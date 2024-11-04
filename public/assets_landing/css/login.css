@@ -1,0 +1,18 @@
+    .bg-white {
+        position: relative;
+        background-image: url(../images/bg-login.jpeg);
+        background-size: cover;
+        z-index: 1000;
+        background-position: center;
+    }
+    .bg-white::before{
+        content: "";
+        position: absolute;
+        top: 0; bottom: 0; left: 0; right: 0;
+        background-color: rgba(0, 0, 0, 0.511);
+    }
+    .col-lg-4{
+        background-color: #ffffffd9;
+    }
+
+

@@ -1,10 +1,14 @@
 @extends('layouts.main')
 
+@section('style')
+<link href="{{ asset('assets_landing/css/login.css') }}" rel="stylesheet">
+@endsection
+
 @section('content')
     <div class="bg-white">
         <div class="container">
             <div class="row justify-content-center align-items-center d-flex vh-100">
-                <div class="col-lg-4 mx-auto">
+                <div class="col-lg-4 mx-auto mt-5">
                     <div class="osahan-login py-4">
                         <div class="text-center mb-4">
                             <a href="{{ url('/') }}"><img src="{{ asset('assets_landing/images/fav.svg') }}" alt=""></a>

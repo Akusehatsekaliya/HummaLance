@@ -23,13 +23,15 @@
     <link href="{{ asset('assets_landing/vendor/select2/css/select2.min.css') }}" rel="stylesheet">
     <!-- Custom styles for this template -->
     <link href="{{ asset('assets_landing/css/style.css') }}" rel="stylesheet">
+
+    @yield('style')
 </head>
 
 <body>
     @include('landing.layouts.navbar_end')
-    <div class="" style="margin-top: -100px">
+    {{-- <div class="" style="margin-top: -100px"> --}}
         @yield('content')
-    </div>
+    {{-- </div> --}}
     <script data-cfasync="false" src="{{ asset('assets_landing/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js') }}"></script>
     <script src="{{ asset('assets_landing/vendor/jquery/jquery.min.js') }}" type="text/javascript"></script>
     <script src="{{ asset('assets_landing/vendor/bootstrap/js/bootstrap.bundle.min.js') }}" type="text/javascript"></script>
