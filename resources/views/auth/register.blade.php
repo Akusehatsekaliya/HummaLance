@@ -1,36 +1,55 @@
-@extends('layouts.app')
+@extends('layouts.main')
 
+@section('style')
+<link href="{{ asset('assets_landing/css/login.css') }}" rel="stylesheet">
+@endsection
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Register') }}</div>
-
-                <div class="card-body">
+<div class="bg-white">
+    <div class="container">
+        <div class="row justify-content-center align-items-center d-flex vh-100">
+            <div class="col-lg-4 mx-auto">
+                <div class="osahan-login py-4">
+                    <div class="text-center mb-4">
+                        <a href="{{ url('/') }}"><img src="{{ asset('assets_landing/images/fav.svg') }}" alt=""></a>
+                        <h5 class="font-weight-bold mt-3">Join Maer</h5>
+                        <p class="text-muted">Make the most of your professional life</p>
+                    </div>
                     <form method="POST" action="{{ route('register') }}">
                         @csrf
 
-                        <div class="row mb-3">
-                            <label for="name" class="col-md-4 col-form-label text-md-end">{{ __('Name') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
-
-                                @error('name')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
+                        <div class="form-row">
+                            <div class="col">
+                                <div class="form-group">
+                                    <label class="mb-1">First name</label>
+                                    <div class="position-relative icon-form-control">
+                                        <i class="mdi mdi-account position-absolute"></i>
+                                        <input type="text" class="form-control @error('first_name') is-invalid @enderror" name="first_name" value="{{ old('first_name') }}" required>
+                                        @error('first_name')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="form-group">
+                                    <label class="mb-1">Last name</label>
+                                    <input type="text" class="form-control @error('last_name') is-invalid @enderror" name="last_name" value="{{ old('last_name') }}" required>
+                                    @error('last_name')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </div>
                             </div>
                         </div>
 
-                        <div class="row mb-3">
-                            <label for="email" class="col-md-4 col-form-label text-md-end">{{ __('Email Address') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
-
+                        <div class="form-group">
+                            <label class="mb-1">Email</label>
+                            <div class="position-relative icon-form-control">
+                                <i class="mdi mdi-email-outline position-absolute"></i>
+                                <input type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required>
                                 @error('email')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -39,12 +58,11 @@
                             </div>
                         </div>
 
-                        <div class="row mb-3">
-                            <label for="password" class="col-md-4 col-form-label text-md-end">{{ __('Password') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
-
+                        <div class="form-group">
+                            <label class="mb-1">Password (6 or more characters)</label>
+                            <div class="position-relative icon-form-control">
+                                <i class="mdi mdi-key-variant position-absolute"></i>
+                                <input type="password" class="form-control @error('password') is-invalid @enderror" name="password" required>
                                 @error('password')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -53,20 +71,36 @@
                             </div>
                         </div>
 
-                        <div class="row mb-3">
-                            <label for="password-confirm" class="col-md-4 col-form-label text-md-end">{{ __('Confirm Password') }}</label>
+                        <div class="form-group">
+                            <label class="mb-1">Confirm Password</label>
+                            <input type="password" class="form-control" name="password_confirmation" required>
+                        </div>
 
-                            <div class="col-md-6">
-                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
+                        <div class="form-group">
+                            <label class="mb-1">You agree to the Maer <a href="#">User Agreement</a>, <a href="#">Privacy Policy</a>, and <a href="#">Cookie Policy</a>.</label>
+                        </div>
+
+                        <button class="btn btn-success btn-block text-uppercase" type="submit"> Agree & Join </button>
+
+                        <div class="text-center mt-3 border-bottom pb-3">
+                            <p class="small text-muted">Or login with</p>
+                            <div class="row">
+                                <div class="col-6">
+                                    <button type="button" class="btn btn-outline-instagram btn-block" style="background-color: #FF4545; border: none">
+                                        <i class="mdi mdi-instagram"></i> Instagram
+                                    </button>
+                                </div>
+                                <div class="col-6">
+                                    <button type="button" class="btn btn-outline-facebook btn-block">
+                                        <i class="mdi mdi-facebook"></i> Facebook
+                                    </button>
+                                </div>
                             </div>
                         </div>
 
-                        <div class="row mb-0">
-                            <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Register') }}
-                                </button>
-                            </div>
+                        <div class="py-3 d-flex align-item-center">
+                            <a href="{{ route('password.request') }}">Forgot password?</a>
+                            <span class="ml-auto"> Already on Maer? <a href="{{ route('login') }}">Sign in</a></span>
                         </div>
                     </form>
                 </div>

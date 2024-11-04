@@ -78,7 +78,7 @@
         <div class="copyright">
             <div class="logo">
                 <a href="index-2.html">
-                    <img src="images/logo.svg">
+                    <img src="{{ asset('assets_landing/images/logo.svg') }}">
                 </a>
             </div>
             <p>© Copyright 2020 Maer. All Rights Reserved
