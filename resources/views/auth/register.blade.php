@@ -22,7 +22,7 @@
                         <div class="form-group">
                             <label class="mb-1">Name</label>
                             <div class="position-relative icon-form-control">
-                                <i class="mdi mdi-email-outline position-absolute"></i>
+                                <i class="mdi mdi-account-outline position-absolute"></i>
                                 <input type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required>
                                 @error('name')
                                     <span class="invalid-feedback" role="alert">
