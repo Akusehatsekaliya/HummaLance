@@ -3,7 +3,7 @@
         <!-- Sidebar Toggle (Topbar) -->
         <a class="navbar-brand" href="index-2.html"><img src="{{ asset('assets_landing/images/logo.svg') }}" alt=""></a>
         <!-- Topbar Search -->
-        <form class="d-none d-sm-inline-block form-inline mr-auto my-2 my-md-0 mw-100 navbar-search">
+        {{-- <form class="d-none d-sm-inline-block form-inline mr-auto my-2 my-md-0 mw-100 navbar-search">
             <div class="input-group">
                 <input type="text" class="form-control bg-white small" placeholder="Find Services..."
                     aria-label="Search" aria-describedby="basic-addon2">
@@ -13,7 +13,7 @@
                     </button>
                 </div>
             </div>
-        </form>
+        </form> --}}
         <!-- Topbar Navbar -->
         <ul class="navbar-nav align-items-center ml-auto">
             <li class="nav-item dropdown no-arrow no-caret mr-3 dropdown-notifications d-sm-none">
