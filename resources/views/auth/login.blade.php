@@ -5,7 +5,7 @@
 @endsection
 
 @section('content')
-    <div class="bg-white">
+    <div class="bg-white1">
         <div class="container">
             <div class="row justify-content-center align-items-center d-flex vh-100">
                 <div class="col-lg-4 mx-auto mt-5">
@@ -54,7 +54,7 @@
                                 <label class="custom-control-label" for="remember">Remember password</label>
                             </div>
                             <button class="btn btn-success btn-block text-uppercase" type="submit"> Sign in </button>
-                            <div class="text-center mt-3 border-bottom pb-3">
+                            {{-- <div class="text-center mt-3 border-bottom pb-3">
                                 <p class="small text-muted">Or login with</p>
                                 <div class="row">
                                     <div class="col-6">
@@ -66,7 +66,7 @@
                                                 class="mdi mdi-facebook"></i> Facebook</button>
                                     </div>
                                 </div>
-                            </div>
+                            </div> --}}
                             <div class="py-3 d-flex align-item-center">
                                 @if (Route::has('password.request'))
                                     <a href="{{ route('password.request') }}">Forgot password?</a>

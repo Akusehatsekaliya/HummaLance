@@ -4,7 +4,9 @@
 @section('style')
 <link href="{{ asset('assets_landing/css/login.css') }}" rel="stylesheet">
 @endsection
-<div class="bg-white">
+
+@section('content')
+<div class="bg-white1">
     <div class="container">
         <div class="row justify-content-center align-items-center d-flex vh-100">
             <div class="col-lg-4 mx-auto">
@@ -67,7 +69,7 @@
 
                         <button class="btn btn-success btn-block text-uppercase" type="submit"> Agree & Join </button>
 
-                        <div class="text-center mt-3 border-bottom pb-3">
+                        {{-- <div class="text-center mt-3 border-bottom pb-3">
                             <p class="small text-muted">Or login with</p>
                             <div class="row">
                                 <div class="col-6">
@@ -81,7 +83,7 @@
                                     </button>
                                 </div>
                             </div>
-                        </div>
+                        </div> --}}
 
                         <div class="py-3 d-flex align-item-center">
                             <a href="{{ route('password.request') }}">Forgot password?</a>
