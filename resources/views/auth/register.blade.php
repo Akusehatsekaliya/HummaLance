@@ -1,9 +1,9 @@
 @extends('layouts.main')
 
+@section('content')
 @section('style')
 <link href="{{ asset('assets_landing/css/login.css') }}" rel="stylesheet">
 @endsection
-@section('content')
 <div class="bg-white">
     <div class="container">
         <div class="row justify-content-center align-items-center d-flex vh-100">
@@ -17,31 +17,16 @@
                     <form method="POST" action="{{ route('register') }}">
                         @csrf
 
-                        <div class="form-row">
-                            <div class="col">
-                                <div class="form-group">
-                                    <label class="mb-1">First name</label>
-                                    <div class="position-relative icon-form-control">
-                                        <i class="mdi mdi-account position-absolute"></i>
-                                        <input type="text" class="form-control @error('first_name') is-invalid @enderror" name="first_name" value="{{ old('first_name') }}" required>
-                                        @error('first_name')
-                                            <span class="invalid-feedback" role="alert">
-                                                <strong>{{ $message }}</strong>
-                                            </span>
-                                        @enderror
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col">
-                                <div class="form-group">
-                                    <label class="mb-1">Last name</label>
-                                    <input type="text" class="form-control @error('last_name') is-invalid @enderror" name="last_name" value="{{ old('last_name') }}" required>
-                                    @error('last_name')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                    @enderror
-                                </div>
+                        <div class="form-group">
+                            <label class="mb-1">Name</label>
+                            <div class="position-relative icon-form-control">
+                                <i class="mdi mdi-email-outline position-absolute"></i>
+                                <input type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required>
+                                @error('name')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
                             </div>
                         </div>
 

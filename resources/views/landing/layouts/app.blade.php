@@ -40,6 +40,8 @@
     {{-- ordered --}}
     @include('landing.ordered.index')
 
+    @yield('content')
+
     {{-- <div class="testi-wrap pt-5">
         <div class="container">
             <div class="testimonial">
