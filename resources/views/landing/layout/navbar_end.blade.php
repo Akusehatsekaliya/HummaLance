@@ -7,39 +7,34 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav">
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownPortfolio"
-                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Home
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdownPortfolio">
-                        <a class="dropdown-item" href="">Home 1</a>
-                        <a class="dropdown-item" href="">Home 2</a>
-                        <a class="dropdown-item" href="">Home 3</a>
-                    </div>
+                <li class="nav-item">
+                    <a class="nav-link" href="/">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="about.html">About</a>
+                    <a class="nav-link" href="/aboutUs">About</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="contact.html">Contact</a>
+                    <a class="nav-link" href="/contact">Contact</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownPortfolio"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Pages
+                        Jobs
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdownPortfolio">
-                        <a class="dropdown-item" href="product.html">Product List</a>
-                        <a class="dropdown-item" href="product2.html">Product List 2</a>
-                        <a class="dropdown-item" href="product-detail.html">List Detail</a>
+                        <a class="dropdown-item" href="/jobs">Jobs 1</a>
+                        <a class="dropdown-item" href="/profile">Profile</a>
+                        {{-- <a class="dropdown-item" href="product-detail.html">List Detail</a>
                         <a class="dropdown-item" href="profile.html">Profile</a>
                         <a class="dropdown-item" href="company-profile.html">Company Profile</a>
                         <a class="dropdown-item" href="alerts.html">Alerts</a>
-                        <a class="dropdown-item" href="messages.html">Messages</a>
+                        <a class="dropdown-item" href="messages.html">Messages</a> --}}
                     </div>
                 </li>
-                <li class="nav-item dropdown">
+                <li class="nav-item">
+                    <a class="nav-link" href="/chat">Chat</a>
+                </li>
+                {{-- <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownBlog" data-toggle="dropdown"
                         aria-haspopup="true" aria-expanded="false">
                         Other Pages
@@ -52,7 +47,7 @@
                         <a class="dropdown-item" href="404.html">404 Page</a>
                         <a class="dropdown-item" href="blank.html">Blank Page</a>
                     </div>
-                </li>
+                </li> --}}
             </ul>
         </div>
         <ul class="navbar-nav ml-auto">

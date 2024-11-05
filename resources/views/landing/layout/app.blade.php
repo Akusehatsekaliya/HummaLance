@@ -28,17 +28,17 @@
 <body>
     @yield('login')
     {{-- navbar 1 --}}
-    @include('landing.layouts.navbar_first')
+    @include('landing.layout.navbar_first')
     {{-- navbar 2 --}}
-    @include('landing.layouts.navbar_end')
+    @include('landing.layout.navbar_end')
     {{-- banner --}}
-    @include('landing.banner.index')
+    {{-- @include('landing.banner.index') --}}
     {{-- post_user --}}
-    @include('landing.post_user.index')
+    {{-- @include('landing.post_user.index') --}}
     {{-- jobs --}}
-    @include('landing.jobs_user.index')
+    {{-- @include('landing.jobs_user.index') --}}
     {{-- ordered --}}
-    @include('landing.ordered.index')
+    {{-- @include('landing.ordered.index') --}}
 
     @yield('content')
 
@@ -114,7 +114,7 @@
     </div>
 
     {{-- footer --}}
-    @include('landing.layouts.footer')
+    @include('landing.layout.footer')
 
     <script data-cfasync="false" src="{{ asset('assets_landing/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js') }}"></script>
     <script src="{{ asset('assets_landing/vendor/jquery/jquery.min.js') }}" type="text/javascript"></script>

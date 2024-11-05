@@ -2,41 +2,17 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Notification;
 use Illuminate\Http\Request;
 
-class LandingPageController extends Controller
+class NotificationController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        return view('welcome');
-    }
-
-    public function aboutUs()
-    {
-        return view('landing.about.index');
-    }
-
-    public function contact()
-    {
-        return view('landing.contact.index');
-    }
-
-    public function jobs()
-    {
-        return view('landing.pages.jobs');
-    }
-
-    public function profile()
-    {
-        return view('landing.pages.profile');
-    }
-
-    public function chat()
-    {
-        return view('landing.chat.index');
+        return view('landing.notifications.index');
     }
 
     /**
@@ -58,7 +34,7 @@ class LandingPageController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(Notification $notification)
     {
         //
     }
@@ -66,7 +42,7 @@ class LandingPageController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(Notification $notification)
     {
         //
     }
@@ -74,7 +50,7 @@ class LandingPageController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, Notification $notification)
     {
         //
     }
@@ -82,7 +58,7 @@ class LandingPageController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Notification $notification)
     {
         //
     }

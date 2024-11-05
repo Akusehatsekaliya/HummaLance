@@ -15,4 +15,4 @@ Route::get('/debug2', function () {
 })->name('debug2');
 
 require __DIR__.'/landing.php';
-require __DIR__.'/admin.php';
+require __DIR__.'/admin.php';   

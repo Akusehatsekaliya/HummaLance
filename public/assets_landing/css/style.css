@@ -27,7 +27,7 @@ a {
     padding: 0;
 }
 .btn-success {
-    background: #2cdd9b;
+    background: #615EFC;
     background: -webkit-linear-gradient(
         legacy-direction(to right),
         #2cdd9b 0%,
@@ -42,7 +42,7 @@ a {
     );
     background: -webkit-linear-gradient(left, #2cdd9b 0%, #1dc8cc 100%);
     background: -o-linear-gradient(left, #2cdd9b 0%, #1dc8cc 100%);
-    background: linear-gradient(to right, #2cdd9b 0%, #1dc8cc 100%);
+    background: linear-gradient(to right, #21BEE8 0%, #00AAFF 100%);
     border-color: #2cdd9b;
 }
 .btn-outline-success {
@@ -697,10 +697,10 @@ header {
 .popular ul li a {
     background-color: transparent;
     padding: 0 8px;
-    border: 1px solid #b5b6ba;
+    border: 1px solid #21BEE8;
     text-decoration: none;
     border-radius: 3px;
-    color: #62646a;
+    color: #00AAFF;
     font-size: 13px;
     -webkit-transition: background-color 0.3s ease-in-out,
         border-color 0.3s ease-in-out;
@@ -1844,7 +1844,7 @@ header {
 .recommended .inner-slider .inner-wrapper .content-info .gig-rating {
     display: flex;
     align-items: center;
-    color: #1fd0b6;
+    color: #ffcc13;
 }
 .recommended .inner-slider .inner-wrapper .content-info .gig-rating svg {
     margin-right: 5px;
@@ -1865,7 +1865,7 @@ header {
     margin: 0 -15px -15px;
 }
 .recommended .inner-slider .inner-wrapper .footer .fa {
-    color: #b2b2b2;
+    color: #e10909;
 }
 .recommended .inner-slider .inner-wrapper .footer a {
     color: #555;
