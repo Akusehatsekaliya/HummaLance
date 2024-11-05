@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-white osahan-nav-mid px-0 border-top shadow-sm">
+<nav class="navbar navbar-expand-lg navbar-light bg-white osahan-nav-mid px-0 border-top shadow-sm" style="z-index:1000;">
     <div class="container">
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
             data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
@@ -51,7 +51,7 @@
             </ul>
         </div>
         <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
+            {{-- <li class="nav-item">
                 <a class="nav-link" href="become-a-seller.html">
                     <i class="fa fa-fw fa-trophy"></i>
                     <span>Become A Seller</span></a>
@@ -61,6 +61,14 @@
                     <img class="country-flag img-fluid" src="{{ asset('assets_landing/images/flag/india.png') }}">
                     <span>English</span>
                 </a>
+            </li> --}}
+            <li class="nav-item">
+                <a class="nav-link" href="{{ route('login') }}">
+                    <span>Login</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ route('register') }}">
+                    <span>Rgister</span></a>
             </li>
         </ul>
     </div>
