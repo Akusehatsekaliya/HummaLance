@@ -17,3 +17,4 @@ Route::get('/debug2', function () {
 require __DIR__.'/landing.php';
 require __DIR__.'/admin.php';
 require __DIR__.'/company.php';
+require __DIR__.'/google.php';

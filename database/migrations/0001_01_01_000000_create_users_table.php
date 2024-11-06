@@ -26,6 +26,7 @@ return new class extends Migration
             $table->string("skill")->nullable();
             $table->bigInteger("tarif")->nullable();
             $table->string("portofolio")->nullable();
+            $table->string('google_id')->nullable()->unique();
             $table->rememberToken();
             $table->timestamps();
         });

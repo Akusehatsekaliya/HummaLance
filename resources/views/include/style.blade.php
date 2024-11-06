@@ -9,3 +9,17 @@
 
 <script src="{{asset ('template-admin/assets/compiled/js/app.js') }}"></script>
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<link rel="stylesheet" href="{{ asset('template-admin/assets/css/pages/datatables.css') }}">
+
+
+<style>
+    #table1_filter {
+    margin-left: auto;
+
+}
+    #table1_paginate {
+    margin-left: auto;
+
+}
+</style>

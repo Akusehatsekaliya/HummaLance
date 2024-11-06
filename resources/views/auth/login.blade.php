@@ -1,7 +1,7 @@
 @extends('layouts.main')
 
 @section('style')
-<link href="{{ asset('assets_landing/css/login.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets_landing/css/login.css') }}" rel="stylesheet">
 @endsection
 
 @section('content')
@@ -11,7 +11,8 @@
                 <div class="col-lg-4 mx-auto mt-5">
                     <div class="osahan-login py-4">
                         <div class="text-center mb-4">
-                            <a href="{{ url('/') }}"><img src="{{ asset('assets_landing/images/fav.svg') }}" alt=""></a>
+                            <a href="{{ url('/') }}"><img src="{{ asset('assets_landing/images/fav.svg') }}"
+                                    alt=""></a>
                             <h5 class="font-weight-bold mt-3">Welcome to junggle</h5>
                             <p class="text-muted">Don't miss your next opportunity. Sign in to stay updated on your
                                 professional world.</p>
@@ -72,6 +73,11 @@
                                     <a href="{{ route('password.request') }}">Forgot password?</a>
                                 @endif
                                 <span class="ml-auto"> New to Maer? <a href="{{ route('register') }}">Join now</a></span>
+                            </div>
+                            <div class="text-center mt-4">
+                                <a href="{{ route('login.google') }}" class="btn btn-danger btn-block text-uppercase">
+                                    <i class="mdi mdi-google"></i> Login with Google
+                                </a>
                             </div>
                         </form>
                     </div>

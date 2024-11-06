@@ -55,12 +55,6 @@ class UserSeeder extends Seeder
                 'role' => UserRoleEnum::CLIENT->value
             ],
             [
-                'username' => 'Mugni',
-                'name' => 'Andhika Mugni',
-                'email' => 'andhikamugniv@gmail.com',
-                'role' => UserRoleEnum::CLIENT->value
-            ],
-            [
                 'username' => 'Refal',
                 'name' => 'Rifaldi Menolak Sadar',
                 'email' => 'rifaldiliebert@gmail.com',
