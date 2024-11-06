@@ -29,7 +29,7 @@
 
 <body>
     @include('landing.layout.navbar_end')
-    {{-- <div class="" style="margin-top: -100px"> --}}
+    <div class="" style="margin-top: -50px">
         @yield('content')
     </div>
     <script data-cfasync="false" src="{{ asset('assets_landing/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js') }}"></script>

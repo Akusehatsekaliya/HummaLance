@@ -62,14 +62,28 @@
                     <span>English</span>
                 </a>
             </li> --}}
+            @if (Route::currentRouteName() === 'register')
+
+
+            <li class="nav-item">
+                <a class="nav-link" href="{{ route('login') }}">
+                    <span>Login</span></a>
+            </li>
+            @elseif (Route::currentRouteName() === 'login')
+            <li class="nav-item">
+                <a class="nav-link" href="{{ route('register') }}">
+                    <span>Register</span></a>
+            </li>
+            @else
             <li class="nav-item">
                 <a class="nav-link" href="{{ route('login') }}">
                     <span>Login</span></a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="{{ route('register') }}">
-                    <span>Rgister</span></a>
+                    <span>Register</span></a>
             </li>
+            @endif
         </ul>
     </div>
 </nav>
