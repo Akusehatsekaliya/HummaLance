@@ -29,7 +29,7 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/';
 
     /**
      * Create a new controller instance.
@@ -63,6 +63,7 @@ class LoginController extends Controller
                 'google_id' => $googleUser->getId(),
                 'password' => bcrypt(Str::random(16)), // password acak
             ]);
+            // return to_route('register', compact('googleUser'));
         }
 
         Auth::login($user);

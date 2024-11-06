@@ -37,7 +37,7 @@ class UserSeeder extends Seeder
                 'role' => UserRoleEnum::CLIENT->value
             ],
             [
-                'username' => 'Cinta',
+                'username' => 'Cintaa',
                 'name' => 'Cinta Adenia',
                 'email' => 'ccintaadenia06@gmail.com',
                 'role' => UserRoleEnum::CLIENT->value
@@ -52,6 +52,12 @@ class UserSeeder extends Seeder
                 'username' => 'Tika',
                 'name' => 'NUGI ARTIKASARI',
                 'email' => 'ar.tika0412@gmail.com',
+                'role' => UserRoleEnum::CLIENT->value
+            ],
+            [
+                'username' => 'Andhika',
+                'name' => 'Andhika Mugni',
+                'email' => 'andhikamugniv@gmail.com',
                 'role' => UserRoleEnum::CLIENT->value
             ],
             [
