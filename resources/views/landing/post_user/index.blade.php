@@ -1,17 +1,26 @@
+<style>
+.slick-slide.slick-cloned.animate {
+    transition: transform 0.4s ease;
+    transform: scale(0.95);
+    opacity: 0;
+}
+
+</style>
+
+
 <div class="freelance-projects bg-white py-5">
     <div class="container">
         <div class="row freelance-slider slick-initialized slick-slider">
             <div class="slick-list draggable">
                 <div class="slick-track"
                     style="opacity: 1; width: 3990px; transform: translate3d(-2565px, 0px, 0px); transition: transform 500ms;">
-                    <div class="slick-slide slick-cloned" data-slick-index="-4" aria-hidden="true" tabindex="-1"
+                    <div class="slick-slide slick-cloned" onclick="navigateWithAnimation()" data-slick-index="-4" aria-hidden="true" tabindex="-1"
                         style="width: 285px;">
                         <div>
                             <div class="col" style="width: 100%; display: inline-block;">
                                 <div class="freelancer">
                                     <img src="images/vnuggz.jpg">
                                     <div class="freelancer-footer">
-                                        <img src="images/user/s8.png">
                                         <h5>Web &amp; Mobile Design
                                             <span>by <i>John</i></span>
                                         </h5>
@@ -20,7 +29,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="slick-slide slick-cloned" data-slick-index="-3" aria-hidden="true" tabindex="-1"
+                    <div class="slick-slide slick-cloned" onclick="navigateWithAnimation()" data-slick-index="-3" aria-hidden="true" tabindex="-1"
                         style="width: 285px;">
                         <div>
                             <div class="col" style="width: 100%; display: inline-block;">
@@ -36,7 +45,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="slick-slide slick-cloned" data-slick-index="-2" aria-hidden="true" tabindex="-1"
+                    <div class="slick-slide slick-cloned" onclick="navigateWithAnimation()" data-slick-index="-2" aria-hidden="true" tabindex="-1"
                         style="width: 285px;">
                         <div>
                             <div class="col" style="width: 100%; display: inline-block;">
@@ -52,7 +61,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="slick-slide slick-cloned" data-slick-index="-1" aria-hidden="true" tabindex="-1"
+                    <div class="slick-slide slick-cloned"  onclick="navigateWithAnimation()" data-slick-index="-1" aria-hidden="true" tabindex="-1"
                         style="width: 285px;">
                         <div>
                             <div class="col" style="width: 100%; display: inline-block;">
@@ -68,7 +77,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="slick-slide slick-current slick-active" data-slick-index="0" aria-hidden="false"
+                    <div class="slick-slide slick-current slick-active" onclick="navigateWithAnimation()" data-slick-index="0" aria-hidden="false"
                         style="width: 285px;" tabindex="-1">
                         <div>
                             <div class="col" style="width: 100%; display: inline-block;">
@@ -84,7 +93,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="slick-slide slick-active" data-slick-index="1" aria-hidden="false" style="width: 285px;"
+                    <div class="slick-slide slick-active" onclick="navigateWithAnimation()" data-slick-index="1" aria-hidden="false" style="width: 285px;"
                         tabindex="-1">
                         <div>
                             <div class="col" style="width: 100%; display: inline-block;">
@@ -100,7 +109,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="slick-slide slick-active" data-slick-index="2" aria-hidden="false" style="width: 285px;"
+                    <div class="slick-slide slick-active" onclick="navigateWithAnimation()" data-slick-index="2" aria-hidden="false" style="width: 285px;"
                         tabindex="-1">
                         <div>
                             <div class="col" style="width: 100%; display: inline-block;">
@@ -116,7 +125,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="slick-slide slick-active" data-slick-index="3" aria-hidden="false" style="width: 285px;"
+                    <div class="slick-slide slick-active" onclick="navigateWithAnimation()" data-slick-index="3" aria-hidden="false" style="width: 285px;"
                         tabindex="-1">
                         <div>
                             <div class="col" style="width: 100%; display: inline-block;">
@@ -132,7 +141,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="slick-slide" data-slick-index="4" aria-hidden="true" style="width: 285px;">
+                    <div class="slick-slide" onclick="navigateWithAnimation()" data-slick-index="4" aria-hidden="true" style="width: 285px;">
                         <div>
                             <div class="col" style="width: 100%; display: inline-block;">
                                 <div class="freelancer">
@@ -147,7 +156,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="slick-slide slick-cloned" data-slick-index="5" aria-hidden="true" tabindex="-1"
+                    <div class="slick-slide slick-cloned" onclick="navigateWithAnimation()" data-slick-index="5" aria-hidden="true" tabindex="-1"
                         style="width: 285px;">
                         <div>
                             <div class="col" style="width: 100%; display: inline-block;">
@@ -163,7 +172,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="slick-slide slick-cloned" data-slick-index="6" aria-hidden="true" tabindex="-1"
+                    <div class="slick-slide slick-cloned" onclick="navigateWithAnimation()" data-slick-index="6" aria-hidden="true" tabindex="-1"
                         style="width: 285px;">
                         <div>
                             <div class="col" style="width: 100%; display: inline-block;">
@@ -179,7 +188,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="slick-slide slick-cloned" data-slick-index="7" aria-hidden="true" tabindex="-1"
+                    <div class="slick-slide slick-cloned" onclick="navigateWithAnimation()" data-slick-index="7" aria-hidden="true" tabindex="-1"
                         style="width: 285px;">
                         <div>
                             <div class="col" style="width: 100%; display: inline-block;">
@@ -195,7 +204,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="slick-slide slick-cloned" data-slick-index="8" aria-hidden="true" tabindex="-1"
+                    <div class="slick-slide slick-cloned" onclick="navigateWithAnimation()" data-slick-index="8" aria-hidden="true" tabindex="-1"
                         style="width: 285px;">
                         <div>
                             <div class="col" style="width: 100%; display: inline-block;">
@@ -211,7 +220,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="slick-slide slick-cloned" data-slick-index="9" aria-hidden="true" tabindex="-1"
+                    <div class="slick-slide slick-cloned" onclick="navigateWithAnimation()" data-slick-index="9" aria-hidden="true" tabindex="-1"
                         style="width: 285px;">
                         <div>
                             <div class="col" style="width: 100%; display: inline-block;">
@@ -236,3 +245,18 @@
         </div>
     </div>
 </div>
+
+<script>
+    function navigateWithAnimation() {
+    const slide = document.querySelector('.slick-slide.slick-cloned');
+
+    if (slide) {
+        slide.classList.add('animate');
+
+        setTimeout(() => {
+            window.location.href = '/detail-job';
+        }, 400);
+    }
+}
+
+</script>

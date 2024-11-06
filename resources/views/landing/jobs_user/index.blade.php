@@ -3,7 +3,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <h3>Recently Viewed &amp; More</h3>
+                    <h3>Jobs from Company</h3>
                     <div class="view recent-slider recommended-slider slick-initialized slick-slider"><button
                             class="slick-prev slick-arrow" aria-label="Previous" type="button" style=""
                             fdprocessedid="eiz3jd">Previous</button>

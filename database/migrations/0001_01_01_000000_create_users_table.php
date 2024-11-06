@@ -1,5 +1,6 @@
 <?php
 
+use App\Constract\Enums\UserRoleEnum;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -15,10 +16,16 @@ return new class extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
+            $table->string('username');
             $table->string('name');
             $table->string('email')->unique();
-            $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+            $table->timestamp('email_verified_at')->nullable();
+            $table->enum("role", [UserRoleEnum::CLIENT->value, UserRoleEnum::FREELANCER->value, UserRoleEnum::ADMIN->value])->default(UserRoleEnum::FREELANCER->value);
+            $table->text("self_description")->nullable();
+            $table->string("skill")->nullable();
+            $table->bigInteger("tarif")->nullable();
+            $table->string("portofolio")->nullable();
             $table->rememberToken();
             $table->timestamps();
         });
@@ -37,14 +44,6 @@ return new class extends Migration
             $table->longText('payload');
             $table->integer('last_activity')->index();
         });
-
-        DB::table('users')->insert([
-            'name' => 'admin',
-            'email' => 'admin@gmail.com',
-            'password' => Hash::make('admin'),
-            'created_at' => now(),
-            'updated_at' => now(),
-         ]);
     }
 
     /**
@@ -56,6 +55,4 @@ return new class extends Migration
         Schema::dropIfExists('password_reset_tokens');
         Schema::dropIfExists('sessions');
     }
-
-
 };

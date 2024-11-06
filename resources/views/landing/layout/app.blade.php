@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="Gurdeep singh osahan">
     <meta name="author" content="Gurdeep singh osahan">
-    <base href="{{ asset('assets_landing') }}/">
+    <base href="{{ asset('storage') }}/">
     <title>HummaLance</title>
     {{-- logo title --}}
     <link rel="icon" type="image/png" href="{{ asset('assets_landing/images/fav.svg') }}">
@@ -125,19 +125,15 @@
     {{-- footer --}}
     @include('landing.layout.footer')
 
-    <script data-cfasync="false"
-      src="{{ asset('assets_landing/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js') }}"></script>
-    <script src="{{ asset('assets_landing/vendor/jquery/jquery.min.js') }}" type="text/javascript"></script>
-    <script src="{{ asset('assets_landing/vendor/bootstrap/js/bootstrap.bundle.min.js') }}" type="text/javascript">
-    </script>
-    <script src="{{ asset('assets_landing/js/jqBootstrapValidation.html') }}" type="text/javascript"></script>
-    <script src="{{ asset('assets_landing/js/contact_me.html') }}" type="text/javascript"></script>
-    <script src="{{ asset('assets_landing/vendor/slick-master/slick/slick.js') }}" type="text/javascript" charset="utf-8">
-    </script>
-    <script src="{{ asset('assets_landing/vendor/lightgallery-master/dist/js/lightgallery-all.min.js') }}"
-      type="text/javascript"></script>
-    <script src="{{ asset('assets_landing/vendor/select2/js/select2.min.js') }}" type="text/javascript"></script>
-    <script src="{{ asset('assets_landing/js/custom.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('assets_landing/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js') }}"></script>
+    <script src="{{ asset('assets_landing/vendor/jquery/jquery.min.js') }}"></script>
+    <script src="{{ asset('assets_landing/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ asset('assets_landing/js/jqBootstrapValidation.html') }}"></script>
+    <script src="{{ asset('assets_landing/js/contact_me.html') }}"></script>
+    <script src="{{ asset('assets_landing/vendor/slick-master/slick/slick.js') }}" charset="utf-8"></script>
+    <script src="{{ asset('assets_landing/vendor/lightgallery-master/dist/js/lightgallery-all.min.js') }}"></script>
+    <script src="{{ asset('assets_landing/vendor/select2/js/select2.min.js') }}"></script>
+    <script src="{{ asset('assets_landing/js/custom.js') }}"></script>
     <script src="{{ asset('assets_landing/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js') }}"
       data-cf-settings="643b16316ea0a7fbc48d654c-|49" defer></script>
     <script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015"
