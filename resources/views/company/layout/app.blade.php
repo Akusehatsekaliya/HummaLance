@@ -33,6 +33,7 @@
 </head>
 
 <body>
+    @include('company.layout.header')
 
     @yield('content')
 

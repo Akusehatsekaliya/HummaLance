@@ -1,19 +1,5 @@
 @extends('company.layout.app')
 @section('content')
-    <section class="py-5 bg-dark inner-header">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12 text-center">
-                    <h1 class="mt-0 mb-3 text-white">Product List</h1>
-                    <div class="breadcrumbs">
-                        <p class="mb-0 text-white"><a class="text-white" href="#">Home</a> / <span
-                                class="text-success">Product List</span></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- End Inner Header -->
     <!--   header -->
     <section class="py-5 p-list-two">
         <div class="container">
