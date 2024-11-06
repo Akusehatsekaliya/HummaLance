@@ -26,6 +26,7 @@ class User extends Authenticatable
         'skill',
         'tarif',
         'portofolio',
+        'google_id'
     ];
 
     /**
