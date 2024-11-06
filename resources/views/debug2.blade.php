@@ -1,56 +1,83 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <link href="{{ asset('assets_landing/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
-    <link rel="stylesheet" href="{{ asset('assets/css/alert.css') }}">
+    <title>Jam Analog</title>
+    <style>
+      .clock {
+        width: 300px;
+        height: 300px;
+        border-radius: 50%;
+        background-color: #fff;
+        position: relative;
+      }
+
+      .hour,
+      .minute,
+      .second {
+        position: absolute;
+        left: 50%;
+        bottom: 50%;
+        transform-origin: bottom center;
+        border-top: 5px solid black;
+        /* Panah */
+        border-left: 5px solid transparent;
+        border-right: 5px solid transparent;
+      }
+
+      .hour {
+        width: 4px;
+        height: 80px;
+        background-color: black;
+        transform: rotate(90deg);
+      }
+
+      .minute {
+        width: 3px;
+        height: 100px;
+        background-color: black;
+        transform: rotate(90deg);
+      }
+
+      .second {
+        width: 2px;
+        height: 120px;
+        background-color: red;
+        transform: rotate(90deg);
+      }
+    </style>
   </head>
 
   <body>
-    <div class="alert-container">
-      <div class="alert alert-success" role="alert">
-        <svg class="icon-success" stroke="currentColor" viewBox="0 0 24 24" fill="none"
-          xmlns="http://www.w3.org/2000/svg">
-          <path d="M13 16h-1v-4h1m0-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke-width="2" stroke-linejoin="round"
-            stroke-linecap="round"></path>
-        </svg>
-        <p class="mt-2 mb-2">Success - Everything went smoothly!</p>
-      </div>
-
-      <div class="alert alert-info" role="alert">
-        <svg class="icon-info" stroke="currentColor" viewBox="0 0 24 24" fill="none"
-          xmlns="http://www.w3.org/2000/svg">
-          <path d="M13 16h-1v-4h1m0-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke-width="2" stroke-linejoin="round"
-            stroke-linecap="round"></path>
-        </svg>
-        <p class="mt-2 mb-2">Info - This is some information for you.</p>
-      </div>
-
-      <div class="alert alert-warning" role="alert">
-        <svg class="icon-warning" stroke="currentColor" viewBox="0 0 24 24" fill="none"
-          xmlns="http://www.w3.org/2000/svg">
-          <path d="M13 16h-1v-4h1m0-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke-width="2" stroke-linejoin="round"
-            stroke-linecap="round"></path>
-        </svg>
-        <p class="mt-2 mb-2">Warning - Be careful with this next step.</p>
-      </div>
-
-      <div class="alert alert-error" role="alert">
-        <svg class="icon-error" stroke="currentColor" viewBox="0 0 24 24" fill="none"
-          xmlns="http://www.w3.org/2000/svg">
-          <path d="M13 16h-1v-4h1m0-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke-width="2" stroke-linejoin="round"
-            stroke-linecap="round"></path>
-        </svg>
-        <p class="mt-2 mb-2">Error - Something went wrong.</p>
-      </div>
+    <div class="clock">
+      <div class="hour"></div>
+      <div class="minute"></div>
+      <div class="second"></div>
     </div>
+    <script>
+      const hour = document.querySelector('.hour');
+      const minute = document.querySelector('.minute');
+      const second = document.querySelector('.second');
 
-    <script src="{{ asset('assets/js/alert.js') }}"></script>
+      function setDate() {
+        const now = new Date();
+        const secondsRatio = now.getSeconds() / 60;
+        const minutesRatio = (secondsRatio + now.getMinutes()) / 60;
+        const hoursRatio = (minutesRatio + now.getHours()) / 12;
 
+        setRotation(second, secondsRatio);
+        setRotation(minute, minutesRatio);
+        setRotation(hour, hoursRatio);
+      }
+
+      function setRotation(element, rotationRatio) {
+        element.style.transform = `rotate(${rotationRatio * 360}deg)`;
+      }
+
+      setInterval(setDate, 1000);
+
+      setDate();
+    </script>
   </body>
 
 </html>

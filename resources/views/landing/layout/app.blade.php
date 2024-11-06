@@ -7,7 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="Gurdeep singh osahan">
     <meta name="author" content="Gurdeep singh osahan">
-    <base href="{{ asset('storage') }}/">
+    {{-- <base href="{{ asset('assets_landing') }}/"> --}}
+    {{-- <base href="{{ asset('storage') }}/"> --}}
     <title>HummaLance</title>
     {{-- logo title --}}
     <link rel="icon" type="image/png" href="{{ asset('assets_landing/images/fav.svg') }}">
@@ -125,21 +126,12 @@
     {{-- footer --}}
     @include('landing.layout.footer')
 
-    <script src="{{ asset('assets_landing/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js') }}"></script>
     <script src="{{ asset('assets_landing/vendor/jquery/jquery.min.js') }}"></script>
     <script src="{{ asset('assets_landing/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
-    <script src="{{ asset('assets_landing/js/jqBootstrapValidation.html') }}"></script>
-    <script src="{{ asset('assets_landing/js/contact_me.html') }}"></script>
-    <script src="{{ asset('assets_landing/vendor/slick-master/slick/slick.js') }}" charset="utf-8"></script>
+    <script src="{{ asset('assets_landing/vendor/slick-master/slick/slick.js') }}"></script>
     <script src="{{ asset('assets_landing/vendor/lightgallery-master/dist/js/lightgallery-all.min.js') }}"></script>
     <script src="{{ asset('assets_landing/vendor/select2/js/select2.min.js') }}"></script>
     <script src="{{ asset('assets_landing/js/custom.js') }}"></script>
-    <script src="{{ asset('assets_landing/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js') }}"
-      data-cf-settings="643b16316ea0a7fbc48d654c-|49" defer></script>
-    <script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015"
-      integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ=="
-      data-cf-beacon='{"rayId":"8dd144230c40ce22","version":"2024.10.4","r":1,"serverTiming":{"name":{"cfExtPri":true,"cfL4":true,"cfSpeedBrain":true,"cfCacheStatus":true}},"token":"dd471ab1978346bbb991feaa79e6ce5c","b":1}'
-      crossorigin="anonymous"></script>
     @yield('script')
     @stack('scripts')
   </body>
