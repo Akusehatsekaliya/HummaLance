@@ -13,14 +13,14 @@
                         <div class="text-center mb-4">
                             <a href="{{ url('/') }}"><img src="{{ asset('assets_landing/images/fav.svg') }}"
                                     alt=""></a>
-                            <h5 class="font-weight-bold mt-3">Welcome to junggle</h5>
+                            <h5 class="font-weight-bold mt-3">Login</h5>
                             <p class="text-muted">Don't miss your next opportunity. Sign in to stay updated on your
                                 professional world.</p>
                         </div>
                         <form method="POST" action="{{ route('login') }}">
                             @csrf
                             <div class="form-group">
-                                <label class="mb-1">Email or Phone</label>
+                                <label class="mb-1">Email</label>
                                 <div class="position-relative icon-form-control">
                                     <i class="mdi mdi-account position-absolute"></i>
                                     <input id="email" type="email"
@@ -72,7 +72,7 @@
                                 @if (Route::has('password.request'))
                                     <a href="{{ route('password.request') }}">Forgot password?</a>
                                 @endif
-                                <span class="ml-auto"> New to Maer? <a href="{{ route('register') }}">Join now</a></span>
+                                <span class="ml-auto"> Don't have an account yet? <a href="{{ route('register') }}">Join now</a></span>
                             </div>
                             <div class="text-center mt-4">
                                 <a href="{{ route('login.google') }}" class="btn btn-danger btn-block text-uppercase">

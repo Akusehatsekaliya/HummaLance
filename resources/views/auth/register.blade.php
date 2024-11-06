@@ -13,7 +13,7 @@
                 <div class="osahan-login py-4">
                     <div class="text-center mb-4">
                         <a href="{{ url('/') }}"><img src="{{ asset('assets_landing/images/fav.svg') }}" alt=""></a>
-                        <h5 class="font-weight-bold mt-3">Join Maer</h5>
+                        <h5 class="font-weight-bold mt-3">Register</h5>
                         <p class="text-muted">Make the most of your professional life</p>
                     </div>
                     <form method="POST" action="{{ route('register') }}">
@@ -63,11 +63,11 @@
                             <input type="password" class="form-control" name="password_confirmation" required>
                         </div>
 
-                        <div class="form-group">
+                        {{-- <div class="form-group">
                             <label class="mb-1">You agree to the Maer <a href="#">User Agreement</a>, <a href="#">Privacy Policy</a>, and <a href="#">Cookie Policy</a>.</label>
-                        </div>
+                        </div> --}}
 
-                        <button class="btn btn-success btn-block text-uppercase" type="submit"> Agree & Join </button>
+                        <button class="btn btn-success btn-block text-uppercase" type="submit"> Register </button>
 
                         {{-- <div class="text-center mt-3 border-bottom pb-3">
                             <p class="small text-muted">Or login with</p>
@@ -86,8 +86,8 @@
                         </div> --}}
 
                         <div class="py-3 d-flex align-item-center">
-                            <a href="{{ route('password.request') }}">Forgot password?</a>
-                            <span class="ml-auto"> Already on Maer? <a href="{{ route('login') }}">Sign in</a></span>
+                            {{-- <a href="{{ route('password.request') }}">Forgot password?</a> --}}
+                            <span class="ml-auto"> Already have an account? <a href="{{ route('login') }}">Sign in</a></span>
                         </div>
                     </form>
                 </div>
