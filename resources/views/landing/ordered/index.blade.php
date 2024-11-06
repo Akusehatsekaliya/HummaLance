@@ -1,6 +1,6 @@
 <div class="services-wrapper bg-white py-5">
     <div class="container">
-        <h2>Popular Professional Services</h2>
+        <h2>Popular &amp; Professional Freelancer</h2>
         <div class="row service-slider slick-initialized slick-slider"><button class="slick-prev slick-arrow"
                 aria-label="Previous" type="button" style="" fdprocessedid="vdhv69">Previous</button>
             <div class="slick-list draggable">

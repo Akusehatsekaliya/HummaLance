@@ -14,7 +14,7 @@
                          <div class="location-dropdown text-left">
                             <i class="icofont-location-arrow"></i>
                             <select class="custom-select form-control border-0 shadow-sm form-control-lg">
-                               <option> All </option>
+                               <option> Categories </option>
                                <option> Graphics & Design </option>
                                <option> Digital Marketing </option>
                                <option> Writing & Translation </option>
@@ -28,7 +28,7 @@
                          </div>
                       </div>
                       <div class="col-lg-7 col-md-7 col-sm-12 form-group">
-                         <input type="text" placeholder="Find Services..."
+                         <input type="text" placeholder="Search..."
                             class="form-control border-0 form-control-lg shadow-sm">
                       </div>
                       <div class="col-lg-2 col-md-2 col-sm-12 form-group">
@@ -39,9 +39,9 @@
                    </div>
                 </form>
              </div>
-             <h6 class="mb-0 mt-1 text-shadow text-center text-white-50 font-weight-normal">E.g. Voice over,
+             {{-- <h6 class="mb-0 mt-1 text-shadow text-center text-white-50 font-weight-normal">E.g. Voice over,
                 translation, logo design, Articles, Blog Posts &amp; more...
-             </h6>
+             </h6> --}}
           </div>
        </div>
     </div>
