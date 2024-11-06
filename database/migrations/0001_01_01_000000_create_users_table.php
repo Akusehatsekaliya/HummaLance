@@ -20,11 +20,12 @@ return new class extends Migration
             $table->string('name');
             $table->string('email')->unique();
             $table->string('password');
+            $table->timestamp('email_verified_at')->nullable();
             $table->enum("role", [UserRoleEnum::CLIENT->value, UserRoleEnum::FREELANCER->value, UserRoleEnum::ADMIN->value])->default(UserRoleEnum::FREELANCER->value);
-            $table->text("self_description");
-            $table->string("skill");
-            $table->bigInteger("tarif");
-            $table->string("portofolio");
+            $table->text("self_description")->nullable();
+            $table->string("skill")->nullable();
+            $table->bigInteger("tarif")->nullable();
+            $table->string("portofolio")->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

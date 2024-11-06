@@ -17,17 +17,17 @@ class UserSeeder extends Seeder
     public function run(): void
     {
         User::factory()->create([
+            'username' => 'Admin',
             'name' => 'Admin',
             'email' => 'admin@gmail.com',
             'role' => UserRoleEnum::ADMIN->value
         ]);
         User::factory()->create([
-            'name' => 'Freelancer User',
+            'username' => 'Freelancer',
+            'name' => 'Freelancer',
             'email' => 'freelancer@gmail.com',
             'role' => UserRoleEnum::FREELANCER->value,
         ]);
-
-        User::factory(10)->create();
 
         $teamAccount = [
             [
