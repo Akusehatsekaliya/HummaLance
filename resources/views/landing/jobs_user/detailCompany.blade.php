@@ -41,11 +41,6 @@
                    </a></div></div><div class="slick-slide" data-slick-index="1" aria-hidden="true" tabindex="-1" style="width: 730px; position: relative; left: -730px; top: 0px; z-index: 998; opacity: 0;"><div><a href="images/list/v2.png" style="width: 100%; display: inline-block;" tabindex="-1">
                    <img class="img-fluid" src="images/list/v2.png">
                    </a></div></div><div class="slick-slide" data-slick-index="2" aria-hidden="true" tabindex="-1" style="width: 730px; position: relative; left: -1460px; top: 0px; z-index: 998; opacity: 0;"><div><a href="images/list/v3.png" style="width: 100%; display: inline-block;" tabindex="-1">
-                   <img class="img-fluid" src="images/list/v3.png">
-                   </a></div></div><div class="slick-slide" data-slick-index="3" aria-hidden="true" tabindex="-1" style="width: 730px; position: relative; left: -2190px; top: 0px; z-index: 998; opacity: 0;"><div><a href="images/list/v4.png" style="width: 100%; display: inline-block;" tabindex="-1">
-                   <img class="img-fluid" src="images/list/v4.png">
-                   </a></div></div><div class="slick-slide" data-slick-index="4" aria-hidden="true" tabindex="-1" style="width: 730px; position: relative; left: -2920px; top: 0px; z-index: 998; opacity: 0;"><div><a href="images/list/v5.png" style="width: 100%; display: inline-block;" tabindex="-1">
-                   <img class="img-fluid" src="images/list/v5.png">
                    </a></div></div></div></div><button class="slick-next slick-arrow" aria-label="Next" type="button" style="">Next</button></div>
                 <div class="slider-nav slick-slider-single slick-initialized slick-slider"><button class="slick-prev slick-arrow" aria-label="Previous" type="button" style="">Previous</button><div class="slick-list draggable"><div class="slick-track" style="opacity: 1; width: 25000px; transform: translate3d(-704px, 0px, 0px);"><div class="slick-slide slick-cloned" data-slick-index="-4" aria-hidden="true" tabindex="-1"><div><div class="item-slick" style="width: 100%; display: inline-block;">
                       <img class="img-fluid" src="images/list/v2.png" alt="Alt">
@@ -59,22 +54,6 @@
                       <img class="img-fluid" src="images/list/v1.png" alt="Alt">
                    </div></div></div><div class="slick-slide slick-active" data-slick-index="1" aria-hidden="false"><div><div class="item-slick" style="width: 100%; display: inline-block;">
                       <img class="img-fluid" src="images/list/v2.png" alt="Alt">
-                   </div></div></div><div class="slick-slide slick-active" data-slick-index="2" aria-hidden="false"><div><div class="item-slick" style="width: 100%; display: inline-block;">
-                      <img class="img-fluid" src="images/list/v3.png" alt="Alt">
-                   </div></div></div><div class="slick-slide slick-active" data-slick-index="3" aria-hidden="false"><div><div class="item-slick" style="width: 100%; display: inline-block;">
-                      <img class="img-fluid" src="images/list/v4.png" alt="Alt">
-                   </div></div></div><div class="slick-slide" data-slick-index="4" aria-hidden="true" tabindex="-1"><div><div class="item-slick" style="width: 100%; display: inline-block;">
-                      <img class="img-fluid" src="images/list/v5.png" alt="Alt">
-                   </div></div></div><div class="slick-slide slick-cloned" data-slick-index="5" aria-hidden="true" tabindex="-1"><div><div class="item-slick" style="width: 100%; display: inline-block;">
-                      <img class="img-fluid" src="images/list/v1.png" alt="Alt">
-                   </div></div></div><div class="slick-slide slick-cloned" data-slick-index="6" aria-hidden="true" tabindex="-1"><div><div class="item-slick" style="width: 100%; display: inline-block;">
-                      <img class="img-fluid" src="images/list/v2.png" alt="Alt">
-                   </div></div></div><div class="slick-slide slick-cloned" data-slick-index="7" aria-hidden="true" tabindex="-1"><div><div class="item-slick" style="width: 100%; display: inline-block;">
-                      <img class="img-fluid" src="images/list/v3.png" alt="Alt">
-                   </div></div></div><div class="slick-slide slick-cloned" data-slick-index="8" aria-hidden="true" tabindex="-1"><div><div class="item-slick" style="width: 100%; display: inline-block;">
-                      <img class="img-fluid" src="images/list/v4.png" alt="Alt">
-                   </div></div></div><div class="slick-slide slick-cloned" data-slick-index="9" aria-hidden="true" tabindex="-1"><div><div class="item-slick" style="width: 100%; display: inline-block;">
-                      <img class="img-fluid" src="images/list/v5.png" alt="Alt">
                    </div></div></div></div></div><button class="slick-next slick-arrow" aria-label="Next" type="button" style="">Next</button></div>
              </div>
              <div id="description" class="description">
@@ -285,7 +264,7 @@
                       </tbody>
                    </table>
                 </div>
-                <div id="recommendations" class="recommended">
+                {{-- <div id="recommendations" class="recommended">
                    <h3>Recommended For You</h3>
                    <div class="recommended-slider recommend slick-initialized slick-slider"><button class="slick-prev slick-arrow" aria-label="Previous" type="button" style="">Previous</button><div class="slick-list draggable"><div class="slick-track" style="opacity: 1; width: 3040px; transform: translate3d(-760px, 0px, 0px);"><div class="slick-slide slick-cloned" data-slick-index="-2" aria-hidden="true" tabindex="-1" style="width: 350px;"><div><div style="width: 100%; display: inline-block;">
                          <a href="#" tabindex="-1">
@@ -608,7 +587,7 @@
                             </div>
                          </div>
                       </div></div></div></div></div><button class="slick-next slick-arrow" aria-label="Next" type="button" style="">Next</button></div>
-                </div>
+                </div> --}}
              </div>
              <div id="faq" class="faq">
                 <h3>FAQ</h3>
