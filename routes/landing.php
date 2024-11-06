@@ -10,6 +10,7 @@ Route::get('/contact', [LandingpageController::class, 'contact']);
 Route::get('/jobs', [LandingpageController::class, 'jobs']);
 Route::get('/profile', [LandingpageController::class, 'profile']);
 Route::get('/chat', [LandingpageController::class, 'chat']);
+Route::get('/detail-job',[LandingpageController::class, 'detail']);
 
 #notifications
 Route::resource('notifications', NotificationController::class);

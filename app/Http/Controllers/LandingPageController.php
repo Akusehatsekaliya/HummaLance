@@ -39,6 +39,12 @@ class LandingPageController extends Controller
         return view('landing.chat.index');
     }
 
+    public function detail()
+    {
+        return view('landing.post_user.detail');
+    }
+
+
     /**
      * Show the form for creating a new resource.
      */
