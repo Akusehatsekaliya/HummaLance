@@ -73,8 +73,8 @@
                         <span>Category</span>
                     </a>
                 </li>
-                <li class="sidebar-item {{ request()->routeIs('user') ? 'active' : '' }}">
-                    <a href="{{ route('user') }}" class='sidebar-link'>
+                <li class="sidebar-item {{ request()->routeIs('user.index') ? 'active' : '' }}">
+                    <a href="{{ route('user.index') }}" class='sidebar-link'>
                         <i class="bi bi-people-fill"></i>
                         <span>Users</span>
                     </a>
