@@ -79,8 +79,8 @@
                         <span>Users</span>
                     </a>
                 </li>
-                <li class="sidebar-item  ">
-                    <a href="index.html" class='sidebar-link'>
+                <li class="sidebar-item {{ request()->routeIs('contract') ? 'active' : '' }} ">
+                    <a href="{{ route('contract') }}" class='sidebar-link'>
                         <i class="bi bi-file-earmark-text-fill"></i>
                         <span>Contract</span>
                     </a>

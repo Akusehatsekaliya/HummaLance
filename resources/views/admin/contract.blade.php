@@ -1,17 +1,11 @@
 @extends('kerangka.master')
 @section('content')
     <div class="page-heading">
-        <h3>Category</h3>
+        <h3>Contract</h3>
     </div>
     <div class="page-content">
         <section class="section">
             <div class="card">
-                <div class="card-header">
-                        <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                        data-bs-target="#inlineForm">
-                        Add Category
-                    </button>
-                </div>
                 <div class="card-body">
                     <div class="table-responsive ">
                         <table class="table" id="table1">
@@ -19,16 +13,17 @@
                                 <tr>
                                     <th width="15%">NO</th>
                                     <th>NAME</th>
-                                    <th width="25%">ACTION</th>
+                                    <th width="33%">PROJECT</th>
+                                    <th width="25%">STATUS</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
                                     <td class="text-bold-500">1</td>
                                     <td class="text-bold-500">UI/UX</td>
-                                    <td>
-                                        <a href="#" class="text-warning"><i class="bi bi-pen-fill"></i></a>
-                                        <button type="button" class="btn text-danger" ><i class="bi bi-trash3-fill"></i></button>
+                                    <td class="text-bold-500">HUMMATHRIFT</td>
+                                    <td class="text-bold-500">
+                                        <span class="badge bg-light-success">Active</span>
                                     </td>
                                 </tr>
                             </tbody>
@@ -38,11 +33,6 @@
             </div>
         </section>
     </div>
-    {{-- <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal"
-            data-bs-target="#inlineForm">
-            Add Category
-        </button> --}}
-    <!--login form Modal -->
     <div class="modal fade text-left" id="inlineForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel33"
         aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">

@@ -4,7 +4,7 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-12">
-            <h3>Recently Viewed & More</h3>
+            <h3>Jobs From Company</h3>
             <div class="view recent-slider recommended-slider">
               <div class="freelancer1" onclick="navigateWithAnimation(this, '/detailCompany')">
                 <a>
