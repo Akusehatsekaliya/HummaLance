@@ -27,8 +27,8 @@
                                     <td class="text-bold-500">1</td>
                                     <td class="text-bold-500">UI/UX</td>
                                     <td>
-                                        <button type="button" class="btn btn-outline-warning mx-2">Edit</button>
-                                        <button type="button" class="btn btn-outline-danger">Delete</button>
+                                        <button type="button" class="btn btn-primary mx-2"><i class="bi bi-pen-fill"></i></button>
+                                        <button type="button" class="btn btn-primary"><i class="bi bi-trash3-fill"></i></button>
                                     </td>
                                 </tr>
                             </tbody>

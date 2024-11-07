@@ -1,5 +1,8 @@
 @extends('kerangka.master')
 @section('style')
+
+<link rel="stylesheet" href="{{ asset('template-admin/assets/extensions/summernote/summernote-lite.min.css') }}"  />
+
 <style>
   .image-preview-container {
     position: relative;
@@ -88,9 +91,9 @@
                                             <div class="col-10">
                                                 <div class="form-group">
                                                     <label for="email-id-vertical">Description</label>
-                                                    <input type="email" id="email-id-vertical" class="form-control"
-                                                        name="email-id" placeholder="Email">
+                                                    <textarea name="description" id="custom-summernote" class="custom-summernote" aria-label="With textarea"></textarea>
                                                 </div>
+
                                             </div>
 
                                             <div class="col-10 d-flex justify-content-end">
@@ -110,6 +113,22 @@
 @endsection
 
 @section('script')
+<script src="{{ asset('template-admin/assets/extensions/summernote/summernote-lite.min.js') }}"></script>
+<script>
+    $(document).ready(function() {
+        $('#custom-summernote').summernote({
+            placeholder: 'Hello stand alone ui',
+            tabsize: 2,
+            height: 120,
+            toolbar: [
+                ['font', ['bold', 'underline', 'clear']],
+                ['insert', ['link', 'picture']],
+                ['para', ['ul', 'ol', 'paragraph']],
+                ['table', ['table']],
+            ],
+        });
+    });
+</script>
 <script>
     function previewImage(event, previewId) {
         const input = event.target;

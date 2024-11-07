@@ -1,7 +1,7 @@
 @extends('kerangka.master')
 @section('content')
     <div class="page-heading">
-        <h3>Category</h3>
+        <h3>Banner</h3>
     </div>
     <div class="page-content">
         <section class="section">
@@ -31,10 +31,8 @@
                                     <td class="text-bold-500">title</td>
                                     <td class="text-bold-500">subtitle</td>
                                     <td>
-                                        <button type="button"
-                                            class="btn btn-outline-warning">Edit</button>
-                                        <button type="button"
-                                            class="btn btn-outline-danger">Delete</button>
+                                        <a href="#" class="text-warning"><i class="bi bi-pen-fill"></i></a>
+                                        <button type="button" class="btn text-danger" ><i class="bi bi-trash3-fill"></i></button>
                                     </td>
                                 </tr>
                             </tbody>
