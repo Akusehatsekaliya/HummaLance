@@ -1,8 +1,9 @@
+
 <div class="freelance-projects bg-white py-5">
   <div class="container">
     <div class="row freelance-slider">
       <div class="col">
-        <div class="freelancer">
+        <div class="freelancer" onclick="navigateWithAnimation(this, '/detail-job')">
           <img src="images/senatopcustudio.jpg">
           <div class="freelancer-footer">
             <img src="images/user/s7.png">
@@ -13,7 +14,7 @@
         </div>
       </div>
       <div class="col">
-        <div class="freelancer">
+        <div class="freelancer" onclick="navigateWithAnimation(this, '/detail-job')">
           <img src="images/vnuggz.jpg">
           <div class="freelancer-footer">
             <img src="images/user/s8.png">
@@ -24,7 +25,7 @@
         </div>
       </div>
       <div class="col">
-        <div class="freelancer">
+        <div class="freelancer"onclick="navigateWithAnimation(this, '/detail-job')">
           <img src="images/digitalgeria.jpg">
           <div class="freelancer-footer">
             <img src="images/user/s1.png">
@@ -35,7 +36,7 @@
         </div>
       </div>
       <div class="col">
-        <div class="freelancer">
+        <div class="freelancer" onclick="navigateWithAnimation(this, '/detail-job')">
           <img src="images/artsi3d.jpg">
           <div class="freelancer-footer">
             <img src="images/user/s2.png">
@@ -46,7 +47,7 @@
         </div>
       </div>
       <div class="col">
-        <div class="freelancer">
+        <div class="freelancer" onclick="navigateWithAnimation(this, '/detail-job')">
           <img src="images/designerheather.jpg">
           <div class="freelancer-footer">
             <img src="images/user/s3.png">
@@ -59,3 +60,4 @@
     </div>
   </div>
 </div>
+

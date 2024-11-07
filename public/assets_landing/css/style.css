@@ -3323,3 +3323,10 @@ section.related-links ul li a:hover {
         max-width: 100%;
     }
 }
+
+.freelancer.animate, .freelancer1.animate {
+    transition: transform 0.4s ease, opacity 0.4s ease;
+    transform: scale(0.95);
+    opacity: 0;
+    pointer-events: none; /* Prevents interaction during animation */
+}
