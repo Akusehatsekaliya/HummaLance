@@ -20,7 +20,11 @@ Route::get('/banner', function () {
 Route::get('/about-us', function () {
     return view('admin/about');
 })->name('about');
+
 Route::get('/contract', function () {
     return view('admin/contract');
 })->name('contract');
 
+Route::get('/transaction', function () {
+    return view('admin/transaction');
+})->name('transaction');

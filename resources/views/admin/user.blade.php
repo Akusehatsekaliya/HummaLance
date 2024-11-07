@@ -26,8 +26,8 @@
                                     <td class="text-bold-500">lusi12@gmail.com</td>
                                     <td class="text-bold-500">Freelancer</td>
                                     <td>
-                                        <button type="button"
-                                            class="btn btn-outline-danger">Delete</button>
+                                        <button type="button" class="btn text-danger" ><i class="bi bi-trash3-fill"></i></button>
+
                                     </td>
                                 </tr>
                             </tbody>
@@ -36,7 +36,7 @@
                 </div>
             </div>
         </section>
-                
+
 
     </div>
 

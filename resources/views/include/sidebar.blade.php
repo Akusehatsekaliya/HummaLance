@@ -85,8 +85,8 @@
                         <span>Contract</span>
                     </a>
                 </li>
-                <li class="sidebar-item  ">
-                    <a href="index.html" class='sidebar-link'>
+                <li class="sidebar-item {{ request()->routeIs('transaction') ? 'active' : '' }} ">
+                    <a href="{{ route('transaction') }}" class='sidebar-link'>
                         <i class="bi bi-wallet"></i>
                         <span>Transaction</span>
                     </a>
