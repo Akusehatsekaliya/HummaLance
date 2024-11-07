@@ -55,15 +55,24 @@ class LoginController extends Controller
         $user = User::where('google_id', $googleUser->getId())->first();
 
         if (!$user) {
-
-            $user = User::create([
-                'username' => $googleUser->getName(),
-                'name' => $googleUser->getName(),
-                'email' => $googleUser->getEmail(),
-                'google_id' => $googleUser->getId(),
-                'password' => bcrypt(Str::random(16)), // password acak
+            session([
+                'google_user_data' => [
+                    'username' => $googleUser->getName(),
+                    'name' => $googleUser->getName(),
+                    'email' => $googleUser->getEmail(),
+                    'google_id' => $googleUser->getId(),
+                    'avatar' => $googleUser->getAvatar()
+                ]
             ]);
-            // return to_route('register', compact('googleUser'));
+
+            // $user = User::create([
+            //     'username' => $googleUser->getName(),
+            //     'name' => $googleUser->getName(),
+            //     'email' => $googleUser->getEmail(),
+            //     'google_id' => $googleUser->getId(),
+            //     'password' => bcrypt(Str::random(16)), // password acak
+            // ]);
+            return to_route('register');
         }
 
         Auth::login($user);
