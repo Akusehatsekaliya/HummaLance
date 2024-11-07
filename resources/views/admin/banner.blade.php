@@ -2,6 +2,7 @@
 @section('content')
     <div class="page-heading">
         <h3>Banner</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing.</p>
     </div>
     <div class="page-content">
         <section class="section">
@@ -19,8 +20,8 @@
                                 <tr>
                                     <th>NO</th>
                                     <th>IMAGE</th>
-                                    <th>TITLE</th>
-                                    <th>SUBTITLE</th>
+                                    <th width="24%">TITLE</th>
+                                    <th width="23%">SUBTITLE</th>
                                     <th>ACTION</th>
                                 </tr>
                             </thead>

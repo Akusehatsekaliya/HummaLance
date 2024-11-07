@@ -2,6 +2,7 @@
 @section('content')
     <div class="page-heading">
         <h3>Category</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
     </div>
     <div class="page-content">
         <section class="section">

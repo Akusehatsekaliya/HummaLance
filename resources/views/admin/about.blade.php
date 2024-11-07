@@ -52,7 +52,8 @@
 @endsection
 @section('content')
     <div class="page-heading">
-        <h3>Category</h3>
+        <h3>About Us</h3>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste.</p>
     </div>
     <div class="page-content">
         <section id="basic-vertical-layouts">

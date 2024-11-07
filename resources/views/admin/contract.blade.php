@@ -2,18 +2,20 @@
 @section('content')
     <div class="page-heading">
         <h3>Contract</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio.</p>
     </div>
     <div class="page-content">
         <section class="section">
             <div class="card">
                 <div class="card-body">
-                    <div class="table-responsive ">
+                    <div class="table-responsive">
                         <table class="table" id="table1">
                             <thead>
                                 <tr>
                                     <th width="15%">NO</th>
                                     <th>NAME</th>
-                                    <th width="33%">PROJECT</th>
+                                    <th width="24%">PROJECT</th>
+                                    <th width="17%">DATE</th>
                                     <th width="25%">STATUS</th>
                                 </tr>
                             </thead>
@@ -22,8 +24,19 @@
                                     <td class="text-bold-500">1</td>
                                     <td class="text-bold-500">UI/UX</td>
                                     <td class="text-bold-500">HUMMATHRIFT</td>
+                                    <td class="text-bold-500">2 Juli - 4 Juli</td>
                                     <td class="text-bold-500">
                                         <span class="badge bg-light-success">Active</span>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td class="text-bold-500">2</td>
+                                    <td class="text-bold-500">WEBSITE</td>
+                                    <td class="text-bold-500">HUMMALANCE</td>
+                                    <td class="text-bold-500">2 Juli - 4 Juli</td>
+                                    <td class="text-bold-500">
+                                        <span class="badge bg-light-danger">Inactive</span>
                                     </td>
                                 </tr>
                             </tbody>
@@ -33,7 +46,7 @@
             </div>
         </section>
     </div>
-    <div class="modal fade text-left" id="inlineForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel33"
+    {{-- <div class="modal fade text-left" id="inlineForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel33"
         aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
             <div class="modal-content">
@@ -63,5 +76,5 @@
                 </form>
             </div>
         </div>
-    </div>
+    </div> --}}
 @endsection
