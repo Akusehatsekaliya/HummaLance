@@ -73,8 +73,7 @@
                                                             <img src="{{ asset('assets_landing/images/bg2.jpeg') }}"
                                                                 alt="up" class="upload-img" id="upload-img" style="object-fit: cover;">
                                                             <label for="input-file" class="pencil-icon">
-                                                                <i class="bi bi-pen-fill"></i>
-                                                            </label>
+                                                                transaction                                                            </label>
                                                             <input type="file" name="image" accept="image/jpeg, image/jpg, image/png, image/webp"
                                                                 id="input-file" onchange="previewImage(event, 'upload-img')" style="display: none;">
                                                         </div>

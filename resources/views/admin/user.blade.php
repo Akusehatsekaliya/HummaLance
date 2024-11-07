@@ -28,8 +28,8 @@
                                         <span class="badge bg-light-warning">Freelancer</span>
                                     </td>
                                     <td>
-                                        <button type="button"
-                                            class="btn btn-outline-danger">Delete</button>
+                                        <button type="button" class="btn text-danger" ><i class="bi bi-trash3-fill"></i></button>
+
                                     </td>
                                 </tr>
                             </tbody>
