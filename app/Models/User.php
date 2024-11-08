@@ -80,10 +80,6 @@ class User extends Authenticatable
         return $isUrlOnAvatar ? $avatar : asset("storage/{$avatar}");
     }
 
-    public function role()
-    {
-        return $this->hasOne(Role::class);
-    }
     public function Contracts()
     {
         return $this->hasMany(Contract::class);

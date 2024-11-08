@@ -37,7 +37,7 @@
 
   <body>
     @yield('login')
-    @if (!request()->routeIs(['register', 'login']))
+    @if (!request()->routeIs(['register', 'login', 'onboard']))
       {{-- navbar 1 --}}
       @include('landing.layout.navbar_first')
       {{-- navbar 2 --}}
@@ -115,7 +115,7 @@
         </div>
     </div> --}}
 
-    @if (!request()->routeIs(['register', 'login']))
+    @if (!request()->routeIs(['register', 'login', 'onboard']))
       <!-- get started -->
       <div>
         <div class="get-started">

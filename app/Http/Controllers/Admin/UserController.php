@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Constract\Enums\UserRoleEnum;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\User;
@@ -19,27 +20,27 @@ class UserController extends Controller
 
     public function getData(Request $request)
     {
-        $users = User::select(['id', 'name', 'email']);
-        // ->where('role', '!=', 'admin')
-
-        // if ($request->has('role') && $request->role) {
-        //     $users->where('role', $request->role);
-        // }
+        $users = User::with('roles')
+            ->select(['id', 'name', 'email'])
+            ->when($request->role, function ($query, $role) {
+                return $query->whereHas('roles', fn($q) => $q->where('name', $role));
+            }, function ($query) {
+                return $query->whereDoesntHave('roles', fn($q) => $q->where('name', 'admin'));
+            });
 
         return DataTables::of($users)
+            ->addIndexColumn()
             ->addColumn('action', function ($user) {
                 return '<button class="btn btn-danger"><i class="bi bi-trash3-fill"></i></button>';
             })
-            ->addColumn('role', fn($query) => $query->getUserRoleInstance()->value)
-            ->filter(function ($query) use ($request) {
-                if ($request->has('search') && $request->search['value']) {
-                    $searchTerm = $request->search['value'];
-                    $query->where(function ($subQuery) use ($searchTerm) {
-                        $subQuery->where('name', 'LIKE', "%{$searchTerm}%")
-                            ->orWhere('email', 'LIKE', "%{$searchTerm}%");
-                    });
-                }
+            ->addColumn('role', fn($user) => $user->getUserRoleInstance()->value)
+            ->filterColumn('name', function ($query, $keyword) {
+                $query->where('name', 'LIKE', "%{$keyword}%");
             })
+            ->filterColumn('email', function ($query, $keyword) {
+                $query->where('email', 'LIKE', "%{$keyword}%");
+            })
+            ->rawColumns(['action'])
             ->make(true);
     }
 

@@ -46,7 +46,7 @@ class LoginController extends Controller
     protected function authenticated(Request $request, $user)
     {
         if ($user->hasRole('admin')) {
-            return to_route('admin.dashboard.index');
+            return to_route('admin-dashboard.index');
         }
 
         return to_route("landing");
@@ -94,7 +94,7 @@ class LoginController extends Controller
         Auth::login($user);
 
         if ($user->hasRole('admin')) {
-            return to_route('admin.dashboard.index');
+            return to_route('admin-dashboard.index');
         }
 
         return to_route("landing");

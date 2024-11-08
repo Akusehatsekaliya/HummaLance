@@ -13,7 +13,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('payments', function (Blueprint $table) {
-            $table->id()->primary();
+            $table->id();
             $table->string('reference_id')->unique();
             $table->foreignId('contract_id')->constrained('contracts')->onDelete('cascade');
             $table->decimal('amount', 10, 2);
@@ -26,7 +26,7 @@ return new class extends Migration
             $table->enum('status', [
                 StatusPaymentEnum::PENDING->value,
                 StatusPaymentEnum::COMPLATE->value,
-                ])->default(StatusPaymentEnum::PENDING->value);
+            ])->default(StatusPaymentEnum::PENDING->value);
             $table->date('payment_date');
             $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
             $table->timestamps();

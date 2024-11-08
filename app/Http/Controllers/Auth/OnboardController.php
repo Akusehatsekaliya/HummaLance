@@ -8,4 +8,8 @@ use Illuminate\Http\Request;
 class OnboardController extends Controller
 {
     //
+    public function index()
+    {
+        return view('auth.onboard');
+    }
 }

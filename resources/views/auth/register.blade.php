@@ -22,35 +22,36 @@
             </div>
             <form method="POST" action="{{ route('register') }}">
               @csrf
-
-              <div class="form-group">
-                <label class="mb-1">Name</label>
-                <div class="position-relative icon-form-control">
-                  <i class="mdi mdi-account-outline position-absolute"></i>
-                  <input type="text" class="form-control @error('name') is-invalid @enderror" name="name"
-                    value="{{ old('name', $isGoogleLogin ? $googleUserData['name'] : '') }}" required>
-                  @error('name')
-                    <span class="invalid-feedback" role="alert">
-                      <strong>{{ $message }}</strong>
-                    </span>
-                  @enderror
+              @if (!$isGoogleLogin)
+                <div class="form-group">
+                  <label class="mb-1">Name</label>
+                  <div class="position-relative icon-form-control">
+                    <i class="mdi mdi-account-outline position-absolute"></i>
+                    <input type="text" class="form-control @error('name') is-invalid @enderror" name="name"
+                      value="{{ old('name', $isGoogleLogin ? $googleUserData['name'] : '') }}" required>
+                    @error('name')
+                      <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                      </span>
+                    @enderror
+                  </div>
                 </div>
-              </div>
 
-              <div class="form-group">
-                <label class="mb-1">Email</label>
-                <div class="position-relative icon-form-control">
-                  <i class="mdi mdi-email-outline position-absolute"></i>
-                  <input type="email" class="form-control @error('email') is-invalid @enderror" name="email"
-                    value="{{ old('email', $isGoogleLogin ? $googleUserData['email'] : '') }}" required
-                    @disabled($isGoogleLogin)>
-                  @error('email')
-                    <span class="invalid-feedback" role="alert">
-                      <strong>{{ $message }}</strong>
-                    </span>
-                  @enderror
+                <div class="form-group">
+                  <label class="mb-1">Email</label>
+                  <div class="position-relative icon-form-control">
+                    <i class="mdi mdi-email-outline position-absolute"></i>
+                    <input type="email" class="form-control @error('email') is-invalid @enderror" name="email"
+                      value="{{ old('email', $isGoogleLogin ? $googleUserData['email'] : '') }}" required
+                      @disabled($isGoogleLogin)>
+                    @error('email')
+                      <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                      </span>
+                    @enderror
+                  </div>
                 </div>
-              </div>
+              @endif
 
               <div class="form-group">
                 <label class="mb-1">Password (6 or more characters)</label>
@@ -93,11 +94,13 @@
                             </div>
                         </div> --}}
 
-              <div class="py-3 d-flex align-item-center">
-                {{-- <a href="{{ route('password.request') }}">Forgot password?</a> --}}
-                <span class="ml-auto"> Already have an account? <a href="{{ route('login') }}">Sign
-                    in</a></span>
-              </div>
+              @if (!$isGoogleLogin)
+                <div class="py-3 d-flex align-item-center">
+                  {{-- <a href="{{ route('password.request') }}">Forgot password?</a> --}}
+                  <span class="ml-auto"> Already have an account? <a href="{{ route('login') }}">Sign
+                      in</a></span>
+                </div>
+              @endif
             </form>
           </div>
         </div>
