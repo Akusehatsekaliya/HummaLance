@@ -9,6 +9,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Spatie\Permission\Traits\HasRoles;
+use Illuminate\Support\Str;
 
 class User extends Authenticatable
 {
@@ -20,16 +21,15 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
-        'username',
         'name',
         'email',
         'password',
-        'role',
         'self_description',
         'skill',
         'tarif',
         'portofolio',
-        'google_id'
+        'google_id',
+        'avatar'
     ];
 
     /**
@@ -65,6 +65,18 @@ class User extends Authenticatable
         $roles = $this->getRoleNames();
         $roleName = !empty($roles) && isset($roles[0]) ? $roles[0] : null;
         return $roleName ? UserRoleEnum::from($roleName) : UserRoleEnum::CLIENT;
+    }
+
+    /**
+     * Getting the user avatar
+     *
+     * @return string
+     */
+    public function getAvatar()
+    {
+        $avatar = $this->getAttribute('avatar');
+        $isUrlOnAvatar = Str::isUrl($avatar);
+        return $isUrlOnAvatar ? $avatar : asset("storage/{$avatar}");
     }
 
     public function Contracts()

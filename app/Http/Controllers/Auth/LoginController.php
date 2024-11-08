@@ -70,27 +70,25 @@ class LoginController extends Controller
             if ($user) {
                 $user->update([
                     'google_id' => $googleUser->getId(),
+                    'avatar' => $googleUser->getAvatar()
                 ]);
             } else {
-                $user = User::create([
-                    'username' => $googleUser->getName(),
+                // $user = User::create([
+                //     'username' => $googleUser->getName(),
+                //     'name' => $googleUser->getName(),
+                //     'email' => $googleUser->getEmail(),
+                //     'google_id' => $googleUser->getId(),
+                //     'password' => bcrypt(Str::random(16)),
+                // ]);
+                session(["google_user_data" => [
                     'name' => $googleUser->getName(),
                     'email' => $googleUser->getEmail(),
                     'google_id' => $googleUser->getId(),
-                    'password' => bcrypt(Str::random(16)),
-                ]);
+                    'avatar' => $googleUser->getAvatar()
+                ]]);
+                session()->flash("isGoogleLogin", true);
+                return to_route('register');
             }
-            // session([
-            //     'google_user_data' => [
-            //         'username' => $googleUser->getName(),
-            //         'name' => $googleUser->getName(),
-            //         'email' => $googleUser->getEmail(),
-            //         'google_id' => $googleUser->getId(),
-            //         'avatar' => $googleUser->getAvatar()
-            //     ]
-            // ]);
-
-            // return to_route('register');
         }
 
         Auth::login($user);
