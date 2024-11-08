@@ -19,18 +19,18 @@ class UserController extends Controller
 
     public function getData(Request $request)
     {
-        $users = User::select(['id', 'name', 'email', 'role'])
-            ->where('role', '!=', 'admin');
+        $users = User::select(['id', 'name', 'email']);
+        // ->where('role', '!=', 'admin')
 
-        // Tambahkan filter berdasarkan role jika diberikan
-        if ($request->has('role') && $request->role) {
-            $users->where('role', $request->role);
-        }
+        // if ($request->has('role') && $request->role) {
+        //     $users->where('role', $request->role);
+        // }
 
         return DataTables::of($users)
             ->addColumn('action', function ($user) {
-                return '<button class="btn btn-danger"><i class="fas fa-trash-alt"></i></button>';
+                return '<button class="btn btn-danger"><i class="bi bi-trash3-fill"></i></button>';
             })
+            ->addColumn('role', fn($query) => $query->getUserRoleInstance()->value)
             ->filter(function ($query) use ($request) {
                 if ($request->has('search') && $request->search['value']) {
                     $searchTerm = $request->search['value'];

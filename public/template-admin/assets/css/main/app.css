@@ -16558,8 +16558,8 @@ body .bi:before {
 }
 .avatar img {
     border-radius: 50%;
-    height: 70px;
-    width: 70px;
+    height: 40px;
+    width: 40px;
 }
 .avatar .avatar-status {
     border: 1px solid #fff;
@@ -17410,7 +17410,7 @@ body .bi:before {
     position: fixed;
 }
 .navbar {
-    height: 90px;
+    height: 60px;
     padding: 1.5rem;
 }
 .navbar .navbar-brand img {

@@ -3,57 +3,10 @@
 
 <link rel="stylesheet" href="{{ asset('template-admin/assets/extensions/summernote/summernote-lite.min.css') }}"  />
 
-<style>
-  .image-preview-container {
-    position: relative;
-    width: 465px;
-    height: 310px;
-    border-radius: 15px;
-    overflow: hidden;
-    border: 2px solid #ddd;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto;
-}
-
-.image-preview-container img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.pencil-icon {
-    position: absolute;
-    bottom: 10px;
-    right: 10px;
-    background-color: white;
-    border-radius: 50%;
-    padding: 10px;
-    cursor: pointer;
-    border: 2px solid #ddd;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 40px;
-    height: 40px;
-}
-
-.pencil-icon i {
-    font-size: 18px;
-    color: #000;
-    line-height: 0;
-}
-
-.upload-input input[type="file"] {
-    display: none;
-}
-</style>
 @endsection
 @section('content')
     <div class="page-heading">
         <h3>About Us</h3>
-        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste.</p>
     </div>
     <div class="page-content">
         <section id="basic-vertical-layouts">
@@ -73,7 +26,8 @@
                                                             <img src="{{ asset('assets_landing/images/bg2.jpeg') }}"
                                                                 alt="up" class="upload-img" id="upload-img" style="object-fit: cover;">
                                                             <label for="input-file" class="pencil-icon">
-                                                                transaction                                                            </label>
+                                                                <i class="bi bi-pen-fill"></i>
+                                                            </label>                                                            </label>
                                                             <input type="file" name="image" accept="image/jpeg, image/jpg, image/png, image/webp"
                                                                 id="input-file" onchange="previewImage(event, 'upload-img')" style="display: none;">
                                                         </div>
