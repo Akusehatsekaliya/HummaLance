@@ -16,59 +16,51 @@ class UserSeeder extends Seeder
      */
     public function run(): void
     {
-        User::factory()->create([
+        User::factory()->withRole(UserRoleEnum::ADMIN->value)->create([
             'username' => 'Admin',
             'name' => 'Admin',
-            'email' => 'admin@gmail.com',
-            'role' => UserRoleEnum::ADMIN->value
+            'email' => 'admin@gmail.com'
         ]);
-        User::factory()->create([
+        User::factory()->withRole(UserRoleEnum::FREELANCER->value)->create([
             'username' => 'Freelancer',
             'name' => 'Freelancer',
-            'email' => 'freelancer@gmail.com',
-            'role' => UserRoleEnum::FREELANCER->value,
+            'email' => 'freelancer@gmail.com'
         ]);
 
         $teamAccount = [
             [
                 'username' => 'Syauqi Ali',
                 'name' => 'Ahmad Syauqi Ali Syahbana',
-                'email' => 'sauqi2019@gmail.com',
-                'role' => UserRoleEnum::CLIENT->value
+                'email' => 'sauqi2019@gmail.com'
             ],
             [
                 'username' => 'Cintaa',
                 'name' => 'Cinta Adenia',
-                'email' => 'ccintaadenia06@gmail.com',
-                'role' => UserRoleEnum::CLIENT->value
+                'email' => 'ccintaadenia06@gmail.com'
             ],
             [
                 'username' => 'Nasya',
                 'name' => 'Nasya Asriva Putri Artama',
-                'email' => 'asrivanasya0@gmail.com',
-                'role' => UserRoleEnum::CLIENT->value
+                'email' => 'asrivanasya0@gmail.com'
             ],
             [
                 'username' => 'Tika',
                 'name' => 'NUGI ARTIKASARI',
-                'email' => 'ar.tika0412@gmail.com',
-                'role' => UserRoleEnum::CLIENT->value
+                'email' => 'ar.tika0412@gmail.com'
             ],
             [
                 'username' => 'Andhika',
                 'name' => 'Andhika Mugni',
-                'email' => 'andhikamugniv@gmail.com',
-                'role' => UserRoleEnum::CLIENT->value
+                'email' => 'andhikamugniv@gmail.com'
             ],
             [
                 'username' => 'Refal',
                 'name' => 'Rifaldi Menolak Sadar',
-                'email' => 'rifaldiliebert@gmail.com',
-                'role' => UserRoleEnum::CLIENT->value
+                'email' => 'rifaldiliebert@gmail.com'
             ],
         ];
         foreach ($teamAccount as $account) {
-            User::factory()->create($account);
+            User::factory()->withRole(UserRoleEnum::CLIENT->value)->create($account);
         }
     }
 }
