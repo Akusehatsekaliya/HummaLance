@@ -91,16 +91,7 @@
           </a>
         </li>
 
-        <li class="sidebar-item active mt-4">
-          <form id="logout-form" class='sidebar-link' style="width:8rem; height:2.8rem;" action="{{ route('logout') }}"
-            method="POST">
-            @csrf
-            <button type="submit" class='sidebar-link' style="background:none; border:none; color:white;">
-              <i class="bi bi-box-arrow-right me-2"></i>
-              Logout
-            </button>
-          </form>
-        </li>
+        
         {{-- <li class="sidebar-item  has-sub">
                     <a href="#" class='sidebar-link'>
                         <i class="bi bi-collection-fill"></i>
