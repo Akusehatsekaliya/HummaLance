@@ -77,12 +77,8 @@ class User extends Authenticatable
     {
         $avatar = $this->getAttribute('avatar');
 
-        // Jika avatar kosong, return default image
-        if (empty($avatar)) {
-            return $default ?? asset("test.png");
-        }
+        if (empty($avatar)) return $default;
 
-        // Cek apakah avatar adalah URL
         return Str::isUrl($avatar) ? $avatar : asset("storage/{$avatar}");
     }
 
