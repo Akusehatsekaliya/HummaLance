@@ -72,7 +72,8 @@
                                 @if (Route::has('password.request'))
                                     <a href="{{ route('password.request') }}">Forgot password?</a>
                                 @endif
-                                <span class="ml-auto"> Don't have an account yet? <a href="{{ route('register') }}">Join now</a></span>
+                                <span class="ml-auto"> Don't have an account yet? <a href="{{ route('register') }}">Join
+                                        now</a></span>
                             </div>
                             <div class="text-center mt-4">
                                 <a href="{{ route('login.google') }}" class="btn btn-danger btn-block text-uppercase">

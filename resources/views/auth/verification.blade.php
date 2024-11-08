@@ -16,27 +16,18 @@
                             <h5 class="font-weight-bold mt-3">Enter verification code</h5>
                             <p class="text-muted">To continue, please enter the 6-digit verification code.</p>
                         </div>
-                        <form method="POST" action="{{ route('login') }}">
+                        <form method="POST" action="#">
                             @csrf
                             <div class="form-group">
                                 <label class="mb-1">Code OTP</label>
                                 <div class="position-relative icon-form-control">
                                     <i class="mdi mdi-key-variant position-absolute"></i>
-                                    <input id="otp" type="number"
-                                        class="form-control is-invalid" name="otp" placeholder="Enter Code">
-                                        <i class="mdi mdi-send position-absolute" style="right: 10px; top: 50%; transform: translateY(-50%); cursor: pointer;"></i>
+                                    <input id="otp" type="number" class="form-control is-invalid" name="otp"
+                                        placeholder="Enter Code">
+                                    <i class="mdi mdi-send position-absolute"
+                                        style="right: 10px; top: 50%; transform: translateY(-50%); cursor: pointer;"></i>
                                 </div>
                             </div>
-
-                            {{-- <div class="form-group">
-                                <label class="mb-1">Code OTP</label>
-                                <div class="position-relative icon-form-control">
-                                    <i class="mdi mdi-key-variant position-absolute" style="left: 10px; top: 50%; transform: translateY(-50%);"></i>
-                                    <input id="otp" type="number" class="form-control is-invalid" name="otp" placeholder="Enter Code">
-                                    <i class="mdi mdi-send position-absolute" style="right: 10px; top: 50%; transform: translateY(-50%); cursor: pointer;"></i>
-                                </div>
-                            </div> --}}
-
                             <br>
                             <button class="btn btn-success btn-block text-uppercase" type="submit"> Continue </button>
                         </form>
