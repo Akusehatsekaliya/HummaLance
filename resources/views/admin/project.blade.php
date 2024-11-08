@@ -13,7 +13,7 @@
                             <thead>
                                 <tr>
                                     <th>NO</th>
-                                    <th>NAME</th>
+                                    <th>PROJECT</th>
                                     <th>DESCRIPTION</th>
                                     <th>BUDGET</th>
                                     <th>USER</th>

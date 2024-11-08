@@ -19,7 +19,7 @@
                             <thead>
                                 <tr>
                                     <th width="15%">NO</th>
-                                    <th>NAME</th>
+                                    <th>CATEGORY</th>
                                     <th width="25%">ACTION</th>
                                 </tr>
                             </thead>
@@ -43,7 +43,8 @@
             data-bs-target="#inlineForm">
             Add Category
         </button> --}}
-    <!--login form Modal -->
+
+    <!-- Modal Add -->
     <div class="modal fade text-left" id="inlineForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel33"
         aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
@@ -75,4 +76,5 @@
             </div>
         </div>
     </div>
+
 @endsection

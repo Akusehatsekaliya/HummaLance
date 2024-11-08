@@ -60,11 +60,13 @@
           </a>
         </li>
 
+        <li class="sidebar-title">Project</li>
+
         <li class="sidebar-item {{ request()->routeIs('project') ? 'active' : '' }} ">
-          <a href="{{ route('project') }}" class='sidebar-link'>
-            <i class="bi bi-folder-fill"></i>
-            <span>Project</span>
-          </a>
+            <a href="{{ route('project') }}" class='sidebar-link'>
+              <i class="bi bi-folder-fill"></i>
+              <span>Project</span>
+            </a>
         </li>
         <li class="sidebar-item {{ request()->routeIs('category') ? 'active' : '' }}">
           <a href="{{ route('category') }}" class='sidebar-link'>
@@ -72,18 +74,28 @@
             <span>Category</span>
           </a>
         </li>
+
+
+        <li class="sidebar-title">Users</li>
+
         <li class="sidebar-item {{ request()->routeIs('user.index') ? 'active' : '' }}">
           <a href="{{ route('user.index') }}" class='sidebar-link'>
             <i class="bi bi-people-fill"></i>
             <span>Users</span>
           </a>
         </li>
+
+        <li class="sidebar-title">Freelancer</li>
+
         <li class="sidebar-item {{ request()->routeIs('contract') ? 'active' : '' }} ">
           <a href="{{ route('contract') }}" class='sidebar-link'>
             <i class="bi bi-file-earmark-text-fill"></i>
             <span>Contract</span>
           </a>
         </li>
+
+        <li class="sidebar-title">Transaction</li>
+
         <li class="sidebar-item {{ request()->routeIs('transaction') ? 'active' : '' }} ">
           <a href="{{ route('transaction') }}" class='sidebar-link'>
             <i class="bi bi-wallet"></i>
