@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-light topbar static-top shadow-sm bg-white osahan-nav-top px-0">
+<nav id="navbar" class="navbar navbar-expand-lg navbar-light topbar static-top shadow-sm bg-white osahan-nav-top px-0">
     <div class="container">
         <!-- Sidebar Toggle (Topbar) -->
         <a class="navbar-brand" href="index-2.html"><img src="{{ asset('assets_landing/images/logo.svg') }}"

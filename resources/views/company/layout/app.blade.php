@@ -34,10 +34,9 @@
 
 <body>
     @include('company.layout.header')
+    @include('company.layout.side')
 
     @yield('content')
-
-
     @include('company.layout.footer')
 
     <script src="{{ asset('assets_landing/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js') }}"></script>
@@ -55,6 +54,30 @@
         integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ=="
         data-cf-beacon='{"rayId":"8dd144230c40ce22","version":"2024.10.4","r":1,"serverTiming":{"name":{"cfExtPri":true,"cfL4":true,"cfSpeedBrain":true,"cfCacheStatus":true}},"token":"dd471ab1978346bbb991feaa79e6ce5c","b":1}'
         crossorigin="anonymous"></script>
+    <script>
+        // Dapatkan elemen sidebar dan footer
+        const sidebar = document.getElementById('sidebar');
+        const footer = document.getElementById('footer');
+
+        // Fungsi untuk mengatur posisi sidebar
+        function handleSidebarPosition() {
+            const footerTop = footer.getBoundingClientRect().top;
+            const sidebarHeight = sidebar.offsetHeight;
+            const sidebarTop = sidebar.getBoundingClientRect().top;
+
+            // Jika sidebar mencapai footer, hentikan sidebar sebelum menimpa footer
+            if (footerTop < sidebarHeight + 70) { // 70 adalah jarak dari atas (tinggi navbar)
+                sidebar.style.position = 'absolute';
+                sidebar.style.top = (window.scrollY + footerTop - sidebarHeight - 70) + 'px';
+            } else {
+                sidebar.style.position = 'fixed';
+                sidebar.style.top = '70px'; // Sesuaikan dengan tinggi navbar
+            }
+        }
+
+        // Jalankan fungsi saat menggulir
+        window.addEventListener('scroll', handleSidebarPosition);
+    </script>
     @yield('script')
     @stack('scripts')
 </body>
