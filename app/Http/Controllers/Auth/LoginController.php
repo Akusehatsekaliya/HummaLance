@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Str;
 use App\Models\User;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Laravel\Socialite\Facades\Socialite;
 
@@ -42,6 +43,15 @@ class LoginController extends Controller
         $this->middleware('auth')->only('logout');
     }
 
+    protected function authenticated(Request $request, $user)
+    {
+        if ($user->hasRole('admin')) {
+            return to_route('admin.dashboard.index');
+        }
+
+        return to_route("landing");
+    }
+
     public function redirectToGoogle()
     {
         return Socialite::driver('google')->redirect();
@@ -55,28 +65,40 @@ class LoginController extends Controller
         $user = User::where('google_id', $googleUser->getId())->first();
 
         if (!$user) {
-            session([
-                'google_user_data' => [
+            $user = User::where('email', $googleUser->getEmail())->first();
+
+            if ($user) {
+                $user->update([
+                    'google_id' => $googleUser->getId(),
+                ]);
+            } else {
+                $user = User::create([
                     'username' => $googleUser->getName(),
                     'name' => $googleUser->getName(),
                     'email' => $googleUser->getEmail(),
                     'google_id' => $googleUser->getId(),
-                    'avatar' => $googleUser->getAvatar()
-                ]
-            ]);
-
-            // $user = User::create([
-            //     'username' => $googleUser->getName(),
-            //     'name' => $googleUser->getName(),
-            //     'email' => $googleUser->getEmail(),
-            //     'google_id' => $googleUser->getId(),
-            //     'password' => bcrypt(Str::random(16)), // password acak
+                    'password' => bcrypt(Str::random(16)),
+                ]);
+            }
+            // session([
+            //     'google_user_data' => [
+            //         'username' => $googleUser->getName(),
+            //         'name' => $googleUser->getName(),
+            //         'email' => $googleUser->getEmail(),
+            //         'google_id' => $googleUser->getId(),
+            //         'avatar' => $googleUser->getAvatar()
+            //     ]
             // ]);
-            return to_route('register');
+
+            // return to_route('register');
         }
 
         Auth::login($user);
 
-        return redirect()->route('admin-dashboard.index')->with('succes', 'anda berhasil login');
+        if ($user->hasRole('admin')) {
+            return to_route('admin.dashboard.index');
+        }
+
+        return to_route("landing");
     }
 }
