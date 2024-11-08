@@ -3,7 +3,7 @@
   $isGoogleLogin = session('isGoogleLogin', false);
 @endphp
 
-@extends('layouts.main')
+@extends('landing.layout.app')
 
 @section('style')
   <link href="{{ asset('assets_landing/css/login.css') }}" rel="stylesheet">
@@ -44,40 +44,40 @@
                   <input type="email" class="form-control @error('email') is-invalid @enderror" name="email"
                     value="{{ old('email', $isGoogleLogin ? $googleUserData['email'] : '') }}" required
                     @disabled($isGoogleLogin)>
-                    @error('email')
+                  @error('email')
                     <span class="invalid-feedback" role="alert">
                       <strong>{{ $message }}</strong>
                     </span>
                   @enderror
-                    </div>
                 </div>
+              </div>
 
-                <div class="form-group">
-                  <label class="mb-1">Password (6 or more characters)</label>
-                  <div class="position-relative icon-form-control">
-                    <i class="mdi mdi-key-variant position-absolute"></i>
-                    <input type="password" class="form-control @error('password') is-invalid @enderror" name="password"
-                      required>
-                    @error('password')
-                      <span class="invalid-feedback" role="alert">
-                        <strong>{{ $message }}</strong>
-                      </span>
-                    @enderror
-                  </div>
+              <div class="form-group">
+                <label class="mb-1">Password (6 or more characters)</label>
+                <div class="position-relative icon-form-control">
+                  <i class="mdi mdi-key-variant position-absolute"></i>
+                  <input type="password" class="form-control @error('password') is-invalid @enderror" name="password"
+                    required>
+                  @error('password')
+                    <span class="invalid-feedback" role="alert">
+                      <strong>{{ $message }}</strong>
+                    </span>
+                  @enderror
                 </div>
+              </div>
 
-                <div class="form-group">
-                  <label class="mb-1">Confirm Password</label>
-                  <input type="password" class="form-control" name="password_confirmation" required>
-                </div>
+              <div class="form-group">
+                <label class="mb-1">Confirm Password</label>
+                <input type="password" class="form-control" name="password_confirmation" required>
+              </div>
 
-                {{-- <div class="form-group">
+              {{-- <div class="form-group">
                             <label class="mb-1">You agree to the Maer <a href="#">User Agreement</a>, <a href="#">Privacy Policy</a>, and <a href="#">Cookie Policy</a>.</label>
                         </div> --}}
 
-                <button class="btn btn-success btn-block text-uppercase" type="submit"> Register </button>
+              <button class="btn btn-success btn-block text-uppercase" type="submit"> Register </button>
 
-                {{-- <div class="text-center mt-3 border-bottom pb-3">
+              {{-- <div class="text-center mt-3 border-bottom pb-3">
                             <p class="small text-muted">Or login with</p>
                             <div class="row">
                                 <div class="col-6">
@@ -93,11 +93,11 @@
                             </div>
                         </div> --}}
 
-                <div class="py-3 d-flex align-item-center">
-                  {{-- <a href="{{ route('password.request') }}">Forgot password?</a> --}}
-                  <span class="ml-auto"> Already have an account? <a href="{{ route('login') }}">Sign
-                      in</a></span>
-                </div>
+              <div class="py-3 d-flex align-item-center">
+                {{-- <a href="{{ route('password.request') }}">Forgot password?</a> --}}
+                <span class="ml-auto"> Already have an account? <a href="{{ route('login') }}">Sign
+                    in</a></span>
+              </div>
             </form>
           </div>
         </div>
