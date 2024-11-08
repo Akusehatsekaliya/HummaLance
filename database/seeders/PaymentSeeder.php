@@ -8,14 +8,14 @@ use Illuminate\Database\Seeder;
 use Carbon\Carbon;
 use App\Constract\Enums\StatusPaymentEnum;
 
-class PaymentSedeer extends Seeder
+class PaymentSeeder extends Seeder
 {
     /**
      * Run the database seeds.
      */
     public function run(): void
     {
-        Payment::factory()->create([
+        Payment::create([
             'contract_id' => 1,
             'amount' => 200000,
             'status' => StatusPaymentEnum::PENDING->value,
