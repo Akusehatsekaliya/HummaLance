@@ -10,6 +10,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Spatie\Permission\Traits\HasRoles;
 use Illuminate\Support\Str;
+use Spatie\Permission\Models\Role;
 
 class User extends Authenticatable
 {
@@ -79,6 +80,10 @@ class User extends Authenticatable
         return $isUrlOnAvatar ? $avatar : asset("storage/{$avatar}");
     }
 
+    public function role()
+    {
+        return $this->hasOne(Role::class);
+    }
     public function Contracts()
     {
         return $this->hasMany(Contract::class);
