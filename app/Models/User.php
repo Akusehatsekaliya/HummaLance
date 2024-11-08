@@ -73,11 +73,17 @@ class User extends Authenticatable
      *
      * @return string
      */
-    public function getAvatar()
+    public function getAvatar($default = null)
     {
         $avatar = $this->getAttribute('avatar');
-        $isUrlOnAvatar = Str::isUrl($avatar);
-        return $isUrlOnAvatar ? $avatar : asset("storage/{$avatar}");
+
+        // Jika avatar kosong, return default image
+        if (empty($avatar)) {
+            return $default ?? asset("test.png");
+        }
+
+        // Cek apakah avatar adalah URL
+        return Str::isUrl($avatar) ? $avatar : asset("storage/{$avatar}");
     }
 
     public function Contracts()
