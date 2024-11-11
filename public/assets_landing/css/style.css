@@ -3446,3 +3446,42 @@ section.related-links ul li a:hover {
     background-color: #fff;
   }
 
+  /* General card styling */
+.card-item {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 250px;
+    text-align: center;
+}
+
+/* Flex layout for card header */
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Title styling */
+.card-header h6 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #333;
+    margin: 0;
+}
+
+/* Icon styling */
+.card-header i {
+    color: #000000;
+}
+
+/* Count styling */
+.card-body h4 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #333;
+    margin: 0;
+}
+
+

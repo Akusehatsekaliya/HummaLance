@@ -7,23 +7,38 @@
                 <div class="col-lg-9 view_slider recommended">
                     <div class="row">
                         <div class="col-lg-12">
-                            <h3>Services In Web &amp; Mobile Design</h3>
+                            <h3>DASHBOARD COMPANY</h3>
                         </div>
                     </div>
                     <div class="chart-row">
                         <div class="card-item">
-                            <h6>All Project</h6>
-                            <h4>15 </h4>
+                            <div class="card-header">
+                                <h6>All Projects</h6>
+                                <i class="fa-solid fa-box fa-2x"></i>
+                            </div>
+                            <div class="card-body">
+                                <h4>15</h4>
+                            </div>
                         </div>
                         <div class="card-item">
-                            <h6>Project Done</h6>
-                            <h4>15 </h4>
+                            <div class="card-header">
+                                <h6>Project Done</h6>
+                                <i class="fa-solid fa-check-square fa-2x"></i>
+                            </div>
+                            <div class="card-body">
+                                <h4>15</h4>
+                            </div>
                         </div>
                         <div class="card-item">
-                            <h6>Project Pending</h6>
-                            <h4>15 </h4>
+                            <div class="card-header">
+                                <h6>Project Pending</h6>
+                                <i class="fa-solid fa-hourglass-half fa-2x"></i>
+                            </div>
+                            <div class="card-body">
+                                <h4>15</h4>
+                            </div>
                         </div>
-                        
+
                     </div>
                     <div class="chart-row">
                         <div class="cardchart">
