@@ -11,6 +11,7 @@ Route::get('/jobs', [LandingpageController::class, 'jobs']);
 Route::get('/profile', [LandingpageController::class, 'profile']);
 Route::get('/chat', [LandingpageController::class, 'chat']);
 Route::get('/detail-job', [LandingpageController::class, 'detail']);
+Route::get('/favorite', [LandingpageController::class, 'favorite']);
 
 Route::get('/detailCompany', [LandingpageController::class, 'detailCompany']);
 

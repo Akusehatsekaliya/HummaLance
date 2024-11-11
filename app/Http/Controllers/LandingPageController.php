@@ -49,6 +49,11 @@ class LandingPageController extends Controller
         return view('landing.post_user.detail');
     }
 
+    public function favorite()
+    {
+        return view('landing.favorite.index');
+    }
+
     /**
      * Show the form for creating a new resource.
      */

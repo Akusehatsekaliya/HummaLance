@@ -31,7 +31,7 @@ class UserController extends Controller
         return DataTables::of($users)
             ->addIndexColumn()
             ->addColumn('action', function ($user) {
-                return '<button class="btn btn-danger"><i class="bi bi-trash3-fill"></i></button>';
+                return '<button class="btn text-danger"><i class="bi bi-trash3-fill"></i></button>';
             })
             ->addColumn('role', fn($user) => $user->getUserRoleInstance()->value)
             ->filterColumn('name', function ($query, $keyword) {
