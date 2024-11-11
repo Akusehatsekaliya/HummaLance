@@ -3337,7 +3337,7 @@ section.related-links ul li a:hover {
     top: 60px;
     left: 0;
     width: 300px; /* Sesuaikan lebar sidebar */
-    height: 100vh;
+    height: 40rem;
     overflow-y: auto;
     padding-top: 20px;
     background-color: #fff; /* Warna background */
@@ -3374,3 +3374,75 @@ section.related-links ul li a:hover {
 .navbar.hidden {
     opacity: 0;
 }
+
+.cardchart {
+    width: 100%; /* Sesuaikan lebar card */
+    max-width: 770px; /* Batas maksimal lebar */
+    /* margin: 10px; */
+    margin-bottom: 20px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    background-color: #fff;
+  }
+
+  /* Judul di atas chart */
+  .cardchart h2 {
+    text-align: center;
+    font-size: 1.2em;
+    color: #333;
+  }
+
+  /* Ukuran chart di dalam card */
+  .chart-container {
+    position: relative;
+    width: 720px;
+    height: 400px; /* Atur tinggi chart */
+  }
+
+  .cardchart-donuts {
+    width: 100%; /* Sesuaikan lebar card */
+    max-width: 350px; /* Batas maksimal lebar */
+    /* margin: 10px; */
+    margin-bottom: 20px;
+    margin-left: 20px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    background-color: #fff;
+  }
+
+  /* Judul di atas chart */
+  .cardchart-donuts h2 {
+    text-align: center;
+    font-size: 1.2em;
+    color: #333;
+  }
+
+  /* Ukuran chart di dalam card */
+  .chart-donuts-container {
+    position: relative;
+    width: 320px;
+    height: 400px; /* Atur tinggi chart */
+  }
+
+  .chart-row {
+    display: flex;
+    justify-content: space-around;
+    gap: 5px;
+    /* padding: 20px; */
+    margin-bottom:20px;
+  }
+
+  .card-item {
+    width: 100%; /* Sesuaikan lebar card */
+    max-width: 300px; /* Batas maksimal lebar */
+    /* margin: 10px; */
+    margin-bottom: 20px;
+    margin-left: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    background-color: #fff;
+  }
+

@@ -48,6 +48,7 @@
     <script src="{{ asset('assets_landing/vendor/lightgallery-master/dist/js/lightgallery-all.min.js') }}"></script>
     <script src="{{ asset('assets_landing/vendor/select2/js/select2.min.js') }}"></script>
     <script src="{{ asset('assets_landing/js/custom.js') }}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="{{ asset('assets_landing/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js') }}"
         data-cf-settings="643b16316ea0a7fbc48d654c-|49" defer></script>
     <script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015"
@@ -55,29 +56,103 @@
         data-cf-beacon='{"rayId":"8dd144230c40ce22","version":"2024.10.4","r":1,"serverTiming":{"name":{"cfExtPri":true,"cfL4":true,"cfSpeedBrain":true,"cfCacheStatus":true}},"token":"dd471ab1978346bbb991feaa79e6ce5c","b":1}'
         crossorigin="anonymous"></script>
     <script>
-        // Dapatkan elemen sidebar dan footer
         const sidebar = document.getElementById('sidebar');
         const footer = document.getElementById('footer');
 
-        // Fungsi untuk mengatur posisi sidebar
         function handleSidebarPosition() {
             const footerTop = footer.getBoundingClientRect().top;
             const sidebarHeight = sidebar.offsetHeight;
             const sidebarTop = sidebar.getBoundingClientRect().top;
 
-            // Jika sidebar mencapai footer, hentikan sidebar sebelum menimpa footer
-            if (footerTop < sidebarHeight + 70) { // 70 adalah jarak dari atas (tinggi navbar)
+            if (footerTop < sidebarHeight + 70) {
                 sidebar.style.position = 'absolute';
                 sidebar.style.top = (window.scrollY + footerTop - sidebarHeight - 70) + 'px';
             } else {
                 sidebar.style.position = 'fixed';
-                sidebar.style.top = '70px'; // Sesuaikan dengan tinggi navbar
+                sidebar.style.top = '70px';
             }
         }
 
-        // Jalankan fungsi saat menggulir
         window.addEventListener('scroll', handleSidebarPosition);
     </script>
+    <script>
+        const ctx = document.getElementById('myChart');
+
+        new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+                datasets: [{
+                        label: '# of Votes Dataset 1',
+                        data: [12, 19, 3, 5, 2, 3],
+                        borderWidth: 1,
+                        backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                        borderColor: 'rgba(255, 99, 132, 1)'
+                    },
+                    {
+                        label: '# of Votes Dataset 2',
+                        data: [3, 5, 2, 3, 12, 19],
+                        borderWidth: 1,
+                        backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                        borderColor: 'rgba(54, 162, 235, 1)'
+                    }
+                ]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    </script>
+<script>
+    const ctx1 = document.getElementById('myChart1');
+
+    new Chart(ctx1, {
+        type: 'doughnut',
+        data: {
+            labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+            datasets: [
+                {
+                    label: '# of Votes Dataset 1',
+                    data: [12, 19, 3, 5, 2, 3],
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(255, 206, 86, 0.2)',
+                        'rgba(75, 192, 192, 0.2)',
+                        'rgba(153, 102, 255, 0.2)',
+                        'rgba(255, 159, 64, 0.2)'
+                    ],
+                    borderColor: [
+                        'rgba(255, 99, 132, 1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)',
+                        'rgba(75, 192, 192, 1)',
+                        'rgba(153, 102, 255, 1)',
+                        'rgba(255, 159, 64, 1)'
+                    ],
+                    borderWidth: 1
+                }
+            ]
+        },
+        options: {
+            responsive: true,
+            plugins: {
+                legend: {
+                    position: 'top',
+                },
+                tooltip: {
+                    enabled: true,
+                }
+            }
+        }
+    });
+</script>
+
+
     @yield('script')
     @stack('scripts')
 </body>

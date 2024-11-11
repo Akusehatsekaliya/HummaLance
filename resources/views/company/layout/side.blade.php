@@ -18,7 +18,7 @@
                                 <a href="#">Profile</a>
                             </div>
                             <div class="custom-control">
-                                <a href="#">Dashboard</a>
+                                <a href="/dashboard-company">Dashboard</a>
                             </div>
                         </div>
                     </div>
@@ -36,7 +36,7 @@
                         data-parent="#accordion">
                         <div class="filters-card-body card-shop-filters">
                             <div class="custom-control">
-                                <a href="#">Jobs</a>
+                                <a href="/jobs-company">Jobs</a>
                             </div>
                         </div>
                     </div>
