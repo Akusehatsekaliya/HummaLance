@@ -37,10 +37,12 @@
 
   <body>
     @yield('login')
-    {{-- navbar 1 --}}
-    @include('landing.layout.navbar_first')
-    {{-- navbar 2 --}}
-    @include('landing.layout.navbar_end')
+    @if (!request()->routeIs(['register', 'login', 'onboard']))
+      {{-- navbar 1 --}}
+      @include('landing.layout.navbar_first')
+      {{-- navbar 2 --}}
+      @include('landing.layout.navbar_end')
+    @endif
     {{-- banner --}}
     {{-- @include('landing.banner.index') --}}
     {{-- post_user --}}
@@ -113,19 +115,21 @@
         </div>
     </div> --}}
 
-    <!-- get started -->
-    <div>
-      <div class="get-started">
-        <div class="content">
-          <h2>Find Freelance Services For Your Business Today</h2>
-          <p>We've got you covered for all your business needs</p>
-          <a href="#" class="c-btn c-fill-color-btn">Get Started</a>
+    @if (!request()->routeIs(['register', 'login', 'onboard']))
+      <!-- get started -->
+      <div>
+        <div class="get-started">
+          <div class="content">
+            <h2>Find Freelance Services For Your Business Today</h2>
+            <p>We've got you covered for all your business needs</p>
+            <a href="#" class="c-btn c-fill-color-btn">Get Started</a>
+          </div>
         </div>
       </div>
-    </div>
 
-    {{-- footer --}}
-    @include('landing.layout.footer')
+      {{-- footer --}}
+      @include('landing.layout.footer')
+    @endif
 
     <script src="{{ asset('assets_landing/vendor/jquery/jquery.min.js') }}"></script>
     <script src="{{ asset('assets_landing/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
@@ -134,17 +138,17 @@
     <script src="{{ asset('assets_landing/vendor/select2/js/select2.min.js') }}"></script>
     <script src="{{ asset('assets_landing/js/custom.js') }}"></script>
     <script>
-        function navigateWithAnimation(element, url) {
-          element.classList.add('animate');
+      function navigateWithAnimation(element, url) {
+        element.classList.add('animate');
 
-            setTimeout(() => {
-            window.location.href = url; // Redirect URL after animation
-            }, 400); // Delay matches the CSS transition duration
+        setTimeout(() => {
+          window.location.href = url; // Redirect URL after animation
+        }, 400); // Delay matches the CSS transition duration
 
-            setTimeout(() => {
-                element.classList.remove('animate');
-            }, 800);
-        }
+        setTimeout(() => {
+          element.classList.remove('animate');
+        }, 800);
+      }
     </script>
     @yield('script')
     @stack('scripts')

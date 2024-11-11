@@ -9,3 +9,8 @@ Route::get('/jobs-company', function () {
 Route::get('/dashboard-company', function () {
     return view('company.dashboard');
 });
+
+Route::get('/company/profile', function () {
+    return view('company.profile');
+});
+

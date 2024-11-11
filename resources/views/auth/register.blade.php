@@ -1,80 +1,84 @@
-@php($googleUserData = session('google_user_data'))
-@extends('layouts.main')
+@php
+  $googleUserData = session('google_user_data');
+  $isGoogleLogin = session('isGoogleLogin', false);
+@endphp
+
+@extends('landing.layout.app')
 
 @section('style')
-    <link href="{{ asset('assets_landing/css/login.css') }}" rel="stylesheet">
+  <link href="{{ asset('assets_landing/css/login.css') }}" rel="stylesheet">
 @endsection
 
 @section('content')
-    <div class="bg-white1">
-        <div class="container">
-            <div class="row justify-content-center align-items-center d-flex vh-100">
-                <div class="col-lg-4 mx-auto">
-                    <div class="osahan-login py-4">
-                        <div class="text-center mb-4">
-                            <a href="{{ url('/') }}"><img src="{{ asset('assets_landing/images/fav.svg') }}"
-                                    alt=""></a>
-                            <h5 class="font-weight-bold mt-3">Register</h5>
-                            <p class="text-muted">Make the most of your professional life</p>
-                        </div>
-                        <form method="POST" action="{{ route('register') }}">
-                            @csrf
+  <div class="bg-white1">
+    <div class="container">
+      <div class="row justify-content-center align-items-center d-flex vh-100">
+        <div class="col-lg-4 mx-auto">
+          <div class="osahan-login py-4">
+            <div class="text-center mb-4">
+              <a href="{{ url('/') }}"><img src="{{ asset('assets_landing/images/fav.svg') }}" alt=""></a>
+              <h5 class="font-weight-bold mt-3">Register</h5>
+              <p class="text-muted">Make the most of your professional life</p>
+            </div>
+            <form method="POST" action="{{ route('register') }}">
+              @csrf
+              @if (!$isGoogleLogin)
+                <div class="form-group">
+                  <label class="mb-1">Name</label>
+                  <div class="position-relative icon-form-control">
+                    <i class="mdi mdi-account-outline position-absolute"></i>
+                    <input type="text" class="form-control @error('name') is-invalid @enderror" name="name"
+                      value="{{ old('name', $isGoogleLogin ? $googleUserData['name'] : '') }}" required>
+                    @error('name')
+                      <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                      </span>
+                    @enderror
+                  </div>
+                </div>
 
-                            <div class="form-group">
-                                <label class="mb-1">Name</label>
-                                <div class="position-relative icon-form-control">
-                                    <i class="mdi mdi-account-outline position-absolute"></i>
-                                    <input type="text" class="form-control @error('name') is-invalid @enderror"
-                                        name="name" value="{{ old('name', $googleUserData['name'] ?? '') }}" required>
-                                    @error('name')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                    @enderror
-                                </div>
-                            </div>
+                <div class="form-group">
+                  <label class="mb-1">Email</label>
+                  <div class="position-relative icon-form-control">
+                    <i class="mdi mdi-email-outline position-absolute"></i>
+                    <input type="email" class="form-control @error('email') is-invalid @enderror" name="email"
+                      value="{{ old('email', $isGoogleLogin ? $googleUserData['email'] : '') }}" required
+                      @disabled($isGoogleLogin)>
+                    @error('email')
+                      <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                      </span>
+                    @enderror
+                  </div>
+                </div>
+              @endif
 
-                            <div class="form-group">
-                                <label class="mb-1">Email</label>
-                                <div class="position-relative icon-form-control">
-                                    <i class="mdi mdi-email-outline position-absolute"></i>
-                                    <input type="email" class="form-control @error('email') is-invalid @enderror"
-                                        name="email" value="{{ old('email', $googleUserData['email'] ?? '') }}" required
-                                        @disabled(isset($googleUserData['email']))>
-                                    @error('email')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                    @enderror
-                                </div>
-                            </div>
+              <div class="form-group">
+                <label class="mb-1">Password (6 or more characters)</label>
+                <div class="position-relative icon-form-control">
+                  <i class="mdi mdi-key-variant position-absolute"></i>
+                  <input type="password" class="form-control @error('password') is-invalid @enderror" name="password"
+                    required>
+                  @error('password')
+                    <span class="invalid-feedback" role="alert">
+                      <strong>{{ $message }}</strong>
+                    </span>
+                  @enderror
+                </div>
+              </div>
 
-                            <div class="form-group">
-                                <label class="mb-1">Password (6 or more characters)</label>
-                                <div class="position-relative icon-form-control">
-                                    <i class="mdi mdi-key-variant position-absolute"></i>
-                                    <input type="password" class="form-control @error('password') is-invalid @enderror"
-                                        name="password" required>
-                                    @error('password')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                    @enderror
-                                </div>
-                            </div>
+              <div class="form-group">
+                <label class="mb-1">Confirm Password</label>
+                <input type="password" class="form-control" name="password_confirmation" required>
+              </div>
 
-                            <div class="form-group">
-                                <label class="mb-1">Confirm Password</label>
-                                <input type="password" class="form-control" name="password_confirmation" required>
-                            </div>
-
-                            {{-- <div class="form-group">
+              {{-- <div class="form-group">
                             <label class="mb-1">You agree to the Maer <a href="#">User Agreement</a>, <a href="#">Privacy Policy</a>, and <a href="#">Cookie Policy</a>.</label>
                         </div> --}}
 
-                            <button class="btn btn-success btn-block text-uppercase" type="submit"> Register </button>
+              <button class="btn btn-success btn-block text-uppercase" type="submit"> Register </button>
 
-                            {{-- <div class="text-center mt-3 border-bottom pb-3">
+              {{-- <div class="text-center mt-3 border-bottom pb-3">
                             <p class="small text-muted">Or login with</p>
                             <div class="row">
                                 <div class="col-6">
@@ -90,15 +94,17 @@
                             </div>
                         </div> --}}
 
-                            <div class="py-3 d-flex align-item-center">
-                                {{-- <a href="{{ route('password.request') }}">Forgot password?</a> --}}
-                                <span class="ml-auto"> Already have an account? <a href="{{ route('login') }}">Sign
-                                        in</a></span>
-                            </div>
-                        </form>
-                    </div>
+              @if (!$isGoogleLogin)
+                <div class="py-3 d-flex align-item-center">
+                  {{-- <a href="{{ route('password.request') }}">Forgot password?</a> --}}
+                  <span class="ml-auto"> Already have an account? <a href="{{ route('login') }}">Sign
+                      in</a></span>
                 </div>
-            </div>
+              @endif
+            </form>
+          </div>
         </div>
+      </div>
     </div>
+  </div>
 @endsection

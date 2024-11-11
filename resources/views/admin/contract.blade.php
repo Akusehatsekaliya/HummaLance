@@ -8,6 +8,15 @@
         <section class="section">
             <div class="card">
                 <div class="card-body">
+                    <div class="row mb-3">
+                        <div class="col-md-3">
+                            <select id="roleFilter" class="form-select" style="width: 130px;">
+                                <option value="" disabled selected>Status</option>
+                                <option value="progres">Progres</option>
+                                <option value="completed">Completed</option>
+                            </select>
+                        </div>
+                    </div>
                     <div class="table-responsive">
                         <table class="table" id="table1">
                             <thead>
@@ -26,7 +35,7 @@
                                     <td class="text-bold-500">HUMMATHRIFT</td>
                                     <td class="text-bold-500">2 Juli - 4 Juli</td>
                                     <td class="text-bold-500">
-                                        <span class="badge bg-light-success">Active</span>
+                                        <span class="badge bg-light-success">Completed</span>
                                     </td>
                                 </tr>
 
@@ -36,7 +45,7 @@
                                     <td class="text-bold-500">HUMMALANCE</td>
                                     <td class="text-bold-500">2 Juli - 4 Juli</td>
                                     <td class="text-bold-500">
-                                        <span class="badge bg-light-danger">Inactive</span>
+                                        <span class="badge bg-light-warning">Progres</span>
                                     </td>
                                 </tr>
                             </tbody>

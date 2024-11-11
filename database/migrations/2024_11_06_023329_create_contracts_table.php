@@ -18,8 +18,8 @@ return new class extends Migration
             $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
             $table->enum('status', [
                 StatusContractEnum::PROGRESS->value,
-                StatusContractEnum::COMPLATE->value,
-                ])->default(StatusContractEnum::PROGRESS->value);
+                StatusContractEnum::COMPLETE->value,
+            ])->default(StatusContractEnum::PROGRESS->value);
             $table->date('start_date');
             $table->date('end_date');
             $table->timestamps();

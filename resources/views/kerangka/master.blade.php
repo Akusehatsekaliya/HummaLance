@@ -17,6 +17,7 @@
     <div id="app">
 
         @include('include.sidebar')
+        @include('include.navbar')
 
         <div id="main">
             <header class="mb-3">
@@ -25,9 +26,9 @@
                 </a>
             </header>
 
-            <div class="page-heading">
+            {{-- <div class="page-heading">
                 <h3></h3>
-            </div>
+            </div> --}}
             @yield('content')
 
             @include('include.footer')
