@@ -3340,15 +3340,15 @@ section.related-links ul li a:hover {
     width: 300px; /* Sesuaikan lebar sidebar */
     height: 40rem;
     overflow-y: auto;
-    padding-top: 20px;
-    background-color: #fff; /* Warna background */
-    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); /* Bayangan untuk efek kedalaman */
-    /* z-index: 1000; Pastikan berada di atas konten lain */
+    padding-top: 100px;
+    background-color: #f0f2f5; /* Warna background */
+    /* box-shadow: 2px 0 5px rgba(0,0,0,0.1);  */
+    /* z-index: 10000;  */
 }
 
 /* Konten utama agar menyesuaikan dengan sidebar */
 .main-content {
-    margin-left: 300px; /* Sesuaikan dengan lebar sidebar */
+    margin-left: 300px;
     padding: 20px;
 }
 
@@ -3365,10 +3365,10 @@ section.related-links ul li a:hover {
 }
 
 .navbar {
-    position: sticky;
+    position: relative;
     top: 0;
     width: 100%;
-    z-index: 1000; /* Pastikan berada di atas elemen lainnya */
+    /* z-index: 1000; */
     transition: opacity 0.3s ease;
 }
 
