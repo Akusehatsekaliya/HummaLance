@@ -53,6 +53,7 @@
   </head>
 
   <body>
+    <div class="container"></div>
     <div class="preloader" style="display: none;">
       {{-- <img src="https://pkl.hummatech.com/preloader.png" style="width:150px" alt="loader" class="lds-ripple"> --}}
       <div class="lds-ripple">

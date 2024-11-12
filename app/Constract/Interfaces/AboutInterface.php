@@ -8,6 +8,6 @@ use App\Constract\Interfaces\Eloquent\ShowInterface;
 use App\Constract\Interfaces\Eloquent\StoreInterface;
 use App\Constract\Interfaces\Eloquent\UpdateInterface;
 
-interface AboutInterface extends GetInterface, StoreInterface,  ShowInterface, UpdateInterface, DeleteInterface
+interface AboutInterface extends GetInterface, UpdateInterface
 {
 }
