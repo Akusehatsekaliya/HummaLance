@@ -26,5 +26,6 @@ Route::resource('/Admin/banner', BannerController::class)->except(['show', 'edit
 Route::resource('/Admin/about', AboutController::class);
 // contract
 Route::resource('/Admin/contract', ContractController::class);
+Route::get('/contracts/data', [ContractController::class, 'getData'])->name('contracts.data');
 // transaction
 Route::resource('/Admin/transaction', TransactionController::class);
