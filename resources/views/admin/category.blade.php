@@ -15,7 +15,7 @@
                 </div>
                 <div class="card-body">
                     <div class="table-responsive ">
-                        <table class="table" id="table1">
+                        <table class="table" id="table2">
                             <thead>
                                 <tr>
                                     <th width="15%">NO</th>
@@ -24,14 +24,6 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td class="text-bold-500">1</td>
-                                    <td class="text-bold-500">UI/UX</td>
-                                    <td>
-                                        <a href="#" class="text-warning"><i class="bi bi-pen-fill"></i></a>
-                                        <button type="button" class="btn text-danger" ><i class="bi bi-trash3-fill"></i></button>
-                                    </td>
-                                </tr>
                             </tbody>
                         </table>
                     </div>
@@ -39,10 +31,6 @@
             </div>
         </section>
     </div>
-    {{-- <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal"
-            data-bs-target="#inlineForm">
-            Add Category
-        </button> --}}
 
     <!-- Modal Add -->
     <div class="modal fade text-left" id="inlineForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel33"
@@ -55,11 +43,12 @@
                         <i data-feather="x"></i>
                     </button>
                 </div>
-                <form action="#">
+                <form action="{{ route('category.store') }}" method="post">
+                    @csrf
                     <div class="modal-body">
                         <label for="email">Name: </label>
                         <div class="form-group">
-                            <input id="email" type="text" placeholder="name category" class="form-control">
+                            <input id="name" type="text" name="name" placeholder="name category" class="form-control">
                         </div>
                     </div>
                     <div class="modal-footer">
@@ -67,7 +56,7 @@
                             <i class="bx bx-x d-block d-sm-none"></i>
                             <span class="d-none d-sm-block">Close</span>
                         </button>
-                        <button type="button" class="btn btn-primary ms-1" data-bs-dismiss="modal">
+                        <button type="submit" class="btn btn-primary ms-1" data-bs-dismiss="modal">
                             <i class="bx bx-check d-block d-sm-none"></i>
                             <span class="d-none d-sm-block">Save</span>
                         </button>
@@ -77,4 +66,20 @@
         </div>
     </div>
 
+@endsection
+@section('script')
+<script>
+    $(document).ready(function() {
+        $('#table2').DataTable({
+            processing: true,
+            serverSide: true,
+            ajax: "{{ route('categories.data') }}",
+            columns: [
+                { data: 'DT_RowIndex', name: 'DT_RowIndex', orderable: false, searchable: false },
+                { data: 'name', name: 'name' },
+                { data: 'action', name: 'action', orderable: false, searchable: false }
+            ]
+        });
+    });
+</script>
 @endsection
