@@ -6,7 +6,7 @@ Route::get('/debug', function () {
     return view('debug.landing');
 })->name('debug');
 Route::get('/debug2', function () {
-    return view('debug2');
+    return '<script>window.localStorage.setItem("mytime", Date.now());</script>';
 })->name('debug2');
 
 #verification

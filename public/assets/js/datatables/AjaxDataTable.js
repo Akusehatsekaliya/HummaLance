@@ -28,12 +28,13 @@ $.fn.AjaxDataTable = function (config) {
     onSuccess: editSuccess
   } = onEdit || {};
   const {
-    url: deleteUrl,
+    modal: deleteModal,
     onClick: deleteOnClick,
     onSuccess: deleteSuccess
   } = onDelete || {};
   let firstLoad = true;
   var editUrl = editModal?.find("form").attr("action");
+  var deleteUrl = deleteModal?.find("form").attr("action");
 
   $.fn.dataTable.ext.buttons.create = {
     text: createText,
@@ -61,6 +62,7 @@ $.fn.AjaxDataTable = function (config) {
     modal?.find("form").submit(function (e) {
       e.preventDefault();
       const form = $(this);
+      form.find(`button[type="submit`).prop("disabled", true);
       const actionUrl = form.attr('action');
       const formData = new FormData(this);
 
@@ -71,7 +73,10 @@ $.fn.AjaxDataTable = function (config) {
         contentType: false,
         processData: false,
         error: onError,
-        complete: () => modal.modal("toggle"),
+        complete: () => {
+          modal.modal("hide");
+          form.find(`button[type="submit`).prop("disabled", false);
+        },
         success: (response) => {
           onSuccess?.(response);
           table.draw(false);
@@ -80,29 +85,39 @@ $.fn.AjaxDataTable = function (config) {
     });
   };
 
-  table.on("click", "button.delete", function () {
-    const row = $(this).closest("tr");
-    const { id } = table.row(row).data();
-    const formData = new FormData();
-    formData.append("_method", "DELETE");
+  // table.on("click", "button.delete", function () {
+  //   const row = $(this).closest("tr");
+  //   const { id } = table.row(row).data();
+  //   const formData = new FormData();
+  //   formData.append("_method", "DELETE");
 
-    const doDelete = () => {
-      row.find("button").prop("disabled", true);
-      row.fadeOut(1000, function () {
-        $(this).remove();
-      });
-      $.ajax(deleteUrl?.replace(":id:", id), {
-        type: "POST",
-        data: formData,
-        contentType: false,
-        processData: false,
-        success: (response) => {
-          deleteSuccess?.(response);
-          table.draw(false);
-        },
-      });
-    };
-    deleteOnClick?.(doDelete);
+  //   const doDelete = () => {
+  //     row.find("button").prop("disabled", true);
+  //     row.fadeOut(1000, function () {
+  //       $(this).remove();
+  //     });
+  //     $.ajax(deleteUrl?.replace(":id:", id), {
+  //       type: "POST",
+  //       data: formData,
+  //       contentType: false,
+  //       processData: false,
+  //       success: (response) => {
+  //         deleteSuccess?.(response);
+  //         table.draw(false);
+  //       },
+  //     });
+  //   };
+  //   deleteOnClick?.(doDelete);
+  // });
+  table.on("click", "button.delete", function () {
+    // const data = table.row($(this).closest("tr")).data();
+    const row = $(this).closest("tr");
+    const data = table.row(row).data();
+    const { id } = data;
+    deleteModal.find("form").attr("action", deleteUrl?.replace(":id:", id));
+    deleteOnClick?.(deleteModal.find("form"), data);
+    deleteModal.modal("toggle");
+    // $("button.delete").prop("disabled", true);
   });
 
   table.on("click", "button.edit", function () {
@@ -118,6 +133,11 @@ $.fn.AjaxDataTable = function (config) {
 
   handleFormSubmit(createModal, null, (data) => {
     createSuccess?.();
+    table.draw(false);
+  });
+
+  handleFormSubmit(deleteModal, null, (data) => {
+    // $("button.delete").prop("disabled", false);
     table.draw(false);
   });
 
