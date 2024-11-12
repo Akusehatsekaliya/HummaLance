@@ -19,9 +19,33 @@
 
   }
 
+  #table1_filter {
+    margin-left: auto;
+  }
+
   #table1_paginate {
     margin-left: auto;
 
+  }
+
+  #table1_paginate {
+    margin-left: auto;
+  }
+
+  #table2_filter {
+    margin-left: auto;
+  }
+
+  #table2_paginate {
+    margin-left: auto;
+  }
+
+  #table10_filter {
+    margin-left: auto;
+  }
+
+  #table10_paginate {
+    margin-left: auto;
   }
 
   .image-preview-container {

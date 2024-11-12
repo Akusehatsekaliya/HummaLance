@@ -4,13 +4,19 @@ namespace App\Http\Controllers\Admin;
 
 use App\Constract\Interfaces\AboutInterface;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\AboutRequest;
+use App\Models\About;
+use App\Services\AboutService;
 use Illuminate\Http\Request;
 
 class AboutController extends Controller
 {
     private AboutInterface $about;
-    public function __construct(AboutInterface $about) {
+    private AboutService $aboutService;
+
+    public function __construct(AboutInterface $about, AboutService $aboutService) {
         $this->about = $about;
+        $this->aboutService = $aboutService;
     }
     /**
      * Display a listing of the resource.
@@ -56,9 +62,14 @@ class AboutController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(AboutRequest $request, About $about)
     {
-        //
+        $data = $request->validated();
+        $data["image"] = $this->aboutService->update($request, $about);
+        $this->about->update($about->id, $data);
+
+        flash()->success('About us edited successfully');
+        return redirect()->back();
     }
 
     /**
