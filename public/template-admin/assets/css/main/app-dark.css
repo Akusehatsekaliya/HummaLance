@@ -3544,7 +3544,7 @@ body.theme-dark .nav {
     --bs-nav-link-font-weight: ;
     --bs-nav-link-color: ;
     --bs-nav-link-hover-color: ;
-    --bs-nav-link-disabled-color: #6c757d;
+    --bs-nav-link-disabled-color: ;
     display: flex;
     flex-wrap: wrap;
     list-style: none;
@@ -3660,8 +3660,8 @@ body.theme-dark .tab-content > .active {
 body.theme-dark .navbar {
     --bs-navbar-padding-x: 0;
     --bs-navbar-padding-y: 0.5rem;
-    --bs-navbar-color: rgba(0, 0, 0, 0.55);
-    --bs-navbar-hover-color: rgba(0, 0, 0, 0.7);
+    --bs-navbar-color: rgba(255, 255, 255, 0.832);
+    --bs-navbar-hover-color: rgba(255, 255, 255, 0.832);
     --bs-navbar-disabled-color: rgba(0, 0, 0, 0.3);
     --bs-navbar-active-color: rgba(0, 0, 0, 0.9);
     --bs-navbar-brand-padding-y: 0.3125rem;
@@ -6789,8 +6789,8 @@ body.theme-dark .avatar .avatar-content i:before {
 }
 body.theme-dark .avatar img {
     border-radius: 50%;
-    height: 32px;
-    width: 32px;
+    height: 40px;
+    width: 40px;
 }
 body.theme-dark .avatar .avatar-status {
     border: 1px solid #fff;
@@ -7705,8 +7705,9 @@ body.theme-dark .navbar-fixed {
     position: fixed;
 }
 body.theme-dark .navbar {
-    height: 90px;
+    height: 60px;
     padding: 1.5rem;
+    background-color: #1e1e2d;
 }
 body.theme-dark .navbar .navbar-brand img {
     height: 1.5rem;

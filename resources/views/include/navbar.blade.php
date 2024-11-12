@@ -1,5 +1,5 @@
 <!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm ms-auto">
+<nav class="navbar navbar-expand-lg shadow-sm ms-auto">
   <div class="container-fluid">
     <!-- Toggle for mobile view -->
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"

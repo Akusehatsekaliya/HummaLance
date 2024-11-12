@@ -17412,6 +17412,8 @@ body .bi:before {
 .navbar {
     height: 60px;
     padding: 1.5rem;
+    background-color: #fff;
+
 }
 .navbar .navbar-brand img {
     height: 1.5rem;
