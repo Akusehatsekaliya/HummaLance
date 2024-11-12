@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 
 Route::get('/debug', function () {
-    return view('debug');
+    return view('debug.landing');
 })->name('debug');
 Route::get('/debug2', function () {
     return view('debug2');
