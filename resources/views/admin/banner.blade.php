@@ -26,17 +26,19 @@
                                 </tr>
                             </thead>
                             <tbody>
+                                @foreach ($banner as $item)
                                 <tr>
-                                    <td class="text-bold-500">1</td>
-                                    <td class="text-bold-500"><img src="{{ asset('assets_landing/images/bg2.jpeg') }}" alt="" width="200px"></td>
-                                    <td class="text-bold-500">title</td>
-                                    <td class="text-bold-500">subtitle</td>
+                                    <td class="text-bold-500">{{ $item->id }}</td>
+                                    <td class="text-bold-500"><img src="{{ asset('storage/' . $item->picture) }}" alt="" width="200px"></td>
+                                    <td class="text-bold-500">{{ $item->title }}</td>
+                                    <td class="text-bold-500">{{ $item->subtitle }}</td>
                                     <td>
-                                        <a href="#" class="text-warning"><i class="bi bi-pen-fill"></i></a>
+                                        <a href="#" class="text-warning" ><i class="bi bi-pen-fill"></i></a>
                                         <button type="button" class="btn text-danger" ><i class="bi bi-trash3-fill"></i></button>
                                     </td>
                                 </tr>
                             </tbody>
+                            @endforeach
                         </table>
                     </div>
                 </div>
@@ -85,7 +87,7 @@
                             <i class="bx bx-x d-block d-sm-none"></i>
                             <span class="d-none d-sm-block">Close</span>
                         </button>
-                        <button type="button" class="btn btn-primary ms-1" data-bs-dismiss="modal">
+                        <button type="submit" class="btn btn-primary ms-1" data-bs-dismiss="modal">
                             <i class="bx bx-check d-block d-sm-none"></i>
                             <span class="d-none d-sm-block">Save</span>
                         </button>

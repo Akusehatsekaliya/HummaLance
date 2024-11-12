@@ -2,21 +2,23 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Contracts\Interfaces\BannerInterface;
+use App\Constract\Interfaces\BannerInterface;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\BannerRequest;
+use App\Http\Requests\UpdateBannerRequest;
+use App\Models\Banner;
 use App\Services\BannerService;
 use Illuminate\Http\Request;
 
 class BannerController extends Controller
 {
 
-    private BannerInterface $interface;
+    private BannerInterface $banner;
     private BannerService $service;
 
-    public function __construct(BannerInterface $interface, BannerService $service)
+    public function __construct(BannerInterface $banner, BannerService $service)
     {
-        $this->interface = $interface;
+        $this->banner = $banner;
         $this->service = $service;
     }
     /**
@@ -24,10 +26,10 @@ class BannerController extends Controller
      */
     public function index()
     {
-
+        $banner = $this->banner->get();
         $service = $this->service;
 
-        return view('admin.banner', compact('service'));
+        return view('admin.banner', compact('banner','service'));
     }
 
     /**
@@ -46,10 +48,10 @@ class BannerController extends Controller
         $data = $request->validated();
         $data["picture"] = $this->service->store($request);
 
-        $this->interface->store($data);
+        $this->banner->store($data);
 
         flash()->success('Data berhasil Diperbarui.');
-        return to_route('gallery.index');
+        return to_route('banner.index');
 
     }
 
@@ -72,16 +74,29 @@ class BannerController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(UpdateBannerRequest $request, Banner $banner)
     {
-        //
+        $data = $request->validated();
+        $data["picture"] = $this->service->update($request, $banner);
+
+        $this->banner->update($banner->id, $data);
+
+        flash()->success('Data berhasil Diperbarui.');
+        return to_route('banner.index');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Banner $banner)
     {
-        //
+        {
+            if (!$this->banner->delete($banner->id)) {
+
+                return back()->with('error');
+            }
+
+            return back();
+        }
     }
 }
