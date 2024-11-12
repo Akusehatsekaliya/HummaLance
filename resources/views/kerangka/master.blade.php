@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin</title>
     <link rel="icon" href="" type="image/png">
-
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 
     @yield('style')
 
