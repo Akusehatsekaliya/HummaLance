@@ -172,6 +172,9 @@ a {
 .bg-dark {
     background-color: #222326 !important;
 }
+.bg-banner {
+    background-color: #006a9e !important;
+}
 .icon-form-control i {
     display: flex;
     top: 0;
