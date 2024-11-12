@@ -15,7 +15,10 @@
                     <div class="card">
                         <div class="card-content">
                             <div class="card-body">
-                                <form class="form form-vertical">
+                                @foreach ($about as $index)
+                                {{-- <form action="{{ route('admin-dashboard.edit') }}" method="POST" class="form form-vertical" enctype="multipart/form-data">
+                                    @csrf
+                                    @method('PUT') --}}
                                     <div class="form-body">
                                         <div class="row d-flex justify-content-center">
 
@@ -23,7 +26,7 @@
                                                 <div class="logo-wrapper">
                                                     <div class="logo-upload mt-5 mb-5">
                                                         <div class="image-preview-container" id="avatar-preview-container">
-                                                            <img src="{{ asset('assets_landing/images/bg2.jpeg') }}"
+                                                            <img src="{{ asset("storage/$about->image") }}"
                                                                 alt="up" class="upload-img" id="upload-img" style="object-fit: cover;">
                                                             <label for="input-file" class="pencil-icon">
                                                                 <i class="bi bi-pen-fill"></i>
@@ -45,9 +48,8 @@
                                             <div class="col-10">
                                                 <div class="form-group">
                                                     <label for="email-id-vertical">Description</label>
-                                                    <textarea name="description" id="custom-summernote" class="custom-summernote" aria-label="With textarea"></textarea>
+                                                    <textarea name="description" class="form-control" aria-label="With textarea"></textarea>
                                                 </div>
-
                                             </div>
 
                                             <div class="col-10 d-flex justify-content-end">
@@ -55,7 +57,8 @@
                                             </div>
                                         </div>
                                     </div>
-                                </form>
+                                {{-- </form> --}}
+                                @endforeach
                             </div>
                         </div>
                     </div>
@@ -67,7 +70,7 @@
 @endsection
 
 @section('script')
-<script src="{{ asset('template-admin/assets/extensions/summernote/summernote-lite.min.js') }}"></script>
+{{-- <script src="{{ asset('template-admin/assets/extensions/summernote/summernote-lite.min.js') }}"></script>
 <script>
     $(document).ready(function() {
         $('#custom-summernote').summernote({
@@ -82,7 +85,7 @@
             ],
         });
     });
-</script>
+</script> --}}
 <script>
     function previewImage(event, previewId) {
         const input = event.target;

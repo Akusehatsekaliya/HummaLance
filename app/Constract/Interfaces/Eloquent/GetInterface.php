@@ -1,7 +1,6 @@
 <?php
 
 namespace App\Contracts\Interfaces\Eloquent;
-use App\Models\User;
 
 interface GetInterface
 {
@@ -11,11 +10,5 @@ interface GetInterface
      * @return mixed
      */
 
-        public function get() :mixed;
-
-        public function getAll() :mixed;
-
-        public function findById($id): ?user;
-
-
+    public function get(): mixed;
 }

@@ -9,7 +9,7 @@
             <div class="card">
                 <div class="card-header">
                     <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                    data-bs-target="#inlineForm">
+                    data-bs-target="#large">
                     Add Banner
                 </button>
             </div>
@@ -44,22 +44,30 @@
         </section>
     </div>
 
-
-    <div class="modal fade text-left" id="inlineForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel33"
+{{-- Modal Add --}}
+    <div class="modal fade text-left" id="large" tabindex="-1" role="dialog" aria-labelledby="myModalLabel17"
         aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h4 class="modal-title" id="myModalLabel33">Add Category</h4>
+                    <h4 class="modal-title" id="myModalLabel17">Add Banner</h4>
                     <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
                         <i data-feather="x"></i>
                     </button>
                 </div>
                 <form action="#">
                     <div class="modal-body">
-                        <label for="email">Name: </label>
+                        <label for="email">Image</label>
                         <div class="form-group">
-                            <input id="email" type="text" placeholder="name category" class="form-control">
+                            <input id="picture" type="file" class="form-control" name="picture">
+                        </div>
+                        <label for="email">Title</label>
+                        <div class="form-group">
+                            <input id="title" type="text" placeholder="Add Title" class="form-control" name="title">
+                        </div>
+                        <label for="email">Subtitle</label>
+                        <div class="form-group">
+                            <input id="subtitle" type="text" placeholder="Add Subtitle" class="form-control" name="subtitle">
                         </div>
                     </div>
                     <div class="modal-footer">

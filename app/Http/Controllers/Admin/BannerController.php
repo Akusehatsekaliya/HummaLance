@@ -2,17 +2,32 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Contracts\Interfaces\BannerInterface;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\BannerRequest;
+use App\Services\BannerService;
 use Illuminate\Http\Request;
 
 class BannerController extends Controller
 {
+
+    private BannerInterface $interface;
+    private BannerService $service;
+
+    public function __construct(BannerInterface $interface, BannerService $service)
+    {
+        $this->interface = $interface;
+        $this->service = $service;
+    }
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        return view('admin.banner');
+
+        $service = $this->service;
+
+        return view('admin.banner', compact('service'));
     }
 
     /**
@@ -26,9 +41,12 @@ class BannerController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(BannerRequest $request)
     {
-        //
+        $data["picture"] = $this->service->store($request);
+
+        $this->interface->store($data);
+
     }
 
     /**
