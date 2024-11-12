@@ -9,6 +9,7 @@ use App\Http\Requests\UpdateBannerRequest;
 use App\Models\Banner;
 use App\Services\BannerService;
 use Illuminate\Http\Request;
+use Yajra\DataTables\DataTables;
 
 class BannerController extends Controller
 {
@@ -24,12 +25,18 @@ class BannerController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
         $banner = $this->banner->get();
         $service = $this->service;
 
-        return view('admin.banner', compact('banner','service'));
+        if ($request->ajax() || $request->wantsJson()) {
+            return DataTables::of($banner)
+                ->addIndexColumn()
+                ->make(true);
+        }
+
+        return view('admin.banner', compact('banner', 'service'));
     }
 
     /**
@@ -52,7 +59,6 @@ class BannerController extends Controller
 
         flash()->success('Data berhasil Diperbarui.');
         return to_route('banner.index');
-
     }
 
     /**
@@ -89,8 +95,7 @@ class BannerController extends Controller
      * Remove the specified resource from storage.
      */
     public function destroy(Banner $banner)
-    {
-        {
+    { {
             if (!$this->banner->delete($banner->id)) {
 
                 return back()->with('error');
