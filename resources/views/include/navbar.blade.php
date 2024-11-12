@@ -1,3 +1,4 @@
+<div id="main">
 <!-- Navbar -->
 <nav class="navbar navbar-expand-lg shadow-sm ms-auto">
   <div class="container-fluid">
@@ -79,3 +80,4 @@
   </div>
 </nav>
 <!-- / Navbar -->
+</div>

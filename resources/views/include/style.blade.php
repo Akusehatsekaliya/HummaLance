@@ -24,15 +24,6 @@
 
     }
 
-
-    .navbar {
-        width: 76%;
-        max-width: 100%;
-        margin-right: 2rem;
-        margin-top: 1.5rem;
-        border-radius: 10px;
-    }
-
     .image-preview-container {
         position: relative;
         width: 465px;
