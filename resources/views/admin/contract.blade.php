@@ -12,42 +12,24 @@
                         <div class="col-md-3">
                             <select id="roleFilter" class="form-select" style="width: 130px;">
                                 <option value="" disabled selected>Status</option>
-                                <option value="progres">Progres</option>
+                                <option value="">All</option>
+                                <option value="progress">Progres</option>
                                 <option value="completed">Completed</option>
                             </select>
                         </div>
                     </div>
                     <div class="table-responsive">
-                        <table class="table" id="table1">
+                        <table class="table" id="table2">
                             <thead>
                                 <tr>
-                                    <th width="15%">NO</th>
-                                    <th>NAME</th>
-                                    <th width="24%">PROJECT</th>
-                                    <th width="17%">DATE</th>
-                                    <th width="25%">STATUS</th>
+                                    <th width="15%">No</th>
+                                    <th>Name</th>
+                                    <th width="24%">Project</th>
+                                    <th width="17%">Date</th>
+                                    <th width="25%">Status</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td class="text-bold-500">1</td>
-                                    <td class="text-bold-500">UI/UX</td>
-                                    <td class="text-bold-500">HUMMATHRIFT</td>
-                                    <td class="text-bold-500">2 Juli - 4 Juli</td>
-                                    <td class="text-bold-500">
-                                        <span class="badge bg-light-success">Completed</span>
-                                    </td>
-                                </tr>
-
-                                <tr>
-                                    <td class="text-bold-500">2</td>
-                                    <td class="text-bold-500">WEBSITE</td>
-                                    <td class="text-bold-500">HUMMALANCE</td>
-                                    <td class="text-bold-500">2 Juli - 4 Juli</td>
-                                    <td class="text-bold-500">
-                                        <span class="badge bg-light-warning">Progres</span>
-                                    </td>
-                                </tr>
                             </tbody>
                         </table>
                     </div>
@@ -55,35 +37,57 @@
             </div>
         </section>
     </div>
-    {{-- <div class="modal fade text-left" id="inlineForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel33"
-        aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h4 class="modal-title" id="myModalLabel33">Add Category</h4>
-                    <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
-                        <i data-feather="x"></i>
-                    </button>
-                </div>
-                <form action="#">
-                    <div class="modal-body">
-                        <label for="email">Name: </label>
-                        <div class="form-group">
-                            <input id="email" type="text" placeholder="name category" class="form-control">
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-light-secondary" data-bs-dismiss="modal">
-                            <i class="bx bx-x d-block d-sm-none"></i>
-                            <span class="d-none d-sm-block">Close</span>
-                        </button>
-                        <button type="button" class="btn btn-primary ms-1" data-bs-dismiss="modal">
-                            <i class="bx bx-check d-block d-sm-none"></i>
-                            <span class="d-none d-sm-block">Save</span>
-                        </button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div> --}}
+@endsection
+@section('script')
+    <script>
+        $(document).ready(function() {
+
+            $('#table2').DataTable({
+                processing: true,
+                serverSide: true,
+                ajax: {
+                    url: '{{ route('contracts.data') }}',
+                    type: 'GET',
+                    data: function(d) {
+                        d.status = $('#roleFilter').val();
+                    }
+                },
+                columns: [{
+                        data: 'id',
+                        name: 'id'
+                    },
+                    {
+                        data: 'user.name',
+                        name: 'user.name'
+                    },
+                    {
+                        data: 'project.name',
+                        name: 'project.name'
+                    },
+                    {
+                        data: null,
+                        name: 'date',
+                        render: function(data) {
+                            return `${data.start_date} - ${data.end_date}`;
+                        },
+                        orderable: false,
+                        searchable: false
+                    },
+                    {
+                        data: 'status',
+                        name: 'status',
+                        render: function(data, type, row) {
+                            let colorClass = data === 'completed' ? 'bg-light-success text-success' :
+                                'bg-light-warning text-warning';
+                            return `<span class="badge ${colorClass} p-2">${data.charAt(0).toUpperCase() + data.slice(1)}</span>`;
+                        }
+                    }
+                ]
+            });
+
+            $('#roleFilter').on('change', function() {
+                $('#table2').DataTable().ajax.reload();
+            });
+        });
+    </script>
 @endsection
