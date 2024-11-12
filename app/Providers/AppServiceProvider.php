@@ -3,13 +3,17 @@
 namespace App\Providers;
 
 use App\Contracts\Interfaces\AboutInterface;
+use App\Contracts\Interfaces\BannerInterface;
 use App\Contracts\Repositories\AboutRepository;
+use App\Contracts\Repositories\BannerRepository;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
 {
     private array $register = [
         AboutInterface::class => AboutRepository::class,
+        BannerInterface::class => BannerRepository::class,
+
     ];
 
     /**

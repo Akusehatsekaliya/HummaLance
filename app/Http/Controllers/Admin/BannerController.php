@@ -43,9 +43,13 @@ class BannerController extends Controller
      */
     public function store(BannerRequest $request)
     {
+        $data = $request->validated();
         $data["picture"] = $this->service->store($request);
 
         $this->interface->store($data);
+
+        flash()->success('Data berhasil Diperbarui.');
+        return to_route('gallery.index');
 
     }
 

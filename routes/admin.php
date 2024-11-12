@@ -21,7 +21,7 @@ Route::resource('/Admin/project', ProjectController::class);
 Route::resource('user', UserController::class);
 Route::get('/admin/users/data', [UserController::class, 'getData'])->name('admin.users.data');
 // banner
-Route::resource('/Admin/banner', BannerController::class);
+Route::resource('/Admin/banner', BannerController::class)->except(['show', 'edit', 'create']);
 // about
 Route::resource('/Admin/about', AboutController::class);
 // contract

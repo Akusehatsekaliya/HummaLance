@@ -55,19 +55,29 @@
                         <i data-feather="x"></i>
                     </button>
                 </div>
-                <form action="#">
+                <form action="{{ route('banner.store') }}" method="POST" enctype="multipart/form-data">
+                    @csrf
                     <div class="modal-body">
                         <label for="email">Image</label>
                         <div class="form-group">
                             <input id="picture" type="file" class="form-control" name="picture">
+                            @error('picture')
+                                <div class="text-danger">{{ $message }}</div>
+                            @enderror
                         </div>
                         <label for="email">Title</label>
                         <div class="form-group">
                             <input id="title" type="text" placeholder="Add Title" class="form-control" name="title">
+                            @error('title')
+                                <div class="text-danger">{{ $message }}</div>
+                            @enderror
                         </div>
                         <label for="email">Subtitle</label>
                         <div class="form-group">
                             <input id="subtitle" type="text" placeholder="Add Subtitle" class="form-control" name="subtitle">
+                            @error('subtitle')
+                                <div class="text-danger">{{ $message }}</div>
+                            @enderror
                         </div>
                     </div>
                     <div class="modal-footer">
