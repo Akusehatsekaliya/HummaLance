@@ -38,23 +38,6 @@
         </section>
     </div>
 @endsection
-@section('style')
-    <style>
-        .bg-success {
-            background-color: green;
-            color: white;
-            padding: 5px 10px;
-            border-radius: 4px;
-        }
-
-        .bg-warning {
-            background-color: yellow;
-            color: black;
-            padding: 5px 10px;
-            border-radius: 4px;
-        }
-    </style>
-@endsection
 @section('script')
     <script>
         $(document).ready(function() {
@@ -94,8 +77,8 @@
                         data: 'status',
                         name: 'status',
                         render: function(data, type, row) {
-                            let colorClass = data === 'completed' ? 'bg-success text-white' :
-                                'bg-warning text-dark';
+                            let colorClass = data === 'completed' ? 'bg-light-success text-success' :
+                                'bg-light-warning text-warning';
                             return `<span class="badge ${colorClass} p-2">${data.charAt(0).toUpperCase() + data.slice(1)}</span>`;
                         }
                     }
