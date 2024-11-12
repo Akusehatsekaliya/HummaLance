@@ -1,10 +1,9 @@
 <?php
 
-namespace App\Contracts\Repositories;
+namespace App\Constract\Repositories;
 
-use App\Contracts\Interfaces\AboutInterface;
+use App\Constract\Interfaces\AboutInterface;
 use App\Models\About;
-use App\Models\barang;
 use Illuminate\Database\Eloquent\Model;
 
 class AboutRepository extends BaseRepository implements AboutInterface
@@ -16,7 +15,17 @@ class AboutRepository extends BaseRepository implements AboutInterface
 
     public function get(): mixed
     {
-        return $this->model->all();
+        return $this->model->query()->get();
+    }
+
+    public function store(array $data): mixed
+    {
+        return $this->model->query()->create($data);
+    }
+
+    public function show(mixed $id): mixed
+    {
+        return $this->model->query()->findOrFail($id);
     }
 
     public function update(mixed $id, array $data): mixed
@@ -24,6 +33,10 @@ class AboutRepository extends BaseRepository implements AboutInterface
         return $this->model->query()->findOrFail($id)->update($data);
     }
 
+    public function delete(mixed $id): mixed
+    {
+        return $this->model->query()->findOrFail($id)->delete();
+    }
 
 }
 

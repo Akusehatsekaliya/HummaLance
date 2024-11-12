@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Contracts\Repositories;
+namespace App\Constract\Repositories;
 
-use App\Contracts\Interfaces\BannerInterface;
+use App\Constract\Interfaces\BannerInterface;
 use App\Models\Banner;
 use Illuminate\Http\Request;
 
