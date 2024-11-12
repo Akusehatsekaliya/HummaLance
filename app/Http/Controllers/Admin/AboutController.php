@@ -2,17 +2,23 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Constract\Interfaces\AboutInterface;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 class AboutController extends Controller
 {
+    private AboutInterface $about;
+    public function __construct(AboutInterface $about) {
+        $this->about = $about;
+    }
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        return view('admin.about');
+        $abouts = $this->about->get();
+        return view('admin.about', compact('abouts'));
     }
 
     /**

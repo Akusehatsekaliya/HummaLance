@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Contracts\Interfaces\Eloquent;
+namespace App\Constract\Interfaces\Eloquent;
 
 interface DeleteInterface
 {

@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Contracts\Interfaces;
+namespace App\Constract\Interfaces;
 
-use App\Contracts\Interfaces\Eloquent\DeleteInterface;
-use App\Contracts\Interfaces\Eloquent\GetInterface;
-use App\Contracts\Interfaces\Eloquent\SearchInterface;
-use App\Contracts\Interfaces\Eloquent\ShowInterface;
-use App\Contracts\Interfaces\Eloquent\StoreInterface;
-use App\Contracts\Interfaces\Eloquent\UpdateInterface;
+use App\Constract\Interfaces\Eloquent\DeleteInterface;
+use App\Constract\Interfaces\Eloquent\GetInterface;
+use App\Constract\Interfaces\Eloquent\SearchInterface;
+use App\Constract\Interfaces\Eloquent\ShowInterface;
+use App\Constract\Interfaces\Eloquent\StoreInterface;
+use App\Constract\Interfaces\Eloquent\UpdateInterface;
 
 interface BannerInterface extends GetInterface, StoreInterface, UpdateInterface, DeleteInterface, SearchInterface, ShowInterface
 {

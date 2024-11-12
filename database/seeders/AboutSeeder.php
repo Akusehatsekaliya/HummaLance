@@ -15,7 +15,7 @@ class AboutSeeder extends Seeder
     {
         About::create([
             'title' => "CLOCKER",
-            'image' => "images/bg2.jpeg",
+            'image' => "bg2.jpeg",
             'description' => "Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi, quibusdam! Corporis in soluta fuga molestiae incidunt odio, quod quae illo!"
         ]);
     }

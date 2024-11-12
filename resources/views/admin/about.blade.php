@@ -15,7 +15,7 @@
                     <div class="card">
                         <div class="card-content">
                             <div class="card-body">
-                                @foreach ($about as $index)
+                                @foreach ($abouts as $about)
                                 {{-- <form action="{{ route('admin-dashboard.edit') }}" method="POST" class="form form-vertical" enctype="multipart/form-data">
                                     @csrf
                                     @method('PUT') --}}
@@ -26,7 +26,7 @@
                                                 <div class="logo-wrapper">
                                                     <div class="logo-upload mt-5 mb-5">
                                                         <div class="image-preview-container" id="avatar-preview-container">
-                                                            <img src="{{ asset("storage/$about->image") }}"
+                                                            <img src="{{ asset('assets_landing/images/bg2.jpeg') }}"
                                                                 alt="up" class="upload-img" id="upload-img" style="object-fit: cover;">
                                                             <label for="input-file" class="pencil-icon">
                                                                 <i class="bi bi-pen-fill"></i>
@@ -40,7 +40,7 @@
 
                                             <div class="col-10">
                                                 <div class="form-group">
-                                                    <label for="first-name-vertical">Title</label>
+                                                    {{-- <label for="first-name-vertical">{{ $index->title }}</label> --}}
                                                     <input type="text" id="first-name-vertical" class="form-control"
                                                         name="fname" placeholder="Title">
                                                 </div>
