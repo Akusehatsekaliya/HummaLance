@@ -32,10 +32,10 @@
                 <ul class="list">
                     <li><a href="#">Help &amp; Support</a></li>
                     <li><a href="#">Trust &amp; Safety</a></li>
-                    <li><a href="#">Selling on Maer
+                    <li><a href="#">Selling on Clocker
                         </a>
                     </li>
-                    <li><a href="#">Buying on Maer
+                    <li><a href="#">Buying on Freelancer
                         </a>
                     </li>
                 </ul>
@@ -50,56 +50,55 @@
                     <li><a href="#">Podcast</a></li>
                     <li><a href="#">Affiliates</a></li>
                     <li><a href="#">Invite a Friend</a></li>
-                    <li><a href="#">Become a Seller</a></li>
-                    <li><a href="#">Maer
-                            Elevate<small>Exclusive Benefits</small></a>
+                    <li><a href="#">Become a Freelancer</a></li>
+                    <li><a href="#">Clocker Elevate
                     </li>
                 </ul>
             </div>
             <div class="footer-list">
-                <h2>More From Maer</h2>
+                <h2>More From Clocker</h2>
                 <ul class="list">
-                    <li><a href="#">Maer
+                    <li><a href="#">Clocker
                             Pro</a>
                     </li>
-                    <li><a href="#">Maer
+                    <li><a href="#">Clocker
                             Studios</a>
                     </li>
-                    <li><a href="#">Maer
+                    <li><a href="#">Clocker
                             Logo Maker</a>
                     </li>
                     <li><a href="#">Get Inspired</a></li>
-                    <li><a href="#">ClearVoice<small>Content Marketing</small></a></li>
-                    <li><a href="#">AND CO<small>Invoice Software</small></a></li>
-                    <li><a href="#">Learn<small>Online Courses</small></a></li>
+                    <li><a href="#">Content Marketing</a>
+                    <li><a href="#">Invoice Software</a></li>
+                    <li><a href="#">Learn Online Courses</a></li>
                 </ul>
             </div>
         </div>
-        <div class="copyright">
-            <div class="logo">
-                <a href="index-2.html">
-                    <img src="{{ asset('assets_landing/images/logo.svg') }}">
-                </a>
-            </div>
-            <p>© Copyright 2020 Maer. All Rights Reserved
-            </p>
-            <ul class="social">
-                <li>
-                    <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-                </li>
-                <li>
-                    <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-                </li>
-                <li>
-                    <a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
-                </li>
-                <li>
-                    <a href="#"><i class="fa fa-pinterest-p" aria-hidden="true"></i></a>
-                </li>
-                <li>
-                    <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
-                </li>
-            </ul>
+    </div>
+    <div class="copyright" style="background-color: black;">
+        <div class="logo" style="margin-left: 13rem;">
+            <a href="index-2.html">
+                <img src="{{ asset('assets_landing/images/logo.svg') }}">
+            </a>
         </div>
+        <p>©Clocker International Ltd, 2024
+        </p>
+        <ul class="social" style="margin-right: 15rem;">
+            <li>
+                <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+            </li>
+            <li>
+                <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+            </li>
+            <li>
+                <a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+            </li>
+            <li>
+                <a href="#"><i class="fa fa-pinterest-p" aria-hidden="true"></i></a>
+            </li>
+            <li>
+                <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+            </li>
+        </ul>
     </div>
 </footer>

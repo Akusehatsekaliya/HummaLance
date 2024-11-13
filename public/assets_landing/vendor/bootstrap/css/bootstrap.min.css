@@ -9517,6 +9517,7 @@ a.text-dark:hover {
     background-color: #01ABFE; /* Menentukan warna garis */
     transition: width 0.5s ease, left 0.5s ease; /* Efek transisi untuk lebar dan posisi */
     transform: translateX(-50%); /* Menggeser garis ke kiri agar tepat di tengah */
+    border-radius: 50px; /* Membuat garis berbentuk oval */
 }
 
 .nav-link:hover:after {
@@ -9536,5 +9537,4 @@ a.text-dark:hover {
 .nav-link:hover {
     color: #01ABFE; /* Ubah warna teks saat hover */
 }
-
 

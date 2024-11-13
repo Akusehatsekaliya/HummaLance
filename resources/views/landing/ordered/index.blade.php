@@ -1,4 +1,4 @@
-<div class="services-wrapper bg-white py-5">
+{{-- <div class="services-wrapper bg-white py-5">
   <div class="container">
     <h2>Popular Professional Services</h2>
     <div class="row service-slider">
@@ -64,4 +64,4 @@
       </div>
     </div>
   </div>
-</div>
+</div> --}}

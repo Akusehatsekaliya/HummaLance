@@ -121,7 +121,7 @@
 
     @if (!request()->routeIs(['register', 'login', 'onboard']))
       <!-- get started -->
-      <div>
+      {{-- <div>
         <div class="get-started">
           <div class="content">
             <h2>Find Freelance Services For Your Business Today</h2>
@@ -129,7 +129,7 @@
             <a href="#" class="c-btn c-fill-color-btn">Get Started</a>
           </div>
         </div>
-      </div>
+      </div> --}}
 
       {{-- footer --}}
       @include('landing.layout.footer')
