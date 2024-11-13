@@ -212,6 +212,7 @@ a {
 .agents-card .img-fluid {
     width: 100px;
     border-radius: 50px;
+    position: relative;
 }
 .dropdown-list-image {
     position: relative;
@@ -3562,3 +3563,105 @@ section.related-links ul li a:hover {
 .nav-link {
     font-weight: bold;
 }
+.modal-form {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-form-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    width: 50rem;
+    max-width: 90%;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: left;
+    animation: fadeIn 0.3s ease;
+    position: relative;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.close-modal {
+    position: absolute; /* This aligns the close button to the top-right */
+    top: 10px;
+    right: 10px;
+    font-size: 10px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.menu {
+    position: relative;
+    /* width: 200px;
+    height: 200px; */
+}
+
+.center-button {
+    margin-top: 1.5rem;
+    position: absolute;
+    top: 50%;
+    left: 90%;
+    transform: translate(-50%, -50%);
+    width: 35px;
+    height: 35px;
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-size: 24px;
+    transition: transform 0.3s ease;
+}
+
+.menu-item {
+    margin-top: 0.5rem;
+    margin-left: 5rem;
+    position: absolute;
+    top: 100%;
+    left: 40%;
+    width: 35px;
+    height: 35px;
+    background-color: #ffffff;
+    color: rgb(26, 185, 248);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transform: translate(20%, 20%) rotate(0deg) translate(0);
+    transition: transform 0.5s ease, opacity 0.3s ease;
+    pointer-events: none;
+}
+
+.menu-item a {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+}
+
+/* Basic active state styling for opacity and pointer events */
+.menu.active .menu-item {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* Reverse the animation direction */
+.menu.active .menu-item {
+    /* Adjust rotation to reverse direction */
+    transform: translate(-50%, -50%) rotate(calc(var(--i) * -72deg)) translate(80px) rotate(calc(var(--i) * 72deg));
+}
+
+

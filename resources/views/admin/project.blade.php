@@ -14,10 +14,10 @@
                                 <tr>
                                     <th>NO</th>
                                     <th>PROJECT</th>
+                                    <th>CATEGORY</th>
+                                    <th>USER</th>
                                     <th>DESCRIPTION</th>
                                     <th>BUDGET</th>
-                                    <th>USER</th>
-                                    <th>ACTION</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -25,11 +25,9 @@
                                     <td class="text-bold-500">1</td>
                                     <td class="text-bold-500">UI/UX</td>
                                     <td class="text-bold-500">UI/UX</td>
+                                    <td class="text-bold-500">USER <br> user@gmail.com</td>
+                                    <td class="text-bold-500">Project About UI/UX designer</td>
                                     <td class="text-bold-500">1.000.000</td>
-                                    <td class="text-bold-500">USER</td>
-                                    <td>
-                                        <button type="button" class="btn text-danger" ><i class="bi bi-trash3-fill"></i></button>
-                                    </td>
                                 </tr>
                             </tbody>
                         </table>

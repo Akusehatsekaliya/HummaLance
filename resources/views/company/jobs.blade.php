@@ -142,29 +142,11 @@
                         </div>
                     </div>
                     <div class="right">
-                        <ul class="d-flex align-items-center">
-                            <li>
-                                <label class="switch">
-                                    <input type="checkbox">
-                                    <span class="slider round"></span>
-                                </label>
-                                <h5>Pro Services</h5>
-                            </li>
-                            <li>
-                                <label class="switch">
-                                    <input type="checkbox">
-                                    <span class="slider round"></span>
-                                </label>
-                                <h5>Local Sellers</h5>
-                            </li>
-                            <li>
-                                <label class="switch">
-                                    <input type="checkbox">
-                                    <span class="slider round"></span>
-                                </label>
-                                <h5>Online Sellers</h5>
-                            </li>
-                        </ul>
+                        <div class="dropdown-filters d-flex">
+                            <div class="dropdown">
+                                <button class="btn btn-secondary" id="openModal">Add the Project</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -189,509 +171,20 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-3">
-                        <a href="product-detail.html">
+                        <div class="menu">
+                            <div class="center-button" onclick="toggleMenu()"><i class="fa-solid fa-ellipsis-h"></i></div>
+                            <div class="menu-item" style="--i: 3;"><button class="btn" id="openEditModal"><i class="fa-solid fa-edit"></i></button></div>
+                            <div class="menu-item" style="--i: 4;"><a href="#"><i class="fa-solid fa-trash"></i></a></div>
+                        </div> 
+                        <a href="product-detail.html">                          
                             <img class="img-fluid" src="images/list/v1.png" />
                         </a>
+                         
                         <div class="inner-slider">
                             <div class="inner-wrapper">
                                 <div class="d-flex align-items-center">
                                     <span class="seller-image">
                                         <img class="img-fluid" src="images/user/s1.png" alt='' />
-                                    </span>
-                                    <span class="seller-name">
-                                        <a href="#">Stave Martin</a>
-                                        <span class="level hint--top level-one-seller">
-                                            Level 1 Seller
-                                        </span>
-                                    </span>
-                                </div>
-                                <h3>
-                                    Contrary to popular belief, Lorem Ipsum is not simply...
-                                </h3>
-                                <div class="content-info">
-                                    <div class="rating-wrapper">
-                                        <span class="gig-rating text-body-2">
-                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1792 1792"
-                                                width="15" height="15">
-                                                <path fill="currentColor"
-                                                    d="M1728 647q0 22-26 48l-363 354 86 500q1 7 1 20 0 21-10.5 35.5t-30.5 14.5q-19 0-40-12l-449-236-449 236q-22 12-40 12-21 0-31.5-14.5t-10.5-35.5q0-6 2-20l86-500-364-354q-25-27-25-48 0-37 56-46l502-73 225-455q19-41 49-41t49 41l225 455 502 73q56 9 56 46z">
-                                                </path>
-                                            </svg>
-                                            5.0
-                                            <span>(7)</span>
-                                        </span>
-                                    </div>
-                                </div>
-                                <div class="footer">
-                                    <i class="fa fa-heart" aria-hidden="true"></i>
-                                    <div class="price">
-                                        <a href="#">
-                                            Starting At <span> $1,205</span>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <a href="product-detail.html">
-                            <img class="img-fluid" src="images/list/v2.png" />
-                        </a>
-                        <div class="inner-slider">
-                            <div class="inner-wrapper">
-                                <div class="d-flex align-items-center">
-                                    <span class="seller-image">
-                                        <img class="img-fluid" src="images/user/s2.png" alt='' />
-                                    </span>
-                                    <span class="seller-name">
-                                        <a href="#">Stave Martin</a>
-                                        <span class="level hint--top level-one-seller">
-                                            Level 1 Seller
-                                        </span>
-                                    </span>
-                                </div>
-                                <h3>
-                                    Contrary to popular belief, Lorem Ipsum is not simply...
-                                </h3>
-                                <div class="content-info">
-                                    <div class="rating-wrapper">
-                                        <span class="gig-rating text-body-2">
-                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1792 1792"
-                                                width="15" height="15">
-                                                <path fill="currentColor"
-                                                    d="M1728 647q0 22-26 48l-363 354 86 500q1 7 1 20 0 21-10.5 35.5t-30.5 14.5q-19 0-40-12l-449-236-449 236q-22 12-40 12-21 0-31.5-14.5t-10.5-35.5q0-6 2-20l86-500-364-354q-25-27-25-48 0-37 56-46l502-73 225-455q19-41 49-41t49 41l225 455 502 73q56 9 56 46z">
-                                                </path>
-                                            </svg>
-                                            5.0
-                                            <span>(7)</span>
-                                        </span>
-                                    </div>
-                                </div>
-                                <div class="footer">
-                                    <i class="fa fa-heart" aria-hidden="true"></i>
-                                    <div class="price">
-                                        <a href="#">
-                                            Starting At <span> $1,205</span>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <a href="product-detail.html">
-                            <img class="img-fluid" src="images/list/v3.png" />
-                        </a>
-                        <div class="inner-slider">
-                            <div class="inner-wrapper">
-                                <div class="d-flex align-items-center">
-                                    <span class="seller-image">
-                                        <img class="img-fluid" src="images/user/s3.png" alt='' />
-                                    </span>
-                                    <span class="seller-name">
-                                        <a href="#">Stave Martin</a>
-                                        <span class="level hint--top level-one-seller">
-                                            Level 1 Seller
-                                        </span>
-                                    </span>
-                                </div>
-                                <h3>
-                                    Contrary to popular belief, Lorem Ipsum is not simply...
-                                </h3>
-                                <div class="content-info">
-                                    <div class="rating-wrapper">
-                                        <span class="gig-rating text-body-2">
-                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1792 1792"
-                                                width="15" height="15">
-                                                <path fill="currentColor"
-                                                    d="M1728 647q0 22-26 48l-363 354 86 500q1 7 1 20 0 21-10.5 35.5t-30.5 14.5q-19 0-40-12l-449-236-449 236q-22 12-40 12-21 0-31.5-14.5t-10.5-35.5q0-6 2-20l86-500-364-354q-25-27-25-48 0-37 56-46l502-73 225-455q19-41 49-41t49 41l225 455 502 73q56 9 56 46z">
-                                                </path>
-                                            </svg>
-                                            5.0
-                                            <span>(7)</span>
-                                        </span>
-                                    </div>
-                                </div>
-                                <div class="footer">
-                                    <i class="fa fa-heart" aria-hidden="true"></i>
-                                    <div class="price">
-                                        <a href="#">
-                                            Starting At <span> $1,205</span>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <a href="product-detail.html">
-                            <img class="img-fluid" src="images/list/v4.png" />
-                        </a>
-                        <div class="inner-slider">
-                            <div class="inner-wrapper">
-                                <div class="d-flex align-items-center">
-                                    <span class="seller-image">
-                                        <img class="img-fluid" src="images/user/s4.png" alt='' />
-                                    </span>
-                                    <span class="seller-name">
-                                        <a href="#">Stave Martin</a>
-                                        <span class="level hint--top level-one-seller">
-                                            Level 1 Seller
-                                        </span>
-                                    </span>
-                                </div>
-                                <h3>
-                                    Contrary to popular belief, Lorem Ipsum is not simply...
-                                </h3>
-                                <div class="content-info">
-                                    <div class="rating-wrapper">
-                                        <span class="gig-rating text-body-2">
-                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1792 1792"
-                                                width="15" height="15">
-                                                <path fill="currentColor"
-                                                    d="M1728 647q0 22-26 48l-363 354 86 500q1 7 1 20 0 21-10.5 35.5t-30.5 14.5q-19 0-40-12l-449-236-449 236q-22 12-40 12-21 0-31.5-14.5t-10.5-35.5q0-6 2-20l86-500-364-354q-25-27-25-48 0-37 56-46l502-73 225-455q19-41 49-41t49 41l225 455 502 73q56 9 56 46z">
-                                                </path>
-                                            </svg>
-                                            5.0
-                                            <span>(7)</span>
-                                        </span>
-                                    </div>
-                                </div>
-                                <div class="footer">
-                                    <i class="fa fa-heart" aria-hidden="true"></i>
-                                    <div class="price">
-                                        <a href="#">
-                                            Starting At <span> $1,205</span>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <a href="product-detail.html">
-                            <img class="img-fluid" src="images/list/v5.png" />
-                        </a>
-                        <div class="inner-slider">
-                            <div class="inner-wrapper">
-                                <div class="d-flex align-items-center">
-                                    <span class="seller-image">
-                                        <img class="img-fluid" src="images/user/s5.png" alt='' />
-                                    </span>
-                                    <span class="seller-name">
-                                        <a href="#">Stave Martin</a>
-                                        <span class="level hint--top level-one-seller">
-                                            Level 1 Seller
-                                        </span>
-                                    </span>
-                                </div>
-                                <h3>
-                                    Contrary to popular belief, Lorem Ipsum is not simply...
-                                </h3>
-                                <div class="content-info">
-                                    <div class="rating-wrapper">
-                                        <span class="gig-rating text-body-2">
-                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1792 1792"
-                                                width="15" height="15">
-                                                <path fill="currentColor"
-                                                    d="M1728 647q0 22-26 48l-363 354 86 500q1 7 1 20 0 21-10.5 35.5t-30.5 14.5q-19 0-40-12l-449-236-449 236q-22 12-40 12-21 0-31.5-14.5t-10.5-35.5q0-6 2-20l86-500-364-354q-25-27-25-48 0-37 56-46l502-73 225-455q19-41 49-41t49 41l225 455 502 73q56 9 56 46z">
-                                                </path>
-                                            </svg>
-                                            5.0
-                                            <span>(7)</span>
-                                        </span>
-                                    </div>
-                                </div>
-                                <div class="footer">
-                                    <i class="fa fa-heart" aria-hidden="true"></i>
-                                    <div class="price">
-                                        <a href="#">
-                                            Starting At <span> $1,205</span>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <a href="product-detail.html">
-                            <img class="img-fluid" src="images/list/v6.png" />
-                        </a>
-                        <div class="inner-slider">
-                            <div class="inner-wrapper">
-                                <div class="d-flex align-items-center">
-                                    <span class="seller-image">
-                                        <img class="img-fluid" src="images/user/s6.png" alt='' />
-                                    </span>
-                                    <span class="seller-name">
-                                        <a href="#">Stave Martin</a>
-                                        <span class="level hint--top level-one-seller">
-                                            Level 1 Seller
-                                        </span>
-                                    </span>
-                                </div>
-                                <h3>
-                                    Contrary to popular belief, Lorem Ipsum is not simply...
-                                </h3>
-                                <div class="content-info">
-                                    <div class="rating-wrapper">
-                                        <span class="gig-rating text-body-2">
-                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1792 1792"
-                                                width="15" height="15">
-                                                <path fill="currentColor"
-                                                    d="M1728 647q0 22-26 48l-363 354 86 500q1 7 1 20 0 21-10.5 35.5t-30.5 14.5q-19 0-40-12l-449-236-449 236q-22 12-40 12-21 0-31.5-14.5t-10.5-35.5q0-6 2-20l86-500-364-354q-25-27-25-48 0-37 56-46l502-73 225-455q19-41 49-41t49 41l225 455 502 73q56 9 56 46z">
-                                                </path>
-                                            </svg>
-                                            5.0
-                                            <span>(7)</span>
-                                        </span>
-                                    </div>
-                                </div>
-                                <div class="footer">
-                                    <i class="fa fa-heart" aria-hidden="true"></i>
-                                    <div class="price">
-                                        <a href="#">
-                                            Starting At <span> $1,205</span>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <a href="product-detail.html">
-                            <img class="img-fluid" src="images/list/v7.png" />
-                        </a>
-                        <div class="inner-slider">
-                            <div class="inner-wrapper">
-                                <div class="d-flex align-items-center">
-                                    <span class="seller-image">
-                                        <img class="img-fluid" src="images/user/s7.png" alt='' />
-                                    </span>
-                                    <span class="seller-name">
-                                        <a href="#">Stave Martin</a>
-                                        <span class="level hint--top level-one-seller">
-                                            Level 1 Seller
-                                        </span>
-                                    </span>
-                                </div>
-                                <h3>
-                                    Contrary to popular belief, Lorem Ipsum is not simply...
-                                </h3>
-                                <div class="content-info">
-                                    <div class="rating-wrapper">
-                                        <span class="gig-rating text-body-2">
-                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1792 1792"
-                                                width="15" height="15">
-                                                <path fill="currentColor"
-                                                    d="M1728 647q0 22-26 48l-363 354 86 500q1 7 1 20 0 21-10.5 35.5t-30.5 14.5q-19 0-40-12l-449-236-449 236q-22 12-40 12-21 0-31.5-14.5t-10.5-35.5q0-6 2-20l86-500-364-354q-25-27-25-48 0-37 56-46l502-73 225-455q19-41 49-41t49 41l225 455 502 73q56 9 56 46z">
-                                                </path>
-                                            </svg>
-                                            5.0
-                                            <span>(7)</span>
-                                        </span>
-                                    </div>
-                                </div>
-                                <div class="footer">
-                                    <i class="fa fa-heart" aria-hidden="true"></i>
-                                    <div class="price">
-                                        <a href="#">
-                                            Starting At <span> $1,205</span>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <a href="product-detail.html">
-                            <img class="img-fluid" src="images/list/v8.png" />
-                        </a>
-                        <div class="inner-slider">
-                            <div class="inner-wrapper">
-                                <div class="d-flex align-items-center">
-                                    <span class="seller-image">
-                                        <img class="img-fluid" src="images/user/s8.png" alt='' />
-                                    </span>
-                                    <span class="seller-name">
-                                        <a href="#">Stave Martin</a>
-                                        <span class="level hint--top level-one-seller">
-                                            Level 1 Seller
-                                        </span>
-                                    </span>
-                                </div>
-                                <h3>
-                                    Contrary to popular belief, Lorem Ipsum is not simply...
-                                </h3>
-                                <div class="content-info">
-                                    <div class="rating-wrapper">
-                                        <span class="gig-rating text-body-2">
-                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1792 1792"
-                                                width="15" height="15">
-                                                <path fill="currentColor"
-                                                    d="M1728 647q0 22-26 48l-363 354 86 500q1 7 1 20 0 21-10.5 35.5t-30.5 14.5q-19 0-40-12l-449-236-449 236q-22 12-40 12-21 0-31.5-14.5t-10.5-35.5q0-6 2-20l86-500-364-354q-25-27-25-48 0-37 56-46l502-73 225-455q19-41 49-41t49 41l225 455 502 73q56 9 56 46z">
-                                                </path>
-                                            </svg>
-                                            5.0
-                                            <span>(7)</span>
-                                        </span>
-                                    </div>
-                                </div>
-                                <div class="footer">
-                                    <i class="fa fa-heart" aria-hidden="true"></i>
-                                    <div class="price">
-                                        <a href="#">
-                                            Starting At <span> $1,205</span>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <a href="product-detail.html">
-                            <img class="img-fluid" src="images/list/v2.png" />
-                        </a>
-                        <div class="inner-slider">
-                            <div class="inner-wrapper">
-                                <div class="d-flex align-items-center">
-                                    <span class="seller-image">
-                                        <img class="img-fluid" src="images/user/s9.png" alt='' />
-                                    </span>
-                                    <span class="seller-name">
-                                        <a href="#">Stave Martin</a>
-                                        <span class="level hint--top level-one-seller">
-                                            Level 1 Seller
-                                        </span>
-                                    </span>
-                                </div>
-                                <h3>
-                                    Contrary to popular belief, Lorem Ipsum is not simply...
-                                </h3>
-                                <div class="content-info">
-                                    <div class="rating-wrapper">
-                                        <span class="gig-rating text-body-2">
-                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1792 1792"
-                                                width="15" height="15">
-                                                <path fill="currentColor"
-                                                    d="M1728 647q0 22-26 48l-363 354 86 500q1 7 1 20 0 21-10.5 35.5t-30.5 14.5q-19 0-40-12l-449-236-449 236q-22 12-40 12-21 0-31.5-14.5t-10.5-35.5q0-6 2-20l86-500-364-354q-25-27-25-48 0-37 56-46l502-73 225-455q19-41 49-41t49 41l225 455 502 73q56 9 56 46z">
-                                                </path>
-                                            </svg>
-                                            5.0
-                                            <span>(7)</span>
-                                        </span>
-                                    </div>
-                                </div>
-                                <div class="footer">
-                                    <i class="fa fa-heart" aria-hidden="true"></i>
-                                    <div class="price">
-                                        <a href="#">
-                                            Starting At <span> $1,205</span>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <a href="product-detail.html">
-                            <img class="img-fluid" src="images/list/v4.png" />
-                        </a>
-                        <div class="inner-slider">
-                            <div class="inner-wrapper">
-                                <div class="d-flex align-items-center">
-                                    <span class="seller-image">
-                                        <img class="img-fluid" src="images/user/s10.png" alt='' />
-                                    </span>
-                                    <span class="seller-name">
-                                        <a href="#">Stave Martin</a>
-                                        <span class="level hint--top level-one-seller">
-                                            Level 1 Seller
-                                        </span>
-                                    </span>
-                                </div>
-                                <h3>
-                                    Contrary to popular belief, Lorem Ipsum is not simply...
-                                </h3>
-                                <div class="content-info">
-                                    <div class="rating-wrapper">
-                                        <span class="gig-rating text-body-2">
-                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1792 1792"
-                                                width="15" height="15">
-                                                <path fill="currentColor"
-                                                    d="M1728 647q0 22-26 48l-363 354 86 500q1 7 1 20 0 21-10.5 35.5t-30.5 14.5q-19 0-40-12l-449-236-449 236q-22 12-40 12-21 0-31.5-14.5t-10.5-35.5q0-6 2-20l86-500-364-354q-25-27-25-48 0-37 56-46l502-73 225-455q19-41 49-41t49 41l225 455 502 73q56 9 56 46z">
-                                                </path>
-                                            </svg>
-                                            5.0
-                                            <span>(7)</span>
-                                        </span>
-                                    </div>
-                                </div>
-                                <div class="footer">
-                                    <i class="fa fa-heart" aria-hidden="true"></i>
-                                    <div class="price">
-                                        <a href="#">
-                                            Starting At <span> $1,205</span>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <a href="product-detail.html">
-                            <img class="img-fluid" src="images/list/v5.png" />
-                        </a>
-                        <div class="inner-slider">
-                            <div class="inner-wrapper">
-                                <div class="d-flex align-items-center">
-                                    <span class="seller-image">
-                                        <img class="img-fluid" src="images/user/s1.png" alt='' />
-                                    </span>
-                                    <span class="seller-name">
-                                        <a href="#">Stave Martin</a>
-                                        <span class="level hint--top level-one-seller">
-                                            Level 1 Seller
-                                        </span>
-                                    </span>
-                                </div>
-                                <h3>
-                                    Contrary to popular belief, Lorem Ipsum is not simply...
-                                </h3>
-                                <div class="content-info">
-                                    <div class="rating-wrapper">
-                                        <span class="gig-rating text-body-2">
-                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1792 1792"
-                                                width="15" height="15">
-                                                <path fill="currentColor"
-                                                    d="M1728 647q0 22-26 48l-363 354 86 500q1 7 1 20 0 21-10.5 35.5t-30.5 14.5q-19 0-40-12l-449-236-449 236q-22 12-40 12-21 0-31.5-14.5t-10.5-35.5q0-6 2-20l86-500-364-354q-25-27-25-48 0-37 56-46l502-73 225-455q19-41 49-41t49 41l225 455 502 73q56 9 56 46z">
-                                                </path>
-                                            </svg>
-                                            5.0
-                                            <span>(7)</span>
-                                        </span>
-                                    </div>
-                                </div>
-                                <div class="footer">
-                                    <i class="fa fa-heart" aria-hidden="true"></i>
-                                    <div class="price">
-                                        <a href="#">
-                                            Starting At <span> $1,205</span>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <a href="product-detail.html">
-                            <img class="img-fluid" src="images/list/v1.png" />
-                        </a>
-                        <div class="inner-slider">
-                            <div class="inner-wrapper">
-                                <div class="d-flex align-items-center">
-                                    <span class="seller-image">
-                                        <img class="img-fluid" src="images/user/s3.png" alt='' />
                                     </span>
                                     <span class="seller-name">
                                         <a href="#">Stave Martin</a>
@@ -752,6 +245,144 @@
                     </li>
                 </ul>
             </nav>
+        </div>
+    </div>
+    <div id="modal" class="modal-form">
+        <div class="modal-form-content">
+            <button class="btn btn-danger close-modal" id="closeModal"><i class="fa-solid fa-times fa-2x"></i>
+            </button>
+            <div class="box-title border-bottom p-3">
+                <h3 class="m-0">Edit Project</h3>
+            </div>
+            <div class="box-body px-3 pt-3 pb-0">
+                <div class="row">
+                    <div class="col-sm-6 mb-4">
+                        <label id="FROM" class="form-label">Name</label>
+                        <!-- Input -->
+                            <input type="text" class="form-control" placeholder="From" aria-label="FROM" aria-describedby="FROM">
+                        <!-- End Input -->
+                    </div>
+                    <div class="col-sm-6 mb-4">
+                        <label id="TO" class="form-label">Category</label>
+                        <!-- Input -->
+                        <div class="row">
+                            <!-- Input -->
+                            <div class="mb-3 mb-sm-6" style="width:94%; margin-left:15px;">
+                               <div class="js-form-message">
+                                  <div class="form-group">
+                                     <select class="form-control custom-select" required="" data-msg="Please select month." data-error-class="u-has-error" data-success-class="u-has-success">
+                                        <option value="">Select month</option>
+                                        <option value="birthMonthSelect1">January</option>
+                                        <option value="birthMonthSelect2">February</option>
+                                        <option value="birthMonthSelect3">March</option>
+                                        <option value="birthMonthSelect4" selected="selected">April</option>
+                                        <option value="birthMonthSelect5">May</option>
+                                        <option value="birthMonthSelect6">June</option>
+                                        <option value="birthMonthSelect7">July</option>
+                                        <option value="birthMonthSelect8">August</option>
+                                        <option value="birthMonthSelect9">September</option>
+                                        <option value="birthMonthSelect10">October</option>
+                                        <option value="birthMonthSelect11">November</option>
+                                        <option value="birthMonthSelect12">December</option>
+                                     </select>
+                                  </div>
+                               </div>
+                            </div>
+                        </div>
+                        <!-- End Input -->
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6 mb-4">
+                        <label id="companyLabel" class="form-label">Description</label>
+                        <!-- Input -->
+                        <div class="input-group">
+                            <textarea class="form-control" rows="4" name="text" placeholder="Enter Bio"> </textarea>
+                        </div>
+                        <!-- End Input -->
+                    </div>
+                    <div class="col-sm-6 mb-4">
+                        <label id="positionLabel" class="form-label">Budget</label>
+                        <!-- Input -->
+                        <div class="input-group">
+                            <input type="number" class="form-control" placeholder="Enter your position" aria-label="Enter your position" aria-describedby="positionLabel">
+                        </div>
+                        <!-- End Input -->
+                    </div>
+                </div>
+            </div>
+            <button class="btn btn-secondary">Cencel</button>
+            <button class="btn btn-success">Submit</button>
+        </div>
+    </div>
+
+    <div id="editmodal" class="modal-form">
+        <div class="modal-form-content">
+            <button class="btn btn-danger close-modal" id="closeEditModal">
+                <i class="fa-solid fa-times fa-2x"></i>
+            </button>
+            <div class="box-title border-bottom p-3">
+                <h3 class="m-0">Edit Project</h3>
+            </div>
+            <div class="box-body px-3 pt-3 pb-0">
+                <div class="row">
+                    <div class="col-sm-6 mb-4">
+                        <label id="FROM" class="form-label">Name</label>
+                        <!-- Input -->
+                            <input type="text" class="form-control" placeholder="From" aria-label="FROM" aria-describedby="FROM">
+                        <!-- End Input -->
+                    </div>
+                    <div class="col-sm-6 mb-4">
+                        <label id="TO" class="form-label">Category</label>
+                        <!-- Input -->
+                        <div class="row">
+                            <!-- Input -->
+                            <div class="mb-3 mb-sm-6" style="width:94%; margin-left:15px;">
+                               <div class="js-form-message">
+                                  <div class="form-group">
+                                     <select class="form-control custom-select" required="" data-msg="Please select month." data-error-class="u-has-error" data-success-class="u-has-success">
+                                        <option value="">Select month</option>
+                                        <option value="birthMonthSelect1">January</option>
+                                        <option value="birthMonthSelect2">February</option>
+                                        <option value="birthMonthSelect3">March</option>
+                                        <option value="birthMonthSelect4" selected="selected">April</option>
+                                        <option value="birthMonthSelect5">May</option>
+                                        <option value="birthMonthSelect6">June</option>
+                                        <option value="birthMonthSelect7">July</option>
+                                        <option value="birthMonthSelect8">August</option>
+                                        <option value="birthMonthSelect9">September</option>
+                                        <option value="birthMonthSelect10">October</option>
+                                        <option value="birthMonthSelect11">November</option>
+                                        <option value="birthMonthSelect12">December</option>
+                                     </select>
+                                  </div>
+                               </div>
+                            </div>
+                        </div>
+                        <!-- End Input -->
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6 mb-4">
+                        <label id="companyLabel" class="form-label">Description</label>
+                        <!-- Input -->
+                        <div class="input-group">
+                            <textarea class="form-control" rows="4" name="text" placeholder="Enter Bio"> </textarea>
+                        </div>
+                        <!-- End Input -->
+                    </div>
+                    <div class="col-sm-6 mb-4">
+                        <label id="positionLabel" class="form-label">Budget</label>
+                        <!-- Input -->
+                        <div class="input-group">
+                            <input type="number" class="form-control" placeholder="Enter your position" aria-label="Enter your position" aria-describedby="positionLabel">
+                        </div>
+                        <!-- End Input -->
+                    </div>
+                </div>
+            </div>
+            <button class="btn btn-secondary">Cancel</button>
+            <button class="btn btn-success">Submit</button>
         </div>
     </div>
 @endsection

@@ -57,6 +57,8 @@
         integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ=="
         data-cf-beacon='{"rayId":"8dd144230c40ce22","version":"2024.10.4","r":1,"serverTiming":{"name":{"cfExtPri":true,"cfL4":true,"cfSpeedBrain":true,"cfCacheStatus":true}},"token":"dd471ab1978346bbb991feaa79e6ce5c","b":1}'
         crossorigin="anonymous"></script>
+
+    {{-- script side bar --}}
     <script>
         const sidebar = document.getElementById('sidebar');
         const footer = document.getElementById('footer');
@@ -77,6 +79,8 @@
 
         window.addEventListener('scroll', handleSidebarPosition);
     </script>
+
+    {{-- script chart bar --}}
     <script>
         const ctx = document.getElementById('myChart');
 
@@ -109,6 +113,7 @@
             }
         });
     </script>
+    {{-- script chart doughnut --}}
 <script>
     const ctx1 = document.getElementById('myChart1');
 
@@ -152,6 +157,65 @@
             }
         }
     });
+</script>
+
+{{-- script modal --}}
+
+<script>
+    // First modal code (e.g., "modal")
+    const modal = document.getElementById('modal');
+    const openModalButton1 = document.getElementById('openModal');
+    const closeModalButton1 = document.getElementById('closeModal');
+    
+    // Open modal
+    openModalButton1.addEventListener('click', () => {
+        modal.style.display = 'flex';
+    });
+    
+    // Close modal
+    closeModalButton1.addEventListener('click', () => {
+        modal.style.display = 'none';
+    });
+    
+    // Close modal when clicking outside of it
+    window.addEventListener('click', (event) => {
+        if (event.target === modal) {
+            modal.style.display = 'none';
+        }
+    });
+    </script>
+    
+    <script>
+    // Second modal code (e.g., "editmodal")
+    const editmodal = document.getElementById('editmodal');
+    const openModalButton2 = document.getElementById('openEditModal');
+    const closeModalButton2 = document.getElementById('closeEditModal');
+    
+    // Open modal
+    openModalButton2.addEventListener('click', () => {
+        editmodal.style.display = 'flex';
+    });
+    
+    // Close modal
+    closeModalButton2.addEventListener('click', () => {
+        editmodal.style.display = 'none';
+    });
+    
+    // Close modal when clicking outside of it
+    window.addEventListener('click', (event) => {
+        if (event.target === editmodal) {
+            editmodal.style.display = 'none';
+        }
+    });
+    </script>
+    
+
+{{-- menu --}}
+
+<script>
+    function toggleMenu() {
+    document.querySelector('.menu').classList.toggle('active');
+}
 </script>
 
 
