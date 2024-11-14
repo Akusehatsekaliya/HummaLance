@@ -9791,10 +9791,11 @@ a.text-dark:hover {
 
 .nav-link1 {
     position: relative;
-    font-weight: 600; /* Menambahkan ketebalan font */
+    font-weight: 500; /* Menambahkan ketebalan font */
     color: #333; /* Menentukan warna teks */
     text-decoration: none; /* Menghilangkan garis bawah default */
     transition: color 0.3s ease; /* Menambahkan transisi warna teks */
+    font-family: "Roboto", sans-serif;
 }
 
 .nav-link1:after {
@@ -9831,5 +9832,5 @@ a.text-dark:hover {
     flex-wrap: nowrap; /* Mencegah elemen turun ke baris berikutnya */
     white-space: nowrap; /* Membuat teks tetap satu baris */
     -webkit-overflow-scrolling: touch;
-    margin-left: 100px;
+    margin-left: 25px;
 }

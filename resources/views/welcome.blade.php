@@ -13,9 +13,9 @@
 @section('content')
     {{-- banner --}}
     @include('home.banner.index')
-    {{-- post_user --}}
+    {{-- Freelancer service --}}
     @include('home.post_user.index')
-    {{-- jobs --}}
+    {{-- Jobs you can apply for --}}
     @include('home.jobs_user.index')
     {{-- ordered --}}
     @include('home.ordered.index')
