@@ -3,36 +3,6 @@
         <!-- Sidebar Toggle (Topbar) -->
         <a class="navbar-brand" href="#"><img src="{{ asset('icon.png') }}" alt=""></a>
         <!-- Topbar Search -->
-        <style>
-            .navbar-search {
-                margin-bottom: -0.25rem;
-            }
-
-            .navbar-search input {
-                width: 50vh;
-            }
-
-            .navbar-search {
-                max-width: 350px !important;
-                width: 100% !important;
-            }
-
-            .navbar-nav {
-                margin-left: 24px;
-            }
-
-            .nav-item {
-                margin-right: 50px; /* Tambahkan jarak sesuai keinginan Anda */
-            }
-            .navbar-nav {
-                margin-right: 50px;
-            }
-
-            .navbar-nav {
-                margin-top: 5px;
-            }
-
-        </style>
         <form class="d-none d-sm-inline-block form-inline mr-auto mw-100 navbar-search">
             <div class="input-group">
                 <input type="text" class="form-control bg-white small" placeholder="Find Services..."
@@ -48,23 +18,20 @@
         @auth
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav">
-                    <li class="nav-item">
+                    <li class="nav-item1 active">
                         <a class="nav-link" href="#">Home</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Work</a>
+                    <li class="nav-item1">
+                        <a class="nav-link" href="/aboutUs">Work</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item1">
                         <a class="nav-link" href="#">Service</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Freelancer</a>
-                    </li>
-                    <li class="nav-item">
+                    <li class="nav-item1">
                         <a class="nav-link" href="#">Community</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">About Us</a>
+                    <li class="nav-item1">
+                        <a class="nav-link" href="#">Become a Freelancer</a>
                     </li>
                 </ul>
             </div>
