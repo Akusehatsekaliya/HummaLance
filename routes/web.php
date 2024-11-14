@@ -1,6 +1,7 @@
 <?php
 
 use App\Models\User;
+use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Route;
 
 
@@ -8,7 +9,7 @@ Route::get('/landing', function () {
     return view('landing');
 })->name('landing1');
 Route::get('/debug', function () {
-    return view('debug.landing');
+    return view('debug2');
 })->name('debug');
 Route::get('/debug2', function () {
     // User::factory(1000)->withRole('client')->create();
@@ -22,7 +23,7 @@ Route::get('/debug2', function () {
     // });
 
     // return $json_response->toJson();
-    return response()->streamJson(User::cursor());
+    return Response::streamJson(User::cursor());
 })->name('debug2');
 
 #verification
