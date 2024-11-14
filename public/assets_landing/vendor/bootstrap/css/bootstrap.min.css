@@ -3995,6 +3995,20 @@ input[type="submit"].btn-block {
     pointer-events: none;
     cursor: default;
 }
+
+.nav-link1 {
+    display: block;
+    padding: 0.5rem 1rem;
+}
+.nav-link1:focus,
+.nav-link1:hover {
+    text-decoration: none;
+}
+.nav-link1.disabled {
+    color: #6c757d;
+    pointer-events: none;
+    cursor: default;
+}
 .nav-tabs {
     border-bottom: 1px solid #dee2e6;
 }
@@ -4021,6 +4035,21 @@ input[type="submit"].btn-block {
     background-color: #fff;
     border-color: #dee2e6 #dee2e6 #fff;
 }
+.nav-tabs .nav-link1:focus,
+.nav-tabs .nav-link1:hover {
+    border-color: #e9ecef #e9ecef #dee2e6;
+}
+.nav-tabs .nav-link1.disabled {
+    color: #6c757d;
+    background-color: transparent;
+    border-color: transparent;
+}
+.nav-tabs .nav-item.show .nav-link1,
+.nav-tabs .nav-link1.active {
+    color: #495057;
+    background-color: #fff;
+    border-color: #dee2e6 #dee2e6 #fff;
+}
 .nav-tabs .dropdown-menu {
     margin-top: -1px;
     border-top-left-radius: 0;
@@ -4031,6 +4060,14 @@ input[type="submit"].btn-block {
 }
 .nav-pills .nav-link.active,
 .nav-pills .show > .nav-link {
+    color: #fff;
+    background-color: #007bff;
+}
+.nav-pills .nav-link1 {
+    border-radius: 0.25rem;
+}
+.nav-pills .nav-link1.active,
+.nav-pills .show > .nav-link1 {
     color: #fff;
     background-color: #007bff;
 }
@@ -4105,6 +4142,10 @@ input[type="submit"].btn-block {
     padding-right: 0;
     padding-left: 0;
 }
+.navbar-nav .nav-link1 {
+    padding-right: 0;
+    padding-left: 0;
+}
 .navbar-nav .dropdown-menu {
     position: static;
     float: none;
@@ -4172,6 +4213,10 @@ input[type="submit"].btn-block {
         padding-right: 0.5rem;
         padding-left: 0.5rem;
     }
+    .navbar-expand-sm .navbar-nav .nav-link1 {
+        padding-right: 0.5rem;
+        padding-left: 0.5rem;
+    }
     .navbar-expand-sm > .container,
     .navbar-expand-sm > .container-fluid,
     .navbar-expand-sm > .container-lg,
@@ -4217,6 +4262,10 @@ input[type="submit"].btn-block {
         position: absolute;
     }
     .navbar-expand-md .navbar-nav .nav-link {
+        padding-right: 0.5rem;
+        padding-left: 0.5rem;
+    }
+    .navbar-expand-md .navbar-nav .nav-link1 {
         padding-right: 0.5rem;
         padding-left: 0.5rem;
     }
@@ -4268,6 +4317,10 @@ input[type="submit"].btn-block {
         padding-right: 0.5rem;
         padding-left: 0.5rem;
     }
+    .navbar-expand-lg .navbar-nav .nav-link1 {
+        padding-right: 0.5rem;
+        padding-left: 0.5rem;
+    }
     .navbar-expand-lg > .container,
     .navbar-expand-lg > .container-fluid,
     .navbar-expand-lg > .container-lg,
@@ -4316,6 +4369,10 @@ input[type="submit"].btn-block {
         padding-right: 0.5rem;
         padding-left: 0.5rem;
     }
+    .navbar-expand-xl .navbar-nav .nav-link1 {
+        padding-right: 0.5rem;
+        padding-left: 0.5rem;
+    }
     .navbar-expand-xl > .container,
     .navbar-expand-xl > .container-fluid,
     .navbar-expand-xl > .container-lg,
@@ -4361,6 +4418,10 @@ input[type="submit"].btn-block {
     padding-right: 0.5rem;
     padding-left: 0.5rem;
 }
+.navbar-expand .navbar-nav .nav-link1 {
+    padding-right: 0.5rem;
+    padding-left: 0.5rem;
+}
 .navbar-expand > .container,
 .navbar-expand > .container-fluid,
 .navbar-expand > .container-lg,
@@ -4402,6 +4463,19 @@ input[type="submit"].btn-block {
 .navbar-light .navbar-nav .show > .nav-link {
     color: #01ABFE;
 }
+.navbar-light .navbar-nav .nav-link1 {
+    color: rgb(73, 67, 67);
+}
+
+.navbar-light .navbar-nav .nav-link1.disabled {
+    color: rgba(0, 0, 0, 0.3);
+}
+.navbar-light .navbar-nav .active > .nav-link1,
+.navbar-light .navbar-nav .nav-link1.active,
+.navbar-light .navbar-nav .nav-link1.show,
+.navbar-light .navbar-nav .show > .nav-link1 {
+    color: #01ABFE;
+}
 .navbar-light .navbar-toggler {
     color: rgba(0, 0, 0, 0.5);
     border-color: rgba(0, 0, 0, 0.1);
@@ -4440,6 +4514,22 @@ input[type="submit"].btn-block {
 .navbar-dark .navbar-nav .nav-link.active,
 .navbar-dark .navbar-nav .nav-link.show,
 .navbar-dark .navbar-nav .show > .nav-link {
+    color: #fff;
+}
+.navbar-dark .navbar-nav .nav-link1 {
+    color: rgba(255, 255, 255, 0.5);
+}
+.navbar-dark .navbar-nav .nav-link1:focus,
+.navbar-dark .navbar-nav .nav-link1:hover {
+    color: rgba(255, 255, 255, 0.75);
+}
+.navbar-dark .navbar-nav .nav-link1.disabled {
+    color: rgba(255, 255, 255, 0.25);
+}
+.navbar-dark .navbar-nav .active > .nav-link1,
+.navbar-dark .navbar-nav .nav-link1.active,
+.navbar-dark .navbar-nav .nav-link1.show,
+.navbar-dark .navbar-nav .show > .nav-link1 {
     color: #fff;
 }
 .navbar-dark .navbar-toggler {
@@ -9568,5 +9658,42 @@ a.text-dark:hover {
 
 .active-nav {
     color: #01ABFE;
+}
+
+.nav-link1 {
+    position: relative;
+    font-weight: 600; /* Menambahkan ketebalan font */
+    color: #333; /* Menentukan warna teks */
+    text-decoration: none; /* Menghilangkan garis bawah default */
+    transition: color 0.3s ease; /* Menambahkan transisi warna teks */
+}
+
+.nav-link1:after {
+    content: '';
+    position: absolute;
+    left: 50%; /* Menempatkan garis mulai dari tengah */
+    bottom: 2px; /* Menyesuaikan posisi garis lebih ke atas */
+    width: 0; /* Mulai dengan lebar 0 */
+    height: 3px; /* Menentukan ketebalan garis */
+    transform: translateX(-50%); /* Menggeser garis ke kiri agar tepat di tengah */
+    border-radius: 50px; /* Membuat garis berbentuk oval */
+}
+
+.nav-link1:hover:after {
+    width: 95%; /* Garis bawah akan mengisi hampir seluruh lebar item */
+    left: 50%; /* Tetap mulai dari tengah */
+}
+
+.nav-item.active .nav-link1:after {
+    width: 100%; /* Garis tetap ada setelah item diklik */
+    left: 45%; /* Tetap mulai dari tengah */
+}
+
+.nav-item.active .nav-link1 {
+    color: #01ABFE; /* Warna biru untuk item aktif */
+}
+
+.nav-link1:hover {
+    color: #01ABFE; /* Ubah warna teks saat hover */
 }
 
