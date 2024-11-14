@@ -58,7 +58,7 @@ class BannerController extends Controller
         $this->banner->store($data);
 
         flash()->success('Data berhasil Diperbarui.');
-        return to_route('banner.index');
+        return redirect()->back();
     }
 
     /**
@@ -88,7 +88,7 @@ class BannerController extends Controller
         $this->banner->update($banner->id, $data);
 
         flash()->success('Data berhasil Diperbarui.');
-        return to_route('banner.index');
+        return redirect()->back();
     }
 
     /**

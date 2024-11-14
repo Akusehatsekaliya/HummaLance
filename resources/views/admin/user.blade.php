@@ -71,7 +71,7 @@
         processing: true,
         serverSide: true,
         ajax: {
-          url: "{{ route('admin.user.data') }}",
+          url: "#",
           data: function(d) {
             d.role = $('#roleFilter').val();
           }

@@ -46,7 +46,7 @@
         processing: true,
         serverSide: true,
         ajax: {
-          url: '{{ route('admin.contract.data') }}',
+          url: '#',
           type: 'GET',
           data: function(d) {
             d.status = $('#roleFilter').val();

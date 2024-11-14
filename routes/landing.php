@@ -6,7 +6,7 @@ use App\Http\Controllers\NotificationController;
 
 Route::get('/', [LandingpageController::class, 'index'])->name('landing');
 Route::get('/aboutUs', [LandingpageController::class, 'aboutUs'])->name('about');
-Route::get('/contact', [LandingpageController::class, 'contact']);
+Route::get('/contact', [LandingpageController::class, 'contact'])->name('contact');
 Route::get('/jobs', [LandingpageController::class, 'jobs']);
 Route::get('/profile', [LandingpageController::class, 'profile']);
 Route::get('/chat', [LandingpageController::class, 'chat']);

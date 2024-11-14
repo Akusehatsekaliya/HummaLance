@@ -13,8 +13,11 @@ class UserController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
+        if ($request->ajax() || $request->wantsJson()) {
+            return $this->getData($request);
+        }
         return view('admin.user');
     }
 

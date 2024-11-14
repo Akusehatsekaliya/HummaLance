@@ -226,7 +226,7 @@
           },
         }
       },
-      ajax: "{{ route('admin.banner.index') }}",
+      ajax: "#",
       columns: [{
           data: 'DT_RowIndex',
           orderable: false,
