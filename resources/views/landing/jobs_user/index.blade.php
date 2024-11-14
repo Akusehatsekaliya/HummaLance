@@ -18,7 +18,8 @@
                     </ul>
                     <br>
                     <br>
-                    <div class="freelancer1" onclick="navigateWithAnimation(this, '/detailCompany')">
+                    {{-- <div class="freelancer1" onclick="navigateWithAnimation(this, '/detailCompany')"> --}}
+                    <div class="freelancer1">
                         <div class="inner-slider">
                             <div class="inner-wrapper">
                                 <div class="d-flex align-items-center">
@@ -83,10 +84,10 @@
                                     <p class="badge2" style="font-size: 12px">
                                         Adobe Ilustrator
                                     </p>
-                                    <p class="badge2" style="font-size: 12px">
+                                    <button class="badge2" style="font-size: 12px; border: 1px solid transparent; ">
                                         Show More
                                         <i class="fas fa-chevron-right" style="margin-left: 8px;"></i>
-                                    </p>
+                                    </button>
                                 </div>
                                 <a
                                     style="display: inline-block; margin-bottom: 10px; margin-top: 15px; margin-left: 20px; font-weight: bold; font-size: 13px;">
@@ -151,7 +152,8 @@
                     </ul>
                     <br>
                     <br>
-                    <div class="freelancer1" onclick="navigateWithAnimation(this, '/detailCompany')">
+                    {{-- <div class="freelancer1" onclick="navigateWithAnimation(this, '/detailCompany')"> --}}
+                    <div class="freelancer1">
                         <div class="inner-slider">
                             <div class="inner-wrapper">
                                 <div class="d-flex align-items-center">
@@ -208,10 +210,10 @@
                                     <p class="badge2" style="font-size: 12px">
                                         Adobe Ilustrator
                                     </p>
-                                    <p class="badge2" style="font-size: 12px">
+                                    <button class="badge2" style="font-size: 12px; border: 1px solid transparent; ">
                                         Show More
                                         <i class="fas fa-chevron-right" style="margin-left: 8px;"></i>
-                                    </p>
+                                    </button>
                                 </div>
                                 <a
                                     style="display: inline-block; margin-bottom: 10px; margin-top: 15px; margin-left: 20px; font-weight: bold; font-size: 13px;">
