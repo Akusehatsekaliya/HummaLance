@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin</title>
@@ -11,32 +11,32 @@
     @yield('style')
 
     @include('include.style')
-</head>
+  </head>
 
-<body>
+  <body>
     <div id="app">
 
-        @include('include.sidebar')
-        @include('include.navbar')
+      @include('include.sidebar')
+      @include('include.navbar')
 
-        <div id="main">
-            <header class="mb-3">
+      <div id="main">
+        {{-- <header class="mb-3">
                 <a href="#" class="burger-btn d-block d-xl-none">
                     <i class="bi bi-justify fs-3"></i>
                 </a>
-            </header>
+            </header> --}}
 
-            {{-- <div class="page-heading">
+        {{-- <div class="page-heading">
                 <h3></h3>
             </div> --}}
-            @yield('content')
+        @yield('content')
 
-            @include('include.footer')
-        </div>
+        @include('include.footer')
+      </div>
     </div>
 
     @include('include.script')
     @yield('script')
-</body>
+  </body>
 
 </html>
