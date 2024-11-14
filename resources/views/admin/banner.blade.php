@@ -7,11 +7,6 @@
   <div class="page-content">
     <section class="section">
       <div class="card">
-        {{-- <div class="card-header">
-          <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#tambahModal">
-            Add Banner
-          </button>
-        </div> --}}
         <div class="card-body">
           <div class="table-responsive">
             <table class="table yajra-datatable" id="banner">
@@ -25,19 +20,6 @@
                 </tr>
               </thead>
               <tbody>
-                {{-- @foreach ($banner as $item)
-                  <tr>
-                    <td class="text-bold-500">{{ $item->id }}</td>
-                    <td class="text-bold-500"><img src="{{ asset('storage/' . $item->picture) }}" alt=""
-                        width="200px"></td>
-                    <td class="text-bold-500">{{ $item->title }}</td>
-                    <td class="text-bold-500">{{ $item->subtitle }}</td>
-                    <td>
-                      <a href="#" class="text-warning"><i class="bi bi-pen-fill"></i></a>
-                      <button type="button" class="btn text-danger"><i class="bi bi-trash3-fill"></i></button>
-                    </td>
-                  </tr>
-                  @endforeach --}}
               </tbody>
             </table>
           </div>
@@ -57,7 +39,7 @@
             <i data-feather="x"></i>
           </button>
         </div>
-        <form action="{{ route('banner.store') }}" method="POST" enctype="multipart/form-data">
+        <form action="{{ route('admin.banner.store') }}" method="POST" enctype="multipart/form-data">
           @csrf
           <div class="modal-body">
             <label for="email">Image</label>
@@ -108,7 +90,7 @@
             <i data-feather="x"></i>
           </button>
         </div>
-        <form action="{{ route('banner.update', ':id:') }}" method="POST" enctype="multipart/form-data">
+        <form action="{{ route('admin.banner.update', ':id:') }}" method="POST" enctype="multipart/form-data">
           @csrf
           @method('PUT')
           <div class="modal-body">
@@ -150,24 +132,23 @@
   </div>
 
   {{-- delete --}}
-  <div id="deleteModal" class="modal fade">
-    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-sm" role="document">
+  <div id="deleteModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h4 class="modal-title">Hapus data</h4>
-          <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
-            <i data-feather="x"></i>
-          </button>
+          <h5 class="modal-title" id="deleteModalLabel">Delete Confirmation</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          <p>Data tidak dapat dikembalikan jika terhapus</p>
+          <p>Data cannot be recovered if deleted</p>
         </div>
         <div class="modal-footer">
-          <a href="javascript:void(0)" class="btn modal-close btn-flat" data-bs-dismiss="modal">Batal</a>
-          <form action="{{ route('banner.destroy', ':id:') }}" method="POST" class="d-inline">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+          <form action="{{ route('admin.banner.destroy', ':id:') }}" method="POST" class="d-inline">
             @csrf
             @method('DELETE')
-            <button type="submit" class="btn modal-close btn-flat">Hapus</button>
+            <button type="submit" class="btn btn-danger">Delete</button>
           </form>
         </div>
       </div>
@@ -177,12 +158,48 @@
 
 @section('script')
   <script>
+    // const table = $('.yajra-datatable').DataTable({
+    //   columns: [{
+    //       data: 'DT_RowIndex',
+    //       orderable: false,
+    //       searchable: false,
+    //     },
+    //     {
+    //       data: 'picture',
+    //       name: 'picture',
+    //       orderable: false,
+    //       searchable: false,
+    //       render: (data, type) =>
+    //         `<img src="{{ asset('storage/') }}/${data}" class="rounded-3" loading="lazy" height="96px">`
+    //     },
+    //     {
+    //       data: 'title',
+    //       name: 'title'
+    //     },
+    //     {
+    //       data: 'subtitle',
+    //       name: 'subtitle',
+    //     },
+    //     {
+    //       data: 'id',
+    //       orderable: false,
+    //       searchable: false,
+    //       render: (data, type) => {
+    //         const editButton =
+    //           `<button type="button" class="btn text-warning edit"><i class="bi bi-pen-fill"></i></button>`;
+    //         const deleteButton =
+    //           `<button type="button" class="btn text-danger delete"><i class="bi bi-trash3-fill"></i></button>`;
+    //         return editButton + deleteButton;
+    //       }
+    //     }
+    //   ]
+    // })
     const {
       table
     } = $('.yajra-datatable').AjaxDataTable({
       onCreate: {
         modal: $('#tambahModal'),
-        text: 'Tambah Data',
+        text: 'Add Data',
         className: 'btn btn-primary'
       },
       onEdit: {
@@ -200,8 +217,8 @@
             buttons: ["create"]
           },
           topEnd: $(`<div class="input-group">
-              <input class="form-control me-4" placeholder="Cari data&hellip;" id="searchInput" />
-            </div>`),
+          <input class="form-control me-4" placeholder="Cari data&hellip;" id="searchInput" />
+          </div>`),
           bottomStart: {
             info: {
               text: 'Menampilkan _START_ dari _END_ hasil'
@@ -209,7 +226,7 @@
           },
         }
       },
-      ajax: "{{ route('banner.index') }}",
+      ajax: "#",
       columns: [{
           data: 'DT_RowIndex',
           orderable: false,

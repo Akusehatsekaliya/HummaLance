@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\User;
 use Illuminate\Support\Facades\Route;
 
 
@@ -10,7 +11,18 @@ Route::get('/debug', function () {
     return view('debug.landing');
 })->name('debug');
 Route::get('/debug2', function () {
-    return '<script>window.localStorage.setItem("mytime", Date.now());</script>';
+    // User::factory(1000)->withRole('client')->create();
+    // $json_response = collect();
+
+    // User::orderBy('id')->chunk(100, function ($users) use ($json_response) {
+    //     foreach ($users as $user) {
+    //         $json_response->push($user);
+    //         sleep(1);
+    //     }
+    // });
+
+    // return $json_response->toJson();
+    return response()->streamJson(User::cursor());
 })->name('debug2');
 
 #verification

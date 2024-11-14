@@ -13,8 +13,11 @@ class UserController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
+        if ($request->ajax() || $request->wantsJson()) {
+            return $this->getData($request);
+        }
         return view('admin.user');
     }
 
@@ -31,7 +34,7 @@ class UserController extends Controller
         return DataTables::of($users)
             ->addIndexColumn()
             ->addColumn('action', function ($user) {
-                return '<button class="btn text-danger"><i class="bi bi-trash3-fill"></i></button>';
+                return '<button class="btn text-danger" data-bs-toggle="modal" data-bs-target="#deleteModal" data-id="1"><i class="bi bi-trash3-fill"></i></button>';
             })
             ->addColumn('role', fn($user) => $user->getUserRoleInstance()->value)
             ->filterColumn('name', function ($query, $keyword) {
@@ -89,6 +92,14 @@ class UserController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        try {
+            $user = User::findOrFail($id);
+
+            $user->delete();
+
+            return redirect()->route('user.index')->with('success', 'Banner deleted successfully.');
+        } catch (\Exception $e) {
+            return redirect()->route('user.index')->with('error', 'Failed to delete users.');
+        }
     }
 }

@@ -549,7 +549,7 @@ pre code {
     .container-md,
     .container-sm,
     .container-xl {
-        max-width: 1140px;
+        max-width: 1300px;
     }
 }
 .row {
@@ -9826,3 +9826,10 @@ a.text-dark:hover {
     color: #01ABFE; /* Ubah warna teks saat hover */
 }
 
+.navbar-nav1 {
+    display: flex;
+    flex-wrap: nowrap; /* Mencegah elemen turun ke baris berikutnya */
+    white-space: nowrap; /* Membuat teks tetap satu baris */
+    -webkit-overflow-scrolling: touch;
+    margin-left: 60px;
+}
