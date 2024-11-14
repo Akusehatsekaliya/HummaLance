@@ -34,21 +34,6 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                {{-- <tr>
-                                    <td class="text-bold-500">1</td>
-                                    <td class="text-bold-500">e-commerce</td>
-                                    <td class="text-bold-500">user</td>
-                                    <td class="text-bold-500">company</td>
-                                    <td class="text-bold-500" style="color: red">Rp1.000.000</td>
-                                    <td class="text-bold-500">7 November 2024</td>
-                                    <td class="text-bold-500">
-                                        <span class="badge bg-light-success">Complete</span>
-                                    </td>
-                                    <td>
-                                        <button type="button" class="btn text-warning" ><i class="bi bi-eye-fill"></i></button>
-                                    </td>
-                                </tr>
-
                                 <tr>
                                     <td class="text-bold-500">1</td>
                                     <td class="text-bold-500">e-commerce</td>
@@ -57,37 +42,7 @@
                                     <td class="text-bold-500" style="color: red">Rp1.000.000</td>
                                     <td class="text-bold-500">7 November 2024</td>
                                     <td class="text-bold-500">
-                                        <span class="badge bg-light-warning">Pending</span>
-                                    </td>
-                                    <td>
-                                        <button type="button" class="btn text-warning" ><i class="bi bi-eye-fill"></i></button>
-                                    </td>
-                                </tr>
-
-                                <tr>
-                                    <td class="text-bold-500">1</td>
-                                    <td class="text-bold-500">e-commerce</td>
-                                    <td class="text-bold-500">user</td>
-                                    <td class="text-bold-500">company</td>
-                                    <td class="text-bold-500" style="color: red">Rp1.000.000</td>
-                                    <td class="text-bold-500">7 November 2024</td>
-                                    <td class="text-bold-500">
-                                        <span class="badge bg-light-primary">Processed</span>
-                                    </td>
-                                    <td>
-                                        <button type="button" class="btn text-warning" ><i class="bi bi-eye-fill"></i></button>
-                                    </td>
-                                </tr> --}}
-
-                                <tr>
-                                    <td class="text-bold-500">1</td>
-                                    <td class="text-bold-500">e-commerce</td>
-                                    <td class="text-bold-500">user</td>
-                                    <td class="text-bold-500">company</td>
-                                    <td class="text-bold-500" style="color: red">Rp1.000.000</td>
-                                    <td class="text-bold-500">7 November 2024</td>
-                                    <td class="text-bold-500">
-                                        <span class="badge bg-light-danger">Failed</span>
+                                        <span class="text-danger badge bg-light-danger">Failed</span>
                                     </td>
                                     <td>
                                         <button type="button" class="btn text-warning" data-bs-toggle="modal"
@@ -102,34 +57,170 @@
         </section>
     </div>
 
-
     {{-- Modal detail --}}
     <div class="modal fade text-left" id="modalTransactions" tabindex="-1" role="dialog" aria-labelledby="myModalLabel33"
         aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
+        <div class="modal-dialog modal-lg modal-dialog-scrollable" role="document" style="margin-top: 20px;">
             <div class="modal-content">
-                <div class="modal-header">
-                    <h4 class="modal-title" id="myModalLabel33">Detail Transactions</h4>
-                    <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
-                        <i data-feather="x"></i>
+                <div class="modal-header" style="background: linear-gradient(90deg, #21BEE8, #00AAFF);x">
+                    <h4 class="modal-title" id="myModalLabel33" style="color: #ffffff;">Detail Transactions</h4>
+                    <button type="button" class="btn-close btn-close-white custom-close" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-4">
+                        <h5 class="text-primary border-bottom pb-2 mb-3">Transaction Information</h5>
+                        <div class="row">
+                            <div class="col-md-6 mb-2">
+                                <strong>Transaction ID:</strong>
+                                <p class="text-muted">1234567890</p>
+                            </div>
+                            <div class="col-md-6 mb-2">
+                                <strong>Project:</strong>
+                                <p class="text-muted">E-commerce Campaign</p>
+                            </div>
+                            <div class="col-md-6 mb-2">
+                                <strong>Influencer:</strong>
+                                <p class="text-muted">John Doe</p>
+                            </div>
+                            <div class="col-md-6 mb-2">
+                                <strong>Company:</strong>
+                                <p class="text-muted">Acme Inc.</p>
+                            </div>
+                            <div class="col-md-6 mb-2">
+                                <strong>Date:</strong>
+                                <p class="text-muted">7 November 2024</p>
+                            </div>
+                            <div class="col-md-6 mb-2">
+                                <strong>Amount:</strong>
+                                <p class="text-body fw-bold">Rp1.000.000</p>
+                            </div>
+                            <div class="col-md-12 mb-2">
+                                <strong>Status:</strong>
+                                <span class=" text-danger badge bg-light-danger">Failed</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mb-4">
+                        <h5 class="text-primary border-bottom pb-2 mb-3">Payment Information</h5>
+                        <div class="row">
+                            <div class="col-md-6 mb-2">
+                                <strong>Payment Method:</strong>
+                                <p class="text-muted">Credit Card</p>
+                            </div>
+                            <div class="col-md-6 mb-2">
+                                <strong>Card Number:</strong>
+                                <p class="text-muted">**** **** **** 1234</p>
+                            </div>
+                            <div class="col-md-12 mb-2">
+                                <strong>Payment Gateway:</strong>
+                                <p class="text-muted">Midtrans</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mb-4">
+                        <h5 class="text-primary border-bottom pb-2 mb-3">Project Information</h5>
+                        <div class="row">
+                            <div class="col-md-12 mb-2">
+                                <strong>Description:</strong>
+                                <p class="text-muted">This is an e-commerce marketing campaign focusing on increasing sales
+                                    and brand awareness using influencer marketing.</p>
+                            </div>
+                            <div class="col-md-6 mb-2">
+                                <strong>Duration:</strong>
+                                <p class="text-muted">1st Nov 2024 - 15th Nov 2024</p>
+                            </div>
+                            <div class="col-md-6 mb-2">
+                                <strong>Target Audience:</strong>
+                                <p class="text-muted">Age 18-25, Southeast Asia</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mb-4">
+                        <h5 class="text-primary border-bottom pb-2 mb-3">Influencer Information</h5>
+                        <div class="row">
+                            <div class="col-md-6 mb-2">
+                                <strong>Name:</strong>
+                                <p class="text-muted">John Doe</p>
+                            </div>
+                            <div class="col-md-6 mb-2">
+                                <strong>Followers:</strong>
+                                <p class="text-muted">150,000</p>
+                            </div>
+                            <div class="col-md-6 mb-2">
+                                <strong>Engagement Rate:</strong>
+                                <p class="text-muted">7.8%</p>
+                            </div>
+                            <div class="col-md-6 mb-2">
+                                <strong>Social Media Platform:</strong>
+                                <p class="text-muted">Instagram</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mb-4">
+                        <h5 class="text-primary border-bottom pb-2 mb-3">Additional Notes</h5>
+                        <p class="text-muted">Note any additional information about the transaction or specific comments
+                            from the influencer or the company involved.</p>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-light-secondary" data-bs-dismiss="modal">
+                        <span class="d-sm-block">Close</span>
+                    </button>
+                    <button type="button" class="btn btn-primary ms-1" id="printButton">
+                        <span class="d-sm-block">Print</span>
                     </button>
                 </div>
-                <form action="#">
-                    <div class="modal-body">
-                        <p>ini detail</p>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-light-secondary" data-bs-dismiss="modal">
-                            <i class="bx bx-x d-block d-sm-none"></i>
-                            <span class="d-none d-sm-block">Close</span>
-                        </button>
-                        <button type="button" class="btn btn-primary ms-1" data-bs-dismiss="modal">
-                            <i class="bx bx-check d-block d-sm-none"></i>
-                            <span class="d-none d-sm-block">Save</span>
-                        </button>
-                    </div>
-                </form>
             </div>
         </div>
     </div>
+@endsection
+@section('style')
+    <style>
+        @media print {
+
+            /* Hide everything except the modal content */
+            body * {
+                visibility: hidden !important;
+            }
+
+            /* Ensure the modal and its content are visible */
+            #modalTransactions,
+            #modalTransactions * {
+                visibility: visible !important;
+            }
+
+            /* Hide the Close button and the Print button */
+            .btn-light-secondary,
+            #printButton,
+            .modal-header,
+            .modal-footer {
+                display: none !important;
+            }
+
+            /* Adjust modal to fill the page during print */
+            #modalTransactions {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: auto;
+            }
+        }
+    </style>
+@endsection
+@section('script')
+    <script>
+        document.getElementById('printButton').addEventListener('click', function() {
+            const modal = document.getElementById('modalTransactions');
+
+            // Ensure modal visibility for print
+            if (modal) {
+                // Trigger the print dialog
+                window.print();
+            } else {
+                console.error('Modal content not found for printing');
+            }
+        });
+    </script>
 @endsection

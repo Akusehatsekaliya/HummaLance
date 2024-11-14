@@ -25,7 +25,7 @@ return new class extends Migration
             $table->string(column: 'ref');
             $table->enum('status', [
                 StatusPaymentEnum::PENDING->value,
-                StatusPaymentEnum::COMPLATE->value,
+                StatusPaymentEnum::COMPLETE->value,
             ])->default(StatusPaymentEnum::PENDING->value);
             $table->date('payment_date');
             $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
