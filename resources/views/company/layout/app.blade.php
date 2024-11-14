@@ -166,17 +166,17 @@
     const modal = document.getElementById('modal');
     const openModalButton1 = document.getElementById('openModal');
     const closeModalButton1 = document.getElementById('closeModal');
-    
+
     // Open modal
     openModalButton1.addEventListener('click', () => {
         modal.style.display = 'flex';
     });
-    
+
     // Close modal
     closeModalButton1.addEventListener('click', () => {
         modal.style.display = 'none';
     });
-    
+
     // Close modal when clicking outside of it
     window.addEventListener('click', (event) => {
         if (event.target === modal) {
@@ -184,23 +184,23 @@
         }
     });
     </script>
-    
+
     <script>
     // Second modal code (e.g., "editmodal")
     const editmodal = document.getElementById('editmodal');
     const openModalButton2 = document.getElementById('openEditModal');
     const closeModalButton2 = document.getElementById('closeEditModal');
-    
+
     // Open modal
     openModalButton2.addEventListener('click', () => {
         editmodal.style.display = 'flex';
     });
-    
+
     // Close modal
     closeModalButton2.addEventListener('click', () => {
         editmodal.style.display = 'none';
     });
-    
+
     // Close modal when clicking outside of it
     window.addEventListener('click', (event) => {
         if (event.target === editmodal) {
@@ -208,7 +208,7 @@
         }
     });
     </script>
-    
+
 
 {{-- menu --}}
 

@@ -34,7 +34,6 @@
     <link rel="stylesheet" href="{{ asset('assets_landing/css/test/style.css')}}" />
     <link href="{{ asset('assets_landing/css/test/index.css')}}" rel="stylesheet" />
 
-
     @yield('style')
     @stack('links')
   </head>
