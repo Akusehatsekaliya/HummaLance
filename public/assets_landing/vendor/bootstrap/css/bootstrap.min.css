@@ -3998,7 +3998,7 @@ input[type="submit"].btn-block {
 
 .nav-link1 {
     display: block;
-    padding: 0.5rem 1rem;
+    padding: 0.5rem 6px;
 }
 .nav-link1:focus,
 .nav-link1:hover {
@@ -9831,5 +9831,5 @@ a.text-dark:hover {
     flex-wrap: nowrap; /* Mencegah elemen turun ke baris berikutnya */
     white-space: nowrap; /* Membuat teks tetap satu baris */
     -webkit-overflow-scrolling: touch;
-    margin-left: 60px;
+    margin-left: 100px;
 }

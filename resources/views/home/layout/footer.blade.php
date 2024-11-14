@@ -76,14 +76,14 @@
         </div>
     </div>
     <div class="copyright" style="background-color: black;">
-        <div class="logo" style="margin-left: 13rem;">
+        <div class="logo" style="margin-left: 7rem;">
             <a href="index-2.html">
                 <img src="{{ asset('assets_landing/images/Asset 14.png') }}">
             </a>
         </div>
         <p>©Clocker International Ltd, 2024
         </p>
-        <ul class="social" style="margin-right: 13rem;">
+        <ul class="social" style="margin-right: 10rem;">
             <li>
                 <a href="#" aria-label="Facebook">
                     <svg xmlns="http://www.w3.org/2000/svg" width="1.65rem" height="2rem" viewBox="0 0 24 24" style="color: #ffffff;">
