@@ -19,7 +19,8 @@ $.fn.AjaxDataTable = function (config) {
     modal: createModal,
     text: createText,
     className: createClassName,
-    onSuccess: createSuccess
+    onSuccess: createSuccess,
+    createButton: createButton
   } = onCreate || {};
   const {
     modal: editModal,
@@ -39,7 +40,8 @@ $.fn.AjaxDataTable = function (config) {
   $.fn.dataTable.ext.buttons.create = {
     text: createText,
     className: `${createClassName} createButton`,
-    action: () => createModal?.modal("show"),
+    async: 100,
+    action: async () => createModal?.modal("show"),
   };
 
   const table = this.DataTable({

@@ -11,10 +11,12 @@
                 flex-wrap: nowrap; /* Mencegah elemen turun ke baris berikutnya */
                 white-space: nowrap; /* Membuat teks tetap satu baris */
                 -webkit-overflow-scrolling: touch;
+                margin-left: 5px;
             }
 
             .nav-item {
-                margin-right: -10px; /* Jarak antar item */
+                margin-right: 6px; /* Jarak antar item */
+
             }
 
             @media (max-width: 768px) {

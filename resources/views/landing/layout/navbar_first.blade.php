@@ -18,20 +18,20 @@
         @auth
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav">
-                    <li class="nav-item1 active">
-                        <a class="nav-link" href="#">Home</a>
+                    <li class="nav-item {{ request()->routeIs('landing') ? 'active' : '' }}">
+                        <a class="nav-link1" href="{{ route('landing') }}">Home</a>
                     </li>
-                    <li class="nav-item1">
-                        <a class="nav-link" href="/aboutUs">Work</a>
+                    <li class="nav-item {{ request()->routeIs('about') ? 'active' : '' }} }}">
+                        <a class="nav-link1" href="{{ route('about') }}">Work</a>
                     </li>
-                    <li class="nav-item1">
-                        <a class="nav-link" href="#">Service</a>
+                    <li class="nav-item ">
+                        <a class="nav-link1" href="#">Service</a>
                     </li>
-                    <li class="nav-item1">
-                        <a class="nav-link" href="#">Community</a>
+                    <li class="nav-item ">
+                        <a class="nav-link1" href="#">Community</a>
                     </li>
-                    <li class="nav-item1">
-                        <a class="nav-link" href="#">Become a Freelancer</a>
+                    <li class="nav-item ">
+                        <a class="nav-link1" href="#">Become a Freelancer</a>
                     </li>
                 </ul>
             </div>
@@ -149,24 +149,6 @@
                                 </div>
                             </a>
                         </div>
-                    </div>
-                </li>
-
-                {{-- favorite --}}
-                <li class="nav-item dropdown no-arrow no-caret mr-3 dropdown-notifications">
-                    <div class="icon">
-                        <a class="btn btn-icon btn-transparent-dark dropdown-toggle" id="navbarDropdownMessages"
-                            href="javascript:void(0);" role="button" data-toggle="dropdown" aria-haspopup="true"
-                            aria-expanded="false">
-                            <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="heart"
-                                class="svg-inline--fa fa-heart fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg"
-                                viewBox="0 0 512 512">
-                                <path fill="currentColor"
-                                    d="M462.3 62.7c-54.5-46.4-136-38.3-186.4 15.8L256 98.6l-19.9-20.1c-50.3-54.1-131.8-62.2-186.4-15.8C7.4 82.4-10.6 150.2 10.3 205.8c19.6 51.4 73.1 106.1 168.5 176.7L256 448l77.2-65.5c95.4-70.6 148.9-125.3 168.5-176.7 20.9-55.6 2.9-123.4-39.4-143.1z">
-                                </path>
-                            </svg>
-                            <div class="notification-badge">3</div>
-                        </a>
                     </div>
                 </li>
 

@@ -1,6 +1,6 @@
-<section class=" homepage-search-block bg-banner position-relative" style="z-index: -1;">
+<section class="py-5 homepage-search-block bg-banner position-relative" style="z-index: -1;">
     <div class="container">
-       <div class="row py-lg-5 justify-content-between align-items-center">
+       <div class="row justify-content-between align-items-center">
           <div class="col-lg-6">
              <div class="homepage-search-title">
 
