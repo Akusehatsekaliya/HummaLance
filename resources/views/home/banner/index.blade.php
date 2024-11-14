@@ -5,7 +5,7 @@
              <div class="homepage-search-title">
 
                 <h2 class="mb-3 text-shadow text-white font-weight-bold">Find your dream job, and turn your free time into a job.</h2>
-                <h6 class="mb-5 text-shadow text-white-50 font-weight-normal">Millions of people use clocker to make their dream jobs a reality.</h6>
+                <h6 class="mb-5 text-shadow text-white font-weight-normal">Millions of people use clocker to make their dream jobs a reality.</h6>
              </div>
              <div class="homepage-search-form">
                 <form class="form-noborder">
