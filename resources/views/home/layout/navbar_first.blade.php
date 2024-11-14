@@ -17,7 +17,7 @@
         <!-- Topbar Navbar -->
         @auth
             <div class="collapse navbar-collapse" id="navbarResponsive">
-                <ul class="navbar-nav">
+                <ul class="navbar-nav1">
                     <li class="nav-item {{ request()->routeIs('home') ? 'active' : '' }}">
                         <a class="nav-link1" href="{{ route('home') }}">Home</a>
                     </li>
