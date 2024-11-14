@@ -1,4 +1,4 @@
-@extends('landing.layout.app')
+@extends('home.layout.app')
 @section('content')
 
 <!-- Inner Header -->

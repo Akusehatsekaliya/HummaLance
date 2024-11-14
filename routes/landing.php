@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LandingPageController;
 use App\Http\Controllers\NotificationController;
 
-Route::get('/', [LandingpageController::class, 'index'])->name('landing');
+Route::get('/', [LandingpageController::class, 'index'])->name('home');
 Route::get('/aboutUs', [LandingpageController::class, 'aboutUs'])->name('about');
 Route::get('/contact', [LandingpageController::class, 'contact']);
 Route::get('/jobs', [LandingpageController::class, 'jobs']);

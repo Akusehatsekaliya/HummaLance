@@ -1,4 +1,4 @@
-@extends('landing.layout.app')
+@extends('home.layout.app')
 @section('content')
 <!-- 404 Page -->
 <section class="py-5 bg-white border-top border-bottom">

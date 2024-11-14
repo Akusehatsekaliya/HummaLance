@@ -16,42 +16,42 @@ class LandingPageController extends Controller
 
     public function aboutUs()
     {
-        return view('landing.about.index');
+        return view('home.about.index');
     }
 
     public function contact()
     {
-        return view('landing.contact.index');
+        return view('home.contact.index');
     }
 
     public function jobs()
     {
-        return view('landing.pages.jobs');
+        return view('home.pages.jobs');
     }
 
     public function profile()
     {
-        return view('landing.pages.profile');
+        return view('home.pages.profile');
     }
 
     public function chat()
     {
-        return view('landing.chat.index');
+        return view('home.chat.index');
     }
 
     public function detailCompany()
     {
-        return view('landing.jobs_user.detailCompany');
+        return view('home.jobs_user.detailCompany');
     }
 
     public function detail()
     {
-        return view('landing.post_user.detail');
+        return view('home.post_user.detail');
     }
 
     public function favorite()
     {
-        return view('landing.favorite.index');
+        return view('home.favorite.index');
     }
 
     /**

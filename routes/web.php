@@ -2,6 +2,10 @@
 
 use Illuminate\Support\Facades\Route;
 
+
+Route::get('/landing', function () {
+    return view('landing');
+})->name('landing1');
 Route::get('/debug', function () {
     return view('debug.landing');
 })->name('debug');

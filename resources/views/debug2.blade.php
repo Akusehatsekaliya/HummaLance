@@ -1,4 +1,4 @@
-@extends('landing.layout.app')
+@extends('home.layout.app')
 @section('content')
   <div class="main-page py-5">
     <div class="container">

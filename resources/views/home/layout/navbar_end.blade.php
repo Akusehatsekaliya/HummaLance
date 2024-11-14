@@ -30,7 +30,7 @@
                 <li class="nav-item active">
                     <a class="nav-link" href="#">Graphic & Design</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item ">
                     <a class="nav-link" href="/aboutUs">Programing & Tech</a>
                 </li>
                 <li class="nav-item">

@@ -39,98 +39,15 @@
   </head>
 
   <body>
-    @yield('login')
-    @if (!request()->routeIs(['register', 'login', 'onboard']))
-      {{-- navbar 1 --}}
-      @include('landing.layout.navbar_first')
-      {{-- navbar 2 --}}
-      @include('landing.layout.navbar_end')
-    @endif
-    {{-- banner --}}
-    {{-- @include('landing.banner.index') --}}
-    {{-- post_user --}}
-    {{-- @include('landing.post_user.index') --}}
-    {{-- jobs --}}
-    {{-- @include('landing.jobs_user.index') --}}
-    {{-- ordered --}}
-    {{-- @include('landing.ordered.index') --}}
-
+      @include('landing.layout.navbar')
+    
     @yield('content')
     @stack('contents')
 
-    {{-- <div class="testi-wrap pt-5">
-        <div class="container">
-            <div class="testimonial">
-                <div class="video-modal">
-                    <div class="picture-wrapper">
-                        <img src="images/1440-haerfest-2x.jpg">
-                    </div>
-                </div>
-                <div class="text-content">
-                    <p>"Being a small but growing brand, we have to definitely do a lot more with less. And when you
-                        want to create a business bigger than yourself, you’re going to need help. And that’s what Maer
-                        does"
-                    </p>
-                    <span>Tim and Dan Joo, Co-founders</span>
-                    <img alt="Company logo" src="images/haerfest-logo.png" loading="lazy">
-                </div>
-            </div>
-        </div>
-    </div> --}}
 
-    <!--       guides  -->
-    {{-- <div class="guide-wrapper py-5">
-        <div class="container">
-            <h2>
-                Maer
-                Guides
-                <a href="#" class="float-right">See More guides></a>
-            </h2>
-            <div class="row">
-                <div class="col-md-4">
-                    <a href="#" class="guide">
-                        <img src="{{ asset('landing_asests/images/guide-01.jpg') }}">
-                        <div class="content">
-                            <h6>Create a Website</h6>
-                            <p>Building a stunning website from A to Z</p>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-md-4">
-                    <a href="#" class="guide">
-                        <img src="{{ asset('landing_asests/images/guide-02.jpg') }}">
-                        <div class="content">
-                            <h6>Grow With Digital Marketing</h6>
-                            <p>Promoting your business online</p>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-md-4">
-                    <a href="#" class="guide">
-                        <img src="{{ asset('landing_assets/images/guide-03.jpg') }}">
-                        <div class="content">
-                            <h6>Build a Strong Brand</h6>
-                            <p>Differentiating yourself from the competition</p>
-                        </div>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div> --}}
 
-    @if (!request()->routeIs(['register', 'login', 'onboard']))
-      <!-- get started -->
-      {{-- <div>
-        <div class="get-started">
-          <div class="content">
-            <h2>Find Freelance Services For Your Business Today</h2>
-            <p>We've got you covered for all your business needs</p>
-            <a href="#" class="c-btn c-fill-color-btn">Get Started</a>
-          </div>
-        </div>
-      </div> --}}
 
-      {{-- footer --}}
+    @if (request()->routeIs(['register', 'login', 'onboard']))
       @include('landing.layout.footer')
     @endif
 

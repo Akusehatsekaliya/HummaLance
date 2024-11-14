@@ -49,7 +49,7 @@ class LoginController extends Controller
             return to_route('admin-dashboard.index');
         }
 
-        return to_route("landing");
+        return to_route("home");
     }
 
     public function redirectToGoogle()
@@ -97,6 +97,6 @@ class LoginController extends Controller
             return to_route('admin-dashboard.index');
         }
 
-        return to_route("landing");
+        return to_route("home");
     }
 }

@@ -28,7 +28,7 @@
 </head>
 
 <body>
-    @include('landing.layout.navbar_end')
+    @include('home.layout.navbar_end')
     <div class="" style="margin-top: -50px">
         @yield('content')
     </div>

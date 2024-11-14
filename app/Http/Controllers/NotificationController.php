@@ -12,7 +12,7 @@ class NotificationController extends Controller
      */
     public function index()
     {
-        return view('landing.notifications.index');
+        return view('home.notifications.index');
     }
 
     /**

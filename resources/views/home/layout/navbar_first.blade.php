@@ -18,8 +18,8 @@
         @auth
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav">
-                    <li class="nav-item {{ request()->routeIs('landing') ? 'active' : '' }}">
-                        <a class="nav-link1" href="{{ route('landing') }}">Home</a>
+                    <li class="nav-item {{ request()->routeIs('home') ? 'active' : '' }}">
+                        <a class="nav-link1" href="{{ route('home') }}">Home</a>
                     </li>
                     <li class="nav-item {{ request()->routeIs('about') ? 'active' : '' }} }}">
                         <a class="nav-link1" href="{{ route('about') }}">Work</a>

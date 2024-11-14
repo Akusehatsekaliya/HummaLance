@@ -90,6 +90,15 @@ a {
     background-color: #d3ac2b;
     border-color: #d3ac2b;
 }
+.btn-outline-landing {
+    color: #ffffff;
+    border-color: #ffffff;
+}
+.btn-outline-landing:hover {
+    color: #01ABFE;
+    background-color: #ffffff;
+    border-color: #ffffff;
+}
 .form-control,
 .btn,
 .custom-select {
@@ -174,6 +183,9 @@ a {
 }
 .bg-banner {
     background-color: #006a9e !important;
+}
+.bg-landing {
+    background-color: #01abfe !important;
 }
 .icon-form-control i {
     display: flex;
@@ -3742,7 +3754,7 @@ section.related-links ul li a:hover {
 .custom-nav-link1 {
     position: relative;
     text-decoration: none;
-    color: #01ABFE;
+    color: #ffffff;
     font-weight: bold;
     padding: 8px 12px;
 }
@@ -3757,7 +3769,7 @@ section.related-links ul li a:hover {
     /* Garis penuh di bawah teks */
     height: 3px;
     /* Ketebalan garis pertama */
-    background-color: #01ABFE;
+    background-color: #000000;
     /* Warna garis pertama */
     border-radius: 5px;
     /* Membuat pinggiran oval pada garis pertama */

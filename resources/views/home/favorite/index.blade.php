@@ -1,4 +1,4 @@
-@extends('landing.layout.app')
+@extends('home.layout.app')
 @section('content')
     <div class="main-page best-selling" data-select2-id="9">
         <div class="view_slider recommended pt-5" data-select2-id="8">

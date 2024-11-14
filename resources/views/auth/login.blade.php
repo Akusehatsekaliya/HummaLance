@@ -1,4 +1,4 @@
-@extends('landing.layout.app')
+@extends('home.layout.app')
 
 @section('style')
   <link href="{{ asset('assets_landing/css/login.css') }}" rel="stylesheet">

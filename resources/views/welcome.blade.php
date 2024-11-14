@@ -1,4 +1,4 @@
-@extends('landing.layout.app')
+@extends('home.layout.app')
 @section('style')
 <style>
     .homepage-search-title h2 {
@@ -12,11 +12,11 @@
 @endsection
 @section('content')
     {{-- banner --}}
-    @include('landing.banner.index')
+    @include('home.banner.index')
     {{-- post_user --}}
-    @include('landing.post_user.index')
+    @include('home.post_user.index')
     {{-- jobs --}}
-    @include('landing.jobs_user.index')
+    @include('home.jobs_user.index')
     {{-- ordered --}}
-    @include('landing.ordered.index')
+    @include('home.ordered.index')
 @endsection
