@@ -145,7 +145,7 @@
                     </div>
                     <ul class="custom-navbar1">
                         <li class="custom-nav-item1" style="color: #01ABFE">
-                            <a class="custom-nav-link">Recommended for you</a>
+                            <a class="custom-nav-link1">Recommended for you</a>
                         </li>
                     </ul>
                     <br>

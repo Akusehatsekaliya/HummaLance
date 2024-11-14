@@ -3771,7 +3771,7 @@ section.related-links ul li a:hover {
     /* Garis penuh di bawah teks */
     height: 3px;
     /* Ketebalan garis pertama */
-    background-color: #000000;
+    background-color: #01ABFE;
     /* Warna garis pertama */
     border-radius: 5px;
     /* Membuat pinggiran oval pada garis pertama */
@@ -3784,7 +3784,7 @@ section.related-links ul li a:hover {
     /* Posisikan di samping kanan garis pertama */
     bottom: -2px;
     /* Sama dengan garis pertama */
-    width: 1098px;
+    width: 1095px;
     /* Panjang garis kedua */
     height: 3px;
     /* Ketebalan yang sama */
