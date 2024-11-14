@@ -31,7 +31,7 @@
                         <a class="nav-link1" href="#">Community</a>
                     </li>
                     <li class="nav-item ">
-                        <a class="nav-link1" href="#">Become a Freelancer</a>
+                        <a class="nav-link1" href="#" style="color: #0081BF">Become a Freelancer</a>
                     </li>
                 </ul>
             </div>
