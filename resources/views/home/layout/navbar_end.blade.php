@@ -24,11 +24,11 @@
         </style>
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav">
-                <li class="nav-item active">
+                <li class="nav-item">
                     <a class="nav-link" href="#">Graphic & Design</a>
                 </li>
-                <li class="nav-item ">
-                    <a class="nav-link" href="/aboutUs">Programing & Tech</a>
+                <li class="nav-item {{ request()->routeIs('about') ? 'active' : '' }}">
+                    <a class="nav-link" href="{{ route('about') }}">Programing & Tech</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Video & Animation</a>
