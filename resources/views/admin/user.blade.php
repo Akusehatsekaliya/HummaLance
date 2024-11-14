@@ -24,11 +24,11 @@
                         <table class="table" id="table10">
                             <thead>
                                 <tr>
-                                    <th>No</th>
-                                    <th>Name</th>
-                                    <th>Email</th>
-                                    <th>Role</th>
-                                    <th>Action</th>
+                                    <th>NO</th>
+                                    <th>NAME</th>
+                                    <th>EMAIL</th>
+                                    <th>ROLE</th>
+                                    <th>ACTION</th>
                                 </tr>
                             </thead>
                             <tbody></tbody>
@@ -38,12 +38,35 @@
             </div>
         </section>
     </div>
+    <!-- Delete Confirmation Modal -->
+    <div id="deleteModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document" style="margin-top: 20px;">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="deleteModalLabel">Delete Confirmation</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Are you sure you want to delete this data? This action cannot be undone.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <form id="deleteForm" method="POST" class="d-inline">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" class="btn btn-danger">Delete</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    {{-- end --}}
 @endsection
 
 @section('script')
     <script>
         $(document).ready(function() {
-            // Initialize DataTable only once
             var table = $('#table10').DataTable({
                 processing: true,
                 serverSide: true,
@@ -79,9 +102,20 @@
                 ]
             });
 
-            // Apply role filter without reinitializing DataTable
             $('#roleFilter').change(function() {
-                table.draw(); // Redraw table with new filter
+                table.draw();
+            });
+        });
+        document.addEventListener('DOMContentLoaded', function() {
+            const deleteModal = document.getElementById('deleteModal');
+            const deleteForm = document.getElementById('deleteForm');
+
+            deleteModal.addEventListener('show.bs.modal', function(event) {
+                const button = event.relatedTarget;
+                const itemId = button.getAttribute('data-id');
+
+                const route = "{{ route('user.destroy', ':id:') }}";
+                deleteForm.action = route.replace(':id:', itemId);
             });
         });
     </script>

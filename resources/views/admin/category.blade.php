@@ -150,11 +150,9 @@
             var id = $(this).data('id');
             var name = $(this).data('name');
 
-            // Set the form action URL dynamically based on the selected category ID
             $('#editCategoryForm').attr('action', '/admin/category/' + id);
             $('#editName').val(name);
 
-            // Open the edit modal
             $('#editModal').modal('show');
         });
 
