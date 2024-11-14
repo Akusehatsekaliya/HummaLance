@@ -15,19 +15,19 @@ Route::prefix("admin")->name("admin.")->group(function () {
   Route::resource('dashboard', DashboardController::class);
   // category
   Route::resource('category', CategoryController::class);
-  Route::get('categories/data', [CategoryController::class, 'getData'])->name('categories.data');
+  Route::get('category/data', [CategoryController::class, 'getData'])->name('category.data');
   // project
   Route::resource('project', ProjectController::class);
   // user
   Route::resource('user', UserController::class);
-  Route::get('usersdata', [UserController::class, 'getData'])->name('admin.users.data');
+  Route::get('usersdata', [UserController::class, 'getData'])->name('user.data');
   // banner
   Route::resource('banner', BannerController::class)->except(['show', 'edit', 'create']);
   // about
   Route::resource('about', AboutController::class);
   // contract
   Route::resource('contract', ContractController::class);
-  Route::get('contracts/data', [ContractController::class, 'getData'])->name('contracts.data');
+  Route::get('contract/data', [ContractController::class, 'getData'])->name('contract.data');
   // transaction
   Route::resource('transaction', TransactionController::class);
 });
