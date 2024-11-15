@@ -21,7 +21,7 @@
 
           </div>
           <div class="col-lg-5" style="margin-top: -20px; margin-bottom: -170px;">
-            <img class="img-fluid" src="{{ asset('assets_landing/images/banner1.svg') }}" alt='' />
+            <img class="img-fluid" src="{{ asset('assets_landing/images/banner2.png') }}" alt='' />
          </div>
        </div>
     </div>

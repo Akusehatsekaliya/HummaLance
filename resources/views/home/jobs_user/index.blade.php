@@ -81,6 +81,9 @@
                                     <p class="badge2" style="font-size: 12px">
                                         Adobe Ilustrator
                                     </p>
+                                    <p class="badge2" style="font-size: 12px">
+                                        Adobe Ilustrator
+                                    </p>
                                     <a href="#" class="badge2"
                                         style="font-size: 12px; border: 1px solid transparent;">
                                         Show More
@@ -200,6 +203,9 @@
                                     Required Skills
                                 </a>
                                 <div>
+                                    <p class="badge2" style="font-size: 12px">
+                                        Adobe Ilustrator
+                                    </p>
                                     <p class="badge2" style="font-size: 12px">
                                         Adobe Ilustrator
                                     </p>

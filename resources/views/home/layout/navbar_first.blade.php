@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-lg navbar-light topbar static-top shadow-sm bg-white osahan-nav-top px-0">
     <div class="container">
         <!-- Sidebar Toggle (Topbar) -->
-        <a class="navbar-brand" href="#"><img src="{{ asset('icon.png') }}" alt=""></a>
+        <a class="navbar-brand" href="#"><img src="{{ asset('assets_landing/images/Asset 15.png') }}" alt=""></a>
         <!-- Topbar Search -->
         <form class="d-none d-sm-inline-block form-inline mr-auto mw-100 navbar-search">
             <div class="input-group">
