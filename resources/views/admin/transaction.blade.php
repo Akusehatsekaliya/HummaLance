@@ -68,6 +68,7 @@
                         aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
+                    <img class="transaction-logo" src="{{ asset('assets_landing/images/Asset 15.png') }}" alt="Logo" />
                     <div class="mb-4">
                         <h5 class="text-primary border-bottom pb-2 mb-3">Transaction Information</h5>
                         <div class="row">
@@ -97,7 +98,7 @@
                             </div>
                             <div class="col-md-12 mb-2">
                                 <strong>Status:</strong>
-                                <span class=" text-danger badge bg-light-danger">Failed</span>
+                                <span class="text-danger badge bg-light-danger">Failed</span>
                             </div>
                         </div>
                     </div>
@@ -177,7 +178,19 @@
 @endsection
 @section('style')
     <style>
+        .transaction-logo {
+            display: none;
+            width: 200px;
+            height: 55px;
+            margin: 0 auto;
+        }
+
         @media print {
+
+            .transaction-logo {
+                display: block !important;
+                margin: 0 auto 20px;
+            }
 
             body * {
                 visibility: hidden !important;
