@@ -92,4 +92,19 @@
   .upload-input input[type="file"] {
     display: none;
   }
+
+
+/* Responsiveness for Mobile */
+@media (max-width: 576px) {
+    .dropdown-menu {
+        left: 0; /* Tetap sejajar dengan elemen */
+        right: auto;
+        width: 100%; /* Sesuaikan dengan layar untuk tampilan rapi */
+        margin-top: 0.5rem; /* Tambahkan jarak sedikit */
+    }
+    .dropdown-menu.show {
+    display: inline-table;
+}
+}
+
 </style>

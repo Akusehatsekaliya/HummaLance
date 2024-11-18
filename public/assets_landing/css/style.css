@@ -222,8 +222,14 @@ a {
 .bg-dark {
     background-color: #222326 !important;
 }
-.bg-banner {
-    background-color: #006a9e !important;
+.banner-background {
+    background: url(../images/Background.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: -1;
+    /* display: flex; */
+    /* justify-content: center; */
+    background-position-y: top;
 }
 .bg-landing {
     background-color: #01abfe !important;
