@@ -3,49 +3,35 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Constract\Enums\UserRoleEnum;
+use App\Constract\Interfaces\UserInterface;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\User;
+use App\Services\UserService;
 use Yajra\DataTables\DataTables;
 
 class UserController extends Controller
 {
-    /**
+    private UserService $service;
+    private UserInterface $userInterface;
+
+    public function __construct(UserService $service, UserInterface $userInterface)
+    {
+        $this->service = $service;
+        $this->userInterface = $userInterface;
+    }
+    /**z
      * Display a listing of the resource.
      */
     public function index(Request $request)
     {
         if ($request->ajax() || $request->wantsJson()) {
-            return $this->getData($request);
+            return $this->service->getData($request);
         }
         return view('admin.user');
     }
 
-    public function getData(Request $request)
-    {
-        $users = User::with('roles')
-            ->select(['id', 'name', 'email'])
-            ->when($request->role, function ($query, $role) {
-                return $query->whereHas('roles', fn($q) => $q->where('name', $role));
-            }, function ($query) {
-                return $query->whereDoesntHave('roles', fn($q) => $q->where('name', 'admin'));
-            });
 
-        return DataTables::of($users)
-            ->addIndexColumn()
-            ->addColumn('action', function ($user) {
-                return '<button class="btn text-danger" data-bs-toggle="modal" data-bs-target="#deleteModal" data-id="1"><i class="bi bi-trash3-fill"></i></button>';
-            })
-            ->addColumn('role', fn($user) => $user->getUserRoleInstance()->value)
-            ->filterColumn('name', function ($query, $keyword) {
-                $query->where('name', 'LIKE', "%{$keyword}%");
-            })
-            ->filterColumn('email', function ($query, $keyword) {
-                $query->where('email', 'LIKE', "%{$keyword}%");
-            })
-            ->rawColumns(['action'])
-            ->make(true);
-    }
 
     /**
      * Show the form for creating a new resource.
@@ -93,13 +79,10 @@ class UserController extends Controller
     public function destroy(string $id)
     {
         try {
-            $user = User::findOrFail($id);
-
-            $user->delete();
-
-            return redirect()->route('user.index')->with('success', 'Banner deleted successfully.');
+            $this->userInterface->delete($id);
+            return redirect()->route('admin.user.index')->with('success', 'User deleted successfully.');
         } catch (\Exception $e) {
-            return redirect()->route('user.index')->with('error', 'Failed to delete users.');
+            return redirect()->route('admin.user.index')->with('error', 'Failed to delete users.');
         }
     }
 }

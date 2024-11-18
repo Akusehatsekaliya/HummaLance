@@ -22,7 +22,7 @@ class DatabaseSeeder extends Seeder
             ProjectSeeder::class,
             ContractSeeder::class,
             AboutSeeder::class,
-            PaymentSeeder::class,
+            // PaymentSeeder::class,
         ]);
     }
 }
