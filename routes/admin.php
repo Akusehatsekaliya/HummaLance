@@ -10,7 +10,7 @@ use App\Http\Controllers\Admin\ProjectController;
 use App\Http\Controllers\Admin\TransactionController;
 use Illuminate\Support\Facades\Route;
 
-Route::prefix("admin")->name("admin.")->group(function () {
+Route::prefix("admin")->name("admin.")->middleware(["auth", "role:admin"])->group(function () {
   // dashboard
   Route::resource('dashboard', DashboardController::class);
   // category
