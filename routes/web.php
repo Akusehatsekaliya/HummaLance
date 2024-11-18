@@ -8,6 +8,11 @@ use Illuminate\Support\Facades\Route;
 Route::get('/landing', function () {
     return view('landing');
 })->name('landing1');
+
+Route::get('/about-landing', function () {
+    return view('about');
+})->name('about-landing');
+
 Route::get('/debug', function () {
     return view('debug2');
 })->name('debug');

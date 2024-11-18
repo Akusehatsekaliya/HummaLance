@@ -9832,5 +9832,5 @@ a.text-dark:hover {
     flex-wrap: nowrap; /* Mencegah elemen turun ke baris berikutnya */
     white-space: nowrap; /* Membuat teks tetap satu baris */
     -webkit-overflow-scrolling: touch;
-    margin-left: 25px;
+    margin-left: 150px;
 }

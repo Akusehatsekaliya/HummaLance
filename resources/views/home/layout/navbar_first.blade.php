@@ -4,9 +4,8 @@
         <a class="navbar-brand" href="#"><img src="{{ asset('assets_landing/images/Asset 15.png') }}" alt=""></a>
         <!-- Topbar Search -->
         <form class="d-none d-sm-inline-block form-inline mr-auto mw-100 navbar-search">
-            <div class="input-group">
-                <input type="text" class="form-control bg-white small" placeholder="Find Services..."
-                    aria-label="Search" aria-describedby="basic-addon2">
+            <div class="input-group" style="width: 460px;">
+                <input type="text" class="form-control bg-white small" placeholder="Find Services..." aria-label="Search" aria-describedby="basic-addon2">
                 <div class="input-group-append">
                     <button class="btn btn-success" type="button">
                         <i class="fa fa-search fa-sm"></i>
@@ -14,6 +13,7 @@
                 </div>
             </div>
         </form>
+
         <!-- Topbar Navbar -->
         @auth
             <div class="collapse navbar-collapse" id="navbarResponsive">

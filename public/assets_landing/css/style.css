@@ -71,14 +71,14 @@ a {
     border-color: #2cdd9b;
 }
 .btn-light {
-    color: #2cdd9b;
+    color: #01ABFE;
     background-color: #e5f7f0;
     border-color: #d8f7eb;
 }
 .btn-light:hover {
     color: #fff;
-    background-color: #2cdd9b;
-    border-color: #2cdd9b;
+    background-color: #01ABFE;
+    border-color: #01ABFE;
 }
 .text-gold {
     color: #d3ac2b;
@@ -96,11 +96,50 @@ a {
     color: #ffffff;
     border-color: #ffffff;
 }
-.btn-outline-landing:hover {
+.btn-outline-login {
     color: #01ABFE;
     background-color: #ffffff;
     border-color: #ffffff;
 }
+
+.btn-outline-landing1 {
+    color: #ffffff;
+    border-color: #ffffff;
+}
+.btn-outline-login1 {
+    color: #01ABFE;
+    background-color: #ffffff;
+    border-color: #ffffff;
+}
+
+/* Tombol Get Started */
+.btn-outline-login1 {
+    color: #01ABFE;
+    background-color: #ffffff;
+    border: 1px solid #ffffff;
+    line-height: 1.5; /* Mengatur tinggi teks */
+    padding: 10px 20px; /* Memberikan ruang di dalam tombol */
+    font-size: 10px; /* Mengatur ukuran teks */
+    height: 48px; /* Memberikan tinggi tombol konsisten */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Tombol Learn More */
+.btn-outline-landing1 {
+    color: #ffffff;
+    border: 1px solid #ffffff;
+    background-color: transparent;
+    line-height: 1.5; /* Mengatur tinggi teks */
+    padding: 10px 20px; /* Memberikan ruang di dalam tombol */
+    font-size: 10px; /* Mengatur ukuran teks */
+    height: 48px; /* Memberikan tinggi tombol konsisten */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .form-control,
 .btn,
 .custom-select {
@@ -183,8 +222,14 @@ a {
 .bg-dark {
     background-color: #222326 !important;
 }
-.bg-banner {
-    background-color: #006a9e !important;
+.banner-background {
+    background: url(../images/Background.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: -1;
+    /* display: flex; */
+    /* justify-content: center; */
+    background-position-y: top;
 }
 .bg-landing {
     background-color: #01abfe !important;

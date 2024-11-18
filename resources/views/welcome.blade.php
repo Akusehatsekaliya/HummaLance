@@ -2,7 +2,7 @@
 @section('style')
 <style>
     .homepage-search-title h2 {
-    max-width: 96%;
+    max-width: 90%;
     text-align: left;
     white-space: normal;
     overflow-wrap: break-word;

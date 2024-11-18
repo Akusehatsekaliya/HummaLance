@@ -3730,7 +3730,7 @@ body.theme-dark .navbar-nav .show > .nav-link {
     color: var(--bs-navbar-active-color);
 }
 body.theme-dark .navbar-nav .dropdown-menu {
-    position: static;
+    position: absolute;
 }
 body.theme-dark .navbar-text {
     color: var(--bs-navbar-color);

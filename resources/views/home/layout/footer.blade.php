@@ -58,14 +58,11 @@
             <div class="footer-list">
                 <h2>More From Clocker</h2>
                 <ul class="list">
-                    <li><a href="#">Clocker
-                            Pro</a>
+                    <li><a href="#">Clocker Pro</a>
                     </li>
-                    <li><a href="#">Clocker
-                            Studios</a>
+                    <li><a href="#">Clocker Studios</a>
                     </li>
-                    <li><a href="#">Clocker
-                            Logo Maker</a>
+                    <li><a href="#">Clocker Logo Maker</a>
                     </li>
                     <li><a href="#">Get Inspired</a></li>
                     <li><a href="#">Content Marketing</a>
@@ -81,7 +78,7 @@
                 <img src="{{ asset('assets_landing/images/Asset 14.png') }}">
             </a>
         </div>
-        <p>©Clocker International Ltd, 2024
+        <p>© Clocker International Ltd, 2024
         </p>
         <ul class="social" style="margin-right: 10rem;">
             <li>
