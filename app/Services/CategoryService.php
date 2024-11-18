@@ -1,4 +1,8 @@
 <?php
+
+use App\Constract\Repositories\CategoryRepository;
+use Yajra\DataTables\DataTables;
+
 class CategoryService
 {
   protected $categoryRepository;
@@ -10,7 +14,7 @@ class CategoryService
 
   public function getCategoriesForDataTable()
   {
-    $categories = $this->categoryRepository->getAllCategories();
+    $categories = $this->categoryRepository->get();
 
     return DataTables::of($categories)
       ->addIndexColumn()
