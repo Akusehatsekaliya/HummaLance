@@ -9,16 +9,13 @@
             .navbar-nav {
                 display: flex;
                 flex-wrap: nowrap;
-                /* Mencegah elemen turun ke baris berikutnya */
                 white-space: nowrap;
-                /* Membuat teks tetap satu baris */
                 -webkit-overflow-scrolling: touch;
                 margin-left: 5px;
             }
 
             .nav-item {
                 margin-right: 6px;
-                /* Jarak antar item */
             }
         </style>
         <div class="collapse navbar-collapse" id="navbarResponsive">
@@ -57,17 +54,5 @@
                 </li>
             </ul>
         </div>
-        <ul class="navbar-nav ml-auto">
-            @guest
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ route('login') }}">
-                        <span>Login</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ route('register') }}">
-                        <span>Register</span></a>
-                </li>
-            @endguest
-        </ul>
     </div>
 </nav>

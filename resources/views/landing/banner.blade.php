@@ -27,7 +27,7 @@
                     <h6 class="custom-title mb-4 text-shadow text-white font-weight-normal">
                         Start Work Today
                     </h6>
-                                    </div>
+                </div>
                 <div class="homepage-search-title">
                     <h2 class="mb-3 text-shadow text-white font-weight-bold">The best <br> Platform to turn your free
                         time into work and to pursue your dream job

@@ -4108,7 +4108,7 @@ fieldset:disabled .btn {
     color: var(--bs-navbar-active-color);
 }
 .navbar-nav .dropdown-menu {
-    position: static;
+    position: absolute;
 }
 .navbar-text {
     color: var(--bs-navbar-color);
