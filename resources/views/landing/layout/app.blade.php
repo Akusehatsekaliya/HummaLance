@@ -29,6 +29,7 @@
     <link href="{{ asset('assets_landing/vendor/select2/css/select2.min.css') }}" rel="stylesheet">
     <!-- Custom styles for this template -->
     <link href="{{ asset('assets_landing/css/style.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets_landing/css/landing.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
     <link rel="stylesheet" href="{{ asset('assets_landing/css/dark.css') }}">
@@ -38,7 +39,7 @@
   </head>
 
   <body>
-    @include('landing.layout.navbar')
+      @include('landing.layout.navbar')
 
     @yield('content')
     @stack('contents')
@@ -56,19 +57,7 @@
     <script src="{{ asset('assets_landing/vendor/lightgallery-master/dist/js/lightgallery-all.min.js') }}"></script>
     <script src="{{ asset('assets_landing/vendor/select2/js/select2.min.js') }}"></script>
     <script src="{{ asset('assets_landing/js/custom.js') }}"></script>
-    <script>
-      function navigateWithAnimation(element, url) {
-        element.classList.add('animate');
-
-        setTimeout(() => {
-          window.location.href = url; // Redirect URL after animation
-        }, 400); // Delay matches the CSS transition duration
-
-        setTimeout(() => {
-          element.classList.remove('animate');
-        }, 800);
-      }
-    </script>
+    <script src="{{ asset('assets_landing/js/landing.js') }}"></script>
     @yield('script')
     @stack('scripts')
   </body>
