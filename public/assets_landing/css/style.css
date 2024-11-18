@@ -234,6 +234,12 @@ a {
 .bg-landing {
     background-color: #01abfe !important;
 }
+.bg-about{
+    background: url(../images/Group8.svg);
+    /* background-size: cover; */
+    background-repeat: no-repeat;
+    background-position-x: right;
+}
 .icon-form-control i {
     display: flex;
     top: 0;
