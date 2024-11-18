@@ -102,7 +102,7 @@
                         </div>
                     </div>
                     <div class="mb-4">
-                        <h5 class="text-primary border-bottom pb-2 mb-3">Payment Information</h5>
+                        <h5 class="text-primary border-bottom pb-2 mb-3 payment-information-header">Payment Information</h5>
                         <div class="row">
                             <div class="col-md-6 mb-2">
                                 <strong>Payment Method:</strong>
@@ -119,7 +119,7 @@
                         </div>
                     </div>
                     <div class="mb-4">
-                        <h5 class="text-primary border-bottom pb-2 mb-3">Project Information</h5>
+                        <h5 class="text-primary border-bottom pb-2 mb-3 project-information-header">Project Information</h5>
                         <div class="row">
                             <div class="col-md-12 mb-2">
                                 <strong>Description:</strong>
@@ -179,18 +179,15 @@
     <style>
         @media print {
 
-            /* Hide everything except the modal content */
             body * {
                 visibility: hidden !important;
             }
 
-            /* Ensure the modal and its content are visible */
             #modalTransactions,
             #modalTransactions * {
                 visibility: visible !important;
             }
 
-            /* Hide the Close button and the Print button */
             .btn-light-secondary,
             #printButton,
             .modal-header,
@@ -198,13 +195,24 @@
                 display: none !important;
             }
 
-            /* Adjust modal to fill the page during print */
             #modalTransactions {
                 position: absolute;
                 top: 0;
                 left: 0;
                 width: 100%;
                 height: auto;
+            }
+
+            .project-information-header {
+                page-break-before: always;
+                page-break-inside: avoid;
+                margin-top: 20px;
+            }
+
+            .payment-information-header {
+                page-break-before: auto;
+                break-before: auto;
+                margin-top: 0;
             }
         }
     </style>
