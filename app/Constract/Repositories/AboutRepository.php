@@ -23,4 +23,3 @@ class AboutRepository extends BaseRepository implements AboutInterface
         return $this->model->query()->findOrFail($id)->update($data);
     }
 }
-
