@@ -1,5 +1,7 @@
 <?php
 
+namespace App\Services;
+
 use App\Constract\Repositories\CategoryRepository;
 use App\Models\Category;
 use Illuminate\Http\Request;
