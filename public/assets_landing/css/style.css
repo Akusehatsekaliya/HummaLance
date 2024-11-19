@@ -47,6 +47,13 @@ a {
     background: linear-gradient(to right, #21bee8 0%, #00aaff 100%);
     border-color: #ffffff;
 }
+
+
+.btn-success1 {
+    background: #C2EEFF;
+    /* background: linear-gradient(to right, #21bee8 0%, #00aaff 100%); */
+    border-color: #ffffff;
+}
 .btn-outline-success {
     color: #2cdd9b;
     border-color: #2cdd9b;
@@ -234,12 +241,13 @@ a {
 .bg-landing {
     background-color: #01abfe !important;
 }
-.bg-about{
-    background: url(../images/Group8.svg);
-    /* background-size: cover; */
+.bg-about {
+    background: url(../images/BackgroundAbout2.png);
+    background-size: cover;
     background-repeat: no-repeat;
     background-position-x: right;
 }
+
 .text-landing{
     color: #00aaff
 }

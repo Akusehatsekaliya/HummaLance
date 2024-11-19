@@ -36,7 +36,29 @@
                                         </a>
                                         <span class="level hint--top level-one-seller"
                                             style="display: inline-block; margin-bottom: 3px; color: #423D55; font-size: 14px;">
-                                            Jakarta (In the Office)
+                                            <svg width="30" height="30" viewBox="0 0 30 30" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                                    d="M10.3125 7.5C10.3125 8.0175 9.8925 8.4375 9.375 8.4375C8.8575 8.4375 8.4375 8.0175 8.4375 7.5V5C8.4375 3.79125 9.4175 2.8125 10.625 2.8125H19.375C20.5825 2.8125 21.5625 3.79125 21.5625 5V7.5C21.5625 8.0175 21.1425 8.4375 20.625 8.4375C20.1075 8.4375 19.6875 8.0175 19.6875 7.5V5C19.6875 4.8275 19.5475 4.6875 19.375 4.6875H10.625C10.4525 4.6875 10.3125 4.8275 10.3125 5V7.5Z"
+                                                    fill="#1ABAED" />
+                                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                                    d="M17.5 15.625C17.5 15.28 17.22 15 16.875 15C15.9137 15 14.0862 15 13.125 15C12.78 15 12.5 15.28 12.5 15.625C12.5 16.4563 12.5 17.9188 12.5 18.75C12.5 19.095 12.78 19.375 13.125 19.375C14.0862 19.375 15.9137 19.375 16.875 19.375C17.22 19.375 17.5 19.095 17.5 18.75C17.5 17.9188 17.5 16.4563 17.5 15.625Z"
+                                                    fill="#1ABAED" />
+                                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                                    d="M18.75 18.1924L27.0838 16.1087C27.34 16.0449 27.5838 15.9524 27.8125 15.8362V23.7499C27.8125 25.6487 26.2738 27.1874 24.375 27.1874H5.625C3.72625 27.1874 2.1875 25.6487 2.1875 23.7499V15.8362C2.41625 15.9524 2.66 16.0449 2.91625 16.1087L11.25 18.1924V18.7499C11.25 19.7849 12.09 20.6249 13.125 20.6249H16.875C17.91 20.6249 18.75 19.7849 18.75 18.7499V18.1924Z"
+                                                    fill="#1ABAED" />
+                                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                                    d="M11.25 16.9038L3.22 14.8963C2.24625 14.6525 1.5625 13.7775 1.5625 12.7738V8.75C1.5625 8.17 1.7925 7.61375 2.20375 7.20375C2.61375 6.7925 3.17 6.5625 3.75 6.5625H26.25C26.83 6.5625 27.3862 6.7925 27.7962 7.20375C28.2075 7.61375 28.4375 8.17 28.4375 8.75V12.7738C28.4375 13.7775 27.7537 14.6525 26.78 14.8963L18.75 16.9038V15.625C18.75 14.59 17.91 13.75 16.875 13.75H13.125C12.09 13.75 11.25 14.59 11.25 15.625V16.9038Z"
+                                                    fill="#1ABAED" />
+                                            </svg>
+                                            <span class="badge"
+                                                style="margin-right: 20px; margin-top: 4px; padding: 5px 14px; font-size: 9px; font-weight: medium; color: #1ABAED; background-color: #C2EEFF;">
+                                                Work From Home
+                                            </span>
+                                            <span class="badge badge-success"
+                                                style="margin-left: -15px; margin-top: 4px; padding: 5px 14px; font-size: 9px; font-weight: 500; color: #1ABAED; background-color: #C2EEFF;">
+                                                Part Time
+                                            </span>
                                         </span>
                                         <span class="level hint--top level-one-seller"
                                             style="display: inline-block; margin-bottom: 3px; color: #423D55; font-size: 14px;">

@@ -1,6 +1,6 @@
 <style>
     .homepage-search-block {
-        height: 50vh;
+        height: 300px; /* Sesuaikan nilai ini sesuai kebutuhan Anda */
     }
 </style>
 
