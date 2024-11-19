@@ -340,3 +340,19 @@
     width: 1200px;
     height: auto;
 }
+
+
+
+.svg-container2 {
+    position: absolute;
+    top: 1400px;
+    right: 0;
+    width: auto;
+    z-index: -3;
+    overflow: hidden;
+}
+
+.svg-container2 svg {
+    width: 1520px;
+    height: auto;
+}

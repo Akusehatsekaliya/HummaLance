@@ -9,6 +9,9 @@
                     <a class="nav-landing" href="{{ route('landing1') }}">Clocker Pro</a>
                 </li>
                 <li class="nav-item ">
+                    <a class="nav-landing" href="#">About Us</a>
+                </li>
+                <li class="nav-item ">
                     <a class="nav-landing" href="#">Guides</a>
                 </li>
                 <li class="nav-item ">

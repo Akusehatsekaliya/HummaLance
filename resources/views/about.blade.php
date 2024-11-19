@@ -14,5 +14,4 @@
 
 @include('landing.about')
 @include('landing.footer')
-
 @endsection

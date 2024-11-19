@@ -8,9 +8,9 @@
     <meta name="description" content="Gurdeep singh osahan">
     <meta name="author" content="Gurdeep singh osahan">
     <base href="{{ asset('assets_landing') }}/">
-    <title>HummaLance</title>
+    <title>CLOCKER</title>
     {{-- logo title --}}
-    <link rel="icon" type="image/png" href="{{ asset('assets_landing/images/fav.svg') }}">
+    <link rel="icon" type="image/png" href="{{ asset('assets_landing/images/CLOCKER.png') }}">
     <!-- Bootstrap core CSS -->
     <link href="{{ asset('assets_landing/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
     <!-- Font Awesome-->
