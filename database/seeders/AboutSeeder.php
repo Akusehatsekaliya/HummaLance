@@ -16,7 +16,7 @@ class AboutSeeder extends Seeder
     {
         $listData = [
             [
-                 'title' => "CLOCKER",
+            'title' => "CLOCKER",
             'image' => "bg3.jpeg",
             'description' => "Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi, quibusdam! Corporis in soluta fuga molestiae incidunt odio, quod quae illo!"
             ]

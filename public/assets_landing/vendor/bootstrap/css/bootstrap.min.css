@@ -9771,6 +9771,8 @@ a.text-dark:hover {
 .nav-landing:hover:after {
     width: 95%;
     left: 50%;
+    border-radius: 50px; /* Membuat garis berbentuk oval */
+
 }
 
 .nav-item.active .nav-landing:after {

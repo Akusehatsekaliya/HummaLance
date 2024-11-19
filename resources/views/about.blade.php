@@ -13,5 +13,6 @@
 @section('content')
 
 @include('landing.about')
+@include('landing.footer')
 
 @endsection

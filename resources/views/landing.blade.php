@@ -14,5 +14,6 @@
 
 @include('landing.banner')
 @include('landing.populer')
+@include('landing.footer')
 
 @endsection

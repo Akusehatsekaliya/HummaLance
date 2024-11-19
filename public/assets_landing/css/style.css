@@ -9,7 +9,7 @@ body {
     background-color: #ffffff;
 }
 .container-fluid {
-    max-width: 1400px;
+    max-width: 1920px;
     padding: 0 32px;
 }
 ul,
@@ -45,6 +45,13 @@ a {
     background: -webkit-linear-gradient(left, #2cdd9b 0%, #1dc8cc 100%);
     background: -o-linear-gradient(left, #2cdd9b 0%, #1dc8cc 100%);
     background: linear-gradient(to right, #21bee8 0%, #00aaff 100%);
+    border-color: #ffffff;
+}
+
+
+.btn-success1 {
+    background: #C2EEFF;
+    /* background: linear-gradient(to right, #21bee8 0%, #00aaff 100%); */
     border-color: #ffffff;
 }
 .btn-outline-success {
@@ -234,8 +241,9 @@ a {
 .bg-landing {
     background-color: #01abfe !important;
 }
-.bg-about{
-    background: url(../images/Group8.svg);
+
+.bg-about {
+    background: url(../images/BackgroundAbout2.png);
     background-size: cover;
     background-repeat: no-repeat;
     background-position-x: center;
@@ -2152,7 +2160,7 @@ footer div ul li a {
     display: flex;
     border-top: 1px solid #e4e5e7;
     margin-top: 30px;
-    padding: 35px 0;
+    padding: 20px 0;
     align-items: center;
 }
 .copyright .logo img {
