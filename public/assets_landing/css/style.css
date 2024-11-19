@@ -236,10 +236,18 @@ a {
 }
 .bg-about{
     background: url(../images/Group8.svg);
-    /* background-size: cover; */
+    background-size: cover;
     background-repeat: no-repeat;
-    background-position-x: right;
+    background-position-x: center;
 }
+
+.bg-line{
+    background: url(../images/Vector9.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position-x: center;
+}
+
 .text-landing{
     color: #00aaff
 }
