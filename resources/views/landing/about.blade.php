@@ -134,7 +134,7 @@
                 <h3 class="text-white font-weight-bold">About Us</h3>
                 <p class="text-white">
                     Home
-                    <x-svg file="icons-12/chevron-double-right" />
+                    <x-svg>{{ asset("assets/svg/icons-12/chevron-double-right.svg") }}</x-svg>
                     <a href="#" style="color: rgb(255, 255, 255); text-decoration: none;">About Us</a>
                 </p>
             </div>
@@ -150,7 +150,7 @@
                 <div class="col-lg-6">
                     <div style="display: flex; align-items: center;">
 
-                        <x-svg file="landing/about/stats/logo-blue" />
+                        <x-svg>{{ asset("assets/svg/landing/about/stats/logo-blue.svg") }}</x-svg>
                         <h6 class="text-landing ml-2 mb-0">About Us</h6>
                     </div>
 
@@ -177,16 +177,16 @@
                 <div class="col-lg-6">
 
                     {{-- 22222 --}}
-                    <x-svg file="landing/about/contents/group1" />
+                    <x-svg>{{ asset("assets/svg/landing/about/contents/group1.svg") }}</x-svg>
 
                     {{-- 33333 --}}
-                    <x-svg file="landing/about/contents/group2" />
+                    <x-svg>{{ asset("assets/svg/landing/about/contents/group2.svg") }}</x-svg>
 
                     {{-- 44444 --}}
-                    <x-svg file="landing/about/contents/group3" />
+                    <x-svg>{{ asset("assets/svg/landing/about/contents/group3.svg") }}</x-svg>
 
                     {{-- 55555 --}}
-                    <x-svg file="landing/about/contents/group4" />
+                    <x-svg>{{ asset("assets/svg/landing/about/contents/group4.svg") }}</x-svg>
 
                 </div>
             </div>
@@ -199,7 +199,7 @@
         <div class="row justify-content-center d-flex text-center">
 
             <div class="col-lg-3 justify-content-center d-flex align-items-center">
-                <x-svg file="landing/about/stats/user-group-20-solid" />
+                <x-svg>{{ asset("assets/svg/landing/about/stats/user-group-20-solid.svg") }}</x-svg>
                 <div class="text-content ml-3">
                     <h6>999+</h6>
                     <span class="span-1" style="color: white;">User</span>
@@ -207,7 +207,7 @@
             </div>
 
             <div class="col-lg-3 justify-content-center d-flex  align-items-center">
-                <x-svg file="landing/about/stats/work" />
+                <x-svg>{{ asset("assets/svg/landing/about/stats/work.svg") }}</x-svg>
                 <div class="text-content ml-3">
                     <h6>999+</h6>
                     <span class="span-1" style="color: white;">Company</span>
@@ -215,7 +215,7 @@
             </div>
 
             <div class="col-lg-3 justify-content-center d-flex align-items-center">
-                <x-svg file="landing/about/stats/workbox" />
+                <x-svg>{{ asset("assets/svg/landing/about/stats/workbox.svg") }}</x-svg>
                 <div class="text-content ml-3">
                     <h6>999+</h6>
                     <span class="span-1" style="color: white;">Freelancer</span>
@@ -223,7 +223,7 @@
             </div>
 
             <div class="col-lg-3 justify-content-center d-flex  align-items-center">
-                <x-svg file="landing/about/stats/job" />
+                <x-svg>{{ asset("assets/svg/landing/about/stats/job.svg") }}</x-svg>
                 <div class="text-content ml-3">
                     <h6>999+</h6>
                     <span class="span-1" style="color: white;">Job</span>
@@ -253,7 +253,7 @@
                     <div class="row">
                         <div class="card-fitur-item">
                             <div class="main-fitur">
-                                <x-svg file="landing/about/main-fitur/Self Development" />
+                                <x-svg>{{ asset("assets/svg/landing/about/main-fitur/Self Development.svg") }}</x-svg>
 
                                 <h5>Self Development</h5>
                                 <p>By joining clocker you can develop yourself further in your work and hone your
@@ -266,7 +266,7 @@
                     <div class="row">
                         <div class="card-fitur-item">
                             <div class="main-fitur">
-                                <x-svg file="landing/about/main-fitur/Time Management" />
+                                <x-svg>{{ asset("assets/svg/landing/about/main-fitur/Time Management.svg") }}</x-svg>
 
                                 <h5>Time Management</h5>
                                 <p>in clocker you can manage your time more efficiently with various working hours from
@@ -279,7 +279,7 @@
                     <div class="row">
                         <div class="card-fitur-item">
                             <div class="main-fitur">
-                                <x-svg file="landing/about/main-fitur/Career Growth" />
+                                <x-svg>{{ asset("assets/svg/landing/about/main-fitur/Career Growth.svg") }}</x-svg>
 
                                 <h5>Career Growth</h5>
                                 <p>At clocker you can grow your career more rapidly for your future</p>
@@ -290,8 +290,8 @@
                 <div class="fitur-item">
                     <div class="row">
                         <div class="card-fitur-item">
-                            <div clas="main-fitur">
-                                <x-svg file="landing/about/main-fitur/Global Networking" />
+                            <div class="main-fitur">
+                                <x-svg>{{ asset("assets/svg/landing/about/main-fitur/Global Networking.svg") }}</x-svg>
 
                                 <h5>Global Networking</h5>
                                 <p>Connect with clients and other professionals worldwide, opening doors to long-term
@@ -313,48 +313,48 @@
                     you want</p>
                 <a href="#" class="btn btn-outline-landing1 text-center" style="font-weight: bold;">
                     Try Clocker Now
-                    <x-svg file="icons-24/icon-next" />
-
+                    <x-svg>{{ asset("assets/svg/icons-24/icon-next.svg") }}</x-svg>
                 </a>
             </div>
             <div class="col-lg-6">
                 <div class="card-about-grid" style="z-index:1; position:absolute; margin-top:-20px;">
                     <div class="card-about-item">
-                        <x-svg file="landing/about/card-about-item/Easy To Use" />
+                        <x-svg>{{ asset("assets/svg/landing/about/card-about-item/Easy To Use.svg") }}</x-svg>
 
                         <h5>Easy To Use</h5>
                         <span>By joining clocker you can develop yourself further in </span>
                     </div>
 
                     <div class="card-about-item">
-                        <x-svg file="landing/about/card-about-item/Varied work" />
+                        <x-svg>{{ asset("assets/svg/landing/about/card-about-item/Varied work.svg") }}</x-svg>
 
                         <h5>Varied work</h5>
                         <span>By joining clocker you can develop yourself further in </span>
                     </div>
 
                     <div class="card-about-item">
-                        <x-svg file="landing/about/card-about-item/Diverse companies" />
+                        <x-svg>{{ asset("assets/svg/landing/about/card-about-item/Diverse companies.svg") }}</x-svg>
 
                         <h5>Diverse companies</h5>
                         <span>By joining clocker you can develop yourself further in </span>
                     </div>
 
                     <div class="card-about-item ">
-                        <x-svg file="landing/about/card-about-item/Various Working Hours" />
+                        <x-svg>{{ asset("assets/svg/landing/about/card-about-item/Various Working Hours.svg") }}</x-svg>
 
                         <h5>Various Working Hours</h5>
                         <span>By joining clocker you can develop yourself further in </span>
                     </div>
 
                     <div class="card-about-item ">
-                        <x-svg file="landing/about/card-about-item/Various Freelancer Services" />
+                        <x-svg>{{ asset("assets/svg/landing/about/card-about-item/Various Freelancer Services.svg") }}
+                        </x-svg>
 
                         <h5>Various Freelancer Services</h5>
                         <span>By joining clocker you can develop yourself further in </span>
                     </div>
                     <div class="card-about-item ">
-                        <x-svg file="landing/about/card-about-item/Used By Many People" />
+                        <x-svg>{{ asset("assets/svg/landing/about/card-about-item/Used By Many People.svg") }}</x-svg>
 
                         <h5>Used By Many People</h5>
                         <span>By joining clocker you can develop yourself further in </span>

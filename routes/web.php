@@ -17,6 +17,7 @@ Route::get('/debug', function () {
     return view('debug2');
 })->name('debug');
 Route::get('/debug2', function () {
+    return public_path("a.png");
     // User::factory(1000)->withRole('client')->create();
     // $json_response = collect();
 
@@ -28,7 +29,7 @@ Route::get('/debug2', function () {
     // });
 
     // return $json_response->toJson();
-    return Response::streamJson(User::cursor());
+    // return Response::streamJson(User::cursor());
 })->name('debug2');
 
 #verification

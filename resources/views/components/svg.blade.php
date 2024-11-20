@@ -1,7 +1,9 @@
-@props(['file'])
+@php
+  $filePath = public_path(str_replace(url('/'), '', $slot));
+@endphp
 
-@if (file_exists(public_path('assets/svg/' . $file . '.svg')))
-  {!! file_get_contents(public_path('assets/svg/' . $file . '.svg')) !!}
+@if (file_exists($filePath))
+  {!! file_get_contents($filePath) !!}
 @else
-  <img src="" alt="{{ $file }}">
+  <img src="" alt="{{ $slot }}">
 @endif
