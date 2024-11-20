@@ -533,14 +533,18 @@
 
 .row-category1 {
     margin-top: 20px;
-    margin-left: 220px;
-    margin-right: 220px;
+    margin-left: 210px;
+    margin-right: auto;
+    padding-left: 10px; /* Kurangi padding agar lebih mepet */
+    padding-right: 10px; /* Kurangi padding agar lebih mepet */
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 15px;
+    gap: 38px; /* Kurangi gap antar elemen */
     width: 100%;
-    max-width: 100%;
+    max-width: 900px; /* Sesuaikan lebar maksimal */
 }
+
+
 
 .card-about-item {
     text-align: left;
