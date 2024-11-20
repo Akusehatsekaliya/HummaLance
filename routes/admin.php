@@ -11,23 +11,23 @@ use App\Http\Controllers\Admin\TransactionController;
 use Illuminate\Support\Facades\Route;
 
 Route::prefix("admin")->name("admin.")->middleware(["auth", "role:admin"])->group(function () {
-  // dashboard
-  Route::resource('dashboard', DashboardController::class);
-  // category
-  Route::resource('category', CategoryController::class);
-  // Route::get('category/data', [CategoryController::class, 'getData'])->name('category.data');
-  // project
-  Route::resource('project', ProjectController::class);
-  // user
-  Route::resource('user', UserController::class);
-  // Route::get('user/data', [UserController::class, 'getData'])->name('user.data');
-  // banner
-  Route::resource('banner', BannerController::class)->except(['show', 'edit', 'create']);
-  // about
-  Route::resource('about', AboutController::class);
-  // contract
-  Route::resource('contract', ContractController::class);
-  // Route::get('contract/data', [ContractController::class, 'getData'])->name('contract.data');
-  // transaction
-  Route::resource('transaction', TransactionController::class);
+    // dashboard
+    Route::resource('dashboard', DashboardController::class);
+    // category
+    Route::resource('category', CategoryController::class);
+    // Route::get('category/data', [CategoryController::class, 'getData'])->name('category.data');
+    // project
+    Route::resource('project', ProjectController::class);
+    // user
+    Route::resource('user', UserController::class);
+    Route::put('/user/toggle-status/{user}', [UserController::class, 'toggleStatus'])->name('user.toggleStatus');
+    // banner
+    Route::resource('banner', BannerController::class)->except(['show', 'edit', 'create']);
+    // about
+    Route::resource('about', AboutController::class);
+    // contract
+    Route::resource('contract', ContractController::class);
+    // Route::get('contract/data', [ContractController::class, 'getData'])->name('contract.data');
+    // transaction
+    Route::resource('transaction', TransactionController::class);
 });
