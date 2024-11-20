@@ -38,13 +38,13 @@
     </div>
     <ul class="navbar-nav align-items-center mr-auto">
       <li class="nav-item mr-3">
-        <a href="{{ route('register') }}" class="btn btn-outline-landing">
+        <a href="#register" class="btn btn-outline-landing">
           Register
         </a>
       </li>
 
       <li class="nav-item">
-        <a href="{{ route('login') }}" class="btn btn-outline-login">
+        <a href="#login" class="btn btn-outline-login">
           Login
         </a>
       </li>

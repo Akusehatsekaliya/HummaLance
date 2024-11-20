@@ -1,4 +1,4 @@
-@include('components.alert')
+@include('landing.layout.auth')
 <!DOCTYPE html>
 <html lang="id">
 
