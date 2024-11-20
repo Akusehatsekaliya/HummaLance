@@ -17,3 +17,13 @@ Route::get('/detailCompany', [LandingpageController::class, 'detailCompany']);
 
 #notifications
 Route::resource('notifications', NotificationController::class);
+
+Route::prefix("landing")->name("landing.")->group(function () {
+  Route::get('/', function () {
+    return view('landing');
+  })->name("index");
+
+  Route::get('about', function () {
+    return view('about');
+  })->name('about');
+});
