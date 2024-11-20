@@ -537,7 +537,48 @@
     margin-right: 220px;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 35px;
+    gap: 15px;
+    width: 100%;
+    max-width: 100%;
+}
+
+.card-about-item {
+    text-align: left;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding-bottom: 25px;
+    transition: transform 0.3s ease;
+}
+
+
+.card-about-item:hover {
+    transform: translateY(-10px);
+}
+
+.card-about-item h5 {
+    font-size: 16px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 5px;
+    margin-top: 10px;
+    font-weight: 700;
+}
+
+.line-about{
+    height: 250px;
+    margin-top:-20px;
+    z-index:-1;
+    background-color:#fff;
+}
+
+.bg-line9 {
+    background: url(../images/line9.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position-y: center;
 }
 
 .svg-shodow {

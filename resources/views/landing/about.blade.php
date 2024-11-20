@@ -232,6 +232,7 @@
         </div>
     </div>
 </section>
+
 <section>
     <div class="container">
         <div class="fitur-clocker">
@@ -305,6 +306,7 @@
         </div>
     </div>
 </section>
+
 <section class="py-5 bg-landing">
     <div class="container">
         <div class="row py-lg-5 justify-content-center d-flex">
@@ -365,6 +367,7 @@
         </div>
     </div>
 </section>
+
 <section class="line-about bg-line9">
 </section>
 
