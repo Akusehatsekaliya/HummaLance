@@ -242,6 +242,25 @@ a {
     background-color: #01abfe !important;
 }
 
+.bg-landingJobs {
+    background-color: #e0f4ff !important; 
+    height: 480px;
+}
+
+.svg-aboutlanding{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    width: 100%;
+    max-width: 100%;
+    svg {
+      transition: transform 0.3s ease;
+    }
+    svg:hover {
+      transform: translateY(-10px);
+    }
+}
+
 .bg-about {
     background: url(../images/BackgroundAbout2.png);
     background-size: cover;

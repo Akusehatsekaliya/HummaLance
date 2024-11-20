@@ -134,7 +134,7 @@
                 <h3 class="text-white font-weight-bold">About Us</h3>
                 <p class="text-white">
                     Home
-                    <x-svg>{{ asset("assets/svg/icons-12/chevron-double-right.svg") }}</x-svg>
+                    <x-svg>{{ asset('assets/svg/icons-12/chevron-double-right.svg') }}</x-svg>
                     <a href="#" style="color: rgb(255, 255, 255); text-decoration: none;">About Us</a>
                 </p>
             </div>
@@ -150,7 +150,7 @@
                 <div class="col-lg-6">
                     <div style="display: flex; align-items: center;">
 
-                        <x-svg>{{ asset("assets/svg/landing/about/stats/logo-blue.svg") }}</x-svg>
+                        <x-svg>{{ asset('assets/svg/landing/about/stats/logo-blue.svg') }}</x-svg>
                         <h6 class="text-landing ml-2 mb-0">About Us</h6>
                     </div>
 
@@ -177,16 +177,16 @@
                 <div class="col-lg-6">
 
                     {{-- 22222 --}}
-                    <x-svg>{{ asset("assets/svg/landing/about/contents/group1.svg") }}</x-svg>
+                    <x-svg>{{ asset('assets/svg/landing/about/contents/group1.svg') }}</x-svg>
 
                     {{-- 33333 --}}
-                    <x-svg>{{ asset("assets/svg/landing/about/contents/group2.svg") }}</x-svg>
+                    <x-svg>{{ asset('assets/svg/landing/about/contents/group2.svg') }}</x-svg>
 
                     {{-- 44444 --}}
-                    <x-svg>{{ asset("assets/svg/landing/about/contents/group3.svg") }}</x-svg>
+                    <x-svg>{{ asset('assets/svg/landing/about/contents/group3.svg') }}</x-svg>
 
                     {{-- 55555 --}}
-                    <x-svg>{{ asset("assets/svg/landing/about/contents/group4.svg") }}</x-svg>
+                    <x-svg>{{ asset('assets/svg/landing/about/contents/group4.svg') }}</x-svg>
 
                 </div>
             </div>
@@ -199,7 +199,7 @@
         <div class="row justify-content-center d-flex text-center">
 
             <div class="col-lg-3 justify-content-center d-flex align-items-center">
-                <x-svg>{{ asset("assets/svg/landing/about/stats/user-group-20-solid.svg") }}</x-svg>
+                <x-svg>{{ asset('assets/svg/landing/about/stats/user-group-20-solid.svg') }}</x-svg>
                 <div class="text-content ml-3">
                     <h6>999+</h6>
                     <span class="span-1" style="color: white;">User</span>
@@ -207,7 +207,7 @@
             </div>
 
             <div class="col-lg-3 justify-content-center d-flex  align-items-center">
-                <x-svg>{{ asset("assets/svg/landing/about/stats/work.svg") }}</x-svg>
+                <x-svg>{{ asset('assets/svg/landing/about/stats/work.svg') }}</x-svg>
                 <div class="text-content ml-3">
                     <h6>999+</h6>
                     <span class="span-1" style="color: white;">Company</span>
@@ -215,7 +215,7 @@
             </div>
 
             <div class="col-lg-3 justify-content-center d-flex align-items-center">
-                <x-svg>{{ asset("assets/svg/landing/about/stats/workbox.svg") }}</x-svg>
+                <x-svg>{{ asset('assets/svg/landing/about/stats/workbox.svg') }}</x-svg>
                 <div class="text-content ml-3">
                     <h6>999+</h6>
                     <span class="span-1" style="color: white;">Freelancer</span>
@@ -223,7 +223,7 @@
             </div>
 
             <div class="col-lg-3 justify-content-center d-flex  align-items-center">
-                <x-svg>{{ asset("assets/svg/landing/about/stats/job.svg") }}</x-svg>
+                <x-svg>{{ asset('assets/svg/landing/about/stats/job.svg') }}</x-svg>
                 <div class="text-content ml-3">
                     <h6>999+</h6>
                     <span class="span-1" style="color: white;">Job</span>
@@ -237,7 +237,8 @@
         <div class="fitur-clocker">
             <div class="svg-container2">
 
-                <svg width="1920" height="222" viewBox="0 0 1920 222" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg width="1920" height="222" viewBox="0 0 1920 222" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
                     <path
                         d="M-47 197.501C-15 148.501 290.5 197.501 104 218C-82.5 238.499 458.068 36.9713 539.5 104.5C724 257.5 1289 -131 1452.37 103.338C1615.74 337.676 1977.88 -9.9241 2007 3.28184"
                         stroke="#CAEEFF" stroke-width="4" stroke-linecap="round" stroke-dasharray="10 10" />
@@ -253,7 +254,7 @@
                     <div class="row">
                         <div class="card-fitur-item">
                             <div class="main-fitur">
-                                <x-svg>{{ asset("assets/svg/landing/about/main-fitur/Self Development.svg") }}</x-svg>
+                                <x-svg>{{ asset('assets/svg/landing/about/main-fitur/Self Development.svg') }}</x-svg>
 
                                 <h5>Self Development</h5>
                                 <p>By joining clocker you can develop yourself further in your work and hone your
@@ -266,7 +267,7 @@
                     <div class="row">
                         <div class="card-fitur-item">
                             <div class="main-fitur">
-                                <x-svg>{{ asset("assets/svg/landing/about/main-fitur/Time Management.svg") }}</x-svg>
+                                <x-svg>{{ asset('assets/svg/landing/about/main-fitur/Time Management.svg') }}</x-svg>
 
                                 <h5>Time Management</h5>
                                 <p>in clocker you can manage your time more efficiently with various working hours from
@@ -279,7 +280,7 @@
                     <div class="row">
                         <div class="card-fitur-item">
                             <div class="main-fitur">
-                                <x-svg>{{ asset("assets/svg/landing/about/main-fitur/Career Growth.svg") }}</x-svg>
+                                <x-svg>{{ asset('assets/svg/landing/about/main-fitur/Career Growth.svg') }}</x-svg>
 
                                 <h5>Career Growth</h5>
                                 <p>At clocker you can grow your career more rapidly for your future</p>
@@ -291,7 +292,7 @@
                     <div class="row">
                         <div class="card-fitur-item">
                             <div class="main-fitur">
-                                <x-svg>{{ asset("assets/svg/landing/about/main-fitur/Global Networking.svg") }}</x-svg>
+                                <x-svg>{{ asset('assets/svg/landing/about/main-fitur/Global Networking.svg') }}</x-svg>
 
                                 <h5>Global Networking</h5>
                                 <p>Connect with clients and other professionals worldwide, opening doors to long-term
@@ -313,48 +314,48 @@
                     you want</p>
                 <a href="#" class="btn btn-outline-landing1 text-center" style="font-weight: bold;">
                     Try Clocker Now
-                    <x-svg>{{ asset("assets/svg/icons-24/icon-next.svg") }}</x-svg>
+                    <x-svg>{{ asset('assets/svg/icons-24/icon-next.svg') }}</x-svg>
                 </a>
             </div>
             <div class="col-lg-6">
                 <div class="card-about-grid" style="z-index:1; position:absolute; margin-top:-20px;">
                     <div class="card-about-item">
-                        <x-svg>{{ asset("assets/svg/landing/about/card-about-item/Easy To Use.svg") }}</x-svg>
+                        <x-svg>{{ asset('assets/svg/landing/about/card-about-item/Easy To Use.svg') }}</x-svg>
 
                         <h5>Easy To Use</h5>
                         <span>By joining clocker you can develop yourself further in </span>
                     </div>
 
                     <div class="card-about-item">
-                        <x-svg>{{ asset("assets/svg/landing/about/card-about-item/Varied work.svg") }}</x-svg>
+                        <x-svg>{{ asset('assets/svg/landing/about/card-about-item/Varied work.svg') }}</x-svg>
 
                         <h5>Varied work</h5>
                         <span>By joining clocker you can develop yourself further in </span>
                     </div>
 
                     <div class="card-about-item">
-                        <x-svg>{{ asset("assets/svg/landing/about/card-about-item/Diverse companies.svg") }}</x-svg>
+                        <x-svg>{{ asset('assets/svg/landing/about/card-about-item/Diverse companies.svg') }}</x-svg>
 
                         <h5>Diverse companies</h5>
                         <span>By joining clocker you can develop yourself further in </span>
                     </div>
 
                     <div class="card-about-item ">
-                        <x-svg>{{ asset("assets/svg/landing/about/card-about-item/Various Working Hours.svg") }}</x-svg>
+                        <x-svg>{{ asset('assets/svg/landing/about/card-about-item/Various Working Hours.svg') }}</x-svg>
 
                         <h5>Various Working Hours</h5>
                         <span>By joining clocker you can develop yourself further in </span>
                     </div>
 
                     <div class="card-about-item ">
-                        <x-svg>{{ asset("assets/svg/landing/about/card-about-item/Various Freelancer Services.svg") }}
+                        <x-svg>{{ asset('assets/svg/landing/about/card-about-item/Various Freelancer Services.svg') }}
                         </x-svg>
 
                         <h5>Various Freelancer Services</h5>
                         <span>By joining clocker you can develop yourself further in </span>
                     </div>
                     <div class="card-about-item ">
-                        <x-svg>{{ asset("assets/svg/landing/about/card-about-item/Used By Many People.svg") }}</x-svg>
+                        <x-svg>{{ asset('assets/svg/landing/about/card-about-item/Used By Many People.svg') }}</x-svg>
 
                         <h5>Used By Many People</h5>
                         <span>By joining clocker you can develop yourself further in </span>
@@ -366,3 +367,41 @@
 </section>
 <section class="line-about bg-line9">
 </section>
+
+
+
+
+
+
+
+
+{{-- <section class="py-5 bg-landingJobs">
+    <div class="container">
+        <div class="row py-lg-5 justify-content-center d-flex">
+            <div class="col-lg-5 svg-aboutlanding">
+                <x-svg class="justify-content-end">{{ asset('assets/svg/landing/banner/Background+Shadow (5).svg') }}</x-svg>
+                <x-svg>{{ asset('assets/svg/landing/banner/Background+Shadow (6).svg') }}</x-svg>
+                <x-svg>{{ asset('assets/svg/landing/banner/Background+Shadow (7).svg') }}</x-svg>
+                <x-svg>{{ asset('assets/svg/landing/banner/Background+Shadow (8).svg') }}</x-svg>
+            </div>
+            <div class="col-lg-5">
+                <div class="text-category1">
+                    <h3 class="font-weight-bold" style="margin-top: -60px; margin-left: -55px;">
+                        Search for Jobs on <span class="text-blue">CLOCKER</span> and Manage Your Job
+                    </h3>
+                    <x-svg class="vector-icon">{{ asset('assets/svg/landing/banner/Vector (2).svg') }}</x-svg>
+                    <p class="description">Look for a job that suits you and matches your passion</p>
+            
+                    <x-svg class="vector-icon">{{ asset('assets/svg/landing/banner/Vector (2).svg') }}</x-svg>
+                    <p class="description">Look for a job with the working hours you want</p>
+            
+                    <x-svg class="vector-icon">{{ asset('assets/svg/landing/banner/Vector (2).svg') }}</x-svg>
+                    <p class="description">Increase your professionalism by working as a freelancer with many connections</p>
+            
+                    <x-svg class="vector-icon">{{ asset('assets/svg/landing/banner/Vector (2).svg') }}</x-svg>
+                    <p class="description">Manage your work more regularly and efficiently</p>
+                </div>                
+            </div>
+        </div>
+    </div>
+</section> --}}
