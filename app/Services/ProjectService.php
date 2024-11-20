@@ -2,6 +2,7 @@
 
 namespace App\Services;
 
+use App\Constract\Interfaces\ProjectInterface;
 use App\Models\Project;
 use Illuminate\Http\Request;
 use Yajra\DataTables\DataTables;
@@ -9,10 +10,16 @@ use Yajra\DataTables\DataTables;
 class ProjectService
 {
 
+    private ProjectInterface $projectInterface;
+
+    public function __construct(ProjectInterface $projectInterface)
+    {
+        $this->projectInterface = $projectInterface;
+    }
 
     public function getData(Request $request)
     {
-        $categories = Project::with(['user', 'category'])->select(['id', 'name', 'description', 'user_id', 'category_id', 'budget']);
+        $categories = $this->projectInterface->get();
 
         return DataTables::of($categories)
             ->addIndexColumn()

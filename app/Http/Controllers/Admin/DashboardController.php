@@ -2,17 +2,28 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Constract\Interfaces\DashboardInterface;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 class DashboardController extends Controller
 {
+    private DashboardInterface $dashboardInterface;
+
+    public function __construct(DashboardInterface $dashboardInterface)
+    {
+        $this->dashboardInterface = $dashboardInterface;
+    }
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        return view('admin.dashboard');
+        $totalUser = $this->dashboardInterface->getUser();
+        $totalProject = $this->dashboardInterface->getProject();
+        $totalContract = $this->dashboardInterface->getContract();
+
+        return view('admin.dashboard', compact('totalUser', 'totalProject', 'totalContract'));
     }
 
     /**

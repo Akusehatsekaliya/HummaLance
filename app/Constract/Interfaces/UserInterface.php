@@ -8,7 +8,9 @@ use App\Constract\Interfaces\Eloquent\SearchInterface;
 use App\Constract\Interfaces\Eloquent\ShowInterface;
 use App\Constract\Interfaces\Eloquent\StoreInterface;
 use App\Constract\Interfaces\Eloquent\UpdateInterface;
+use Illuminate\Http\Request;
 
-interface UserInterface extends GetInterface, StoreInterface, UpdateInterface, DeleteInterface, SearchInterface, ShowInterface
+interface UserInterface extends StoreInterface, UpdateInterface, DeleteInterface, SearchInterface, ShowInterface
 {
+    public function get(Request $request): mixed;
 }

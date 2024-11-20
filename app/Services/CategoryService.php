@@ -2,6 +2,7 @@
 
 namespace App\Services;
 
+use App\Constract\Interfaces\CategoryInterface;
 use App\Constract\Repositories\CategoryRepository;
 use App\Models\Category;
 use Illuminate\Http\Request;
@@ -10,16 +11,18 @@ use Yajra\DataTables\DataTables;
 class CategoryService
 {
     protected $categoryRepository;
+    private CategoryInterface $categoryInterface;
 
-    public function __construct(CategoryRepository $categoryRepository)
+    public function __construct(CategoryRepository $categoryRepository, CategoryInterface $categoryInterface)
     {
         $this->categoryRepository = $categoryRepository;
+        $this->categoryInterface = $categoryInterface;
     }
 
 
     public function getData(Request $request)
     {
-        $categories = Category::select(['id', 'name']);
+        $categories = $this->categoryInterface->get();
 
         return DataTables::of($categories)
             ->addIndexColumn()
