@@ -3,15 +3,25 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Services\ProjectService;
 use Illuminate\Http\Request;
 
 class ProjectController extends Controller
 {
+    private ProjectService $projectService;
+
+    public function __construct( ProjectService $projectService)
+    {
+        $this->projectService = $projectService;
+    }
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
+        if ($request->ajax() || $request->wantsJson()) {
+            return $this->projectService->getData($request);
+        }
         return view('admin.project');
     }
 

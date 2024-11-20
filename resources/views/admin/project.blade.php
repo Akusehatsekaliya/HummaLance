@@ -9,7 +9,7 @@
             <div class="card">
                 <div class="card-body">
                     <div class="table-responsive ">
-                        <table class="table" id="table1">
+                        <table class="table" id="table2">
                             <thead>
                                 <tr>
                                     <th>NO</th>
@@ -21,14 +21,6 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td class="text-bold-500">1</td>
-                                    <td class="text-bold-500">UI/UX</td>
-                                    <td class="text-bold-500">UI/UX</td>
-                                    <td class="text-bold-500">USER <br> user@gmail.com</td>
-                                    <td class="text-bold-500">Project About UI/UX designer</td>
-                                    <td class="text-bold-500">1.000.000</td>
-                                </tr>
                             </tbody>
                         </table>
                     </div>
@@ -36,4 +28,48 @@
             </div>
         </section>
     </div>
+@endsection
+
+@section('script')
+    <script>
+        $(document).ready(function() {
+            $('#table2').DataTable({
+                processing: true,
+                serverSide: true,
+                ajax: "#",
+                columns: [{
+                        data: 'DT_RowIndex',
+                        name: 'DT_RowIndex',
+                        orderable: false,
+                        searchable: false
+                    },
+                    {
+                        data: 'name',
+                        name: 'name'
+                    },
+                    {
+                        data: 'category_name',
+                        name: 'category.name'
+                    },
+                    {
+                        data: 'user_name',
+                        name: 'user.name'
+                    },
+                    {
+                        data: 'description',
+                        name: 'description'
+                    },
+                    {
+                        data: 'budget',
+                        name: 'budget',
+                        render: function(data, type, row) {
+                            return '<strong>Rp ' + new Intl.NumberFormat('id-ID', {
+                                minimumFractionDigits: 0
+                            }).format(data)+ '</strong>';
+                        }
+                    },
+                ]
+            });
+        });
+    </script>
 @endsection
