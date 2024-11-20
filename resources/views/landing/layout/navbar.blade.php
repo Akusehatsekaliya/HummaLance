@@ -5,22 +5,22 @@
     <!-- Topbar Navbar -->
     <div class="collapse navbar-collapse" id="navbarResponsive">
       <ul class="navbar-nav ml-auto ">
-        <li class="nav-item active">
+        <li @class(['nav-item', 'active' => request()->routeIs('landing.index')])>
           <a class="nav-landing" href="{{ route('landing.index') }}">Clocker Pro</a>
         </li>
-        <li class="nav-item ">
+        <li @class(['nav-item', 'active' => request()->routeIs('landing.about')])>
           <a class="nav-landing" href="{{ route('landing.about') }}">About Us</a>
         </li>
-        <li class="nav-item ">
+        <li @class(['nav-item', 'active' => false])>
           <a class="nav-landing" href="#">Guides</a>
         </li>
-        <li class="nav-item ">
+        <li @class(['nav-item', 'active' => false])>
           <a class="nav-landing" href="#">learn</a>
         </li>
-        <li class="nav-item ">
+        <li @class(['nav-item', 'active' => false])>
           <a class="nav-landing" href="#">Podcast</a>
         </li>
-        <li class="nav-item ">
+        <li @class(['nav-item', 'active' => false])>
           <a class="nav-landing" href="#">Events</a>
         </li>
 
