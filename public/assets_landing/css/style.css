@@ -3945,9 +3945,9 @@ section.related-links ul li a:hover {
 }
 .img-clocker {
     border-radius: 4px;
-    width: 7rem;
-    height: 7rem;
-    object-fit: cover;
+    width: 7.8rem;
+    height: 7.8rem;
+    object-fit: cover; /* Menjaga agar gambar tetap proporsional */
     margin-left: 20px;
 }
 

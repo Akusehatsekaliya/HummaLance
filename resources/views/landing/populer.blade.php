@@ -9,10 +9,8 @@
         padding: 20px;
         display: flex;
         flex-wrap: wrap;
-        justify-content: center;
-        /* Menyusun item di tengah secara horizontal */
-        align-items: center;
-        /* Menyusun item di tengah secara vertikal */
+        justify-content:flex-start;
+        align-items:flex-start;
     }
 
 
@@ -22,10 +20,8 @@
         background-color: #fff;
         display: flex;
         align-items: center;
-        justify-content: center;
         width: 250px;
-        height: 87px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
         border-radius: 8px;
         opacity: 1;
         transform: scale(1);
@@ -35,16 +31,13 @@
     .item.hidden {
         opacity: 0;
         transform: scale(0.8);
-        /* Mengecil saat menghilang */
+
         pointer-events: none;
-        /* Tidak dapat diklik */
     }
 
-    /* Tambahkan sedikit efek hover */
-    .item:hover {
+     .item:hover {
         transform: scale(1.05);
-        /* Perbesar sedikit saat dihover */
-        box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
     }
 
     .item svg {
@@ -118,36 +111,23 @@
         justify-content: center;
         align-items: center;
         width: 30px;
-        /* Ukuran lebar dan tinggi sama untuk bentuk bulat */
         height: 30px;
         padding: 0;
         margin: 20px auto;
         background-color: #ffffff;
-        /* Warna putih */
         color: #3498db;
-        /* Warna teks/panah */
         border: none;
-        /* Hilangkan border */
         border-radius: 50%;
-        /* Membuat bentuk bulat */
         cursor: pointer;
         text-align: center;
         font-size: 16px;
         position: relative;
-        /* Untuk ikon panah */
         transition: background-color 0.3s ease, transform 0.3s ease;
     }
 
     .load-more-btn:hover {
-        background-color: #3498db;
-        /* Ubah ke warna utama saat hover */
-        color: white;
-        /* Teks menjadi putih saat hover */
         transform: scale(1.1);
-        /* Perbesar sedikit saat hover */
     }
-
-    /* Tambahkan SVG panah ke bawah */
     .load-more-btn::after {
         content: '';
         position: absolute;
@@ -159,7 +139,6 @@
         transform: translateY(-50%);
     }
 
-    /* Jika tombol aktif seperti dropdown terbuka */
     .load-more-btn.active::after {
         background: url('data:image/svg+xml,%3Csvg%20width%3D%2222%22%20height%3D%2213%22%20viewBox%3D%220%200%2022%2013%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill-rule%3D%22evenodd%22%20clip-rule%3D%22evenodd%22%20d%3D%22M0.538724%209.81879L9.69784%200.548432C9.86813%200.374653%2010.0707%200.236717%2010.294%200.142589C10.5172%200.0484601%2010.7566%20-8.25403e-07%2010.9984%20-8.22519e-07C11.2403%20-8.19636e-07%2011.4797%200.0484601%2011.7029%200.142589C11.9261%200.236717%2012.1287%200.374653%2012.299%200.548432L21.4581%209.81879C21.6298%209.99115%2021.7661%2010.1962%2021.8591%2010.4221C21.9521%2010.6481%2022%2010.8904%2022%2011.1352C22%2011.3799%2021.9521%2011.6223%2021.8591%2011.8482C21.7661%2012.0741%2021.6298%2012.2792%2021.4581%2012.4516C21.2879%2012.6253%2021.0853%2012.7633%2020.862%2012.8574C20.6388%2012.9515%2020.3994%2013%2020.1576%2013C19.9157%2013%2019.6763%2012.9515%2019.4531%2012.8574C19.2299%2012.7633%2019.0273%2012.6253%2018.857%2012.4516L10.9984%204.47906L3.13991%2012.4516C2.79497%2012.8007%202.32714%2012.9968%201.83932%2012.9968C1.59778%2012.9968%201.3586%2012.9487%201.13544%2012.8551C0.912286%2012.7616%200.709521%2012.6244%200.538724%2012.4516C0.193785%2012.1024%201.635e-08%2011.6289%202.22378e-08%2011.1352C2.51531e-08%2010.8907%200.047576%2010.6486%200.14001%2010.4228C0.232445%2010.1969%200.367928%209.99166%200.538724%209.81879Z%22%20fill%3D%22%2300AAFF%22%2F%3E%3C%2Fsvg%3E') no-repeat center center;
         background-size: contain;
