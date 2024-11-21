@@ -383,7 +383,6 @@
 
 .card-about-item h5 {
     font-size: 16px;
-    font-weight: 600;
     color: #333;
     margin-bottom: 5px;
     margin-top: 10px;
@@ -402,4 +401,72 @@
     background-size: cover;
     background-repeat: no-repeat;
     background-position-y: center;
+}
+
+
+.list p{
+    font-size: 19px;
+    line-height: 1.5;
+    margin-bottom: 0;
+    font-style: Roboto;
+    margin-top: 4px;
+    margin-left: 4px;
+}
+
+.bg-line1{
+    background: url(../images/line1.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position-y: center;
+
+}
+
+.bg-15{
+    background: url(../images/Group15.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-position-y: center;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0); /* Posisi awal (di tempat) */
+    }
+    50% {
+        transform: translateY(-10px); /* Naik 15px */
+    }
+    100% {
+        transform: translateY(0); /* Kembali ke posisi semula */
+    }
+}
+.item1 {
+    z-index: 1;
+    position: absolute;
+    left: 10.9%;
+    top: 26%;
+    animation: float 3s ease-in-out infinite;
+    animation-delay: 0s;
+}
+
+
+.item2 {
+    z-index: 1;
+    position: absolute;
+    right: 10%;
+    bottom: 18px;
+    animation: float 3s ease-in-out infinite;
+    animation-delay: 1s;
+}
+.item3 {
+    z-index: 1;
+    position: absolute;
+    left: 13%;
+    bottom: 13%;
+    animation: float 3s ease-in-out infinite;
+    animation-delay: 2s;
+}
+
+.svg1{
+    justify-content: center;
 }
