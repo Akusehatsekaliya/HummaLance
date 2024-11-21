@@ -14,9 +14,9 @@
             <div class="row ">
                 <div class="col">
                     {{-- <div class="freelancer"> --}}
-                    <div class="freelancer1">
+                    <div class="freelancer2">
                         <img src="images/senatopcustudio.jpg">
-                        <div class="freelancer1-footer">
+                        <div class="freelancer2-footer">
                             <img src="images/user/s7.png">
                             <h5>Clocker</h5>
                         </div>
@@ -77,9 +77,9 @@
                     </div>
                 </div>
                 <div class="col">
-                    <div class="freelancer1">
+                    <div class="freelancer2">
                         <img src="images/senatopcustudio.jpg">
-                        <div class="freelancer1-footer">
+                        <div class="freelancer2-footer">
                             <img src="images/user/s7.png">
                             <h5>Clocker</h5>
                         </div>
@@ -140,9 +140,9 @@
                     </div>
                 </div>
                 <div class="col">
-                    <div class="freelancer1">
+                    <div class="freelancer2">
                         <img src="images/senatopcustudio.jpg">
-                        <div class="freelancer1-footer">
+                        <div class="freelancer2-footer">
                             <img src="images/user/s7.png">
                             <h5>Clocker</h5>
                         </div>
@@ -203,9 +203,9 @@
                     </div>
                 </div>
                 <div class="col">
-                    <div class="freelancer1">
+                    <div class="freelancer2">
                         <img src="images/senatopcustudio.jpg">
-                        <div class="freelancer1-footer">
+                        <div class="freelancer2-footer">
                             <img src="images/user/s7.png">
                             <h5>Clocker</h5>
                         </div>

@@ -18,16 +18,18 @@
                     </ul>
                     <br>
                     <br>
-                    {{-- <div class="freelancer1" onclick="navigateWithAnimation(this, '/detailCompany')"> --}}
+
+                    {{-- 1111111 --}}
                     <div class="freelancer1">
                         <div class="inner-slider">
                             <div class="inner-wrapper">
                                 <div class="d-flex align-items-center">
                                     <a>
-                                        <img class="img-clocker" src="{{ asset('assets_landing/images/ClockerHome.png') }}" />
+                                        <img class="img-clocker"
+                                            src="{{ asset('assets_landing/images/ClockerHome.png') }}" />
                                     </a>
                                     <span class="seller-name"
-                                        style="margin-left: 20px; top: -6px; height: 110px; position: relative; padding-right: 12px;">
+                                        style="margin-left: 12px; top: -6px; height: 110px; position: relative; padding-right: 12px;">
                                         <a style="font-size: 20px; display: inline-block; margin-bottom: 6px;">
                                             Graphic Designer Needed for Instagram Content
                                         </a>
@@ -196,16 +198,17 @@
                     </ul>
                     <br>
                     <br>
-                    {{-- <div class="freelancer1" onclick="navigateWithAnimation(this, '/detailCompany')"> --}}
+                    {{-- 222222 --}}
                     <div class="freelancer1">
                         <div class="inner-slider">
                             <div class="inner-wrapper">
                                 <div class="d-flex align-items-center">
                                     <a>
-                                        <img class="img-clocker" src="{{ asset('assets_landing/images/ClockerHome.png') }}" />
+                                        <img class="img-clocker"
+                                            src="{{ asset('assets_landing/images/ClockerHome.png') }}" />
                                     </a>
                                     <span class="seller-name"
-                                        style="margin-left: 20px; top: -6px; height: 110px; position: relative; padding-right: 12px;">
+                                        style="margin-left: 12px; top: -6px; height: 110px; position: relative; padding-right: 12px;">
                                         <a style="font-size: 20px; display: inline-block; margin-bottom: 6px;">
                                             Graphic Designer Needed for Instagram Content
                                         </a>
@@ -354,17 +357,18 @@
                         </div>
                     </div>
 
-
+                    {{-- 333333 --}}
                     <div class="graphic">
                         <div class="freelancer1">
                             <div class="inner-slider">
                                 <div class="inner-wrapper">
                                     <div class="d-flex align-items-center">
                                         <a>
-                                            <img class="img-clocker" src="{{ asset('assets_landing/images/ClockerHome.png') }}" />
+                                            <img class="img-clocker"
+                                                src="{{ asset('assets_landing/images/ClockerHome.png') }}" />
                                         </a>
                                         <span class="seller-name"
-                                            style="margin-left: 20px; top: -6px; height: 110px; position: relative; padding-right: 12px;">
+                                            style="margin-left: 12px; top: -6px; height: 110px; position: relative; padding-right: 12px;">
                                             <a style="font-size: 20px; display: inline-block; margin-bottom: 6px;">
                                                 Graphic Designer Needed for Instagram Content
                                             </a>
