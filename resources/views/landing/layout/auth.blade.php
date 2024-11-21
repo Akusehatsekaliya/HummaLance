@@ -72,6 +72,8 @@
           <h1>Hello, welcome</h1>
           <p>Don't have a account?</p>
           <button class="btn register-btn">Register</button>
+          <img src="{{asset('assets_landing/images/login1.png')}}" alt="login1">
+          <img src="{{asset('assets_landing/images/login2.png')}}" alt="login2">
         </div>
 
         <div class="toggle-panel toggle-right">
