@@ -15,7 +15,9 @@
                 <div class="col">
                     {{-- <div class="freelancer"> --}}
                     <div class="freelancer2">
-                        <img src="{{ asset('assets_landing/images/BackgroundHome.png') }}">
+                        <div class="img-wrapper2">
+                            <img src="{{ asset('assets_landing/images/BackgroundHome.png') }}" alt="Freelancer Background">
+                        </div>
                         <div class="freelancer2-footer">
                             <img src="images/user/s7.png">
                             <h5>Clocker</h5>
@@ -57,7 +59,9 @@
                 </div>
                 <div class="col">
                     <div class="freelancer2">
-                        <img src="{{ asset('assets_landing/images/BackgroundHome.png') }}">
+                        <div class="img-wrapper2">
+                            <img src="{{ asset('assets_landing/images/BackgroundHome.png') }}" alt="Freelancer Background">
+                        </div>
                         <div class="freelancer2-footer">
                             <img src="images/user/s7.png">
                             <h5>Clocker</h5>
@@ -99,7 +103,9 @@
                 </div>
                 <div class="col">
                     <div class="freelancer2">
-                        <img src="{{ asset('assets_landing/images/BackgroundHome.png') }}">
+                        <div class="img-wrapper2">
+                            <img src="{{ asset('assets_landing/images/BackgroundHome.png') }}" alt="Freelancer Background">
+                        </div>
                         <div class="freelancer2-footer">
                             <img src="images/user/s7.png">
                             <h5>Clocker</h5>
@@ -141,7 +147,9 @@
                 </div>
                 <div class="col">
                     <div class="freelancer2">
-                        <img src="{{ asset('assets_landing/images/BackgroundHome.png') }}">
+                        <div class="img-wrapper2">
+                            <img src="{{ asset('assets_landing/images/BackgroundHome.png') }}" alt="Freelancer Background">
+                        </div>
                         <div class="freelancer2-footer">
                             <img src="images/user/s7.png">
                             <h5>Clocker</h5>

@@ -241,16 +241,6 @@ a {
 .bg-landing {
     background-color: #01abfe !important;
 }
-.bg-home {
-    background-color: #e0f4ffe1 !important;
-    border: 2px solid #e0f4ffe1;
-    border-radius: 30px;
-    padding: 20px;
-    margin: 100px;
-    max-width: 100%;
-    height: 600px;
-}
-
 
 .bg-landingJobs {
     background-color: #e0f4ff !important;
@@ -4008,14 +3998,6 @@ section.related-links ul li a:hover {
     border-radius: 6px;
 }
 
-
-.button-container {
-    display: flex;
-    justify-content: flex-end;
-    margin-left: 443px;
-    margin-top: -60px;
-    padding: 10px 15px;
-}
 
 .button {
     display: inline-flex;
