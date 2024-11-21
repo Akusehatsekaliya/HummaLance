@@ -3968,7 +3968,7 @@ section.related-links ul li a:hover {
 .button-container {
     display: flex;
     justify-content: flex-end;
-    margin-left: 435px;
+    margin-left: 443px;
     margin-top: -60px;
     padding: 10px 15px;
 }
@@ -4003,4 +4003,48 @@ section.related-links ul li a:hover {
 .heart {
     color: #ff0000;
     background-color: #FFE9E9;
+}
+
+
+.freelancer2 {
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    background-color: #fff;
+    margin-bottom: 7px;
+    overflow: hidden;
+    /* height: 10rem;
+    width: 5rem;
+    margin-left: 1px; */
+}
+
+.freelancer2 img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 4px 4px 4px 4px;
+}
+.freelancer2 .freelancer2-footer {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    padding: 15px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.freelancer2 .freelancer2-footer img {
+    height: 36px;
+    width: 36px;
+    border-radius: 50%;
+}
+.freelancer2 .freelancer2-footer h5 {
+    color: #222325;
+    padding-left: 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    line-height: 18px;
+    font-weight: 700;
+}
+.freelancer2 .freelancer2-footer h5 span {
+    display: block;
+    font-weight: 400;
 }
