@@ -1,5 +1,14 @@
+<style>
+    hr {
+    border: 0;
+    height: 1.50px; /* Tinggi garis */
+    background-color: rgb(118, 118, 128, 0.2); /* Warna garis, bisa disesuaikan */
+    width: 100%; /* Lebar garis, bisa disesuaikan */
+}
+</style>
+
 <div class="freelance-projects bg-white py-5">
-    <div class="container">
+    <div class="container" style="margin-top: -70px;">
         <div style="display: flex; justify-content: space-between; align-items: center;">
             <h3 style="font-size: 1.5em; font-weight: bold;">Freelancer service</h3>
             <a href="URL-HAKAMU"
@@ -9,9 +18,9 @@
             </a>
         </div>
         <br>
-        <ul class="custom-navbar">
-            <li class="custom-nav-item" style="color: #01ABFE">
-                <a class="custom-nav-link">Jobs</a>
+        <ul class="custom-navbar0">
+            <li class="custom-nav-item0" style="color: #01ABFE">
+                <a class="custom-nav-link0">Service</a>
             </li>
         </ul>
         <br>
@@ -20,7 +29,7 @@
             <div class="col">
                 {{-- <div class="freelancer"> --}}
                 <div class="freelancer">
-                    <img src="images/senatopcustudio.jpg">
+                    <img src="{{ asset('assets_landing/images/BackgroundHome.png') }}">
                     <div class="freelancer-footer">
                         <img src="images/user/s7.png">
                         <h5>Clocker</h5>
@@ -70,7 +79,7 @@
 
             <div class="col">
                 <div class="freelancer">
-                    <img src="images/senatopcustudio.jpg">
+                    <img src="{{ asset('assets_landing/images/BackgroundHome.png') }}">
                     <div class="freelancer-footer">
                         <img src="images/user/s7.png">
                         <h5>Clocker</h5>
@@ -120,7 +129,7 @@
 
             <div class="col">
                 <div class="freelancer">
-                    <img src="images/senatopcustudio.jpg">
+                    <img src="{{ asset('assets_landing/images/BackgroundHome.png') }}">
                     <div class="freelancer-footer">
                         <img src="images/user/s7.png">
                         <h5>Clocker</h5>
@@ -169,7 +178,7 @@
             </div>
             <div class="col">
                 <div class="freelancer">
-                    <img src="images/senatopcustudio.jpg">
+                    <img src="{{ asset('assets_landing/images/BackgroundHome.png') }}">
                     <div class="freelancer-footer">
                         <img src="images/user/s7.png">
                         <h5>Clocker</h5>
@@ -218,7 +227,7 @@
             </div>
             <div class="col">
                 <div class="freelancer">
-                    <img src="images/senatopcustudio.jpg">
+                    <img src="{{ asset('assets_landing/images/BackgroundHome.png') }}">
                     <div class="freelancer-footer">
                         <img src="images/user/s7.png">
                         <h5>Clocker</h5>
@@ -268,3 +277,5 @@
         </div>
     </div>
 </div>
+
+<hr>
