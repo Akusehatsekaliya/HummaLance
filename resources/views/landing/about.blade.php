@@ -10,16 +10,12 @@
         position: relative;
         z-index: 3;
         max-width: 100%;
-        /* Batasi agar tidak melebihi kontainer */
         height: auto;
-        /* Pertahankan aspek rasio */
     }
 
     .svg-first {
         top: -60px;
-        /* Atur agar melebihi navbar */
         left: 40%;
-        /* Pusatkan secara horizontal */
         transform: translateX(-40%);
     }
 
@@ -38,10 +34,7 @@
         transform: translatex(165px);
     }
 
-    /* Media queries untuk memastikan responsivitas */
     @media (max-width: 768px) {
-
-        /* Sesuaikan agar tata letak tetap sama dengan desktop di layar kecil */
         .svg-first {
             top: -23px;
             left: 23%;
@@ -74,10 +67,8 @@
     .col-lg-6 {
         width: 100%;
         max-width: 600px;
-        /* Atur maksimum lebar */
         position: relative;
     }
-
 
     .homepage-search-block1 {
         height: 175px;
@@ -87,31 +78,22 @@
     .icon-with-text {
         display: flex;
         align-items: center;
-        /* Agar teks sejajar vertikal dengan ikon */
         gap: 0.5rem;
-        /* Memberikan jarak antara ikon dan teks */
     }
 
     .text-content {
         display: flex;
         flex-direction: column;
-        /* Teks "999+" dan "users" tersusun secara vertikal */
         align-items: flex-start;
-        /* Teks rata ke kiri */
     }
 
     h6 {
-        margin: 0;
-        /* Menghapus margin default */
-        font-size: 1.50rem;
-        /* Atur ukuran font sesuai kebutuhan */
-        color: #fff;
+        margin: 0 font-size: 1.50rem color: #fff;
         font-weight: bold;
     }
 
     span-1 {
         font-size: 0.875rem;
-        /* Ukuran font "users" */
     }
 
     /* .svg-line{
@@ -122,7 +104,6 @@
     /* Pastikan kontainer section dapat menyesuaikan dengan elemen SVG */
     .homepage-search-block {
         overflow: visible;
-        /* Memastikan elemen SVG yang keluar tetap terlihat */
     }
 </style>
 
@@ -146,7 +127,6 @@
     <div class="view_slider recommended position-relative">
         <div class="container ">
             <div class="row justify-content-center d-flex ">
-
                 <div class="col-lg-6">
                     <div style="display: flex; align-items: center;">
 
@@ -175,7 +155,6 @@
                         work together.</p>
                 </div>
                 <div class="col-lg-6">
-
                     {{-- 22222 --}}
                     <x-svg>{{ asset('assets/svg/landing/about/contents/group1.svg') }}</x-svg>
 
@@ -187,14 +166,13 @@
 
                     {{-- 55555 --}}
                     <x-svg>{{ asset('assets/svg/landing/about/contents/group4.svg') }}</x-svg>
-
                 </div>
             </div>
         </div>
     </div>
 </section>
 
-<section class="py-5 homepage-search-block1 bg-landing position-relative">
+<section class="py-5 homepage-search-block1 bg-landing bg-user position-relative">
     <div class="container">
         <div class="row justify-content-center d-flex text-center">
 
@@ -253,7 +231,7 @@
             <div class="row-fitur">
                 <div class="fitur-item">
                     <div class="row">
-                        <div class="card-fitur-item">
+                        <div class="card-fitur-item1">
                             <div class="main-fitur">
                                 <x-svg>{{ asset('assets/svg/landing/about/main-fitur/Self Development.svg') }}</x-svg>
 
@@ -279,7 +257,7 @@
                 </div>
                 <div class="fitur-item">
                     <div class="row">
-                        <div class="card-fitur-item">
+                        <div class="card-fitur-item2">
                             <div class="main-fitur">
                                 <x-svg>{{ asset('assets/svg/landing/about/main-fitur/Career Growth.svg') }}</x-svg>
 
@@ -370,41 +348,3 @@
 
 <section class="line-about bg-line9">
 </section>
-
-
-
-
-
-
-
-
-{{-- <section class="py-5 bg-landingJobs">
-    <div class="container">
-        <div class="row py-lg-5 justify-content-center d-flex">
-            <div class="col-lg-5 svg-aboutlanding">
-                <x-svg class="justify-content-end">{{ asset('assets/svg/landing/banner/Background+Shadow (5).svg') }}</x-svg>
-                <x-svg>{{ asset('assets/svg/landing/banner/Background+Shadow (6).svg') }}</x-svg>
-                <x-svg>{{ asset('assets/svg/landing/banner/Background+Shadow (7).svg') }}</x-svg>
-                <x-svg>{{ asset('assets/svg/landing/banner/Background+Shadow (8).svg') }}</x-svg>
-            </div>
-            <div class="col-lg-5">
-                <div class="text-category1">
-                    <h3 class="font-weight-bold" style="margin-top: -60px; margin-left: -55px;">
-                        Search for Jobs on <span class="text-blue">CLOCKER</span> and Manage Your Job
-                    </h3>
-                    <x-svg class="vector-icon">{{ asset('assets/svg/landing/banner/Vector (2).svg') }}</x-svg>
-                    <p class="description">Look for a job that suits you and matches your passion</p>
-            
-                    <x-svg class="vector-icon">{{ asset('assets/svg/landing/banner/Vector (2).svg') }}</x-svg>
-                    <p class="description">Look for a job with the working hours you want</p>
-            
-                    <x-svg class="vector-icon">{{ asset('assets/svg/landing/banner/Vector (2).svg') }}</x-svg>
-                    <p class="description">Increase your professionalism by working as a freelancer with many connections</p>
-            
-                    <x-svg class="vector-icon">{{ asset('assets/svg/landing/banner/Vector (2).svg') }}</x-svg>
-                    <p class="description">Manage your work more regularly and efficiently</p>
-                </div>                
-            </div>
-        </div>
-    </div>
-</section> --}}
