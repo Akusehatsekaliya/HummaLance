@@ -3951,3 +3951,56 @@ section.related-links ul li a:hover {
     margin-left: 20px;
 }
 
+.graphic {
+    margin-top: 40px;
+}
+
+.button-apply {
+    margin-right: 27px;
+    margin-top: -200px;
+    padding: 9px 9px;
+    font-size: 12px;
+    font-weight: bold;
+    border-radius: 6px;
+}
+
+
+.button-container {
+    display: flex;
+    justify-content: flex-end;
+    margin-left: 435px;
+    margin-top: -60px;
+    padding: 10px 15px;
+}
+
+.button {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 45px;
+    height: 45px;
+    margin: 10px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.2s, background-color 0.3s;
+    margin-top: -12px;
+}
+
+.button:hover {
+    transform: scale(1.1);
+}
+
+.button i {
+    font-size: 1.45rem;
+}
+
+.like {
+    color: #007bff;
+    background-color: #DFF4FF;
+}
+
+.heart {
+    color: #ff0000;
+    background-color: #FFE9E9;
+}
