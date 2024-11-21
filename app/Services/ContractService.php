@@ -2,18 +2,24 @@
 
 namespace App\Services;
 
+use App\Constract\Interfaces\ContractInterface;
 use App\Models\Contract;
 use Illuminate\Http\Request;
 use Yajra\DataTables\Facades\DataTables;
 
 class ContractService
-
 {
+
+    private ContractInterface $contractInterface;
+
+    public function __construct(ContractInterface $contractInterface)
+    {
+        $this->contractInterface = $contractInterface;
+    }
     public function getData(Request $request)
     {
-        $contracts = Contract::with(['user', 'project']);
+        $contracts = $this->contractInterface->get();
 
-        // Apply status filter if provided
         if ($request->has('status') && !empty($request->status)) {
             $contracts->where('status', $request->status);
         }
@@ -31,7 +37,6 @@ class ContractService
             ->filter(function ($query) use ($request) {
                 if ($request->has('search') && !empty($request->search['value'])) {
                     $search = $request->search['value'];
-                    // Apply search to specific columns except 'status'
                     $query->where(function ($q) use ($search) {
                         $q->where('id', 'like', "%{$search}%")
                             ->orWhereHas('user', function ($q) use ($search) {

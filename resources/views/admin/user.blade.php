@@ -28,6 +28,7 @@
                                     <th>NAME</th>
                                     <th>EMAIL</th>
                                     <th>ROLE</th>
+                                    <th>STATUS</th>
                                     <th>ACTION</th>
                                 </tr>
                             </thead>
@@ -57,6 +58,25 @@
                         @method('DELETE')
                         <button type="submit" class="btn btn-danger">Delete</button>
                     </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    {{-- end --}}
+
+    {{-- modal detail --}}
+    <div id="detailModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="detailModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document" style="margin-top: 20px;">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="detailModalLabel">User Details</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                 </div>
             </div>
         </div>
@@ -94,6 +114,16 @@
                         name: 'role'
                     },
                     {
+                        data: 'status',
+                        name: 'status',
+                        render: function(data, type, row) {
+                            let colorClass = data === 'active' ?
+                                'bg-light-success text-success' :
+                                'bg-light-warning text-warning';
+                            return `<span class="badge ${colorClass} p-2">${data.charAt(0).toUpperCase() + data.slice(1)}</span>`;
+                        }
+                    },
+                    {
                         data: 'action',
                         name: 'action',
                         orderable: false,
@@ -106,16 +136,39 @@
                 table.draw();
             });
         });
-        document.addEventListener('DOMContentLoaded', function() {
-            const deleteModal = document.getElementById('deleteModal');
-            const deleteForm = document.getElementById('deleteForm');
 
-            deleteModal.addEventListener('show.bs.modal', function(event) {
-                const button = event.relatedTarget;
-                const itemId = button.getAttribute('data-id');
+        $('#detailModal').on('show.bs.modal', function(event) {
+            const button = $(event.relatedTarget);
+            
+        });
 
-                const route = "{{ route('admin.user.destroy', ':id:') }}";
-                deleteForm.action = route.replace(':id:', itemId);
+        $(document).on('click', '.toggle-status', function() {
+            const userId = $(this).data('id');
+            const status = $(this).data('status');
+            const button = $(this);
+            const table = $('#table10').DataTable();
+
+            $.ajax({
+                url: '{{ route('admin.user.toggleStatus', ['user' => '__id__']) }}'.replace('__id__',
+                    userId),
+                method: 'PUT',
+                data: {
+                    status: status,
+                    _token: '{{ csrf_token() }}'
+                },
+                success: function(response) {
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Status Updated Successfully',
+                        text: response.message,
+                        showConfirmButton: true,
+                    }).then(function() {
+                        table.ajax.reload();
+                    });
+                },
+                error: function(xhr, status, error) {
+                    alert('Failed to change user status: ' + error);
+                }
             });
         });
     </script>

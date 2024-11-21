@@ -51,10 +51,15 @@ class UserRepository extends BaseRepository implements UserInterface
      *
      * @return mixed
      */
-    public function get(): mixed
+    public function get(Request $request): mixed
     {
-        return $this->model->query()
-            ->get();
+        return $this->model->with('roles')
+            ->select(['id', 'name', 'email', 'status'])
+            ->when($request->role, function ($query, $role) {
+                return $query->whereHas('roles', fn($q) => $q->where('name', $role));
+            }, function ($query) {
+                return $query->whereDoesntHave('roles', fn($q) => $q->where('name', 'admin'));
+            });
     }
     /**
      * Handle store data event to models.
@@ -78,7 +83,7 @@ class UserRepository extends BaseRepository implements UserInterface
      */
     public function update(mixed $id, array $data): mixed
     {
-        return $this->show($id)->update($data);
+        return $this->model->query()->findOrFail($id)->update($data);
     }
 
     /**

@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Constract\Enums\UserRoleEnum;
+use App\Constract\Enums\UserStatusEnum;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use App\Enums\RoleUserEnum;
 use App\Models\User;
@@ -22,33 +23,40 @@ class UserSeeder extends Seeder
         ]);
         User::factory()->withRole(UserRoleEnum::FREELANCER->value)->create([
             'name' => 'Freelancer',
-            'email' => 'freelancer@gmail.com'
+            'email' => 'freelancer@gmail.com',
+            'status' => UserStatusEnum::ACTIVE->value
         ]);
 
         $teamAccount = [
             [
                 'name' => 'Ahmad Syauqi Ali Syahbana',
-                'email' => 'sauqi2019@gmail.com'
+                'email' => 'sauqi2019@gmail.com',
+                'status' => UserStatusEnum::ACTIVE->value
             ],
             [
                 'name' => 'Cintaa',
-                'email' => 'ccintaadenia06@gmail.com'
+                'email' => 'ccintaadenia06@gmail.com',
+                'status' => UserStatusEnum::ACTIVE->value
             ],
             [
                 'name' => 'Nasya Asriva Putri Artama',
-                'email' => 'asrivanasya0@gmail.com'
+                'email' => 'asrivanasya0@gmail.com',
+                'status' => UserStatusEnum::ACTIVE->value
             ],
             [
                 'name' => 'NUGI ARTIKASARI',
-                'email' => 'ar.tika0412@gmail.com'
+                'email' => 'ar.tika0412@gmail.com',
+                'status' => UserStatusEnum::ACTIVE->value
             ],
             [
                 'name' => 'Andhika Mugni',
-                'email' => 'andhikamugniv@gmail.com'
+                'email' => 'andhikamugniv@gmail.com',
+                'status' => UserStatusEnum::ACTIVE->value
             ],
             [
                 'name' => 'Rifaldi Menolak Sadar',
-                'email' => 'rifaldiliebert@gmail.com'
+                'email' => 'rifaldiliebert@gmail.com',
+                'status' => UserStatusEnum::ACTIVE->value
             ],
         ];
         foreach ($teamAccount as $account) {

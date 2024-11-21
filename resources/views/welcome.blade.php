@@ -13,6 +13,8 @@
 @section('content')
     {{-- banner --}}
     @include('home.banner.index')
+    {{-- popular service --}}
+    @include('home.popular.index')
     {{-- Freelancer service --}}
     @include('home.post_user.index')
     {{-- Jobs you can apply for --}}

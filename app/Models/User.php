@@ -30,7 +30,8 @@ class User extends Authenticatable
         'tarif',
         'portofolio',
         'google_id',
-        'avatar'
+        'avatar',
+        'status'
     ];
 
     /**

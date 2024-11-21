@@ -1,14 +1,14 @@
-@include('components.alert')
+@include('landing.layout.auth')
 <!DOCTYPE html>
-<html>
+<html lang="id">
 
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="Gurdeep singh osahan">
     <meta name="author" content="Gurdeep singh osahan">
-    <base href="{{ asset('assets_landing') }}/">
-    {{-- <base href="{{ asset('storage') }}/"> --}}
+    <meta name="msapplication-navbutton-color" content="#01ABFE">
+
     <title>CLOCKER</title>
     {{-- logo title --}}
     <link rel="icon" type="image/png" href="{{ asset('assets_landing/images/CLOCKER.png') }}">

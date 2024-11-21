@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Constract\Enums\UserRoleEnum;
+use App\Constract\Enums\UserStatusEnum;
 use App\Constract\Interfaces\UserInterface;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -29,6 +30,17 @@ class UserController extends Controller
             return $this->service->getData($request);
         }
         return view('admin.user');
+    }
+
+    public function toggleStatus(User $user)
+    {
+        $this->userInterface->update($user->id, [
+            'status' => $user->status == UserStatusEnum::ACTIVE->value ? UserStatusEnum::NONACTIVE->value : UserStatusEnum::ACTIVE->value,
+        ]);
+
+        return response()->json([
+            'message' => 'User status changed successfully.',
+        ]);
     }
 
 
