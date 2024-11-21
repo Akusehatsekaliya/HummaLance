@@ -1896,18 +1896,6 @@ header {
     border-radius: 4px 4px 0 0;
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 }
-.recommended .inner-slider {
-    position: relative;
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
-    border-radius: 0 0 20px 20px;
-    background-color: #fff;
-    margin-bottom: 5px;
-    transition: transform 0.2s ease;
-}
-
-.recommended .inner-slider:hover{
-    transform: translateY(-10px);
-}
 
 .p-list-two .recommended .inner-slider {
     margin-bottom: 30px;
