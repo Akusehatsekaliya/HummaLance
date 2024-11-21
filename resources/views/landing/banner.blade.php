@@ -1,8 +1,8 @@
 <style>
     .custom-title {
-    line-height: 1.50px; /* Mengatur tinggi baris */
-    margin-top: 14px; /* Mengatur jarak atas */
-    margin-bottom: 50px; /* Mengatur jarak bawah */
+    line-height: 1.50px;
+    margin-top: 14px;
+    margin-bottom: 50px;
     margin-left: 12px;
 }
 

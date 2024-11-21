@@ -97,12 +97,6 @@
         font-size: 0.875rem;
     }
 
-    /* .svg-line{
-    position: relative;
-    z-index:-1; */
-    /* transform: translatey(25%); */
-    /* } */
-    /* Pastikan kontainer section dapat menyesuaikan dengan elemen SVG */
     .homepage-search-block {
         overflow: visible;
     }
