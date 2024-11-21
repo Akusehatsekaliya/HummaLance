@@ -18,9 +18,9 @@
             </a>
         </div>
         <br>
-        <ul class="custom-navbar">
-            <li class="custom-nav-item" style="color: #01ABFE">
-                <a class="custom-nav-link">Jobs</a>
+        <ul class="custom-navbar0">
+            <li class="custom-nav-item0" style="color: #01ABFE">
+                <a class="custom-nav-link0">Service</a>
             </li>
         </ul>
         <br>
