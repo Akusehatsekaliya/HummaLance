@@ -16,3 +16,7 @@
         color: #1e1e1e;
     }
 } */
+
+nav ~ body{
+    all: unset;
+}
