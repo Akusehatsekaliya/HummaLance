@@ -1,8 +1,7 @@
 <div id="main">
     <nav class="navbar navbar-expand-lg shadow-sm ms-auto p-0">
         <div class="container-fluid">
-            <button class="navbar-toggler sidebar-hide"
-                style="height: fit-content;margin-top: 10px;">
+            <button class="navbar-toggler sidebar-hide" style="height: fit-content;margin-top: 10px;">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
@@ -16,7 +15,8 @@
                             <span class="badge bg-danger rounded-pill"
                                 style="position: absolute; top: 4px; left: 77%; transform: translateX(-50%); font-size: 0.7rem;  border-width: 1px;">1</span>
                         </a>
-                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="notificationDropdown">
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="notificationDropdown"
+                            id="notification">
                             <li>
                                 <h6 class="dropdown-header">Notifikasi</h6>
                             </li>
@@ -74,3 +74,7 @@
     <!-- / Navbar -->
 
 </div>
+
+@push('style')
+
+@endpush
