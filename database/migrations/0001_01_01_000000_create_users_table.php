@@ -17,7 +17,6 @@ return new class extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
-            // $table->string('username');
             $table->string('name');
             $table->text('avatar')->nullable();
             $table->string('email')->unique();
@@ -31,7 +30,7 @@ return new class extends Migration
             $table->enum('status',allowed:
             [
                 UserStatusEnum::ACTIVE->value,
-                UserStatusEnum::NONACTIVE->value,
+                UserStatusEnum::BANNED->value,
             ]);
             $table->rememberToken();
             $table->timestamps();
