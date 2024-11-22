@@ -27,7 +27,7 @@ Route::prefix("admin")->name("admin.")->group(function () {
     Route::resource('about', AboutController::class);
     // contract
     Route::resource('contract', ContractController::class);
-    // Route::get('contract/data', [ContractController::class, 'getData'])->name('contract.data');
+    Route::get('contracts/showDetail/{id}', [ContractController::class, 'showDetail']);
     // transaction
     Route::resource('transaction', TransactionController::class);
 });

@@ -34,12 +34,15 @@ class ContractService
             ->addColumn('date', function ($contract) {
                 return $contract->start_date . ' - ' . $contract->end_date;
             })
+            ->addColumn('Action', function ($contract) {
+                return '<button class="btn text-primary" title="detail contract" data-bs-toggle="modal" data-bs-target="#detailModal" data-id="' . $contract->id . '"><i class="bi bi-info-circle-fill"></i></button>';
+            })
             ->filter(function ($query) use ($request) {
                 if ($request->has('search') && !empty($request->search['value'])) {
                     $search = $request->search['value'];
                     $query->where(function ($q) use ($search) {
                         $q->where('id', 'like', "%{$search}%")
-                            ->orWhereHas('user', function ($q) use ($search) {
+                            ->orWhereHas('contract', function ($q) use ($search) {
                                 $q->where('name', 'like', "%{$search}%");
                             })
                             ->orWhereHas('project', function ($q) use ($search) {
@@ -51,6 +54,7 @@ class ContractService
                 }
             })
             ->rawColumns(['date'])
+            ->rawColumns(['Action'])
             ->make(true);
     }
 }

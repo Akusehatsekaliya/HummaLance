@@ -19,4 +19,9 @@ class ContractRepository extends BaseRepository implements ContractInterface
     {
         return $this->model->with(['user', 'project']);
     }
+
+    public function showDetail(mixed $id): mixed
+    {
+        return  $this->model->query()->with(['user', 'project'])->find($id);
+    }
 }
