@@ -12,7 +12,7 @@
       <div class="form-box login">
         <form method="POST" action="{{ route('login') }}">
           @csrf
-          <h1>Login</h1>
+          <h1>Log in To Clocker</h1>
           <div class="input-box">
             <input type="email" class="@error('email') is-invalid @enderror" placeholder="Email" name="email"
               value="{{ old('email') }}" required autocomplete="email" autofocus>
@@ -45,41 +45,54 @@
 
       <div class="form-box register">
         <form method="POST" action="{{ route('register') }}">
-          @csrf
-          <h1>Registration</h1>
-          <div class="input-box">
-            <input type="text" placeholder="Username" name="name" required>
-            <i class='bx bxs-user'></i>
-          </div>
-          <div class="input-box">
-            <input type="email" placeholder="Email" name="email" required>
-            <i class='bx bxs-envelope'></i>
-          </div>
-          <div class="input-box">
-            <input type="password" placeholder="Password" name="password" required>
-            <i class='bx bxs-lock-alt'></i>
-          </div>
-          <div class="input-box">
-            <input type="password" placeholder="Confirm Password" name="password_confirmation" required>
-            <i class='bx bxs-lock-alt'></i>
-          </div>
-          <button type="submit" class="btn">Register</button>
+            @csrf
+            <h1>Registration</h1>
+            
+            <!-- Username input field -->
+            <div class="input-box1">
+                <input type="text" placeholder="Username" name="name" required>
+                <i class='bx bxs-user'></i>
+            </div>
+            
+            <!-- Email input field -->
+            <div class="input-box1">
+                <input type="email" placeholder="Email" name="email" required>
+                <i class='bx bxs-envelope'></i>
+            </div>
+            
+            <!-- Password input field -->
+            <div class="input-box1">
+                <input type="password" placeholder="Password" name="password" required>
+                <i class='bx bxs-lock-alt'></i>
+            </div>
+            
+            <!-- Confirm Password input field -->
+            <div class="input-box1">
+                <input type="password" placeholder="Confirm Password" name="password_confirmation" required>
+                <i class='bx bxs-lock-alt'></i>
+            </div>
+            
+            <!-- Submit button -->
+            <button type="submit" class="btn">Register</button>
         </form>
-      </div>
+    </div>
+    
 
       <div class="toggle-box">
         <div class="toggle-panel toggle-left">
-          <h1>Hello, welcome</h1>
-          <p>Don't have a account?</p>
-          <button class="btn register-btn">Register</button>
-          <img src="{{asset('assets_landing/images/login1.png')}}" alt="login1">
-          <img src="{{asset('assets_landing/images/login2.png')}}" alt="login2">
+          <h1>Welcome Back</h1>
+          <p>Hi, nice to see you back and stay connected with us.</p>
+          <button class="btn register-btn">Sign Up</button>
+          <img src="{{asset('assets_landing/images/login1.png')}}" alt="login1" class="login1" >
+          <img src="{{asset('assets_landing/images/login2.png')}}" alt="login2" class="login2">
         </div>
 
         <div class="toggle-panel toggle-right">
           <h1>Welcome Back!</h1>
           <p>Already have a account?</p>
           <button class="btn login-btn">Login</button>
+          <img src="{{asset('assets_landing/images/login1.png')}}" alt="login1" class="login3" >
+          <img src="{{asset('assets_landing/images/login2.png')}}" alt="login2" class="login4">
         </div>
       </div>
     </div>
