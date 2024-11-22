@@ -5,10 +5,10 @@ namespace App\Constract\Enums;
 enum UserStatusEnum: string
 {
     case ACTIVE = 'active';
-    case NONACTIVE = 'non_active';
+    case BANNED = 'banned';
 
     public static function getValues()
     {
-        return [self::ACTIVE, self::NONACTIVE];
+        return [self::ACTIVE, self::BANNED];
     }
 }

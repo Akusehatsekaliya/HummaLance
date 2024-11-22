@@ -35,7 +35,7 @@ class UserController extends Controller
     public function toggleStatus(User $user)
     {
         $this->userInterface->update($user->id, [
-            'status' => $user->status == UserStatusEnum::ACTIVE->value ? UserStatusEnum::NONACTIVE->value : UserStatusEnum::ACTIVE->value,
+            'status' => $user->status == UserStatusEnum::ACTIVE->value ? UserStatusEnum::BANNED->value : UserStatusEnum::ACTIVE->value,
         ]);
 
         return response()->json([
