@@ -54,6 +54,17 @@ a {
     /* background: linear-gradient(to right, #21bee8 0%, #00aaff 100%); */
     border-color: #ffffff;
 }
+.btn-success2 {
+    background: linear-gradient(to right, #21bee8 0%, #00aaff 100%);
+    border-color: #ffffff;
+    color: #fff;
+}
+.btn-success2:hover {
+    background: linear-gradient(to right, #21bee8 0%, #00aaff);
+    color: #fff;
+    border-color: #fff;
+}
+
 .btn-outline-success {
     color: #2cdd9b;
     border-color: #2cdd9b;

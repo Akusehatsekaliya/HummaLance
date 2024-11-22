@@ -118,7 +118,7 @@
                                 </div>
                                 <div style="display: flex; justify-content: space-between; align-items: flex-start;">
                                     <p style="text-align: left; padding-left: 10px; font-weight: bold;"></p>
-                                    <button class="btn btn-success button-apply" type="submit">
+                                    <button class="btn btn-success2 button-apply" type="submit">
                                         <x-svg>{{ asset('assets/svg/home/apply/fastApply.svg') }}</x-svg>
                                         Fast Apply
                                     </button>
@@ -245,7 +245,7 @@
                                 </div>
                                 <div style="display: flex; justify-content: space-between; align-items: flex-start;">
                                     <p style="text-align: left; padding-left: 10px; font-weight: bold;"></p>
-                                    <button class="btn btn-success button-apply" type="submit">
+                                    <button class="btn btn-success2 button-apply" type="submit">
                                         <x-svg>{{ asset('assets/svg/home/apply/fastApply.svg') }}</x-svg>
                                         Fast Apply
                                     </button>
@@ -358,7 +358,7 @@
                                     <div
                                         style="display: flex; justify-content: space-between; align-items: flex-start;">
                                         <p style="text-align: left; padding-left: 10px; font-weight: bold;"></p>
-                                        <button class="btn btn-success button-apply" type="submit">
+                                        <button class="btn btn-success2 button-apply" type="submit">
                                             <x-svg>{{ asset('assets/svg/home/apply/fastApply.svg') }}</x-svg>
                                             Fast Apply
                                         </button>
