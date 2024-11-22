@@ -1,7 +1,7 @@
 <style>
-    .homepage-search-block {
-        height: 300px;
-    }
+.homepage-search-block {
+    height: 100%;
+}
 
     .svg-first,
     .svg-second,
@@ -88,7 +88,8 @@
     }
 
     h6 {
-        margin: 0 font-size: 1.50rem color: #fff;
+        margin: 0;
+        font-size: 1.50rem;
         font-weight: bold;
     }
 
@@ -96,12 +97,6 @@
         font-size: 0.875rem;
     }
 
-    /* .svg-line{
-    position: relative;
-    z-index:-1; */
-    /* transform: translatey(25%); */
-    /* } */
-    /* Pastikan kontainer section dapat menyesuaikan dengan elemen SVG */
     .homepage-search-block {
         overflow: visible;
     }
@@ -176,35 +171,35 @@
     <div class="container">
         <div class="row justify-content-center d-flex text-center">
 
-            <div class="col-lg-3 justify-content-center d-flex align-items-center">
+            <div class="col-lg-3 justify-content-center d-flex align-items-center my-2">
                 <x-svg>{{ asset('assets/svg/landing/about/stats/user-group-20-solid.svg') }}</x-svg>
-                <div class="text-content ml-3">
+                <div class="text-content ml-3 text-white">
                     <h6>999+</h6>
-                    <span class="span-1" style="color: white;">User</span>
+                    <span class="span-1">User</span>
                 </div>
             </div>
 
-            <div class="col-lg-3 justify-content-center d-flex  align-items-center">
+            <div class="col-lg-3 justify-content-center d-flex  align-items-center my-2">
                 <x-svg>{{ asset('assets/svg/landing/about/stats/work.svg') }}</x-svg>
-                <div class="text-content ml-3">
+                <div class="text-content ml-3 text-white">
                     <h6>999+</h6>
-                    <span class="span-1" style="color: white;">Company</span>
+                    <span class="span-1">Company</span>
                 </div>
             </div>
 
-            <div class="col-lg-3 justify-content-center d-flex align-items-center">
+            <div class="col-lg-3 justify-content-center d-flex align-items-center my-2">
                 <x-svg>{{ asset('assets/svg/landing/about/stats/workbox.svg') }}</x-svg>
-                <div class="text-content ml-3">
+                <div class="text-content ml-3 text-white">
                     <h6>999+</h6>
-                    <span class="span-1" style="color: white;">Freelancer</span>
+                    <span class="span-1">Freelancer</span>
                 </div>
             </div>
 
-            <div class="col-lg-3 justify-content-center d-flex  align-items-center">
+            <div class="col-lg-3 justify-content-center d-flex  align-items-center my-2">
                 <x-svg>{{ asset('assets/svg/landing/about/stats/job.svg') }}</x-svg>
-                <div class="text-content ml-3">
+                <div class="text-content ml-3 text-white">
                     <h6>999+</h6>
-                    <span class="span-1" style="color: white;">Job</span>
+                    <span class="span-1">Job</span>
                 </div>
             </div>
         </div>
@@ -290,9 +285,9 @@
         <div class="row py-lg-5 justify-content-center d-flex">
             <div class="col-lg-5 text-white">
                 <h2 class="font-weight-bold">This is why you need to use a clocker</h2>
-                <p style="font-size: 20px;">At Clocker you can find many job vacancies with the working hours and skills
+                <p style="font-size: 20px; font-weight:300;">At Clocker you can find many job vacancies with the working hours and skills
                     you want</p>
-                <a href="#" class="btn btn-outline-landing1 text-center" style="font-weight: bold;">
+                <a href="#" class="btn btn-outline-landing1 text-center" style="font-size: 14px; font-weight: bold;">
                     Try Clocker Now
                     <x-svg>{{ asset('assets/svg/icons-24/icon-next.svg') }}</x-svg>
                 </a>
@@ -302,43 +297,43 @@
                     <div class="card-about-item">
                         <x-svg>{{ asset('assets/svg/landing/about/card-about-item/Easy To Use.svg') }}</x-svg>
 
-                        <h5>Easy To Use</h5>
-                        <span>By joining clocker you can develop yourself further in </span>
+                        <h5 >Easy To Use</h5>
+                        <span class="font-italic">By joining clocker you can develop yourself further in </span>
                     </div>
 
                     <div class="card-about-item">
                         <x-svg>{{ asset('assets/svg/landing/about/card-about-item/Varied work.svg') }}</x-svg>
 
                         <h5>Varied work</h5>
-                        <span>By joining clocker you can develop yourself further in </span>
+                        <span class="font-italic">By joining clocker you can develop yourself further in </span>
                     </div>
 
                     <div class="card-about-item">
                         <x-svg>{{ asset('assets/svg/landing/about/card-about-item/Diverse companies.svg') }}</x-svg>
 
                         <h5>Diverse companies</h5>
-                        <span>By joining clocker you can develop yourself further in </span>
+                        <span class="font-italic">By joining clocker you can develop yourself further in </span>
                     </div>
 
                     <div class="card-about-item ">
                         <x-svg>{{ asset('assets/svg/landing/about/card-about-item/Various Working Hours.svg') }}</x-svg>
 
                         <h5>Various Working Hours</h5>
-                        <span>By joining clocker you can develop yourself further in </span>
+                        <span class="font-italic">By joining clocker you can develop yourself further in </span>
                     </div>
 
                     <div class="card-about-item ">
                         <x-svg>{{ asset('assets/svg/landing/about/card-about-item/Various Freelancer Services.svg') }}
                         </x-svg>
 
-                        <h5>Various Freelancer Services</h5>
-                        <span>By joining clocker you can develop yourself further in </span>
+                        <h5 >Various Freelancer Services</h5>
+                        <span class="font-italic">By joining clocker you can develop yourself further in </span>
                     </div>
                     <div class="card-about-item ">
                         <x-svg>{{ asset('assets/svg/landing/about/card-about-item/Used By Many People.svg') }}</x-svg>
 
-                        <h5>Used By Many People</h5>
-                        <span>By joining clocker you can develop yourself further in </span>
+                        <h5 >Used By Many People</h5>
+                        <span class="font-italic">By joining clocker you can develop yourself further in </span>
                     </div>
                 </div>
             </div>

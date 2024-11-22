@@ -7,7 +7,8 @@ use App\Http\Controllers\Auth\LoginController;
 
 Auth::routes();
 
-// Route::get('setpassword', [PasswordController::class, 'index'])->name('setpassword');
+Route::get("login", fn() => redirect(route('landing.index') . '#login'))->name("login");
+Route::get("register", fn() => redirect(route('landing.index') . '#register'))->name("register");
 
 // Google Login
 Route::get('login/google', [LoginController::class, 'redirectToGoogle'])->name('login.google');

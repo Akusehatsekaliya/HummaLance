@@ -101,35 +101,66 @@
 
 @push('scripts')
   <script>
-    const authContainer = document.querySelector('.auth-modal .container');
-    const registerBtn = document.querySelector('.register-btn');
-    const loginBtn = document.querySelector('.login-btn');
+    document.addEventListener('DOMContentLoaded', () => {
+      const authModal = document.querySelector('.auth-modal');
+      const authContainer = authModal.querySelector('.container');
+      const registerBtn = document.querySelector('.register-btn');
+      const loginBtn = document.querySelector('.login-btn');
+      const loginLink = document.querySelector(`a[href="#login"]`);
+      const registerLink = document.querySelector(`a[href="#register"]`);
+      const closeModalButton = document.querySelector(`[data-close="modal"]`);
 
-    registerBtn.addEventListener('click', () => {
-      authContainer.classList.add('active');
-    });
+      const showModal = (isRegister = false) => {
+        authContainer.classList.toggle('active', isRegister);
+        authModal.classList.add('show');
+      };
 
-    loginBtn.addEventListener('click', () => {
-      authContainer.classList.remove('active');
-    });
+      const closeModal = () => {
+        authModal.classList.remove('show');
+      };
 
-    const loginButton = document.querySelector(`a[href="#login"]`);
-    const registerButton = document.querySelector(`a[href="#register"]`);
-    loginButton.addEventListener('click', (e) => {
-      e.preventDefault();
-      authContainer.classList.remove('active');
-      document.querySelector(".auth-modal").classList.add("show");
-    });
-    registerButton.addEventListener('click', (e) => {
-      e.preventDefault();
-      authContainer.classList.add('active');
-      document.querySelector(".auth-modal").classList.add("show");
-    });
+      const handleHashChange = () => {
+        if (location.hash.includes("#login")) {
+          removeHash();
+          showModal(false);
+        } else if (location.hash.includes("#register")) {
+          removeHash();
+          showModal(true);
+        }
+      };
 
-    const closeModalButton = document.querySelector(`[data-close="modal"]`);
-    closeModalButton.addEventListener('click', (e) => {
-      e.preventDefault();
-      document.querySelector(".auth-modal").classList.remove("show");
+      const removeHash = () => {
+        if ("pushState" in history) {
+          history.pushState("", document.title, window.location.pathname + window.location.search);
+        } else {
+          const {
+            scrollTop,
+            scrollLeft
+          } = document.body;
+          location.hash = "";
+          document.body.scrollTop = scrollTop;
+          document.body.scrollLeft = scrollLeft;
+        }
+      };
+
+      registerBtn.addEventListener('click', () => authContainer.classList.add('active'));
+      loginBtn.addEventListener('click', () => authContainer.classList.remove('active'));
+      loginLink.addEventListener('click', (e) => {
+        e.preventDefault();
+        showModal(false);
+      });
+      registerLink.addEventListener('click', (e) => {
+        e.preventDefault();
+        showModal(true);
+      });
+      closeModalButton.addEventListener('click', (e) => {
+        e.preventDefault();
+        closeModal();
+      });
+
+      handleHashChange();
+
+      window.addEventListener('hashchange', handleHashChange);
     });
   </script>
 @endpush

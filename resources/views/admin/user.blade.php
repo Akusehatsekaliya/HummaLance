@@ -119,7 +119,7 @@
                         render: function(data, type, row) {
                             let colorClass = data === 'active' ?
                                 'bg-light-success text-success' :
-                                'bg-light-warning text-warning';
+                                'bg-light-danger text-danger';
                             return `<span class="badge ${colorClass} p-2">${data.charAt(0).toUpperCase() + data.slice(1)}</span>`;
                         }
                     },
@@ -139,36 +139,42 @@
 
         $('#detailModal').on('show.bs.modal', function(event) {
             const button = $(event.relatedTarget);
-            
+
         });
 
-        $(document).on('click', '.toggle-status', function() {
-            const userId = $(this).data('id');
-            const status = $(this).data('status');
-            const button = $(this);
-            const table = $('#table10').DataTable();
+        $(document).ready(function() {
+            $(document).on('click', '.toggle-status', function() {
+                var userId = $(this).data('id');
+                const table = $('#table10').DataTable();
+                const button = $(this);
 
-            $.ajax({
-                url: '{{ route('admin.user.toggleStatus', ['user' => '__id__']) }}'.replace('__id__',
-                    userId),
-                method: 'PUT',
-                data: {
-                    status: status,
-                    _token: '{{ csrf_token() }}'
-                },
-                success: function(response) {
-                    Swal.fire({
-                        icon: 'success',
-                        title: 'Status Updated Successfully',
-                        text: response.message,
-                        showConfirmButton: true,
-                    }).then(function() {
-                        table.ajax.reload();
-                    });
-                },
-                error: function(xhr, status, error) {
-                    alert('Failed to change user status: ' + error);
-                }
+                $.ajax({
+                    url: '{{ route('admin.user.toggleStatus', ['user' => '__id__']) }}'.replace(
+                        '__id__', userId),
+                    type: 'PUT',
+                    data: {
+                        _token: '{{ csrf_token() }}'
+                    },
+                    success: function(response) {
+                        Swal.fire({
+                            icon: 'success',
+                            title: 'Status Updated Successfully',
+                            text: response.message,
+                            showConfirmButton: true,
+                        }).then(function() {
+                            table.ajax.reload();
+                        });
+                    },
+                    error: function(xhr) {
+                        console.error(xhr.responseText);
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Error',
+                            text: 'An error occurred while changing the user status.',
+                            showConfirmButton: true,
+                        });
+                    }
+                });
             });
         });
     </script>

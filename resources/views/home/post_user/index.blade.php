@@ -1,5 +1,14 @@
+<style>
+    hr {
+    border: 0;
+    height: 1.50px;
+    background-color: rgb(118, 118, 128, 0.2);
+    width: 100%;
+}
+</style>
+
 <div class="freelance-projects bg-white py-5">
-    <div class="container">
+    <div class="container" style="margin-top: -70px;">
         <div style="display: flex; justify-content: space-between; align-items: center;">
             <h3 style="font-size: 1.5em; font-weight: bold;">Freelancer service</h3>
             <a href="URL-HAKAMU"
@@ -9,9 +18,9 @@
             </a>
         </div>
         <br>
-        <ul class="custom-navbar">
-            <li class="custom-nav-item" style="color: #01ABFE">
-                <a class="custom-nav-link">Jobs</a>
+        <ul class="custom-navbar0">
+            <li class="custom-nav-item0" style="color: #01ABFE">
+                <a class="custom-nav-link0">Service</a>
             </li>
         </ul>
         <br>
@@ -20,7 +29,9 @@
             <div class="col">
                 {{-- <div class="freelancer"> --}}
                 <div class="freelancer">
-                    <img src="images/senatopcustudio.jpg">
+                    <div class="img-wrapper">
+                        <img src="{{ asset('assets_landing/images/BackgroundHome.png') }}" alt="Freelancer Background">
+                    </div>
                     <div class="freelancer-footer">
                         <img src="images/user/s7.png">
                         <h5>Clocker</h5>
@@ -30,12 +41,7 @@
                         <p class="badge1"
                            style="text-align: left; padding-left: 9px; font-weight: bold; margin-right: 20px; margin-top: -50px; padding: 2px 10px; font-size: 10px; font-weight: bold;">
                             Top Rated
-                            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 48 48"><path fill="currentColor" fill-rule="evenodd" d="m16.871 33.044l-.873 11.66c-.062.82.667 1.383 1.318 1.018c4.613-2.584 19.062-12.074 26.386-32.932c.336-.957-.567-1.82-1.337-1.28c-4.326 3.03-13.78 9.29-19.623 10.484c0 0 3.742-2.6 5.981-6.588a1.2 1.2 0 0 0-.043-1.245L20.513 2.389c-.484-.697-1.478-.408-1.652.481l-2.543 12.937L4.384 26.223c-.598.522-.476 1.577.215 1.856zm21.104-4.596c-.756 1.055-2.384 3.224-3.887 4.55c-.3.265-.26.709.084.925l7.943 4.986c.478.3 1.123-.056 1.043-.576c-.37-2.383-1.434-7.351-4.125-9.959c-.3-.29-.819-.26-1.059.074" clip-rule="evenodd"/>
-                            </svg>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 48 48"><path fill="currentColor" fill-rule="evenodd" d="m16.871 33.044l-.873 11.66c-.062.82.667 1.383 1.318 1.018c4.613-2.584 19.062-12.074 26.386-32.932c.336-.957-.567-1.82-1.337-1.28c-4.326 3.03-13.78 9.29-19.623 10.484c0 0 3.742-2.6 5.981-6.588a1.2 1.2 0 0 0-.043-1.245L20.513 2.389c-.484-.697-1.478-.408-1.652.481l-2.543 12.937L4.384 26.223c-.598.522-.476 1.577.215 1.856zm21.104-4.596c-.756 1.055-2.384 3.224-3.887 4.55c-.3.265-.26.709.084.925l7.943 4.986c.478.3 1.123-.056 1.043-.576c-.37-2.383-1.434-7.351-4.125-9.959c-.3-.29-.819-.26-1.059.074" clip-rule="evenodd"/>
-                            </svg>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 48 48"><path fill="currentColor" fill-rule="evenodd" d="m16.871 33.044l-.873 11.66c-.062.82.667 1.383 1.318 1.018c4.613-2.584 19.062-12.074 26.386-32.932c.336-.957-.567-1.82-1.337-1.28c-4.326 3.03-13.78 9.29-19.623 10.484c0 0 3.742-2.6 5.981-6.588a1.2 1.2 0 0 0-.043-1.245L20.513 2.389c-.484-.697-1.478-.408-1.652.481l-2.543 12.937L4.384 26.223c-.598.522-.476 1.577.215 1.856zm21.104-4.596c-.756 1.055-2.384 3.224-3.887 4.55c-.3.265-.26.709.084.925l7.943 4.986c.478.3 1.123-.056 1.043-.576c-.37-2.383-1.434-7.351-4.125-9.959c-.3-.29-.819-.26-1.059.074" clip-rule="evenodd"/>
-                            </svg>
+                            <x-svg>{{ asset('assets/svg/home/popular/topRated.svg') }}</x-svg>
                         </p>
                     </div>
 
@@ -58,10 +64,7 @@
                         <p style="text-align: left; padding-left: 10px; font-weight: bold;">From $20</p>
                         <button class="btn btn-success" type="submit"
                             style="margin-right: 18px; margin-top: -15px; padding: 6px 15px; font-size: 12px; font-weight: bold;">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
-                                <path fill="currentColor"
-                                    d="M2 22V4q0-.825.588-1.412T4 2h16q.825 0 1.413.588T22 4v12q0 .825-.587 1.413T20 18H6zm4-8h8v-2H6zm0-3h12V9H6zm0-3h12V6H6z" />
-                            </svg>
+                            <x-svg>{{ asset('assets/svg/home/popular/orderNow.svg') }}</x-svg>
                             Order Now
                         </button>
                     </div>
@@ -70,7 +73,9 @@
 
             <div class="col">
                 <div class="freelancer">
-                    <img src="images/senatopcustudio.jpg">
+                    <div class="img-wrapper">
+                        <img src="{{ asset('assets_landing/images/BackgroundHome.png') }}" alt="Freelancer Background">
+                    </div>
                     <div class="freelancer-footer">
                         <img src="images/user/s7.png">
                         <h5>Clocker</h5>
@@ -80,12 +85,7 @@
                         <p class="badge1"
                            style="text-align: left; padding-left: 9px; font-weight: bold; margin-right: 20px; margin-top: -50px; padding: 2px 10px; font-size: 10px; font-weight: bold;">
                             Top Rated
-                            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 48 48"><path fill="currentColor" fill-rule="evenodd" d="m16.871 33.044l-.873 11.66c-.062.82.667 1.383 1.318 1.018c4.613-2.584 19.062-12.074 26.386-32.932c.336-.957-.567-1.82-1.337-1.28c-4.326 3.03-13.78 9.29-19.623 10.484c0 0 3.742-2.6 5.981-6.588a1.2 1.2 0 0 0-.043-1.245L20.513 2.389c-.484-.697-1.478-.408-1.652.481l-2.543 12.937L4.384 26.223c-.598.522-.476 1.577.215 1.856zm21.104-4.596c-.756 1.055-2.384 3.224-3.887 4.55c-.3.265-.26.709.084.925l7.943 4.986c.478.3 1.123-.056 1.043-.576c-.37-2.383-1.434-7.351-4.125-9.959c-.3-.29-.819-.26-1.059.074" clip-rule="evenodd"/>
-                            </svg>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 48 48"><path fill="currentColor" fill-rule="evenodd" d="m16.871 33.044l-.873 11.66c-.062.82.667 1.383 1.318 1.018c4.613-2.584 19.062-12.074 26.386-32.932c.336-.957-.567-1.82-1.337-1.28c-4.326 3.03-13.78 9.29-19.623 10.484c0 0 3.742-2.6 5.981-6.588a1.2 1.2 0 0 0-.043-1.245L20.513 2.389c-.484-.697-1.478-.408-1.652.481l-2.543 12.937L4.384 26.223c-.598.522-.476 1.577.215 1.856zm21.104-4.596c-.756 1.055-2.384 3.224-3.887 4.55c-.3.265-.26.709.084.925l7.943 4.986c.478.3 1.123-.056 1.043-.576c-.37-2.383-1.434-7.351-4.125-9.959c-.3-.29-.819-.26-1.059.074" clip-rule="evenodd"/>
-                            </svg>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 48 48"><path fill="currentColor" fill-rule="evenodd" d="m16.871 33.044l-.873 11.66c-.062.82.667 1.383 1.318 1.018c4.613-2.584 19.062-12.074 26.386-32.932c.336-.957-.567-1.82-1.337-1.28c-4.326 3.03-13.78 9.29-19.623 10.484c0 0 3.742-2.6 5.981-6.588a1.2 1.2 0 0 0-.043-1.245L20.513 2.389c-.484-.697-1.478-.408-1.652.481l-2.543 12.937L4.384 26.223c-.598.522-.476 1.577.215 1.856zm21.104-4.596c-.756 1.055-2.384 3.224-3.887 4.55c-.3.265-.26.709.084.925l7.943 4.986c.478.3 1.123-.056 1.043-.576c-.37-2.383-1.434-7.351-4.125-9.959c-.3-.29-.819-.26-1.059.074" clip-rule="evenodd"/>
-                            </svg>
+                            <x-svg>{{ asset('assets/svg/home/popular/topRated.svg') }}</x-svg>
                         </p>
                     </div>
 
@@ -108,10 +108,7 @@
                         <p style="text-align: left; padding-left: 10px; font-weight: bold;">From $20</p>
                         <button class="btn btn-success" type="submit"
                             style="margin-right: 18px; margin-top: -15px; padding: 6px 15px; font-size: 12px; font-weight: bold;">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
-                                <path fill="currentColor"
-                                    d="M2 22V4q0-.825.588-1.412T4 2h16q.825 0 1.413.588T22 4v12q0 .825-.587 1.413T20 18H6zm4-8h8v-2H6zm0-3h12V9H6zm0-3h12V6H6z" />
-                            </svg>
+                            <x-svg>{{ asset('assets/svg/home/popular/orderNow.svg') }}</x-svg>
                             Order Now
                         </button>
                     </div>
@@ -120,7 +117,9 @@
 
             <div class="col">
                 <div class="freelancer">
-                    <img src="images/senatopcustudio.jpg">
+                    <div class="img-wrapper">
+                        <img src="{{ asset('assets_landing/images/BackgroundHome.png') }}" alt="Freelancer Background">
+                    </div>
                     <div class="freelancer-footer">
                         <img src="images/user/s7.png">
                         <h5>Clocker</h5>
@@ -130,12 +129,7 @@
                         <p class="badge1"
                            style="text-align: left; padding-left: 9px; font-weight: bold; margin-right: 20px; margin-top: -50px; padding: 2px 10px; font-size: 10px; font-weight: bold;">
                             Top Rated
-                            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 48 48"><path fill="currentColor" fill-rule="evenodd" d="m16.871 33.044l-.873 11.66c-.062.82.667 1.383 1.318 1.018c4.613-2.584 19.062-12.074 26.386-32.932c.336-.957-.567-1.82-1.337-1.28c-4.326 3.03-13.78 9.29-19.623 10.484c0 0 3.742-2.6 5.981-6.588a1.2 1.2 0 0 0-.043-1.245L20.513 2.389c-.484-.697-1.478-.408-1.652.481l-2.543 12.937L4.384 26.223c-.598.522-.476 1.577.215 1.856zm21.104-4.596c-.756 1.055-2.384 3.224-3.887 4.55c-.3.265-.26.709.084.925l7.943 4.986c.478.3 1.123-.056 1.043-.576c-.37-2.383-1.434-7.351-4.125-9.959c-.3-.29-.819-.26-1.059.074" clip-rule="evenodd"/>
-                            </svg>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 48 48"><path fill="currentColor" fill-rule="evenodd" d="m16.871 33.044l-.873 11.66c-.062.82.667 1.383 1.318 1.018c4.613-2.584 19.062-12.074 26.386-32.932c.336-.957-.567-1.82-1.337-1.28c-4.326 3.03-13.78 9.29-19.623 10.484c0 0 3.742-2.6 5.981-6.588a1.2 1.2 0 0 0-.043-1.245L20.513 2.389c-.484-.697-1.478-.408-1.652.481l-2.543 12.937L4.384 26.223c-.598.522-.476 1.577.215 1.856zm21.104-4.596c-.756 1.055-2.384 3.224-3.887 4.55c-.3.265-.26.709.084.925l7.943 4.986c.478.3 1.123-.056 1.043-.576c-.37-2.383-1.434-7.351-4.125-9.959c-.3-.29-.819-.26-1.059.074" clip-rule="evenodd"/>
-                            </svg>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 48 48"><path fill="currentColor" fill-rule="evenodd" d="m16.871 33.044l-.873 11.66c-.062.82.667 1.383 1.318 1.018c4.613-2.584 19.062-12.074 26.386-32.932c.336-.957-.567-1.82-1.337-1.28c-4.326 3.03-13.78 9.29-19.623 10.484c0 0 3.742-2.6 5.981-6.588a1.2 1.2 0 0 0-.043-1.245L20.513 2.389c-.484-.697-1.478-.408-1.652.481l-2.543 12.937L4.384 26.223c-.598.522-.476 1.577.215 1.856zm21.104-4.596c-.756 1.055-2.384 3.224-3.887 4.55c-.3.265-.26.709.084.925l7.943 4.986c.478.3 1.123-.056 1.043-.576c-.37-2.383-1.434-7.351-4.125-9.959c-.3-.29-.819-.26-1.059.074" clip-rule="evenodd"/>
-                            </svg>
+                            <x-svg>{{ asset('assets/svg/home/popular/topRated.svg') }}</x-svg>
                         </p>
                     </div>
 
@@ -158,10 +152,7 @@
                         <p style="text-align: left; padding-left: 10px; font-weight: bold;">From $20</p>
                         <button class="btn btn-success" type="submit"
                             style="margin-right: 18px; margin-top: -15px; padding: 6px 15px; font-size: 12px; font-weight: bold;">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
-                                <path fill="currentColor"
-                                    d="M2 22V4q0-.825.588-1.412T4 2h16q.825 0 1.413.588T22 4v12q0 .825-.587 1.413T20 18H6zm4-8h8v-2H6zm0-3h12V9H6zm0-3h12V6H6z" />
-                            </svg>
+                            <x-svg>{{ asset('assets/svg/home/popular/orderNow.svg') }}</x-svg>
                             Order Now
                         </button>
                     </div>
@@ -169,7 +160,9 @@
             </div>
             <div class="col">
                 <div class="freelancer">
-                    <img src="images/senatopcustudio.jpg">
+                    <div class="img-wrapper">
+                        <img src="{{ asset('assets_landing/images/BackgroundHome.png') }}" alt="Freelancer Background">
+                    </div>
                     <div class="freelancer-footer">
                         <img src="images/user/s7.png">
                         <h5>Clocker</h5>
@@ -179,12 +172,7 @@
                         <p class="badge1"
                            style="text-align: left; padding-left: 9px; font-weight: bold; margin-right: 20px; margin-top: -50px; padding: 2px 10px; font-size: 10px; font-weight: bold;">
                             Top Rated
-                            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 48 48"><path fill="currentColor" fill-rule="evenodd" d="m16.871 33.044l-.873 11.66c-.062.82.667 1.383 1.318 1.018c4.613-2.584 19.062-12.074 26.386-32.932c.336-.957-.567-1.82-1.337-1.28c-4.326 3.03-13.78 9.29-19.623 10.484c0 0 3.742-2.6 5.981-6.588a1.2 1.2 0 0 0-.043-1.245L20.513 2.389c-.484-.697-1.478-.408-1.652.481l-2.543 12.937L4.384 26.223c-.598.522-.476 1.577.215 1.856zm21.104-4.596c-.756 1.055-2.384 3.224-3.887 4.55c-.3.265-.26.709.084.925l7.943 4.986c.478.3 1.123-.056 1.043-.576c-.37-2.383-1.434-7.351-4.125-9.959c-.3-.29-.819-.26-1.059.074" clip-rule="evenodd"/>
-                            </svg>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 48 48"><path fill="currentColor" fill-rule="evenodd" d="m16.871 33.044l-.873 11.66c-.062.82.667 1.383 1.318 1.018c4.613-2.584 19.062-12.074 26.386-32.932c.336-.957-.567-1.82-1.337-1.28c-4.326 3.03-13.78 9.29-19.623 10.484c0 0 3.742-2.6 5.981-6.588a1.2 1.2 0 0 0-.043-1.245L20.513 2.389c-.484-.697-1.478-.408-1.652.481l-2.543 12.937L4.384 26.223c-.598.522-.476 1.577.215 1.856zm21.104-4.596c-.756 1.055-2.384 3.224-3.887 4.55c-.3.265-.26.709.084.925l7.943 4.986c.478.3 1.123-.056 1.043-.576c-.37-2.383-1.434-7.351-4.125-9.959c-.3-.29-.819-.26-1.059.074" clip-rule="evenodd"/>
-                            </svg>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 48 48"><path fill="currentColor" fill-rule="evenodd" d="m16.871 33.044l-.873 11.66c-.062.82.667 1.383 1.318 1.018c4.613-2.584 19.062-12.074 26.386-32.932c.336-.957-.567-1.82-1.337-1.28c-4.326 3.03-13.78 9.29-19.623 10.484c0 0 3.742-2.6 5.981-6.588a1.2 1.2 0 0 0-.043-1.245L20.513 2.389c-.484-.697-1.478-.408-1.652.481l-2.543 12.937L4.384 26.223c-.598.522-.476 1.577.215 1.856zm21.104-4.596c-.756 1.055-2.384 3.224-3.887 4.55c-.3.265-.26.709.084.925l7.943 4.986c.478.3 1.123-.056 1.043-.576c-.37-2.383-1.434-7.351-4.125-9.959c-.3-.29-.819-.26-1.059.074" clip-rule="evenodd"/>
-                            </svg>
+                            <x-svg>{{ asset('assets/svg/home/popular/topRated.svg') }}</x-svg>
                         </p>
                     </div>
 
@@ -207,10 +195,7 @@
                         <p style="text-align: left; padding-left: 10px; font-weight: bold;">From $20</p>
                         <button class="btn btn-success" type="submit"
                             style="margin-right: 18px; margin-top: -15px; padding: 6px 15px; font-size: 12px; font-weight: bold;">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
-                                <path fill="currentColor"
-                                    d="M2 22V4q0-.825.588-1.412T4 2h16q.825 0 1.413.588T22 4v12q0 .825-.587 1.413T20 18H6zm4-8h8v-2H6zm0-3h12V9H6zm0-3h12V6H6z" />
-                            </svg>
+                            <x-svg>{{ asset('assets/svg/home/popular/orderNow.svg') }}</x-svg>
                             Order Now
                         </button>
                     </div>
@@ -218,7 +203,9 @@
             </div>
             <div class="col">
                 <div class="freelancer">
-                    <img src="images/senatopcustudio.jpg">
+                    <div class="img-wrapper">
+                        <img src="{{ asset('assets_landing/images/BackgroundHome.png') }}" alt="Freelancer Background">
+                    </div>
                     <div class="freelancer-footer">
                         <img src="images/user/s7.png">
                         <h5>Clocker</h5>
@@ -228,12 +215,7 @@
                         <p class="badge1"
                            style="text-align: left; padding-left: 9px; font-weight: bold; margin-right: 20px; margin-top: -50px; padding: 2px 10px; font-size: 10px; font-weight: bold;">
                             Top Rated
-                            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 48 48"><path fill="currentColor" fill-rule="evenodd" d="m16.871 33.044l-.873 11.66c-.062.82.667 1.383 1.318 1.018c4.613-2.584 19.062-12.074 26.386-32.932c.336-.957-.567-1.82-1.337-1.28c-4.326 3.03-13.78 9.29-19.623 10.484c0 0 3.742-2.6 5.981-6.588a1.2 1.2 0 0 0-.043-1.245L20.513 2.389c-.484-.697-1.478-.408-1.652.481l-2.543 12.937L4.384 26.223c-.598.522-.476 1.577.215 1.856zm21.104-4.596c-.756 1.055-2.384 3.224-3.887 4.55c-.3.265-.26.709.084.925l7.943 4.986c.478.3 1.123-.056 1.043-.576c-.37-2.383-1.434-7.351-4.125-9.959c-.3-.29-.819-.26-1.059.074" clip-rule="evenodd"/>
-                            </svg>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 48 48"><path fill="currentColor" fill-rule="evenodd" d="m16.871 33.044l-.873 11.66c-.062.82.667 1.383 1.318 1.018c4.613-2.584 19.062-12.074 26.386-32.932c.336-.957-.567-1.82-1.337-1.28c-4.326 3.03-13.78 9.29-19.623 10.484c0 0 3.742-2.6 5.981-6.588a1.2 1.2 0 0 0-.043-1.245L20.513 2.389c-.484-.697-1.478-.408-1.652.481l-2.543 12.937L4.384 26.223c-.598.522-.476 1.577.215 1.856zm21.104-4.596c-.756 1.055-2.384 3.224-3.887 4.55c-.3.265-.26.709.084.925l7.943 4.986c.478.3 1.123-.056 1.043-.576c-.37-2.383-1.434-7.351-4.125-9.959c-.3-.29-.819-.26-1.059.074" clip-rule="evenodd"/>
-                            </svg>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 48 48"><path fill="currentColor" fill-rule="evenodd" d="m16.871 33.044l-.873 11.66c-.062.82.667 1.383 1.318 1.018c4.613-2.584 19.062-12.074 26.386-32.932c.336-.957-.567-1.82-1.337-1.28c-4.326 3.03-13.78 9.29-19.623 10.484c0 0 3.742-2.6 5.981-6.588a1.2 1.2 0 0 0-.043-1.245L20.513 2.389c-.484-.697-1.478-.408-1.652.481l-2.543 12.937L4.384 26.223c-.598.522-.476 1.577.215 1.856zm21.104-4.596c-.756 1.055-2.384 3.224-3.887 4.55c-.3.265-.26.709.084.925l7.943 4.986c.478.3 1.123-.056 1.043-.576c-.37-2.383-1.434-7.351-4.125-9.959c-.3-.29-.819-.26-1.059.074" clip-rule="evenodd"/>
-                            </svg>
+                            <x-svg>{{ asset('assets/svg/home/popular/topRated.svg') }}</x-svg>
                         </p>
                     </div>
 
@@ -256,10 +238,7 @@
                         <p style="text-align: left; padding-left: 10px; font-weight: bold;">From $20</p>
                         <button class="btn btn-success" type="submit"
                             style="margin-right: 18px; margin-top: -15px; padding: 6px 15px; font-size: 12px; font-weight: bold;">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
-                                <path fill="currentColor"
-                                    d="M2 22V4q0-.825.588-1.412T4 2h16q.825 0 1.413.588T22 4v12q0 .825-.587 1.413T20 18H6zm4-8h8v-2H6zm0-3h12V9H6zm0-3h12V6H6z" />
-                            </svg>
+                            <x-svg>{{ asset('assets/svg/home/popular/orderNow.svg') }}</x-svg>
                             Order Now
                         </button>
                     </div>
@@ -268,3 +247,5 @@
         </div>
     </div>
 </div>
+
+<hr>
