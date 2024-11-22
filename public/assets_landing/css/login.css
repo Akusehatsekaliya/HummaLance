@@ -202,7 +202,7 @@
     transition: 0.6s ease-in-out;
     padding: 73px;
     top: 24px;
-
+    overflow: hidden;
 }
 
 .toggle-panel img {
@@ -263,7 +263,10 @@
 }
 
 @media screen and (max-width: 650px) {
-    .toggle-panel .login1, .toggle-panel .login2, .toggle-panel .login3, .toggle-panel .login4 {
+    .toggle-panel .login1,
+    .toggle-panel .login2,
+    .toggle-panel .login3,
+    .toggle-panel .login4 {
         width: 150px;
     }
 
