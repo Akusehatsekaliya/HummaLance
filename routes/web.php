@@ -1,6 +1,7 @@
 <?php
 
 use App\Models\User;
+use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Route;
 
@@ -9,8 +10,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/debug', function () {
     return view('debug2');
 })->name('debug');
-Route::get('/debug2', function () {
-    return public_path("a.png");
+Route::get('/debug2', function (Request $request) {
+    return $request;
     // User::factory(1000)->withRole('client')->create();
     // $json_response = collect();
 
