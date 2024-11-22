@@ -90,12 +90,12 @@
     margin: -10px 0;
 }
 
-.input-box1 {
+.input-box {
     position: relative;
     margin: 30px 0;
 }
 
-.input-box1 input {
+.input-box input {
     width: 100%;
     padding: 13px 50px 13px 20px;
     background: #eee;
@@ -107,12 +107,12 @@
     font-weight: 500;
 }
 
-.input-box1 input::placeholder {
+.input-box input::placeholder {
     color: #ffffff;
     font-weight: 400;
 }
 
-.input-box1 i {
+.input-box i {
     position: absolute;
     right: 20px;
     top: 50%;

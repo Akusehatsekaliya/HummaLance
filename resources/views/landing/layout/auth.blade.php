@@ -47,36 +47,36 @@
         <form method="POST" action="{{ route('register') }}">
             @csrf
             <h1>Registration</h1>
-            
+
             <!-- Username input field -->
-            <div class="input-box1">
+            <div class="input-box">
                 <input type="text" placeholder="Username" name="name" required>
                 <i class='bx bxs-user'></i>
             </div>
-            
+
             <!-- Email input field -->
-            <div class="input-box1">
+            <div class="input-box">
                 <input type="email" placeholder="Email" name="email" required>
                 <i class='bx bxs-envelope'></i>
             </div>
-            
+
             <!-- Password input field -->
-            <div class="input-box1">
+            <div class="input-box">
                 <input type="password" placeholder="Password" name="password" required>
                 <i class='bx bxs-lock-alt'></i>
             </div>
-            
+
             <!-- Confirm Password input field -->
-            <div class="input-box1">
+            <div class="input-box">
                 <input type="password" placeholder="Confirm Password" name="password_confirmation" required>
                 <i class='bx bxs-lock-alt'></i>
             </div>
-            
+
             <!-- Submit button -->
             <button type="submit" class="btn">Register</button>
         </form>
     </div>
-    
+
 
       <div class="toggle-box">
         <div class="toggle-panel toggle-left">
