@@ -62,7 +62,7 @@
                     </div>
                     <div style="display: flex; justify-content: space-between; align-items: flex-start;">
                         <p style="text-align: left; padding-left: 10px; font-weight: bold;">From $20</p>
-                        <button class="btn btn-success" type="submit"
+                        <button class="btn btn-success2" type="submit"
                             style="margin-right: 18px; margin-top: -15px; padding: 6px 15px; font-size: 12px; font-weight: bold;">
                             <x-svg>{{ asset('assets/svg/home/popular/orderNow.svg') }}</x-svg>
                             Order Now
@@ -106,7 +106,7 @@
                     </div>
                     <div style="display: flex; justify-content: space-between; align-items: flex-start;">
                         <p style="text-align: left; padding-left: 10px; font-weight: bold;">From $20</p>
-                        <button class="btn btn-success" type="submit"
+                        <button class="btn btn-success2" type="submit"
                             style="margin-right: 18px; margin-top: -15px; padding: 6px 15px; font-size: 12px; font-weight: bold;">
                             <x-svg>{{ asset('assets/svg/home/popular/orderNow.svg') }}</x-svg>
                             Order Now
@@ -150,7 +150,7 @@
                     </div>
                     <div style="display: flex; justify-content: space-between; align-items: flex-start;">
                         <p style="text-align: left; padding-left: 10px; font-weight: bold;">From $20</p>
-                        <button class="btn btn-success" type="submit"
+                        <button class="btn btn-success2" type="submit"
                             style="margin-right: 18px; margin-top: -15px; padding: 6px 15px; font-size: 12px; font-weight: bold;">
                             <x-svg>{{ asset('assets/svg/home/popular/orderNow.svg') }}</x-svg>
                             Order Now
@@ -193,7 +193,7 @@
                     </div>
                     <div style="display: flex; justify-content: space-between; align-items: flex-start;">
                         <p style="text-align: left; padding-left: 10px; font-weight: bold;">From $20</p>
-                        <button class="btn btn-success" type="submit"
+                        <button class="btn btn-success2" type="submit"
                             style="margin-right: 18px; margin-top: -15px; padding: 6px 15px; font-size: 12px; font-weight: bold;">
                             <x-svg>{{ asset('assets/svg/home/popular/orderNow.svg') }}</x-svg>
                             Order Now
@@ -236,7 +236,7 @@
                     </div>
                     <div style="display: flex; justify-content: space-between; align-items: flex-start;">
                         <p style="text-align: left; padding-left: 10px; font-weight: bold;">From $20</p>
-                        <button class="btn btn-success" type="submit"
+                        <button class="btn btn-success2" type="submit"
                             style="margin-right: 18px; margin-top: -15px; padding: 6px 15px; font-size: 12px; font-weight: bold;">
                             <x-svg>{{ asset('assets/svg/home/popular/orderNow.svg') }}</x-svg>
                             Order Now

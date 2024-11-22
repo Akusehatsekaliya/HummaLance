@@ -2,7 +2,7 @@
     overflow: hidden;
     overflow-x: auto;
     width: 100%;
-    max-width: 1300px;
+    max-width: 1198px;
     /* Adjust the container width */
     margin: auto;
     position: relative;
@@ -615,7 +615,6 @@
     padding-bottom: 25px;
     transition: transform 0.3s ease;
 }
-
 
 .card-about-item:hover {
     transform: translateY(-10px);

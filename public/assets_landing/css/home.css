@@ -148,3 +148,11 @@
         left: 150%;
     }
 }
+
+
+
+.nav-link:hover:after {
+    border-radius: 50px; /* Membuat garis berbentuk oval */
+
+}
+
