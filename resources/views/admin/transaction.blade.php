@@ -45,8 +45,9 @@
                                         <span class="text-danger badge bg-light-danger">Failed</span>
                                     </td>
                                     <td>
-                                        <button type="button" class="btn text-warning" data-bs-toggle="modal"
-                                            data-bs-target="#modalTransactions"><i class="bi bi-eye-fill"></i></button>
+                                        <button type="button" class="btn text-primary" title="detail transaction" data-bs-toggle="modal"
+                                            data-bs-target="#modalTransactions"><i
+                                                class="bi bi-info-circle-fill"></i></button>
                                     </td>
                                 </tr>
                             </tbody>
