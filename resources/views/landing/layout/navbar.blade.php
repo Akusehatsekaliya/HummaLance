@@ -39,13 +39,13 @@
     <ul class="navbar-nav align-items-center mr-auto">
       <li class="nav-item mr-3">
         <a href="#register" class="btn btn-outline-landing">
-          Register
+          Sign Up
         </a>
       </li>
 
       <li class="nav-item">
         <a href="#login" class="btn btn-outline-login">
-          Login
+          Log in
         </a>
       </li>
     </ul>
