@@ -1,0 +1,243 @@
+.header {
+    background-color: #fff;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #e6e6e6;
+}
+
+.header img {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+}
+
+.header .logo {
+    font-size: 24px;
+    font-weight: 500;
+    margin-right: auto;
+}
+
+.header .search-bar {
+    margin-right: 20px;
+}
+
+.header .search-bar input {
+    padding: 5px 10px;
+    border: 1px solid #e6e6e6;
+    border-radius: 4px;
+}
+
+.header .nav-links {
+    display: flex;
+    align-items: center;
+}
+
+.header .nav-links a {
+    margin-left: 20px;
+    color: #333;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.header .nav-links .messages {
+    position: relative;
+}
+
+.header .nav-links .messages .badge {
+    position: absolute;
+    top: -5px;
+    right: -10px;
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 50%;
+    padding: 2px 6px;
+    font-size: 12px;
+}
+
+.container {
+    display: flex;
+    padding: 20px;
+}
+
+.profile-sidebar {
+    width: 30%;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-right: 20px;
+}
+
+.profile-sidebar img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.profile-sidebar .work,
+.profile-sidebar .skills {
+    margin-top: 20px;
+}
+
+.profile-sidebar .work h3,
+.profile-sidebar .skills h3 {
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.profile-sidebar .work .item,
+.profile-sidebar .skills .item {
+    margin-bottom: 10px;
+}
+
+.profile-sidebar .work .item span,
+.profile-sidebar .skills .item span {
+    display: block;
+    font-size: 14px;
+    color: #666;
+}
+
+.profile-sidebar .work .item .primary {
+    color: #007bff;
+    font-weight: 500;
+}
+
+.profile-content {
+    width: 70%;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.profile-content .header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.profile-content .header h2 {
+    font-size: 24px;
+    font-weight: 500;
+    margin: 0;
+    margin-right: 10px;
+}
+
+.profile-content .header .location {
+    color: #666;
+    font-size: 14px;
+}
+
+.profile-content .header .bookmark {
+    margin-left: auto;
+    color: #666;
+    cursor: pointer;
+}
+
+.profile-content .header .bookmark:hover {
+    color: #333;
+}
+
+.profile-content .header .job-title {
+    color: #007bff;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.profile-content .rankings {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.profile-content .rankings .score {
+    font-size: 24px;
+    font-weight: 500;
+    margin-right: 10px;
+}
+
+.profile-content .rankings .stars {
+    color: #ffc107;
+}
+
+.profile-content .actions {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.profile-content .actions .btn {
+    padding: 10px 20px;
+    border: 1px solid #007bff;
+    border-radius: 4px;
+    color: #007bff;
+    background-color: #fff;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.profile-content .actions .btn:hover {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.profile-content .tabs {
+    display: flex;
+    border-bottom: 1px solid #e6e6e6;
+    margin-bottom: 20px;
+}
+
+.profile-content .tabs .tab {
+    padding: 10px 20px;
+    cursor: pointer;
+    color: #666;
+}
+
+.profile-content .tabs .tab.active {
+    color: #007bff;
+    border-bottom: 2px solid #007bff;
+}
+
+.profile-content .tab-content {
+    display: none;
+}
+
+.profile-content .tab-content.active {
+    display: block;
+}
+
+.profile-content .contact-info,
+.profile-content .basic-info {
+    margin-bottom: 20px;
+}
+
+.profile-content .contact-info h3,
+.profile-content .basic-info h3 {
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.profile-content .contact-info .item,
+.profile-content .basic-info .item {
+    margin-bottom: 10px;
+}
+
+.profile-content .contact-info .item span,
+.profile-content .basic-info .item span {
+    display: block;
+    font-size: 14px;
+    color: #666;
+}
+
+.profile-content .contact-info .item a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.custom-modal {
+    max-width: 145vh;
+    max-height: 100vh;
+    overflow-y: auto;
+}

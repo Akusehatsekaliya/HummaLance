@@ -1,6 +1,8 @@
 {{-- css --}}
 <link rel="stylesheet" href="{{ asset('template-admin/assets/css/main/app.css') }}">
 <link rel="stylesheet" href="{{ asset('template-admin/assets/css/main/app-dark.css') }}">
+<link rel="stylesheet" href="{{ asset('template-admin/assets/css/main/detail.css') }}">
+
 {{-- <link rel="shortcut icon" href="{{asset ('template-admin/assets/images/logo/favicon.svg') }}" type="image/x-icon">
 <link rel="shortcut icon" href="{{asset ('template-admin/assets/images/logo/favicon.png') }}" type="image/png"> --}}
 
@@ -11,6 +13,8 @@
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 <link rel="stylesheet" href="{{ asset('template-admin/assets/css/pages/datatables.css') }}">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+
 
 
 <style>
