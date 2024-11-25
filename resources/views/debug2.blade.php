@@ -1,16 +1,47 @@
+@include('landing.layout.auth')
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Gurdeep singh osahan">
+    <meta name="author" content="Gurdeep singh osahan">
+    <meta name="msapplication-navbutton-color" content="#01ABFE">
+
+    <title>CLOCKER</title>
+
+    {{-- logo title --}}
+    <!-- Bootstrap core CSS -->
+    <link href="{{ asset('assets_landing/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+    <!-- Font Awesome-->
+    <!-- Custom styles for this template -->
+    <link href="{{ asset('assets_landing/css/style.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets_landing/css/landing.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets_landing/css/home.css') }}" rel="stylesheet">
+
+    {{-- <link rel="stylesheet" href="{{ asset('assets_landing/css/dark.css') }}"> --}}
+
+    @yield('style')
+    @stack('links')
   </head>
 
   <body>
+
+    @yield('content')
+    @stack('contents')
+
+
+
+
+    <script src="{{ asset('assets_landing/vendor/jquery/jquery.min.js') }}"></script>
+    <script src="{{ asset('assets_landing/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ asset('assets_landing/js/landing.js') }}"></script>
+    @yield('script')
+    @stack('scripts')
+
     <script>
-      loadStreamingContent("http://127.0.0.1:8000/landing/about")
+      // loadStreamingContent("http://127.0.0.1:8000/landing/about")
       async function loadStreamingContent(url) {
         try {
           const response = await fetch(url);

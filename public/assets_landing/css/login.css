@@ -1,7 +1,10 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 
 .auth-modal * {
-    font-family: "Roboto";
+    font-family: "Roboto", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
 }
 
 .auth-modal {
@@ -18,6 +21,10 @@
     transition: opacity 0.2s ease-in-out, transform 0.3s ease-in-out;
     z-index: 10;
     background: linear-gradient(90deg, #1e1e20bf, #1e1e20bf);
+}
+.auth-modal img {
+    user-select: none;
+    -webkit-user-select: none;
 }
 
 .auth-modal.show {
@@ -64,11 +71,20 @@
     color: #333;
     text-align: center;
     padding: 40px;
+    padding-top: 0;
     transition: 0.5s ease-in-out 1.2s, visibility 0s 1s;
 }
 
 .auth-modal .container.active .form-box {
     right: 50%;
+}
+
+.form-box h1 {
+    color: var(--font, #060020);
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
 }
 
 .form-box.register {
@@ -86,29 +102,53 @@
 .auth-modal .container h1 {
     font-size: 32px;
     font-weight: 400;
-    margin: -10px 0;
+    margin-bottom: 35px;
 }
 
 .input-box {
     position: relative;
-    margin: 30px 0;
+    padding: 12px 0;
+}
+
+.input-box svg {
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    width: 1.4375rem;
+    height: 1.4375rem;
+    transform: translateY(-50%);
 }
 
 .input-box input {
     width: 100%;
-    padding: 13px 50px 13px 20px;
+    height: 2.9375rem;
+    border-radius: 0.625rem;
+    border: 1px solid var(--Miscellaneous-Bar-border, rgba(0, 0, 0, 0.3));
+    box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.2);
+    padding: 0 2.75rem;
+    transition: 0.5s ease-in-out;
+
+    outline-color: rgba(0, 0, 0, 0.2);
+    /* padding: 13px 50px 13px 20px;
     background: #eee;
     border-radius: 8px;
     border: none;
     outline: none;
     font-size: 16px;
     color: #333;
-    font-weight: 500;
+    font-weight: 500; */
 }
 
 .input-box input::placeholder {
-    color: #ffffff;
-    font-weight: 400;
+    color: var(--Miscellaneous-Bar-border, rgba(0, 0, 0, 0.3));
+    border-color: #21bee8;
+    font-size: 1rem;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+.input-box input:focus {
+    outline-color: #21bee8;
 }
 
 .input-box i {
@@ -118,6 +158,29 @@
     transform: translateY(-50%);
     font-size: 20px;
     color: #888;
+}
+
+.form-box .divider {
+    display: flex;
+    height: 22px;
+    align-items: center;
+    gap: 8px;
+    padding: 30px 0;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+.form-box .divider .rect {
+    width: 100%;
+    height: 3px;
+    border-radius: 22px;
+    background: var(--Miscellaneous-Bar-border, rgba(0, 0, 0, 0.3));
+}
+
+.form-box .divider span {
+    color: var(--Miscellaneous-Bar-border, rgba(0, 0, 0, 0.3));
+    font-size: 18px;
+    font-weight: 500;
 }
 
 .forgot-link {
@@ -142,6 +205,7 @@
     color: #fff;
     font-weight: 500;
     display: inline-block;
+    margin-top: 24px;
 }
 
 .auth-modal .container p {
@@ -168,10 +232,10 @@
 }
 
 .toggle-box {
-    position: absolute;
+    /* position: absolute;
     width: 100%;
     height: 100%;
-    z-index: 2;
+    z-index: 2; */
 }
 
 .toggle-box::before {
@@ -181,8 +245,25 @@
     width: 300%;
     height: 100%;
     background: linear-gradient(to right, #21bee8 0%, #00aaff 100%);
-    z-index: 2;
+    /* z-index: 2; */
     transition: 1.1s ease-in-out;
+}
+
+.toggle-box .logo {
+    position: absolute;
+    left: 1.5rem;
+    top: 1.5rem;
+    width: 102px;
+    height: 26px;
+    flex-shrink: 0;
+    user-select: none;
+    -webkit-user-select: none;
+    transition: 1.1s ease-in-out;
+}
+
+.auth-modal .container.active .toggle-box .logo {
+    left: 50%;
+    transform: translateX(25%);
 }
 
 .auth-modal .container.active .toggle-box::before {
@@ -192,6 +273,7 @@
 .toggle-panel {
     position: absolute;
     width: 50%;
+    /* left: 0; */
     height: 100%;
     color: #fff;
     display: flex;
@@ -202,6 +284,10 @@
     padding: 73px;
     top: 24px;
     overflow: hidden;
+
+    &.toggle-left {
+        left: 0;
+    }
 }
 
 .toggle-panel img {
@@ -259,6 +345,33 @@
 
 .auth-modal .container.active .toggle-panel.toggle-right .login4 {
     transform: translateX(100%);
+}
+
+.login-button-container {
+    display: flex;
+    column-gap: 0.5rem;
+}
+
+.login-button-container button,
+.login-button-container a {
+    all: unset;
+    padding: 7px;
+    cursor: pointer;
+    border-radius: 10px;
+    border: 1px solid var(--Miscellaneous-Bar-border, rgba(0, 0, 0, 0.3));
+    box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.2);
+
+    &:hover {
+        border-color: #21bee8;
+    }
+}
+
+.login-button-container .google-login {
+    width: -webkit-fill-available;
+    color: var(--Miscellaneous-Bar-border, rgba(0, 0, 0, 0.3));
+    font-family: Roboto, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
 }
 
 @media screen and (max-width: 650px) {
