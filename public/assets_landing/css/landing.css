@@ -829,8 +829,26 @@
 .item.hidden {
     opacity: 0;
     transform: scale(0.8);
-
     pointer-events: none;
+}
+
+.item.floating {
+    animation: floatingEffect 1s ease-in-out;
+}
+
+@keyframes floatingEffect {
+    0% {
+        transform: translateY(10px);
+        opacity: 0;
+    }
+    50% {
+        transform: translateY(-10px);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
 }
 
  .item:hover {
