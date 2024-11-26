@@ -13,6 +13,12 @@ class Contract extends Model
         'status',
         'start_date',
         'end_date',
+        'payment_date',
+        'approval_status',
+        'payment_status',
+        'file',
+        'amount_id',
+        'description'
     ];
 
     public function User()

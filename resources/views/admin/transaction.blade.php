@@ -63,7 +63,7 @@
         aria-hidden="true">
         <div class="modal-dialog modal-lg modal-dialog-scrollable" role="document" style="margin-top: 20px;">
             <div class="modal-content">
-                <div class="modal-header" style="background: linear-gradient(90deg, #21BEE8, #00AAFF);x">
+                <div class="modal-header" style="background: linear-gradient(90deg, #21BEE8, #00AAFF);">
                     <h4 class="modal-title" id="myModalLabel33" style="color: #ffffff;">Detail Transactions</h4>
                     <button type="button" class="btn-close btn-close-white custom-close" data-bs-dismiss="modal"
                         aria-label="Close"></button>

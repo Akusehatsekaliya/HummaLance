@@ -13,7 +13,7 @@ class ContractController extends Controller
     private ContractService $contractService;
     private ContractInterface $contractInterface;
 
-    public function __construct(ContractService $contractService,ContractInterface $contractInterface)
+    public function __construct(ContractService $contractService, ContractInterface $contractInterface)
     {
         $this->contractService = $contractService;
         $this->contractInterface = $contractInterface;
@@ -51,10 +51,15 @@ class ContractController extends Controller
 
         if ($contract) {
             return response()->json([
+                'id' => $contract->id,
                 'project_name' => $contract->project->name,
                 'user_name' => $contract->user->name,
                 'project_date' => $contract->start_date . ' - ' . $contract->end_date,
-                'contract_file' => $contract->contract_file,
+                'contract_file' => $contract->file,
+                'project_description' => $contract->description,
+                'amount_project' => $contract->project->budget,
+                'payment_status' => $contract->payment_status,
+                'approval_status' => $contract->approval_status,
                 'status' => $contract->status
             ]);
         }
@@ -65,6 +70,12 @@ class ContractController extends Controller
     /**
      * Display the specified resource.
      */
+
+    public function downloadContract($id)
+    {
+        $contract = $this->contractInterface->showDetail($id);
+        return response()->download(public_path($contract->file));
+    }
     public function show(string $id)
     {
         //

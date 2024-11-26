@@ -4,7 +4,7 @@
 @endpush
 
 @push('contents')
-  <div class="auth-modal show">
+  <div class="auth-modal">
     <div class="container">
       <button class="close-btn" data-close="modal">
         <i class="bx bx-x"></i>
@@ -164,7 +164,7 @@
 
 
       <div class="toggle-box">
-        <img src="{{ asset("assets/images/4ec9514b66c366d84e143a15f119c010.png") }}" alt="" class="logo">
+        <img src="{{ asset('assets/images/4ec9514b66c366d84e143a15f119c010.png') }}" alt="" class="logo">
         <div class="toggle-panel toggle-left">
           <h1>Welcome Back</h1>
           <p>Hi, nice to see you back and stay connected with us.</p>
