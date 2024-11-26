@@ -1,7 +1,10 @@
 <?php
 
+use App\Constract\Enums\UserGenderEnum;
 use App\Constract\Enums\UserRoleEnum;
+use App\Constract\Enums\UserSkilsEnum;
 use App\Constract\Enums\UserStatusEnum;
+use App\Constract\Enums\UserStatusLoginEnum;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -20,18 +23,44 @@ return new class extends Migration
             $table->string('name');
             $table->text('avatar')->nullable();
             $table->string('email')->unique();
+            $table->string('phone', 15)->nullable();
+            $table->enum(
+                'gender',
+                [
+                    UserGenderEnum::MALE->value,
+                    UserGenderEnum::FAMALE->value
+                ]
+            );
+            $table->string('address', 255)->nullable();
+            $table->date('birthday')->nullable();
             $table->string('password');
             $table->timestamp('email_verified_at')->nullable();
             $table->text("self_description")->nullable();
-            $table->string("skill")->nullable();
             $table->bigInteger("tarif")->nullable();
             $table->string("portofolio")->nullable();
             $table->string('google_id')->nullable()->unique();
-            $table->enum('status',allowed:
-            [
-                UserStatusEnum::ACTIVE->value,
-                UserStatusEnum::BANNED->value,
-            ]);
+            $table->enum(
+                'status',
+                [
+                    UserStatusEnum::ACTIVE->value,
+                    UserStatusEnum::BANNED->value,
+                ]
+            )->default(UserStatusEnum::ACTIVE->value,);
+            $table->enum(
+                'status_login',
+                [
+                    UserStatusLoginEnum::ONLINE->value,
+                    UserStatusLoginEnum::OFFLINE->value,
+                ]
+            )->default(UserStatusLoginEnum::ONLINE->value,);
+            $table->enum(
+                'skills',
+                [
+                    UserSkilsEnum::UI_UX->value,
+                    UserSkilsEnum::FULL_STACK->value,
+                    UserSkilsEnum::WEB_DESIGN->value,
+                ]
+            );
             $table->rememberToken();
             $table->timestamps();
         });
