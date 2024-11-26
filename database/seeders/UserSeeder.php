@@ -101,7 +101,7 @@ class UserSeeder extends Seeder
             ],
             [
                 'first_name' => 'Rifaldi',
-                'last_name' => 'Gendeng',
+                'last   _name' => 'Gendeng',
                 'email' => 'rifaldiliebert@gmail.com',
                 'status' => UserStatusEnum::ACTIVE->value,
                 'phone' => '085796783031',

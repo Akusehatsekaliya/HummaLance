@@ -50,15 +50,15 @@ class UserController extends Controller
         if ($users) {
             return response()->json([
                 'id' => $users->id,
-                'project_name' => $users->project->name,
-                'user_name' => $users->user->name,
-                'project_date' => $users->start_date . ' - ' . $users->end_date,
-                'contract_file' => $users->file,
-                'project_description' => $users->description,
-                'amount_project' => $users->project->budget,
-                'payment_status' => $users->payment_status,
-                'approval_status' => $users->approval_status,
-                'status' => $users->status
+                'first_name' => $users->first_name,
+                'last_name' => $users->last_name,
+                'email' => $users->email,
+                'phone' => $users->phone,
+                'birthday' => $users->birthday,
+                'address' => $users->address,
+                'gender' => $users->gender,
+                'skills' => $users->skills,
+                'statusLogin' => $users->status_login,
             ]);
         }
 

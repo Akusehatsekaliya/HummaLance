@@ -25,8 +25,8 @@ class UserService
             ->addColumn('action', function ($user) {
                 $statusButton =
                 $user->status != UserStatusEnum::BANNED->value ?
-                '<button class="btn text-danger toggle-status" title="banned '. $user->name .'" data-id="' . $user->id . '" data-status="banned"><i class="bi bi-slash-circle-fill"></i></button>' : '' ;
-                $detailButton = '<button class="btn text-primary"  title="detail ' . $user->name . '" data-bs-toggle="modal" data-bs-target="#detailModal" data-id="' . $user->id . '"><i class="bi bi-info-circle-fill"></i></button>';
+                '<button class="btn text-danger toggle-status" title="banned '. $user->first_name .'" data-id="' . $user->id . '" data-status="banned"><i class="bi bi-slash-circle-fill"></i></button>' : '' ;
+                $detailButton = '<button class="btn text-primary"  title="detail ' . $user->first_name . '" data-bs-toggle="modal" data-bs-target="#detailModal" data-id="' . $user->id . '"><i class="bi bi-info-circle-fill"></i></button>';
 
                 return $statusButton . ' ' . $detailButton;
             })

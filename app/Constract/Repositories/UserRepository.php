@@ -54,7 +54,7 @@ class UserRepository extends BaseRepository implements UserInterface
     public function get(Request $request): mixed
     {
         return $this->model->with('roles')
-            ->select(['id', 'name', 'email', 'status'])
+            ->select(['id', 'first_name', 'last_name', 'email', 'status'])
             ->when($request->role, function ($query, $role) {
                 return $query->whereHas('roles', fn($q) => $q->where('name', $role));
             }, function ($query) {

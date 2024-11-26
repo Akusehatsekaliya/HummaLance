@@ -94,22 +94,16 @@
                                     4
                                 </span>
                             </a>
-                            {{-- <a href="#">
-                                My Contacts
-                            </a>
-                            <img alt="User profile picture" height="40"
-                                src="https://storage.googleapis.com/a1aa/image/6Di0B47SswK7PtjVZ1CzZ9sZ03KY5n7PsQxigtj4QLOJW88E.jpg"
-                                width="40" /> --}}
                         </div>
                     </div>
                     <div class="container">
                         <div class="profile-sidebar">
-                            <img alt="Profile picture of a man looking sideways" height="275" width="250" class="rounded-circle img-fluid"
-                                src="https://storage.googleapis.com/a1aa/image/R47AYiWekQ3rAKemSec2JXSoLDSpWeHCnnEEZWvf3dUrELe8E.jpg"
-                                 />
+                            <img alt="Profile picture of a man looking sideways" height="275" width="250"
+                                class="rounded-circle img-fluid"
+                                src="https://storage.googleapis.com/a1aa/image/R47AYiWekQ3rAKemSec2JXSoLDSpWeHCnnEEZWvf3dUrELe8E.jpg" />
                             <div class="work">
                                 <h3>
-                                    Work
+                                    <span id="firstName"></span>
                                 </h3>
                                 <div class="item">
                                     <strong>
@@ -122,33 +116,13 @@
                                         Karangploso, Malang
                                     </span>
                                 </div>
-                                {{-- <div class="item">
-                                    <strong>
-                                        Metropolitan Museum
-                                    </strong>
-                                    <span class="secondary">
-                                        Secondary
-                                    </span>
-                                    <span>
-                                        525 E 68th Street
-                                    </span>
-                                    <span>
-                                        New York, NY 10651-78 156-187-60
-                                    </span>
-                                </div> --}}
                             </div>
                             <div class="skills">
                                 <h3>
                                     Skills
                                 </h3>
                                 <div class="item">
-                                    <span class="badge bg-light-primary text-primary">UI/UX</span>
-                                </div>
-                                <div class="item">
-                                    <span class="badge bg-light-danger text-danger">Web - Design</span>
-                                </div>
-                                <div class="item">
-                                    <span class="badge bg-light-success text-success">Full Stack</span>
+                                    <span id="skills"></span>
                                 </div>
                             </div>
                         </div>
@@ -157,37 +131,9 @@
                                 <h2>
                                     CLOCKER
                                 </h2>
-                                <span class="location">
-                                    <i class="fas fa-map-marker-alt">
-                                    </i>
-                                    Karangploso, Malang
-                                </span>
-                                <span class="bookmark">
-                                    <i class="fa-solid fa-circle" style="color: #d91919;"></i>
+                                <span class="bookmark" id="statusLogin">
                                 </span>
                             </div>
-                            {{-- <div class="header"> --}}
-                                {{-- <span class="job-title"> --}}
-                                    {{-- <span class="badge bg-light-primary text-primary">Freelancer</span> --}}
-                                {{-- </span> --}}
-                            {{-- </div> --}}
-                            {{-- <div class="rankings">
-                                <span class="score">
-                                    8,6
-                                </span>
-                                <span class="stars">
-                                    <i class="fas fa-star">
-                                    </i>
-                                    <i class="fas fa-star">
-                                    </i>
-                                    <i class="fas fa-star">
-                                    </i>
-                                    <i class="fas fa-star">
-                                    </i>
-                                    <i class="fas fa-star-half-alt">
-                                    </i>
-                                </span>
-                            </div> --}}
                             <div class="actions">
                                 <button class="btn">
                                     Send message
@@ -204,7 +150,7 @@
                                     About
                                 </div>
                                 <div class="tab" onclick="openTab(event, 'timeline')">
-                                    Timeline
+                                    Report
                                 </div>
                             </div>
                             <div class="tab-content active" id="about">
@@ -216,18 +162,18 @@
                                             <div class="item">
                                                 <i class="fa-solid fa-phone"></i>
                                                 <strong>Phone:</strong>
-                                                <span>+1 123 456 7890</span>
+                                                <span id="phone"></span>
                                             </div>
                                             <div class="item">
                                                 <i class="fa-solid fa-location-dot"></i>
                                                 <strong>Address:</strong>
-                                                <span>Karangploso, Malang Jawa Timur</span>
+                                                <span id="address"></span>
                                             </div>
                                             <div class="item">
                                                 <i class="fa-solid fa-envelope"></i>
                                                 <strong>E-mail:</strong>
                                                 <span>
-                                                    <a href="mailto:hello@clocker.com">hello@clocker.com</a>
+                                                    <a href="" id="email"></a>
                                                 </span>
                                             </div>
                                             <div class="item">
@@ -245,23 +191,69 @@
                                             <h3>Basic Information</h3>
                                             <div class="item">
                                                 <strong>Birthday:</strong>
-                                                <span>June 5, 1992</span>
+                                                <span id="birthday"></span>
                                             </div>
                                             <div class="item">
                                                 <strong>Gender:</strong>
-                                                <span>Male</span>
+                                                <span id="gender"></span>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
 
+                            <div class="tab-content" id="timeline" style="max-height: 400px; overflow-y: auto;">
+                                <!-- Timeline Item 1 -->
+                                <div class="timeline-item border-b border-gray-300 py-3 px-4">
+                                    <div class="timeline-content ml-10 bg-white shadow-sm rounded-lg p-4">
+                                        <h5 class="timeline-title font-semibold text-lg">User Name</h5>
+                                        <p class="timeline-description text-gray-600">Completed the project task "Design
+                                            UI" on
+                                            <strong class="font-medium text-black">November 25, 2024</strong>.
+                                        </p>
+                                        <span class="timeline-time text-sm text-gray-500">2 hours ago</span>
+                                    </div>
+                                </div>
 
-                            <div class="tab-content" id="timeline">
-                                <p>
-                                    isi terserah
-                                </p>
+                                <!-- Timeline Item 2 -->
+                                <div class="timeline-item border-b border-gray-300 py-3 px-4">
+                                    <div class="timeline-content ml-10 bg-white shadow-sm rounded-lg p-4">
+                                        <h5 class="timeline-title font-semibold text-lg">User Name</h5>
+                                        <p class="timeline-description text-gray-600">Commented on the post "UI/UX
+                                            Discussion" at
+                                            <strong class="font-medium text-black">November 24, 2024</strong>.
+                                        </p>
+                                        <span class="timeline-time text-sm text-gray-500">1 day ago</span>
+                                    </div>
+                                </div>
+
+                                <!-- Timeline Item 3 -->
+                                <div class="timeline-item border-b border-gray-300 py-3 px-4">
+                                    <div class="timeline-content ml-10 bg-white shadow-sm rounded-lg p-4">
+                                        <h5 class="timeline-title font-semibold text-lg">User Name</h5>
+                                        <p class="timeline-description text-gray-600">Marked task "Build Landing Page" as
+                                            In Progress on
+                                            <strong class="font-medium text-black">November 23, 2024</strong>.
+                                        </p>
+                                        <span class="timeline-time text-sm text-gray-500">3 days ago</span>
+                                    </div>
+                                </div>
+
+                                <!-- Timeline Item 4 -->
+                                <div class="timeline-item py-3 px-4">
+                                    <div class="timeline-content ml-10 bg-white shadow-sm rounded-lg p-4">
+                                        <h5 class="timeline-title font-semibold text-lg">User Name</h5>
+                                        <p class="timeline-description text-gray-600">Task "Fix bugs in API" was rejected
+                                            due to
+                                            incomplete documentation on <strong class="font-medium text-black">November 22,
+                                                2024</strong>.
+                                        </p>
+                                        <span class="timeline-time text-sm text-gray-500">4 days ago</span>
+                                    </div>
+                                </div>
                             </div>
+
+
                         </div>
                     </div>
                 </div>
@@ -272,6 +264,26 @@
         </div>
     </div>
     {{-- end --}}
+@endsection
+@section('style')
+    <style>
+        #timeline::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        #timeline::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        #timeline::-webkit-scrollbar-thumb {
+            background: #888;
+            border-radius: 10px;
+        }
+
+        #timeline::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+    </style>
 @endsection
 
 @section('script')
@@ -292,8 +304,8 @@
                         searchable: false,
                     },
                     {
-                        data: 'name',
-                        name: 'name'
+                        data: 'first_name',
+                        name: 'first_name'
                     },
                     {
                         data: 'email',
@@ -326,9 +338,107 @@
                 table.draw();
             });
         });
+        $(`[data-bs-target="#detailModal"]`).click(function() {
+            console.log("test");
 
+
+        })
         $('#detailModal').on('show.bs.modal', function(event) {
             const button = $(event.relatedTarget);
+
+            var userId = button.data('id');
+            console.log(userId);
+
+            $.ajax({
+                url: 'users/showDetail/' + userId,
+                method: 'GET',
+                success: function(data) {
+                    if (data.error) {
+                        alert(data.error);
+                    } else {
+                        $('#detailModal .modal-body #firstName').text(data.first_name || '-');
+                        $('#detailModal .modal-body #lastName').text(data.last_name || '-');
+                        $('#detailModal .modal-body #email').text(data.email || '-');
+                        $('#detailModal .modal-body #phone').text(data.phone || '-');
+                        $('#detailModal .modal-body #birthday').text(data.birthday || '-');
+                        $('#detailModal .modal-body #address').text(data.address || '-');
+                        $('#detailModal .modal-body #gender').text(data.gender || '-');
+                        $('#detailModal .modal-body #skills').text(data.skills || '-');
+                        $('#detailModal .modal-body #statusLogin').text(data.statusLogin || '-');
+
+                        var skillsElement = $('#detailModal .modal-body #skills');
+                        if (data.skills === 'ui/ux') {
+                            skillsElement.text('UI/UX Design').removeClass().addClass(
+                                'badge bg-light-primary text-primary');
+                        } else if (data.skills === 'Web - Design') {
+                            skillsElement.text('Web Design').removeClass().addClass(
+                                'badge bg-light-danger text-danger');
+                        } else if (data.skills === 'full stack') {
+                            skillsElement.text('Full Stack Developer').removeClass().addClass(
+                                'badge bg-light-succes text-succes');
+                        } else {
+                            skillsElement.text('-').removeClass();
+                        }
+
+                        var genderElement = $('#detailModal .modal-body #gender');
+                        if (data.gender === 'male') {
+                            genderElement
+                                .removeClass('text-danger text-primary')
+                                .addClass('text-primary')
+                                .html(
+                                    '<i class="fas fa-mars"></i> Male');
+                        } else if (data.gender === 'female') {
+                            genderElement
+                                .removeClass('text-primary')
+                                .addClass('text-danger')
+                                .html(
+                                    '<i class="fas fa-venus"></i> Female');
+                        } else {
+                            genderElement
+                                .removeClass('text-primary text-danger')
+                                .text('-');
+                        }
+
+                        var monthNames = [
+                            "Januari", "Februari", "Maret", "April", "Mei", "Juni",
+                            "Juli", "Agustus", "September", "Oktober", "November", "Desember"
+                        ];
+
+                        var birthday = data.birthday;
+                        if (birthday) {
+                            var date = new Date(birthday);
+
+                            var formattedDate = ('0' + date.getDate()).slice(-2) + ' ' +
+                                monthNames[date.getMonth()] + ' ' +
+                                date.getFullYear();
+
+                            $('#detailModal .modal-body #birthday').text(formattedDate);
+                        } else {
+
+                            $('#detailModal .modal-body #birthday').text('-');
+                        }
+
+                        var statusLoginElement = $('#detailModal .modal-body #statusLogin');
+
+                        if (data.statusLogin === 'online') {
+
+                            statusLoginElement.html(
+                                '<i class="fa-solid fa-circle" style="color: #28a745;"></i> Online');
+                        } else if (data.statusLogin === 'offline') {
+                            statusLoginElement.html(
+                                '<i class="fa-solid fa-circle" style="color: #d91919;"></i> Offline'
+                            );
+                        } else {
+                            statusLoginElement.text('-');
+                        }
+
+                    }
+                },
+                error: function(xhr, status, error) {
+                    console.error('Error fetching user details:', error);
+                    alert('Failed to fetch user details.');
+                }
+            });
 
         });
 
