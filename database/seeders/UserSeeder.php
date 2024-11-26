@@ -16,16 +16,18 @@ use Illuminate\Support\Facades\Hash;
 class UserSeeder extends Seeder
 {
     /**
-     * Run the database seeds.
+     * Run the database seeds.user
      */
     public function run(): void
     {
         User::factory()->withRole(UserRoleEnum::ADMIN->value)->create([
-            'name' => 'Admin',
+            'first_name' => 'Admin',
+            'last_name' => 'syauqi',
             'email' => 'admin@gmail.com'
         ]);
         User::factory()->withRole(UserRoleEnum::FREELANCER->value)->create([
-            'name' => 'Freelancer',
+            'first_name' => 'Freelancer',
+            'last_name' => 'mugni',
             'email' => 'freelancer@gmail.com',
             'status' => UserStatusEnum::ACTIVE->value,
             'phone' => '085796783031',
@@ -38,7 +40,8 @@ class UserSeeder extends Seeder
 
         $teamAccount = [
             [
-                'name' => 'Ahmad Syauqi Ali Syahbana',
+                'first_name' => 'Ahmad',
+                'last_name' => 'Syauqi',
                 'email' => 'sauqi2019@gmail.com',
                 'status' => UserStatusEnum::ACTIVE->value,
                 'phone' => '085796783031',
@@ -49,7 +52,8 @@ class UserSeeder extends Seeder
                 'status_login' => UserStatusLoginEnum::ONLINE->value
             ],
             [
-                'name' => 'Cintaa',
+                'first_name' => 'Cinta',
+                'last_name' => 'Adenia',
                 'email' => 'ccintaadenia06@gmail.com',
                 'status' => UserStatusEnum::ACTIVE->value,
                 'phone' => '085796783031',
@@ -60,7 +64,8 @@ class UserSeeder extends Seeder
                 'status_login' => UserStatusLoginEnum::ONLINE->value
             ],
             [
-                'name' => 'Nasya Asriva Putri Artama',
+                'first_name' => 'Nasya',
+                'last_name' => 'Asriva',
                 'email' => 'asrivanasya0@gmail.com',
                 'status' => UserStatusEnum::ACTIVE->value,
                 'phone' => '085796783031',
@@ -71,7 +76,8 @@ class UserSeeder extends Seeder
                 'status_login' => UserStatusLoginEnum::ONLINE->value
             ],
             [
-                'name' => 'NUGI ARTIKASARI',
+                'first_name' => 'Nugi',
+                'last_name' => 'Antartika',
                 'email' => 'ar.tika0412@gmail.com',
                 'status' => UserStatusEnum::ACTIVE->value,
                 'phone' => '085796783031',
@@ -82,7 +88,8 @@ class UserSeeder extends Seeder
                 'status_login' => UserStatusLoginEnum::ONLINE->value
             ],
             [
-                'name' => 'Andhika Mugni',
+                'first_name' => 'Andhika',
+                'last_name' => 'mugni',
                 'email' => 'andhikamugniv@gmail.com',
                 'status' => UserStatusEnum::ACTIVE->value,
                 'phone' => '085796783031',
@@ -93,7 +100,8 @@ class UserSeeder extends Seeder
                 'status_login' => UserStatusLoginEnum::ONLINE->value
             ],
             [
-                'name' => 'Rifaldi Menolak Sadar',
+                'first_name' => 'Rifaldi',
+                'last_name' => 'Gendeng',
                 'email' => 'rifaldiliebert@gmail.com',
                 'status' => UserStatusEnum::ACTIVE->value,
                 'phone' => '085796783031',

@@ -97,4 +97,9 @@ class UserRepository extends BaseRepository implements UserInterface
     {
         return $this->model->query()->get();
     }
+
+    public function showDetail(mixed $id): mixed
+    {
+        return  $this->model->find($id);
+    }
 }
