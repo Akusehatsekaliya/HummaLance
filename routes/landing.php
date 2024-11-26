@@ -4,16 +4,18 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LandingPageController;
 use App\Http\Controllers\NotificationController;
 
-Route::get('/', [LandingPageController::class, 'index'])->name('home');
-Route::get('/aboutUs', [LandingPageController::class, 'aboutUs'])->name('about');
-Route::get('/contact', [LandingPageController::class, 'contact'])->name('contact');
-Route::get('/jobs', [LandingPageController::class, 'jobs']);
-Route::get('/profile', [LandingPageController::class, 'profile']);
-Route::get('/chat', [LandingPageController::class, 'chat']);
-Route::get('/detail-job', [LandingPageController::class, 'detail']);
-Route::get('/favorite', [LandingPageController::class, 'favorite']);
+Route::middleware("auth:landing.index")->group(function () {
+  Route::get('/', [LandingPageController::class, 'index'])->name('home');
+  Route::get('/aboutUs', [LandingPageController::class, 'aboutUs'])->name('about');
+  Route::get('/contact', [LandingPageController::class, 'contact'])->name('contact');
+  Route::get('/jobs', [LandingPageController::class, 'jobs']);
+  Route::get('/profile', [LandingPageController::class, 'profile']);
+  Route::get('/chat', [LandingPageController::class, 'chat']);
+  Route::get('/detail-job', [LandingPageController::class, 'detail']);
+  Route::get('/favorite', [LandingPageController::class, 'favorite']);
 
-Route::get('/detailCompany', [LandingPageController::class, 'detailCompany']);
+  Route::get('/detailCompany', [LandingPageController::class, 'detailCompany']);
+});
 
 #notifications
 Route::resource('notifications', NotificationController::class);
