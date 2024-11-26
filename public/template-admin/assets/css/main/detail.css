@@ -237,7 +237,7 @@
 }
 
 .custom-modal {
-    max-width: 145vh;
+    /* max-width: 145vh;
     max-height: 100vh;
-    overflow-y: auto;
+    overflow-y: auto; */
 }

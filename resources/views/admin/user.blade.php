@@ -104,7 +104,7 @@
                     </div>
                     <div class="container">
                         <div class="profile-sidebar">
-                            <img alt="Profile picture of a man looking sideways" height="275" width="250" class="rounded-circle"
+                            <img alt="Profile picture of a man looking sideways" height="275" width="250" class="rounded-circle img-fluid"
                                 src="https://storage.googleapis.com/a1aa/image/R47AYiWekQ3rAKemSec2JXSoLDSpWeHCnnEEZWvf3dUrELe8E.jpg"
                                  />
                             <div class="work">
