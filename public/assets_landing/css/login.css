@@ -420,17 +420,19 @@
     display: inline-block;
 }
 
-.border, .card {
+.border,
+.card {
     border: 1px solid #686868 !important;
 }
-.card{
+.card {
     width: 300px;
     border-radius: 8px;
 }
 .card.active {
     background-color: #e9f7ff; /* Latar belakang biru muda */
 }
-.border, .card.active{
+.border,
+.card.active {
     border: 1px solid #2b99ff !important;
 }
 .card-body {
@@ -440,7 +442,7 @@
     padding: 10px 15px;
 }
 
-.card-register{
+.card-register {
     /* justify-content: center;
     display: flex; */
     padding: 15px;
@@ -458,8 +460,8 @@ input[type="radio"] {
     border-width: 2px;
     border-color: #9d9d9d;
 }
-.text-line{
-    color:#7a7a7a;
+.text-line {
+    color: #7a7a7a;
 }
 .btn-login {
     background-color: #ededed;
@@ -493,10 +495,10 @@ input[type="radio"] {
     background-color: #00aaff;
     color: #ffffff;
     border: 1px solid #00aaff;
-
 }
 
 .linkedin-register {
+    width: 100%;
     background-color: #ffffff;
     display: inline-block;
     font-weight: 400;
@@ -514,7 +516,41 @@ input[type="radio"] {
     border-radius: 25px;
 }
 
+.google-register {
+    all: unset;
+    width: 100%;
+    max-height: 73px;
+    padding: 4px 2px 4px 8px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 160px;
+    background: var(--Miscellaneous-Floating-Tab---Text-Selected, #007aff);
+    box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.2);
+    gap: 1rem;
+}
 
+.google-register .profile-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 17px;
+}
+
+.google-register .text-area {
+    display: grid;
+    color: #fff;
+    font-family: Roboto;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.google-register .btn-icon {
+    border-radius: 223px;
+    background: #fff;
+    box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.2);
+}
 
 @media screen and (max-width: 650px) {
     .auth-modal .container {
