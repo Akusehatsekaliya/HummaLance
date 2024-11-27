@@ -59,7 +59,7 @@ class UserSeeder extends Seeder
                 'phone' => '085796783031',
                 'birthday' => '1990-01-01',
                 'address' => '123 Main Street, City, Country',
-                'gender' => UserGenderEnum::FAMALE->value,
+                'gender' => UserGenderEnum::FEMALE->value,
                 'skills' => UserSkilsEnum::UI_UX->value,
                 'status_login' => UserStatusLoginEnum::ONLINE->value
             ],
@@ -71,7 +71,7 @@ class UserSeeder extends Seeder
                 'phone' => '085796783031',
                 'birthday' => '1990-01-01',
                 'address' => '123 Main Street, City, Country',
-                'gender' => UserGenderEnum::FAMALE->value,
+                'gender' => UserGenderEnum::FEMALE->value,
                 'skills' => UserSkilsEnum::UI_UX->value,
                 'status_login' => UserStatusLoginEnum::ONLINE->value
             ],
@@ -83,7 +83,7 @@ class UserSeeder extends Seeder
                 'phone' => '085796783031',
                 'birthday' => '1990-01-01',
                 'address' => '123 Main Street, City, Country',
-                'gender' => UserGenderEnum::FAMALE->value,
+                'gender' => UserGenderEnum::FEMALE->value,
                 'skills' => UserSkilsEnum::UI_UX->value,
                 'status_login' => UserStatusLoginEnum::ONLINE->value
             ],
@@ -101,7 +101,7 @@ class UserSeeder extends Seeder
             ],
             [
                 'first_name' => 'Rifaldi',
-                'last   _name' => 'Gendeng',
+                'last_name' => 'Gendeng',
                 'email' => 'rifaldiliebert@gmail.com',
                 'status' => UserStatusEnum::ACTIVE->value,
                 'phone' => '085796783031',

@@ -29,9 +29,9 @@ return new class extends Migration
                 'gender',
                 [
                     UserGenderEnum::MALE->value,
-                    UserGenderEnum::FAMALE->value
+                    UserGenderEnum::FEMALE->value
                 ]
-            );
+            )->default(UserGenderEnum::MALE->value);
             $table->string('address', 255)->nullable();
             $table->date('birthday')->nullable();
             $table->string('password');
@@ -61,7 +61,7 @@ return new class extends Migration
                     UserSkilsEnum::FULL_STACK->value,
                     UserSkilsEnum::WEB_DESIGN->value,
                 ]
-            );
+            )->nullable();
             $table->rememberToken();
             $table->timestamps();
         });
