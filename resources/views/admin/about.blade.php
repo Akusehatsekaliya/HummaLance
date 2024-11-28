@@ -1,7 +1,9 @@
 @extends('kerangka.master')
+
 @section('style')
     <link rel="stylesheet" href="{{ asset('template-admin/assets/extensions/summernote/summernote-lite.min.css') }}" />
 @endsection
+
 @section('content')
     <div class="page-heading">
         <h3>About Us</h3>

@@ -1,4 +1,21 @@
 @extends('kerangka.master')
+
+@section('style')
+    <style>
+        .modal-body .bg-blue-500:hover {
+            background-color: #2563eb;
+        }
+
+        .modal-lg {
+            max-width: 900px;
+        }
+
+        .modal-body .p-6 {
+            padding: 30px;
+        }
+    </style>
+@endsection
+
 @section('content')
     <div class="page-heading">
         <h3>Contract</h3>
@@ -98,23 +115,8 @@
         </div>
     </div>
 @endsection
-@section('style')
-    <style>
-        .modal-body .bg-blue-500:hover {
-            background-color: #2563eb;
-        }
 
-        .modal-lg {
-            max-width: 900px;
-        }
-
-        .modal-body .p-6 {
-            padding: 30px;
-        }
-    </style>
-@endsection
 @section('script')
-    <script src="https://cdn.tailwindcss.com"></script>
     <script>
         $(document).ready(function() {
 
