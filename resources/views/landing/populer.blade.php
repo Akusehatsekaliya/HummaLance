@@ -1107,39 +1107,57 @@
     </div>
 </section>
 
+
+
 <script>
     document.addEventListener('DOMContentLoaded', () => {
     const btn = document.getElementById('loadMoreBtn');
     const items = document.querySelectorAll('.item');
 
-    // Pastikan hanya 8 item pertama yang ditampilkan, sisanya disembunyikan
+    // Sembunyikan semua item setelah 8 pertama
     items.forEach((item, index) => {
         if (index >= 8) {
-            item.classList.add('hidden');
+            item.classList.add('hidden'); // Menyembunyikan item setelah 8 pertama
         }
     });
 
+    let currentIndex = 0;
+
+    // Fungsi untuk menampilkan item satu per satu
+    function showItem() {
+        if (currentIndex < items.length) {
+            items[currentIndex].classList.add('visible'); // Tampilkan item satu per satu
+            currentIndex++;
+        }
+    }
+
+    // Tombol "Load More" event listener
     btn.addEventListener('click', () => {
         const hiddenItems = document.querySelectorAll('.item.hidden');
 
         if (hiddenItems.length > 0) {
-            // Tampilkan semua item yang tersembunyi dan beri animasi floating
-            hiddenItems.forEach(item => {
-                item.classList.remove('hidden');
-                item.classList.add('floating'); // Tambahkan kelas floating
+            // Tampilkan item yang tersembunyi satu per satu
+            hiddenItems.forEach((item, index) => {
+                setTimeout(() => {
+                    item.classList.remove('hidden'); // Hapus kelas hidden
+                    item.classList.add('floating'); // Tambahkan animasi floating
+                    showItem(); // Panggil fungsi untuk menampilkan item
+                }, index * 300); // Tambahkan sedikit jeda untuk animasi per item
             });
-            btn.classList.add('active'); // Tambahkan kelas aktif pada tombol
+
+            btn.classList.add('active'); // Menambahkan kelas active pada tombol
         } else {
-            // Sembunyikan item yang berada di atas indeks ke-8
+            // Jika semua item sudah ditampilkan, sembunyikan item lebih dari 8
             items.forEach((item, index) => {
                 if (index >= 8) {
-                    item.classList.add('hidden');
+                    item.classList.add('hidden'); // Sembunyikan item setelah 8 pertama
                     item.classList.remove('floating'); // Hapus animasi floating
                 }
             });
-            btn.classList.remove('active'); // Hapus kelas aktif pada tombol
+            btn.classList.remove('active'); // Hapus kelas active pada tombol
         }
     });
 });
-
 </script>
+
+

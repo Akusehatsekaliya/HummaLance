@@ -807,8 +807,9 @@
     padding: 20px;
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
     align-items: center;
+    justify-content: left;
+    padding-inline: 5.9%;
 }
 
 
@@ -834,6 +835,10 @@
 
 .item.floating {
     animation: floatingEffect 1s ease-in-out;
+}
+
+.content-item{
+    display: flex;
 }
 
 @keyframes floatingEffect {
@@ -925,11 +930,61 @@
     color: #FF3B30;
     font-weight: 600;
 }
+.item:nth-child(9) {
+    margin-left: 30px;
+    color: rgb(52, 199, 89);
+    font-weight: 600;
+}
+.item:nth-child(10) {
+    margin-left: 30px;
+    color: rgb(255, 204, 0);
+    font-weight: 600;
+}
+.item:nth-child(11) {
+    margin-left: 30px;
+    color: rgb(48, 176, 199);
+    font-weight: 600;
+}
+.item:nth-child(12) {
+    margin-left: 30px;
+    color: rgb(255, 59, 48);
+    font-weight: 600;
+}
 
+.item:nth-child(13) {
+    margin-left: 30px;
+    color: rgb(52, 199, 89);
+    font-weight: 600;
+}
+
+.item:nth-child(14) {
+    margin-left: 30px;
+    color: rgb(255, 204, 0);
+    font-weight: 600;
+}
+
+.item:nth-child(15) {
+    margin-left: 30px;
+    color: rgb(48, 176, 199);
+    font-weight: 600;
+}
+
+.item:nth-child(16) {
+    margin-left: 30px;
+    color: rgb(255, 59, 48);
+    font-weight: 600;
+}
+
+.item:nth-child(17) {
+    margin-left: 30px;
+    color: rgb(52, 199, 89);
+    font-weight: 600;
+}
 .item:nth-child(n+5) {
     margin-left: 30px;
     font-weight: 600;
 }
+
 
 .load-more-btn {
     display: flex;

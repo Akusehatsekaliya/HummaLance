@@ -76,14 +76,20 @@
               <a href="{{ route('password.request') }}">Forgot password?</a>
             @endif
           </div> --}}
-          <button type="submit" class="btn-gradient">Login</button>
-          {{-- <p>Or login with platforms</p>
-          <div class="social-icons">
-            <a href="{{ route('login.google') }}"><i class='bx bxl-google'></i></a>
-            <a href=""><i class='bx bxl-facebook'></i></a>
-            <a href=""><i class='bx bxl-github'></i></a>
-            <a href=""><i class='bx bxl-linkedin'></i></a>
-          </div> --}}
+            <div class="form-check ml-0 mt-1 mb-2 text-left align-items-center d-flex mt-4">
+                <input class="form-check-input mb-1" type="checkbox" value="" id="flexCheckDefault">
+                <label class="form-check-label" for="flexCheckDefault">
+                Remember me
+                </label>
+            </div>
+
+            <button type="submit" class="btn-gradient">Sign Up</button>          {{-- <p>Or login with platforms</p>
+            <div class="social-icons">
+                <a href="{{ route('login.google') }}"><i class='bx bxl-google'></i></a>
+                <a href=""><i class='bx bxl-facebook'></i></a>
+                <a href=""><i class='bx bxl-github'></i></a>
+                <a href=""><i class='bx bxl-linkedin'></i></a>
+            </div> --}}
         </form>
       </div>
 
@@ -171,7 +177,7 @@
 
             <div class="d-flex align-items-center">
                 <hr class="flex-grow-1 thick-line">
-                <span class="mx-2 text-line">Already have an Clocker account? <span class="text-landing">Log in</span></span>
+                <span class="mx-2 text-line">Already have an Clocker account? <a href="" class="text-landing">Log in</a></span>
                 <hr class="flex-grow-1 thick-line">
             </div>
 
