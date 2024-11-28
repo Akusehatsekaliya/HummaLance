@@ -1,4 +1,5 @@
 @extends('kerangka.master')
+
 @section('content')
     <div class="page-heading">
         <h3>Category</h3>
@@ -118,6 +119,7 @@
         </div>
     </div>
 @endsection
+
 @section('script')
     <script>
         $(document).ready(function() {

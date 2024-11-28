@@ -1,5 +1,60 @@
 @extends('kerangka.master')
 
+@section('style')
+    <style>
+        .transaction-logo {
+            display: none;
+            width: 200px;
+            height: 55px;
+            margin: 0 auto;
+        }
+
+        @media print {
+
+            .transaction-logo {
+                display: block !important;
+                margin: 0 auto 20px;
+            }
+
+            body * {
+                visibility: hidden !important;
+            }
+
+            #modalTransactions,
+            #modalTransactions * {
+                visibility: visible !important;
+            }
+
+            .btn-light-secondary,
+            #printButton,
+            .modal-header,
+            .modal-footer {
+                display: none !important;
+            }
+
+            #modalTransactions {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: auto;
+            }
+
+            .project-information-header {
+                page-break-before: always;
+                page-break-inside: avoid;
+                margin-top: 20px;
+            }
+
+            .payment-information-header {
+                page-break-before: auto;
+                break-before: auto;
+                margin-top: 0;
+            }
+        }
+    </style>
+@endsection
+
 @section('content')
     <div class="page-heading">
         <h3>Transaction</h3>
@@ -178,60 +233,7 @@
         </div>
     </div>
 @endsection
-@section('style')
-    <style>
-        .transaction-logo {
-            display: none;
-            width: 200px;
-            height: 55px;
-            margin: 0 auto;
-        }
 
-        @media print {
-
-            .transaction-logo {
-                display: block !important;
-                margin: 0 auto 20px;
-            }
-
-            body * {
-                visibility: hidden !important;
-            }
-
-            #modalTransactions,
-            #modalTransactions * {
-                visibility: visible !important;
-            }
-
-            .btn-light-secondary,
-            #printButton,
-            .modal-header,
-            .modal-footer {
-                display: none !important;
-            }
-
-            #modalTransactions {
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: auto;
-            }
-
-            .project-information-header {
-                page-break-before: always;
-                page-break-inside: avoid;
-                margin-top: 20px;
-            }
-
-            .payment-information-header {
-                page-break-before: auto;
-                break-before: auto;
-                margin-top: 0;
-            }
-        }
-    </style>
-@endsection
 @section('script')
     <script>
         document.getElementById('printButton').addEventListener('click', function() {

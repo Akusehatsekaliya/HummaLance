@@ -1,4 +1,5 @@
 @extends('kerangka.master')
+
 @section('content')
     <div class="page-heading">
         <h3>Banner</h3>
