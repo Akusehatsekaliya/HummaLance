@@ -1,4 +1,5 @@
 @extends('kerangka.master')
+
 @section('content')
     <div class="page-heading">
         <h3>Project</h3>
@@ -65,7 +66,7 @@
                         render: function(data, type, row) {
                             return '<strong>Rp ' + new Intl.NumberFormat('id-ID', {
                                 minimumFractionDigits: 0
-                            }).format(data)+ '</strong>';
+                            }).format(data) + '</strong>';
                         }
                     },
                 ]
