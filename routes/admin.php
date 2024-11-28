@@ -22,6 +22,8 @@ Route::prefix("admin")->name("admin.")->group(function () {
     Route::resource('user', UserController::class);
     Route::put('/user/toggle-status/{user}', [UserController::class, 'toggleStatus'])->name('user.toggleStatus');
     Route::get('/users/showDetail/{id}', [UserController::class, 'showDetail']);
+    Route::post('/users/update-status-register', [UserController::class, 'updateStatusRegister']);
+
     // banner
     Route::resource('banner', BannerController::class)->except(['show', 'edit', 'create']);
     // about

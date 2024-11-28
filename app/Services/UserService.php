@@ -3,6 +3,7 @@
 namespace App\Services;
 
 use App\Constract\Enums\UserStatusEnum;
+use App\Constract\Enums\UserStatusRegisterEnum;
 use App\Constract\Interfaces\UserInterface;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -23,12 +24,37 @@ class UserService
         return DataTables::of($users)
             ->addIndexColumn()
             ->addColumn('action', function ($user) {
-                $statusButton =
-                $user->status != UserStatusEnum::BANNED->value ?
-                '<button class="btn text-danger toggle-status" title="banned '. $user->first_name .'" data-id="' . $user->id . '" data-status="banned"><i class="bi bi-slash-circle-fill"></i></button>' : '' ;
-                $detailButton = '<button class="btn text-primary"  title="detail ' . $user->first_name . '" data-bs-toggle="modal" data-bs-target="#detailModal" data-id="' . $user->id . '"><i class="bi bi-info-circle-fill"></i></button>';
+                $actionButtons = '';
+                if ($user->status_acount_register === UserStatusRegisterEnum::APPCEPT->value) {
+                    $statusButton = $user->status != UserStatusEnum::BANNED->value
+                        ? '<button class="btn text-danger toggle-status" title="Banned ' . $user->first_name . '" data-id="' . $user->id . '" data-status="banned">
+                            <i class="bi bi-slash-circle-fill" style="font-size: 20px;"></i>
+                            </button>'
+                        : '';
 
-                return $statusButton . ' ' . $detailButton;
+                    $detailButton = '<button class="btn text-primary" title="Detail ' . $user->first_name . '"
+                                    data-bs-toggle="modal" data-bs-target="#detailModal"
+                                    data-id="' . $user->id . '">
+                                    <i class="bi bi-info-circle-fill" style="font-size: 20px;"></i>
+                                    </button>';
+
+                    $actionButtons = $statusButton . ' ' . $detailButton;
+                } elseif ($user->status_acount_register === UserStatusRegisterEnum::PENDING->value) {
+                    $rejectButton = '<button class="btn text-danger reject-account" title="rejecd ' . $user->first_name . '"
+                        data-id="' . $user->id . '" data-status="rejected">
+                        <i class="bi bi-x-circle-fill" style="font-size: 20px;"></i>
+                        </button>';
+                    $acceptButton = '<button class="btn text-success accept-account" title="appcept ' . $user->first_name . '"
+                        data-id="' . $user->id . '" data-status="appcept">
+                        <i class="bi bi-check-circle-fill" style="font-size: 20px;"></i>
+                        </button>';
+
+                    $actionButtons =  $rejectButton.''.$acceptButton;
+                } elseif ($user->status_acount_register === UserStatusRegisterEnum::REJECTED->value) {
+                    $actionButtons = '<span class="text-danger">Account Rejected</span>';
+                }
+
+                return $actionButtons;
             })
             ->addColumn('role', fn($user) => $user->getUserRoleInstance()->value)
             ->addColumn('status', function ($user) {

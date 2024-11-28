@@ -5,6 +5,7 @@ use App\Constract\Enums\UserRoleEnum;
 use App\Constract\Enums\UserSkilsEnum;
 use App\Constract\Enums\UserStatusEnum;
 use App\Constract\Enums\UserStatusLoginEnum;
+use App\Constract\Enums\UserStatusRegisterEnum;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -32,6 +33,13 @@ return new class extends Migration
                     UserGenderEnum::FEMALE->value
                 ]
             )->default(UserGenderEnum::MALE->value);
+            $table->enum(
+                'status_acount_register',
+                [
+                    UserStatusRegisterEnum::APPCEPT->value,
+                    UserStatusRegisterEnum::REJECTED->value,
+                    UserStatusRegisterEnum::PENDING->value,
+            ])->default(UserStatusRegisterEnum::PENDING->value);
             $table->string('address', 255)->nullable();
             $table->date('birthday')->nullable();
             $table->string('password');

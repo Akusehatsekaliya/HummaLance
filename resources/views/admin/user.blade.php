@@ -253,7 +253,6 @@
                                 </div>
                             </div>
 
-
                         </div>
                     </div>
                 </div>
@@ -478,7 +477,6 @@
             });
         });
 
-        // scrip tab detail user
         function openTab(evt, tabName) {
             var i, tabcontent, tablinks;
             tabcontent = document.getElementsByClassName("tab-content");
@@ -492,5 +490,34 @@
             document.getElementById(tabName).classList.add("active");
             evt.currentTarget.classList.add("active");
         }
+
+        $(document).on('click', '.accept-account, .reject-account', function() {
+            const userId = $(this).data('id');
+            const status = $(this).data('status');
+            const table = $('#table10').DataTable();
+
+            $.ajax({
+                url: 'users/update-status-register',
+                type: 'POST',
+                data: {
+                    id: userId,
+                    status: status,
+                    _token: $('meta[name="csrf-token"]').attr('content')
+                },
+                success: function(response) {
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Status Updated Successfully',
+                        text: response.message,
+                        showConfirmButton: true,
+                    }).then(function() {
+                        table.ajax.reload();
+                    });
+                },
+                error: function(xhr) {
+                    alert('Gagal memperbarui status!');
+                }
+            });
+        });
     </script>
 @endsection

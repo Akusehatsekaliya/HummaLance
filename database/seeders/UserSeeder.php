@@ -7,6 +7,7 @@ use App\Constract\Enums\UserRoleEnum;
 use App\Constract\Enums\UserSkilsEnum;
 use App\Constract\Enums\UserStatusEnum;
 use App\Constract\Enums\UserStatusLoginEnum;
+use App\Constract\Enums\UserStatusRegisterEnum;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use App\Enums\RoleUserEnum;
 use App\Models\User;
@@ -35,7 +36,8 @@ class UserSeeder extends Seeder
             'address' => '123 Main Street, City, Country',
             'gender' => UserGenderEnum::MALE->value,
             'skills' => UserSkilsEnum::UI_UX->value,
-            'status_login' => UserStatusLoginEnum::ONLINE->value
+            'status_login' => UserStatusLoginEnum::ONLINE->value,
+            'status_acount_register' => UserStatusRegisterEnum::PENDING->value,
         ]);
 
         $teamAccount = [
@@ -49,7 +51,8 @@ class UserSeeder extends Seeder
                 'address' => '123 Main Street, City, Country',
                 'gender' => UserGenderEnum::MALE->value,
                 'skills' => UserSkilsEnum::UI_UX->value,
-                'status_login' => UserStatusLoginEnum::ONLINE->value
+                'status_login' => UserStatusLoginEnum::ONLINE->value,
+                'status_acount_register' => UserStatusRegisterEnum::PENDING->value,
             ],
             [
                 'first_name' => 'Cinta',
@@ -61,7 +64,8 @@ class UserSeeder extends Seeder
                 'address' => '123 Main Street, City, Country',
                 'gender' => UserGenderEnum::FEMALE->value,
                 'skills' => UserSkilsEnum::UI_UX->value,
-                'status_login' => UserStatusLoginEnum::ONLINE->value
+                'status_login' => UserStatusLoginEnum::ONLINE->value,
+                'status_acount_register' => UserStatusRegisterEnum::APPCEPT->value,
             ],
             [
                 'first_name' => 'Nasya',
@@ -73,7 +77,8 @@ class UserSeeder extends Seeder
                 'address' => '123 Main Street, City, Country',
                 'gender' => UserGenderEnum::FEMALE->value,
                 'skills' => UserSkilsEnum::UI_UX->value,
-                'status_login' => UserStatusLoginEnum::ONLINE->value
+                'status_login' => UserStatusLoginEnum::ONLINE->value,
+                'status_acount_register' => UserStatusRegisterEnum::APPCEPT->value,
             ],
             [
                 'first_name' => 'Nugi',
@@ -85,7 +90,8 @@ class UserSeeder extends Seeder
                 'address' => '123 Main Street, City, Country',
                 'gender' => UserGenderEnum::FEMALE->value,
                 'skills' => UserSkilsEnum::UI_UX->value,
-                'status_login' => UserStatusLoginEnum::ONLINE->value
+                'status_login' => UserStatusLoginEnum::ONLINE->value,
+                'status_acount_register' => UserStatusRegisterEnum::APPCEPT->value,
             ],
             [
                 'first_name' => 'Andhika',
@@ -97,7 +103,8 @@ class UserSeeder extends Seeder
                 'address' => '123 Main Street, City, Country',
                 'gender' => UserGenderEnum::MALE->value,
                 'skills' => UserSkilsEnum::UI_UX->value,
-                'status_login' => UserStatusLoginEnum::ONLINE->value
+                'status_login' => UserStatusLoginEnum::ONLINE->value,
+                'status_acount_register' => UserStatusRegisterEnum::APPCEPT->value,
             ],
             [
                 'first_name' => 'Rifaldi',
@@ -109,7 +116,8 @@ class UserSeeder extends Seeder
                 'address' => '123 Main Street, City, Country',
                 'gender' => UserGenderEnum::MALE->value,
                 'skills' => UserSkilsEnum::UI_UX->value,
-                'status_login' => UserStatusLoginEnum::ONLINE->value
+                'status_login' => UserStatusLoginEnum::ONLINE->value,
+                'status_acount_register' => UserStatusRegisterEnum::APPCEPT->value,
             ],
         ];
         foreach ($teamAccount as $account) {

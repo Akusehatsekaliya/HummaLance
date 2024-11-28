@@ -65,7 +65,13 @@ class UserController extends Controller
         return response()->json(['error' => 'Contract not found'], 404);
     }
 
-
+    public function updateStatusRegister(Request $request)
+    {
+        $user = $this->userInterface->show($request->id);
+        $user->status_acount_register = $request->status;
+        $user->update();
+        return response()->json(['message' => 'Status updated successfully!']);
+    }
     /**
      * Show the form for creating a new resource.
      */
