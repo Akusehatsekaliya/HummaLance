@@ -204,7 +204,7 @@
     color: #fff;
     font-weight: 500;
     display: inline-block;
-    margin-top: 24px;
+    margin-top: 10px;
 }
 
 .auth-modal .container p {
@@ -401,7 +401,9 @@
     right: -50%;
     transition-delay: 0.4s;
 }
-
+.toggle-panel.toggle-left {
+    transition-delay: 1s;
+}
 .auth-modal .container.active .toggle-panel.toggle-right {
     right: 0;
     transition-delay: 1.2s;
