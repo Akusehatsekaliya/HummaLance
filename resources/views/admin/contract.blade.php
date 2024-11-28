@@ -3,7 +3,7 @@
 @section('style')
     <style>
         .modal-body .bg-blue-500 {
-            background-color: #2563eb;
+            background-color: rgb(37, 99, 235);
         }
 
         .modal-lg {
@@ -12,6 +12,50 @@
 
         .modal-body .p-6 {
             padding: 30px;
+        }
+
+
+
+
+
+        .section {
+            margin-bottom: 20px;
+        }
+
+        .section-header {
+            background-color: #00AAFF;
+            color: #fff;
+            padding: 10px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .section-content {
+            padding: 10px;
+            background-color: #ecf0f1;
+        }
+
+        .section-content div {
+            margin-bottom: 10px;
+        }
+
+        .section-content div span {
+            display: inline-block;
+            width: 200px;
+            font-weight: bold;
+        }
+
+        .section-content div span.value {
+            font-weight: normal;
+        }
+
+        .two-column {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .two-column .column {
+            width: 48%;
         }
     </style>
 @endsection
@@ -66,7 +110,7 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <div class="bg-white shadow-md rounded-md p-6 mb-6">
+                    {{-- <div class="bg-white shadow-md rounded-md p-6 mb-6">
                         <div class=" text-white p-4 rounded-t-md"
                             style="background: linear-gradient(90deg, #21BEE8, #00AAFF);">
                             <h2 class="text-lg font-bold" style="color: white">Contract Details</h2>
@@ -80,15 +124,7 @@
                                 <div><strong>Status :</strong> <span id="status"></span></div>
                                 <div><strong>Amount :</strong> <span id="amountProject"></span></div>
                                 <div><strong>Payment Status :</strong> <span id="paymentStatus"></span></div>
-                                <div><strong>Approval Status :</strong> <span id="approvalStatus">
-                                        {{-- @if ($contract->REJECTED)
-                                        <span class="badge bg-light-danger text-danger p-2">REJECTED</span>
-                                    @elseif($contract->PENDING)
-                                        <span class="badge bg-light-warning text-warning p-2">PENDING</span>
-                                    @else
-                                        <span class="badge bg-light-success text-success p-2">APPROVED</span>
-                                    @endif --}}
-                                    </span></div>
+                                <div><strong>Approval Status :</strong> <span id="approvalStatus"></span></div>
                             </div>
                         </div>
                         <div class="p-6 border-b">
@@ -105,6 +141,57 @@
                         <div class="p-6">
                             <h3 class="text-lg font-semibold mb-4">Additional Information</h3>
                             <p><strong>Scope of Work:</strong> <span id="projectDescription"></span></p>
+                        </div>
+                    </div> --}}
+
+
+
+
+
+
+                    <div class="section">
+                        <div class="section-header">Landlord Information</div>
+                        <div class="section-content">
+                            <div><span>Name:</span> <span class="value" id="userName"></span></div>
+                            <div><span>Project:</span> <span class="value" id="projectName"></span></div>
+                            <div><span>Date:</span> <span class="value" id="projectDate"></span></div>
+                            <div><span>Status:</span> <span class="value" id="status"></span></div>
+                            <div><span>Amount:</span> <span class="value" id="amountProject"></span></div>
+                            <div><span>Payment Status:</span> <span class="value" id="paymentStatus"></span></div>
+                            <div><span>Approval Status:</span> <span class="value" id="approvalStatus"></span></div>
+
+                        </div>
+                    </div>
+                    <div class="section">
+                        <div class="section-header">Tenant Information</div>
+                        <div class="section-content">
+                            <div><span>Name:</span> <span class="value"></span></div>
+                            <div><span>Email:</span> <span class="value"></span></div>
+                            <div><span>Date:</span> <span class="value"></span></div>
+                            <div><span>Number of Occupants:</span> <span class="value">6</span></div>
+                        </div>
+                    </div>
+                    <div class="section">
+                        <div class="section-header">Rental Information</div>
+                        <div class="section-content two-column">
+                            <div class="column">
+                                <div><span>House Rental Address:</span> <span class="value">2 Oak V<br>Raleigh, No,
+                                        27621<br>United States</span></div>
+                                <div><span>Start Date of Agreement:</span> <span class="value">September 12, 1967</span>
+                                </div>
+                                <div><span>End Date of Agreement:</span> <span class="value">September 12, 1967</span>
+                                </div>
+                                <div><span>Date of First Payment Due:</span> <span class="value">October 8, 2008</span>
+                                </div>
+                                <div><span>Pay Period:</span> <span class="value">every 15th of the month</span></div>
+                            </div>
+                            <div class="column">
+                                <div><span>Rent Amount per Month:</span> <span class="value">$ 7,500.00</span></div>
+                                <div><span>Security Deposit:</span> <span class="value">$ 2,500.00</span></div>
+                                <div><span>Late Charges:</span> <span class="value">$ 500.00</span></div>
+                                <div><span>Payment Method:</span> <span class="value">Check</span></div>
+                                <div><span>Collected by:</span> <span class="value">Engracia Van de Vlies</span></div>
+                            </div>
                         </div>
                     </div>
                 </div>
