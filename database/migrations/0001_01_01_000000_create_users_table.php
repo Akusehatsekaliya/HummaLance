@@ -36,7 +36,7 @@ return new class extends Migration
             $table->enum(
                 'status_acount_register',
                 [
-                    UserStatusRegisterEnum::APPCEPT->value,
+                    UserStatusRegisterEnum::ACCEPTED->value,
                     UserStatusRegisterEnum::REJECTED->value,
                     UserStatusRegisterEnum::PENDING->value,
             ])->default(UserStatusRegisterEnum::PENDING->value);
