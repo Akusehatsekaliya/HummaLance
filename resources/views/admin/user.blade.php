@@ -84,16 +84,7 @@
                             {{-- <input placeholder="Search" type="text"/> --}}
                         </div>
                         <div class="nav-links">
-                            <a href="#">
                                 <span class="badge bg-light-primary text-primary">Freelancer</span>
-
-                            </a>
-                            <a class="messages" href="#">
-                                Messages
-                                <span class="badge">
-                                    4
-                                </span>
-                            </a>
                         </div>
                     </div>
                     <div class="container">
@@ -203,52 +194,91 @@
                             </div>
 
                             <div class="tab-content" id="timeline" style="max-height: 400px; overflow-y: auto;">
-                                <!-- Timeline Item 1 -->
                                 <div class="timeline-item border-b border-gray-300 py-3 px-4">
                                     <div class="timeline-content ml-10 bg-white shadow-sm rounded-lg p-4">
-                                        <h5 class="timeline-title font-semibold text-lg">User Name</h5>
-                                        <p class="timeline-description text-gray-600">Completed the project task "Design
-                                            UI" on
-                                            <strong class="font-medium text-black">November 25, 2024</strong>.
-                                        </p>
-                                        <span class="timeline-time text-sm text-gray-500">2 hours ago</span>
+                                        <div class="flex items-center space-x-4">
+                                            <div class="d-flex align-items-center gap-3 mb-3">
+                                                <img alt="Profile picture of a man looking sideways" height="70"
+                                                    width="60" class="rounded-circle img-fluid"
+                                                    src="https://storage.googleapis.com/a1aa/image/R47AYiWekQ3rAKemSec2JXSoLDSpWeHCnnEEZWvf3dUrELe8E.jpg" />
+                                                <h5 class="timeline-title font-semibold text-lg m-0">User Name</h5>
+                                            </div>
+                                            <div>
+                                                <p class="timeline-description text-gray-600">
+                                                    Completed the project task "Design UI" on
+                                                    <strong class="font-medium text-black">November 25, 2024</strong>.
+                                                </p>
+                                            </div>
+                                        </div>
+
+                                        <!-- Time Information -->
+                                        <span class="timeline-time text-sm text-gray-500 block mt-2">2 hours ago</span>
                                     </div>
                                 </div>
 
-                                <!-- Timeline Item 2 -->
                                 <div class="timeline-item border-b border-gray-300 py-3 px-4">
                                     <div class="timeline-content ml-10 bg-white shadow-sm rounded-lg p-4">
-                                        <h5 class="timeline-title font-semibold text-lg">User Name</h5>
-                                        <p class="timeline-description text-gray-600">Commented on the post "UI/UX
-                                            Discussion" at
-                                            <strong class="font-medium text-black">November 24, 2024</strong>.
-                                        </p>
-                                        <span class="timeline-time text-sm text-gray-500">1 day ago</span>
+                                        <div class="flex items-center space-x-4">
+                                            <div class="d-flex align-items-center gap-3 mb-3">
+                                                <img alt="Profile picture of a man looking sideways" height="70"
+                                                    width="60" class="rounded-circle img-fluid"
+                                                    src="https://storage.googleapis.com/a1aa/image/R47AYiWekQ3rAKemSec2JXSoLDSpWeHCnnEEZWvf3dUrELe8E.jpg" />
+                                                <h5 class="timeline-title font-semibold text-lg m-0">User Name</h5>
+                                            </div>
+                                            <div>
+                                                <p class="timeline-description text-gray-600">
+                                                    Completed the project task "Design UI" on
+                                                    <strong class="font-medium text-black">November 25, 2024</strong>.
+                                                </p>
+                                            </div>
+                                        </div>
+
+                                        <!-- Time Information -->
+                                        <span class="timeline-time text-sm text-gray-500 block mt-2">2 hours ago</span>
                                     </div>
                                 </div>
 
-                                <!-- Timeline Item 3 -->
                                 <div class="timeline-item border-b border-gray-300 py-3 px-4">
                                     <div class="timeline-content ml-10 bg-white shadow-sm rounded-lg p-4">
-                                        <h5 class="timeline-title font-semibold text-lg">User Name</h5>
-                                        <p class="timeline-description text-gray-600">Marked task "Build Landing Page" as
-                                            In Progress on
-                                            <strong class="font-medium text-black">November 23, 2024</strong>.
-                                        </p>
-                                        <span class="timeline-time text-sm text-gray-500">3 days ago</span>
+                                        <div class="flex items-center space-x-4">
+                                            <div class="d-flex align-items-center gap-3 mb-3">
+                                                <img alt="Profile picture of a man looking sideways" height="70"
+                                                    width="60" class="rounded-circle img-fluid"
+                                                    src="https://storage.googleapis.com/a1aa/image/R47AYiWekQ3rAKemSec2JXSoLDSpWeHCnnEEZWvf3dUrELe8E.jpg" />
+                                                <h5 class="timeline-title font-semibold text-lg m-0">User Name</h5>
+                                            </div>
+                                            <div>
+                                                <p class="timeline-description text-gray-600">
+                                                    Completed the project task "Design UI" on
+                                                    <strong class="font-medium text-black">November 25, 2024</strong>.
+                                                </p>
+                                            </div>
+                                        </div>
+
+                                        <!-- Time Information -->
+                                        <span class="timeline-time text-sm text-gray-500 block mt-2">2 hours ago</span>
                                     </div>
                                 </div>
 
-                                <!-- Timeline Item 4 -->
-                                <div class="timeline-item py-3 px-4">
+                                <div class="timeline-item border-b border-gray-300 py-3 px-4">
                                     <div class="timeline-content ml-10 bg-white shadow-sm rounded-lg p-4">
-                                        <h5 class="timeline-title font-semibold text-lg">User Name</h5>
-                                        <p class="timeline-description text-gray-600">Task "Fix bugs in API" was rejected
-                                            due to
-                                            incomplete documentation on <strong class="font-medium text-black">November 22,
-                                                2024</strong>.
-                                        </p>
-                                        <span class="timeline-time text-sm text-gray-500">4 days ago</span>
+                                        <div class="flex items-center space-x-4">
+                                            <div class="d-flex align-items-center gap-3 mb-3">
+                                                <img alt="Profile picture of a man looking sideways" height="70"
+                                                    width="60" class="rounded-circle img-fluid"
+                                                    src="https://storage.googleapis.com/a1aa/image/R47AYiWekQ3rAKemSec2JXSoLDSpWeHCnnEEZWvf3dUrELe8E.jpg" />
+                                                <h5 class="timeline-title font-semibold text-lg m-0">User Name</h5>
+                                            </div>
+                                            <div>
+                                                <p class="timeline-description text-gray-600">
+                                                    Completed the project task "Design UI" on
+                                                    <strong class="font-medium text-black">November 25, 2024</strong>.
+                                                </p>
+                                            </div>
+                                        </div>
+
+                                        <!-- Time Information -->
+                                        <span class="timeline-time text-sm text-gray-500 block mt-2">2 hours ago</span>
                                     </div>
                                 </div>
                             </div>
