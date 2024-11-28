@@ -135,8 +135,9 @@
                         name: 'id'
                     },
                     {
-                        data: 'user.name',
-                        name: 'user.name'
+                        data: null,
+                        name: 'user',
+                        render: (data) => `${data.user.first_name} ${data.user.last_name}`,
                     },
                     {
                         data: 'project.name',
@@ -210,7 +211,7 @@
 
                         $('#detailModal .modal-body #amountProject').text(new Intl.NumberFormat()
                             .format(data.amount_project));
-                            $('#detailModal .modal-body #amountProject')
+                        $('#detailModal .modal-body #amountProject')
                             .removeClass('amount-success')
                             .addClass('text-danger');
 
@@ -223,7 +224,8 @@
                             paymentStatusElement.removeClass('text-success').addClass('text-warning')
                                 .text('Pending');
                         } else {
-                            paymentStatusElement.removeClass('text-success text-warning').text('Unknown');
+                            paymentStatusElement.removeClass('text-success text-warning').text(
+                                'Unknown');
                         }
 
                         var approvalStatusElement = $('#detailModal .modal-body #approvalStatus');
@@ -231,21 +233,21 @@
                         if (data.approval_status.toLowerCase() === 'pending') {
                             approvalStatusElement.removeClass('status-approved status-rejected')
                                 .addClass(
-                                'status-pending text-warning')
+                                    'status-pending text-warning')
                                 .text('Pending');
                         } else if (data.approval_status.toLowerCase() === 'approved') {
                             approvalStatusElement.removeClass('status-pending status-rejected')
                                 .addClass(
-                                'status-approved text-success')
+                                    'status-approved text-success')
                                 .text('Approved');
                         } else if (data.approval_status.toLowerCase() === 'rejected') {
                             approvalStatusElement.removeClass('status-pending status-approved')
                                 .addClass(
-                                'status-rejected text-danger')
+                                    'status-rejected text-danger')
                                 .text('Rejected');
                         } else {
                             approvalStatusElement.removeClass(
-                                'status-pending status-approved status-rejected')
+                                    'status-pending status-approved status-rejected')
                                 .addClass('text-muted')
                                 .text('Unknown');
                         }

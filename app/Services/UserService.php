@@ -25,7 +25,7 @@ class UserService
             ->addIndexColumn()
             ->addColumn('action', function ($user) {
                 $actionButtons = '';
-                if ($user->status_acount_register === UserStatusRegisterEnum::APPCEPT->value) {
+                if ($user->status_acount_register === UserStatusRegisterEnum::ACCEPTED->value) {
                     $statusButton = $user->status != UserStatusEnum::BANNED->value
                         ? '<button class="btn text-danger toggle-status" title="Banned ' . $user->first_name . '" data-id="' . $user->id . '" data-status="banned">
                             <i class="bi bi-slash-circle-fill" style="font-size: 20px;"></i>
@@ -44,8 +44,8 @@ class UserService
                         data-id="' . $user->id . '" data-status="rejected">
                         <i class="bi bi-x-circle-fill" style="font-size: 20px;"></i>
                         </button>';
-                    $acceptButton = '<button class="btn text-success accept-account" title="appcept ' . $user->first_name . '"
-                        data-id="' . $user->id . '" data-status="appcept">
+                    $acceptButton = '<button class="btn text-success accept-account" title="ACCEPTED ' . $user->first_name . '"
+                        data-id="' . $user->id . '" data-status="ACCEPTED">
                         <i class="bi bi-check-circle-fill" style="font-size: 20px;"></i>
                         </button>';
 
