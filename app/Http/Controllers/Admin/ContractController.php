@@ -53,7 +53,7 @@ class ContractController extends Controller
             return response()->json([
                 'id' => $contract->id,
                 'project_name' => $contract->project->name,
-                'user_name' => $contract->user->name,
+                'user_name' => $contract->user->first_name . ' ' . $contract->user->last_name,
                 'project_date' => $contract->start_date . ' - ' . $contract->end_date,
                 'contract_file' => $contract->file,
                 'project_description' => $contract->description,

@@ -171,7 +171,7 @@
                             <div><span>Number of Occupants:</span> <span class="value">6</span></div>
                         </div>
                     </div>
-                    <div class="section">
+                    {{-- <div class="section">
                         <div class="section-header">Rental Information</div>
                         <div class="section-content two-column">
                             <div class="column">
@@ -193,6 +193,11 @@
                                 <div><span>Collected by:</span> <span class="value">Engracia Van de Vlies</span></div>
                             </div>
                         </div>
+                    </div> --}}
+                    <div class="p-6 border-b">
+                        <h3 class="text-lg font-semibold mb-4">Contract File</h3>
+                        <a href="" id="contractFile" class="bg-blue-500 text-white p-2 rounded">Download
+                            Contract</a>
                     </div>
                 </div>
                 <div class="modal-footer">
