@@ -84,7 +84,7 @@
                             {{-- <input placeholder="Search" type="text"/> --}}
                         </div>
                         <div class="nav-links">
-                                <span class="badge bg-light-primary text-primary">Freelancer</span>
+                            <span class="badge bg-light-primary text-primary">Freelancer</span>
                         </div>
                     </div>
                     <div class="container">
@@ -144,7 +144,7 @@
                                     Report
                                 </div>
                             </div>
-                            <div class="tab-content active" id="about">
+                            <div class="tab-content active" id="about" >
                                 <div class="row">
                                     <!-- Bagian Contact Information -->
                                     <div class="col-md-6">
@@ -193,8 +193,23 @@
                                 </div>
                             </div>
 
-                            <div class="tab-content" id="timeline" style="max-height: 400px; overflow-y: auto;">
-                                <div class="timeline-item border-b border-gray-300 py-3 px-4">
+                            <div class="tab-content" id="timeline" style="max-height: 300px; overflow-y: auto;">
+                                <div class="search-filter-container">
+                                    <div class="search-bar1">
+                                        <input type="text" placeholder="Search...">
+                                        <i class="fas fa-search icon icon-right search"></i>
+                                    </div>
+                                    <div class="filter1">
+                                        <i class="bi bi-filter icon icon-right"></i>
+                                        <select id="filter" class="form-select">
+                                            <option value="">Filter</option>
+                                            <option value="">123</option>
+                                            <option value="">main st</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="timeline-item border-b border-gray-300 py-3 px-4" style="margin-top: 25px;">
                                     <div class="timeline-content ml-10 bg-white shadow-sm rounded-lg p-4">
                                         <div class="flex items-center space-x-4">
                                             <div class="d-flex align-items-center gap-3 mb-3">
@@ -210,7 +225,6 @@
                                                 </p>
                                             </div>
                                         </div>
-
                                         <!-- Time Information -->
                                         <span class="timeline-time text-sm text-gray-500 block mt-2">2 hours ago</span>
                                     </div>
@@ -232,7 +246,6 @@
                                                 </p>
                                             </div>
                                         </div>
-
                                         <!-- Time Information -->
                                         <span class="timeline-time text-sm text-gray-500 block mt-2">2 hours ago</span>
                                     </div>
@@ -254,7 +267,6 @@
                                                 </p>
                                             </div>
                                         </div>
-
                                         <!-- Time Information -->
                                         <span class="timeline-time text-sm text-gray-500 block mt-2">2 hours ago</span>
                                     </div>
@@ -276,7 +288,6 @@
                                                 </p>
                                             </div>
                                         </div>
-
                                         <!-- Time Information -->
                                         <span class="timeline-time text-sm text-gray-500 block mt-2">2 hours ago</span>
                                     </div>

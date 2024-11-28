@@ -241,3 +241,127 @@
     max-height: 100vh;
     overflow-y: auto; */
 }
+.container20 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+.search-bar1 {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 25px;
+    padding: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+.search-bar1 input {
+    border: none;
+    outline: none;
+    flex: 1;
+    padding: 0 10px;
+    font-size: 16px;
+    border-radius: 25px;
+}
+.search-bar1 .icon {
+    color: #007bff;
+    font-size: 18px;
+}
+.search-bar1 .icon-right {
+    margin-left: -30px;
+    font-size: 15px;
+}
+.search-bar1 .icon-left {
+    margin-right: 10px;
+}
+.search-bar1 .icon-right.dots {
+    color: #007bff;
+}
+.search-bar1 .icon-right.search {
+    color: #fff;
+    background-color: #007bff;
+    border-radius: 50%;
+    padding: 5px;
+}
+
+.container21 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+.filter1 {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 25px;
+    padding: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+.filter1 select {
+    border: none;
+    outline: none;
+    flex: 1;
+    padding: 0 10px;
+    font-size: 16px;
+    border-radius: 25px;
+}
+.filter1 .icon {
+    color: #007bff;
+    font-size: 18px;
+}
+.filter1 .icon-right {
+    margin-left: -30px;
+    font-size: 15px;
+}
+.filter1 .icon-left {
+    margin-right: 10px;
+}
+.filter1 .icon-right.dots {
+    color: #007bff;
+}
+.filter1 .icon-right.search {
+    color: #fff;
+    background-color: #007bff;
+    border-radius: 50%;
+    padding: 5px;
+}
+.search-filter-container {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+.search-bar1 {
+    width: 290px;
+    position: relative;
+}
+.search-bar1 input {
+    width: 100%;
+    padding-right: 30px;
+}
+.search-bar1 .icon {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+/* Filter */
+.filter1 {
+    width: 150px;
+    position: relative;
+}
+.filter1 select {
+    width: 100%;
+    padding-right: 30px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background: transparent;
+}
+.filter1 .icon {
+    position: absolute;
+    right: 10px;
+    top: 40%;
+    transform: translateY(-50%);
+    pointer-events: none;
+    font-size: 20px;
+}

@@ -14,7 +14,7 @@
         <form method="POST" action="{{ route('login') }}">
           @csrf
           <h1>Log in To Clocker</h1>
-          <div class="login-button-container">
+          {{-- <div class="login-button-container">
             <a class="google-login" href="{{ route('login.google') }}">
               <img src="{{ asset('assets/svg/icons/gg_google.svg') }}" alt="" />
               Login With Google
@@ -25,12 +25,12 @@
             <button class="linkedin-login">
               <img src="{{ asset('assets/svg/icons/mdi_linkedin.svg') }}" alt="" />
             </button>
-          </div>
-          <div class="divider">
+          </div> --}}
+          {{-- <div class="divider">
             <div class="rect"></div>
             <span>or</span>
             <div class="rect"></div>
-          </div>
+          </div> --}}
           <div class="input-box">
             <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" viewBox="0 0 23 23" fill="none">
               <path fill-rule="evenodd" clip-rule="evenodd"
@@ -53,6 +53,23 @@
             </svg>
             <input type="password" class="@error('email') is-invalid @enderror" placeholder="Password" name="password"
               value="{{ old('password') }}" required>
+          </div>
+          <div class="divider">
+            <div class="rect"></div>
+            <span>or</span>
+            <div class="rect"></div>
+          </div>
+          <div class="login-button-container">
+            <a class="google-login" href="{{ route('login.google') }}">
+              <img src="{{ asset('assets/svg/icons/gg_google.svg') }}" alt="" />
+              Login With Google
+            </a>
+            <button class="facebook-login">
+              <img src="{{ asset('assets/svg/icons/ic_baseline-facebook.svg') }}" alt="" />
+            </button>
+            <button class="linkedin-login">
+              <img src="{{ asset('assets/svg/icons/mdi_linkedin.svg') }}" alt="" />
+            </button>
           </div>
           {{-- <div class="forgot-link">
             @if (Route::has('password.request'))
