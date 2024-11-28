@@ -2,7 +2,7 @@
 
 @section('style')
     <style>
-        .modal-body .bg-blue-500:hover {
+        .modal-body .bg-blue-500 {
             background-color: #2563eb;
         }
 

@@ -69,13 +69,14 @@
         aria-hidden="true">
         <div class="modal-dialog modal-lg custom-modal" role="document" style="margin-top: 20px;">
             <div class="modal-content">
-                <div class="modal-header">
-                    <img class="modal-title" src="{{ asset('assets_landing/images/Asset 15.png') }}" alt=""
-                        style="width: 120px;">
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
 
                 <div class="modal-body">
+                    <div class="justify-content-between d-flex">
+                        <img class="modal-title" src="{{ asset('assets_landing/images/Asset 15.png') }}" alt=""
+                            style="width: 120px;">
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+
                     <div class="header">
                         <div class="logo">
                             {{-- Kodecolor --}}
@@ -83,9 +84,9 @@
                         <div class="search-bar">
                             {{-- <input placeholder="Search" type="text"/> --}}
                         </div>
-                        <div class="nav-links">
+                        {{-- <div class="nav-links">
                             <span class="badge bg-light-primary text-primary">Freelancer</span>
-                        </div>
+                        </div> --}}
                     </div>
                     <div class="container">
                         <div class="profile-sidebar">
@@ -95,6 +96,8 @@
                             <div class="work">
                                 <h3>
                                     <span id="firstName"></span>
+                                    <span class="badge bg-light-primary text-primary">Freelancer</span>
+
                                 </h3>
                                 <div class="item">
                                     <strong>
@@ -194,21 +197,23 @@
                             </div>
 
                             <div class="tab-content" id="timeline" style="max-height: 300px; overflow-y: auto;">
-                                <div class="search-filter-container">
-                                    <div class="search-bar1">
+                                <!-- Search and Filter Section -->
+                                <div class="search-filter-container" style="position: sticky; top: 0; background: white; z-index: 10; padding: 10px 0;">
+                                    <div class="search-bar1" style="display: inline-block; margin-left: 25px;">
                                         <input type="text" placeholder="Search...">
-                                        <i class="fas fa-search icon icon-right search"></i>
+                                        <i class="fas fa-search icon icon-right search" style="margin-left: -25px; cursor: pointer;"></i>
                                     </div>
-                                    <div class="filter1">
-                                        <i class="bi bi-filter icon icon-right"></i>
-                                        <select id="filter" class="form-select">
+                                    <div class="filter1" style="display: inline-block; margin-right: 25px;">
+                                        <i class="bi bi-filter icon icon-right" style="margin-right: 5px;"></i>
+                                        <select id="filter">
                                             <option value="">Filter</option>
-                                            <option value="">123</option>
-                                            <option value="">main st</option>
+                                            <option value="123">123</option>
+                                            <option value="main-st">Main St</option>
                                         </select>
                                     </div>
                                 </div>
 
+                                <!-- Timeline Items -->
                                 <div class="timeline-item border-b border-gray-300 py-3 px-4" style="margin-top: 25px;">
                                     <div class="timeline-content ml-10 bg-white shadow-sm rounded-lg p-4">
                                         <div class="flex items-center space-x-4">
@@ -296,9 +301,10 @@
 
                         </div>
                     </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <div class="justify-content-end d-flex">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    </div>
+
                 </div>
             </div>
         </div>

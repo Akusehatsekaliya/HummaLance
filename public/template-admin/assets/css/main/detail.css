@@ -304,6 +304,14 @@
     font-size: 16px;
     border-radius: 25px;
 }
+.filter1 select {
+    border: none;
+    outline: none;
+    flex: 1;
+    padding: 0 10px;
+    font-size: 16px;
+    border-radius: 25px;
+}
 .filter1 .icon {
     color: #007bff;
     font-size: 18px;
@@ -364,4 +372,11 @@
     transform: translateY(-50%);
     pointer-events: none;
     font-size: 20px;
+}
+
+.form-select2{
+    width: 150px;
+    position: relative;
+    border-radius: 50%;
+
 }
