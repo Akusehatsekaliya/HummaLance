@@ -28,4 +28,8 @@ Route::prefix("landing")->name("landing.")->group(function () {
   Route::get('about', function () {
     return view('about');
   })->name('about');
+
+  Route::get('guides', function () {
+    return view('landing.guides');
+  })->name('guides');
 });

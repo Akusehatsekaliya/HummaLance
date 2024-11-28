@@ -11,8 +11,8 @@
         <li @class(['nav-item', 'active' => request()->routeIs('landing.about')])>
           <a class="nav-landing" href="{{ route('landing.about') }}">About Us</a>
         </li>
-        <li @class(['nav-item', 'active' => false])>
-          <a class="nav-landing" href="#">Guides</a>
+        <li @class(['nav-item', 'active' => request()->routeIs('landing.guides')])>
+          <a class="nav-landing" href="{{ route('landing.guides') }}">Guides</a>
         </li>
         <li @class(['nav-item', 'active' => false])>
           <a class="nav-landing" href="#">learn</a>
