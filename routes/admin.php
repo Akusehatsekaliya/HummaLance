@@ -8,6 +8,7 @@ use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\ContractController;
 use App\Http\Controllers\Admin\ProjectController;
 use App\Http\Controllers\Admin\TransactionController;
+use App\Http\Controllers\Admin\LanguageController;
 use Illuminate\Support\Facades\Route;
 
 Route::prefix("admin")->name("admin.")->group(function () {
@@ -34,4 +35,9 @@ Route::prefix("admin")->name("admin.")->group(function () {
     Route::get('/download/contract/{id}', [ContractController::class, 'downloadContract']);
     // transaction
     Route::resource('transaction', TransactionController::class);
+
+    // language
+    Route::resource('language', LanguageController::class)->except(['show', 'edit', 'create']);
+    Route::get('language/detail/{id}', [LanguageController::class, 'detail'])->name("language.detail");
+    Route::get('language/detail/{id}/edit', [LanguageController::class, 'detailEdit'])->name("language.detail.edit");
 });
