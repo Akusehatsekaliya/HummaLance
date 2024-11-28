@@ -65,7 +65,7 @@ class UserSeeder extends Seeder
                 'gender' => UserGenderEnum::FEMALE->value,
                 'skills' => UserSkilsEnum::UI_UX->value,
                 'status_login' => UserStatusLoginEnum::ONLINE->value,
-                'status_acount_register' => UserStatusRegisterEnum::APPCEPT->value,
+                'status_acount_register' => UserStatusRegisterEnum::ACCEPTED->value,
             ],
             [
                 'first_name' => 'Nasya',
@@ -78,7 +78,7 @@ class UserSeeder extends Seeder
                 'gender' => UserGenderEnum::FEMALE->value,
                 'skills' => UserSkilsEnum::UI_UX->value,
                 'status_login' => UserStatusLoginEnum::ONLINE->value,
-                'status_acount_register' => UserStatusRegisterEnum::APPCEPT->value,
+                'status_acount_register' => UserStatusRegisterEnum::ACCEPTED->value,
             ],
             [
                 'first_name' => 'Nugi',
@@ -91,7 +91,7 @@ class UserSeeder extends Seeder
                 'gender' => UserGenderEnum::FEMALE->value,
                 'skills' => UserSkilsEnum::UI_UX->value,
                 'status_login' => UserStatusLoginEnum::ONLINE->value,
-                'status_acount_register' => UserStatusRegisterEnum::APPCEPT->value,
+                'status_acount_register' => UserStatusRegisterEnum::ACCEPTED->value,
             ],
             [
                 'first_name' => 'Andhika',
@@ -104,7 +104,7 @@ class UserSeeder extends Seeder
                 'gender' => UserGenderEnum::MALE->value,
                 'skills' => UserSkilsEnum::UI_UX->value,
                 'status_login' => UserStatusLoginEnum::ONLINE->value,
-                'status_acount_register' => UserStatusRegisterEnum::APPCEPT->value,
+                'status_acount_register' => UserStatusRegisterEnum::ACCEPTED->value,
             ],
             [
                 'first_name' => 'Rifaldi',
@@ -117,7 +117,7 @@ class UserSeeder extends Seeder
                 'gender' => UserGenderEnum::MALE->value,
                 'skills' => UserSkilsEnum::UI_UX->value,
                 'status_login' => UserStatusLoginEnum::ONLINE->value,
-                'status_acount_register' => UserStatusRegisterEnum::APPCEPT->value,
+                'status_acount_register' => UserStatusRegisterEnum::ACCEPTED->value,
             ],
         ];
         foreach ($teamAccount as $account) {
