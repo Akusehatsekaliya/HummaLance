@@ -53,6 +53,7 @@ return new class extends Migration
                 [
                     UserStatusEnum::ACTIVE->value,
                     UserStatusEnum::BANNED->value,
+                    UserStatusEnum::NULL->value,
                 ]
             )->default(UserStatusEnum::ACTIVE->value,);
             $table->enum(

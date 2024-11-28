@@ -96,8 +96,6 @@
                             <div class="work">
                                 <h3>
                                     <span id="firstName"></span>
-                                    <span class="badge bg-light-primary text-primary">Freelancer</span>
-
                                 </h3>
                                 <div class="item">
                                     <strong>
@@ -112,11 +110,17 @@
                                 </div>
                             </div>
                             <div class="skills">
-                                <h3>
+                                <h3 class="fw-semibold d-flex align-items-center">
                                     Skills
                                 </h3>
                                 <div class="item">
                                     <span id="skills"></span>
+                                </div>
+                                <h3 class="fw-semibold d-flex align-items-center">
+                                    Role
+                                </h3>
+                                <div class="item">
+                                    <span class="badge bg-light-primary text-primary">Freelancer</span>
                                 </div>
                             </div>
                         </div>
@@ -198,7 +202,7 @@
 
                             <div class="tab-content" id="timeline" style="max-height: 300px; overflow-y: auto;">
                                 <!-- Search and Filter Section -->
-                                <div class="search-filter-container" style="position: sticky; top: 0; background: white; z-index: 10; padding: 10px 0;">
+                                <div class="search-filter-container mb-0" style="position: sticky; top: 0; background: white; z-index: 10; padding: 10px 0;">
                                     <div class="search-bar1" style="display: inline-block; margin-left: 25px;">
                                         <input type="text" placeholder="Search...">
                                         <i class="fas fa-search icon icon-right search" style="margin-left: -25px; cursor: pointer;"></i>
@@ -207,20 +211,59 @@
                                         <i class="bi bi-filter icon icon-right" style="margin-right: 5px;"></i>
                                         <select id="filter">
                                             <option value="">Filter</option>
-                                            <option value="123">123</option>
-                                            <option value="main-st">Main St</option>
+                                            <option value="">category report</option>
+                                            <option value="main-st">status report</option>
                                         </select>
                                     </div>
+
                                 </div>
 
                                 <!-- Timeline Items -->
-                                <div class="timeline-item border-b border-gray-300 py-3 px-4" style="margin-top: 25px;">
+                                <div class="timeline-item border-b border-gray-300 py-3 px-4" style="margin-top: 5px;">
                                     <div class="timeline-content ml-10 bg-white shadow-sm rounded-lg p-4">
                                         <div class="flex items-center space-x-4">
                                             <div class="d-flex align-items-center gap-3 mb-3">
                                                 <img alt="Profile picture of a man looking sideways" height="70"
                                                     width="60" class="rounded-circle img-fluid"
                                                     src="https://storage.googleapis.com/a1aa/image/R47AYiWekQ3rAKemSec2JXSoLDSpWeHCnnEEZWvf3dUrELe8E.jpg" />
+                                                <h5 class="timeline-title font-semibold text-lg m-0">User Name</h5>
+                                            </div>
+                                            <div>
+                                                <p class="timeline-description text-gray-600">
+                                                    Completed the project task "Design UI" on
+                                                    <strong class="font-medium text-black">November 25, 2024</strong>.
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <!-- Time Information -->
+                                        <span class="timeline-time text-sm text-gray-500 block mt-2">2 hours ago</span>
+                                    </div>
+                                </div>
+
+                                <div class="timeline-item border-b border-gray-300 py-3 px-4">
+                                    <div class="timeline-content ml-10 bg-white shadow-sm rounded-lg p-4">
+                                        <div class="flex items-center space-x-4">
+                                            <div class="d-flex align-items-center gap-3 mb-3">
+                                                <div style="position: relative; display: inline-block; width: 60px; height: 70px;">
+                                                    <img
+                                                        alt="Profile picture of a man looking sideways"
+                                                        height="70"
+                                                        width="60"
+                                                        class="rounded-circle img-fluid"
+                                                        src="https://storage.googleapis.com/a1aa/image/R47AYiWekQ3rAKemSec2JXSoLDSpWeHCnnEEZWvf3dUrELe8E.jpg"
+                                                    />
+                                                    <i
+                                                        class="fa-solid fa-circle"
+                                                        title="online"
+                                                        style="
+                                                            position: absolute;
+                                                            top: 3px;
+                                                            right: 5px;
+                                                            color: #28a745;
+                                                            font-size: 12px;">
+                                                    </i>
+                                                </div>
+
                                                 <h5 class="timeline-title font-semibold text-lg m-0">User Name</h5>
                                             </div>
                                             <div>
@@ -263,27 +306,7 @@
                                                 <img alt="Profile picture of a man looking sideways" height="70"
                                                     width="60" class="rounded-circle img-fluid"
                                                     src="https://storage.googleapis.com/a1aa/image/R47AYiWekQ3rAKemSec2JXSoLDSpWeHCnnEEZWvf3dUrELe8E.jpg" />
-                                                <h5 class="timeline-title font-semibold text-lg m-0">User Name</h5>
-                                            </div>
-                                            <div>
-                                                <p class="timeline-description text-gray-600">
-                                                    Completed the project task "Design UI" on
-                                                    <strong class="font-medium text-black">November 25, 2024</strong>.
-                                                </p>
-                                            </div>
-                                        </div>
-                                        <!-- Time Information -->
-                                        <span class="timeline-time text-sm text-gray-500 block mt-2">2 hours ago</span>
-                                    </div>
-                                </div>
 
-                                <div class="timeline-item border-b border-gray-300 py-3 px-4">
-                                    <div class="timeline-content ml-10 bg-white shadow-sm rounded-lg p-4">
-                                        <div class="flex items-center space-x-4">
-                                            <div class="d-flex align-items-center gap-3 mb-3">
-                                                <img alt="Profile picture of a man looking sideways" height="70"
-                                                    width="60" class="rounded-circle img-fluid"
-                                                    src="https://storage.googleapis.com/a1aa/image/R47AYiWekQ3rAKemSec2JXSoLDSpWeHCnnEEZWvf3dUrELe8E.jpg" />
                                                 <h5 class="timeline-title font-semibold text-lg m-0">User Name</h5>
                                             </div>
                                             <div>
