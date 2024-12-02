@@ -6,6 +6,9 @@ use App\Http\Controllers\NotificationController;
 
 Route::middleware("auth:landing.index")->group(function () {
   Route::get('/', [LandingPageController::class, 'index'])->name('home');
+  Route::get('/work', function () {
+    return view('home.work');
+  })->name("work");
   Route::get('/aboutUs', [LandingPageController::class, 'aboutUs'])->name('about');
   Route::get('/contact', [LandingPageController::class, 'contact'])->name('contact');
   Route::get('/jobs', [LandingPageController::class, 'jobs']);

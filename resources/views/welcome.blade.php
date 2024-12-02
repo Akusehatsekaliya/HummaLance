@@ -1,13 +1,12 @@
 @extends('home.layout.app')
 @section('style')
 <style>
-    .homepage-search-title h2 {
+.homepage-search-title h2 {
     max-width: 90%;
     text-align: left;
     white-space: normal;
     overflow-wrap: break-word;
 }
-
 </style>
 @endsection
 @section('content')

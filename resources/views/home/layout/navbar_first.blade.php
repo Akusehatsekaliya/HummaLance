@@ -23,8 +23,8 @@
                     <li class="nav-item {{ request()->routeIs('home') ? 'active' : '' }}">
                         <a class="nav-link1" href="{{ route('home') }}">Home</a>
                     </li>
-                    <li class="nav-item {{ request()->routeIs('about') ? 'active' : '' }} }}">
-                        <a class="nav-link1" href="{{ route('about') }}">Work</a>
+                    <li class="nav-item {{ request()->routeIs('work') ? 'active' : '' }} }}">
+                        <a class="nav-link1" href="{{ route('work') }}">Work</a>
                     </li>
                     <li class="nav-item ">
                         <a class="nav-link1" href="#">Service</a>

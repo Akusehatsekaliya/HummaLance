@@ -425,6 +425,7 @@
 .border,
 .card {
     border: 1px solid #686868 !important;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
 }
 .card {
     width: 300px;

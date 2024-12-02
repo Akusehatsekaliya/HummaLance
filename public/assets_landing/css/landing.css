@@ -1031,3 +1031,22 @@
     background-position-x: center;
 }
 
+
+.card-guides-grid {
+    display: grid;
+    grid-template-columns: repeat(1, 3fr);
+    gap: 15px;
+    width: 100%;
+    max-width: 100%;
+}
+
+.card-guides-item {
+    text-align: left;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding-bottom: 25px;
+    transition: transform 0.3s ease;
+}

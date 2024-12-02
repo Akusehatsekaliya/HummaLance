@@ -15,9 +15,9 @@
 .button-container {
     display: flex;
     justify-content: flex-end;
-    margin-left: 443px;
     margin-top: -60px;
     padding: 10px 15px;
+    margin-left: auto;
 }
 
 .recommended .inner-slider {
