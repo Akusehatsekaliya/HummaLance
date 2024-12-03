@@ -1,6 +1,7 @@
 <?php
 
 use App\Models\User;
+use App\Models\UserReport;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Route;
@@ -11,7 +12,7 @@ Route::get('/debug', function () {
     return view('debug2');
 })->name('debug');
 Route::get('/debug2', function (Request $request) {
-    return $request;
+    return UserReport::all();
     // User::factory(1000)->withRole('client')->create();
     // $json_response = collect();
 

@@ -119,7 +119,8 @@
         </div>
     </div>
 @endsection
-
+@section('style')
+@endsection
 @section('script')
     <script>
         $(document).ready(function() {
@@ -171,21 +172,43 @@
                     if (response.success) {
                         $('#editModal').modal('hide');
                         $('#table2').DataTable().ajax.reload();
-                        alert(response.message);
+
+                        Swal.fire({
+                            icon: 'success',
+                            title: 'Category Updated Successfully',
+                            text: response.message,
+                            showConfirmButton: true,
+                        });
                     } else {
-                        alert('Failed to update category');
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Update Failed',
+                            text: 'Failed to update category',
+                            showConfirmButton: true,
+                        });
                     }
                 },
                 error: function(xhr) {
                     var errors = xhr.responseJSON?.errors;
                     if (errors) {
-                        let errorMessage = 'Error updating category:\n';
+                        let errorMessage = '';
                         $.each(errors, function(key, error) {
-                            errorMessage += '- ' + error + '\n';
+                            errorMessage += '- ' + error + '<br>';
                         });
-                        alert(errorMessage);
+
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Error Updating Category',
+                            html: errorMessage,
+                            showConfirmButton: true,
+                        });
                     } else {
-                        alert('An unexpected error occurred');
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Unexpected Error',
+                            text: 'An unexpected error occurred',
+                            showConfirmButton: true,
+                        });
                     }
                 }
             });
@@ -207,12 +230,22 @@
                     _token: '{{ csrf_token() }}'
                 },
                 success: function(response) {
-                    $('#deleteModal').modal('hide');
-                    $('#table2').DataTable().ajax.reload();
-                    alert(response.message);
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Delete Successfully',
+                        text: response.message,
+                        showConfirmButton: true,
+                    }).then(function() {
+                        table.ajax.reload();
+                    });
                 },
                 error: function(xhr) {
-                    alert('Error deleting category: ' + xhr.responseJSON.message);
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Error Updating Status',
+                        text: 'Terjadi kesalahan saat memperbarui status!',
+                        showConfirmButton: true,
+                    });
                 }
             });
         });

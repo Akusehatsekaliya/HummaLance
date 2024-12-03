@@ -16,7 +16,7 @@
 <script src="{{ asset('assets/js/datatables/AjaxDataTable.js') }}"></script>
 
 <script>
-  window.addEventListener("storage", function(e) {
-    alert(this, e)
-  });
+    window.addEventListener("storage", function(e) {
+        alert(this, e)
+    });
 </script>

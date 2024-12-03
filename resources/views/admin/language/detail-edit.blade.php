@@ -16,7 +16,7 @@
                 <h3>Preview</h3>
             </div>
             <iframe src="{{ route('landing.index') }}" frameborder="0"
-                style="width: 275%; height: 2000%; transform: scale(0.35); transform-origin: top left;"></iframe>
+                style="width: 275%; height: 500%; transform: scale(0.35); transform-origin: top left;"></iframe>
         </div>
     </div>
 @endsection

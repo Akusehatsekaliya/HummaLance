@@ -21,7 +21,7 @@
                     </div>
 
                     <div class="table-responsive">
-                        <table class="table" id="table10">
+                        <table class="table" id="tableuser">
                             <thead>
                                 <tr>
                                     <th>NO</th>
@@ -132,16 +132,18 @@
                                 <span class="bookmark" id="statusLogin">
                                 </span>
                             </div>
-                            <div class="actions">
-                                <button class="btn">
-                                    Send message
-                                </button>
-                                <button class="btn">
-                                    Contacts
-                                </button>
-                                <button class="btn">
-                                    Report user
-                                </button>
+                            <div class="row">
+                                <div class="actions">
+                                    <button class="btn btn-outline-admin">
+                                        Send message
+                                    </button>
+                                    <button class="btn btn-outline-admin">
+                                        Contacts
+                                    </button>
+                                    <button class="btn btn-outline-admin">
+                                        Report user
+                                    </button>
+                                </div>
                             </div>
                             <div class="tabs">
                                 <div class="tab active" onclick="openTab(event, 'about')">
@@ -151,7 +153,7 @@
                                     Report
                                 </div>
                             </div>
-                            <div class="tab-content active" id="about" >
+                            <div class="tab-content active" id="about">
                                 <div class="row">
                                     <!-- Bagian Contact Information -->
                                     <div class="col-md-6">
@@ -202,12 +204,14 @@
 
                             <div class="tab-content" id="timeline" style="max-height: 300px; overflow-y: auto;">
                                 <!-- Search and Filter Section -->
-                                <div class="search-filter-container mb-0" style="position: sticky; top: 0; background: white; z-index: 10; padding: 10px 0;">
-                                    <div class="search-bar1" style="display: inline-block; margin-left: 25px;">
+                                <div class="search-filter-container mb-0"
+                                    style="position: sticky; top: 0; background: white; z-index: 10; padding: 10px 0;">
+                                    <div class="search-bar1" style="display: inline-block;">
                                         <input type="text" placeholder="Search...">
-                                        <i class="fas fa-search icon icon-right search" style="margin-left: -25px; cursor: pointer;"></i>
+                                        <i class="fas fa-search icon icon-right search"
+                                            style="margin-left: -25px; cursor: pointer;"></i>
                                     </div>
-                                    <div class="filter1" style="display: inline-block; margin-right: 25px;">
+                                    <div class="filter1" style="display: inline-block; ">
                                         <i class="bi bi-filter icon icon-right" style="margin-right: 5px;"></i>
                                         <select id="filter">
                                             <option value="">Filter</option>
@@ -244,17 +248,12 @@
                                     <div class="timeline-content ml-10 bg-white shadow-sm rounded-lg p-4">
                                         <div class="flex items-center space-x-4">
                                             <div class="d-flex align-items-center gap-3 mb-3">
-                                                <div style="position: relative; display: inline-block; width: 60px; height: 70px;">
-                                                    <img
-                                                        alt="Profile picture of a man looking sideways"
-                                                        height="70"
-                                                        width="60"
-                                                        class="rounded-circle img-fluid"
-                                                        src="https://storage.googleapis.com/a1aa/image/R47AYiWekQ3rAKemSec2JXSoLDSpWeHCnnEEZWvf3dUrELe8E.jpg"
-                                                    />
-                                                    <i
-                                                        class="fa-solid fa-circle"
-                                                        title="online"
+                                                <div
+                                                    style="position: relative; display: inline-block; width: 60px; height: 70px;">
+                                                    <img alt="Profile picture of a man looking sideways" height="70"
+                                                        width="60" class="rounded-circle img-fluid"
+                                                        src="https://storage.googleapis.com/a1aa/image/R47AYiWekQ3rAKemSec2JXSoLDSpWeHCnnEEZWvf3dUrELe8E.jpg" />
+                                                    <i class="fa-solid fa-circle" title="online"
                                                         style="
                                                             position: absolute;
                                                             top: 3px;
@@ -358,7 +357,7 @@
 @section('script')
     <script>
         $(document).ready(function() {
-            var table = $('#table10').DataTable({
+            var table = $('#tableuser').DataTable({
                 processing: true,
                 serverSide: true,
                 ajax: {
@@ -388,11 +387,23 @@
                         data: 'status',
                         name: 'status',
                         render: function(data, type, row) {
-                            let colorClass = data === 'active' ?
-                                'bg-light-success text-success' :
-                                'bg-light-danger text-danger';
-                            return `<span class="badge ${colorClass} p-2">${data.charAt(0).toUpperCase() + data.slice(1)}</span>`;
+                            let colorClass = '';
+                            let label = '';
+
+                            if (data === 'active') {
+                                colorClass = 'bg-light-success text-success';
+                                label = data.charAt(0).toUpperCase() + data.slice(1);
+                            } else if (data === 'banned') {
+                                colorClass = 'bg-light-danger text-danger';
+                                label = data.charAt(0).toUpperCase() + data.slice(1);
+                            } else if (data === '--') {
+                                colorClass = 'bg-light-secondary text-secondary';
+                                label = 'null';
+                            }
+
+                            return `<span class="badge ${colorClass} p-2">${label}</span>`;
                         }
+
                     },
                     {
                         data: 'action',
@@ -514,7 +525,7 @@
         $(document).ready(function() {
             $(document).on('click', '.toggle-status', function() {
                 var userId = $(this).data('id');
-                const table = $('#table10').DataTable();
+                const table = $('#tableuser').DataTable();
                 const button = $(this);
 
                 $.ajax({
@@ -564,7 +575,7 @@
         $(document).on('click', '.accept-account, .reject-account', function() {
             const userId = $(this).data('id');
             const status = $(this).data('status');
-            const table = $('#table10').DataTable();
+            const table = $('#tableuser').DataTable();
 
             $.ajax({
                 url: 'users/update-status-register',
@@ -585,7 +596,13 @@
                     });
                 },
                 error: function(xhr) {
-                    alert('Gagal memperbarui status!');
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Error Updating Status',
+                        text:
+                            'Terjadi kesalahan saat memperbarui status!',
+                        showConfirmButton: true,
+                    });
                 }
             });
         });

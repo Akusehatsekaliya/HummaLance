@@ -168,6 +168,10 @@
 }
 
 .profile-content .actions .btn {
+    margin-right: 10px;
+}
+
+/* .profile-content .actions .btn {
     padding: 10px 20px;
     border: 1px solid #007bff;
     border-radius: 4px;
@@ -180,7 +184,7 @@
 .profile-content .actions .btn:hover {
     background-color: #007bff;
     color: #fff;
-}
+} */
 
 .profile-content .tabs {
     display: flex;
@@ -295,6 +299,7 @@
     border-radius: 25px;
     padding: 10px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-right: 25px;
 }
 .filter1 select {
     border: none;
@@ -338,8 +343,9 @@
     align-items: center;
 }
 .search-bar1 {
-    width: 290px;
+    width: 213px;
     position: relative;
+    margin-left: 25px;
 }
 .search-bar1 input {
     width: 100%;
@@ -354,7 +360,7 @@
 }
 /* Filter */
 .filter1 {
-    width: 150px;
+    width: 175px;
     position: relative;
 }
 .filter1 select {
@@ -379,4 +385,143 @@
     position: relative;
     border-radius: 50%;
 
+}
+
+
+
+
+
+
+/* Responsiveness */
+@media (max-width: 768px) {
+    /* Ukuran diperkecil */
+    .header {
+        padding: 10px;
+    }
+
+    .header img {
+        width: 30px;
+        height: 30px;
+    }
+
+    .header .logo {
+        font-size: 18px;
+    }
+
+    .header .search-bar input {
+        padding: 5px;
+        font-size: 14px;
+    }
+
+    .container {
+        gap: 10px; /* Kurangi jarak antar elemen */
+    }
+
+    .profile-sidebar {
+        max-width: 40%; /* Sidebar diperkecil */
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    .profile-content {
+        max-width: 60%; /* Konten diperkecil */
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    .profile-sidebar img {
+        height: auto;
+        border-radius: 5px;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Tampilan lebih kecil */
+    .header img {
+        width: 25px;
+        height: 25px;
+    }
+
+    .header .logo {
+        font-size: 16px;
+    }
+
+    .header .search-bar input {
+        font-size: 12px;
+    }
+
+    .container {
+        gap: 5px;
+        padding: 0;
+        padding-right: 12px;
+        padding-block: 15px;
+    }
+
+    .profile-sidebar {
+        max-width: 45%; /* Sidebar lebih kecil */
+        font-size: 12px;
+        margin-right: 10px;
+        margin-left: 0;
+    }
+
+    .profile-content {
+        max-width: 67%; /* Konten lebih kecil */
+        font-size: 12px;
+    }
+
+    .profile-content .header h2 {
+        font-size: 14px
+    }
+
+    .profile-content .actions .btn {
+        padding: 4px 6px;
+        margin-right: 5px;
+        font-size: 10px;
+    }
+
+    .search-bar1{
+       margin-left: 0;
+       width: 166px;
+    }
+
+    .search-bar1 input{
+        font-size: 11px;
+        padding: 0;
+    }
+
+    .search-bar1 .icon-right.search {
+        padding: 4px;
+        font-size: x-small;
+    }
+
+    .py-3 {
+        padding: 7px 7px !important;
+    }
+
+    .filter1{
+        margin-right: 10px;
+        width: 153px;
+     }
+
+     .p-4 {
+        padding: 1rem !important;
+     }
+
+     .filter1 select{
+        font-size: 12px;
+     }
+
+     h5{
+        font-size: 16px;
+     }
+
+     .profile-sidebar .work .item span, .profile-sidebar .skills .item span {
+        font-size: 12px;
+    }
+
+    .profile-sidebar .work h3, .profile-sidebar .skills h3 {
+        font-size: 15px;
+        font-weight: 500;
+        margin-bottom: 10px;
+    }
 }

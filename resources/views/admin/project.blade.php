@@ -10,7 +10,7 @@
             <div class="card">
                 <div class="card-body">
                     <div class="table-responsive ">
-                        <table class="table" id="table2">
+                        <table class="table" id="tableproject">
                             <thead>
                                 <tr>
                                     <th>NO</th>
@@ -30,11 +30,13 @@
         </section>
     </div>
 @endsection
+@section('style')
 
+@endsection
 @section('script')
     <script>
         $(document).ready(function() {
-            $('#table2').DataTable({
+            $('#tableproject').DataTable({
                 processing: true,
                 serverSide: true,
                 ajax: "#",

@@ -85,24 +85,10 @@
         </section>
     </div>
 @endsection
+@section('style')
 
+@endsection
 @section('script')
-    {{-- <script src="{{ asset('template-admin/assets/extensions/summernote/summernote-lite.min.js') }}"></script>
-<script>
-    $(document).ready(function() {
-        $('#custom-summernote').summernote({
-            placeholder: 'Hello stand alone ui',
-            tabsize: 2,
-            height: 120,
-            toolbar: [
-                ['font', ['bold', 'underline', 'clear']],
-                ['insert', ['link', 'picture']],
-                ['para', ['ul', 'ol', 'paragraph']],
-                ['table', ['table']],
-            ],
-        });
-    });
-</script> --}}
     <script>
         function previewImage(event, previewId) {
             const input = event.target;

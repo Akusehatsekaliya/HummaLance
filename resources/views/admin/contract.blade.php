@@ -1,65 +1,4 @@
 @extends('kerangka.master')
-
-@section('style')
-    <style>
-        .modal-body .bg-blue-500 {
-            background-color: rgb(37, 99, 235);
-        }
-
-        .modal-lg {
-            max-width: 900px;
-        }
-
-        .modal-body .p-6 {
-            padding: 30px;
-        }
-
-
-
-
-
-        .section {
-            margin-bottom: 20px;
-        }
-
-        .section-header {
-            background-color: #00AAFF;
-            color: #fff;
-            padding: 10px;
-            font-size: 18px;
-            font-weight: bold;
-        }
-
-        .section-content {
-            padding: 10px;
-            background-color: #ecf0f1;
-        }
-
-        .section-content div {
-            margin-bottom: 10px;
-        }
-
-        .section-content div span {
-            display: inline-block;
-            width: 200px;
-            font-weight: bold;
-        }
-
-        .section-content div span.value {
-            font-weight: normal;
-        }
-
-        .two-column {
-            display: flex;
-            justify-content: space-between;
-        }
-
-        .two-column .column {
-            width: 48%;
-        }
-    </style>
-@endsection
-
 @section('content')
     <div class="page-heading">
         <h3>Contract</h3>
@@ -80,7 +19,7 @@
                         </div>
                     </div>
                     <div class="table-responsive">
-                        <table class="table" id="table2">
+                        <table class="table" id="table4">
                             <thead>
                                 <tr>
                                     <th width="15%">No</th>
@@ -203,12 +142,66 @@
         </div>
     </div>
 @endsection
+@section('style')
+    <style>
+        .modal-body .bg-blue-500 {
+            background-color: rgb(37, 99, 235);
+        }
 
+        .modal-lg {
+            max-width: 900px;
+        }
+
+        .modal-body .p-6 {
+            padding: 30px;
+        }
+
+        .section {
+            margin-bottom: 20px;
+        }
+
+        .section-header {
+            background-color: #00AAFF;
+            color: #fff;
+            padding: 10px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .section-content {
+            padding: 10px;
+            background-color: #ecf0f1;
+        }
+
+        .section-content div {
+            margin-bottom: 10px;
+        }
+
+        .section-content div span {
+            display: inline-block;
+            width: 200px;
+            font-weight: bold;
+        }
+
+        .section-content div span.value {
+            font-weight: normal;
+        }
+
+        .two-column {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .two-column .column {
+            width: 48%;
+        }
+    </style>
+@endsection
 @section('script')
     <script>
         $(document).ready(function() {
 
-            $('#table2').DataTable({
+            $('#table4').DataTable({
                 processing: true,
                 serverSide: true,
                 ajax: {
@@ -261,7 +254,7 @@
             });
 
             $('#roleFilter').on('change', function() {
-                $('#table2').DataTable().ajax.reload();
+                $('#table4').DataTable().ajax.reload();
             });
         });
         $(document).on('click', '.btn[data-bs-target="#detailModal"]', function() {

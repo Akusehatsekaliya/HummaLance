@@ -40,16 +40,17 @@ class UserService
 
                     $actionButtons = $statusButton . ' ' . $detailButton;
                 } elseif ($user->status_acount_register === UserStatusRegisterEnum::PENDING->value) {
-                    $rejectButton = '<button class="btn text-danger reject-account" title="rejecd ' . $user->first_name . '"
-                        data-id="' . $user->id . '" data-status="rejected">
-                        <i class="bi bi-x-circle-fill" style="font-size: 20px;"></i>
-                        </button>';
-                    $acceptButton = '<button class="btn text-success accept-account" title="ACCEPTED ' . $user->first_name . '"
-                        data-id="' . $user->id . '" data-status="ACCEPTED">
-                        <i class="bi bi-check-circle-fill" style="font-size: 20px;"></i>
-                        </button>';
+                    $rejectButton = '<button class="btn text-danger reject-account" title="Reject ' . $user->first_name . '"
+                    data-id="' . $user->id . '" data-status="rejected">
+                    <i class="bi bi-x-circle-fill" style="font-size: 20px;"></i>
+                </button>';
+                    $acceptButton = '<button class="btn text-success accept-account" title="Accept ' . $user->first_name . '"
+                    data-id="' . $user->id . '" data-status="accepted">
+                    <i class="bi bi-check-circle-fill" style="font-size: 20px;"></i>
+                </button>';
 
-                    $actionButtons =  $rejectButton.''.$acceptButton;
+
+                    $actionButtons =  $rejectButton . '' . $acceptButton;
                 } elseif ($user->status_acount_register === UserStatusRegisterEnum::REJECTED->value) {
                     $actionButtons = '<span class="text-danger">Account Rejected</span>';
                 }
@@ -58,8 +59,15 @@ class UserService
             })
             ->addColumn('role', fn($user) => $user->getUserRoleInstance()->value)
             ->addColumn('status', function ($user) {
-                return $user->status == UserStatusEnum::BANNED->value ? 'banned' : 'active';
+                if ($user->status == UserStatusEnum::BANNED->value) {
+                    return 'banned';
+                } elseif ($user->status == UserStatusEnum::ACTIVE->value) {
+                    return 'active';
+                } elseif ($user->status == UserStatusEnum::NULL->value) {
+                    return '--';
+                }
             })
+
             ->filterColumn('name', function ($query, $keyword) {
                 $query->where('name', 'LIKE', "%{$keyword}%");
             })
@@ -68,5 +76,23 @@ class UserService
             })
             ->rawColumns(['status', 'action'])
             ->make(true);
+    }
+
+    public function updateStatusAcount(Request $request)
+    {
+        $user = $this->userInterface->show($request->id);
+
+        if ($request->status === UserStatusRegisterEnum::ACCEPTED->value) {
+            $user->status_acount_register = UserStatusRegisterEnum::ACCEPTED->value;
+            $user->status = UserStatusEnum::ACTIVE->value;
+        } elseif ($request->status === UserStatusRegisterEnum::REJECTED->value) {
+            $user->status_acount_register = UserStatusRegisterEnum::REJECTED->value;
+            $user->status = UserStatusEnum::NULL->value;
+        } else {
+            $user->status_acount_register = UserStatusRegisterEnum::PENDING->value;
+            $user->status = UserStatusEnum::NULL->value;
+        }
+
+        $user->update();
     }
 }

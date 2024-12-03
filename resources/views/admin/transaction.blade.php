@@ -1,60 +1,4 @@
 @extends('kerangka.master')
-
-@section('style')
-    <style>
-        .transaction-logo {
-            display: none;
-            width: 200px;
-            height: 55px;
-            margin: 0 auto;
-        }
-
-        @media print {
-
-            .transaction-logo {
-                display: block !important;
-                margin: 0 auto 20px;
-            }
-
-            body * {
-                visibility: hidden !important;
-            }
-
-            #modalTransactions,
-            #modalTransactions * {
-                visibility: visible !important;
-            }
-
-            .btn-light-secondary,
-            #printButton,
-            .modal-header,
-            .modal-footer {
-                display: none !important;
-            }
-
-            #modalTransactions {
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: auto;
-            }
-
-            .project-information-header {
-                page-break-before: always;
-                page-break-inside: avoid;
-                margin-top: 20px;
-            }
-
-            .payment-information-header {
-                page-break-before: auto;
-                break-before: auto;
-                margin-top: 0;
-            }
-        }
-    </style>
-@endsection
-
 @section('content')
     <div class="page-heading">
         <h3>Transaction</h3>
@@ -101,8 +45,8 @@
                                         <span class="text-danger badge bg-light-danger">Failed</span>
                                     </td>
                                     <td>
-                                        <button type="button" class="btn text-primary" title="detail transaction" data-bs-toggle="modal"
-                                            data-bs-target="#modalTransactions"><i
+                                        <button type="button" class="btn text-primary" title="detail transaction"
+                                            data-bs-toggle="modal" data-bs-target="#modalTransactions"><i
                                                 class="bi bi-info-circle-fill"></i></button>
                                     </td>
                                 </tr>
@@ -233,19 +177,70 @@
         </div>
     </div>
 @endsection
+@section('style')
+    <style>
+        .transaction-logo {
+            display: none;
+            width: 200px;
+            height: 55px;
+            margin: 0 auto;
+        }
 
+        @media print {
+
+            .transaction-logo {
+                display: block !important;
+                margin: 0 auto 20px;
+            }
+
+            body * {
+                visibility: hidden !important;
+            }
+
+            #modalTransactions,
+            #modalTransactions * {
+                visibility: visible !important;
+            }
+
+            .btn-light-secondary,
+            #printButton,
+            .modal-header,
+            .modal-footer {
+                display: none !important;
+            }
+
+            #modalTransactions {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: auto;
+            }
+
+            .project-information-header {
+                page-break-before: always;
+                page-break-inside: avoid;
+                margin-top: 20px;
+            }
+
+            .payment-information-header {
+                page-break-before: auto;
+                break-before: auto;
+                margin-top: 0;
+            }
+        }
+    </style>
+@endsection
 @section('script')
     <script>
         document.getElementById('printButton').addEventListener('click', function() {
             const modal = document.getElementById('modalTransactions');
 
-            // Ensure modal visibility for print
             if (modal) {
-                // Trigger the print dialog
                 window.print();
             } else {
                 console.error('Modal content not found for printing');
             }
-        });
+        });\
     </script>
 @endsection

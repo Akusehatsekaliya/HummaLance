@@ -160,7 +160,8 @@
         </div>
     </div>
 @endsection
-
+@section('style')
+@endsection
 @section('script')
     <script>
         // const table = $('.yajra-datatable').DataTable({
@@ -222,8 +223,7 @@
                         buttons: ["create"]
                     },
                     topEnd: $(`<div class="input-group">
-          <input class="form-control me-4" placeholder="Cari data&hellip;" id="searchInput" />
-          </div>`),
+        <input class="form-control me-4" placeholder="Cari data&hellip;" id="searchInput" /></div>`),
                     bottomStart: {
                         info: {
                             text: 'Menampilkan _START_ dari _END_ hasil'

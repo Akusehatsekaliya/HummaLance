@@ -1,26 +1,4 @@
 @extends('kerangka.master')
-
-@section('style')
-    <style>
-        #timeline::-webkit-scrollbar {
-            width: 6px;
-        }
-
-        #timeline::-webkit-scrollbar-track {
-            background: #f1f1f1;
-        }
-
-        #timeline::-webkit-scrollbar-thumb {
-            background: #888;
-            border-radius: 10px;
-        }
-
-        #timeline::-webkit-scrollbar-thumb:hover {
-            background: #555;
-        }
-    </style>
-@endsection
-
 @section('content')
     <div class="page-heading">
         <h3>Users</h3>
@@ -119,7 +97,26 @@
         </div>
     </div>
 @endsection
+@section('style')
+    <style>
+        #timeline::-webkit-scrollbar {
+            width: 6px;
+        }
 
+        #timeline::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        #timeline::-webkit-scrollbar-thumb {
+            background: #888;
+            border-radius: 10px;
+        }
+
+        #timeline::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+    </style>
+@endsection
 @section('script')
     <script>
         $(document).ready(function() {
@@ -140,8 +137,8 @@
                             buttons: ["create"]
                         },
                         topEnd: $(`<div class="input-group">
-          <input class="form-control me-4" placeholder="Cari data&hellip;" id="searchInput" />
-          </div>`),
+  <input class="form-control me-4" placeholder="Cari data&hellip;" id="searchInput" />
+  </div>`),
                         bottomStart: {
                             info: {
                                 text: 'Menampilkan _START_ dari _END_ hasil'
