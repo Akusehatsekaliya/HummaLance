@@ -17,12 +17,8 @@
                     </h6>
                 </div>
                 <div class="homepage-search-title">
-                    <h2 class="mb-3 text-shadow text-white font-weight-bold">The best <br> Platform to turn your free
-                        time into work and to pursue your dream job
-                    </h2>
-                    <h6 class="mb-5 text-shadow text-white font-weight-normal">Millions of people use clockers to make
-                        their dream jobs come true. Expand your connections and make your dream job come true with
-                        clockers.</h6>
+                    <h2 class="mb-3 text-shadow text-white font-weight-bold">{!! __("landing.banner.headline") !!}</h2>
+                    <h6 class="mb-5 text-shadow text-white font-weight-normal">{!! __("landing.banner.description") !!}</h6>
                 </div>
                 <div class="homepage-search-form">
                     <div class="form-row" style="margin-left: -24px">
