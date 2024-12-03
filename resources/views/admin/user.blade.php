@@ -21,7 +21,7 @@
                     </div>
 
                     <div class="table-responsive">
-                        <table class="table" id="table10">
+                        <table class="table" id="tableuser">
                             <thead>
                                 <tr>
                                     <th>NO</th>
@@ -357,7 +357,7 @@
 @section('script')
     <script>
         $(document).ready(function() {
-            var table = $('#table10').DataTable({
+            var table = $('#tableuser').DataTable({
                 processing: true,
                 serverSide: true,
                 ajax: {
@@ -525,7 +525,7 @@
         $(document).ready(function() {
             $(document).on('click', '.toggle-status', function() {
                 var userId = $(this).data('id');
-                const table = $('#table10').DataTable();
+                const table = $('#tableuser').DataTable();
                 const button = $(this);
 
                 $.ajax({
@@ -575,7 +575,7 @@
         $(document).on('click', '.accept-account, .reject-account', function() {
             const userId = $(this).data('id');
             const status = $(this).data('status');
-            const table = $('#table10').DataTable();
+            const table = $('#tableuser').DataTable();
 
             $.ajax({
                 url: 'users/update-status-register',

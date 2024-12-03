@@ -14,18 +14,9 @@
 <script src="{{ asset('assets/js/datatables/datatables-responsive.min.js') }}"></script>
 <script src="{{ asset('assets/js/datatables/datatables-stateRestore.min.js') }}"></script>
 <script src="{{ asset('assets/js/datatables/AjaxDataTable.js') }}"></script>
-<script src="{{ asset('admin/about.js') }}"></script>
-<script src="{{ asset('admin/banner.js') }}"></script>
-<script src="{{ asset('admin/category.js') }}"></script>
-<script src="{{ asset('admin/contract.js') }}"></script>
-<script src="{{ asset('admin/user.js') }}"></script>
-<script src="{{ asset('admin/transaction.js') }}"></script>
-<script src="{{ asset('admin/language.js') }}"></script>
-<script src="{{ asset('admin/user.js') }}"></script>
-<script src="{{ asset('admin/project.js') }}"></script>
 
 <script>
-  window.addEventListener("storage", function(e) {
-    alert(this, e)
-  });
+    window.addEventListener("storage", function(e) {
+        alert(this, e)
+    });
 </script>
