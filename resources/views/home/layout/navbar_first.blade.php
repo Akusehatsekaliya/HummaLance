@@ -9,7 +9,7 @@
                 <input type="text" class="form-control bg-white small" placeholder="Find Services..."
                     aria-label="Search" aria-describedby="basic-addon2">
                 <div class="input-group-append">
-                    <button class="btn btn-success" type="button">
+                    <button class="btn btn-success2" type="button">
                         <i class="fa fa-search fa-sm"></i>
                     </button>
                 </div>

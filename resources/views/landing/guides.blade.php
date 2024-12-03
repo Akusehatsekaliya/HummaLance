@@ -1,5 +1,10 @@
 @extends('landing.layout.app')
 @section('content')
+<style>
+    .title1{
+        font-weight: bold;
+    }
+</style>
     <section class="py-5 homepage-search-block bg-landing bg-guides position-relative">
         <div class="container">
             <div class="row py-lg-5 justify-content-center d-flex align-items-center">
@@ -83,7 +88,7 @@
         </div>
     </section>
 
-    <section class="py-5 bg-landing">
+    <section class="py-5 bg-landing10">
         <div class="container">
             <div class="row py-lg-5 justify-content-center d-flex">
                 <div class="col-lg-6 mr-5">
@@ -91,21 +96,21 @@
                         <div class="card-guides-item">
                             <x-svg>{{ asset('assets/svg/landing/about/card-about-item/Easy To Use.svg') }}</x-svg>
 
-                            <h5 >Easy To Use</h5>
+                            <h5 class="title1">Easy To Use</h5>
                             <span class="font-italic">By joining clocker you can develop yourself further in </span>
                         </div>
 
                         <div class="card-guides-item">
                             <x-svg>{{ asset('assets/svg/landing/about/card-about-item/Varied work.svg') }}</x-svg>
 
-                            <h5>Varied work</h5>
+                            <h5 class="title1">Varied work</h5>
                             <span class="font-italic">By joining clocker you can develop yourself further in </span>
                         </div>
 
                         <div class="card-guides-item">
                             <x-svg>{{ asset('assets/svg/landing/about/card-about-item/Diverse companies.svg') }}</x-svg>
 
-                            <h5>Diverse companies</h5>
+                            <h5 class="title1">Diverse companies</h5>
                             <span class="font-italic">By joining clocker you can develop yourself further in </span>
                         </div>
 

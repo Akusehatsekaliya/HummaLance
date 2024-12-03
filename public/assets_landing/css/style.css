@@ -253,6 +253,10 @@ a {
     background-color: #01abfe !important;
 }
 
+.bg-landing10 {
+    background-color: #01abfe !important;
+    margin-bottom: 10rem;
+}
 .bg-landingJobs {
     background-color: #e0f4ff !important;
     height: 480px;

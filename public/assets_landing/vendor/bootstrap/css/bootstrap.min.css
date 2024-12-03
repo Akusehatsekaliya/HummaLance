@@ -9506,6 +9506,7 @@ button.bg-dark:hover {
 }
 .font-italic {
     font-style: italic !important;
+    font-size: 14px;
 }
 .text-white {
     color: #fff !important;
