@@ -1,11 +1,9 @@
-<div id="main">
+<div id="main" style="position: sticky; top: 0; z-index: 1030;">
     <nav class="navbar navbar-expand-lg shadow-sm ms-auto p-0">
         <div class="container-fluid">
-            <button class="navbar-toggler sidebar-hide" style="height: fit-content;margin-top: 10px;">
+            <button class="navbar-toggler sidebar-hide" style="height: fit-content; margin-top: 10px;">
                 <span class="navbar-toggler-icon"></span>
             </button>
-
-
             <div class="ms-auto" id="navbarContent">
                 <ul class="navbar-nav ms-auto align-items-center" style="flex-direction: unset;">
                     <li class="nav-item dropdown me-2">
@@ -13,7 +11,7 @@
                             data-bs-toggle="dropdown" aria-expanded="false">
                             <i class="bi bi-bell-fill" style="font-size: 1.5rem;"></i>
                             <span class="badge bg-danger rounded-pill"
-                                style="position: absolute; top: 4px; left: 77%; transform: translateX(-50%); font-size: 0.7rem;  border-width: 1px;">1</span>
+                                style="position: absolute; top: 4px; left: 77%; transform: translateX(-50%); font-size: 0.7rem; border-width: 1px;">1</span>
                         </a>
                         <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="notificationDropdown"
                             id="notification">
@@ -76,5 +74,11 @@
 </div>
 
 @push('style')
-
+    <style>
+        #main {
+            position: sticky;
+            top: 0;
+            z-index: 1030;
+        }
+    </style>
 @endpush
