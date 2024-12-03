@@ -23,6 +23,7 @@ class DatabaseSeeder extends Seeder
             ContractSeeder::class,
             AboutSeeder::class,
             // PaymentSeeder::class,
+            UserReportSeeder::class,
         ]);
     }
 }
