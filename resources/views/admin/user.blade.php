@@ -132,16 +132,18 @@
                                 <span class="bookmark" id="statusLogin">
                                 </span>
                             </div>
-                            <div class="actions">
-                                <button class="btn">
-                                    Send message
-                                </button>
-                                <button class="btn">
-                                    Contacts
-                                </button>
-                                <button class="btn">
-                                    Report user
-                                </button>
+                            <div class="row">
+                                <div class="actions">
+                                    <button class="btn btn-outline-admin">
+                                        Send message
+                                    </button>
+                                    <button class="btn btn-outline-admin">
+                                        Contacts
+                                    </button>
+                                    <button class="btn btn-outline-admin">
+                                        Report user
+                                    </button>
+                                </div>
                             </div>
                             <div class="tabs">
                                 <div class="tab active" onclick="openTab(event, 'about')">
@@ -204,12 +206,12 @@
                                 <!-- Search and Filter Section -->
                                 <div class="search-filter-container mb-0"
                                     style="position: sticky; top: 0; background: white; z-index: 10; padding: 10px 0;">
-                                    <div class="search-bar1" style="display: inline-block; margin-left: 25px;">
+                                    <div class="search-bar1" style="display: inline-block;">
                                         <input type="text" placeholder="Search...">
                                         <i class="fas fa-search icon icon-right search"
                                             style="margin-left: -25px; cursor: pointer;"></i>
                                     </div>
-                                    <div class="filter1" style="display: inline-block; margin-right: 25px;">
+                                    <div class="filter1" style="display: inline-block; ">
                                         <i class="bi bi-filter icon icon-right" style="margin-right: 5px;"></i>
                                         <select id="filter">
                                             <option value="">Filter</option>
@@ -391,7 +393,7 @@
                             if (data === 'active') {
                                 colorClass = 'bg-light-success text-success';
                                 label = data.charAt(0).toUpperCase() + data.slice(1);
-                            } else if (data === 'inactive') {
+                            } else if (data === 'banned') {
                                 colorClass = 'bg-light-danger text-danger';
                                 label = data.charAt(0).toUpperCase() + data.slice(1);
                             } else if (data === '--') {

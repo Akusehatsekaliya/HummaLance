@@ -20,7 +20,7 @@
         </style>
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav">
-                <li class="nav-item">
+                <li class="nav-item active">
                     <a class="nav-link" href="#">Graphic & Design</a>
                 </li>
                 <li class="nav-item {{ request()->routeIs('about') ? 'active' : '' }}">

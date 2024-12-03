@@ -308,10 +308,10 @@
                                             </div>
                                             <div class="button-container">
                                                 <button class="button like">
-                                                    <i class="fa-regular fa-thumbs-up"></i>
+                                                    <i class="fa fa-thumbs-up"></i>
                                                 </button>
                                                 <button class="button heart">
-                                                    <i class="fa-regular fa-heart"></i>
+                                                    <i class="fa fa-heart"></i>
                                                 </button>
                                             </div>
                                         </div>
@@ -421,10 +421,10 @@
                                             </div>
                                             <div class="button-container">
                                                 <button class="button like">
-                                                    <i class="fa-regular fa-thumbs-up"></i>
+                                                    <i class="fa fa-thumbs-up"></i>
                                                 </button>
                                                 <button class="button heart">
-                                                    <i class="fa-regular fa-heart"></i>
+                                                    <i class="fa fa-heart"></i>
                                                 </button>
                                             </div>
                                         </div>
@@ -534,10 +534,10 @@
                                             </div>
                                             <div class="button-container">
                                                 <button class="button like">
-                                                    <i class="fa-regular fa-thumbs-up"></i>
+                                                    <i class="fa fa-thumbs-up"></i>
                                                 </button>
                                                 <button class="button heart">
-                                                    <i class="fa-regular fa-heart"></i>
+                                                    <i class="fa fa-heart"></i>
                                                 </button>
                                             </div>
                                         </div>
@@ -647,10 +647,10 @@
                                             </div>
                                             <div class="button-container">
                                                 <button class="button like">
-                                                    <i class="fa-regular fa-thumbs-up"></i>
+                                                    <i class="fa fa-thumbs-up"></i>
                                                 </button>
                                                 <button class="button heart">
-                                                    <i class="fa-regular fa-heart"></i>
+                                                    <i class="fa fa-heart"></i>
                                                 </button>
                                             </div>
                                         </div>
@@ -760,10 +760,10 @@
                                             </div>
                                             <div class="button-container">
                                                 <button class="button like">
-                                                    <i class="fa-regular fa-thumbs-up"></i>
+                                                    <i class="fa fa-thumbs-up"></i>
                                                 </button>
                                                 <button class="button heart">
-                                                    <i class="fa-regular fa-heart"></i>
+                                                    <i class="fa fa-heart"></i>
                                                 </button>
                                             </div>
                                         </div>
