@@ -2,6 +2,9 @@
 <link rel="stylesheet" href="{{ asset('template-admin/assets/css/main/app.css') }}">
 <link rel="stylesheet" href="{{ asset('template-admin/assets/css/main/app-dark.css') }}">
 <link rel="stylesheet" href="{{ asset('template-admin/assets/css/main/detail.css') }}">
+<link rel="stylesheet" href="{{ asset('template-admin/assets/css/main/admin/transaction.css') }}">
+<link rel="stylesheet" href="{{ asset('template-admin/assets/css/main/admin/language.css') }}">
+<link rel="stylesheet" href="{{ asset('template-admin/assets/css/main/admin/contract.css') }}">
 
 {{-- <link rel="shortcut icon" href="{{asset ('template-admin/assets/images/logo/favicon.svg') }}" type="image/x-icon">
 <link rel="shortcut icon" href="{{asset ('template-admin/assets/images/logo/favicon.png') }}" type="image/png"> --}}
