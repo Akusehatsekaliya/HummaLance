@@ -55,7 +55,7 @@ return new class extends Migration
                     UserStatusEnum::BANNED->value,
                     UserStatusEnum::NULL->value,
                 ]
-            )->default(UserStatusEnum::ACTIVE->value,);
+            )->default(UserStatusEnum::NULL->value,);
             $table->enum(
                 'status_login',
                 [

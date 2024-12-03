@@ -4,8 +4,10 @@ namespace App\Http\Controllers\Admin;
 
 use App\Constract\Enums\UserRoleEnum;
 use App\Constract\Enums\UserStatusEnum;
+use App\Constract\Enums\UserStatusRegisterEnum;
 use App\Constract\Interfaces\UserInterface;
 use App\Http\Controllers\Controller;
+use App\Http\Resources\UserResource;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Services\UserService;
@@ -48,30 +50,19 @@ class UserController extends Controller
         $users = $this->userInterface->showDetail($id);
 
         if ($users) {
-            return response()->json([
-                'id' => $users->id,
-                'first_name' => $users->first_name,
-                'last_name' => $users->last_name,
-                'email' => $users->email,
-                'phone' => $users->phone,
-                'birthday' => $users->birthday,
-                'address' => $users->address,
-                'gender' => $users->gender,
-                'skills' => $users->skills,
-                'statusLogin' => $users->status_login,
-            ]);
+            return new UserResource($users);
         }
 
-        return response()->json(['error' => 'Contract not found'], 404);
+        return response()->json(['error' => 'not found'], 404);
     }
 
     public function updateStatusRegister(Request $request)
     {
-        $user = $this->userInterface->show($request->id);
-        $user->status_acount_register = $request->status;
-        $user->update();
+        $this->service->updateStatusAcount($request);
+
         return response()->json(['message' => 'Status updated successfully!']);
     }
+
     /**
      * Show the form for creating a new resource.
      */
