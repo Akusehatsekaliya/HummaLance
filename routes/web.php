@@ -12,7 +12,16 @@ Route::get('/debug', function () {
     return view('debug2');
 })->name('debug');
 Route::get('/debug2', function (Request $request) {
-    return UserReport::all();
+    $routeName = $request->route('route');
+
+        // Cek apakah route yang diminta ada
+        if (Route::has($routeName)) {
+            // Menggunakan Route::dispatch untuk menjalankan route yang diminta
+            $response = Route::dispatch(Request::create(route($routeName)));
+            
+            // Mengembalikan respon dari route yang diminta (bisa berupa view atau response lain)
+            return $response;
+        }
     // User::factory(1000)->withRole('client')->create();
     // $json_response = collect();
 

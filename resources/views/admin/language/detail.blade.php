@@ -6,8 +6,8 @@
     </div>
     <div class="row ">
         @foreach ($files as $item)
-            <div class="col-lg-6 col-xl-4">
-                <div class="card mb-4">
+            <div class="col-md-6 col-xl-4">
+                <div class="card mb-4 w-100">
                     <div class="card-body">
                         <div class="d-flex">
                             @if (str_ends_with($item, '.php'))
@@ -23,7 +23,8 @@
                             @endif
                             <div class="ms-3">
                                 <h5 class="mb-0">
-                                    <a href="{{ url()->current() }}/edit?file={{ $item }}">{{ $item }}</a>
+                                    @php($route = str_replace(['/', '.php', '.json'], ['.', '', ''], preg_replace('#^[^/]+/#', '', $item)))
+                                    <a href="{{ url()->current() }}/edit?file={{ $item }}&route={{ $route }}">{{ $route }}</a>
                                 </h5>
                             </div>
                         </div>

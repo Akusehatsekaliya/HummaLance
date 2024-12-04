@@ -75,7 +75,7 @@
     <div class="copyright" style="background-color: black;">
         <div class="logo" style="margin-left: 7rem;">
             <a href="index-2.html">
-                <img src="{{ asset('assets_landing/images/Asset 14.png') }}">
+                <img src="{{ asset('assets_landing/images/Asset 14.png') }}" loading="lazy">
             </a>
         </div>
         <p>© Clocker International Ltd, 2024

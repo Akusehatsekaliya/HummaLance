@@ -16,14 +16,14 @@
           <h1>Log in To Clocker</h1>
           {{-- <div class="login-button-container">
             <a class="google-login" href="{{ route('login.google') }}">
-              <img src="{{ asset('assets/svg/icons/gg_google.svg') }}" alt="" />
+              <img loading="lazy" src="{{ asset('assets/svg/icons/gg_google.svg') }}" alt="" />
               Login With Google
             </a>
             <button class="facebook-login">
-              <img src="{{ asset('assets/svg/icons/ic_baseline-facebook.svg') }}" alt="" />
+              <img loading="lazy" src="{{ asset('assets/svg/icons/ic_baseline-facebook.svg') }}" alt="" />
             </button>
             <button class="linkedin-login">
-              <img src="{{ asset('assets/svg/icons/mdi_linkedin.svg') }}" alt="" />
+              <img loading="lazy" src="{{ asset('assets/svg/icons/mdi_linkedin.svg') }}" alt="" />
             </button>
           </div> --}}
           {{-- <div class="divider">
@@ -61,14 +61,14 @@
           </div>
           <div class="login-button-container">
             <a class="google-login" href="{{ route('login.google') }}">
-              <img src="{{ asset('assets/svg/icons/gg_google.svg') }}" alt="" />
+              <img loading="lazy" src="{{ asset('assets/svg/icons/gg_google.svg') }}" alt="" />
               Login With Google
             </a>
             <button class="facebook-login">
-              <img src="{{ asset('assets/svg/icons/ic_baseline-facebook.svg') }}" alt="" />
+              <img loading="lazy" src="{{ asset('assets/svg/icons/ic_baseline-facebook.svg') }}" alt="" />
             </button>
             <button class="linkedin-login">
-              <img src="{{ asset('assets/svg/icons/mdi_linkedin.svg') }}" alt="" />
+              <img loading="lazy" src="{{ asset('assets/svg/icons/mdi_linkedin.svg') }}" alt="" />
             </button>
           </div>
           {{-- <div class="forgot-link">
@@ -187,21 +187,21 @@
 
 
       <div class="toggle-box">
-        <img src="{{ asset('assets/images/4ec9514b66c366d84e143a15f119c010.png') }}" alt="" class="logo">
+        <img loading="lazy" src="{{ asset('assets/images/4ec9514b66c366d84e143a15f119c010.png') }}" alt="" class="logo">
         <div class="toggle-panel toggle-left">
           <h1>Welcome Back</h1>
           <p>Hi, nice to see you back and stay connected with us.</p>
           <button class="btn register-btn text-white">Sign Up</button>
-          <img src="{{ asset('assets_landing/images/login1.png') }}" alt="login1" class="login1">
-          <img src="{{ asset('assets_landing/images/login2.png') }}" alt="login2" class="login2">
+          <img loading="lazy" src="{{ asset('assets_landing/images/login1.png') }}" alt="login1" class="login1">
+          <img loading="lazy" src="{{ asset('assets_landing/images/login2.png') }}" alt="login2" class="login2">
         </div>
 
         <div class="toggle-panel toggle-right">
           <h1>Welcome Back!</h1>
           <p>Start your journey in building your career with us at Clocker.</p>
           <button class="btn login-btn text-white">Login</button>
-          <img src="{{ asset('assets_landing/images/login1.png') }}" alt="login1" class="login3">
-          <img src="{{ asset('assets_landing/images/login2.png') }}" alt="login2" class="login4">
+          <img loading="lazy" src="{{ asset('assets_landing/images/login1.png') }}" alt="login1" class="login3">
+          <img loading="lazy" src="{{ asset('assets_landing/images/login2.png') }}" alt="login2" class="login4">
         </div>
       </div>
     </div>

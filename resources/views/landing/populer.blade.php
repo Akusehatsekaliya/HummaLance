@@ -387,7 +387,7 @@
             </div>
             <div class="img-category-wrapper">
                 <div class="img-category">
-                    <img src="{{ asset('assets_landing/images/category1.jpg') }}" alt="freelance">
+                    <img loading="lazy" src="{{ asset('assets_landing/images/category1.jpg') }}" alt="freelance">
                 </div>
                 <h3>Freelance</h3>
             </div>
@@ -397,19 +397,19 @@
         <div class="row-category1">
             <div class="img-category-wrapper1">
                 <div class="img-category1">
-                    <img src="{{ asset('assets_landing/images/category3.jpg') }}" alt="fulltime">
+                    <img loading="lazy" src="{{ asset('assets_landing/images/category3.jpg') }}" alt="fulltime">
                 </div>
                 <h3>Full Time</h3>
             </div>
             <div class="img-category-wrapper1">
                 <div class="img-category1">
-                    <img src="{{ asset('assets_landing/images/category4.jpg') }}" alt="part_time">
+                    <img loading="lazy" src="{{ asset('assets_landing/images/category4.jpg') }}" alt="part_time">
                 </div>
                 <h3>Part Time</h3>
             </div>
             <div class="img-category-wrapper1">
                 <div class="img-category1">
-                    <img src="{{ asset('assets_landing/images/category2.jpg') }}" alt="work_remotly">
+                    <img loading="lazy" src="{{ asset('assets_landing/images/category2.jpg') }}" alt="work_remotly">
                 </div>
                 <h3>Work Remotly</h3>
             </div>
