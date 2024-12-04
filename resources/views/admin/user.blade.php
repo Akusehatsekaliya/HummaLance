@@ -211,20 +211,22 @@
                                         <i class="fas fa-search icon icon-right search"
                                             style="margin-left: -25px; cursor: pointer;"></i>
                                     </div>
-                                    <div class="filter1" style="display: inline-block;">
-                                        <i class="bi bi-filter icon icon-right" style="margin-right: 5px;"></i>
-                                        <select id="filter" onchange="handleFilterChange()"
-                                            style="margin-right: 10px;">
+                                    <div class="filter1" style="display: inline-block; position: relative;">
+                                        <!-- Dropdown Select Awal -->
+                                        <select id="filter" class="filter" onchange="handleFilterChange()">
                                             <option value="">Filter</option>
                                             <option value="category">Category Report</option>
                                             <option value="status">Status Report</option>
                                             <option value="date">Tanggal Report</option>
                                         </select>
+                                        <i class="bi bi-filter icon icon-right" id="filter-icon"></i>
                                     </div>
 
+
+
                                     <!-- Dropdown untuk kategori (statis) -->
-                                    <div id="category-dropdown" style="display: none;">
-                                        <select>
+                                    <div  class="filter1" id="category-dropdown" style="display: none;">
+                                        <select style="padding-right:10px;">
                                             <option value="category1">Category 1</option>
                                             <option value="category2">Category 2</option>
                                             <option value="category3">Category 3</option>
@@ -232,8 +234,8 @@
                                     </div>
 
                                     <!-- Dropdown untuk status -->
-                                    <div id="status-dropdown" style="display: none;">
-                                        <select>
+                                    <div  class="filter1" id="status-dropdown" style="display: none; margin-right:0;">
+                                        <select style="padding-right:10px;">
                                             <option value="pending">Pending</option>
                                             <option value="approved">Approved</option>
                                             <option value="rejected">Rejected</option>
@@ -242,7 +244,7 @@
 
                                     <!-- Input untuk tanggal -->
                                     <div id="date-input" style="display: none;">
-                                        <input type="date" />
+                                        <input type="date" class="styled-date-input"/>
                                     </div>
 
                                 </div>
@@ -649,5 +651,7 @@
                 document.getElementById('date-input').style.display = 'inline-block';
             }
         }
+
+
     </script>
 @endsection
