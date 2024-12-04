@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Middleware\LanguageEditMiddleware;
 use App\Http\Middleware\LanguageMiddleware;
 use Illuminate\Foundation\Application;
 use Illuminate\Foundation\Configuration\Exceptions;
@@ -20,7 +21,8 @@ return Application::configure(basePath: dirname(__DIR__))
             \Illuminate\Foundation\Http\Middleware\ValidateCsrfToken::class,
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
             \Illuminate\Session\Middleware\AuthenticateSession::class,
-            LanguageMiddleware::class
+            LanguageMiddleware::class,
+            LanguageEditMiddleware::class
         ]);
         $middleware->validateCsrfTokens(except: [
             'tripay/*'

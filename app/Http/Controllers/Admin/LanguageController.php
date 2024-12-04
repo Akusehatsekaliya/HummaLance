@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use App\Models\Language;
 use App\Services\FileService;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Lang;
+use Illuminate\Support\Facades\View;
 use Yajra\DataTables\DataTables;
 
 class LanguageController extends Controller
@@ -39,16 +41,33 @@ class LanguageController extends Controller
         return view("admin.language.detail", compact("language", "files"));
     }
 
-    public function detailEdit($id)
+    public function detailEdit(Request $request, $id)
     {
-        //
-        $language = Language::find($id);
-        $files = [
-            "$language->locale.json",
-            ...$this->fileservice->getFolderFiles($language->locale)
-        ];
-        return view("admin.language.detail-edit", compact("language", "files"));
+        $language = Language::findOrFail($id);
+
+        $file = $request->query('file');
+        $fileKey = pathinfo($file, PATHINFO_FILENAME);
+
+        $langKey = Lang::get($fileKey);
+
+        $preview = route($request->query("preview") ?? "landing.index");
+
+        return view("admin.language.detail-edit", compact("language", "file", "langKey", "preview"));
     }
+
+    // public function detailEdit(Request $request, $id)
+    // {
+    //     $language = Language::findOrFail($id);
+
+    //     $file = $request->query('file');
+    //     $fileKey = pathinfo($file, PATHINFO_FILENAME);
+
+    //     $langKey = Lang::get($fileKey);
+
+    //     return view("admin.language.detail-edit", compact("language", "file", "langKey"));
+    // }
+
+
 
     /**
      * Store a newly created resource in storage.

@@ -1,4 +1,5 @@
 @include('landing.layout.auth')
+<x-language-edit/>
 <!DOCTYPE html>
 <html lang="id">
 
