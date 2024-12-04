@@ -335,6 +335,34 @@
     margin-bottom: 5px;
 }
 
+.card-fitur-item3 {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 295px;
+    text-align: left;
+    margin: 15px;
+    transition: transform 0.3s ease;
+    height: 200px;
+}
+
+.card-fitur-item3 p {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.5;
+    margin-bottom: 0;
+    font-style: italic;
+}
+
+.card-fitur-item3 h5 {
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+
 .card-fitur-item:hover {
     transform: translateY(-10px);
 }
@@ -342,6 +370,9 @@
     transform: translateY(-10px);
 }
 .card-fitur-item2:hover {
+    transform: translateY(-10px);
+}
+.card-fitur-item3:hover {
     transform: translateY(-10px);
 }
 .main-fitur {
@@ -685,7 +716,8 @@
     background: url(../images/line9.svg);
     background-size: cover;
     background-repeat: no-repeat;
-    background-position-y: center;
+    background-position-y: -183px;
+    z-index: -5;
 }
 
 .svg-container2 {
@@ -1035,18 +1067,26 @@
 .card-guides-grid {
     display: grid;
     grid-template-columns: repeat(1, 3fr);
-    gap: 15px;
+    gap: 18px;
     width: 100%;
-    max-width: 100%;
+    max-width: 96%;
 }
 
 .card-guides-item {
     text-align: left;
-    padding: 20px;
+    padding: 15px;
     border: 1px solid #ddd;
-    border-radius: 15px;
+    border-radius: 11px;
     background-color: #fff;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    padding-bottom: 25px;
+    padding-bottom: 10px;
     transition: transform 0.3s ease;
 }
+
+.row-fitur1 {
+    justify-content: center;
+    align-items: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(21%, 1fr));
+    gap: 1px;
+  }
