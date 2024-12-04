@@ -67,7 +67,7 @@
     {{-- modal detail --}}
     <div id="detailModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="detailModalLabel"
         aria-hidden="true">
-        <div class="modal-dialog modal-lg custom-modal" role="document" style="margin-top: 20px;">
+        <div class="modal-dialog modal-xl custom-modal modal-centered" role="document" style="margin-top: 20px;">
             <div class="modal-content">
 
                 <div class="modal-body">
@@ -202,7 +202,7 @@
                                 </div>
                             </div>
 
-                            <div class="tab-content" id="timeline" style="max-height: 300px; overflow-y: auto;">
+                            <div class="tab-content" id="timeline" style="max-height: 350px; overflow-y: auto;">
                                 <!-- Search and Filter Section -->
                                 <div class="search-filter-container mb-0"
                                     style="position: sticky; top: 0; background: white; z-index: 10; padding: 10px 0;">
@@ -211,13 +211,38 @@
                                         <i class="fas fa-search icon icon-right search"
                                             style="margin-left: -25px; cursor: pointer;"></i>
                                     </div>
-                                    <div class="filter1" style="display: inline-block; ">
+                                    <div class="filter1" style="display: inline-block;">
                                         <i class="bi bi-filter icon icon-right" style="margin-right: 5px;"></i>
-                                        <select id="filter">
+                                        <select id="filter" onchange="handleFilterChange()"
+                                            style="margin-right: 10px;">
                                             <option value="">Filter</option>
-                                            <option value="">category report</option>
-                                            <option value="main-st">status report</option>
+                                            <option value="category">Category Report</option>
+                                            <option value="status">Status Report</option>
+                                            <option value="date">Tanggal Report</option>
                                         </select>
+                                    </div>
+
+                                    <!-- Dropdown untuk kategori (statis) -->
+                                    <div id="category-dropdown" style="display: none;">
+                                        <select>
+                                            <option value="category1">Category 1</option>
+                                            <option value="category2">Category 2</option>
+                                            <option value="category3">Category 3</option>
+                                        </select>
+                                    </div>
+
+                                    <!-- Dropdown untuk status -->
+                                    <div id="status-dropdown" style="display: none;">
+                                        <select>
+                                            <option value="pending">Pending</option>
+                                            <option value="approved">Approved</option>
+                                            <option value="rejected">Rejected</option>
+                                        </select>
+                                    </div>
+
+                                    <!-- Input untuk tanggal -->
+                                    <div id="date-input" style="display: none;">
+                                        <input type="date" />
                                     </div>
 
                                 </div>
@@ -599,12 +624,30 @@
                     Swal.fire({
                         icon: 'error',
                         title: 'Error Updating Status',
-                        text:
-                            'Terjadi kesalahan saat memperbarui status!',
+                        text: 'Terjadi kesalahan saat memperbarui status!',
                         showConfirmButton: true,
                     });
                 }
             });
         });
+
+        function handleFilterChange() {
+            // Ambil nilai dari dropdown utama
+            const filterValue = document.getElementById('filter').value;
+
+            // Sembunyikan semua elemen tambahan
+            document.getElementById('category-dropdown').style.display = 'none';
+            document.getElementById('status-dropdown').style.display = 'none';
+            document.getElementById('date-input').style.display = 'none';
+
+            // Tampilkan elemen yang sesuai
+            if (filterValue === 'category') {
+                document.getElementById('category-dropdown').style.display = 'inline-block';
+            } else if (filterValue === 'status') {
+                document.getElementById('status-dropdown').style.display = 'inline-block';
+            } else if (filterValue === 'date') {
+                document.getElementById('date-input').style.display = 'inline-block';
+            }
+        }
     </script>
 @endsection
