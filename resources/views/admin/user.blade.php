@@ -145,14 +145,29 @@
                                     </button>
                                 </div>
                             </div>
-                            <div class="tabs">
-                                <div class="tab active" onclick="openTab(event, 'about')">
-                                    About
-                                </div>
-                                <div class="tab" onclick="openTab(event, 'timeline')">
-                                    Report
+                            <div class="tabs-container">
+                                <div class="tabs">
+                                    <div class="tab active" onclick="openTab(event, 'about')">
+                                        About
+                                    </div>
+                                    <div class="tab" onclick="openTab(event, 'timeline')">
+                                        Report
+                                    </div>
+                                    <div class="tab" onclick="openTab(event, 'activity')">
+                                        Activity
+                                    </div>
+                                    <div class="tab" onclick="openTab(event, 'transaction-statistics')">
+                                        Transaction Statistics
+                                    </div>
+                                    <div class="tab" onclick="openTab(event, 'engagement-statistics')">
+                                        Engagement Statistics
+                                    </div>
+                                    <div class="tab" onclick="openTab(event, 'account-status')">
+                                        Account Status
+                                    </div>
                                 </div>
                             </div>
+
                             <div class="tab-content active" id="about">
                                 <div class="row">
                                     <!-- Bagian Contact Information -->
@@ -222,30 +237,37 @@
                                         <i class="bi bi-filter icon icon-right" id="filter-icon"></i>
                                     </div>
 
-
-
-                                    <!-- Dropdown untuk kategori (statis) -->
-                                    <div  class="filter1" id="category-dropdown" style="display: none;">
+                                    <!-- Dropdown untuk kategori -->
+                                    <div class="filter1" id="category-dropdown"
+                                        style="display: none; position: relative;">
                                         <select style="padding-right:10px;">
                                             <option value="category1">Category 1</option>
                                             <option value="category2">Category 2</option>
                                             <option value="category3">Category 3</option>
                                         </select>
+                                        <span id="category-arrow" class="arrow"
+                                            onclick="toggleDropdown('category')">&#x2193;</span> <!-- Down arrow -->
                                     </div>
 
                                     <!-- Dropdown untuk status -->
-                                    <div  class="filter1" id="status-dropdown" style="display: none; margin-right:0;">
+                                    <div class="filter1" id="status-dropdown"
+                                        style="display: none; margin-right:0; position: relative;">
                                         <select style="padding-right:10px;">
                                             <option value="pending">Pending</option>
                                             <option value="approved">Approved</option>
                                             <option value="rejected">Rejected</option>
                                         </select>
+                                        <span id="status-arrow" class="arrow"
+                                            onclick="toggleDropdown('status')">&#x2193;</span> <!-- Down arrow -->
                                     </div>
 
                                     <!-- Input untuk tanggal -->
-                                    <div id="date-input" style="display: none;">
-                                        <input type="date" class="styled-date-input"/>
+                                    <div
+                                        style="display: inline-block; background-color: #fff; border-radius: 25px; padding: 10px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);">
+                                        <input type="date" id="date-input"
+                                            style="border: none; outline: none;font-size: 1rem; text-align: center" />
                                     </div>
+
 
                                 </div>
 
@@ -348,6 +370,331 @@
                                 </div>
                             </div>
 
+                            <div class="tab-content" id="activity">
+                                <div class="page-content">
+                                    <section class="row">
+                                        <div class="col-12 col-lg-12">
+                                            <div class="row row-cols-3">
+                                                <!-- Jumlah Proyek Diambil -->
+                                                <div class="col">
+                                                    <div class="card rounded"
+                                                        style="background-color: white; border-radius: 8px;box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+                                                        <div class="card-body px-4 py-4-5">
+                                                            <div class="row">
+                                                                <div
+                                                                    class="col-md-4 col-lg-12 col-xl-12 col-xxl-5 d-flex justify-content-start">
+                                                                    <div class="stats-icon green mb-2">
+                                                                        <i class="iconly-boldFolder"></i>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-8 col-lg-12 col-xl-12 col-xxl-7">
+                                                                    <h6 class="text-muted font-semibold">project taken</h6>
+                                                                    <h6 class="font-extrabold mb-0">15</h6>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- Jumlah Proyek Selesai -->
+                                                <div class="col">
+                                                    <div class="card rounded"
+                                                        style="background-color: white; border-radius: 8px;box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+                                                        <div class="card-body px-4 py-4-5">
+                                                            <div class="row">
+                                                                <div
+                                                                    class="col-md-4 col-lg-12 col-xl-12 col-xxl-5 d-flex justify-content-start">
+                                                                    <div class="stats-icon blue mb-2">
+                                                                        <i class="iconly-boldFolder-checked"></i>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-8 col-lg-12 col-xl-12 col-xxl-7">
+                                                                    <h6 class="text-muted font-semibold">project completed
+                                                                    </h6>
+                                                                    <h6 class="font-extrabold mb-0">12</h6>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- Jumlah Proyek Dibatalkan -->
+                                                <div class="col">
+                                                    <div class="card rounded"
+                                                        style="background-color: white; border-radius: 8px;box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+                                                        <div class="card-body px-4 py-4-5">
+                                                            <div class="row">
+                                                                <div
+                                                                    class="col-md-4 col-lg-12 col-xl-12 col-xxl-5 d-flex justify-content-start">
+                                                                    <div class="stats-icon red mb-2">
+                                                                        <i class="iconly-boldCloseSquare"></i>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-8 col-lg-12 col-xl-12 col-xxl-7">
+                                                                    <h6 class="text-muted font-semibold">project cancelled
+                                                                    </h6>
+                                                                    <h6 class="font-extrabold mb-0">3</h6>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- Rata-rata Rating -->
+                                                <div class="col">
+                                                    <div class="card rounded"
+                                                        style="background-color: white; border-radius: 8px;box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+                                                        <div class="card-body px-4 py-4-5">
+                                                            <div class="row">
+                                                                <div
+                                                                    class="col-md-4 col-lg-12 col-xl-12 col-xxl-5 d-flex justify-content-start">
+                                                                    <div class="stats-icon yellow mb-2">
+                                                                        <i class="iconly-boldStar"></i>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-8 col-lg-12 col-xl-12 col-xxl-7">
+                                                                    <h6 class="text-muted font-semibold">Rating</h6>
+                                                                    <div class="flex items-center">
+                                                                        <!-- Bintang -->
+                                                                        <i class="fas fa-star text-yellow-400"></i>
+                                                                        <i class="fas fa-star text-yellow-400"></i>
+                                                                        <i class="fas fa-star text-yellow-400"></i>
+                                                                        <i class="fas fa-star text-yellow-400"></i>
+                                                                        <i
+                                                                            class="fas fa-star-half-alt text-yellow-400"></i>
+                                                                        <!-- Rating -->
+                                                                        <h6 class="font-extrabold mb-0 ml-2">4.8</h6>
+                                                                    </div>
+                                                                </div>
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- Ulasan Terbaru -->
+                                                <div class="col">
+                                                    <div class="card rounded"
+                                                        style="background-color: white; border-radius: 8px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+                                                        <div class="card-body px-4 py-4-5">
+                                                            <div class="row">
+                                                                <div class="col-md-12 d-flex">
+                                                                    <!-- Ikon di sebelah kiri -->
+                                                                    <div
+                                                                        class="col-md-4 col-lg-12 col-xl-12 col-xxl-5 d-flex justify-content-start">
+                                                                        <i class="iconly-boldChat"></i>
+                                                                    </div>
+                                                                    <!-- Teks di sebelah kanan -->
+                                                                    <div>
+                                                                        <h6 class="text-muted font-semibold">Latest Reviews
+                                                                        </h6>
+                                                                        <p class="text-muted mb-0" id="review-text">"Very
+                                                                            fast work and
+                                                                            satisfactory results."</p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <!-- Kategori Favorit -->
+                                                <div class="col">
+                                                    <div class="card rounded"
+                                                        style="background-color: white; border-radius: 8px;box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+                                                        <div class="card-body px-4 py-4-5">
+                                                            <div class="row">
+                                                                <div
+                                                                    class="col-md-4 col-lg-12 col-xl-12 col-xxl-5 d-flex justify-content-start">
+                                                                    <div class="stats-icon indigo mb-2">
+                                                                        <i class="iconly-boldCategory"></i>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-8 col-lg-12 col-xl-12 col-xxl-7">
+                                                                    <h6 class="text-muted font-semibold">Kategori Favorit
+                                                                    </h6>
+                                                                    <h6 class="font-extrabold mb-0">Desain Grafis</h6>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- Waktu Pengerjaan -->
+                                                <div class="col">
+                                                    <div class="card rounded"
+                                                        style="background-color: white; border-radius: 8px;box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+                                                        <div class="card-body px-4 py-4-5">
+                                                            <div class="row">
+                                                                <div
+                                                                    class="col-md-4 col-lg-12 col-xl-12 col-xxl-5 d-flex justify-content-start">
+                                                                    <div class="stats-icon gray mb-2">
+                                                                        <i class="iconly-boldTimeCircle"></i>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-8 col-lg-12 col-xl-12 col-xxl-7">
+                                                                    <h6 class="text-muted font-semibold">Waktu Pengerjaan
+                                                                    </h6>
+                                                                    <h6 class="font-extrabold mb-0">5 Hari</h6>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </section>
+                                </div>
+
+                            </div>
+
+                            <div class="tab-content overflow-auto max-h-[80vh]" id="transaction-statistics">
+                                <!-- Filter Section -->
+                                <div class="d-flex justify-content-end mb-2">
+                                    <!-- Search Input -->
+                                    <div class="position-relative d-flex align-items-center">
+                                        <i class="fa fa-search position-absolute left-1 top-1/2 transform -translate-y-1/2 text-gray-400"
+                                            style="left: 7%;"></i>
+                                        <input type="text" id="searchInput" placeholder="search transaction..."
+                                            class="w-full border border-gray-300 rounded-lg ps-5 pe-4 py-2 pl-10 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                            style=" border-radius: 4px; width:210px;">
+                                    </div>
+                                    <!-- Date Filter -->
+                                    <div class="ms-2">
+                                        <input type="date" id="startDate"
+                                            class="border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                            style=" border-radius: 4px">
+                                    </div>
+                                </div>
+
+                                <!-- Table Section -->
+                                <div class="overflow-x-auto">
+                                    <table class="min-w-full bg-white border border-gray-300 rounded-lg shadow-md">
+                                        <thead class="bg-gray-100 text-left">
+                                            <tr>
+                                                <th class="py-3 px-4 border-b">Transaction ID</th>
+                                                <th class="py-3 px-4 border-b">Date</th>
+                                                <th class="py-3 px-4 border-b">Amount</th>
+                                                <th class="py-3 px-4 border-b">Status</th>
+                                                <th class="py-3 px-4 border-b">User</th>
+                                                <th class="py-3 px-4 border-b">Action</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="transactionTableBody">
+                                            <tr class="hover:bg-gray-50">
+                                                <td class="py-3 px-4 border-b">TXN123456</td>
+                                                <td class="py-3 px-4 border-b">2024-12-01</td>
+                                                <td class="py-3 px-4 border-b text-green-600">$150.00</td>
+                                                <td class="py-3 px-4 border-b text-blue-600">Completed</td>
+                                                <td class="py-3 px-4 border-b">John Doe</td>
+                                                <td class="py-3 px-4 border-b">
+                                                    <button type="button" class="btn text-primary"
+                                                        title="detail transaction" data-bs-toggle="modal"
+                                                        data-bs-target="#modalTransactions"><i
+                                                            class="bi bi-info-circle-fill"></i></button>
+                                                </td>
+                                            </tr>
+                                            <tr class="hover:bg-gray-50">
+                                                <td class="py-3 px-4 border-b">TXN123457</td>
+                                                <td class="py-3 px-4 border-b">2024-12-02</td>
+                                                <td class="py-3 px-4 border-b text-red-600">$200.00</td>
+                                                <td class="py-3 px-4 border-b text-gray-500">Pending</td>
+                                                <td class="py-3 px-4 border-b">Jane Smith</td>
+                                                <td class="py-3 px-4 border-b">
+                                                    <button type="button" class="btn text-primary"
+                                                        title="detail transaction" data-bs-toggle="modal"
+                                                        data-bs-target="#modalTransactions"><i
+                                                            class="bi bi-info-circle-fill"></i></button>
+                                                </td>
+                                            </tr>
+                                            <tr class="hover:bg-gray-50">
+                                                <td class="py-3 px-4 border-b">TXN123458</td>
+                                                <td class="py-3 px-4 border-b">2024-12-03</td>
+                                                <td class="py-3 px-4 border-b text-green-600">$50.00</td>
+                                                <td class="py-3 px-4 border-b text-green-600">Completed</td>
+                                                <td class="py-3 px-4 border-b">Alice Johnson</td>
+                                                <td class="py-3 px-4 border-b">
+                                                    <button type="button" class="btn text-primary"
+                                                        title="detail transaction" data-bs-toggle="modal"
+                                                        data-bs-target="#modalTransactions"><i
+                                                            class="bi bi-info-circle-fill"></i></button>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+
+                            <div class="tab-content overflow-auto max-h-[80vh]" id="engagement-statistics">
+                                <div class="bg-white p-6 rounded-lg shadow-md">
+                                    <h4 class="text-2xl font-semibold text-gray-800 mb-4">User Engagement Statistics</h4>
+
+                                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                        <!-- Total Logins -->
+                                        <div>
+                                            <h6 class="font-semibold text-gray-700">Total Logins:</h6>
+                                            <p class="text-gray-500">120</p>
+                                        </div>
+
+                                        <!-- Proposals Sent (Freelancer) -->
+                                        <div>
+                                            <h6 class="font-semibold text-gray-700">Total Proposals Sent (Freelancer):</h6>
+                                            <p class="text-gray-500">45</p>
+                                        </div>
+
+                                        <!-- Messages Sent -->
+                                        <div>
+                                            <h6 class="font-semibold text-gray-700">Total Messages Sent:</h6>
+                                            <p class="text-gray-500">300</p>
+                                        </div>
+
+                                        <!-- Disputes -->
+                                        <div>
+                                            <h6 class="font-semibold text-gray-700">Total Disputes:</h6>
+                                            <p class="text-gray-500">2</p>
+                                        </div>
+
+                                        <!-- Average Response Time -->
+                                        <div>
+                                            <h6 class="font-semibold text-gray-700">Average Response Time:</h6>
+                                            <p class="text-gray-500">2 hours</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="tab-content overflow-auto max-h-[80vh]" id="account-status">
+                                <div class="bg-white p-6 rounded-lg shadow-md">
+                                    <h4 class="text-2xl font-semibold text-gray-800 mb-4">Account Status</h4>
+
+                                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                        <!-- Account Status -->
+                                        <div>
+                                            <h6 class="font-semibold text-gray-700">Account Status:</h6>
+                                            <p class="text-gray-500">Active</p>
+                                        </div>
+
+                                        <!-- Registration Date -->
+                                        <div>
+                                            <h6 class="font-semibold text-gray-700">Registration Date:</h6>
+                                            <p class="text-gray-500">January 15, 2023</p>
+                                        </div>
+
+                                        <!-- Last Login -->
+                                        <div>
+                                            <h6 class="font-semibold text-gray-700">Last Login:</h6>
+                                            <p class="text-gray-500">December 3, 2024, 10:00 AM</p>
+                                        </div>
+
+                                        <!-- Duration of Activity -->
+                                        <div>
+                                            <h6 class="font-semibold text-gray-700">Duration of Activity:</h6>
+                                            <p class="text-gray-500">2 years, 10 months</p>
+                                        </div>
+
+                                        <!-- Account Verified -->
+                                        <div>
+                                            <h6 class="font-semibold text-gray-700">Account Verified:</h6>
+                                            <p class="text-gray-500">Yes</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="justify-content-end d-flex">
@@ -377,6 +724,61 @@
 
         #timeline::-webkit-scrollbar-thumb:hover {
             background: #555;
+        }
+
+        select {
+            width: 100%;
+            padding: 8px;
+            font-size: 14px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .arrow {
+            position: absolute;
+            top: 50%;
+            right: 10px;
+            transform: translateY(-50%);
+            cursor: pointer;
+            font-size: 18px;
+            color: #555;
+        }
+
+        .tabs-container {
+            overflow-x: auto;
+            /* Enable horizontal scrolling */
+            -webkit-overflow-scrolling: touch;
+            /* Smooth scrolling on mobile */
+            scrollbar-width: none;
+            /* For Firefox */
+            -ms-overflow-style: none;
+            /* For Internet Explorer */
+        }
+
+        .tabs-container::-webkit-scrollbar {
+            display: none;
+            /* Hide scrollbar for Webkit browsers (Chrome, Safari) */
+        }
+
+        .tabs {
+            display: flex;
+            flex-wrap: nowrap;
+        }
+
+        .tab {
+            padding: 10px 20px;
+            cursor: pointer;
+            display: inline-block;
+            text-align: center;
+            white-space: nowrap;
+            /* border: 1px solid #ccc; */
+            /* border-radius: 4px; */
+            margin-right: 8px;
+            /* transition: background-color 0.3s ease; */
+        }
+
+        .tab:hover {
+            background-color: #f0f0f0;
         }
     </style>
 @endsection
@@ -460,27 +862,27 @@
                 url: 'users/showDetail/' + userId,
                 method: 'GET',
                 success: function(data) {
-                    if (data.error) {
-                        alert(data.error);
+                    if (data.data.error) {
+                        alert(data.data.error);
                     } else {
-                        $('#detailModal .modal-body #firstName').text(data.first_name || '-');
-                        $('#detailModal .modal-body #lastName').text(data.last_name || '-');
-                        $('#detailModal .modal-body #email').text(data.email || '-');
-                        $('#detailModal .modal-body #phone').text(data.phone || '-');
-                        $('#detailModal .modal-body #birthday').text(data.birthday || '-');
-                        $('#detailModal .modal-body #address').text(data.address || '-');
-                        $('#detailModal .modal-body #gender').text(data.gender || '-');
-                        $('#detailModal .modal-body #skills').text(data.skills || '-');
-                        $('#detailModal .modal-body #statusLogin').text(data.statusLogin || '-');
+                        $('#detailModal .modal-body #firstName').text(data.data.first_name || '-');
+                        $('#detailModal .modal-body #lastName').text(data.data.last_name || '-');
+                        $('#detailModal .modal-body #email').text(data.data.email || '-');
+                        $('#detailModal .modal-body #phone').text(data.data.phone || '-');
+                        $('#detailModal .modal-body #birthday').text(data.data.birthday || '-');
+                        $('#detailModal .modal-body #address').text(data.data.address || '-');
+                        $('#detailModal .modal-body #gender').text(data.data.gender || '-');
+                        $('#detailModal .modal-body #skills').text(data.data.skills || '-');
+                        $('#detailModal .modal-body #statusLogin').text(data.data.statusLogin || '-');
 
                         var skillsElement = $('#detailModal .modal-body #skills');
-                        if (data.skills === 'ui/ux') {
+                        if (data.data.skills === 'ui/ux') {
                             skillsElement.text('UI/UX Design').removeClass().addClass(
                                 'badge bg-light-primary text-primary');
-                        } else if (data.skills === 'Web - Design') {
+                        } else if (data.data.skills === 'Web - Design') {
                             skillsElement.text('Web Design').removeClass().addClass(
                                 'badge bg-light-danger text-danger');
-                        } else if (data.skills === 'full stack') {
+                        } else if (data.data.skills === 'full stack') {
                             skillsElement.text('Full Stack Developer').removeClass().addClass(
                                 'badge bg-light-succes text-succes');
                         } else {
@@ -488,13 +890,13 @@
                         }
 
                         var genderElement = $('#detailModal .modal-body #gender');
-                        if (data.gender === 'male') {
+                        if (data.data.gender === 'male') {
                             genderElement
                                 .removeClass('text-danger text-primary')
                                 .addClass('text-primary')
                                 .html(
                                     '<i class="fas fa-mars"></i> Male');
-                        } else if (data.gender === 'female') {
+                        } else if (data.data.gender === 'female') {
                             genderElement
                                 .removeClass('text-primary')
                                 .addClass('text-danger')
@@ -511,7 +913,7 @@
                             "Juli", "Agustus", "September", "Oktober", "November", "Desember"
                         ];
 
-                        var birthday = data.birthday;
+                        var birthday = data.data.birthday;
                         if (birthday) {
                             var date = new Date(birthday);
 
@@ -527,11 +929,11 @@
 
                         var statusLoginElement = $('#detailModal .modal-body #statusLogin');
 
-                        if (data.statusLogin === 'online') {
+                        if (data.data.statusLogin === 'online') {
 
                             statusLoginElement.html(
                                 '<i class="fa-solid fa-circle" style="color: #28a745;"></i> Online');
-                        } else if (data.statusLogin === 'offline') {
+                        } else if (data.data.statusLogin === 'offline') {
                             statusLoginElement.html(
                                 '<i class="fa-solid fa-circle" style="color: #d91919;"></i> Offline'
                             );
@@ -642,16 +1044,74 @@
             document.getElementById('status-dropdown').style.display = 'none';
             document.getElementById('date-input').style.display = 'none';
 
+            // Sembunyikan semua panah
+            document.getElementById('category-arrow').innerHTML = '&#x2193;'; // Down arrow
+            document.getElementById('status-arrow').innerHTML = '&#x2193;'; // Down arrow
+
             // Tampilkan elemen yang sesuai
             if (filterValue === 'category') {
                 document.getElementById('category-dropdown').style.display = 'inline-block';
+                document.getElementById('category-arrow').innerHTML = '&#x2191;'; // Up arrow
             } else if (filterValue === 'status') {
                 document.getElementById('status-dropdown').style.display = 'inline-block';
+                document.getElementById('status-arrow').innerHTML = '&#x2191;'; // Up arrow
             } else if (filterValue === 'date') {
                 document.getElementById('date-input').style.display = 'inline-block';
             }
         }
 
 
+        // Fungsi untuk toggle dropdown dan mengubah panah
+        function toggleDropdown(type) {
+            const dropdown = document.getElementById(type + '-dropdown');
+            const arrow = document.getElementById(type + '-arrow');
+
+            // Cek apakah dropdown terbuka atau tidak
+            if (dropdown.style.display === 'inline-block') {
+                dropdown.style.display = 'none'; // Sembunyikan dropdown
+                arrow.innerHTML = '&#x2193;'; // Ubah panah menjadi down
+            } else {
+                dropdown.style.display = 'inline-block'; // Tampilkan dropdown
+                arrow.innerHTML = '&#x2191;'; // Ubah panah menjadi up
+            }
+        }
+        document.addEventListener('DOMContentLoaded', () => {
+            const searchInput = document.getElementById('searchInput');
+            const startDate = document.getElementById('startDate');
+            const tableBody = document.getElementById('transactionTableBody');
+            const rows = Array.from(tableBody.getElementsByTagName('tr'));
+
+            function filterTable() {
+                const searchTerm = searchInput.value.toLowerCase();
+                const filterDate = new Date(startDate.value);
+
+                rows.forEach(row => {
+                    const id = row.children[0].textContent.toLowerCase();
+                    const user = row.children[4].textContent.toLowerCase();
+                    const date = new Date(row.children[1].textContent);
+
+                    const matchesSearch = id.includes(searchTerm) || user.includes(searchTerm);
+                    const matchesDate = !startDate.value || date.toISOString().split('T')[0] === startDate
+                        .value;
+
+                    row.style.display = matchesSearch && matchesDate ? '' : 'none';
+                });
+            }
+
+            searchInput.addEventListener('input', filterTable);
+            startDate.addEventListener('change', filterTable);
+        });
+        // Fungsi untuk memotong teks
+        function truncateText(selector, maxLength) {
+            const element = document.querySelector(selector);
+            if (element) {
+                const text = element.textContent;
+                if (text.length > maxLength) {
+                    element.textContent = text.slice(0, maxLength) + "...";
+                }
+            }
+        }
+
+        truncateText("#review-text", 30);
     </script>
 @endsection

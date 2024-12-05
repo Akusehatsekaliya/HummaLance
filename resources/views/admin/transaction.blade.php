@@ -30,7 +30,7 @@
                                     <th>AMOUNT</th>
                                     <th>DATE</th>
                                     <th>STATUS</th>
-                                    <th>DETAIL</th>
+                                    <th>ACTION</th>
                                 </tr>
                             </thead>
                             <tbody>
