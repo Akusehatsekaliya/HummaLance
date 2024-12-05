@@ -4,18 +4,16 @@
             <div class="col-lg-1"></div>
             <div class="col-lg-5 font-roboto">
                 <div class="row">
-                    <h4 class="font-weight-bold mb-5">Companies can also register to find <br>workers on <span
-                            class="text-landing">CLOCKER</span></h4>
+                    <h4 class="font-weight-bold mb-5"><x-language>work.headline</x-language></h4>
 
                     <div class="list mb-3">
-                        <p>with the many companies registered on clocker, <br> there are also many job vacancies
-                            available.</p>
+                        <p><x-language>work.description1</x-language></p>
                     </div>
                     <div class="list mb-3">
-                        <p>It will be easier for companies to find professional <br> clocker workers.</p>
+                        <p><x-language>work.description2</x-language></p>
                     </div>
                     <div class="list ">
-                        <p>Companies can also buy the services of freelancers <br> or recruit them</p>
+                        <p><x-language>work.description3</x-language></p>
                     </div>
                 </div>
             </div>
@@ -38,8 +36,7 @@
 <section class="bg-15 text-center text-white bg-landing py-5">
     <div class="container my-5">
         <div class="row py-lg-5 justify-content-center ">
-            <h4>Try clocker pro to increase sales of your services, <br> and expand your connections as a freelancer
-            </h4>
+            <h4><x-language>work.hero.title</x-language></h4>
         </div>
     </div>
 </section>

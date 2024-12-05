@@ -9,18 +9,18 @@
             </div>
             <div class="col-lg-5">
                 <div class="text-category1">
-                    <h3 class="font-weight-bold" style="margin-top: -60px; margin-left: -55px;">{!! __("landing/index.manage.header") !!}</h3>
+                    <h3 class="font-weight-bold" style="margin-top: -60px; margin-left: -55px;"><x-language>manage.header</x-language></h3>
                     <x-svg class="vector-icon">{{ asset('assets/svg/landing/banner/Vector (2).svg') }}</x-svg>
-                    <p class="description">{!! __("landing/index.manage.description1") !!}</p>
+                    <p class="description"><x-language>manage.description1</x-language></p>
 
                     <x-svg class="vector-icon">{{ asset('assets/svg/landing/banner/Vector (2).svg') }}</x-svg>
-                    <p class="description">{!! __("landing/index.manage.description2") !!}</p>
+                    <p class="description"><x-language>manage.description2</x-language></p>
 
                     <x-svg class="vector-icon">{{ asset('assets/svg/landing/banner/Vector (2).svg') }}</x-svg>
-                    <p class="description">{!! __("landing/index.manage.description3") !!}</p>
+                    <p class="description"><x-language>manage.description3</x-language></p>
 
                     <x-svg class="vector-icon">{{ asset('assets/svg/landing/banner/Vector (2).svg') }}</x-svg>
-                    <p class="description">{!! __("landing/index.manage.description4") !!}</p>
+                    <p class="description"><x-language>manage.description4</x-language></p>
                 </div>
             </div>
         </div>

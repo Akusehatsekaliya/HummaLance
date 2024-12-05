@@ -153,8 +153,8 @@
                 </svg>
             </div>
             <div class="fitur-text">
-                <h4>What People Do At Clocker</h4>
-                <h2>Become a freelancer and make lots of connections</h2>
+                <h4><x-language>populer.what_people_do_at_clocker</x-language></h4>
+                <h2><x-language>populer.become_a_freelancer_and_make_lots_of_connections</x-language></h2>
             </div>
             <div class="row-fitur">
                 <div class="fitur-item">
@@ -197,8 +197,8 @@
                                         </clipPath>
                                     </defs>
                                 </svg>
-                                <h5>Join Clocker</h5>
-                                <p>Join clocker and create a freelancer account to start becoming a freelancer</p>
+                                <h5><x-language>populer.Join Clocker</x-language></h5>
+                                <p><x-language>populer.Join clocker and create a freelancer account to start becoming a freelancer</x-language></p>
                             </div>
                         </div>
                     </div>
@@ -243,8 +243,8 @@
                                         </clipPath>
                                     </defs>
                                 </svg>
-                                <h5>Start Selling</h5>
-                                <p>Start by selling services and offering services through freelance postings</p>
+                                <h5><x-language>populer.Start Selling</x-language></h5>
+                                <p><x-language>populer.Start by selling services and offering services through freelance postings</x-language></p>
                             </div>
                         </div>
                     </div>
@@ -292,8 +292,8 @@
                                         </clipPath>
                                     </defs>
                                 </svg>
-                                <h5>Make Connections</h5>
-                                <p>Start making connections with many people to expand your sales reach</p>
+                                <h5><x-language>populer.Make Connections</x-language></h5>
+                                <p><x-language>populer.Start making connections with many people to expand your sales reach</x-language></p>
                             </div>
                         </div>
                     </div>
@@ -339,16 +339,14 @@
                                         </clipPath>
                                     </defs>
                                 </svg>
-                                <h5>Earning</h5>
-                                <p>ends by making money from selling the services the freelancer offers
-                                </p>
+                                <h5><x-language>populer.Earning</x-language></h5>
+                                <p><x-language>populer.ends by making money from selling the services the freelancer offers</x-language></p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
     </div>
 </section>
 <section>
@@ -363,19 +361,19 @@
                                 d="M10.5 1.875C9.68777 1.875 8.90882 2.2207 8.33449 2.83606C7.76016 3.45141 7.4375 4.28601 7.4375 5.15625V7.5H5.25C4.32174 7.5 3.4315 7.89509 2.77513 8.59835C2.11875 9.30161 1.75 10.2554 1.75 11.25V24.375C1.75 25.3696 2.11875 26.3234 2.77513 27.0266C3.4315 27.7299 4.32174 28.125 5.25 28.125H22.75C23.6783 28.125 24.5685 27.7299 25.2249 27.0266C25.8813 26.3234 26.25 25.3696 26.25 24.375V11.25C26.25 10.2554 25.8813 9.30161 25.2249 8.59835C24.5685 7.89509 23.6783 7.5 22.75 7.5H20.5625V5.15625C20.5625 4.28601 20.2398 3.45141 19.6655 2.83606C19.0912 2.2207 18.3122 1.875 17.5 1.875H10.5ZM17.9375 7.5V5.15625C17.9375 5.03193 17.8914 4.9127 17.8094 4.82479C17.7273 4.73689 17.616 4.6875 17.5 4.6875H10.5C10.384 4.6875 10.2727 4.73689 10.1906 4.82479C10.1086 4.9127 10.0625 5.03193 10.0625 5.15625V7.5H17.9375ZM5.25 10.3125H22.75C22.9821 10.3125 23.2046 10.4113 23.3687 10.5871C23.5328 10.7629 23.625 11.0014 23.625 11.25V13.125H4.375V11.25C4.375 11.0014 4.46719 10.7629 4.63128 10.5871C4.79538 10.4113 5.01794 10.3125 5.25 10.3125ZM4.375 15.9375V24.375C4.375 24.6236 4.46719 24.8621 4.63128 25.0379C4.79538 25.2137 5.01794 25.3125 5.25 25.3125H22.75C22.9821 25.3125 23.2046 25.2137 23.3687 25.0379C23.5328 24.8621 23.625 24.6236 23.625 24.375V15.9375H15.75V18.75H12.25V15.9375H4.375Z"
                                 fill="#00AAFF" />
                         </svg>
-                        <p>Work Categories</p>
+                        <p><x-language>populer.Work Categories</x-language></p>
                     </div>
                     <div class="text-category">
-                        <h2>Why Should</h2>
+                        <h2><x-language>populer.Why Should</x-language></h2>
                         <h2 style="color: #00AAFF; margin-left:5px;">CLOCKER?</h2>
                     </div>
                     <div class="text-category2">
-                        <p>At Clocker you can find many job vacancies with the working hours and skills you want</p>
+                        <p><x-language>populer.At Clocker you can find many job vacancies with the working hours and skills you want</x-language></p>
                     </div>
                 </div>
                 <button class="btn-try">
                     <p>
-                        Try Clocker Now
+                        <x-language>populer.Try Clocker Now</x-language>
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                             xmlns="http://www.w3.org/2000/svg">
                             <path
@@ -389,7 +387,7 @@
                 <div class="img-category">
                     <img loading="lazy" src="{{ asset('assets_landing/images/category1.jpg') }}" alt="freelance">
                 </div>
-                <h3>Freelance</h3>
+                <h3><x-language>populer.Freelance</x-language></h3>
             </div>
 
         </div>
@@ -399,19 +397,19 @@
                 <div class="img-category1">
                     <img loading="lazy" src="{{ asset('assets_landing/images/category3.jpg') }}" alt="fulltime">
                 </div>
-                <h3>Full Time</h3>
+                <h3><x-language>populer.Full Time</x-language></h3>
             </div>
             <div class="img-category-wrapper1">
                 <div class="img-category1">
                     <img loading="lazy" src="{{ asset('assets_landing/images/category4.jpg') }}" alt="part_time">
                 </div>
-                <h3>Part Time</h3>
+                <h3><x-language>populer.Part Time</x-language></h3>
             </div>
             <div class="img-category-wrapper1">
                 <div class="img-category1">
                     <img loading="lazy" src="{{ asset('assets_landing/images/category2.jpg') }}" alt="work_remotly">
                 </div>
-                <h3>Work Remotly</h3>
+                <h3><x-language>populer.Work Remotly</x-language></h3>
             </div>
         </div>
     </div>
@@ -421,8 +419,8 @@
     <div class="container">
         <div class="container-content">
             <div class="fitur-text">
-                <h4>Find Freelancer</h4>
-                <h2>Find Freelancer In Any Service</h2>
+                <h4><x-language>populer.Find Freelancer</x-language></h4>
+                <h2><x-language>populer.Find Freelancer In Any Service</x-language></h2>
             </div>
             <div class="content1">
                 <div class="svg-container3">

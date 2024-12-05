@@ -57,20 +57,14 @@ class LanguageController extends Controller
         if ($response instanceof \Illuminate\Http\Response) {
             $originalContent = $response->getContent();
             $injectedHtml = view('admin.language.detail-edit', compact('langKey'))->render();
-            $patterns = array_map(function($value) {
-                return preg_quote($value, '/');
-            }, array_values($langKey));
-            $regex = '/(' . implode('|', $patterns) . ')/';
-            $modifiedContent = preg_replace_callback($regex, function($matches) use ($langKey) {
-                $match = $matches[0];
-                $key = array_search($match, $langKey);
-                return "<span name=\"$key\" style=\"background-color: #1f1f1f7a;\" contenteditable=\"true\">$match</span>";
-            }, $originalContent);
-            $modifiedContent = str_replace('</body>', $injectedHtml . '</body>', $modifiedContent);
+        
+            $modifiedContent = str_replace('</body>', $injectedHtml . '</body>', $originalContent);
             $response->setContent($modifiedContent);
-
+        
             return $response;
         }
+        
+        
 
         return response()->view('errors.notfound', [], 404);
 
