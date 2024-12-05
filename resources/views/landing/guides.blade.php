@@ -1,11 +1,11 @@
 @extends('landing.layout.app')
 @section('content')
-<style>
-    .title1{
-        font-weight: bold;
-        margin-top:5px;
-    }
-</style>
+    <style>
+        .title1 {
+            font-weight: bold;
+            margin-top: 5px;
+        }
+    </style>
     <section class="py-5 homepage-search-block bg-landing bg-guides position-relative">
         <div class="container">
             <div class="row py-lg-5 justify-content-center d-flex align-items-center">
@@ -23,60 +23,63 @@
 
     <section class="py-5 mb-5 mt-5">
         <div class="container">
-                <div class="fitur-text">
-                    <h5 class="text-landing">
-                        <x-svg>{{ asset('assets/svg/landing/about/stats/logo-blue.svg') }}</x-svg>
-                        <span class="mr-1"></span>
-                        Learn How To Use Clocker With Us
-                    </h5>
-                    <h2>Guides For <span class="text-landing">You</span></h2>
+            <div class="svg-container4">
+                <x-svg>{{ asset('assets/svg/landing/guides.svg') }}</x-svg>
+            </div>
+            <div class="fitur-text">
+                <h5 class="text-landing">
+                    <x-svg>{{ asset('assets/svg/landing/about/stats/logo-blue.svg') }}</x-svg>
+                    <span class="mr-1"></span>
+                    Learn How To Use Clocker With Us
+                </h5>
+                <h2>Guides For <span class="text-landing">You</span></h2>
+            </div>
+            <div class="row-fitur1">
+                <div class="fitur-item">
+                    <div class="card-fitur-item3">
+                        <div class="main-fitur">
+                            <x-svg>{{ asset('assets/svg/landing/about/main-fitur/Self Development.svg') }}</x-svg>
+
+                            <h5>Self Development</h5>
+                            <p>By joining clocker you can develop yourself further in your work and hone your
+                                skills.</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="row-fitur1">
-                    <div class="fitur-item">
-                            <div class="card-fitur-item3">
-                                <div class="main-fitur">
-                                    <x-svg>{{ asset('assets/svg/landing/about/main-fitur/Self Development.svg') }}</x-svg>
+                <div class="fitur-item">
+                    <div class="card-fitur-item3">
+                        <div class="main-fitur">
+                            <x-svg>{{ asset('assets/svg/landing/about/main-fitur/Time Management.svg') }}</x-svg>
 
-                                    <h5>Self Development</h5>
-                                    <p>By joining clocker you can develop yourself further in your work and hone your
-                                        skills.</p>
-                                </div>
-                            </div>
+                            <h5>Time Management</h5>
+                            <p>in clocker you can manage your time more efficiently with various working hours from
+                                many vacancies</p>
+                        </div>
                     </div>
-                    <div class="fitur-item">
-                            <div class="card-fitur-item3">
-                                <div class="main-fitur">
-                                    <x-svg>{{ asset('assets/svg/landing/about/main-fitur/Time Management.svg') }}</x-svg>
+                </div>
+                <div class="fitur-item">
+                    <div class="card-fitur-item3">
+                        <div class="main-fitur">
+                            <x-svg>{{ asset('assets/svg/landing/about/main-fitur/Career Growth.svg') }}</x-svg>
 
-                                    <h5>Time Management</h5>
-                                    <p>in clocker you can manage your time more efficiently with various working hours from
-                                        many vacancies</p>
-                                </div>
-                            </div>
+                            <h5>Career Growth</h5>
+                            <p>At clocker you can grow your career more rapidly for your future</p>
+                        </div>
                     </div>
-                    <div class="fitur-item">
-                            <div class="card-fitur-item3">
-                                <div class="main-fitur">
-                                    <x-svg>{{ asset('assets/svg/landing/about/main-fitur/Career Growth.svg') }}</x-svg>
+                </div>
+                <div class="fitur-item">
+                    <div class="card-fitur-item3">
+                        <div class="main-fitur">
+                            <x-svg>{{ asset('assets/svg/landing/about/main-fitur/Global Networking.svg') }}</x-svg>
 
-                                    <h5>Career Growth</h5>
-                                    <p>At clocker you can grow your career more rapidly for your future</p>
-                                </div>
-                            </div>
-                    </div>
-                    <div class="fitur-item">
-                            <div class="card-fitur-item3">
-                                <div class="main-fitur">
-                                    <x-svg>{{ asset('assets/svg/landing/about/main-fitur/Global Networking.svg') }}</x-svg>
-
-                                    <h5>Global Networking</h5>
-                                    <p>Connect with clients and other professionals worldwide, opening doors to long-term
-                                        partnerships.</p>
-                                </div>
-                            </div>
+                            <h5>Global Networking</h5>
+                            <p>Connect with clients and other professionals worldwide, opening doors to long-term
+                                partnerships.</p>
+                        </div>
                     </div>
                 </div>
             </div>
+        </div>
         </div>
     </section>
 
@@ -110,8 +113,10 @@
                 </div>
                 <div class="col-lg-5 text-white">
                     <h2 class="font-weight-bold">This is why you need to use a clocker</h2>
-                    <p style="font-size: 20px; font-weight:300;">At Clocker you can find many job vacancies with the working hours and skills you want</p>
-                    <a href="#" class="btn btn-outline-landing1 text-center" style="font-size: 14px; font-weight: bold;">
+                    <p style="font-size: 20px; font-weight:300;">At Clocker you can find many job vacancies with the working
+                        hours and skills you want</p>
+                    <a href="#" class="btn btn-outline-landing1 text-center"
+                        style="font-size: 14px; font-weight: bold;">
                         Try Clocker Now
                         <x-svg>{{ asset('assets/svg/icons-24/icon-next.svg') }}</x-svg>
                     </a>
@@ -122,162 +127,179 @@
 
     <section class="py-4">
         <div class="container">
-                <div class="fitur-text">
-                    <h5 class="text-landing">
-                        <x-svg>{{ asset('assets/svg/landing/about/stats/logo-blue.svg') }}</x-svg>
-                        <span class="mr-1"></span>
-                        Learn How To Use Clocker With Us
-                    </h5>
-                    <h2>Guides For <span class="text-landing">You</span></h2>
+            <div class="fitur-text">
+                <h5 class="text-landing">
+                    <x-svg>{{ asset('assets/svg/landing/about/stats/logo-blue.svg') }}</x-svg>
+                    <span class="mr-1"></span>
+                    Learn How To Use Clocker With Us
+                </h5>
+                <h2>Guides For <span class="text-landing">You</span></h2>
+            </div>
+            <div class="row-fitur1">
+                <div class="fitur-item">
+
+                    <div class="card-fitur-item3">
+                        <div class="main-fitur">
+                            <x-svg>{{ asset('assets/svg/landing/about/main-fitur/Self Development.svg') }}</x-svg>
+
+                            <h5>Self Development</h5>
+                            <p>By joining clocker you can develop yourself further in your work and hone your
+                                skills.</p>
+                        </div>
+                    </div>
+
                 </div>
-                <div class="row-fitur1">
-                    <div class="fitur-item">
+                <div class="fitur-item">
 
-                            <div class="card-fitur-item3">
-                                <div class="main-fitur">
-                                    <x-svg>{{ asset('assets/svg/landing/about/main-fitur/Self Development.svg') }}</x-svg>
+                    <div class="card-fitur-item3">
+                        <div class="main-fitur">
+                            <x-svg>{{ asset('assets/svg/landing/about/main-fitur/Time Management.svg') }}</x-svg>
 
-                                    <h5>Self Development</h5>
-                                    <p>By joining clocker you can develop yourself further in your work and hone your
-                                        skills.</p>
-                                </div>
-                            </div>
-
+                            <h5>Time Management</h5>
+                            <p>in clocker you can manage your time more efficiently with various working hours from
+                                many vacancies</p>
+                        </div>
                     </div>
-                    <div class="fitur-item">
 
-                            <div class="card-fitur-item3">
-                                <div class="main-fitur">
-                                    <x-svg>{{ asset('assets/svg/landing/about/main-fitur/Time Management.svg') }}</x-svg>
+                </div>
+                <div class="fitur-item">
 
-                                    <h5>Time Management</h5>
-                                    <p>in clocker you can manage your time more efficiently with various working hours from
-                                        many vacancies</p>
-                                </div>
-                            </div>
+                    <div class="card-fitur-item3">
+                        <div class="main-fitur">
+                            <x-svg>{{ asset('assets/svg/landing/about/main-fitur/Career Growth.svg') }}</x-svg>
 
+                            <h5>Career Growth</h5>
+                            <p>At clocker you can grow your career more rapidly for your future</p>
+                        </div>
                     </div>
-                    <div class="fitur-item">
 
-                            <div class="card-fitur-item3">
-                                <div class="main-fitur">
-                                    <x-svg>{{ asset('assets/svg/landing/about/main-fitur/Career Growth.svg') }}</x-svg>
+                </div>
+                <div class="fitur-item">
 
-                                    <h5>Career Growth</h5>
-                                    <p>At clocker you can grow your career more rapidly for your future</p>
-                                </div>
-                            </div>
+                    <div class="card-fitur-item3">
+                        <div class="main-fitur">
+                            <x-svg>{{ asset('assets/svg/landing/about/main-fitur/Global Networking.svg') }}</x-svg>
 
+                            <h5>Global Networking</h5>
+                            <p>Connect with clients and other professionals worldwide, opening doors to long-term
+                                partnerships.</p>
+                        </div>
                     </div>
-                    <div class="fitur-item">
 
-                            <div class="card-fitur-item3">
-                                <div class="main-fitur">
-                                    <x-svg>{{ asset('assets/svg/landing/about/main-fitur/Global Networking.svg') }}</x-svg>
+                </div>
+                <div class="fitur-item">
 
-                                    <h5>Global Networking</h5>
-                                    <p>Connect with clients and other professionals worldwide, opening doors to long-term
-                                        partnerships.</p>
-                                </div>
-                            </div>
+                    <div class="card-fitur-item3">
+                        <div class="main-fitur">
+                            <x-svg>{{ asset('assets/svg/landing/about/main-fitur/Self Development.svg') }}</x-svg>
 
+                            <h5>Self Development</h5>
+                            <p>By joining clocker you can develop yourself further in your work and hone your
+                                skills.</p>
+                        </div>
                     </div>
-                    <div class="fitur-item">
 
-                            <div class="card-fitur-item3">
-                                <div class="main-fitur">
-                                    <x-svg>{{ asset('assets/svg/landing/about/main-fitur/Self Development.svg') }}</x-svg>
+                </div>
+                <div class="fitur-item">
 
-                                    <h5>Self Development</h5>
-                                    <p>By joining clocker you can develop yourself further in your work and hone your
-                                        skills.</p>
-                                </div>
-                            </div>
+                    <div class="card-fitur-item3">
+                        <div class="main-fitur">
+                            <x-svg>{{ asset('assets/svg/landing/about/main-fitur/Time Management.svg') }}</x-svg>
 
+                            <h5>Time Management</h5>
+                            <p>in clocker you can manage your time more efficiently with various working hours from
+                                many vacancies</p>
+                        </div>
                     </div>
-                    <div class="fitur-item">
 
-                            <div class="card-fitur-item3">
-                                <div class="main-fitur">
-                                    <x-svg>{{ asset('assets/svg/landing/about/main-fitur/Time Management.svg') }}</x-svg>
+                </div>
+                <div class="fitur-item">
+                    <div class="card-fitur-item3">
+                        <div class="main-fitur">
+                            <x-svg>{{ asset('assets/svg/landing/about/main-fitur/Career Growth.svg') }}</x-svg>
 
-                                    <h5>Time Management</h5>
-                                    <p>in clocker you can manage your time more efficiently with various working hours from
-                                        many vacancies</p>
-                                </div>
-                            </div>
-
+                            <h5>Career Growth</h5>
+                            <p>At clocker you can grow your career more rapidly for your future</p>
+                        </div>
                     </div>
-                    <div class="fitur-item">
-                            <div class="card-fitur-item3">
-                                <div class="main-fitur">
-                                    <x-svg>{{ asset('assets/svg/landing/about/main-fitur/Career Growth.svg') }}</x-svg>
+                </div>
+                <div class="fitur-item">
+                    <div class="card-fitur-item3">
+                        <div class="main-fitur">
+                            <x-svg>{{ asset('assets/svg/landing/about/main-fitur/Global Networking.svg') }}</x-svg>
 
-                                    <h5>Career Growth</h5>
-                                    <p>At clocker you can grow your career more rapidly for your future</p>
-                                </div>
-                            </div>
+                            <h5>Global Networking</h5>
+                            <p>Connect with clients and other professionals worldwide, opening doors to long-term
+                                partnerships.</p>
+                        </div>
                     </div>
-                    <div class="fitur-item">
-                            <div class="card-fitur-item3">
-                                <div class="main-fitur">
-                                    <x-svg>{{ asset('assets/svg/landing/about/main-fitur/Global Networking.svg') }}</x-svg>
+                </div>
+                <div class="fitur-item">
+                    <div class="card-fitur-item3">
+                        <div class="main-fitur">
+                            <x-svg>{{ asset('assets/svg/landing/about/main-fitur/Self Development.svg') }}</x-svg>
 
-                                    <h5>Global Networking</h5>
-                                    <p>Connect with clients and other professionals worldwide, opening doors to long-term
-                                        partnerships.</p>
-                                </div>
-                            </div>
+                            <h5>Self Development</h5>
+                            <p>By joining clocker you can develop yourself further in your work and hone your
+                                skills.</p>
+                        </div>
                     </div>
-                    <div class="fitur-item">
-                            <div class="card-fitur-item3">
-                                <div class="main-fitur">
-                                    <x-svg>{{ asset('assets/svg/landing/about/main-fitur/Self Development.svg') }}</x-svg>
+                </div>
+                <div class="fitur-item">
+                    <div class="card-fitur-item3">
+                        <div class="main-fitur">
+                            <x-svg>{{ asset('assets/svg/landing/about/main-fitur/Time Management.svg') }}</x-svg>
 
-                                    <h5>Self Development</h5>
-                                    <p>By joining clocker you can develop yourself further in your work and hone your
-                                        skills.</p>
-                                </div>
-                            </div>
+                            <h5>Time Management</h5>
+                            <p>in clocker you can manage your time more efficiently with various working hours from
+                                many vacancies</p>
+                        </div>
                     </div>
-                    <div class="fitur-item">
-                            <div class="card-fitur-item3">
-                                <div class="main-fitur">
-                                    <x-svg>{{ asset('assets/svg/landing/about/main-fitur/Time Management.svg') }}</x-svg>
+                </div>
+                <div class="fitur-item">
+                    <div class="card-fitur-item3">
+                        <div class="main-fitur">
+                            <x-svg>{{ asset('assets/svg/landing/about/main-fitur/Career Growth.svg') }}</x-svg>
 
-                                    <h5>Time Management</h5>
-                                    <p>in clocker you can manage your time more efficiently with various working hours from
-                                        many vacancies</p>
-                                </div>
-                            </div>
+                            <h5>Career Growth</h5>
+                            <p>At clocker you can grow your career more rapidly for your future</p>
+                        </div>
                     </div>
-                    <div class="fitur-item">
-                            <div class="card-fitur-item3">
-                                <div class="main-fitur">
-                                    <x-svg>{{ asset('assets/svg/landing/about/main-fitur/Career Growth.svg') }}</x-svg>
+                </div>
+                <div class="fitur-item">
+                    <div class="card-fitur-item3 ">
+                        <div class="main-fitur">
+                            <x-svg>{{ asset('assets/svg/landing/about/main-fitur/Global Networking.svg') }}</x-svg>
 
-                                    <h5>Career Growth</h5>
-                                    <p>At clocker you can grow your career more rapidly for your future</p>
-                                </div>
-                            </div>
+                            <h5>Global Networking</h5>
+                            <p>Connect with clients and other professionals worldwide, opening doors to long-term
+                                partnerships.</p>
+                        </div>
                     </div>
-                    <div class="fitur-item">
-                            <div class="card-fitur-item3 ">
-                                <div class="main-fitur">
-                                    <x-svg>{{ asset('assets/svg/landing/about/main-fitur/Global Networking.svg') }}</x-svg>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
 
-                                    <h5>Global Networking</h5>
-                                    <p>Connect with clients and other professionals worldwide, opening doors to long-term
-                                        partnerships.</p>
-                                </div>
-                            </div>
+    <section class="bg-landing11" style="margin-top: 190px; height: 444px;">
+        <div class="container">
+            <div class="row py-lg-5 justify-content-between align-items-center">
+                <div class="col-lg-5 text-white" style="margin-top: -180px;">
+                    <h2 class="font-weight-bold">This is why you need to use a clocker</h2>
+                    <p style="font-size: 20px; font-weight:300;">
+                        At Clocker you can find many job vacancies with the working hours and skills you want
+                    </p>
+                </div>
+
+                <div class="col-lg-6 d-flex justify-content-center">
+                    <div class="card-about-grid" style="z-index: 1; margin-top: -194px;">
+                        <img src="{{ asset('assets_landing/images/guides.png') }}" alt="" width="615" height="590">
                     </div>
                 </div>
             </div>
         </div>
     </section>
-
-
 
     @include('landing.footer')
 @endsection

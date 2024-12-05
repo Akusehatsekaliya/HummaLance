@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-light topbar static-top bg-landing osahan-nav-top px-0">
+<nav class="navbar navbar-expand-lg navbar-light topbar static-top bg-landing osahan-nav-top px-0" style="position: sticky; top: 0; z-index: 1030;">
   <div class="container">
     <!-- Sidebar Toggle (Topbar) -->
     <a class="navbar-brand" href="#"><img src="{{ asset('assets_landing/images/Asset 14.png') }}" alt=""></a>
@@ -14,8 +14,8 @@
         <li @class(['nav-item', 'active' => request()->routeIs('landing.guides')])>
           <a class="nav-landing" href="{{ route('landing.guides') }}">Guides</a>
         </li>
-        <li @class(['nav-item', 'active' => false])>
-          <a class="nav-landing" href="#">learn</a>
+        <li @class(['nav-item', 'active' => request()->routeIs('landing.learn')])>
+          <a class="nav-landing" href="{{ route('landing.learn') }}">learn</a>
         </li>
         <li @class(['nav-item', 'active' => false])>
           <a class="nav-landing" href="#">Podcast</a>

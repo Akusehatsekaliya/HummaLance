@@ -748,6 +748,20 @@
     height: auto;
 }
 
+.svg-container4 {
+    position: absolute;
+    top: 137rem;
+    right: 0;
+    width: auto;
+    z-index: -3;
+    overflow: hidden;
+}
+
+.svg-container4 svg {
+    width: 1520px;
+    height: auto;
+}
+
 .description {
     margin-top: -30px;
     margin-left: -10px;
@@ -823,18 +837,15 @@
 .svg1{
     justify-content: center;
 }
-
 .text-blue1{
     color: #00AAFF;
 }
-
 
 .container-content {
     margin-top: 100px;
     margin-bottom: 30px;
 
 }
-
 .content1 {
     padding: 20px;
     display: flex;
@@ -843,8 +854,6 @@
     justify-content: left;
     padding-inline: 5.9%;
 }
-
-
 .item {
     padding: 10px;
     margin-bottom: 26px;
@@ -1199,3 +1208,28 @@
         margin-top: 10px;
     }
 }
+
+
+.bg-learn{
+    background: url(../images/bgLearn.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position-x: center;
+}
+
+
+
+.svg-container4 {
+    position: absolute;
+    top: 137rem;
+    right: 0;
+    width: auto;
+    z-index: -3;
+    overflow: hidden;
+}
+
+.svg-container4 svg {
+    width: 1520px;
+    height: auto;
+}
+

@@ -35,4 +35,8 @@ Route::prefix("landing")->name("landing.")->group(function () {
   Route::get('guides', function () {
     return view('landing.guides');
   })->name('guides');
+
+  Route::get('learn', function () {
+    return view('landing.learn');
+  })->name('learn');
 });
