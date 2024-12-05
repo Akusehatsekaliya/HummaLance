@@ -25,14 +25,27 @@
 </div>
 
 <script>
-    // const langKey = @json($langKey);
+    let searchTimeout;
 
-    // // Combine all langKey values into one regex to replace all at once
-    // const regex = new RegExp(Object.values(langKey).join('|'), 'g');
+    $('.language-edit').on('input', function() {
+        clearTimeout(searchTimeout);
 
-    // document.body.innerHTML = document.body.innerHTML.replace(regex, (match) => {
-    //     // Find the key associated with the matched text
-    //     const key = Object.keys(langKey).find(k => langKey[k] === match);
-    //     return `<span name="${key}" style="background-color: #1f1f1f;" contenteditable="true">${match}</span>`;
-    // });
+        searchTimeout = setTimeout(() => {
+            const languageKey = $(this).attr("name");
+            const languageValue = $(this).text();
+            $.ajax({
+                type: "PUT",
+                url: "{{ route('admin.language.detail.update', $id) }}",
+                data: {
+                    file: "{{ Request::query('file') }}",
+                    key: languageKey,
+                    value: languageValue
+                },
+                success: function(response) {
+
+                }
+            });
+
+        }, 750);
+    });
 </script>
