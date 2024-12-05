@@ -9,20 +9,18 @@
             </div>
             <div class="col-lg-5">
                 <div class="text-category1">
-                    <h3 class="font-weight-bold" style="margin-top: -60px; margin-left: -55px;">
-                        Search for Jobs on <span class="text-blue1">CLOCKER</span> and Manage Your Job
-                    </h3>
+                    <h3 class="font-weight-bold" style="margin-top: -60px; margin-left: -55px;"><x-language>manage.header</x-language></h3>
                     <x-svg class="vector-icon">{{ asset('assets/svg/landing/banner/Vector (2).svg') }}</x-svg>
-                    <p class="description">Look for a job that suits you and matches your passion</p>
+                    <p class="description"><x-language>manage.description1</x-language></p>
 
                     <x-svg class="vector-icon">{{ asset('assets/svg/landing/banner/Vector (2).svg') }}</x-svg>
-                    <p class="description">Look for a job with the working hours you want</p>
+                    <p class="description"><x-language>manage.description2</x-language></p>
 
                     <x-svg class="vector-icon">{{ asset('assets/svg/landing/banner/Vector (2).svg') }}</x-svg>
-                    <p class="description">Increase your professionalism by working as a freelancer with many connections</p>
+                    <p class="description"><x-language>manage.description3</x-language></p>
 
                     <x-svg class="vector-icon">{{ asset('assets/svg/landing/banner/Vector (2).svg') }}</x-svg>
-                    <p class="description">Manage your work more regularly and efficiently</p>
+                    <p class="description"><x-language>manage.description4</x-language></p>
                 </div>
             </div>
         </div>

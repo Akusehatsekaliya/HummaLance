@@ -17,8 +17,8 @@
                     </h6>
                 </div>
                 <div class="homepage-search-title">
-                    <h2 class="mb-3 text-shadow text-white font-weight-bold">{!! __("landing/index.banner.headline") !!}</h2>
-                    <h6 class="mb-5 text-shadow text-white font-weight-normal">{!! __("landing/index.banner.description") !!}</h6>
+                    <h2 class="mb-3 text-shadow text-white font-weight-bold"><x-language>banner.headline</x-language></h2>
+                    <h6 class="mb-5 text-shadow text-white font-weight-normal"><x-language>banner.description</x-language></h6>
                 </div>
                 <div class="homepage-search-form">
                     <div class="form-row" style="margin-left: -24px">
@@ -27,13 +27,13 @@
                                 <a href="#" class="btn btn-outline-login1 text-center"
                                     style="font-size: 1rem; font-weight: bold;">
                                     
-                                    {!! __("landing/index.banner.get_started") !!}
+                                    <x-language>banner.get_started</x-language>
                                     <x-svg>{{ asset('assets/svg/landing/banner/getStarted.svg') }}</x-svg>
                                 </a>
 
                                 <a href="#" class="btn btn-outline-landing1 text-center ml-3"
                                     style="font-size: 1rem; font-weight: bold;">
-                                    {!! __("landing/index.banner.learn_more") !!}
+                                    <x-language>banner.learn_more</x-language>
                                 </a>
                             </li>
                         </ul>

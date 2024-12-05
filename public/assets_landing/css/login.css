@@ -296,6 +296,7 @@
 
 .toggle-panel .login1 {
     width: 300px;
+    height: 300px;
     bottom: -56px;
     left: -140px;
     z-index: -2;
@@ -305,6 +306,7 @@
 
 .toggle-panel .login2 {
     width: 200px;
+    height: 200px;
     bottom: -44px;
     right: -40px;
     z-index: -2;
@@ -314,6 +316,7 @@
 
 .toggle-panel .login3 {
     width: 300px;
+    height: 300px;
     bottom: -80px;
     left: -425px;
     z-index: -3; /* Gambar berada di bawah form-box */
@@ -323,6 +326,7 @@
 
 .toggle-panel .login4 {
     width: 200px;
+    height: 200px;
     bottom: -70px;
     left: 50px;
     z-index: -3; /* Gambar berada di bawah form-box */
