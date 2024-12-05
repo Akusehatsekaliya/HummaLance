@@ -25,7 +25,8 @@ return Application::configure(basePath: dirname(__DIR__))
             LanguageEditMiddleware::class
         ]);
         $middleware->validateCsrfTokens(except: [
-            'tripay/*'
+            'tripay/*',
+            'admin/language/detail/*/update',
         ]);
         $middleware->alias([
             'auth' => \App\Http\Middleware\DynamicRedirectAuth::class,

@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Language;
 use App\Services\FileService;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Lang;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\View;
@@ -56,7 +57,7 @@ class LanguageController extends Controller
 
         if ($response instanceof \Illuminate\Http\Response) {
             $originalContent = $response->getContent();
-            $injectedHtml = view('admin.language.detail-edit', compact('langKey'))->render();
+            $injectedHtml = view('admin.language.detail-edit', compact('langKey', 'id'))->render();
         
             $modifiedContent = str_replace('</body>', $injectedHtml . '</body>', $originalContent);
             $response->setContent($modifiedContent);
@@ -64,29 +65,14 @@ class LanguageController extends Controller
             return $response;
         }
         
-        
-
         return response()->view('errors.notfound', [], 404);
-
-
-
-
-        $preview = route($request->query("preview") ?? "landing.index");
-
-        return view("admin.language.detail-edit", compact("language", "file", "langKey", "preview"));
     }
 
-    // public function detailEdit(Request $request, $id)
-    // {
-    //     $language = Language::findOrFail($id);
-
-    //     $file = $request->query('file');
-    //     $fileKey = pathinfo($file, PATHINFO_FILENAME);
-
-    //     $langKey = Lang::get($fileKey);
-
-    //     return view("admin.language.detail-edit", compact("language", "file", "langKey"));
-    // }
+    public function detailUpdate(Request $request, $id)
+    {
+        $language = Language::findOrFail($id);
+        $this->fileservice->updateFileContent($request->file, $request->key, $request->value);
+    }
 
 
 

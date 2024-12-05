@@ -1,7 +1,7 @@
 <?php
 
 return [
-    "banner.headline" => "The best <br> Platform to turn your free time into work and to pursue your dream job",
+    'banner.headline' => 'The best <br> Platform to turn your free time into work and to pursue your dream job',
     "banner.description" => "Millions of people use clockers to make their dream jobs come true. Expand your connections and make your dream job come true with clockers.",
     "banner.get_started" => "Get Started",
     "banner.learn_more" => "Learn More",
@@ -34,5 +34,5 @@ return [
     'work.description1' => 'with the many companies registered on clocker, <br> there are also many job vacancies available.',
     'work.description2' => 'It will be easier for companies to find professional <br> clocker workers.',
     'work.description3' => 'Companies can also buy the services of freelancers <br> or recruit them',
-    "work.hero.title" => "Try clocker pro to increase sales of your services, <br> and expand your connections as a freelancer",
+    'work.hero.title' => 'Try clocker pro to increase sales of your services, <br> and expand your connections as a freelancer',
 ];

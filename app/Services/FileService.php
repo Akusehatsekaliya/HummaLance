@@ -111,4 +111,26 @@ class FileService
     }
     return $this->disk->delete($file);
   }
+
+  function updateFileContent($filePath, $key, $newValue)
+{
+    if (!$this->disk->exists($filePath)) {
+        return "File $filePath tidak ditemukan.";
+    }
+
+    $fileContent = $this->disk->get($filePath);
+    
+    $pattern = '/[\'"]' . $key . '[\'"]\s*=>\s*[\'"].*?[\'"],/';
+
+    $replacement = "'$key' => '$newValue',";
+    $updatedContent = preg_replace($pattern, $replacement, $fileContent);
+
+    if ($updatedContent === null) {
+        return "Gagal memperbarui key '$key'.";
+    }
+
+    $this->disk->put($filePath, $updatedContent);
+
+    return "Key '$key' berhasil diperbarui menjadi '$newValue'.";
+}
 }

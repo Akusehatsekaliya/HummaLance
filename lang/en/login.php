@@ -1,7 +1,5 @@
 <?php
 
-// lang/en/messages.php
-
 return [
   "join_as_a_freelancer" => "Join as a freelancer",
   "join_as_a_company" => "Join as a company",

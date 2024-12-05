@@ -40,4 +40,5 @@ Route::prefix("admin")->name("admin.")->group(function () {
     Route::resource('language', LanguageController::class)->except(['show', 'edit', 'create']);
     Route::get('language/detail/{id}', [LanguageController::class, 'detail'])->name("language.detail");
     Route::get('language/detail/{id}/edit', [LanguageController::class, 'detailEdit'])->name("language.detail.edit");
+    Route::put('language/detail/{id}/update', [LanguageController::class, 'detailUpdate'])->name("language.detail.update");
 });
