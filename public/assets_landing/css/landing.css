@@ -1233,3 +1233,11 @@
     height: auto;
 }
 
+.buy-course-btn {
+    margin-right: 18px;
+    margin-top: -31px;
+    padding: 6px 15px;
+    font-size: 12px;
+    font-weight: bold;
+    border-radius: 5px;
+}

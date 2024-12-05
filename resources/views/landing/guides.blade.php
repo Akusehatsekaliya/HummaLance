@@ -137,7 +137,6 @@
             </div>
             <div class="row-fitur1">
                 <div class="fitur-item">
-
                     <div class="card-fitur-item3">
                         <div class="main-fitur">
                             <x-svg>{{ asset('assets/svg/landing/about/main-fitur/Self Development.svg') }}</x-svg>
@@ -147,10 +146,8 @@
                                 skills.</p>
                         </div>
                     </div>
-
                 </div>
                 <div class="fitur-item">
-
                     <div class="card-fitur-item3">
                         <div class="main-fitur">
                             <x-svg>{{ asset('assets/svg/landing/about/main-fitur/Time Management.svg') }}</x-svg>
@@ -160,10 +157,8 @@
                                 many vacancies</p>
                         </div>
                     </div>
-
                 </div>
                 <div class="fitur-item">
-
                     <div class="card-fitur-item3">
                         <div class="main-fitur">
                             <x-svg>{{ asset('assets/svg/landing/about/main-fitur/Career Growth.svg') }}</x-svg>
@@ -172,10 +167,8 @@
                             <p>At clocker you can grow your career more rapidly for your future</p>
                         </div>
                     </div>
-
                 </div>
                 <div class="fitur-item">
-
                     <div class="card-fitur-item3">
                         <div class="main-fitur">
                             <x-svg>{{ asset('assets/svg/landing/about/main-fitur/Global Networking.svg') }}</x-svg>
@@ -185,10 +178,8 @@
                                 partnerships.</p>
                         </div>
                     </div>
-
                 </div>
                 <div class="fitur-item">
-
                     <div class="card-fitur-item3">
                         <div class="main-fitur">
                             <x-svg>{{ asset('assets/svg/landing/about/main-fitur/Self Development.svg') }}</x-svg>
@@ -198,10 +189,8 @@
                                 skills.</p>
                         </div>
                     </div>
-
                 </div>
                 <div class="fitur-item">
-
                     <div class="card-fitur-item3">
                         <div class="main-fitur">
                             <x-svg>{{ asset('assets/svg/landing/about/main-fitur/Time Management.svg') }}</x-svg>
@@ -211,7 +200,6 @@
                                 many vacancies</p>
                         </div>
                     </div>
-
                 </div>
                 <div class="fitur-item">
                     <div class="card-fitur-item3">
@@ -285,21 +273,25 @@
     <section class="bg-landing11" style="margin-top: 190px; height: 444px;">
         <div class="container">
             <div class="row py-lg-5 justify-content-between align-items-center">
-                <div class="col-lg-5 text-white" style="margin-top: -180px;">
-                    <h2 class="font-weight-bold">This is why you need to use a clocker</h2>
-                    <p style="font-size: 20px; font-weight:300;">
-                        At Clocker you can find many job vacancies with the working hours and skills you want
-                    </p>
+                <!-- Kolom untuk teks -->
+                <div class="col-lg-5 text-white">
+                    <div style="margin-top: 0px; height: auto;"> <!-- Bungkus teks agar gambar terpisah -->
+                        <h2 class="font-weight-bold" style="margin-bottom: 20px;">This is why you need to use a clocker</h2>
+                        <p style="font-size: 20px; font-weight: 300;">
+                            At Clocker you can find many job vacancies with the working hours and skills you want
+                        </p>
+                    </div>
                 </div>
 
+                <!-- Kolom untuk gambar -->
                 <div class="col-lg-6 d-flex justify-content-center">
-                    <div class="card-about-grid" style="z-index: 1; margin-top: -194px;">
-                        <img src="{{ asset('assets_landing/images/guides.png') }}" alt="" width="615" height="590">
+                    <div class="card-about-grid" style="z-index: 1; margin-top: -281px;">
+                        <img src="{{ asset('assets_landing/images/guides.png') }}" alt="" width="615" height="590" style="margin-top: 0px;">
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    @include('landing.footer')
+@include('landing.footer')
 @endsection

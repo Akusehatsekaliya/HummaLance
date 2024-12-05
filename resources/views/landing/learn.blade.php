@@ -123,8 +123,7 @@
                             <div style="display: flex; justify-content: space-between; align-items: flex-start;">
                                 <p style="text-align: left; padding-left: 10px; font-weight: bold; margin-top: -16px;">10
                                     year in freelancing</p>
-                                <button class="btn btn-success2" type="submit"
-                                    style="margin-right: 18px; margin-top: -31px; padding: 6px 15px; font-size: 12px; font-weight: bold;">
+                                <button class="btn btn-success2 buy-course-btn" type="submit">
                                     Buy Course
                                 </button>
                             </div>
@@ -163,8 +162,7 @@
                             <div style="display: flex; justify-content: space-between; align-items: flex-start;">
                                 <p style="text-align: left; padding-left: 10px; font-weight: bold; margin-top: -16px;">10
                                     year in freelancing</p>
-                                <button class="btn btn-success2" type="submit"
-                                    style="margin-right: 18px; margin-top: -31px; padding: 6px 15px; font-size: 12px; font-weight: bold;">
+                                <button class="btn btn-success2 buy-course-btn" type="submit">
                                     Buy Course
                                 </button>
                             </div>
@@ -203,8 +201,7 @@
                             <div style="display: flex; justify-content: space-between; align-items: flex-start;">
                                 <p style="text-align: left; padding-left: 10px; font-weight: bold; margin-top: -16px;">10
                                     year in freelancing</p>
-                                <button class="btn btn-success2" type="submit"
-                                    style="margin-right: 18px; margin-top: -31px; padding: 6px 15px; font-size: 12px; font-weight: bold;">
+                                <button class="btn btn-success2 buy-course-btn" type="submit">
                                     Buy Course
                                 </button>
                             </div>
@@ -243,8 +240,7 @@
                             <div style="display: flex; justify-content: space-between; align-items: flex-start;">
                                 <p style="text-align: left; padding-left: 10px; font-weight: bold; margin-top: -16px;">10
                                     year in freelancing</p>
-                                <button class="btn btn-success2" type="submit"
-                                    style="margin-right: 18px; margin-top: -31px; padding: 6px 15px; font-size: 12px; font-weight: bold;">
+                                <button class="btn btn-success2 buy-course-btn" type="submit">
                                     Buy Course
                                 </button>
                             </div>
@@ -283,8 +279,7 @@
                             <div style="display: flex; justify-content: space-between; align-items: flex-start;">
                                 <p style="text-align: left; padding-left: 10px; font-weight: bold; margin-top: -16px;">10
                                     year in freelancing</p>
-                                <button class="btn btn-success2" type="submit"
-                                    style="margin-right: 18px; margin-top: -31px; padding: 6px 15px; font-size: 12px; font-weight: bold;">
+                                <button class="btn btn-success2 buy-course-btn" type="submit">
                                     Buy Course
                                 </button>
                             </div>
@@ -323,8 +318,7 @@
                             <div style="display: flex; justify-content: space-between; align-items: flex-start;">
                                 <p style="text-align: left; padding-left: 10px; font-weight: bold; margin-top: -16px;">10
                                     year in freelancing</p>
-                                <button class="btn btn-success2" type="submit"
-                                    style="margin-right: 18px; margin-top: -31px; padding: 6px 15px; font-size: 12px; font-weight: bold;">
+                                <button class="btn btn-success2 buy-course-btn" type="submit">
                                     Buy Course
                                 </button>
                             </div>
@@ -363,8 +357,7 @@
                             <div style="display: flex; justify-content: space-between; align-items: flex-start;">
                                 <p style="text-align: left; padding-left: 10px; font-weight: bold; margin-top: -16px;">10
                                     year in freelancing</p>
-                                <button class="btn btn-success2" type="submit"
-                                    style="margin-right: 18px; margin-top: -31px; padding: 6px 15px; font-size: 12px; font-weight: bold;">
+                                <button class="btn btn-success2 buy-course-btn" type="submit">
                                     Buy Course
                                 </button>
                             </div>
@@ -403,8 +396,7 @@
                             <div style="display: flex; justify-content: space-between; align-items: flex-start;">
                                 <p style="text-align: left; padding-left: 10px; font-weight: bold; margin-top: -16px;">10
                                     year in freelancing</p>
-                                <button class="btn btn-success2" type="submit"
-                                    style="margin-right: 18px; margin-top: -31px; padding: 6px 15px; font-size: 12px; font-weight: bold;">
+                                <button class="btn btn-success2 buy-course-btn" type="submit">
                                     Buy Course
                                 </button>
                             </div>
@@ -443,8 +435,7 @@
                             <div style="display: flex; justify-content: space-between; align-items: flex-start;">
                                 <p style="text-align: left; padding-left: 10px; font-weight: bold; margin-top: -16px;">10
                                     year in freelancing</p>
-                                <button class="btn btn-success2" type="submit"
-                                    style="margin-right: 18px; margin-top: -31px; padding: 6px 15px; font-size: 12px; font-weight: bold;">
+                                <button class="btn btn-success2 buy-course-btn" type="submit">
                                     Buy Course
                                 </button>
                             </div>
@@ -483,8 +474,7 @@
                             <div style="display: flex; justify-content: space-between; align-items: flex-start;">
                                 <p style="text-align: left; padding-left: 10px; font-weight: bold; margin-top: -16px;">10
                                     year in freelancing</p>
-                                <button class="btn btn-success2" type="submit"
-                                    style="margin-right: 18px; margin-top: -31px; padding: 6px 15px; font-size: 12px; font-weight: bold;">
+                                <button class="btn btn-success2 buy-course-btn" type="submit">
                                     Buy Course
                                 </button>
                             </div>
@@ -523,8 +513,7 @@
                             <div style="display: flex; justify-content: space-between; align-items: flex-start;">
                                 <p style="text-align: left; padding-left: 10px; font-weight: bold; margin-top: -16px;">10
                                     year in freelancing</p>
-                                <button class="btn btn-success2" type="submit"
-                                    style="margin-right: 18px; margin-top: -31px; padding: 6px 15px; font-size: 12px; font-weight: bold;">
+                                <button class="btn btn-success2 buy-course-btn" type="submit">
                                     Buy Course
                                 </button>
                             </div>
@@ -563,8 +552,7 @@
                             <div style="display: flex; justify-content: space-between; align-items: flex-start;">
                                 <p style="text-align: left; padding-left: 10px; font-weight: bold; margin-top: -16px;">10
                                     year in freelancing</p>
-                                <button class="btn btn-success2" type="submit"
-                                    style="margin-right: 18px; margin-top: -31px; padding: 6px 15px; font-size: 12px; font-weight: bold;">
+                                <button class="btn btn-success2 buy-course-btn" type="submit">
                                     Buy Course
                                 </button>
                             </div>
@@ -575,5 +563,5 @@
         </div>
     </section>
 
-@include('landing.footer')
+    @include('landing.footer')
 @endsection
