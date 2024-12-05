@@ -64,7 +64,7 @@ class LanguageController extends Controller
             $modifiedContent = preg_replace_callback($regex, function($matches) use ($langKey) {
                 $match = $matches[0];
                 $key = array_search($match, $langKey);
-                return "<span name=\"$key\" style=\"background-color: #1f1f1f;\" contenteditable=\"true\">$match</span>";
+                return "<span name=\"$key\" style=\"background-color: #1f1f1f7a;\" contenteditable=\"true\">$match</span>";
             }, $originalContent);
             $modifiedContent = str_replace('</body>', $injectedHtml . '</body>', $modifiedContent);
             $response->setContent($modifiedContent);
