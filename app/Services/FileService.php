@@ -120,7 +120,7 @@ class FileService
 
     $fileContent = $this->disk->get($filePath);
     
-    $pattern = '/[\'"]' . $key . '[\'"]\s*=>\s*[\'"].*?[\'"],/';
+    $pattern = '/[\'"]' . $key . '[\'"]\s*=>\s*["\'](?:[^"\']*?\n)*[^"\']*["\']/';
 
     $replacement = "'$key' => '$newValue',";
     $updatedContent = preg_replace($pattern, $replacement, $fileContent);

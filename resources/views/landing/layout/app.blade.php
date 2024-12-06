@@ -1,6 +1,6 @@
 @include('landing.layout.auth')
 <!DOCTYPE html>
-<html lang="id">
+<html lang="{{ App::getLocale() }}">
 
   <head>
     <meta charset="utf-8">

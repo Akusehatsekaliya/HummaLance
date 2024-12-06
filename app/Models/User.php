@@ -6,6 +6,7 @@ namespace App\Models;
 
 use App\Constract\Enums\UserRoleEnum;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Spatie\Permission\Traits\HasRoles;
@@ -64,6 +65,22 @@ class User extends Authenticatable
         ];
     }
 
+    protected static function boot()
+    {
+        parent::boot();
+
+        static::created(function (Model $model) {
+            UserSetting::create([
+                "user_id" => $model->id,
+                "languages_id" => 1
+            ]);
+        });
+
+        static::deleted(function (Model $model) {
+            UserSetting::where("users_id", $model->id)->delete();
+        });
+    }
+
     /**
      * Get user role instance
      *
@@ -90,6 +107,10 @@ class User extends Authenticatable
         return Str::isUrl($avatar) ? $avatar : asset("storage/{$avatar}");
     }
 
+    public function setting()
+    {
+        return $this->hasOne(UserSetting::class);
+    }
     public function Contracts()
     {
         return $this->hasMany(Contract::class);

@@ -9,11 +9,11 @@
 <section class="py-5 homepage-search-block bg-landing position-relative" style="padding-bottom: unset !important; overflow-y: hidden;">
     <div class="container my-5" style="margin-top: unset !important;">
         <div class="row justify-content-center d-flex align-items-center">
-            <div class="col-lg-7">
+            <div class="col-lg-7" style="border: 1px solid;">
                 <div class="row" style="margin-right: 12rem; margin-left: unset">
                     <x-svg>{{ asset('assets/svg/landing/banner/Start Work Today.svg') }}</x-svg>
                     <h6 class="custom-title mb-4 text-shadow text-white font-weight-normal">
-                        Start Work Today
+                        <x-language>banner.Start Work Today</x-language>
                     </h6>
                 </div>
                 <div class="homepage-search-title">
