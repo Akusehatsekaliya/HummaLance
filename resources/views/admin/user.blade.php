@@ -546,18 +546,17 @@
                                 <!-- Filter Section -->
                                 <div class="d-flex justify-content-end mb-2">
                                     <!-- Search Input -->
-                                    <div class="position-relative d-flex align-items-center">
+                                    <div class="position-relative d-flex align-items-center search-bar1">
                                         <i class="fa fa-search position-absolute left-1 top-1/2 transform -translate-y-1/2 text-gray-400"
                                             style="left: 7%;"></i>
                                         <input type="text" id="searchInput" placeholder="search transaction..."
-                                            class="w-full border border-gray-300 rounded-lg ps-5 pe-4 py-2 pl-10 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                                            style=" border-radius: 4px; width:210px;">
+                                            {{-- class="w-full border border-gray-300 rounded-lg ps-5 pe-4 py-2 pl-10 focus:outline-none focus:ring-2 focus:ring-blue-500" --}}
+                                            style="border-radius: 4px;margin-left: 18px;padding-right: 1px;">
                                     </div>
                                     <!-- Date Filter -->
-                                    <div class="ms-2">
-                                        <input type="date" id="startDate"
-                                            class="border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                                            style=" border-radius: 4px">
+                                    <div class="ms-2 mr-1" style="display: inline-block; background-color: #fff; border-radius: 25px; padding: 10px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);">                                        <input type="date" id="startDate"
+                                            {{-- class="border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" --}}
+                                            style="border: none; outline: none;font-size: 1rem; text-align: center"/>
                                     </div>
                                 </div>
 
