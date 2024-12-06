@@ -60,6 +60,8 @@ class LanguageController extends Controller
             return response()->view('errors.notfound', [], 404);
         }
 
+        return view('admin.language.detail-edit', compact('langKey', 'id'));
+
         $response = Route::dispatch(Request::create(route($routeName)));
 
         if ($response instanceof \Illuminate\Http\Response) {

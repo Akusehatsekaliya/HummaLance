@@ -2,7 +2,7 @@
 
 return [
     "banner.Start Work Today" => "Start Work Today",
-    "banner.headline" => "Ayam Bakar",
+    'banner.headline' => 'Ayam Bakar',
     "banner.description" => "Jutaan orang menggunakan Clockers untuk mewujudkan pekerjaan impian mereka. Perluas koneksi Anda dan wujudkan pekerjaan impian Anda bersama Clockers.",
     "banner.get_started" => "Mulai Sekarang",
     "banner.learn_more" => "Pelajari Lebih Lanjut",
