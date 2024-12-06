@@ -113,24 +113,24 @@ class FileService
   }
 
   function updateFileContent($filePath, $key, $newValue)
-{
+  {
     if (!$this->disk->exists($filePath)) {
-        return "File $filePath tidak ditemukan.";
+      return "File $filePath tidak ditemukan.";
     }
 
     $fileContent = $this->disk->get($filePath);
-    
+
     $pattern = '/[\'"]' . $key . '[\'"]\s*=>\s*["\'](?:[^"\']*?\n)*[^"\']*["\']/';
 
-    $replacement = "'$key' => '$newValue',";
+    $replacement = "'$key' => '$newValue'";
     $updatedContent = preg_replace($pattern, $replacement, $fileContent);
 
     if ($updatedContent === null) {
-        return "Gagal memperbarui key '$key'.";
+      return "Gagal memperbarui key '$key'.";
     }
 
     $this->disk->put($filePath, $updatedContent);
 
     return "Key '$key' berhasil diperbarui menjadi '$newValue'.";
-}
+  }
 }

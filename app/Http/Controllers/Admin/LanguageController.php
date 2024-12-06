@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Language;
+use App\Models\UserSetting;
 use App\Services\FileService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
@@ -11,6 +12,8 @@ use Illuminate\Support\Facades\Lang;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\View;
 use Yajra\DataTables\DataTables;
+use Illuminate\Routing\Controllers\HasMiddleware;
+use Illuminate\Routing\Controllers\Middleware;
 
 class LanguageController extends Controller
 {
@@ -20,6 +23,7 @@ class LanguageController extends Controller
     {
         $this->fileservice = new FileService("lang");
     }
+
     /**
      * Display a listing of the resource.
      */
@@ -36,6 +40,9 @@ class LanguageController extends Controller
     {
         //
         $language = Language::find($id);
+        UserSetting::where("user_id", auth()->id())->update([
+            "languages_id" => $language->id
+        ]);
         $files = [
             "$language->locale.json",
             ...$this->fileservice->getFolderFiles($language->locale)
