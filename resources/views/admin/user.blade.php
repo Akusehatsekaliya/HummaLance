@@ -425,7 +425,7 @@
                                                             <div class="row">
                                                                 <div
                                                                     class="col-md-4 col-lg-12 col-xl-12 col-xxl-5 d-flex justify-content-start">
-                                                                    <div class="stats-icon red mb-2">
+                                                                    <div class="stats-icon bg-gradient mb-2" style="background-color: #ff5555;">
                                                                         <i class="iconly-boldClose-Square"></i>
                                                                     </div>
                                                                 </div>
@@ -441,12 +441,12 @@
                                                 <!-- Rata-rata Rating -->
                                                 <div class="col">
                                                     <div class="card rounded"
-                                                        style="background-color: white; border-radius: 8px;box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+                                                        style="background-color: rgb(255, 255, 255); border-radius: 8px;box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
                                                         <div class="card-body px-4 py-4-5">
                                                             <div class="row">
                                                                 <div
                                                                     class="col-md-4 col-lg-12 col-xl-12 col-xxl-5 d-flex justify-content-start">
-                                                                    <div class="stats-icon yellow mb-2">
+                                                                    <div class="stats-icon bg-warning bg-gradient mb-2">
                                                                         <i class="iconly-boldStar"></i>
                                                                     </div>
                                                                 </div>
@@ -454,12 +454,12 @@
                                                                     <h6 class="text-muted font-semibold">Rating</h6>
                                                                     <div class="flex items-center">
                                                                         <!-- Bintang -->
-                                                                        <i class="fas fa-star text-yellow-400"></i>
-                                                                        <i class="fas fa-star text-yellow-400"></i>
-                                                                        <i class="fas fa-star text-yellow-400"></i>
-                                                                        <i class="fas fa-star text-yellow-400"></i>
+                                                                        <i class="fas fa-star text-warning"></i>
+                                                                        <i class="fas fa-star text-warning"></i>
+                                                                        <i class="fas fa-star text-warning"></i>
+                                                                        <i class="fas fa-star text-warning"></i>
                                                                         <i
-                                                                            class="fas fa-star-half-alt text-yellow-400"></i>
+                                                                            class="fas fa-star-half-alt text-warning"></i>
                                                                         <!-- Rating -->
                                                                         <h6 class="font-extrabold mb-0 ml-2">4.8</h6>
                                                                     </div>
@@ -470,6 +470,7 @@
                                                     </div>
                                                 </div>
                                                 <!-- Ulasan Terbaru -->
+
                                                 <div class="col">
                                                     <div class="card rounded"
                                                         style="background-color: white; border-radius: 8px;box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
@@ -477,21 +478,21 @@
                                                             <div class="row">
                                                                 <div
                                                                     class="col-md-4 col-lg-12 col-xl-12 col-xxl-5 d-flex justify-content-start">
-                                                                    <div class="stats-icon indigo mb-2">
+                                                                    <div class="stats-icon bg-gradient red mb-2">
                                                                         <i class="iconly-boldChat"></i>
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-md-8 col-lg-12 col-xl-12 col-xxl-7">
                                                                     <h6 class="text-muted font-semibold">Latest Reviews
                                                                     </h6>
-                                                                    <p class="text-muted mb-0" id="review-text">"Very fast work and
+                                                                    <p class="text-muted mb-0" id="review-text">"Very
+                                                                        fast work and
                                                                         satisfactory results."</p>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
-
                                                 <!-- Kategori Favorit -->
                                                 <div class="col">
                                                     <div class="card rounded"
@@ -500,7 +501,7 @@
                                                             <div class="row">
                                                                 <div
                                                                     class="col-md-4 col-lg-12 col-xl-12 col-xxl-5 d-flex justify-content-start">
-                                                                    <div class="stats-icon indigo mb-2">
+                                                                    <div class="stats-icon purple bg-gradient mb-2">
                                                                         <i class="iconly-boldCategory"></i>
                                                                     </div>
                                                                 </div>
@@ -521,7 +522,7 @@
                                                             <div class="row">
                                                                 <div
                                                                     class="col-md-4 col-lg-12 col-xl-12 col-xxl-5 d-flex justify-content-start">
-                                                                    <div class="stats-icon gray mb-2">
+                                                                    <div class="stats-icon bg-secondary bg-gradient mb-2">
                                                                         <i class="iconly-boldTime-Circle"></i>
                                                                     </div>
                                                                 </div>
@@ -545,20 +546,19 @@
                                 <!-- Filter Section -->
                                 <div class="d-flex justify-content-end mb-2">
                                     <!-- Search Input -->
-                                    <div class="position-relative d-flex align-items-center search-bar1">
+                                    <div class="position-relative d-flex align-items-center">
                                         <i class="fa fa-search position-absolute left-1 top-1/2 transform -translate-y-1/2 text-gray-400"
                                             style="left: 7%;"></i>
                                         <input type="text" id="searchInput" placeholder="search transaction..."
-                                            {{-- class="w-full border border-gray-300 rounded-lg ps-5 pe-4 py-2 pl-10 focus:outline-none focus:ring-2 focus:ring-blue-500" --}}
-                                            style="border-radius: 4px;margin-left: 18px;padding-right: 1px;">
+                                            class="w-full border border-gray-300 rounded-lg ps-5 pe-4 py-2 pl-10 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                            style=" border-radius: 4px; width:210px;">
                                     </div>
                                     <!-- Date Filter -->
-                                    <div class="ms-2 mr-1" style="display: inline-block; background-color: #fff; border-radius: 25px; padding: 10px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);">
+                                    <div class="ms-2">
                                         <input type="date" id="startDate"
-                                            {{-- class="border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" --}}
-                                            style="border: none; outline: none;font-size: 1rem; text-align: center"/>
+                                            class="border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                            style=" border-radius: 4px">
                                     </div>
-
                                 </div>
 
                                 <!-- Table Section -->
