@@ -619,42 +619,44 @@
                             </div>
 
                             <div class="tab-content overflow-auto max-h-[80vh]" id="engagement-statistics">
-                                <div class="bg-white p-6 rounded-lg shadow-md">
-                                    <h4 class="text-2xl font-semibold text-gray-800 mb-4">User Engagement Statistics</h4>
+                                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 p-4">
+                                    <!-- Jumlah Login -->
+                                    <div class="bg-white shadow-md rounded-lg p-6">
+                                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Jumlah Login</h3>
+                                        <p class="text-2xl font-bold text-green-500">150</p>
+                                        <p class="text-sm text-gray-500 mt-2">Total login yang dilakukan pengguna.</p>
+                                    </div>
 
-                                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                        <!-- Total Logins -->
-                                        <div>
-                                            <h6 class="font-semibold text-gray-700">Total Logins:</h6>
-                                            <p class="text-gray-500">120</p>
-                                        </div>
+                                    <!-- Jumlah Proposal Dikirim -->
+                                    <div class="bg-white shadow-md rounded-lg p-6">
+                                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Jumlah Proposal Dikirim</h3>
+                                        <p class="text-2xl font-bold text-blue-500">35</p>
+                                        <p class="text-sm text-gray-500 mt-2">Penawaran yang dibuat untuk proyek.</p>
+                                    </div>
 
-                                        <!-- Proposals Sent (Freelancer) -->
-                                        <div>
-                                            <h6 class="font-semibold text-gray-700">Total Proposals Sent (Freelancer):</h6>
-                                            <p class="text-gray-500">45</p>
-                                        </div>
+                                    <!-- Jumlah Pesan Terkirim -->
+                                    <div class="bg-white shadow-md rounded-lg p-6">
+                                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Jumlah Pesan Terkirim</h3>
+                                        <p class="text-2xl font-bold text-purple-500">120</p>
+                                        <p class="text-sm text-gray-500 mt-2">Pesan dalam sistem platform.</p>
+                                    </div>
 
-                                        <!-- Messages Sent -->
-                                        <div>
-                                            <h6 class="font-semibold text-gray-700">Total Messages Sent:</h6>
-                                            <p class="text-gray-500">300</p>
-                                        </div>
+                                    <!-- Jumlah Sengketa -->
+                                    <div class="bg-white shadow-md rounded-lg p-6">
+                                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Jumlah Sengketa</h3>
+                                        <p class="text-2xl font-bold text-red-500">2</p>
+                                        <p class="text-sm text-gray-500 mt-2">Masalah atau dispute yang melibatkan pengguna.</p>
+                                    </div>
 
-                                        <!-- Disputes -->
-                                        <div>
-                                            <h6 class="font-semibold text-gray-700">Total Disputes:</h6>
-                                            <p class="text-gray-500">2</p>
-                                        </div>
-
-                                        <!-- Average Response Time -->
-                                        <div>
-                                            <h6 class="font-semibold text-gray-700">Average Response Time:</h6>
-                                            <p class="text-gray-500">2 hours</p>
-                                        </div>
+                                    <!-- Waktu Rata-rata Respons -->
+                                    <div class="bg-white shadow-md rounded-lg p-6">
+                                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Waktu Rata-rata Respons</h3>
+                                        <p class="text-2xl font-bold text-yellow-500">4 jam</p>
+                                        <p class="text-sm text-gray-500 mt-2">Berapa cepat pengguna merespons pesan atau tawaran.</p>
                                     </div>
                                 </div>
                             </div>
+
 
                             <div class="tab-content overflow-auto max-h-[80vh]" id="account-status">
                                 <div class="bg-white p-6 rounded-lg shadow-md">
