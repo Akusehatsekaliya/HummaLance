@@ -8,9 +8,15 @@
             -webkit-overflow-scrolling: touch;
             margin-left: 5px;
         }
-
+        .nav-item.active .nav-link:after {
+            margin-left: 6px;
+        }
         .nav-item {
             margin-right: 6px;
+        }
+        .nav-link:after {
+            border-radius: 20px;
+            bottom: 0;
         }
     </style>
     <section class="py-5 homepage-search-block bg-landing bg-learn position-relative">

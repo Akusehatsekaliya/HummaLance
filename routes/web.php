@@ -1,15 +1,24 @@
 <?php
 
+use App\Models\Language;
 use App\Models\User;
 use App\Models\UserReport;
+use App\Models\UserSetting;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 
 
 Route::get('/debug', function () {
     return view('debug2');
+})->name('debug');
+Route::get('/setlang/{lang}', function ($lang) {
+    dd(Language::all(), UserSetting::where("user_id", auth()->id())->get(), UserSetting::where("user_id", auth()->id())->update([
+        "languages_id" => $lang
+    ]));
+    // return view('debug2');
 })->name('debug');
 Route::get('/debug2', function (Request $request) {
     $routeName = $request->route('route');

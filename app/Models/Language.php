@@ -34,4 +34,9 @@ class Language extends Model
             $fileService->deleteFolder($model->locale);
         });
     }
+
+    public function User()
+    {
+        return $this->belongsTo(User::class);
+    }
 }

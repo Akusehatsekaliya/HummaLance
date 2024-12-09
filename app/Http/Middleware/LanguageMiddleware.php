@@ -17,7 +17,7 @@ class LanguageMiddleware
     public function handle(Request $request, Closure $next): Response
     {
         if (Auth::check()) {
-            $locale = Auth::user()->language ?? "en";
+            $locale = Auth::user()->setting->language->locale ?? "en";
         } else {
             $locale = Session::get('locale') ?? "en";
         }
