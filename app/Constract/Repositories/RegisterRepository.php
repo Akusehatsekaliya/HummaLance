@@ -3,6 +3,7 @@
 namespace App\Constract\Repositories;
 
 use App\Constract\Interfaces\RegisterInterface;
+use App\Http\Requests\RegisterFreelancerRequest;
 use App\Models\User;
 
 class RegisterRepository extends BaseRepository implements RegisterInterface
@@ -27,9 +28,9 @@ class RegisterRepository extends BaseRepository implements RegisterInterface
      *
      * @return mixed
      */
-        public function freelancer(): mixed
+        public function freelancer(RegisterFreelancerRequest $request): mixed
         {
-            return $this->model->query->get();
+            return $this->model->create();
         }
     /**
      * Handle get the specified data by id from models.

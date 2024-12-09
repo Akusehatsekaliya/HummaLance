@@ -2,19 +2,12 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\Constract\Enums\UserRoleEnum;
-use App\Enums\RoleUserEnum;
+use App\Constract\Interfaces\RegisterInterface;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\RegisterFreelancerRequest;
 use App\Http\Requests\RegisterRequest;
 use App\Models\User;
-use App\Services\RegisterService;
-use Illuminate\Auth\Events\Validated;
 use Illuminate\Foundation\Auth\RegistersUsers;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Facades\Validator;
-use Illuminate\Validation\Rules\Enum;
 use Illuminate\Auth\Events\Registered;
 
 class RegisterController extends Controller
@@ -45,11 +38,11 @@ class RegisterController extends Controller
      * @return void
      */
 
-    protected $registerservice;
-    public function __construct(RegisterService $registerService)
+    protected $registerinterface;
+    public function __construct(RegisterInterface $registerInterface)
     {
         $this->middleware('guest');
-        $this->registerservice = $registerService;
+        $this->registerinterface = $registerInterface;
     }
 
     /**
@@ -86,7 +79,8 @@ class RegisterController extends Controller
 
     public function freelancerStore(RegisterFreelancerRequest $request)
     {
-        $freelancer = $this->registerservice->freelancerStore($request);
+        $validatedData = $request->validated();
+        $freelancer = $this->registerinterface->freelancer($validatedData);
 
         return response()->json([
             'message' => 'Freelancer berhasil didaftarkan.',
