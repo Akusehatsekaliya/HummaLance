@@ -39,7 +39,8 @@ class User extends Authenticatable
         'gender',
         'skills',
         'status_login',
-        'status_acount_register'
+        'status_acount_register',
+        'country'
     ];
 
     /**

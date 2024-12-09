@@ -1,5 +1,6 @@
 <?php
 
+use App\Constract\Enums\CountryEnum;
 use App\Constract\Enums\UserGenderEnum;
 use App\Constract\Enums\UserRoleEnum;
 use App\Constract\Enums\UserSkilsEnum;
@@ -39,7 +40,8 @@ return new class extends Migration
                     UserStatusRegisterEnum::ACCEPTED->value,
                     UserStatusRegisterEnum::REJECTED->value,
                     UserStatusRegisterEnum::PENDING->value,
-            ])->default(UserStatusRegisterEnum::PENDING->value);
+                ]
+            )->default(UserStatusRegisterEnum::PENDING->value);
             $table->string('address', 255)->nullable();
             $table->date('birthday')->nullable();
             $table->string('password');
@@ -71,6 +73,14 @@ return new class extends Migration
                     UserSkilsEnum::WEB_DESIGN->value,
                 ]
             )->nullable();
+            $country = [];
+            foreach (CountryEnum::cases() as $item) {
+                array_push($country, $item->name);
+            }
+            $table->enum(
+                'country',
+                $country
+            )->default("ID");
             $table->rememberToken();
             $table->timestamps();
         });

@@ -25,6 +25,7 @@ class UserResource extends JsonResource
             'gender' => $this->gender,
             'skills' => $this->skills,
             'statusLogin' => $this->status_login,
+            'country' => $this->country,
         ];
     }
 }
