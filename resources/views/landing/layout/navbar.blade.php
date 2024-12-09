@@ -1,11 +1,10 @@
-<nav class="navbar navbar-expand-lg navbar-light topbar static-top bg-landing osahan-nav-top px-0"
-    style="position: sticky; top: 0; z-index: 1030;">
+<nav class="navbar navbar-expand-lg navbar-light topbar static-top bg-landing osahan-nav-top px-0">
     <div class="container">
         <!-- Sidebar Toggle (Topbar) -->
         <a class="navbar-brand" href="#"><img src="{{ asset('assets_landing/images/Asset 14.png') }}"
                 alt=""></a>
         <!-- Topbar Navbar -->
-        <div class="collapse navbar-collapse" id="navbarResponsive">
+        <div class="collapse navbar-collapse nav-links" id="navLinks">
             <ul class="navbar-nav ml-auto ">
                 <li @class(['nav-item', 'active' => request()->routeIs('landing.index')])>
                     <a class="nav-landing" href="{{ route('landing.index') }}">Clocker Pro</a>
@@ -47,6 +46,25 @@
                     Log in
                 </a>
             </li>
+
+            <div class="hamburger" id="hamburger">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+
         </ul>
     </div>
 </nav>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+
+        // Toggle the class 'collapsed' on nav-links
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('collapsed'); // Show or hide the menu
+            hamburger.classList.toggle('open'); // Hamburger animation
+        });
+    });
+</script>

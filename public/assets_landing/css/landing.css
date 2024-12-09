@@ -335,32 +335,6 @@
     margin-bottom: 5px;
 }
 
-.card-fitur-item3 {
-    background-color: #ffffff;
-    border-radius: 10px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    width: 295px;
-    text-align: left;
-    margin: 15px;
-    transition: transform 0.3s ease;
-    height: 200px;
-}
-
-.card-fitur-item3 p {
-    font-size: 14px;
-    color: #666;
-    line-height: 1.5;
-    margin-bottom: 0;
-    font-style: italic;
-}
-
-.card-fitur-item3 h5 {
-    font-size: 18px;
-    font-weight: 600;
-    color: #333;
-    margin-bottom: 5px;
-}
 
 
 .card-fitur-item:hover {
@@ -372,9 +346,7 @@
 .card-fitur-item2:hover {
     transform: translateY(-10px);
 }
-.card-fitur-item3:hover {
-    transform: translateY(-10px);
-}
+
 .main-fitur {
     display: flex;
     flex-direction: column;
@@ -1092,13 +1064,70 @@
     transition: transform 0.3s ease;
 }
 
+.card-fitur-item3 {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 100%; /* Set width to 100% for responsive sizing */
+    max-width: 295px; /* Ensure it doesn't exceed 295px on larger screens */
+    text-align: left;
+    margin: 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Added box-shadow transition */
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Ensure content spacing within the card */
+}
+
+.card-fitur-item3 p {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.5;
+    margin-bottom: 0;
+    font-style: italic;
+}
+
+.card-fitur-item3 h5 {
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.card-fitur-item3:hover {
+    transform: translateY(-10px);
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2); /* Slightly stronger shadow on hover */
+}
+
+/* Responsive Grid Layout */
 .row-fitur1 {
+    display: grid;
     justify-content: center;
     align-items: center;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(21%, 1fr));
-    gap: 1px;
-  }
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Minimum of 250px per item */
+    gap: 1.5rem; /* Spacing between items */
+    margin: 0 auto;
+}
+
+/* For smaller screens */
+@media (max-width: 768px) {
+    .row-fitur1 {
+        grid-template-columns: 1fr 1fr; /* Two items per row for medium screens */
+    }
+}
+
+/* For very small screens (portrait phones) */
+@media (max-width: 576px) {
+    .row-fitur1 {
+        grid-template-columns: 1fr;
+    }
+
+    .card-fitur-item3 {
+        height: 200px;
+        margin: 5px;
+    }
+}
 
 .line-benefit{
     background: url(../images/Vector10.svg);
