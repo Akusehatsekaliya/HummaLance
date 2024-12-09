@@ -1241,3 +1241,10 @@
     font-weight: bold;
     border-radius: 5px;
 }
+.inline-heading {
+    white-space: nowrap;
+  }
+
+  .text-landing {
+    display: inline;
+  }
