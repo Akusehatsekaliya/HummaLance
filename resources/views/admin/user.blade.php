@@ -205,6 +205,10 @@
                                         <div class="basic-info">
                                             <h3>Basic Information</h3>
                                             <div class="item">
+                                                <strong>Contry:</strong>
+                                                <span id="country"></span>
+                                            </div>
+                                            <div class="item">
                                                 <strong>Birthday:</strong>
                                                 <span id="birthday"></span>
                                             </div>
@@ -874,6 +878,7 @@
                         $('#detailModal .modal-body #gender').text(data.data.gender || '-');
                         $('#detailModal .modal-body #skills').text(data.data.skills || '-');
                         $('#detailModal .modal-body #statusLogin').text(data.data.statusLogin || '-');
+                        $('#detailModal .modal-body #country').text(data.data.country || '-');
 
                         var skillsElement = $('#detailModal .modal-body #skills');
                         if (data.data.skills === 'ui/ux') {
