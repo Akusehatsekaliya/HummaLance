@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class RegisterRequest extends FormRequest
+class RegisterCompanyRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -12,19 +12,6 @@ class RegisterRequest extends FormRequest
     public function authorize(): bool
     {
         return true;
-    }
-
-    public function prepareForValidation()
-    {
-        $googleUserData = session('google_user_data');
-
-        if ($googleUserData) {
-            $this->merge([
-                'email' => $googleUserData['email'],
-                'google_id' => $googleUserData['google_id'],
-                'avatar' => $googleUserData['avatar']
-            ]);
-        }
     }
 
     /**
@@ -35,7 +22,8 @@ class RegisterRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'name' => ['required', 'string', 'max:255'],
+            'first_name' => ['required', 'string', 'max:255'],
+            'last_name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
             'google_id' => ['nullable', 'string'],
@@ -46,8 +34,4 @@ class RegisterRequest extends FormRequest
     /**
      * Check if the registration is via Google
      */
-    protected function isGoogleLogin(): bool
-    {
-        return session()->has('google_user_data');
-    }
 }

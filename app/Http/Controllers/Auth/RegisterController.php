@@ -5,8 +5,10 @@ namespace App\Http\Controllers\Auth;
 use App\Constract\Enums\UserRoleEnum;
 use App\Enums\RoleUserEnum;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\RegisterFreelancerRequest;
 use App\Http\Requests\RegisterRequest;
 use App\Models\User;
+use App\Services\RegisterService;
 use Illuminate\Auth\Events\Validated;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Http\Request;
@@ -42,9 +44,12 @@ class RegisterController extends Controller
      *
      * @return void
      */
-    public function __construct()
+
+    protected $registerservice;
+    public function __construct(RegisterService $registerService)
     {
         $this->middleware('guest');
+        $this->registerservice = $registerService;
     }
 
     /**
@@ -77,5 +82,15 @@ class RegisterController extends Controller
 
         $user = User::create($data);
         return $user;
+    }
+
+    public function freelancerStore(RegisterFreelancerRequest $request)
+    {
+        $freelancer = $this->registerservice->freelancerStore($request);
+
+        return response()->json([
+            'message' => 'Freelancer berhasil didaftarkan.',
+            'data' => $freelancer,
+        ]);
     }
 }
