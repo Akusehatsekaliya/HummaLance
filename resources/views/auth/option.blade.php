@@ -94,10 +94,44 @@
                 <input type="email" class="form-control mb-3" id="inputEmail">
 
                 <label for="inputPassword" class="form-label">{{ __('register.password') }}</label>
-                <input type="email" class="form-control mb-3" id="inputPassword">
+                <input type="password" class="form-control mb-3" id="inputPassword">
 
                 <label for="inputCountry" class="form-label">{{ __('register.country') }}</label>
-                <input type="email" class="form-control mb-3" id="inputCountry">
+                <select class="form-control mb-3" aria-label="Default select example" id="inputCountry">
+                    <option selected>indonesia</option>
+                    <option value="1">english</option>
+                </select>
+
+                <div class="row g-3 mb-3">
+                    <div class="col-sm">
+                        <label for="inputday" class="form-label">Day</label>
+                        <input type="number" name="day" class="form-control" id="inputday">
+                    </div>
+                    <div class="col-sm">
+                        <label for="inputmonth" class="form-label">Month</label>
+                        <select id="inputmonth" class="form-control" name="month" required>
+                        <option value="" disabled selected>MM</option>
+                        <script>
+                            for (let i = 1; i <= 12; i++) {
+                                const value = i < 10 ? `0${i}` : i; // Format 01, 02, etc.
+                                document.write(`<option value="${value}">${value}</option>`);
+                            }
+                        </script>
+                        </select>
+                    </div>
+                    <div class="col-sm">
+                        <label for="year" class="form-label">Year</label>
+                        <select id="year" name="year" class="form-control" required>
+                            <option value="" disabled selected>YYYY</option>
+                            <script>
+                                const currentYear = new Date().getFullYear();
+                                for (let i = currentYear; i >= 1900; i--) {
+                                    document.write(`<option value="${i}">${i}</option>`);
+                                }
+                            </script>
+                        </select>
+                    </div>
+                </div>
 
                 <div class="form-check my-1">
                   <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">

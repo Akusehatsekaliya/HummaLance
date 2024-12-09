@@ -267,7 +267,7 @@
 
 .fitur-item {
     margin-top: 60px;
-    margin-left: 23px;
+    /* margin-left: 23px; */
 }
 
 .card-fitur-item {
@@ -1159,6 +1159,12 @@
     grid-template-columns: repeat(4, 1fr);
 }
 
+.bg-line10{
+    background: url(../images/line10.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position-x: center;
+}
 
 @media (max-width: 990px) {
     .line-about{
