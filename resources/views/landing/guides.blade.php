@@ -113,7 +113,7 @@
                 </div>
                 <div class="col-lg-5 text-white">
                     <h2 class="font-weight-bold">Start Your Freelancing Journey With Us</h2>
-                    <p style="font-size: 20px; font-weight:300;">At Clocker you will start your journey as a freelancer by starting to sell your services and developing your career in the freelance world.</p>
+                    <p style="font-size: 18px; font-weight:300;">At Clocker you will start your journey as a freelancer by starting to sell your services and developing your career in the freelance world.</p>
                     <a href="#" class="btn btn-outline-landing1 text-center"
                         style="font-size: 14px; font-weight: bold;">
                         Star Your Journey Now
