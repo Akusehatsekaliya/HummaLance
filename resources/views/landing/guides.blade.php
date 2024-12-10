@@ -23,10 +23,6 @@
 
     <section class="py-5 mb-5 mt-5">
         <div class="container">
-            {{-- svg  vector--}}
-            <div class="svg-container4">
-                <x-svg>{{ asset('assets/svg/landing/guides.svg') }}</x-svg>
-            </div>
             <div class="fitur-text">
                 <h5 class="text-landing">
                     <x-svg>{{ asset('assets/svg/landing/about/stats/logo-blue.svg') }}</x-svg>
@@ -126,6 +122,10 @@
 
     <section class="py-4">
         <div class="container">
+            {{-- svg  vector--}}
+            <div class="svg-container4">
+                <x-svg>{{ asset('assets/svg/landing/guides.svg') }}</x-svg>
+            </div>
             <div class="fitur-text">
                 <h5 class="text-landing">
                     <x-svg>{{ asset('assets/svg/landing/about/stats/logo-blue.svg') }}</x-svg>

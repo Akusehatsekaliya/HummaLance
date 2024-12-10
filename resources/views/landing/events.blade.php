@@ -44,7 +44,7 @@
                 </div>
             </div>
             <div class="col-lg-4" style="margin-top: -30px; margin-bottom: -80px;">
-                <img class="img-fluid" src="{{ asset('assets_landing/images/landingbanner.svg') }}" alt='' loading="lazy"/>
+                <img class="img-fluid" src="{{ asset('assets_landing/images/BackgroundEvents.svg') }}" alt='' loading="lazy"/>
             </div>
         </div>
     </div>
