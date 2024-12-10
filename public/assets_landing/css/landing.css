@@ -267,7 +267,7 @@
 
 .fitur-item {
     margin-top: 60px;
-    margin-left: 23px;
+    /* margin-left: 23px; */
 }
 
 .card-fitur-item {
@@ -1159,6 +1159,12 @@
     grid-template-columns: repeat(4, 1fr);
 }
 
+.bg-line10{
+    background: url(../images/line10.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position-x: center;
+}
 
 @media (max-width: 990px) {
     .line-about{
@@ -1274,3 +1280,114 @@
   .text-landing {
     display: inline;
   }
+
+  @media (max-width: 991px) {
+    .card-guides-grid {
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .card-guides-item {
+        max-width: 318px;
+    }
+
+    .py-lg-5 {
+        padding: 2rem 0;
+    }
+
+    .col-lg-6, .col-lg-5 {
+        margin-bottom: 20px;
+    }
+
+    .col-lg-5 {
+        text-align: center;
+    }
+
+    .col-lg-5 h2 {
+        font-size: 1.75rem;
+    }
+
+    .col-lg-5 p {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 768px) {
+    .col-lg-6, .col-lg-5 {
+        margin-bottom: 30px;
+    }
+
+    .card-guides-item h5 {
+        font-size: 16px;
+    }
+
+    .card-guides-item span {
+        font-size: 12px;
+    }
+
+    .btn-outline-landing1 {
+        font-size: 12px;
+    }
+
+    .col-lg-5 h2 {
+        font-size: 1.5rem;
+        max-width: 100%;
+        width: 53%;
+        margin-left: 350px;
+        text-align: left;
+    }
+
+    .col-lg-5 p {
+        font-size: 14px;
+        max-width: 100%;
+        width: 46%;
+        margin-left: 350px;
+        text-align: left;
+    }
+
+    .btn-outline-landing1 {
+        font-size: 12px;
+        padding: 8px 16px;
+        margin-left: 324px;
+    }
+}
+
+@media (max-width: 576px) {
+    .py-5 {
+        padding: 1.5rem 0;
+    }
+
+    .text-white h2 {
+        font-size: 1.5rem;
+    }
+
+    .text-white p {
+        font-size: 16px;
+    }
+
+    .card-guides-grid {
+        flex-direction: column;
+    }
+
+    .card-guides-item {
+        width: 100%;
+    }
+
+    .col-lg-5 {
+        text-align: center;
+        padding: 10px;
+    }
+
+    .col-lg-5 h2 {
+        font-size: 1.25rem;
+    }
+
+    .col-lg-5 p {
+        font-size: 14px;
+    }
+
+    .btn-outline-landing1 {
+        width: 100%;
+        justify-content: center;
+    }
+}
