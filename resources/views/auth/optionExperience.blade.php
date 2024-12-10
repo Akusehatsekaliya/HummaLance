@@ -163,6 +163,64 @@
             margin: 0;
             margin-left: 45px;
         }
+
+
+        .progress-container {
+            position: absolute;
+            left: -175px;
+            width: 100vw;
+            height: 4px;
+            background-color: #ddd;
+            margin: 40px 0;
+            border-radius: 12px;
+            z-index: 1;
+        }
+
+        .progress-bar {
+            position: absolute;
+            height: 100%;
+            width: 0;
+            background-color: #00AAFF;
+            /* Warna garis aktif */
+            transition: width 0.3s ease;
+
+        }
+
+        .step {
+            position: absolute;
+            top: -10px;
+            width: 20px;
+            height: 20px;
+            background-color: white;
+            border: 4px solid #ddd;
+            border-radius: 50%;
+        }
+
+        #step1 {
+            left: 0%;
+        }
+
+        #step2 {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        #step3 {
+            right: 0%;
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
     </style>
 
 </head>
@@ -194,19 +252,18 @@
                     </p>
 
                     <div class="options">
-                        <div class="option">
-                            <input name="experience" type="radio" />
+                        <label class="option" data-color="#C6FFD4">
+                            <input name="experience" type="radio" id="experience-1" />
                             <x-svg class="vector-icon">{{ asset('assets/svg/login/freelancing.svg') }}</x-svg>
-
-                            </i>
                             <h3 style="font-weight: bold;">
                                 I'm new to freelancing
                             </h3>
                             <p class="mb-0">
                                 This option will let us know if you are new to the world of freelancing.
                             </p>
-                        </div>
-                        <div class="option">
+                        </label>
+
+                        <label class="option" data-color="#FFE0B5">
                             <input name="experience" type="radio" />
                             <x-svg class="vector-icon">{{ asset('assets/svg/login/experience.svg') }}</x-svg>
 
@@ -217,8 +274,8 @@
                             <p class="mb-0">
                                 With this option we will know if you are a freelancer who has experience.
                             </p>
-                        </div>
-                        <div class="option">
+                        </label>
+                        <label class="option" data-color="#FFB8B4">
                             <input name="experience" type="radio" />
                             <x-svg class="vector-icon">{{ asset('assets/svg/login/expert.svg') }}</x-svg>
 
@@ -230,7 +287,12 @@
                                 By choosing this option we will know that you are an experienced expert in the world of
                                 freelancing.
                             </p>
-                        </div>
+                        </label>
+                    </div>
+                </div>
+                <div class="position-relative" style="width: 100%;">
+                    <div class="progress-container">
+                        <div class="progress-bar" id="progressBar"></div>
                     </div>
                 </div>
                 <div class="footer">
@@ -240,14 +302,60 @@
                     <a href="#" style="margin-left: 775px; margin-top: 17px;">
                         Skip if you are a job seeker
                     </a>
-                    <button class="custom-button" style="background-color: #00AAFF; color: white;">
+                    <button class="custom-button" style="background-color: #00AAFF; color: white;" id="nextBtn">
                         Next
                     </button>
-
                 </div>
             </div>
         </div>
     </section>
+
+    <script>
+        $('input[name="experience"]').change(function() {
+            console.log($(this), $(this).closest('.option').data("color"));
+            $('.option').css('background-color', '');
+
+            $(this).closest('.option').css('background-color', $(this).closest('.option').data("color"));
+        });
+    </script>
+
+    <script>
+        const progressBar = document.getElementById('progressBar');
+        const steps = document.querySelectorAll('.step');
+        const backBtn = document.getElementById('backBtn');
+        const nextBtn = document.getElementById('nextBtn');
+
+        let currentStep = 0;
+        const maxSteps = 3;
+
+        nextBtn.addEventListener('click', () => {
+            if (currentStep < maxSteps) {
+                currentStep++;
+                updateProgress();
+            }
+        });
+
+        backBtn.addEventListener('click', () => {
+            if (currentStep > 0) {
+                currentStep--;
+                updateProgress();
+            }
+        });
+
+        function updateProgress() {
+            // Update progress bar width
+            progressBar.style.width = `${(currentStep / (maxSteps - 1)) * 100}%`;
+
+            // Update step indicators
+            steps.forEach((step, index) => {
+                if (index < currentStep) {
+                    step.classList.add('active');
+                } else {
+                    step.classList.remove('active');
+                }
+            });
+        }
+    </script>
 </body>
 
 </html>
