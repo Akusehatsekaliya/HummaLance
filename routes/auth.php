@@ -23,9 +23,9 @@ Route::get('/journey', function () {
 Route::get('/adventure', function () {
     return view('auth.adventure');
 })->name('adventure');
-Route::get('/option', function () {
-    return view('auth.adventure');
-})->name('adventure');
+Route::get('/optionExperience', function () {
+    return view('auth.optionExperience');
+})->name('optionExperience');
 
 // Google Login
 Route::get('login/google', [LoginController::class, 'redirectToGoogle'])->name('login.google');

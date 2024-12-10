@@ -27,6 +27,10 @@
         label {
             font-weight: 500;
         }
+        hr {
+
+    border-top: 1px solid rgba(0, 0, 0, 0) !important;
+}
     </style>
     @yield('style')
 </head>
@@ -35,13 +39,15 @@
     <section>
         <div class="container">
             <div class="row justify-content-center d-flex">
-                <div class="col-lg-10 py-4 nav-signup">
+                <div class="col-lg-11 py-4 nav-signup">
                     <div class="justify-content-between d-flex">
                         <x-svg>{{ asset('assets/svg/landing/logo-login.svg') }}</x-svg>
                         <p class="text-landing">{{ __('register.join_as_a_freelancer') }} <span
                                 class="text-body-2">or</span>
                             {{ __('register.join_as_a_company') }}</p>
                     </div>
+                    <hr class="custom-hr">
+
                 </div>
 
                 @yield('content')
