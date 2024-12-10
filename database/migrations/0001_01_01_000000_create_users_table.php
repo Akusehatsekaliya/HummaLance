@@ -44,7 +44,7 @@ return new class extends Migration
             )->default(UserStatusRegisterEnum::PENDING->value);
             $table->string('address', 255)->nullable();
             $table->date('birthday')->nullable();
-            $table->string('password');
+            $table->string('password')->nullable()->default(null);
             $table->timestamp('email_verified_at')->nullable();
             $table->text("self_description")->nullable();
             $table->bigInteger("tarif")->nullable();

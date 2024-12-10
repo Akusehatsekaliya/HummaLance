@@ -11,7 +11,9 @@ Auth::routes();
 
 Route::get("login", fn() => redirect(route('landing.index') . '#login'))->name("login");
 Route::get("register", fn() => redirect(route('landing.index') . '#register'))->name("register");
-Route::get('/freelancer-register', [RegisterController::class, 'freelancerStore'])->name('freelancer_register');
+Route::get('/freelancer-register', [RegisterController::class, 'RegisterFreelancerStore'])->name('freelancer_register');
+Route::get('/freelancer-register', [RegisterController::class, 'RegisterFreelancerGoogleStore'])->name('freelancer_register_google');
+Route::get('/freelancer-register', [RegisterController::class, 'RegisterFreelancerStoreNextGoogle'])->name('freelancer_register_next_google');
 Route::get('/register', function () {
     return view('auth.option');
 })->name('option');

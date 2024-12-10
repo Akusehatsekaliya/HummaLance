@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\Constract\Interfaces\RegisterInterface;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\RegisterFreelancerGoogleUpdtaeRequest;
 use App\Http\Requests\RegisterFreelancerRequest;
 use App\Http\Requests\RegisterRequest;
 use App\Models\User;
@@ -77,14 +78,31 @@ class RegisterController extends Controller
         return $user;
     }
 
-    public function freelancerStore(RegisterFreelancerRequest $request)
+    public function RegisterFreelancerStore(RegisterFreelancerRequest $request)
     {
-        $validatedData = $request->validated();
-        $freelancer = $this->registerinterface->freelancer($validatedData);
+        $freelancer = $this->registerinterface->freelancer($request);
 
         return response()->json([
-            'message' => 'Freelancer berhasil didaftarkan.',
+            'message' => 'Your freelancer account has been successfully created',
             'data' => $freelancer,
+        ]);
+    }
+
+    public function RegisterFreelancerGoogleStore()
+    {
+        $this->registerinterface->freelancerGoogleID();
+
+        return response()->json([
+            'message' => 'complete the form',
+        ]);
+    }
+
+    public function RegisterFreelancerStoreNextGoogle(RegisterFreelancerGoogleUpdtaeRequest $request, $id)
+    {
+        $this->registerinterface->signUpFreelancerGoogle($request, $id);
+
+        return response()->json([
+            'message' => 'Your freelancer account has been successfully created',
         ]);
     }
 }
