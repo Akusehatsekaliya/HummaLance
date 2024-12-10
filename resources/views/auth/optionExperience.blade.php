@@ -1,28 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>register</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-
-    {{-- logo title --}}
-    <link rel="icon" type="image/png" href="{{ asset('assets_landing/images/CLOCKER.png') }}">
-    <!-- Bootstrap core CSS -->
-    <link href="{{ asset('assets_landing/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
-    <!-- Font Awesome-->
-    <link href="{{ asset('assets_landing/vendor/fontawesome/css/font-awesome.min.css') }}" rel="stylesheet">
-    <!-- Material Design Icons -->
-    <link href="{{ asset('assets_landing/vendor/icons/css/materialdesignicons.min.css') }}" media="all"
-        rel="stylesheet" type="text/css">
-
-    <link href="{{ asset('assets_landing/css/login.css') }}" rel="stylesheet">
-    <link href="{{ asset('assets_landing/css/style.css') }}" rel="stylesheet">
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
+@extends('auth.layout.app')
+@section('style')
     <style>
         label {
             font-weight: 500;
@@ -140,8 +117,8 @@
         }
 
         /* .footer button:hover {
-            background-color: #f0f0f0;
-        } */
+                    background-color: #f0f0f0;
+                } */
 
 
         .custom-hr {
@@ -220,96 +197,81 @@
             font-size: 16px;
             cursor: pointer;
         }
-
     </style>
+@endsection
 
-</head>
-
-<body>
-    <section>
-        <div class="container">
-            <div class="row justify-content-center d-flex">
-                <div class="col-lg-10 py-4">
-                    <div class="justify-content-between d-flex">
-                        <x-svg class="logo-svg">{{ asset('assets/svg/landing/logo-login.svg') }}</x-svg>
-                        <p style="margin-top: -12px; margin-right: -100px;" class="text-landing">
-                            {{ __('register.join_as_a_freelancer') }} <span class="text-body-2">or</span>
-                            {{ __('register.join_as_a_company') }}</p>
-                    </div>
-                    <hr class="custom-hr">
-                </div>
-                <div class="content">
-                    <div>
-                        <h6 class="move-up">Freelancer</h6>
-                    </div>
-                    <h1>
-                        Some questions that might help you: first, have you ever had experience as a freelancer?
-                    </h1>
-
-                    <p class="shift-right">
-                        This will let us know and can help you further in starting your career journey as a freelancer,
-                        we will not tell your answer to anyone including clients and potential companies.
-                    </p>
-
-                    <div class="options">
-                        <label class="option" data-color="#C6FFD4">
-                            <input name="experience" type="radio" id="experience-1" />
-                            <x-svg class="vector-icon">{{ asset('assets/svg/login/freelancing.svg') }}</x-svg>
-                            <h3 style="font-weight: bold;">
-                                I'm new to freelancing
-                            </h3>
-                            <p class="mb-0">
-                                This option will let us know if you are new to the world of freelancing.
-                            </p>
-                        </label>
-
-                        <label class="option" data-color="#FFE0B5">
-                            <input name="experience" type="radio" />
-                            <x-svg class="vector-icon">{{ asset('assets/svg/login/experience.svg') }}</x-svg>
-
-                            </i>
-                            <h3 style="font-weight: bold;">
-                                I have experience as a freelancer
-                            </h3>
-                            <p class="mb-0">
-                                With this option we will know if you are a freelancer who has experience.
-                            </p>
-                        </label>
-                        <label class="option" data-color="#FFB8B4">
-                            <input name="experience" type="radio" />
-                            <x-svg class="vector-icon">{{ asset('assets/svg/login/expert.svg') }}</x-svg>
-
-                            </i>
-                            <h3 style="font-weight: bold;">
-                                I am an expert in freelancer
-                            </h3>
-                            <p class="mb-0">
-                                By choosing this option we will know that you are an experienced expert in the world of
-                                freelancing.
-                            </p>
-                        </label>
-                    </div>
-                </div>
-                <div class="position-relative" style="width: 100%;">
-                    <div class="progress-container">
-                        <div class="progress-bar" id="progressBar"></div>
-                    </div>
-                </div>
-                <div class="footer">
-                    <button style="margin-left: 45px;">
-                        Back
-                    </button>
-                    <a href="#" style="margin-left: 775px; margin-top: 17px;">
-                        Skip if you are a job seeker
-                    </a>
-                    <button class="custom-button" style="background-color: #00AAFF; color: white;" id="nextBtn">
-                        Next
-                    </button>
-                </div>
-            </div>
+@section('content')
+    <div class="content">
+        <div>
+            <h6 class="move-up">Freelancer</h6>
         </div>
-    </section>
+        <h1>
+            Some questions that might help you: first, have you ever had experience as a freelancer?
+        </h1>
 
+        <p class="shift-right">
+            This will let us know and can help you further in starting your career journey as a freelancer,
+            we will not tell your answer to anyone including clients and potential companies.
+        </p>
+
+        <div class="options">
+            <label class="option" data-color="#C6FFD4">
+                <input name="experience" type="radio" id="experience-1" />
+                <x-svg class="vector-icon">{{ asset('assets/svg/login/freelancing.svg') }}</x-svg>
+                <h3 style="font-weight: bold;">
+                    I'm new to freelancing
+                </h3>
+                <p class="mb-0">
+                    This option will let us know if you are new to the world of freelancing.
+                </p>
+            </label>
+
+            <label class="option" data-color="#FFE0B5">
+                <input name="experience" type="radio" />
+                <x-svg class="vector-icon">{{ asset('assets/svg/login/experience.svg') }}</x-svg>
+
+                </i>
+                <h3 style="font-weight: bold;">
+                    I have experience as a freelancer
+                </h3>
+                <p class="mb-0">
+                    With this option we will know if you are a freelancer who has experience.
+                </p>
+            </label>
+            <label class="option" data-color="#FFB8B4">
+                <input name="experience" type="radio" />
+                <x-svg class="vector-icon">{{ asset('assets/svg/login/expert.svg') }}</x-svg>
+
+                </i>
+                <h3 style="font-weight: bold;">
+                    I am an expert in freelancer
+                </h3>
+                <p class="mb-0">
+                    By choosing this option we will know that you are an experienced expert in the world of
+                    freelancing.
+                </p>
+            </label>
+        </div>
+    </div>
+    <div class="position-relative" style="width: 100%;">
+        <div class="progress-container">
+            <div class="progress-bar" id="progressBar"></div>
+        </div>
+    </div>
+    <div class="footer">
+        <button style="margin-left: 45px;">
+            Back
+        </button>
+        <a href="#" style="margin-left: 775px; margin-top: 17px;">
+            Skip if you are a job seeker
+        </a>
+        <button class="custom-button" style="background-color: #00AAFF; color: white;" id="nextBtn">
+            Next
+        </button>
+    </div>
+@endsection
+
+@section('script')
     <script>
         $('input[name="experience"]').change(function() {
             console.log($(this), $(this).closest('.option').data("color"));
@@ -356,6 +318,4 @@
             });
         }
     </script>
-</body>
-
-</html>
+@endsection
