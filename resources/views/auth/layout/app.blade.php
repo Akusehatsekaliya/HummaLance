@@ -27,9 +27,10 @@
         label {
             font-weight: 500;
         }
-        hr{
-            color: #fff;
-        }
+        hr {
+
+    border-top: 1px solid rgba(0, 0, 0, 0) !important;
+}
     </style>
     @yield('style')
 </head>
