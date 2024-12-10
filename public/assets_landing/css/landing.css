@@ -265,10 +265,6 @@
     font-weight: bold;
 }
 
-.fitur-item {
-    margin-top: 60px;
-    /* margin-left: 23px; */
-}
 
 .card-fitur-item {
     background-color: #ffffff;
@@ -1157,6 +1153,7 @@
 .fitur-item-group {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
+    margin-top: 60px;
 }
 
 .bg-line10{
@@ -1164,6 +1161,21 @@
     background-size: cover;
     background-repeat: no-repeat;
     background-position-x: center;
+}
+.line-guides{
+    background: url(../../assets/svg/landing/guides.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position-y: center;
+}
+
+.img-guides{
+    z-index: 1;
+    margin-top: -178px;
+}
+
+.guides-png{
+    width:615px;
 }
 
 @media (max-width: 990px) {
@@ -1188,7 +1200,13 @@
     .fitur-item{
         margin-top: 20px;
     }
-
+    .img-guides {
+        z-index: 1;
+        margin-top: 32px;
+    }
+    .guides-png {
+        width: 407px;
+    }
 }
 
 @media (max-width: 768px) {

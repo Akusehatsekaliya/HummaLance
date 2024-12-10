@@ -9,6 +9,7 @@
       <button class="close-btn" data-close="modal">
         <i class="bx bx-x"></i>
       </button>
+      
       <div class="form-box login">
 
         <form method="POST" action="{{ route('login') }}">

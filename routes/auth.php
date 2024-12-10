@@ -15,6 +15,9 @@ Route::get('/freelancer-register', [RegisterController::class, 'freelancerStore'
 Route::get('/register', function () {
     return view('auth.option');
 })->name('option');
+Route::get('/register/google', function () {
+    return view('auth.signup_google');
+})->name('signup_google');
 
 // Google Login
 Route::get('login/google', [LoginController::class, 'redirectToGoogle'])->name('login.google');
