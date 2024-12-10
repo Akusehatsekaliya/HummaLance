@@ -25,10 +25,6 @@ Route::get('/option', function () {
     return view('auth.adventure');
 })->name('adventure');
 
-Route::get('/register/google', function () {
-    return view('auth.signup_google');
-})->name('signup_google');
-
 // Google Login
 Route::get('login/google', [LoginController::class, 'redirectToGoogle'])->name('login.google');
 Route::get('login/google/callback', [LoginController::class, 'handleGoogleCallback']);
