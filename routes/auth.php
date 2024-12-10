@@ -15,6 +15,16 @@ Route::get('/freelancer-register', [RegisterController::class, 'freelancerStore'
 Route::get('/register', function () {
     return view('auth.option');
 })->name('option');
+Route::get('/journey', function () {
+    return view('auth.journey');
+})->name('journey');
+Route::get('/adventure', function () {
+    return view('auth.adventure');
+})->name('adventure');
+Route::get('/option', function () {
+    return view('auth.adventure');
+})->name('adventure');
+
 Route::get('/register/google', function () {
     return view('auth.signup_google');
 })->name('signup_google');

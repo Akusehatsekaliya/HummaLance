@@ -1262,7 +1262,6 @@
     }
 }
 
-
 .bg-learn{
     background: url(../images/bgLearn.png);
     background-size: cover;
@@ -1270,11 +1269,9 @@
     background-position-x: center;
 }
 
-
-
 .svg-container4 {
     position: absolute;
-    top: 137rem;
+    top: 110rem;
     right: 0;
     width: auto;
     z-index: -3;
