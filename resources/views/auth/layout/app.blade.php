@@ -35,7 +35,7 @@
     <section>
         <div class="container">
             <div class="row justify-content-center d-flex">
-                <div class="col-lg-10 py-4">
+                <div class="col-lg-10 py-4 nav-signup">
                     <div class="justify-content-between d-flex">
                         <x-svg>{{ asset('assets/svg/landing/logo-login.svg') }}</x-svg>
                         <p class="text-landing">{{ __('register.join_as_a_freelancer') }} <span
