@@ -9,7 +9,7 @@
       <button class="close-btn" data-close="modal">
         <i class="bx bx-x"></i>
       </button>
-      
+
       <div class="form-box login">
 
         <form method="POST" action="{{ route('login') }}">
@@ -116,7 +116,7 @@
                                 <path d="M18.0716 19.3271H24.0722H31.3633H33.4888C33.6387 19.3271 33.7675 19.22 33.7956 19.0718L35.2203 11.5763C35.2572 11.3824 35.1096 11.2027 34.9135 11.2027H25.4969C25.347 11.2027 25.2183 11.3099 25.1901 11.4581L23.7919 18.8142H18.0716C17.9315 18.8142 17.8169 18.9296 17.8169 19.0707C17.8169 19.2117 17.9315 19.3271 18.0716 19.3271ZM29.5562 13.7741C29.5947 13.5543 29.803 13.376 30.0214 13.376C30.2397 13.376 30.3856 13.5543 30.347 13.7741C30.3085 13.994 30.1003 14.1722 29.8819 14.1722C29.6635 14.1722 29.5177 13.994 29.5562 13.7741Z" fill="#060020"/>
                             </svg>
                         </div>
-                        <p class="card-text text-left mb-0 mt-1" style="font-size: 18px; font-weight:400;">Im a freelancer looking for client</p>
+                        <p class="card-text text-left mb-0 mt-1" style="font-size: 18px; font-weight:400;">Im a freelancer and worker looking for job</p>
                     </div>
                 </div>
             </label>
@@ -142,7 +142,7 @@
                         </svg>
                         <input class="form-check-input" type="radio" name="option" id="option2" value="2">
                       </div>
-                        <p class="card-text text-left mb-0 mt-1" style="font-size: 18px; font-weight:400;">Im a job seeker looking for a work</p>
+                        <p class="card-text text-left mb-0 mt-1" style="font-size: 18px; font-weight:400;">Im a client looking for a freelancer</p>
                     </div>
                 </div>
             </label>

@@ -1,8 +1,8 @@
 @extends('auth.layout.app')
 @section('content')
+<h4 id="signup-heading" class="justify-content-center d-flex">Sign up and discover your greatest potential as a freelancer or worker</h4>
           <div class="col-lg-7">
-            <div class="card-register">
-              <h4 id="signup-heading" class="justify-content-center d-flex">Sign up to start your freelance career</h4>
+            <div class="card-register pt-0">
               <form action="">
                 <div id="header" class="header">
                   <div class="justify-content-between d-flex mt-5 gap-1" style="gap: 1rem;">
@@ -166,7 +166,7 @@
 
       // Teks yang akan digunakan untuk masing-masing pilihan
       const texts = {
-        '1': 'Sign up to start your freelance career',
+        '1': 'Sign up and discover your greatest potential as a freelancer or worker',
         '2': 'Sign to find a job that you love and that suits you',
         '3': 'Sign to find a job that you love and that suits you'
       };

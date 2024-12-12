@@ -122,11 +122,12 @@
         .custom-hr {
             border: none;
             height: 0.8px;
-            width: 159.6%;
+            width: 146.13%;
             background-color: #000;
             /* margin: 20px 0; */
-            margin-left: -287px;
+            margin-left: -253px;
         }
+
     </style>
 @endsection
 @section('content')
