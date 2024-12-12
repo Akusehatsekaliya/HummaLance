@@ -62,3 +62,5 @@ Route::post('password/reset', [ResetPasswordController::class, 'reset'])->name('
 Route::post('/update-goal', [UserController::class, 'UpdateGoal'])->name('update-goal');
 
 Route::post('/update-jobs', [UserController::class, 'UpdateJob'])->name('update-job');
+
+Route::post('/update-about_user', [UserController::class, 'UpdateAboutUser'])->name('update.about');

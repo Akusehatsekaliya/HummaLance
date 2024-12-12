@@ -5,6 +5,7 @@ namespace App\Services;
 use App\Constract\Enums\UserStatusEnum;
 use App\Constract\Enums\UserStatusRegisterEnum;
 use App\Constract\Interfaces\UserInterface;
+use App\Http\Requests\UserAboutRequest;
 use App\Http\Requests\UserGoalRequest;
 use App\Http\Requests\UserJobRequest;
 use App\Models\User;
@@ -112,5 +113,22 @@ class UserService
         $validatedRequest["user_id"] = auth()->id();
 
         return $this->userInterface->UpdateJob($validatedRequest);
+    }
+
+    public function UpdateAboutUser(UserAboutRequest $request)
+    {
+        $validatedRequest = $request->validated();
+        $validatedRequest["user_id"] = auth()->id();
+
+        if ($request->hasFile('about_user')) {
+
+            $file = $request->file('about_user');
+
+            $filePath = $file->store('uploads/about_users', 'public');
+
+            $validatedRequest['about_user'] = $filePath;
+        }
+
+        return $this->userInterface->UpdateAboutUser($validatedRequest);
     }
 }

@@ -114,4 +114,10 @@ class UserRepository extends BaseRepository implements UserInterface
         return model::where('user_id', $data['user_id'])
             ->update(['job' => $data['job']]);
     }
+
+    public function UpdateAboutUser(array $data): mixed
+    {
+        return model::where('user_id', $data['user_id'])
+        ->update(['about_user' => $data['about_user']]);
+    }
 }
