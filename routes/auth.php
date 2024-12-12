@@ -37,6 +37,12 @@ Route::get('/goals', function () {
 Route::get('/success', function () {
     return view('auth.success');
 })->name('success');
+Route::get('/option', function () {
+    return view('auth.adventure');
+})->name('adventure');
+Route::get('/question', function () {
+    return view('auth.question');
+})->name('adventure');
 // Google Login
 Route::get('login/google', [LoginController::class, 'redirectToGoogle'])->name('login.google');
 Route::get('login/google/callback', [LoginController::class, 'handleGoogleCallback']);
