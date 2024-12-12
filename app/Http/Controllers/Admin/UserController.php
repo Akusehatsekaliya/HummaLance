@@ -2,16 +2,15 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Constract\Enums\UserRoleEnum;
 use App\Constract\Enums\UserStatusEnum;
-use App\Constract\Enums\UserStatusRegisterEnum;
 use App\Constract\Interfaces\UserInterface;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\UserGoalRequest;
+use App\Http\Requests\UserJobRequest;
 use App\Http\Resources\UserResource;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Services\UserService;
-use Yajra\DataTables\DataTables;
 
 class UserController extends Controller
 {
@@ -61,6 +60,20 @@ class UserController extends Controller
         $this->service->updateStatusAcount($request);
 
         return response()->json(['message' => 'Status updated successfully!']);
+    }
+
+    public function UpdateGoal(UserGoalRequest $request)
+    {
+        $this->service->UpdateGoal($request);
+
+        return redirect();
+    }
+
+    public function UpdateJob(UserJobRequest $request)
+    {
+        $this->service->UpdateJob($request);
+
+        return redirect();
     }
 
     /**

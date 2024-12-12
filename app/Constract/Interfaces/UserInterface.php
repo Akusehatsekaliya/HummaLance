@@ -14,4 +14,6 @@ interface UserInterface extends StoreInterface, UpdateInterface, DeleteInterface
 {
     public function get(Request $request): mixed;
     public function showDetail(mixed $id): mixed;
+    public function UpdateGoal(array $data): mixed;
+    public function UpdateJob(array $data): mixed;
 }

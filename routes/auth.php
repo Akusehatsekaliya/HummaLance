@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\UserController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\LoginController;
@@ -51,3 +52,7 @@ Route::get('password/reset/{token}', [ResetPasswordController::class, 'showReset
 
 // Memproses reset password
 Route::post('password/reset', [ResetPasswordController::class, 'reset'])->name('password.update');
+
+Route::post('/update-goal', [UserController::class, 'UpdateGoal'])->name('update-goal');
+
+Route::post('/update-jobs', [UserController::class, 'UpdateJob'])->name('update-job');

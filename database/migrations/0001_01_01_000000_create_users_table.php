@@ -2,6 +2,8 @@
 
 use App\Constract\Enums\CountryEnum;
 use App\Constract\Enums\UserGenderEnum;
+use App\Constract\Enums\UserGoalEnum;
+use App\Constract\Enums\UserJobEnum;
 use App\Constract\Enums\UserRoleEnum;
 use App\Constract\Enums\UserSkilsEnum;
 use App\Constract\Enums\UserStatusEnum;
@@ -81,6 +83,18 @@ return new class extends Migration
                 'country',
                 $country
             )->default("ID");
+            $table->enum('goal',[
+                UserGoalEnum::SIDE->value,
+                UserGoalEnum::STEADY->value,
+                UserGoalEnum::EXPERIENCE->value,
+                UserGoalEnum::NOTHING->value,
+            ])->default(UserGoalEnum::NOTHING->value,);
+            $table->enum('job',[
+                UserJobEnum::OFFICE->value,
+                UserJobEnum::WFH->value,
+                UserJobEnum::FULL_TIME->value,
+                UserJobEnum::PART_TIME->value,
+            ]);
             $table->rememberToken();
             $table->timestamps();
         });
