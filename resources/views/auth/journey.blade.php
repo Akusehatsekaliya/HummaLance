@@ -9,10 +9,10 @@
               <div class="col-12">
 
                 <label for="inputPassword" class="form-label">{{ __('register.password') }}</label>
-                <input type="password" class="form-control mb-3" id="inputPassword">
+                <input type="password" class="form-control mb-3" id="inputPassword" style="border-radius: 9px; height: 45px;">
 
                 <label for="inputCountry" class="form-label">{{ __('register.country') }}</label>
-                <select class="form-control mb-3" aria-label="Default select example" id="inputCountry">
+                <select class="form-control mb-3" aria-label="Default select example" id="inputCountry" style="border-radius: 9px; height: 45px;">
                     <option selected>indonesia</option>
                     <option value="1">english</option>
                 </select>
@@ -20,11 +20,11 @@
                 <div class="row g-3 mb-3">
                     <div class="col-sm">
                         <label for="inputday" class="form-label">Day</label>
-                        <input type="number" name="day" class="form-control" id="inputday">
+                        <input type="number" name="day" class="form-control" id="inputday" style="border-radius: 9px; height: 45px;">
                     </div>
                     <div class="col-sm">
                         <label for="inputmonth" class="form-label">Month</label>
-                        <select id="inputmonth" class="form-control" name="month" required>
+                        <select id="inputmonth" class="form-control" name="month" style="border-radius: 9px; height: 45px;" required>
                         <option value="" disabled selected>MM</option>
                         <script>
                             for (let i = 1; i <= 12; i++) {
@@ -36,7 +36,7 @@
                     </div>
                     <div class="col-sm">
                         <label for="year" class="form-label">Year</label>
-                        <select id="year" name="year" class="form-control" required>
+                        <select id="year" name="year" class="form-control" style="border-radius: 9px; height: 45px;" required>
                             <option value="" disabled selected>YYYY</option>
                             <script>
                                 const currentYear = new Date().getFullYear();

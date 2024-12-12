@@ -206,6 +206,68 @@
             max-width: 100%;
             word-wrap: break-word;
         }
+
+
+
+        .card-question1 input[type="radio"] {
+            -webkit-appearance: none;
+            appearance: none;
+            height: 100%;
+            width: 100%;
+            border-radius: 10px;
+            position: absolute;
+            /* box-shadow: 7px 7px 15px rgba(2, 28, 53, 0.08); */
+            cursor: pointer;
+            outline: none;
+            /* border: 2px solid transparent; */
+            /* transition: transform 0.3s, border 0.3s; */
+        }
+
+        .card-question1 input[type="radio"]::before {
+            content: "";
+            position: absolute;
+            height: 22px;
+            width: 22px;
+            background-color: #f9fafd;
+            border: 1px solid #e2e6f3;
+            border-radius: 50%;
+            top: -4px;
+            right: -2px;
+        }
+
+        .card-question1 input[type="radio"]::after {
+            content: "";
+            position: absolute;
+            height: 11px;
+            width: 11px;
+            background-color: transparent;
+            border-radius: 50%;
+            top: 2px;
+            right: 3px;
+            /* transition: background-color 0.3s; */
+        }
+
+        .card-question1 input[type="radio"]:checked {
+
+            transform: scale(1.05);
+        }
+
+        .card-question1 {
+            --data-color: #00AAFF;
+        }
+
+        .card-question1 input[type="radio"]:checked::after {
+            background-color: var(--data-color);
+            border: 2.3px solid #ffff;
+            height: 12px;
+            width: 12px;
+            top: 1.9px;
+            right: 2.9px;
+        }
+
+        .card-question1 input[type="radio"]:checked::before {
+            background-color: var(--data-color);
+        }
     </style>
 @endsection
 
@@ -225,7 +287,9 @@
 
         <div class="options">
             <label class="option" data-color="#C6FFD4">
-                <input name="experience" type="radio" id="experience-1" data-color="#2f994a"/>
+                <div class="card-question1">
+                    <input name="experience" type="radio" id="experience-1" data-color="#34C759" />
+                </div>
                 <x-svg class="vector-icon">{{ asset('assets/svg/login/freelancing.svg') }}</x-svg>
                 <h3 style="font-weight: bold;">
                     I'm new to freelancing
@@ -236,7 +300,9 @@
             </label>
 
             <label class="option" data-color="#FFE0B5">
-                <input name="experience" type="radio" data-color="#D9730C"/>
+                <div class="card-question1">
+                    <input name="experience" type="radio" data-color="#FF9500" />
+                </div>
                 <x-svg class="vector-icon">{{ asset('assets/svg/login/experience.svg') }}</x-svg>
 
                 </i>
@@ -249,7 +315,9 @@
             </label>
 
             <label class="option" data-color="#FFB8B4">
-                <input name="experience" type="radio" data-color="#FF3B30"/>
+                <div class="card-question1">
+                    <input name="experience" type="radio" data-color="#FF3B30" />
+                </div>
                 <x-svg class="vector-icon">{{ asset('assets/svg/login/expert.svg') }}</x-svg>
 
                 </i>
@@ -285,9 +353,9 @@
     <script>
         $('input[name="experience"]').change(function() {
             $('.option').css('background-color', '');
-            $(this).css("accent-color", "");
+            $(this).css("--data-color", "");
 
-            $(this).css("accent-color", $(this).data("color"));
+            $(this).css("--data-color", $(this).data("color"));
             $(this).closest('.option').css('background-color', $(this).closest('.option').data("color"));
         });
     </script>
