@@ -10,11 +10,7 @@ use App\Constract\Interfaces\Eloquent\StoreInterface;
 use App\Constract\Interfaces\Eloquent\UpdateInterface;
 use Illuminate\Http\Request;
 
-interface UserInterface extends StoreInterface, UpdateInterface, DeleteInterface, SearchInterface, ShowInterface
+interface CompanyInterface extends StoreInterface
 {
-    public function get(Request $request): mixed;
-    public function showDetail(mixed $id): mixed;
-    public function UpdateGoal(array $data): mixed;
-    public function UpdateJob(array $data): mixed;
-    public function UpdateAboutUser(array $data): mixed;
+
 }

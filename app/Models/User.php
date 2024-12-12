@@ -40,7 +40,10 @@ class User extends Authenticatable
         'skills',
         'status_login',
         'status_acount_register',
-        'country'
+        'country',
+        'job',
+        'goal',
+        'about_user'
     ];
 
     /**
@@ -147,5 +150,9 @@ class User extends Authenticatable
     public function UserReports()
     {
         return $this->hasMany(UserReport::class);
+    }
+    public function Company()
+    {
+        return $this->hasOne(Company::class);
     }
 }

@@ -4,6 +4,7 @@ namespace App\Constract\Repositories;
 
 use App\Constract\Interfaces\UserInterface;
 use App\Models\User;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
 
 class UserRepository extends BaseRepository implements UserInterface
@@ -101,5 +102,22 @@ class UserRepository extends BaseRepository implements UserInterface
     public function showDetail(mixed $id): mixed
     {
         return  $this->model->find($id);
+    }
+
+    public function UpdateGoal(array $data): mixed
+    {
+        return model::where('user_id', $data['user_id'])
+            ->update(['goal' => $data['goal']]);
+    }
+    public function UpdateJob(array $data): mixed
+    {
+        return model::where('user_id', $data['user_id'])
+            ->update(['job' => $data['job']]);
+    }
+
+    public function UpdateAboutUser(array $data): mixed
+    {
+        return model::where('user_id', $data['user_id'])
+        ->update(['about_user' => $data['about_user']]);
     }
 }

@@ -5,13 +5,6 @@
             font-weight: 500;
         }
 
-        .container {
-            max-width: 1200px;
-            width: 100%;
-            padding: 20px;
-            box-sizing: border-box;
-        }
-
         .header {
             display: flex;
             justify-content: space-between;
@@ -31,7 +24,6 @@
         }
 
         .content {
-            /* text-align: center; */
             margin-top: 50px;
         }
 
@@ -59,7 +51,7 @@
         .option {
             background-color: #fff;
             border: 1px solid #dee2e6;
-            border-radius: 8px;
+            border-radius: 15px;
             padding: 20px;
             width: 347px;
             box-sizing: border-box;
@@ -90,6 +82,8 @@
         .option p {
             font-size: 14px;
             color: #6c757d;
+            font-style: italic;
+            color: #000;
         }
 
         .footer {
@@ -116,18 +110,13 @@
             color: #007bff;
         }
 
-        /* .footer button:hover {
-                    background-color: #f0f0f0;
-                } */
-
-
         .custom-hr {
             border: none;
             height: 0.8px;
-            width: 159.6%;
+            width: 100vw;
             background-color: #000;
             /* margin: 20px 0; */
-            margin-left: -287px;
+            margin-left: -16.1%;
         }
 
         .shift-right {
@@ -144,7 +133,7 @@
 
         .progress-container {
             position: absolute;
-            left: -175px;
+            left: -9.1%;
             width: 100vw;
             height: 4px;
             background-color: #ddd;
@@ -197,6 +186,88 @@
             font-size: 16px;
             cursor: pointer;
         }
+
+        .option {
+            padding: 20px;
+            border-radius: 10px;
+            background-color: #fff;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+            transition: box-shadow 0.3s ease, transform 0.3s ease;
+            cursor: pointer;
+        }
+
+        .option.selected {
+            box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+            transform: scale(1.03);
+        }
+
+        .shift-right {
+            display: block;
+            max-width: 100%;
+            word-wrap: break-word;
+        }
+
+
+
+        .card-question1 input[type="radio"] {
+            -webkit-appearance: none;
+            appearance: none;
+            height: 100%;
+            width: 100%;
+            border-radius: 10px;
+            position: absolute;
+            /* box-shadow: 7px 7px 15px rgba(2, 28, 53, 0.08); */
+            cursor: pointer;
+            outline: none;
+            /* border: 2px solid transparent; */
+            /* transition: transform 0.3s, border 0.3s; */
+        }
+
+        .card-question1 input[type="radio"]::before {
+            content: "";
+            position: absolute;
+            height: 22px;
+            width: 22px;
+            background-color: #f9fafd;
+            border: 1px solid #e2e6f3;
+            border-radius: 50%;
+            top: -4px;
+            right: -2px;
+        }
+
+        .card-question1 input[type="radio"]::after {
+            content: "";
+            position: absolute;
+            height: 11px;
+            width: 11px;
+            background-color: transparent;
+            border-radius: 50%;
+            top: 2px;
+            right: 3px;
+            /* transition: background-color 0.3s; */
+        }
+
+        .card-question1 input[type="radio"]:checked {
+
+            transform: scale(1.05);
+        }
+
+        .card-question1 {
+            --data-color: #00AAFF;
+        }
+
+        .card-question1 input[type="radio"]:checked::after {
+            background-color: var(--data-color);
+            border: 2.3px solid #ffff;
+            height: 12px;
+            width: 12px;
+            top: 1.9px;
+            right: 2.9px;
+        }
+
+        .card-question1 input[type="radio"]:checked::before {
+            background-color: var(--data-color);
+        }
     </style>
 @endsection
 
@@ -206,17 +277,19 @@
             <h6 class="move-up">Freelancer</h6>
         </div>
         <h1>
-            Some questions that might help you: first, have you ever had experience as a freelancer?
+            Some questions that might help you: first, have you ever had br experience <br> as a freelancer?
         </h1>
 
         <p class="shift-right">
             This will let us know and can help you further in starting your career journey as a freelancer,
-            we will not tell your answer to anyone including clients and potential companies.
+            we will not tell your <br> answer to anyone including clients and potential companies.
         </p>
 
         <div class="options">
             <label class="option" data-color="#C6FFD4">
-                <input name="experience" type="radio" id="experience-1" />
+                <div class="card-question1">
+                    <input name="experience" type="radio" id="experience-1" data-color="#34C759" />
+                </div>
                 <x-svg class="vector-icon">{{ asset('assets/svg/login/freelancing.svg') }}</x-svg>
                 <h3 style="font-weight: bold;">
                     I'm new to freelancing
@@ -227,7 +300,9 @@
             </label>
 
             <label class="option" data-color="#FFE0B5">
-                <input name="experience" type="radio" />
+                <div class="card-question1">
+                    <input name="experience" type="radio" data-color="#FF9500" />
+                </div>
                 <x-svg class="vector-icon">{{ asset('assets/svg/login/experience.svg') }}</x-svg>
 
                 </i>
@@ -238,8 +313,11 @@
                     With this option we will know if you are a freelancer who has experience.
                 </p>
             </label>
+
             <label class="option" data-color="#FFB8B4">
-                <input name="experience" type="radio" />
+                <div class="card-question1">
+                    <input name="experience" type="radio" data-color="#FF3B30" />
+                </div>
                 <x-svg class="vector-icon">{{ asset('assets/svg/login/expert.svg') }}</x-svg>
 
                 </i>
@@ -274,10 +352,24 @@
 @section('script')
     <script>
         $('input[name="experience"]').change(function() {
-            console.log($(this), $(this).closest('.option').data("color"));
             $('.option').css('background-color', '');
+            $(this).css("--data-color", "");
 
+            $(this).css("--data-color", $(this).data("color"));
             $(this).closest('.option').css('background-color', $(this).closest('.option').data("color"));
+        });
+    </script>
+
+    <script>
+        const options = document.querySelectorAll('.option');
+
+        options.forEach(option => {
+            option.addEventListener('click', () => {
+                // Hapus kelas 'selected' dari semua kartu
+                options.forEach(opt => opt.classList.remove('selected'));
+                // Tambahkan kelas 'selected' ke kartu yang diklik
+                option.classList.add('selected');
+            });
         });
     </script>
 
@@ -306,7 +398,7 @@
 
         function updateProgress() {
             // Update progress bar width
-            progressBar.style.width = `${(currentStep / (maxSteps - 1)) * 100}%`;
+            progressBar.style.width = `${(currentStep / (1 + maxSteps - 1)) * 100}%`;
 
             // Update step indicators
             steps.forEach((step, index) => {

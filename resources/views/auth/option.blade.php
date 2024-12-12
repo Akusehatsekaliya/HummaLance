@@ -30,10 +30,10 @@
                 <div id="company-name-input">
                   <div class="row g-3 mt-5">
                     <label for="companyname" class="form-label">{{ __('register.company_name') }}</label>
-                    <input type="text" class="form-control mb-3" id="companyname">
+                    <input type="text" class="form-control mb-3" id="companyname" style="border-radius: 9px; height: 45px;">
 
                     <label for="companyname" class="form-label">{{ __('register.company_name') }}</label>
-                    <input type="text" class="form-control mb-3" id="companyname">
+                    <input type="text" class="form-control mb-3" id="companyname" style="border-radius: 9px; height: 45px;">
                   </div>
                 </div>
             </div>
@@ -41,21 +41,21 @@
             <div class="row g-3">
               <div class="col-md-6">
                 <label for="inputfisrt" class="form-label">{{ __('register.first_name') }}</label>
-                <input type="text" class="form-control mb-3" id="inputfisrt">
+                <input type="text" class="form-control mb-3" id="inputfisrt" style="border-radius: 9px; height: 45px;">
               </div>
               <div class="col-md-6">
                 <label for="inputlast" class="form-label">{{ __('register.last_name') }}</label>
-                <input type="text" class="form-control mb-3" id="inputlast">
+                <input type="text" class="form-control mb-3" id="inputlast" style="border-radius: 9px; height: 45px;">
               </div>
               <div class="col-12">
                 <label for="inputEmail" class="form-label">Email</label>
-                <input type="email" class="form-control mb-3" id="inputEmail">
+                <input type="email" class="form-control mb-3" id="inputEmail" style="border-radius: 9px; height: 45px;">
 
                 <label for="inputPassword" class="form-label">{{ __('register.password') }}</label>
-                <input type="password" class="form-control mb-3" id="inputPassword">
+                <input type="password" class="form-control mb-3" id="inputPassword" style="border-radius: 9px; height: 45px;">
 
                 <label for="inputCountry" class="form-label">{{ __('register.country') }}</label>
-                <select class="form-control mb-3" aria-label="Default select example" id="inputCountry">
+                <select class="form-control mb-3" aria-label="Default select example" id="inputCountry" style="border-radius: 9px; height: 45px;">
                     <option selected>indonesia</option>
                     <option value="1">english</option>
                 </select>
@@ -63,11 +63,11 @@
                 <div class="row g-3 mb-3">
                     <div class="col-sm">
                         <label for="inputday" class="form-label">Day</label>
-                        <input type="number" name="day" class="form-control" id="inputday">
+                        <input type="number" name="day" class="form-control" id="inputday" style="border-radius: 9px; height: 45px;">
                     </div>
                     <div class="col-sm">
                         <label for="inputmonth" class="form-label">Month</label>
-                        <select id="inputmonth" class="form-control" name="month" required>
+                        <select id="inputmonth" class="form-control" name="month" style="border-radius: 9px; height: 45px;" required>
                             <option value="" disabled selected>Month</option>
                             <script>
                                 const months = [
@@ -93,7 +93,7 @@
                     </div>
                     <div class="col-sm">
                         <label for="year" class="form-label">Year</label>
-                        <select id="year" name="year" class="form-control" required>
+                        <select id="year" name="year" class="form-control" style="border-radius: 9px; height: 45px;" required>
                             <option value="" disabled selected>YYYY</option>
                             <script>
                                 const currentYear = new Date().getFullYear();
