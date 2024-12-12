@@ -40,7 +40,10 @@ class User extends Authenticatable
         'skills',
         'status_login',
         'status_acount_register',
-        'country'
+        'country',
+        'job',
+        'goal',
+        'about_user'
     ];
 
     /**

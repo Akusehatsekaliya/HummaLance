@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Constract\Enums\UserStatusEnum;
 use App\Constract\Interfaces\UserInterface;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\UserAboutRequest;
 use App\Http\Requests\UserGoalRequest;
 use App\Http\Requests\UserJobRequest;
 use App\Http\Resources\UserResource;
@@ -72,6 +73,13 @@ class UserController extends Controller
     public function UpdateJob(UserJobRequest $request)
     {
         $this->service->UpdateJob($request);
+
+        return redirect();
+    }
+
+    public function UpdateAboutUser(UserAboutRequest $request)
+    {
+        $this->service->UpdateAboutUser($request);
 
         return redirect();
     }

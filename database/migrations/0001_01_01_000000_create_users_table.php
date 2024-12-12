@@ -95,6 +95,7 @@ return new class extends Migration
                 UserJobEnum::FULL_TIME->value,
                 UserJobEnum::PART_TIME->value,
             ]);
+            $table->string('about_user')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });
