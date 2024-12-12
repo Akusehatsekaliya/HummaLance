@@ -2,12 +2,14 @@
 @section('content')
           <div class="col-lg-7">
             <div class="card-register">
-              <h4 id="signup-heading" class="justify-content-center d-flex">Lets start your journey as a freelancer</h4>
-              <form action="">
+                <h4 id="signup-heading" class="justify-content-center d-flex text-nowrap">Sign up and discover your greatest potential as a freelancer or worker</h4>
+                <form method="POST" action="">
             </div>
-
             <div class="row g-3">
               <div class="col-12">
+
+                <label for="inputPassword" class="form-label">{{ __('register.password') }}</label>
+                <input type="password" class="form-control mb-3" id="inputPassword">
 
                 <label for="inputCountry" class="form-label">{{ __('register.country') }}</label>
                 <select class="form-control mb-3" aria-label="Default select example" id="inputCountry">
@@ -61,7 +63,6 @@
                   </label>
                 </div>
               </div>
-
 
               <div class="col-12 justify-content-center d-flex">
                 <button type="submit" class="btn btn-primary">Create my account</button>
