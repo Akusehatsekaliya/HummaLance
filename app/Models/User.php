@@ -148,4 +148,8 @@ class User extends Authenticatable
     {
         return $this->hasMany(UserReport::class);
     }
+    public function Company()
+    {
+        return $this->hasOne(Company::class);
+    }
 }
