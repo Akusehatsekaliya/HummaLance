@@ -701,9 +701,8 @@ label {
 .custom-hr {
     border: none;
     height: 0.8px;
-    width: 159.6%;
+    width: 148.6%;
     background-color: #000;
-    /* margin: 20px 0; */
     margin-left: -287px;
 }
 
