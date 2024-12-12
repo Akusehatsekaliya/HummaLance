@@ -5,7 +5,7 @@
                 alt=""></a>
         <!-- Topbar Navbar -->
         <div class="collapse navbar-collapse nav-links" id="navLinks">
-            <ul class="navbar-nav ml-auto mr-sm-auto nav-item">
+            <ul class="navbar-nav ml-auto">
                 <li @class(['nav-item', 'active' => request()->routeIs('landing.index')])>
                     <a class="nav-landing" href="{{ route('landing.index') }}">Clocker Pro</a>
                 </li>

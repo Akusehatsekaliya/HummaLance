@@ -17,7 +17,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-6 justify-content-center d-flex align-items-center">
+            <div class="col-lg-6 justify-content-center d-flex align-items-center sm-none">
                 <div class="row">
                     {{-- item1 --}}
                     <x-svg>{{ asset('assets/svg/landing/banner/item1.svg') }}</x-svg>
