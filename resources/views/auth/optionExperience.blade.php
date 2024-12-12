@@ -5,13 +5,6 @@
             font-weight: 500;
         }
 
-        .container {
-            max-width: 1200px;
-            width: 100%;
-            padding: 20px;
-            box-sizing: border-box;
-        }
-
         .header {
             display: flex;
             justify-content: space-between;
@@ -31,7 +24,6 @@
         }
 
         .content {
-            /* text-align: center; */
             margin-top: 50px;
         }
 
@@ -118,18 +110,13 @@
             color: #007bff;
         }
 
-        /* .footer button:hover {
-                            background-color: #f0f0f0;
-                        } */
-
-
         .custom-hr {
             border: none;
             height: 0.8px;
-            width: 159.6%;
+            width: 100vw;
             background-color: #000;
             /* margin: 20px 0; */
-            margin-left: -287px;
+            margin-left: -16.1%;
         }
 
         .shift-right {
@@ -146,7 +133,7 @@
 
         .progress-container {
             position: absolute;
-            left: -175px;
+            left: -9.1%;
             width: 100vw;
             height: 4px;
             background-color: #ddd;
@@ -205,15 +192,13 @@
             border-radius: 10px;
             background-color: #fff;
             box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
-            /* Efek shadow */
             transition: box-shadow 0.3s ease, transform 0.3s ease;
-            /* Animasi untuk efek interaktif */
             cursor: pointer;
         }
 
-        .option:hover {
+        .option.selected {
             box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
-            transform: translateY(-5px);
+            transform: scale(1.03);
         }
 
         .shift-right {
@@ -240,7 +225,7 @@
 
         <div class="options">
             <label class="option" data-color="#C6FFD4">
-                <input name="experience" type="radio" id="experience-1" />
+                <input name="experience" type="radio" id="experience-1" data-color="#2f994a"/>
                 <x-svg class="vector-icon">{{ asset('assets/svg/login/freelancing.svg') }}</x-svg>
                 <h3 style="font-weight: bold;">
                     I'm new to freelancing
@@ -251,7 +236,7 @@
             </label>
 
             <label class="option" data-color="#FFE0B5">
-                <input name="experience" type="radio" />
+                <input name="experience" type="radio" data-color="#D9730C"/>
                 <x-svg class="vector-icon">{{ asset('assets/svg/login/experience.svg') }}</x-svg>
 
                 </i>
@@ -264,7 +249,7 @@
             </label>
 
             <label class="option" data-color="#FFB8B4">
-                <input name="experience" type="radio" />
+                <input name="experience" type="radio" data-color="#FF3B30"/>
                 <x-svg class="vector-icon">{{ asset('assets/svg/login/expert.svg') }}</x-svg>
 
                 </i>
@@ -299,10 +284,24 @@
 @section('script')
     <script>
         $('input[name="experience"]').change(function() {
-            console.log($(this), $(this).closest('.option').data("color"));
             $('.option').css('background-color', '');
+            $(this).css("accent-color", "");
 
+            $(this).css("accent-color", $(this).data("color"));
             $(this).closest('.option').css('background-color', $(this).closest('.option').data("color"));
+        });
+    </script>
+
+    <script>
+        const options = document.querySelectorAll('.option');
+
+        options.forEach(option => {
+            option.addEventListener('click', () => {
+                // Hapus kelas 'selected' dari semua kartu
+                options.forEach(opt => opt.classList.remove('selected'));
+                // Tambahkan kelas 'selected' ke kartu yang diklik
+                option.classList.add('selected');
+            });
         });
     </script>
 
