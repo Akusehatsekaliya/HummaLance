@@ -216,11 +216,9 @@
             width: 100%;
             border-radius: 10px;
             position: absolute;
-            /* box-shadow: 7px 7px 15px rgba(2, 28, 53, 0.08); */
             cursor: pointer;
             outline: none;
-            /* border: 2px solid transparent; */
-            /* transition: transform 0.3s, border 0.3s; */
+
         }
 
         .card-question1 input[type="radio"]::before {
@@ -244,7 +242,6 @@
             border-radius: 50%;
             top: 2px;
             right: 3px;
-            /* transition: background-color 0.3s; */
         }
 
         .card-question1 input[type="radio"]:checked {
