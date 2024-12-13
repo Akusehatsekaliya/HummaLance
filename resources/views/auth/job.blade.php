@@ -10,10 +10,11 @@
                 Everyone works differently, and we want to know what you like to work with and what type of job you want,
                 this will really help us in finding the right job for you.
             </p>
-            <form action="{{route('update-job')}}">
+            <form action="{{route('update-job')}}" method="POST">
+                @csrf
                 <div class="card-job">
                     <input type="radio" name="job" id="job1" value="OFFICE">
-                    <label for="option1">
+                    <label for="job1">
                         <svg width="50" height="50" viewBox="0 0 64 63" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <g filter="url(#filter0_d_1570_258)">
                                 <g clip-path="url(#clip0_1570_258)">
@@ -54,7 +55,7 @@
                 </div>
                 <div class="card-job">
                     <input type="radio" name="job" id="job2" class="toggleFormButton" value="WFH">
-                    <label for="option2">
+                    <label for="job2">
                         <svg width="50" height="50" viewBox="0 0 64 63" fill="none"
                             xmlns="http://www.w3.org/2000/svg">
                             <g filter="url(#filter0_d_1570_272)">
@@ -100,7 +101,7 @@
                 </div>
                 <div class="card-job">
                     <input type="radio" name="job" id="job3" value="FULL_TIME">
-                    <label for="option3">
+                    <label for="job3">
                         <svg width="50" height="50" viewBox="0 0 64 63" fill="none"
                             xmlns="http://www.w3.org/2000/svg">
                             <g filter="url(#filter0_d_1570_284)">
@@ -146,7 +147,7 @@
                 </div>
                 <div class="card-job">
                     <input type="radio" name="job" id="job4" class="toggleFormButton" value="PART_TIME">
-                    <label for="option4">
+                    <label for="job4">
                         <svg width="50" height="50" viewBox="0 0 64 63" fill="none"
                             xmlns="http://www.w3.org/2000/svg">
                             <g filter="url(#filter0_d_1570_298)">
