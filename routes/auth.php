@@ -43,6 +43,9 @@ Route::get('/option', function () {
 Route::get('/question', function () {
     return view('auth.question');
 })->name('adventure');
+Route::get('/job', function () {
+    return view('auth.job');
+})->name('adventure');
 // Google Login
 Route::get('login/google', [LoginController::class, 'redirectToGoogle'])->name('login.google');
 Route::get('login/google/callback', [LoginController::class, 'handleGoogleCallback']);
