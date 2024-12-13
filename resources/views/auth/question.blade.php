@@ -173,6 +173,7 @@
             position: absolute;
             right: 10px;
             pointer-events: none;
+            margin-top: 9px;
         }
 
 
