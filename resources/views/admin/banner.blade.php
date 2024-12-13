@@ -160,8 +160,7 @@
         </div>
     </div>
 @endsection
-@section('style')
-@endsection
+
 @section('script')
     <script>
         // const table = $('.yajra-datatable').DataTable({

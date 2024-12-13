@@ -22,7 +22,7 @@ class UpdateBannerRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'picture_update' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:10000',
+            'picture' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:10000',
             'title' => 'required|string|max:255',
             'subtitle' => 'required|string',
         ];
@@ -31,7 +31,7 @@ class UpdateBannerRequest extends FormRequest
     public function messages(): array
     {
         return [
-            'picture_update.max' => 'Ukuran foto tidak boleh lebih dari 10MB',
+            'picture.max' => 'Ukuran foto tidak boleh lebih dari 10MB',
             'title.required' => 'Judul tidak boleh kosong',
             'subtitle.required' => 'Deskripsi tidak boleh kosong',
         ];

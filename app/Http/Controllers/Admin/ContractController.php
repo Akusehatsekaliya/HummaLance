@@ -43,6 +43,7 @@ class ContractController extends Controller
     public function store(Request $request)
     {
         //
+        // dd("test");
     }
 
     public function showDetail($id)

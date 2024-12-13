@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="id">
 
-  <head>
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="Gurdeep singh osahan">
@@ -10,6 +10,8 @@
     <meta name="msapplication-navbutton-color" content="#01ABFE">
 
     <title>CLOCKER</title>
+    @viteReactRefresh
+    @vite('resources/scripts/landing.jsx');
 
     {{-- logo title --}}
     <!-- Bootstrap core CSS -->
@@ -24,13 +26,11 @@
 
     @yield('style')
     @stack('links')
-  </head>
+</head>
 
-  <body>
+<body>
 
-    @yield('content')
-    @stack('contents')
-
+    <div id="app"></div>
 
 
 
@@ -41,43 +41,43 @@
     @stack('scripts')
 
     <script>
-      // loadStreamingContent("http://127.0.0.1:8000/landing/about")
-      async function loadStreamingContent(url) {
-        try {
-          const response = await fetch(url);
-          const reader = response.body.getReader();
-          const decoder = new TextDecoder();
+        // loadStreamingContent("http://127.0.0.1:8000/landing/about")
+        async function loadStreamingContent(url) {
+            try {
+                const response = await fetch(url);
+                const reader = response.body.getReader();
+                const decoder = new TextDecoder();
 
-          // Membuka dokumen baru
-          document.open();
-          let buffer = '';
+                // Membuka dokumen baru
+                document.open();
+                let buffer = '';
 
-          while (true) {
-            const {
-              done,
-              value
-            } = await reader.read();
-            if (done) break;
+                while (true) {
+                    const {
+                        done,
+                        value
+                    } = await reader.read();
+                    if (done) break;
 
-            // Decode chunk data
-            const text = decoder.decode(value, {
-              stream: true
-            });
+                    // Decode chunk data
+                    const text = decoder.decode(value, {
+                        stream: true
+                    });
 
-            buffer += text;
-            console.log(buffer);
-            // Tulis konten ke halaman
-            document.write(buffer);
-          }
+                    buffer += text;
+                    console.log(buffer);
+                    // Tulis konten ke halaman
+                    document.write(buffer);
+                }
 
-          // Menutup dokumen setelah selesai
-          document.close();
-        } catch (error) {
-          console.error('Error:', error);
-          // document.body.innerHTML = '<h1>Error loading content</h1>';
+                // Menutup dokumen setelah selesai
+                document.close();
+            } catch (error) {
+                console.error('Error:', error);
+                // document.body.innerHTML = '<h1>Error loading content</h1>';
+            }
         }
-      }
     </script>
-  </body>
+</body>
 
 </html>

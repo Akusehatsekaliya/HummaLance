@@ -55,6 +55,7 @@
     .image-preview-container {
         position: relative;
         width: 465px;
+        max-width: 'fit-content';
         height: 310px;
         border-radius: 15px;
         overflow: hidden;
@@ -66,9 +67,12 @@
     }
 
     .image-preview-container img {
-        width: 100%;
+        max-width: 100%;
         height: 100%;
         object-fit: cover;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
     .pencil-icon {

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\ContractController;
 use App\Models\Language;
 use App\Models\User;
 use App\Models\UserReport;
@@ -14,6 +15,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/debug', function () {
     return view('debug2');
 })->name('debug');
+
+
+
+
 Route::get('/setlang/{lang}', function ($lang) {
     dd(Language::all(), UserSetting::where("user_id", auth()->id())->get(), UserSetting::where("user_id", auth()->id())->update([
         "languages_id" => $lang
@@ -56,3 +61,4 @@ require __DIR__ . '/landing.php';
 require __DIR__ . '/admin.php';
 require __DIR__ . '/company.php';
 require __DIR__ . '/tripay.php';
+require __DIR__ . '/react.php';

@@ -14,9 +14,3 @@
 <script src="{{ asset('assets/js/datatables/datatables-responsive.min.js') }}"></script>
 <script src="{{ asset('assets/js/datatables/datatables-stateRestore.min.js') }}"></script>
 <script src="{{ asset('assets/js/datatables/AjaxDataTable.js') }}"></script>
-
-<script>
-    window.addEventListener("storage", function(e) {
-        alert(this, e)
-    });
-</script>
