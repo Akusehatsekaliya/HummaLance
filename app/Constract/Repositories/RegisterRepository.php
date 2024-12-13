@@ -4,7 +4,6 @@ namespace App\Constract\Repositories;
 
 use App\Constract\Interfaces\RegisterInterface;
 use App\Http\Requests\RegisterFreelancerGoogleUpdtaeRequest;
-use App\Http\Requests\RegisterFreelancerRequest;
 use App\Models\User;
 use Laravel\Socialite\Facades\Socialite;
 
@@ -30,36 +29,16 @@ class RegisterRepository extends BaseRepository implements RegisterInterface
      *
      * @return mixed
      */
-    public function freelancer(RegisterFreelancerRequest $request): mixed
+    public function freelancer(array $data): mixed
     {
-        return $this->model->create($request->only([
-            'first_name',
-            'last_name',
-            'email',
-            'password',
-            'country',
-            'birthday'
-        ]));
+        return $this->model->create($data);
     }
 
-    public function freelancerGoogleID(): mixed
+    public function findByGoogleIdOrEmail(string $googleId, string $email): ?User
     {
-        $googleUser = Socialite::driver('google')->user();
-
-        $user = User::where('google_id', $googleUser->getId())->first();
-
-        if (!$user) {
-            $user = User::create([
-                'first_name' => explode(' ', $googleUser->getName())[0],
-                'last_name' => explode(' ', $googleUser->getName(), 2)[1] ?? '',
-                'email' => $googleUser->getEmail(),
-                'google_id' => $googleUser->getId(),
-            ]);
-        }
-
-        auth()->login($user);
-
-        return redirect('journey');
+        return $this->model->where('google_id', $googleId)
+            ->orWhere('email', $email)
+            ->first();
     }
 
 

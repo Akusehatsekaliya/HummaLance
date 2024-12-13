@@ -8,13 +8,13 @@ class UserSetting extends Model
 {
     protected $fillable =
     [
-        'users_id',
+        'user_id',
         'languages_id'
     ];
 
     public function user()
     {
-        return $this->belongsTo(User::class, 'users_id');
+        return $this->belongsTo(User::class, 'user_id');
     }
 
     public function language()

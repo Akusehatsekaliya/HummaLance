@@ -8,8 +8,10 @@ use App\Http\Requests\RegisterFreelancerGoogleUpdtaeRequest;
 use App\Http\Requests\RegisterFreelancerRequest;
 use App\Http\Requests\RegisterRequest;
 use App\Models\User;
+use App\Services\RegisterService;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Auth\Events\Registered;
+use Laravel\Socialite\Facades\Socialite;
 
 class RegisterController extends Controller
 {
@@ -40,10 +42,13 @@ class RegisterController extends Controller
      */
 
     protected $registerinterface;
-    public function __construct(RegisterInterface $registerInterface)
+    private RegisterService $registerService;
+
+    public function __construct(RegisterInterface $registerInterface, RegisterService $registerService)
     {
         $this->middleware('guest');
         $this->registerinterface = $registerInterface;
+        $this->registerService = $registerService;
     }
 
     /**
@@ -80,21 +85,22 @@ class RegisterController extends Controller
 
     public function RegisterFreelancerStore(RegisterFreelancerRequest $request)
     {
-        $freelancer = $this->registerinterface->freelancer($request);
+        $freelancer = $request->validated();
+        $this->registerService->FreelancerRegister($freelancer);
 
-        return response()->json([
-            'message' => 'Your freelancer account has been successfully created',
-            'data' => $freelancer,
-        ]);
+        return redirect('adventure')->with('succes', 'succes aount created');
+    }
+
+    public function registerRedirecToGoogle()
+    {
+        return Socialite::driver('google')->redirectUrl(env('GOOGLE_REDIRECT_URI_FREELANCER'))->redirect();
     }
 
     public function RegisterFreelancerGoogleStore()
     {
-        $this->registerinterface->freelancerGoogleID();
+        $user = $this->registerService->FreelancerRegisterGoogle([]);
 
-        return response()->json([
-            'message' => 'complete the form',
-        ]);
+        return redirect('journey')->with('success', "complete this form!");
     }
 
     public function RegisterFreelancerStoreNextGoogle(RegisterFreelancerGoogleUpdtaeRequest $request, $id)

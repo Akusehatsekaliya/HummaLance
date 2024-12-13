@@ -74,14 +74,16 @@ class User extends Authenticatable
         parent::boot();
 
         static::created(function (Model $model) {
+            $id = $model->id;
+            // dd($id);
             UserSetting::create([
-                "user_id" => $model->id,
+                "user_id" => $id,
                 "languages_id" => 1
             ]);
         });
 
         static::deleted(function (Model $model) {
-            UserSetting::where("users_id", $model->id)->delete();
+            UserSetting::where("user_id", $model->id)->delete();
         });
     }
 
