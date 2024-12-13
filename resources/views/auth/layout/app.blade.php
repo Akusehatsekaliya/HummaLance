@@ -12,6 +12,7 @@
     <link rel="icon" type="image/png" href="{{ asset('assets_landing/images/CLOCKER.png') }}">
     <!-- Bootstrap core CSS -->
     <link href="{{ asset('assets_landing/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <!-- Font Awesome-->
     <link href="{{ asset('assets_landing/vendor/fontawesome/css/font-awesome.min.css') }}" rel="stylesheet">
     <!-- Material Design Icons -->
@@ -38,7 +39,7 @@
                 <div class="col-lg-11 py-4">
                     <div class="justify-content-between d-flex">
                         <x-svg>{{ asset('assets/svg/landing/logo-login.svg') }}</x-svg>
-                        <p class="text-landing">{{ __('register.join_as_a_freelancer') }} <span
+                        <p class="text-landing mb-0">{{ __('register.join_as_a_freelancer') }} <span
                                 class="text-body-2">or</span>
                             {{ __('register.join_as_a_company') }}</p>
                     </div>
@@ -53,6 +54,7 @@
     </section>
     @yield('script')
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
 </body>
 
