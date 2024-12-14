@@ -21,6 +21,7 @@ use App\Constract\Repositories\ProjectRepository;
 use App\Constract\Repositories\RegisterRepository;
 use App\Constract\Repositories\UserRepository;
 use Illuminate\Support\ServiceProvider;
+use Laravel\Passport\Passport;
 use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
 class AppServiceProvider extends ServiceProvider

@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LandingPageController;
 use App\Http\Controllers\NotificationController;
 
-Route::middleware("auth:landing.index")->group(function () {
+Route::middleware("rauth:landing.index")->group(function () {
   Route::get('/', [LandingPageController::class, 'index'])->name('home');
   Route::get('/work', function () {
     return view('home.work');

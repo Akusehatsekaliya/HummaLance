@@ -21,7 +21,6 @@ const AboutUs = () => {
                 title: data.title || '',
                 description: data.description || '',
             });
-            console.log(aboutData);
 
         } catch (error) {
             console.error('Error fetching about us data:', error);

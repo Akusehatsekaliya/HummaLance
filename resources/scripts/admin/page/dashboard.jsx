@@ -1,7 +1,44 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Chart from 'react-apexcharts';
+import NumberIncrease from '../../components/numberIncrease';
+import API from '../../components/apiAxios';
 
-const Dashboard = ({ totalUser, totalCompany, totalProject, totalContract }) => {
+const Dashboard = () => {
+    const [totalUser, setTotalUser] = useState(0);
+    const [totalCompany, setTotalCompany] = useState(0);
+    const [totalProject, setTotalProject] = useState(0);
+    const [totalContract, setTotalContract] = useState(0);
+
+    useEffect(() => {
+        fetchData();
+    }, []);
+
+    const fetchData = async () => {
+        try {
+            const { data } = await API.get("/project/total");
+            setTotalProject(data);
+        } catch (error) {
+            console.error('Error fetching banners:', error);
+        }
+    }
+
+    const animateNumber = (from, to, setValue) => {
+        let startTime;
+        const duration = 200;
+
+        const step = (timestamp) => {
+            if (!startTime) startTime = timestamp;
+            const progress = Math.min((timestamp - startTime) / duration, 1);
+            setValue(Math.floor(from + progress * (to - from)));
+
+            if (progress < 1) {
+                requestAnimationFrame(step);
+            }
+        };
+
+        requestAnimationFrame(step);
+    };
+
     const [chartOptions] = useState({
         annotations: {
             position: 'back',
@@ -29,6 +66,26 @@ const Dashboard = ({ totalUser, totalCompany, totalProject, totalContract }) => 
         },
     ]);
 
+    const CardTotal = ({ title, total, icon }) => (
+        <div className="col-9 col-lg-3 col-md-9">
+            <div className="card">
+                <div className="card-body px-4 py-4-5">
+                    <div className="row">
+                        <div className="col-md-4 col-lg-12 col-xl-12 col-xxl-5 d-flex justify-content-start">
+                            <div className={`stats-icon ${icon.color} mb-2`}>
+                                <i className={icon.class}></i>
+                            </div>
+                        </div>
+                        <div className="col-md-8 col-lg-12 col-xl-12 col-xxl-7">
+                            <h6 className="text-muted font-semibold">{title}</h6>
+                            <h6 className="font-extrabold mb-0"><NumberIncrease target={total} /></h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    );
+
     return (
         <div className="page-heading">
             <h3>Dashboard</h3>
@@ -37,80 +94,16 @@ const Dashboard = ({ totalUser, totalCompany, totalProject, totalContract }) => 
                     <div className="col-12 col-lg-12">
                         <div className="row">
                             {/* Card Users */}
-                            <div className="col-9 col-lg-3 col-md-9">
-                                <div className="card">
-                                    <div className="card-body px-4 py-4-5">
-                                        <div className="row">
-                                            <div className="col-md-4 col-lg-12 col-xl-12 col-xxl-5 d-flex justify-content-start">
-                                                <div className="stats-icon green mb-2">
-                                                    <i className="iconly-boldUser"></i>
-                                                </div>
-                                            </div>
-                                            <div className="col-md-8 col-lg-12 col-xl-12 col-xxl-7">
-                                                <h6 className="text-muted font-semibold">Users</h6>
-                                                <h6 className="font-extrabold mb-0">{totalUser}</h6>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            <CardTotal title="Users" total={totalUser} icon={{ color: "green", class: "iconly-boldUser" }} />
 
                             {/* Card Company */}
-                            <div className="col-9 col-lg-3 col-md-9">
-                                <div className="card">
-                                    <div className="card-body px-4 py-4-5">
-                                        <div className="row">
-                                            <div className="col-md-4 col-lg-12 col-xl-12 col-xxl-5 d-flex justify-content-start">
-                                                <div className="stats-icon blue mb-2">
-                                                    <i className="iconly-boldProfile"></i>
-                                                </div>
-                                            </div>
-                                            <div className="col-md-8 col-lg-12 col-xl-12 col-xxl-7">
-                                                <h6 className="text-muted font-semibold">Company</h6>
-                                                <h6 className="font-extrabold mb-0">{totalCompany}</h6>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            <CardTotal title="Company" total={totalCompany} icon={{ color: "blue", class: "iconly-boldProfile" }} />
 
                             {/* Card Project */}
-                            <div className="col-9 col-lg-3 col-md-9">
-                                <div className="card">
-                                    <div className="card-body px-4 py-4-5">
-                                        <div className="row">
-                                            <div className="col-md-4 col-lg-12 col-xl-12 col-xxl-5 d-flex justify-content-start">
-                                                <div className="stats-icon purple mb-2">
-                                                    <i className="iconly-boldFolder"></i>
-                                                </div>
-                                            </div>
-                                            <div className="col-md-8 col-lg-12 col-xl-12 col-xxl-7">
-                                                <h6 className="text-muted font-semibold">Project</h6>
-                                                <h6 className="font-extrabold mb-0">{totalProject}</h6>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            <CardTotal title="Project" total={totalProject} icon={{ color: "purple", class: "iconly-boldFolder" }} />
 
                             {/* Card Contract */}
-                            <div className="col-9 col-lg-3 col-md-9">
-                                <div className="card">
-                                    <div className="card-body px-4 py-4-5">
-                                        <div className="row">
-                                            <div className="col-md-4 col-lg-12 col-xl-12 col-xxl-5 d-flex justify-content-start">
-                                                <div className="stats-icon red mb-2">
-                                                    <i className="iconly-boldDocument"></i>
-                                                </div>
-                                            </div>
-                                            <div className="col-md-8 col-lg-12 col-xl-12 col-xxl-7">
-                                                <h6 className="text-muted font-semibold">Contract</h6>
-                                                <h6 className="font-extrabold mb-0">{totalContract}</h6>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            <CardTotal title="Contract" total={totalContract} icon={{ color: "red", class: "iconly-boldDocument" }} />
                         </div>
 
                         {/* Profile Visit Chart */}
@@ -122,7 +115,6 @@ const Dashboard = ({ totalUser, totalCompany, totalProject, totalContract }) => 
                                     </div>
                                     <div className="card-body">
                                         <Chart options={chartOptions} series={chartSeries} type="bar" height={300} />
-                                        {/* <div id="chart-profile-visit"></div> */}
                                     </div>
                                 </div>
                             </div>

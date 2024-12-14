@@ -10,7 +10,7 @@ export default defineConfig({
                 // 'resources/js/app.js',
                 'resources/scripts/landing.jsx',
                 'resources/scripts/admin.jsx',
-                'resources/scripts/admin/**'
+                // 'resources/scripts/admin/**'
             ],
             refresh: true,
         }),

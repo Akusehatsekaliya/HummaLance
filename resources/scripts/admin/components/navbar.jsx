@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useSidebar } from '../context/is-sidebar-active';
 
 const Navbar = () => {
     const user = {
@@ -8,12 +9,13 @@ const Navbar = () => {
     };
 
     const [notificationCount, setNotificationCount] = useState(1);
+    const { toggleSidebar } = useSidebar();
 
     return (
         <div id="main" style={{ position: "sticky", top: 0, zIndex: 1030 }}>
             <nav className="navbar navbar-expand-lg shadow-sm ms-auto p-0">
                 <div className="container-fluid">
-                    <button className="navbar-toggler sidebar-hide" style={{ height: "fit-content", marginTop: "10px" }}>
+                    <button onClick={toggleSidebar} className="navbar-toggler sidebar-hide" style={{ height: "fit-content", marginTop: "10px" }}>
                         <span className="navbar-toggler-icon"></span>
                     </button>
                     <div className="ms-auto" id="navbarContent">
@@ -105,7 +107,7 @@ const Navbar = () => {
                                         <hr className="dropdown-divider" />
                                     </li>
                                     <li>
-                                        <a className="dropdown-item" href="#" onClick={(e) => { e.preventDefault(); /* Add logout logic here */ }}>
+                                        <a className="dropdown-item" href="#" onClick={(e) => { e.preventDefault(); document.getElementById('logout-form').submit(); }}>
                                             <i className="bi bi-box-arrow-right"></i> Keluar
                                         </a>
                                     </li>

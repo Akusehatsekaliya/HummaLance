@@ -24,7 +24,7 @@ class ProjectService
         return DataTables::of($categories)
             ->addIndexColumn()
             ->addColumn('user_name', function ($row) {
-                return $row->user ? $row->user->name : '-';
+                return $row->user ? "{$row->user->first_name} {$row->user->last_name}" : '-';
             })
             ->addColumn('category_name', function ($row) {
                 return $row->category ? $row->category->name : '-';

@@ -39,14 +39,14 @@
                                     <div class="d-flex">
                                         <div class="flex-shrink-0 me-3">
                                             <div class="avatar avatar-online">
-                                                <img src="{{ auth()->user()->getAvatar(asset('avatar.jpg')) }}"
+                                                <img src="{{ auth()->user()->getAvatar(asset('avatar.jpg')) ?? asset('avatar.jpg') }}"
                                                     alt="User Avatar" class="rounded-circle" width="40"
                                                     height="40" style="object-fit: cover;">
                                             </div>
                                         </div>
                                         <div class="flex-grow-1">
-                                            <span class="fw-medium d-block">{{ auth()->user()->name }}</span>
-                                            <small class="text-muted">{{ auth()->user()->email }}</small>
+                                            <span class="fw-medium d-block">{{ auth()->user()->name ?? "none" }}</span>
+                                            <small class="text-muted">{{ auth()->user()->email ?? "none" }}</small>
                                         </div>
                                     </div>
                                 </a>
@@ -74,11 +74,11 @@
 </div>
 
 @push('style')
-    <style>
-        #main {
-            position: sticky;
-            top: 0;
-            z-index: 1030;
-        }
-    </style>
+<style>
+    #main {
+        position: sticky;
+        top: 0;
+        z-index: 1030;
+    }
+</style>
 @endpush

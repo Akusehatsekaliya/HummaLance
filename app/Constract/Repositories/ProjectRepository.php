@@ -21,4 +21,9 @@ class ProjectRepository extends BaseRepository implements ProjectInterface
             ->select(['id', 'name', 'description', 'user_id', 'category_id', 'budget'])
             ->get();
     }
+
+    public function total(): int
+    {
+        return $this->model->count();
+    }
 }
