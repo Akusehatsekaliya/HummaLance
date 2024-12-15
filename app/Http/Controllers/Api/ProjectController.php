@@ -27,8 +27,8 @@ class ProjectController extends Controller
     /**
      * Display a total of the resource.
      */
-    public function total(Request $request)
+    public function total()
     {
-        return $this->projectInterface->total($request);
+        return $this->projectInterface->total();
     }
 }

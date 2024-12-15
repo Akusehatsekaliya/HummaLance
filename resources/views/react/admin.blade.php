@@ -22,7 +22,79 @@
 
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 
+    <style>
+        #timeline::-webkit-scrollbar {
+            width: 6px;
+        }
 
+        #timeline::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        #timeline::-webkit-scrollbar-thumb {
+            background: #888;
+            border-radius: 10px;
+        }
+
+        #timeline::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+
+        select {
+            width: 100%;
+            padding: 8px;
+            font-size: 14px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .arrow {
+            position: absolute;
+            top: 50%;
+            right: 10px;
+            transform: translateY(-50%);
+            cursor: pointer;
+            font-size: 18px;
+            color: #555;
+        }
+
+        .tabs-container {
+            overflow-x: auto;
+            /* Enable horizontal scrolling */
+            -webkit-overflow-scrolling: touch;
+            /* Smooth scrolling on mobile */
+            scrollbar-width: none;
+            /* For Firefox */
+            -ms-overflow-style: none;
+            /* For Internet Explorer */
+        }
+
+        .tabs-container::-webkit-scrollbar {
+            display: none;
+            /* Hide scrollbar for Webkit browsers (Chrome, Safari) */
+        }
+
+        .tabs {
+            display: flex;
+            flex-wrap: nowrap;
+        }
+
+        .tab {
+            padding: 10px 20px;
+            cursor: pointer;
+            display: inline-block;
+            text-align: center;
+            white-space: nowrap;
+            /* border: 1px solid #ccc; */
+            /* border-radius: 4px; */
+            margin-right: 8px;
+            /* transition: background-color 0.3s ease; */
+        }
+
+        .tab:hover {
+            background-color: #f0f0f0;
+        }
+    </style>
 
     <style>
         .card-header {

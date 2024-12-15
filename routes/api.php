@@ -12,9 +12,9 @@ use App\Http\Controllers\Api\{
 };
 use App\Http\Controllers\Api\LoginController;
 
-Route::get('/user', function (Request $request) {
-    return $request->user();
-})->middleware('auth:api');
+// Route::get('/user', function (Request $request) {
+//     return $request->user();
+// })->middleware('auth:api');
 
 
 
@@ -27,8 +27,12 @@ Route::get('about', [AboutController::class, 'index']);
 Route::put('about', [AboutController::class, 'update']);
 
 Route::get('project', [ProjectController::class, 'index']);
-Route::get('project/total', [ProjectController::class, 'total']);
+
 Route::apiResource('category', CategoryController::class);
+
 Route::apiResource('user', UserController::class);
+
+Route::get('total/project', [ProjectController::class, 'total']);
+Route::get('total/user', [UserController::class, 'total']);
 
 Route::apiResource('contract', ContractController::class);

@@ -93,8 +93,7 @@ const AboutUs = () => {
                                                             id="first-name-vertical"
                                                             className="form-control"
                                                             name="title"
-                                                            value={aboutData.title}
-                                                            onChange={(e) => setTitle(e.target.value)}
+                                                            defaultValue={aboutData.title}
                                                         />
                                                     </div>
                                                 </div>
@@ -106,8 +105,7 @@ const AboutUs = () => {
                                                             name="description"
                                                             className="form-control"
                                                             aria-label="With textarea"
-                                                            value={aboutData.description}
-                                                            onChange={(e) => setDescription(e.target.value)}
+                                                            defaultValue={aboutData.description}
                                                         />
                                                     </div>
                                                 </div>

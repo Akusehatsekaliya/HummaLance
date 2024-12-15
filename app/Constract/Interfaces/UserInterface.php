@@ -12,6 +12,7 @@ use Illuminate\Http\Request;
 
 interface UserInterface extends StoreInterface, UpdateInterface, DeleteInterface, SearchInterface, ShowInterface
 {
+    public function total(): int;
     public function get(Request $request): mixed;
     public function showDetail(mixed $id): mixed;
     public function UpdateGoal(array $data): mixed;

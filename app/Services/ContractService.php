@@ -25,6 +25,7 @@ class ContractService
         }
 
         return DataTables::of($contracts)
+            ->addIndexColumn()
             ->addColumn('user_name', function ($contract) {
                 return $contract->user ? $contract->user->name : 'N/A';
             })

@@ -15,8 +15,10 @@ const Dashboard = () => {
 
     const fetchData = async () => {
         try {
-            const { data } = await API.get("/project/total");
-            setTotalProject(data);
+            const { data: totalUser } = await API.get("/total/user");
+            const { data: totalProject } = await API.get("/total/project");
+            setTotalUser(totalUser);
+            setTotalProject(totalProject);
         } catch (error) {
             console.error('Error fetching banners:', error);
         }

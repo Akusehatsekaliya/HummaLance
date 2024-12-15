@@ -48,6 +48,16 @@ class UserRepository extends BaseRepository implements UserInterface
     }
 
     /**
+     * Handle the Get total of all data from models.
+     *
+     * @return int
+     */
+    public function total(): int
+    {
+        return $this->model->count();
+    }
+
+    /**
      * Handle the Get all data event from models.
      *
      * @return mixed
@@ -55,7 +65,6 @@ class UserRepository extends BaseRepository implements UserInterface
     public function get(Request $request): mixed
     {
         return $this->model->with('roles')
-            ->select(['id', 'first_name', 'last_name', 'email', 'status', 'status_acount_register'])
             ->when($request->role, function ($query, $role) {
                 return $query->whereHas('roles', fn($q) => $q->where('name', $role));
             }, function ($query) {
@@ -118,6 +127,6 @@ class UserRepository extends BaseRepository implements UserInterface
     public function UpdateAboutUser(array $data): mixed
     {
         return model::where('user_id', $data['user_id'])
-        ->update(['about_user' => $data['about_user']]);
+            ->update(['about_user' => $data['about_user']]);
     }
 }

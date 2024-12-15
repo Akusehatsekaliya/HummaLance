@@ -34,8 +34,30 @@ class UserController extends Controller
     public function index(Request $request)
     {
         if ($request->ajax() || $request->wantsJson()) {
-            return $this->service->getData($request);
+            $users = $this->userInterface->get($request);
+
+            return DataTables::of($users)
+                ->addIndexColumn()
+                ->addColumn('role', fn($user) => $user->getUserRoleInstance()->value)
+                ->make(true);
         }
+    }
+
+    /**
+     * Display a total of the resource.
+     */
+    public function total()
+    {
+        return $this->userInterface->total();
+    }
+
+    /**
+     * Display a total of the resource.
+     */
+    public function show(Request $request)
+    {
+        return $this->userInterface->total();
+        // return $this->userInterface->total($request);
     }
 
     public function toggleStatus(User $user)
