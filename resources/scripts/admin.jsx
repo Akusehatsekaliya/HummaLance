@@ -24,7 +24,7 @@ const routeData = [
     {
         title: "Menu",
         items: [
-            { name: "Dashboard", icon: "bi bi-grid-fill", path: "" },
+            { name: "Dashboard", icon: "bi bi-grid-fill", path: "dashboard" },
             { name: "Banner", icon: "bi bi-map-fill", path: "banner" },
             { name: "About Us", icon: "bi bi-person-fill", path: "about" },
         ],
@@ -83,7 +83,7 @@ function AnimatedRoutes({ routeData }) {
                                     path={`/react/admin/${route.path}`}
                                     element={React.createElement(
                                         {
-                                            "": Dashboard,
+                                            dashboard: Dashboard,
                                             banner: Banner,
                                             about: AboutUs,
                                             project: Project,
