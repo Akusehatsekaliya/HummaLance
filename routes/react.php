@@ -6,5 +6,5 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::prefix("react")->group(function () {
-    Route::get("admin/{path?}", [AdminController::class, "index"])->where('path', '.*')->middleware("role:admin");
+    Route::get("admin/{path?}", [AdminController::class, "index"])->where('path', '.*');
 });
