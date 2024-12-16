@@ -29,11 +29,11 @@ class ContractController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
+     * Display a total of the resource.
      */
-    public function create()
+    public function total()
     {
-        //
+        return $this->contractInterface->get()->count();
     }
 
     /**

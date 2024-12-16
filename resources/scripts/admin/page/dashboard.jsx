@@ -15,31 +15,19 @@ const Dashboard = () => {
 
     const fetchData = async () => {
         try {
-            const { data: totalUser } = await API.get("/total/user");
-            const { data: totalProject } = await API.get("/total/project");
-            setTotalUser(totalUser);
-            setTotalProject(totalProject);
+            const [totalUserResponse, totalProjectResponse, totalContractResponse] = await Promise.all([
+                API.get("/total/user"),
+                API.get("/total/project"),
+                API.get("/total/contract"),
+            ]);
+
+            setTotalUser(totalUserResponse.data);
+            setTotalProject(totalProjectResponse.data);
+            setTotalContract(totalContractResponse.data);
         } catch (error) {
             console.error('Error fetching banners:', error);
         }
     }
-
-    const animateNumber = (from, to, setValue) => {
-        let startTime;
-        const duration = 200;
-
-        const step = (timestamp) => {
-            if (!startTime) startTime = timestamp;
-            const progress = Math.min((timestamp - startTime) / duration, 1);
-            setValue(Math.floor(from + progress * (to - from)));
-
-            if (progress < 1) {
-                requestAnimationFrame(step);
-            }
-        };
-
-        requestAnimationFrame(step);
-    };
 
     const [chartOptions] = useState({
         annotations: {
