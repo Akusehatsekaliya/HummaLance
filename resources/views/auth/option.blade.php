@@ -9,7 +9,7 @@
                         <img src="{{ asset('assets/svg/icons/mdi_linkedin.svg') }}" alt="" />
                         {{ __('continue_with') }} Linkedin
                     </button>
-                    <a class="google-register" href="{{ route('registerRedirectToGoogle') }}">
+                    <a class="google-register" href="{{ route('login.google') }}">
                         <img src="{{ asset('assets/images/c0ab57ca036251e04177a7fc61040073.jfif') }}" alt=""
                             class="profile-icon" />
                         <div class="text-area">

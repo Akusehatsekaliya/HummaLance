@@ -12,7 +12,11 @@ export default defineConfig({
                 'resources/scripts/admin.jsx',
                 // 'resources/scripts/admin/**'
             ],
-            refresh: true,
+            refresh: [
+                'resources/routes/**',
+                'routes/**',
+                'resources/views/**',
+            ],
         }),
         react(),
     ],

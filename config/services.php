@@ -35,6 +35,5 @@ return [
         'client_id' => env('GOOGLE_CLIENT_ID'),
         'client_secret' => env('GOOGLE_CLIENT_SECRET'),
         'redirect' => env('GOOGLE_REDIRECT_URL'),
-        'redirect_freelancer' => env('GOOGLE_REDIRECT_URL_FREELANCER'),
     ],
 ];

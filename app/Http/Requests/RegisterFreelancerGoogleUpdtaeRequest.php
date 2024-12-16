@@ -21,10 +21,13 @@ class RegisterFreelancerGoogleUpdtaeRequest extends FormRequest
      */
     public function rules(): array
     {
+        // dd($this->all());
         return [
-            'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'password' => ['required', 'string', 'min:8'],
             'country' => ['required',],
-            'birthday' => ['required', 'date', 'before:today'],
+            'day' => 'required|integer|min:1|max:31',
+            'month' => 'required|integer|min:1|max:12',
+            'year' => 'required|integer|min:1900|max:' . date('Y'),
 
         ];
     }

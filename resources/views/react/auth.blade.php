@@ -7,7 +7,9 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>register</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    @vite('resources/js/app.js')
+
+    @viteReactRefresh
+    @vite('resources/scripts/auth.jsx')
 
     {{-- logo title --}}
     <link rel="icon" type="image/png" href="{{ asset('assets_landing/images/CLOCKER.png') }}">
@@ -49,7 +51,7 @@
 
                 </div>
 
-                @yield('content')
+                <div id="app"></div>
 
             </div>
         </div>

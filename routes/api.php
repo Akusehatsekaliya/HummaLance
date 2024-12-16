@@ -20,6 +20,7 @@ use App\Http\Controllers\Api\LoginController;
 
 
 Route::post('/login', [LoginController::class, 'login']);
+Route::get('/login/google', [LoginController::class, 'redirectToGoogle']);
 Route::post('/logout', [LoginController::class, 'logout'])->middleware('auth:api');
 
 Route::apiResource('banner', BannerController::class);

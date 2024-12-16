@@ -11,10 +11,15 @@ use App\Models\User;
 use App\Services\RegisterService;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Auth\Events\Registered;
+use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Session;
 use Laravel\Socialite\Facades\Socialite;
 
 class RegisterController extends Controller
 {
+    // use AuthenticatesUsers;
     /*
     |--------------------------------------------------------------------------
     | Register Controller
@@ -46,7 +51,7 @@ class RegisterController extends Controller
 
     public function __construct(RegisterInterface $registerInterface, RegisterService $registerService)
     {
-        $this->middleware('guest');
+        // $this->middleware('auth');
         $this->registerinterface = $registerInterface;
         $this->registerService = $registerService;
     }
@@ -91,13 +96,6 @@ class RegisterController extends Controller
         return redirect('adventure')->with('succes', 'succes aount created');
     }
 
-    public function registerRedirecToGoogle()
-    {
-        return Socialite::driver('google')
-            ->redirectUrl(env('GOOGLE_REDIRECT_URL_FREELANCER'))
-            ->redirect();
-    }
-
     public function RegisterFreelancerGoogleStore()
     {
         $user = $this->registerService->FreelancerRegisterGoogle([]);
@@ -105,12 +103,16 @@ class RegisterController extends Controller
         return redirect('journey')->with('success', "complete this form!");
     }
 
-    public function RegisterFreelancerStoreNextGoogle(RegisterFreelancerGoogleUpdtaeRequest $request, $id)
+    public function RegisterFreelancerStoreNextGoogle(RegisterFreelancerGoogleUpdtaeRequest $request, int $user_id)
     {
-        $this->registerinterface->signUpFreelancerGoogle($request, $id);
-
-        return response()->json([
-            'message' => 'Your freelancer account has been successfully created',
-        ]);
+        // Session::get("user")
+        // dd($user);
+        // $user = auth()->user();
+        $user = $this->registerinterface->signUpFreelancerGoogle($request->validated(), id: $user_id);
+        auth()->login($user);
+        // dd(auth()->id());
+        // dd(auth()->user());
+        // dd(route('adventure'));
+        return redirect()->route('adventure')->with('success', 'created acount success');
     }
 }
