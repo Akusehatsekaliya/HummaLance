@@ -68,8 +68,8 @@ const Language = () => {
                             <DataTable data={languages} columns={columns} options={options} className='table text-nowrap' slots={{
                                 3: (data, row) => (
                                     <>
-                                        <button type="button" class="btn text-warning edit" onClick={() => { setCurrentRow(row); }}><i class="bi bi-pen-fill"></i></button>
-                                        <button type="button" class="btn text-danger delete" onClick={() => { setCurrentRow(row); }}><i class="bi bi-trash3-fill"></i></button>
+                                        <button type="button" className="btn text-warning edit" onClick={() => { setCurrentRow(row); }}><i className="bi bi-pen-fill"></i></button>
+                                        <button type="button" className="btn text-danger delete" onClick={() => { setCurrentRow(row); }}><i className="bi bi-trash3-fill"></i></button>
                                     </>
                                 )
                             }}>
