@@ -25,7 +25,38 @@ const Register = () => {
         } catch (error) {
             console.error('Error fetching banners:', error);
         }
+
     }
+    const handleGoogleClick = () => {
+        const dualScreenLeft = window.screenLeft !== undefined ? window.screenLeft : window.screenX;
+        const dualScreenTop = window.screenTop !== undefined ? window.screenTop : window.screenY;
+
+        const width = window.innerWidth || document.documentElement.clientWidth || screen.width;
+        const height = window.innerHeight || document.documentElement.clientHeight || screen.height;
+
+        const systemZoom = width / window.screen.availWidth;
+        const left = (width - 500) / 2 / systemZoom + dualScreenLeft;
+        const top = (height - 600) / 2 / systemZoom + dualScreenTop;
+
+        const newWindow = window.open(
+            "/login/google",
+            "login",
+            `scrollbars=yes, width=500, height=600, top=${top}, left=${left}`
+        );
+
+        if (window.focus) newWindow.focus();
+
+        window.addEventListener("message", (event) => {
+            if (event.origin !== window.location.origin) return;
+
+            console.log("Data dari popup:", event.data);
+
+            // alert(`Data diterima: ${event.data}`);
+        });
+
+        return false;
+    };
+
 
     return (
         <div className="col-lg-7">
@@ -35,9 +66,9 @@ const Register = () => {
                     <div className="justify-content-between d-flex mt-5 gap-5">
                         <button className="linkedin-register">
                             <img src="/assets/svg/icons/mdi_linkedin.svg" alt="" />
-                            Continue With Linkedin
+                            Continue With Linked
                         </button>
-                        <a className="google-register" href="/api/login/google">
+                        <a className="google-register" onClick={handleGoogleClick}>
                             <img src="/assets/images/c0ab57ca036251e04177a7fc61040073.jfif" alt=""
                                 className="profile-icon" />
                             <div className="text-area">
