@@ -16,9 +16,9 @@ Route::get("login", fn() => redirect(route('landing.index') . '#login'))->name("
 Route::get("register", fn() => redirect(route('landing.index') . '#register'))->name("register");
 // register freelancer
 Route::get('/freelancer-register', [RegisterController::class, 'RegisterFreelancerStore'])->name('freelancer_register');
-Route::get('/freelancer-redirect-google',[RegisterController::class,'registerRedirecToGoogle'])->name('registerRedirectToGoogle');
-Route::get('/freelancer/register/google', [RegisterController::class, 'RegisterFreelancerGoogleStore'])->name('freelancer_register_google');
-Route::get('/freelancer-register-google-next', [RegisterController::class, 'RegisterFreelancerStoreNextGoogle'])->name('freelancer_register_next_google');
+Route::get('/freelancer/register/google',[RegisterController::class,'registerRedirecToGoogle'])->name('registerRedirectToGoogle');
+Route::get('/freelancer/register/googleCallback', [RegisterController::class, 'RegisterFreelancerGoogleStore'])->name('freelancer_register_google');
+Route::post('/freelancer-register-google-next/{user_id}', [RegisterController::class, 'RegisterFreelancerStoreNextGoogle'])->name('freelancer_register_next_google');
 // end
 Route::get('/register', function () {
     return view('auth.option');
@@ -27,7 +27,7 @@ Route::get('/journey', function () {
     return view('auth.journey');
 })->name('journey');
 Route::get('/adventure', function () {
-    return view('auth.adventure');
+    return view(view: 'auth.adventure');
 })->name('adventure');
 Route::get('/optionExperience', function () {
     return view('auth.optionExperience');
@@ -39,14 +39,14 @@ Route::get('/success', function () {
     return view('auth.success');
 })->name('success');
 Route::get('/option', function () {
-    return view('auth.adventure');
-})->name('adventure');
+    return view('auth.option');
+})->name('option');
 Route::get('/question', function () {
     return view('auth.question');
-})->name('adventure');
+})->name('question');
 Route::get('/job', function () {
     return view('auth.job');
-})->name('adventure');
+})->name('job');
 Route::get('/aboutyou', function () {
     return view('auth.aboutyou');
 })->name('aboutyou');

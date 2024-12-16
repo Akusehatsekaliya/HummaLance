@@ -5,6 +5,8 @@ namespace App\Constract\Repositories;
 use App\Constract\Interfaces\RegisterInterface;
 use App\Http\Requests\RegisterFreelancerGoogleUpdtaeRequest;
 use App\Models\User;
+use Carbon\Carbon;
+use Illuminate\Support\Facades\Auth;
 use Laravel\Socialite\Facades\Socialite;
 
 class RegisterRepository extends BaseRepository implements RegisterInterface
@@ -42,15 +44,12 @@ class RegisterRepository extends BaseRepository implements RegisterInterface
     }
 
 
-    public function signUpFreelancerGoogle(RegisterFreelancerGoogleUpdtaeRequest $request, $id): mixed
+    public function signUpFreelancerGoogle(array $request, $id): mixed
     {
-        $freelancer = $this->model->findOrFail($id);
-
-        $freelancer->update($request->only([
-            'password',
-            'country',
-            'birthday'
-        ]));
+        $freelancer = $this->model->find($id);
+        $request["birthday"] = Carbon::parse("{$request['day']}-{$request['month']}-{$request['year']}");
+// dd($freelancer, $request);
+        $freelancer->update($request);
 
         return $freelancer;
     }

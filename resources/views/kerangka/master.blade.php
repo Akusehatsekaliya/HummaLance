@@ -8,7 +8,9 @@
     <link rel="icon" href="" type="image/png">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    @yield("head")
+    @vite('resources/js/app.js')
+
+    @yield('head')
 
     @yield('style')
     @stack('style')

@@ -11,5 +11,5 @@ interface RegisterInterface
     public function freelancer(array $data): mixed;
 
     public function findByGoogleIdOrEmail(string $googleId, string $email): ?User;
-    public function signUpFreelancerGoogle(RegisterFreelancerGoogleUpdtaeRequest $request, int $id): mixed;
+    public function signUpFreelancerGoogle(array $request, int $id): mixed;
 }

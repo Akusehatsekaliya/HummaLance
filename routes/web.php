@@ -32,7 +32,7 @@ Route::get('/debug2', function (Request $request) {
         if (Route::has($routeName)) {
             // Menggunakan Route::dispatch untuk menjalankan route yang diminta
             $response = Route::dispatch(Request::create(route($routeName)));
-            
+
             // Mengembalikan respon dari route yang diminta (bisa berupa view atau response lain)
             return $response;
         }
