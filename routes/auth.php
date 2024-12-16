@@ -16,8 +16,8 @@ Route::get("login", fn() => redirect(route('landing.index') . '#login'))->name("
 Route::get("register", fn() => redirect(route('landing.index') . '#register'))->name("register");
 // register freelancer
 Route::get('/freelancer-register', [RegisterController::class, 'RegisterFreelancerStore'])->name('freelancer_register');
-Route::get('/freelancer-redirect-google',[RegisterController::class,'registerRedirecToGoogle'])->name('registerRedirectToGoogle');
-Route::get('/freelancer/register/google', [RegisterController::class, 'RegisterFreelancerGoogleStore'])->name('freelancer_register_google');
+Route::get('/freelancer/register/google',[RegisterController::class,'registerRedirecToGoogle'])->name('registerRedirectToGoogle');
+Route::get('/freelancer/register/googleCallback', [RegisterController::class, 'RegisterFreelancerGoogleStore'])->name('freelancer_register_google');
 Route::get('/freelancer-register-google-next', [RegisterController::class, 'RegisterFreelancerStoreNextGoogle'])->name('freelancer_register_next_google');
 // end
 Route::get('/register', function () {

@@ -1,23 +1,29 @@
-.page-enter {
+/* .page-enter {
     opacity: 0;
+    transition: opacity 3000ms;
+    -webkit-transition: opacity 3000ms;
+    -moz-transition: opacity 300ms;
+    -o-transition: opacity 3000ms;
 }
 
 .page-enter-active {
     opacity: 1;
-    transition: opacity 300ms ease-out;
-    -webkit-transition: opacity 300ms ease-out;
-    -moz-transition: opacity 300ms ease-out;
-    -o-transition: opacity 300ms ease-out;
 }
 
-/* .page-exit {
+.page-exit {
+    position: absolute;
     opacity: 1;
+    transition: opacity 300ms;
+    -webkit-transition: opacity 300ms;
+    -moz-transition: opacity 300ms;
+    -o-transition: opacity 300ms;
+    z-index: 1;
 }
 
 .page-exit-active {
     opacity: 0;
-    transition: opacity 300ms ease-out;
-    -webkit-transition: opacity 300ms ease-out;
-    -moz-transition: opacity 300ms ease-out;
-    -o-transition: opacity 300ms ease-out;
 } */
+
+.page-exit {
+    display: none;
+}

@@ -93,7 +93,9 @@ class RegisterController extends Controller
 
     public function registerRedirecToGoogle()
     {
-        return Socialite::driver('google')->redirectUrl(env('GOOGLE_REDIRECT_URI_FREELANCER'))->redirect();
+        return Socialite::driver('google')
+            ->redirectUrl(env('GOOGLE_REDIRECT_URL_FREELANCER'))
+            ->redirect();
     }
 
     public function RegisterFreelancerGoogleStore()
