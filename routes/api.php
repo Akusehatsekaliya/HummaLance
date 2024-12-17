@@ -17,36 +17,6 @@ use App\Http\Controllers\Api\LoginController;
 //     return $request->user();
 // })->middleware('auth:api');
 
-Route::get("test", function () {
-    $html = <<<HTML
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Popup</title>
-    <script>
-        const userData ="hai";
-
-        window.onload = () => {
-            // Tunggu beberapa detik, lalu kirim pesan
-            setTimeout(() => {
-                window.opener.postMessage(userData, window.location.origin);
-                // Tutup popup setelah pesan dikirim
-                window.close();
-            }, 2000);
-        };
-    </script>
-</head>
-<body>
-    <h1>Popup</h1>
-    <p>Data sedang diproses...</p>
-</body>
-</html>
-HTML;
-
-    return response($html, 200)->header('Content-Type', 'text/html');
-});
 
 
 Route::post('/login', [LoginController::class, 'login']);

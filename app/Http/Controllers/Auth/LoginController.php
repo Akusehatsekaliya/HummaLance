@@ -54,7 +54,9 @@ class LoginController extends Controller
 
     public function redirectToGoogle()
     {
-        return Socialite::driver('google')->redirect();
+        return Socialite::driver('google')
+            ->with(['prompt' => 'select_account'])
+            ->redirect();
     }
 
 
@@ -93,14 +95,13 @@ class LoginController extends Controller
 
             }
         }
-        return to_route('journey')->with('user_id', $user->id);
+        // dd($user);
 
         Auth::login($user);
-
-        if ($user->hasRole('admin')) {
-            return to_route('admin.dashboard.index');
-        }
-
-        return to_route("home");
+        return response(<<<HTML
+            <script>
+                window.close();
+            </script>
+        HTML, 200)->header('Content-Type', 'text/html');
     }
 }

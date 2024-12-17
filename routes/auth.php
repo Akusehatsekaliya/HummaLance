@@ -16,7 +16,7 @@ Route::get("login", fn() => redirect(route('landing.index') . '#login'))->name("
 Route::get("register", fn() => redirect(route('landing.index') . '#register'))->name("register");
 // register freelancer
 Route::get('/freelancer-register', [RegisterController::class, 'RegisterFreelancerStore'])->name('freelancer_register');
-Route::get('/freelancer/register/google',[RegisterController::class,'registerRedirecToGoogle'])->name('registerRedirectToGoogle');
+Route::get('/freelancer/register/google', [RegisterController::class, 'registerRedirecToGoogle'])->name('registerRedirectToGoogle');
 Route::get('/freelancer/register/googleCallback', [RegisterController::class, 'RegisterFreelancerGoogleStore'])->name('freelancer_register_google');
 Route::post('/freelancer-register-google-next/{user_id}', [RegisterController::class, 'RegisterFreelancerStoreNextGoogle'])->name('freelancer_register_next_google');
 // end
@@ -50,9 +50,12 @@ Route::get('/job', function () {
 Route::get('/aboutyou', function () {
     return view('auth.aboutyou');
 })->name('aboutyou');
+
 // Google Login
-Route::get('login/google', [LoginController::class, 'redirectToGoogle'])->name('login.google');
-Route::get('login/google/callback', [LoginController::class, 'handleGoogleCallback']);
+Route::middleware("guest")->group(function () {
+    Route::get('login/google', [LoginController::class, 'redirectToGoogle'])->name('login.google');
+    Route::get('login/google/callback', [LoginController::class, 'handleGoogleCallback']);
+});
 
 // Menampilkan form "Lupa Password"
 Route::get('password/reset', [ForgotPasswordController::class, 'showLinkRequestForm'])->name('password.request');

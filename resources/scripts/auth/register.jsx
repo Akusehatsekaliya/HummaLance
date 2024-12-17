@@ -27,32 +27,54 @@ const Register = () => {
         }
 
     }
-    const handleGoogleClick = () => {
+
+    const popupCenter = ({ url, title, w, h }) => {
         const dualScreenLeft = window.screenLeft !== undefined ? window.screenLeft : window.screenX;
         const dualScreenTop = window.screenTop !== undefined ? window.screenTop : window.screenY;
 
-        const width = window.innerWidth || document.documentElement.clientWidth || screen.width;
-        const height = window.innerHeight || document.documentElement.clientHeight || screen.height;
+        const width = window.innerWidth ? window.innerWidth : document.documentElement.clientWidth ? document.documentElement.clientWidth : screen.width;
+        const height = window.innerHeight ? window.innerHeight : document.documentElement.clientHeight ? document.documentElement.clientHeight : screen.height;
 
         const systemZoom = width / window.screen.availWidth;
-        const left = (width - 500) / 2 / systemZoom + dualScreenLeft;
-        const top = (height - 600) / 2 / systemZoom + dualScreenTop;
-
-        const newWindow = window.open(
-            "/login/google",
-            "login",
-            `scrollbars=yes, width=500, height=600, top=${top}, left=${left}`
+        const left = (width - w) / 2 / systemZoom + dualScreenLeft
+        const top = (height - h) / 2 / systemZoom + dualScreenTop
+        const newWindow = window.open(url, title,
+            `
+            popup=true,
+            toolbar=no,
+            location=no,
+            directories=no,
+            status=no,
+            menubar=no,
+            resizable=no,
+            copyhistory=no
+            scrollbars=yes,
+            width=${w / systemZoom}, 
+            height=${h / systemZoom}, 
+            top=${top}, 
+            left=${left}
+          `
         );
 
         if (window.focus) newWindow.focus();
+        return newWindow;
+    }
 
-        window.addEventListener("message", (event) => {
-            if (event.origin !== window.location.origin) return;
+    const handleGoogleClick = () => {
+        const loginPopup = popupCenter({ url: '/login/google', title: 'Clocker Login', w: 500, h: 600 });
 
-            console.log("Data dari popup:", event.data);
+        let popupChecker = setInterval(function () {
+            if (loginPopup.closed) {
+                clearInterval(popupChecker);
+                alert("Popup ditutup! Fungsi dijalankan.");
+            }
+        }, 500);
 
-            // alert(`Data diterima: ${event.data}`);
-        });
+        // window.addEventListener("message", (event) => {
+        // console.log(event);
+        //     if (event.origin !== "https://accounts.google.com") return;
+        //     console.log("Data dari popup:", event.data);
+        // });
 
         return false;
     };
