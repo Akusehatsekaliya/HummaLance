@@ -67,14 +67,15 @@ class UserController extends Controller
     {
         $this->service->UpdateGoal($request);
 
-        return redirect();
+        return redirect()->route('job')->with('success', 'success created');
     }
 
     public function UpdateJob(UserJobRequest $request)
     {
+        // dd($request);
         $this->service->UpdateJob($request);
 
-        return redirect();
+        return redirect()->route('aboutyou')->with('success', 'success created');
     }
 
     public function UpdateAboutUser(UserAboutRequest $request)

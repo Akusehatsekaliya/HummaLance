@@ -113,14 +113,9 @@ class UserRepository extends BaseRepository implements UserInterface
         return  $this->model->find($id);
     }
 
-    public function UpdateGoal(array $data): mixed
+    public function UpdateColumn(array $data): mixed
     {
-        return $this->model->update($data);
-    }
-    public function UpdateJob(array $data): mixed
-    {
-        return model::where('user_id', $data['user_id'])
-            ->update(['job' => $data['job']]);
+        return $this->showDetail(auth()->user()->id)->update($data);
     }
 
     public function UpdateAboutUser(array $data): mixed

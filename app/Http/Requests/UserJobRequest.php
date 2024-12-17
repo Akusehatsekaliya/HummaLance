@@ -23,8 +23,9 @@ class UserJobRequest extends FormRequest
      */
     public function rules(): array
     {
+        // dd($this->all());
         return [
-            'goal' => ['required', Rule::in([
+            'job' => ['required', Rule::in([
                 UserJobEnum::OFFICE->value,
                 UserJobEnum::WFH->value,
                 UserJobEnum::FULL_TIME->value,

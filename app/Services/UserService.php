@@ -6,7 +6,7 @@ use App\Constract\Enums\UserStatusEnum;
 use App\Constract\Enums\UserStatusRegisterEnum;
 use App\Constract\Interfaces\UserInterface;
 use App\Http\Requests\UserAboutRequest;
-use App\Http\Requests\UserGoalRequest;
+use App\Http\Requests\UserGoColumnquest;
 use App\Http\Requests\UserJobRequest;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -102,17 +102,17 @@ class UserService
     public function UpdateGoal(UserGoalRequest $request)
     {
         $validatedRequest = $request->validated();
-        $validatedRequest["user_id"] = auth()->id();
+        $validatedRequest["user_id"] = auth()->user()->id;
 
-        return $this->userInterface->UpdateGoal($validatedRequest);
+        return $this->userInterface->UpdateColumn($validatedRequest);
     }
 
     public function UpdateJob(UserJobRequest $request)
     {
         $validatedRequest = $request->validated();
-        $validatedRequest["user_id"] = auth()->id();
+        $validatedRequest["user_id"] = auth()->user()->id;
 
-        return $this->userInterface->UpdateJob($validatedRequest);
+        return $this->userInterface->UpdateColumn($validatedRequest);
     }
 
     public function UpdateAboutUser(UserAboutRequest $request)

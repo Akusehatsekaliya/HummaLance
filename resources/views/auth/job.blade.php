@@ -13,7 +13,7 @@
             <form action="{{route('update-job')}}" method="POST">
                 @csrf
                 <div class="card-job">
-                    <input type="radio" name="job" id="job1" value="OFFICE">
+                    <input type="radio" name="job" id="job1" value="{{ App\Constract\Enums\UserJobEnum::OFFICE->value }}">
                     <label for="job1">
                         <svg width="50" height="50" viewBox="0 0 64 63" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <g filter="url(#filter0_d_1570_258)">
@@ -54,7 +54,7 @@
                     </label>
                 </div>
                 <div class="card-job">
-                    <input type="radio" name="job" id="job2" class="toggleFormButton" value="WFH">
+                    <input type="radio" name="job" id="job2" class="toggleFormButton"value="{{ App\Constract\Enums\UserJobEnum::WFH->value }}">
                     <label for="job2">
                         <svg width="50" height="50" viewBox="0 0 64 63" fill="none"
                             xmlns="http://www.w3.org/2000/svg">
@@ -100,7 +100,7 @@
                     </label>
                 </div>
                 <div class="card-job">
-                    <input type="radio" name="job" id="job3" value="FULL_TIME">
+                    <input type="radio" name="job" id="job3" value="{{ App\Constract\Enums\UserJobEnum::FULL_TIME->value }}">
                     <label for="job3">
                         <svg width="50" height="50" viewBox="0 0 64 63" fill="none"
                             xmlns="http://www.w3.org/2000/svg">
@@ -146,7 +146,7 @@
                     </label>
                 </div>
                 <div class="card-job">
-                    <input type="radio" name="job" id="job4" class="toggleFormButton" value="PART_TIME">
+                    <input type="radio" name="job" id="job4" class="toggleFormButton" value="{{ App\Constract\Enums\UserJobEnum::PART_TIME->value }}">
                     <label for="job4">
                         <svg width="50" height="50" viewBox="0 0 64 63" fill="none"
                             xmlns="http://www.w3.org/2000/svg">
@@ -184,6 +184,9 @@
                         <h5>Part Time</h5>
                         <span>By selecting the option you will be doing the work part time, and we will recommend part time job vacancies that you can apply for.</span>
                     </label>
+                </div>
+                <div class="footer mt-3">
+                    <button class="btn btn-primary" type="submit">Send</button>
                 </div>
             </form>
         </div>
