@@ -24,8 +24,8 @@ return Application::configure(basePath: dirname(__DIR__))
             \Illuminate\Foundation\Http\Middleware\ValidateCsrfToken::class,
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
             \Illuminate\Session\Middleware\AuthenticateSession::class,
-            LanguageMiddleware::class,
-            LanguageEditMiddleware::class
+            // LanguageMiddleware::class,
+            // LanguageEditMiddleware::class
         ]);
         $middleware->validateCsrfTokens(except: [
             'tripay/*',

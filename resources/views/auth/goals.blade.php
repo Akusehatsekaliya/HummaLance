@@ -121,266 +121,271 @@
             grid-template-columns: 1fr 1fr;
             gap: 16px;
         }
+
         /* .card-option-container {
-    position: relative;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    background-color: #fff;
-    cursor: pointer;
-    text-align: center;
-    font-size: 15px;
-    font-weight: 600;
-    padding: 20px;
-    transition: box-shadow 0.3s ease, background-color 0.3s ease;
-} */
+            position: relative;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background-color: #fff;
+            cursor: pointer;
+            text-align: center;
+            font-size: 15px;
+            font-weight: 600;
+            padding: 20px;
+            transition: box-shadow 0.3s ease, background-color 0.3s ease;
+        } */
 
-.card-option-container {
-        position: relative;
-        width: 100%;
-        flex-direction: column;
-        align-items: center;
-        border: 1px solid #ddd;
-        border-radius: 8px;
-        background-color: #fff;
-        cursor: pointer;
-        text-align: center;
-        font-size: 15px;
-        font-weight: 600;
-        padding: 20px;
-        transition: box-shadow 0.3s ease, background-color 0.3s ease;
-    }
+        .card-option-container {
+            position: relative;
+            width: 100%;
+            flex-direction: column;
+            align-items: center;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background-color: #fff;
+            cursor: pointer;
+            text-align: center;
+            font-size: 15px;
+            font-weight: 600;
+            padding: 20px;
+            transition: box-shadow 0.3s ease, background-color 0.3s ease;
+        }
 
-.card-option-container input[type="radio"] {
-    position: absolute;
-    opacity: 0;
-    pointer-events: none;
-}
+        .card-option-container input[type="radio"] {
+            position: absolute;
+            opacity: 0;
+            pointer-events: none;
+        }
 
-.card-option-container input[type="radio"]:checked + div {
-    background-color: #d1ecf1; /* Light blue */
-    box-shadow: 0 3px 7px rgba(0, 0, 0, 0.15);
-    border-color: #007bff; /* Optional: change border color */
-    color: #007bff; /* Optional: change text color */
-}
+        .card-option-container input[type="radio"]:checked+div {
+            background-color: #d1ecf1;
+            /* Light blue */
+            box-shadow: 0 3px 7px rgba(0, 0, 0, 0.15);
+            border-color: #007bff;
+            /* Optional: change border color */
+            color: #007bff;
+            /* Optional: change text color */
+        }
 
-.vector-icon {
-    width: 60px;
-    height: 60px;
-    margin-bottom: 10px;
-}
-input[type="radio"] {
-    box-sizing: border-box;
-    padding: 0;
-    position: absolute;
-    right: 10px;
-    top: 10px;
-}
-.card-option-container input[type="radio"] {
-    position: absolute;
-    opacity: 1;
-    pointer-events: none;
-}
+        .vector-icon {
+            width: 60px;
+            height: 60px;
+            margin-bottom: 10px;
+        }
 
-    .custom-hr {
-    border: none;
-    height: 0.8px;
-    width: 100vw;
-    background-color: #000;
-    /* margin: 20px 0; */
-    margin-left: -16.1%;
-    }
+        input[type="radio"] {
+            box-sizing: border-box;
+            padding: 0;
+            position: absolute;
+            right: 10px;
+            top: 10px;
+        }
 
+        .card-option-container input[type="radio"] {
+            position: absolute;
+            opacity: 1;
+            pointer-events: none;
+        }
+
+        .custom-hr {
+            border: none;
+            height: 0.8px;
+            width: 100vw;
+            background-color: #000;
+            /* margin: 20px 0; */
+            margin-left: -16.1%;
+        }
     </style>
-  <style>
-    label {
-        font-weight: 500;
-    }
+    <style>
+        label {
+            font-weight: 500;
+        }
 
 
 
-    .header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        width: 100%;
-        padding: 20px 0;
-    }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            padding: 20px 0;
+        }
 
-    .header img {
-        height: 50px;
-    }
+        .header img {
+            height: 50px;
+        }
 
-    .header a {
-        color: #007bff;
-        text-decoration: none;
-        font-weight: 500;
-    }
+        .header a {
+            color: #007bff;
+            text-decoration: none;
+            font-weight: 500;
+        }
 
-    .content {
-        /* text-align: center; */
-        margin-top: 50px;
-    }
+        .content {
+            /* text-align: center; */
+            margin-top: 50px;
+        }
 
-    .content h1 {
-        font-size: 24px;
-        font-weight: 700;
-        margin-bottom: 10px;
-        margin-left: 45px;
+        .content h1 {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            margin-left: 45px;
 
-    }
+        }
 
-    .content p {
-        font-size: 16px;
-        color: #6c757d;
-        margin-bottom: 40px;
-    }
+        .content p {
+            font-size: 16px;
+            color: #6c757d;
+            margin-bottom: 40px;
+        }
 
-    .options {
-        display: flex;
-        justify-content: space-around;
-        flex-wrap: wrap;
-        margin-left: 12px;
-    }
+        .options {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-left: 12px;
+        }
 
-    .option {
-        background-color: #fff;
-        border: 1px solid #dee2e6;
-        border-radius: 8px;
-        padding: 20px;
-        width: 347px;
-        box-sizing: border-box;
-        text-align: left;
-        margin: 10px;
-        position: relative;
-        margin-left: 35px;
+        .option {
+            background-color: #fff;
+            border: 1px solid #dee2e6;
+            border-radius: 8px;
+            padding: 20px;
+            width: 347px;
+            box-sizing: border-box;
+            text-align: left;
+            margin: 10px;
+            position: relative;
+            margin-left: 35px;
 
-    }
+        }
 
-    .option input {
-        position: absolute;
-        top: 20px;
-        right: 20px;
-    }
+        .option input {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
 
-    .option i {
-        font-size: 24px;
-        margin-bottom: 10px;
-    }
+        .option i {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
 
-    .option h3 {
-        font-size: 18px;
-        font-weight: 500;
-        margin-bottom: 10px;
-    }
+        .option h3 {
+            font-size: 18px;
+            font-weight: 500;
+            margin-bottom: 10px;
+        }
 
-    .option p {
-        font-size: 14px;
-        color: #6c757d;
-    }
+        .option p {
+            font-size: 14px;
+            color: #6c757d;
+        }
 
-    .footer {
-        display: flex;
-        justify-content: space-between;
-        width: 100%;
-        padding: 20px 0;
-        margin-top: 50px;
-    }
+        .footer {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            padding: 20px 0;
+            margin-top: 50px;
+        }
 
-    .footer a {
-        color: #007bff;
-        text-decoration: none;
-        font-weight: 500;
-    }
+        .footer a {
+            color: #007bff;
+            text-decoration: none;
+            font-weight: 500;
+        }
 
-    .footer button {
-        background-color: transparent;
-        border: 4px solid #f0f0f0;
-        border-radius: 10px;
-        padding: 8px 25px;
-        font-size: 16px;
-        cursor: pointer;
-        color: #007bff;
-    }
+        .footer button {
+            background-color: transparent;
+            border: 4px solid #f0f0f0;
+            border-radius: 10px;
+            padding: 8px 25px;
+            font-size: 16px;
+            cursor: pointer;
+            color: #007bff;
+        }
 
-    /* .footer button:hover {
-                background-color: #f0f0f0;
-            } */
-
-
+        /* .footer button:hover {
+                        background-color: #f0f0f0;
+                    } */
 
 
-    .shift-right {
-        margin-left: 45px;
-    }
-
-    .move-up {
-        position: relative;
-        top: -15px;
-        margin: 0;
-        margin-left: 45px;
-    }
 
 
-    .progress-container {
-        position: absolute;
-        left: -9.1%;
-        width: 100vw;
-        height: 4px;
-        background-color: #ddd;
-        margin: 40px 0;
-        border-radius: 12px;
-        z-index: 1;
-    }
+        .shift-right {
+            margin-left: 45px;
+        }
 
-    .progress-bar {
-        position: absolute;
-        height: 100%;
-        width: 0;
-        background-color: #00AAFF;
-        /* Warna garis aktif */
-        transition: width 0.3s ease;
+        .move-up {
+            position: relative;
+            top: -15px;
+            margin: 0;
+            margin-left: 45px;
+        }
 
-    }
 
-    .step {
-        position: absolute;
-        top: -10px;
-        width: 20px;
-        height: 20px;
-        background-color: white;
-        border: 4px solid #ddd;
-        border-radius: 50%;
-    }
+        .progress-container {
+            position: absolute;
+            left: -9.1%;
+            width: 100vw;
+            height: 4px;
+            background-color: #ddd;
+            margin: 40px 0;
+            border-radius: 12px;
+            z-index: 1;
+        }
 
-    #step1 {
-        left: 0%;
-    }
+        .progress-bar {
+            position: absolute;
+            height: 100%;
+            width: 0;
+            background-color: #00AAFF;
+            /* Warna garis aktif */
+            transition: width 0.3s ease;
 
-    #step2 {
-        left: 50%;
-        transform: translateX(-50%);
-    }
+        }
 
-    #step3 {
-        right: 0%;
-    }
+        .step {
+            position: absolute;
+            top: -10px;
+            width: 20px;
+            height: 20px;
+            background-color: white;
+            border: 4px solid #ddd;
+            border-radius: 50%;
+        }
 
-    .button-container {
-        display: flex;
-        justify-content: space-between;
-        margin-top: 20px;
-    }
+        #step1 {
+            left: 0%;
+        }
 
-    button {
-        padding: 10px 20px;
-        font-size: 16px;
-        cursor: pointer;
-    }
-</style>
+        #step2 {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        #step3 {
+            right: 0%;
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
 @endsection
 @section('content')
     <div class="col-lg-4 text-start ">
@@ -478,43 +483,49 @@ input[type="radio"] {
     <div class="col-lg-5 grid-goals px-4 pb-4">
         <!-- Card 1 -->
         {{-- <div> --}}
+        <form action="{{ route('update-goal') }}" method="post">
+            @csrf
             <label class="card-option-container" for="goal1">
-                <input type="radio" class="form-check-input" name="goal" id="goal1">
-                    <img src="{{ asset('assets/svg/register/Coins-amico.svg') }}" alt="icon">
-                    <br>
-                    <span>To find income and side jobs</span>
+                <input type="radio" class="form-check-input" name="goal"
+                    value="{{ App\Constract\Enums\UserGoalEnum::SIDE->value }}" id="goal1">
+                <img src="{{ asset('assets/svg/register/Coins-amico.svg') }}" alt="icon">
+                <br>
+                <span>To find income and side jobs</span>
             </label>
-        {{-- </div> --}}
+            {{-- </div> --}}
 
-        <!-- Card 2 -->
-        {{-- <div class="card-options"> --}}
+            <!-- Card 2 -->
+            {{-- <div class="card-options"> --}}
             <label class="card-option-container" for="goal2">
-                <input type="radio" name="goal" id="goal2">
-                    <x-svg class="vector-icon">{{ asset('assets/svg/register/Group63.svg') }}</x-svg>
-                    <br>
-                    <span>To get a job and a steady income</span>
+                <input type="radio" name="goal" id="goal2"
+                    value="{{ App\Constract\Enums\UserGoalEnum::STEADY->value }}">
+                <x-svg class="vector-icon">{{ asset('assets/svg/register/Group63.svg') }}</x-svg>
+                <br>
+                <span>To get a job and a steady income</span>
             </label>
-        {{-- </div> --}}
+            {{-- </div> --}}
 
-        <!-- Card 3 -->
-        {{-- <div class=""> --}}
-            <label class="card-option-container " data-color="#000"  for="goal3">
-                <input type="radio"  name="goal" id="goal3">
-                    <x-svg class="vector-icon">{{ asset('assets/svg/register/group64.svg') }}</x-svg>
-                    <br>
-                    <span>To find income and side jobs</span>
+            <!-- Card 3 -->
+            {{-- <div class=""> --}}
+            <label class="card-option-container " data-color="#000" for="goal3">
+                <input type="radio" name="goal" id="goal3"
+                    value="{{ App\Constract\Enums\UserGoalEnum::EXPERIENCE->value }}">
+                <x-svg class="vector-icon">{{ asset('assets/svg/register/group64.svg') }}</x-svg>
+                <br>
+                <span>To find income and side jobs</span>
             </label>
-        {{-- </div> --}}
+            {{-- </div> --}}
 
-        <!-- Card 4 -->
-        {{-- <div> --}}
+            <!-- Card 4 -->
+            {{-- <div> --}}
             <label class="card-option-container" for="goal4">
-                <input type="radio"  name="goal" id="goal4">
-                    <x-svg class="vector-icon">{{ asset('assets/svg/register/goals-yet.svg') }}</x-svg>
-                    <br>
-                    <span>To get a job and a steady income</span>
+                <input type="radio" name="goal" id="goal4"
+                    value="{{ App\Constract\Enums\UserGoalEnum::NOTHING->value }}">
+                <x-svg class="vector-icon">{{ asset('assets/svg/register/goals-yet.svg') }}</x-svg>
+                <br>
+                <span>To get a job and a steady income</span>
             </label>
-        {{-- </div> --}}
+            {{-- </div> --}}
     </div>
     <div class="position-relative" style="width: 100%;">
         <div class="progress-container mt-2">
@@ -528,27 +539,27 @@ input[type="radio"] {
         <a href="#" style="margin-left: 775px; margin-top: 17px;">
             Skip if you are a job seeker
         </a>
-        <button class="custom-button" style="background-color: #00AAFF; color: white;" id="nextBtn">
+        <button class="custom-button" type="submit" style="background-color: #00AAFF; color: white;" id="nextBtn">
             Next
         </button>
+        </form>
     </div>
 @endsection
 
 @section('script')
     <script>
-       document.querySelectorAll('input[name="goal"]').forEach((input) => {
-    input.addEventListener('change', function () {
-        // Hapus gaya aktif pada semua card
-        document.querySelectorAll('.card-option-container').forEach((card) => {
-            card.style.backgroundColor = '#fff';
+        document.querySelectorAll('input[name="goal"]').forEach((input) => {
+            input.addEventListener('change', function() {
+                // Hapus gaya aktif pada semua card
+                document.querySelectorAll('.card-option-container').forEach((card) => {
+                    card.style.backgroundColor = '#fff';
+                });
+
+                // Tambahkan gaya aktif pada card yang terpilih
+                const container = this.closest('.card-option-container');
+                container.style.backgroundColor = '#d1ecf1'; // Light blue
+            });
         });
-
-        // Tambahkan gaya aktif pada card yang terpilih
-        const container = this.closest('.card-option-container');
-        container.style.backgroundColor = '#d1ecf1'; // Light blue
-    });
-});
-
     </script>
 
     <script>
