@@ -1,6 +1,5 @@
 @extends('auth.layout.app')
 @section('content')
-   
     <section>
         <div class="job-seeker-question">
             <div class="top-links">
@@ -14,8 +13,7 @@
             <div class="card-question">
                 <input type="radio" name="job_question" id="option1">
                 <label for="option1">
-                    <svg width="50" height="50" viewBox="0 0 64 63" fill="none"
-                        xmlns="http://www.w3.org/2000/svg">
+                    <svg width="50" height="50" viewBox="0 0 64 63" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <g filter="url(#filter0_d_1459_1085)">
                             <g clip-path="url(#clip0_1459_1085)">
                                 <path
@@ -103,29 +101,38 @@
                 </label>
             </div>
             <div id="hiddenForm" class="hidden-form">
-                <form>
+                <form action="{{ route('company.store') }}" method="post">
+                    @csrf
                     <label class="label-question" for="company-name">Company Name</label>
-                    <input type="text" class="input-question" id="company-name" name="company-name"
+                    <input type="text" class="input-question" id="company-name" name="name"
                         placeholder="Enter the company name">
 
                     <label for="job-position" class="label-question">Job Position</label>
-                    <input type="text" class="input-question" id="job-position" name="job-position"
+                    <input type="text" class="input-question" id="job-position" name="job_position"
                         placeholder="Enter your job position">
 
                     <label for="name" class="label-question">Location</label>
-                    <input type="text" class="input-question" id="location" name="location"
-                        placeholder="Enter the company's location">
+                    <select class="form-control mb-3" aria-label="Default select example" id="inputCountry"
+                        name="country" style="border-radius: 9px; height: 45px;">
+                        @foreach (App\Constract\Enums\CountryEnum::cases() as $item)
+                            <option value="{{ $item->name }}">{{ $item->value }}</option>
+                        @endforeach
+                    </select>
 
                     <label for="name" class="label-question">Company Field</label>
-                    <input type="text" class="input-question" id="company-field" name="company-field"
-                        placeholder="Enter the Company Field">
+                    <select class="form-control mb-3" aria-label="Default select example" id="CompanyField"
+                        name="company_field" style="border-radius: 9px; height: 45px;">
+                        @foreach (App\Constract\Enums\CompanyFieldEnum::cases() as $item)
+                            <option value="{{ $item->name }}">{{ $item->value }}</option>
+                        @endforeach
+                    </select>
 
                     <div class="row">
                         <div class="col-md-6">
                             <label for="start-date" class="label-question">Start Date</label>
                             <div class="custom-date-wrapper">
                                 <input class="input-question custom-date" type="date" id="start-date"
-                                    name="start-date" placeholder="dd/mm/yy">
+                                    name="start_date" placeholder="dd/mm/yy">
                                 <span class="calendar-icon">
 
                                     <svg width="24" height="24" viewBox="0 0 36 36" fill="none"
@@ -177,7 +184,7 @@
                         <div class="col-md-6">
                             <label for="end-date" class="label-question">End Date</label>
                             <div class="custom-date-wrapper">
-                                <input class="input-question custom-date" type="date" id="end-date" name="end-date"
+                                <input class="input-question custom-date" type="date" id="end-date" name="end_date"
                                     placeholder="dd/mm/yy">
                                 <span class="calendar-icon">
 
@@ -226,6 +233,11 @@
 
                                 </span>
                             </div>
+                        </div>
+                        <div class="footer w-full flex justify-end mt-3">
+                            <button class="btn btn-primary" type="submit">
+                                Submit
+                            </button>
                         </div>
                     </div>
                 </form>

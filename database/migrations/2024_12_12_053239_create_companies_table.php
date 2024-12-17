@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('user_id')->constrained('users')->cascadeOnDelete();
             $table->string('name',255);
+            $table->String('job_position');
             $country = [];
             foreach (CountryEnum::cases() as $item) {
                 array_push($country, $item->name);
@@ -25,7 +26,6 @@ return new class extends Migration
                 'country',
                 $country
             )->default("ID");
-            $table->text('address');
             $company_field = [];
             foreach (CompanyFieldEnum::cases() as $item) {
                 array_push($company_field, $item->name);

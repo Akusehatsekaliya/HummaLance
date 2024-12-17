@@ -41,7 +41,7 @@ class CompanyController extends Controller
     {
         $this->companyService->store($request);
 
-        return redirect()->route('')->with('success', 'Company has been created successfully.');
+        return redirect()->route('goals')->with('success', 'Company has been created successfully.');
     }
 
     /**
