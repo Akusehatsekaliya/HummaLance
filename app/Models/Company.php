@@ -6,11 +6,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class Company extends Model
 {
-    protected $filllable = [
+    protected $fillable = [
         'user_id',
         'name',
+        'job_position',
         'country',
-        'addres',
         'company_field',
         'start_date',
         'end_date'

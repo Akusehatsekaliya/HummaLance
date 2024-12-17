@@ -6,7 +6,6 @@
             height: 0.8px;
             width: 100vw;
             background-color: #000;
-            /* margin: 20px 0; */
             margin-left: -16.1%;
         }
 
@@ -61,7 +60,6 @@
             height: 100%;
             width: 0;
             background-color: #00AAFF;
-            /* Warna garis aktif */
             transition: width 0.3s ease;
 
         }
@@ -116,7 +114,6 @@
             position: absolute;
             left: 91px;
             top: 63px;
-            /* border: 3px solid #fff; */
         }
 
         h5 {
@@ -185,6 +182,11 @@
             height: auto;
         }
 
+        .upload-box2 img {
+            width: 100px;
+            height: auto;
+        }
+
         .upload-box p {
             margin: 25px 0 0;
             color: #666;
@@ -216,6 +218,69 @@
         .modal-footer {
             margin-top: 55px;
             border-top: none;
+        }
+
+        .progress-bar12 {
+            width: 100%;
+            height: 4px;
+            background-color: #e0e0e0;
+            border-radius: 5px;
+            overflow: hidden;
+            /* margin-bottom: 21px; */
+            margin-top: 40px;
+        }
+
+        .progress-bar12 div {
+            width: 50%;
+            height: 100%;
+            background-color: #2196f3;
+        }
+
+        .container h1 {
+            font-size: 24px;
+            color: #2c2c2c;
+            margin-bottom: 20px;
+            margin-top: 12px;
+        }
+
+        .resume-item {
+            display: flex;
+            align-items: center;
+            background-color: #21bee829;
+            border-radius: 5px;
+            padding: 10px;
+            margin-top: 50px;
+        }
+
+        .resume-item i {
+            color: #007bff;
+            margin-right: 10px;
+        }
+
+        .resume-item span {
+            flex-grow: 1;
+            color: #007bff;
+            margin-left: 270px;
+        }
+
+        .resume-item .fa-check {
+            color: #00AAFF;
+            margin-right: 210px;
+        }
+
+        .resume-item .fa-trash {
+            color: #00AAFF;
+            cursor: pointer;
+        }
+
+        .continue-btn {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 16px;
         }
     </style>
 @endsection
@@ -256,10 +321,10 @@
     </div>
     <div class="col-lg-4 pb-4">
         <span style="font-weight: 600;">About You</span>
+        <span style="margin-left: 320px; font-weight: 610; color: #000000; font-size: 0.8rem;">1/10</span>
         <h4 class="font-weight-bold my-3">Can you tell us about yourself?</h4>
         <p>Everyone has a different version of themselves, and we want to know your story so we can recommend jobs that are
             a good fit for you.</p>
-
         <div class="button-about">
             <button class="btn btn-outline-custom my-3">
                 <svg width="25" class="mr-2" height="25" viewBox="0 0 25 25" fill="none"
@@ -275,11 +340,10 @@
                         </clipPath>
                     </defs>
                 </svg>
-
                 Impor Form Linkedin
             </button>
             <button class="btn btn-outline-custom my-3" type="button" class="btn btn-primary" data-bs-toggle="modal"
-                data-bs-target="#staticBackdrop">
+                data-bs-target="#uploadModal">
                 <svg width="20" class="mr-2" height="25" viewBox="0 0 20 25" fill="none"
                     xmlns="http://www.w3.org/2000/svg">
                     <g clip-path="url(#clip0_1594_1042)">
@@ -297,29 +361,89 @@
                 Upload Your Resume
             </button>
 
-            {{-- Modal upload --}}
-            <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+            {{-- page 1 --}}
+            <div class="modal fade" id="uploadModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
                 aria-labelledby="staticBackdropLabel" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered custom-modal-height custom-modal-width"
                     style="max-width: 750px;">
                     <div class="modal-content">
-                        <div class="modal-body">
-                            <div class="container">
-                                <div class="close-btn" data-bs-dismiss="modal" aria-label="Close">×</div>
-                                <h1 style="margin-top: 12px;">Add your resume</h1>
-                                <p>Use a PDF, Word doc, or rich text file – make sure it’s 5MB or less.</p>
-                                <div class="upload-box" id="uploadBox">
-                                    <x-svg class="vector-icon">{{ asset('assets/svg/login/modal.svg') }}</x-svg>
-                                    <p style="margin-left: 195px;">Drag and drop or <a href="#"
-                                            id="chooseFileLink">choose file</a></p>
-                                    <input type="file" id="fileInput" style="display: none;"
-                                        accept=".pdf, .doc, .docx, .rtf" />
+                        <div class="close-btn" data-bs-dismiss="modal" aria-label="Close" style="z-index: 1;">×</div>
+                        <div id="page1" class="page">
+                            <div class="modal-body">
+                                <div class="container">
+                                    <h1 style="margin-top: 12px;">Add your resume</h1>
+                                    <p>Use a PDF, Word doc, or rich text file – make sure it’s 5MB or less.</p>
+                                    <div class="upload-box" id="uploadBox">
+                                        <x-svg class="vector-icon">{{ asset('assets/svg/login/modal.svg') }}</x-svg>
+                                        <p style="margin-left: 195px;">Drag and drop or <a href="#"
+                                                id="chooseFileLink">choose file</a></p>
+                                        <input type="file" id="fileInput" style="display: none;"
+                                            accept=".pdf, .doc, .docx, .rtf" />
+                                    </div>
                                 </div>
                             </div>
+                            <div class="modal-footer">
+                                <button type="button" id="continueButton" class="btn btn-primary continueButton"
+                                    style="background-color: #00AAFF; margin-right: 20px;" data-page="2">Continue</button>
+                            </div>
                         </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-primary"
-                                style="background-color: #00AAFF; margin-right: 20px;">Continue</button>
+
+                        {{-- page 2 --}}
+                        <div id="page2" class="page d-none">
+                            <div class="modal-body">
+                                <div class="container">
+                                    <h1 style="margin-top: 12px;"></h1>
+                                    <div class="upload-box2">
+                                        <x-svg class="vector-icon">{{ asset('assets/svg/login/modal2.svg') }}</x-svg>
+                                        <h1 style="margin-left: 232px; margin-top: 30px;">Add your resume</h1>
+                                        <p style="margin-left: 105px;">Use a PDF, Word doc, or rich text file – make sure
+                                            it’s 5MB or less.</p>
+                                        <div class="progress-bar12">
+                                            <div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-primary continueButton"
+                                    style="background-color: #00AAFF; margin-right: 20px;" data-page="3">Continue</button>
+                            </div>
+                        </div>
+
+                        {{-- Page 3 --}}
+                        <div id="page3" class="page d-none">
+                            <div class="modal-body">
+                                <div class="container">
+                                    <h1>Add your resume</h1>
+                                    <div class="resume-item">
+                                        <div style="margin-left: 270px;">
+                                            <svg class="fas fa-paperclip" width="12" height="20"
+                                                viewBox="0 0 14 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path
+                                                    d="M11.5625 5.75V18.6875C11.5625 19.881 11.0884 21.0256 10.2445 21.8695C9.40057 22.7134 8.25597 23.1875 7.0625 23.1875C5.86903 23.1875 4.72443 22.7134 3.88052 21.8695C3.03661 21.0256 2.5625 19.881 2.5625 18.6875V4.625C2.5625 3.87908 2.85882 3.16371 3.38626 2.63626C3.91371 2.10882 4.62908 1.8125 5.375 1.8125C6.12092 1.8125 6.83629 2.10882 7.36374 2.63626C7.89118 3.16371 8.1875 3.87908 8.1875 4.625V16.4375C8.1875 16.7359 8.06897 17.022 7.858 17.233C7.64702 17.444 7.36087 17.5625 7.0625 17.5625C6.76413 17.5625 6.47798 17.444 6.267 17.233C6.05603 17.022 5.9375 16.7359 5.9375 16.4375V5.75H4.25V16.4375C4.25 17.1834 4.54632 17.8988 5.07376 18.4262C5.60121 18.9537 6.31658 19.25 7.0625 19.25C7.80842 19.25 8.52379 18.9537 9.05124 18.4262C9.57868 17.8988 9.875 17.1834 9.875 16.4375V4.625C9.875 3.43153 9.40089 2.28693 8.55698 1.44302C7.71307 0.599106 6.56847 0.125 5.375 0.125C4.18153 0.125 3.03693 0.599106 2.19302 1.44302C1.34911 2.28693 0.875 3.43153 0.875 4.625V18.6875C0.875 20.3285 1.5269 21.9023 2.68728 23.0627C3.84766 24.2231 5.42147 24.875 7.0625 24.875C8.70353 24.875 10.2773 24.2231 11.4377 23.0627C12.5981 21.9023 13.25 20.3285 13.25 18.6875V5.75H11.5625Z"
+                                                    fill="#00AAFF" />
+                                            </svg>
+                                            <span style="margin-left: unset">Ahmad Rifaldi CV</span>
+                                            <svg class="fas fa-check" width="23" height="15" viewBox="0 0 27 15"
+                                                fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M4.64062 8.21987L10.5469 14.0792L22.3594 1.52344" stroke="#00AAFF"
+                                                    stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                            </svg>
+                                        </div>
+                                        <svg class="fas fa-trash" width="15" height="23" viewBox="0 0 21 23"
+                                            fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                d="M4.00156 4.11579L4.994 20.6371C5.00894 20.8833 5.11819 21.1146 5.29944 21.2837C5.48069 21.4529 5.72028 21.5472 5.96933 21.5474H14.8084C15.0575 21.5472 15.2971 21.4529 15.4783 21.2837C15.6596 21.1146 15.7688 20.8833 15.7838 20.6371L16.7762 4.11579H4.00156ZM18.2466 4.11579L17.248 20.723C17.2109 21.339 16.9378 21.9177 16.4844 22.3409C16.0309 22.7641 15.4315 22.9999 14.8084 23H5.96933C5.3463 22.9999 4.74684 22.7641 4.29342 22.3409C3.84 21.9177 3.56685 21.339 3.52978 20.723L2.53122 4.11579H0V3.26842C0 3.1079 0.0643849 2.95394 0.17899 2.84044C0.293596 2.72693 0.449034 2.66316 0.611111 2.66316H10.3889H20.1667C20.3287 2.66316 20.4842 2.72693 20.5988 2.84044C20.7134 2.95394 20.7778 3.1079 20.7778 3.26842V4.11579H18.2466ZM12.8333 0C12.9954 0 13.1509 0.0637687 13.2655 0.177278C13.3801 0.290786 13.4444 0.444737 13.4444 0.605263V1.45263H7.33333V0.605263C7.33333 0.444737 7.39772 0.290786 7.51232 0.177278C7.62693 0.0637687 7.78237 0 7.94445 0H12.8333ZM7.33333 7.26316H8.8L9.41111 18.1579H7.94445L7.33333 7.26316ZM11.9778 7.26316H13.4444L12.8333 18.1579H11.3667L11.9778 7.26316Z"
+                                                fill="#00AAFF" />
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-primary"
+                                    style="background-color: #00AAFF; margin-right: 20px;">Continue</button>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -331,7 +455,6 @@
         </button>
     </div>
     </div>
-
 
     <div class="position-relative" style="width: 100%;">
         <div class="progress-container mt-2">
@@ -395,8 +518,25 @@
         });
 
         document.getElementById('chooseFileLink').addEventListener('click', function(e) {
-            e.preventDefault(); // Mencegah default behavior link
+            e.preventDefault();
             document.getElementById('fileInput').click();
+        });
+    </script>
+
+    <script>
+        // Event listener untuk tombol Continue
+        $(".continueButton").click(function() {
+            console.log($(this).data("page"), $(`#page${$(this).data("page")}`));
+            $(".page").css("display", "none");
+            $(`#page${$(this).data("page")}`).css("display", "unset !important")
+        });
+
+        // Event listener untuk tombol Close pada modal Continue
+        document.querySelectorAll('#uploadModal [data-bs-dismiss="modal"]').forEach((e) => {
+            e.addEventListener('click', function() {
+                document.getElementById('upload').classList.remove("d-none");
+                document.getElementById('continue').classList.add("d-none");
+            });
         });
     </script>
 @endsection

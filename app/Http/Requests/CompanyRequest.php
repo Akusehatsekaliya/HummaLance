@@ -25,7 +25,8 @@ class CompanyRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'name' => ['required', 'string', '255'],
+            'name' => ['required', 'string', 'max:255'],
+            'job_position' => ['required','string','max:255'],
             'country' => [
                 'required',
                 'string',

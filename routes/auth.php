@@ -7,6 +7,7 @@ use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\ForgotPasswordController;
 use App\Http\Controllers\Auth\ResetPasswordController;
 use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Controllers\CompanyController;
 
 // use App\Http\Controllers\Auth\SetPasswordControllerSetPasswordController;
 
@@ -74,3 +75,5 @@ Route::post('/update-goal', [UserController::class, 'UpdateGoal'])->name('update
 Route::post('/update-jobs', [UserController::class, 'UpdateJob'])->name('update-job');
 
 Route::post('/update-about_user', [UserController::class, 'UpdateAboutUser'])->name('update.about');
+
+Route::resource('/company', CompanyController::class);
