@@ -6,6 +6,8 @@ use App\Constract\Enums\UserStatusEnum;
 use App\Constract\Enums\UserStatusRegisterEnum;
 use App\Constract\Interfaces\UserInterface;
 use App\Http\Requests\UserAboutRequest;
+use App\Http\Requests\UserExperienceRequest;
+use App\Http\Requests\UserGoalRequest;
 use App\Http\Requests\UserGoColumnquest;
 use App\Http\Requests\UserJobRequest;
 use App\Models\User;
@@ -108,6 +110,14 @@ class UserService
     }
 
     public function UpdateJob(UserJobRequest $request)
+    {
+        $validatedRequest = $request->validated();
+        $validatedRequest["user_id"] = auth()->user()->id;
+
+        return $this->userInterface->UpdateColumn($validatedRequest);
+    }
+
+    public function UpdateExperience(UserExperienceRequest $request)
     {
         $validatedRequest = $request->validated();
         $validatedRequest["user_id"] = auth()->user()->id;

@@ -483,7 +483,8 @@
     <div class="col-lg-5 grid-goals px-4 pb-4">
         <!-- Card 1 -->
         {{-- <div> --}}
-        <form action="{{ route('update-goal') }}" method="post">
+        <form action="{{ route('update-goal') }}" method="post" style="
+        display: contents;">
             @csrf
             <label class="card-option-container" for="goal1">
                 <input type="radio" class="form-check-input" name="goal"

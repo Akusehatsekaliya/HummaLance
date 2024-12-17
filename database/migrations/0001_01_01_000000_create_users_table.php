@@ -1,6 +1,7 @@
 <?php
 
 use App\Constract\Enums\CountryEnum;
+use App\Constract\Enums\UserExperienceEnum;
 use App\Constract\Enums\UserGenderEnum;
 use App\Constract\Enums\UserGoalEnum;
 use App\Constract\Enums\UserJobEnum;
@@ -96,6 +97,11 @@ return new class extends Migration
                 UserJobEnum::PART_TIME->value,
             ])->nullable();
             $table->string('about_user')->nullable();
+            $table->enum('experience',[
+                UserExperienceEnum::NEW->value,
+                UserExperienceEnum::EXPERIENCE->value,
+                UserExperienceEnum::EXPERT->value,
+            ])->default(UserExperienceEnum::NEW->value);
             $table->rememberToken();
             $table->timestamps();
         });
