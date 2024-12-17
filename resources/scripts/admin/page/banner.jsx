@@ -19,7 +19,7 @@ const Banner = () => {
 
     const fetchBanners = async () => {
         try {
-            const response = await axios.get('/api/banner');
+            const response = await axios.get('/api/admin/banner');
             setBanners(response.data);
         } catch (error) {
             console.error('Error fetching banners:', error);
@@ -30,7 +30,7 @@ const Banner = () => {
         event.preventDefault();
         const formData = new FormData(event.target);
         try {
-            await axios.post('/api/banner', formData);
+            await axios.post('/api/admin/banner', formData);
             setShowAddModal(false);
             fetchBanners();
         } catch (error) {
@@ -44,7 +44,7 @@ const Banner = () => {
         formData.append("_method", "PUT")
 
         try {
-            await axios.post(`/api/banner/${currentBanner.id}`, formData);
+            await axios.post(`/api/admin/banner/${currentBanner.id}`, formData);
             setShowEditModal(false);
             fetchBanners();
         } catch (error) {
@@ -54,7 +54,7 @@ const Banner = () => {
 
     const handleDeleteBanner = async () => {
         try {
-            await axios.delete(`/api/banner/${currentBanner.id}`);
+            await axios.delete(`/api/admin/banner/${currentBanner.id}`);
             setShowDeleteModal(false);
             fetchBanners();
         } catch (error) {

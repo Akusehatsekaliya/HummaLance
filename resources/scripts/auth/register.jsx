@@ -14,7 +14,7 @@ const Register = () => {
     const fetchData = async () => {
         try {
             const [totalUserResponse, totalProjectResponse, totalContractResponse] = await Promise.all([
-                API.get("/total/user"),
+                API.get("/user"),
                 API.get("/total/project"),
                 API.get("/total/contract"),
             ]);

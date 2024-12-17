@@ -16,9 +16,9 @@ const Dashboard = () => {
     const fetchData = async () => {
         try {
             const [totalUserResponse, totalProjectResponse, totalContractResponse] = await Promise.all([
-                API.get("/total/user"),
-                API.get("/total/project"),
-                API.get("/total/contract"),
+                API.get("/admin/total/user"),
+                API.get("/admin/total/project"),
+                API.get("/admin/total/contract"),
             ]);
 
             setTotalUser(totalUserResponse.data);

@@ -34,7 +34,7 @@ const Contract = () => {
 
     const fetchData = async () => {
         try {
-            const { data } = await API.get('/contract', { params: { status: statusFilter } });
+            const { data } = await API.get('/admin/contract', { params: { status: statusFilter } });
             setContracts(data.data);
         } catch (error) {
             console.error('Error fetching data:', error);

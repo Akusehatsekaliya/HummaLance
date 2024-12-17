@@ -31,7 +31,7 @@ const Language = () => {
 
     const fetchLanguage = async () => {
         try {
-            const response = await API.get('/language');
+            const response = await API.get('/admin/language');
             setLanguages(response.data.data);
         } catch (error) {
             console.error('Error fetching language', error);
@@ -42,7 +42,7 @@ const Language = () => {
         event.preventDefault();
         const formData = new FormData(event.target);
         try {
-            await API.post(`/language`, formData);
+            await API.post(`/admin/language`, formData);
             setShowAddModal(false);
             fetchLanguage();
         } catch (error) {

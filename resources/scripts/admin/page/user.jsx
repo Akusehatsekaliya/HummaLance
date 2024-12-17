@@ -36,7 +36,7 @@ const User = () => {
 
     const fetchUser = async () => {
         try {
-            const { data } = await API.get('/user', { params: { role: roleFilter } });
+            const { data } = await API.get('/admin/user', { params: { role: roleFilter } });
             setUser(data.data);
         } catch (error) {
             console.error('Error fetching user:', error);
@@ -45,7 +45,7 @@ const User = () => {
 
     const handleDeleteUser = async () => {
         try {
-            await API.delete(`/user/${currentUser.id}`);
+            await API.delete(`/admin/user/${currentUser.id}`);
             setShowDeleteModal(false);
             fetchUser();
         } catch (error) {
@@ -55,7 +55,7 @@ const User = () => {
 
     const handleShowDetail = async (userId) => {
         try {
-            const { data } = await API.get(`/user/showDetail/${userId}`);
+            const { data } = await API.get(`/admin/user/showDetail/${userId}`);
             setCurrentUser(data.data);
             setShowDetailModal(true);
         } catch (error) {

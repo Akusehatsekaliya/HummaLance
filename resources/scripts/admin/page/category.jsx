@@ -6,7 +6,7 @@ import API from '../../components/apiAxios';
 
 DataTable.use(DT);
 
-const apiPath = '/category';
+const apiPath = '/admin/category';
 const Category = () => {
     const tableRef = useRef(null);
     const [categories, setCategories] = useState([]);

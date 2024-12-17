@@ -10,7 +10,7 @@ const Project = () => {
             const table = new DataTable(tableRef.current, {
                 processing: true,
                 serverSide: true,
-                ajax: "/api/project",
+                ajax: "/api/admin/project",
                 columns: [
                     {
                         data: 'DT_RowIndex',

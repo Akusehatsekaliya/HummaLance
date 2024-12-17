@@ -15,7 +15,7 @@ const AboutUs = () => {
 
     const fetchAboutUs = async () => {
         try {
-            const { data } = await axios.get('/api/about');
+            const { data } = await axios.get('/api/admin/about');
             setAboutData({
                 image: data.image || '',
                 title: data.title || '',
@@ -40,7 +40,7 @@ const AboutUs = () => {
         formData.append("_method", "PUT")
 
         try {
-            await axios.post(`/api/about`, formData);
+            await axios.post(`/api/admin/about`, formData);
         } catch (error) {
             console.error('Error editing about:', error);
         }
