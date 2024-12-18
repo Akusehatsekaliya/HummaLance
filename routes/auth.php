@@ -21,7 +21,7 @@ Route::get('/freelancer/register/google', [RegisterController::class, 'registerR
 Route::get('/freelancer/register/googleCallback', [RegisterController::class, 'RegisterFreelancerGoogleStore'])->name('freelancer_register_google');
 Route::post('/freelancer-register-google-next/{user_id}', [RegisterController::class, 'RegisterFreelancerStoreNextGoogle'])->name('freelancer_register_next_google');
 // end
-Route::get('/register', function () {
+Route::get('/register', action: function () {
     return view('auth.option');
 })->name('option');
 Route::get('/journey', function () {
@@ -41,10 +41,13 @@ Route::get('/success', function () {
 })->name('success');
 Route::get('/option', function () {
     return view('auth.option');
-})->name('option');
+})->name('option1');
 Route::get('/question', function () {
     return view('auth.question');
 })->name('question');
+Route::get('/overview', function () {
+    return view('auth.overview');
+})->name( 'overview');
 Route::get('/job', function () {
     return view('auth.job');
 })->name('job');
