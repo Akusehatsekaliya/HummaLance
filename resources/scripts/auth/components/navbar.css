@@ -1,0 +1,25 @@
+.auth-navbar {
+    display: flex;
+    padding: 8px 128px;
+    align-items: center;
+    border-bottom: 1px solid rgba(0, 0, 0, 25%);
+}
+
+.auth-navbar .logo {
+    width: 140px;
+    height: auto;
+    object-fit: cover;
+}
+
+.auth-navbar .join-text {
+    text-align: left;
+    font-family: "Roboto-Medium", sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    margin-left: auto;
+}
+
+.auth-navbar .join-text span,
+.auth-navbar .join-text a {
+    margin: 0 4px;
+}

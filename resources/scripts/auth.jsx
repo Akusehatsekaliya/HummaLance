@@ -1,41 +1,31 @@
-import React, { useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import ReactDOM from 'react-dom/client';
-import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
-import { SidebarProvider } from './admin/context/is-sidebar-active';
-import { CSSTransition, TransitionGroup } from 'react-transition-group';
+import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-router-dom';
+import axios from 'axios';
+
+import Navbar from './auth/components/navbar';
 
 import Register from './auth/register';
+import Journey from './auth/journey';
 
 import '/resources/css/transition.css';
+import '/resources/css/auth.css';
 
-function AnimatedRoutes() {
-    const location = useLocation();
-    const nodeRef = useRef(null);
-
+function RouteArea() {
     return (
-        <TransitionGroup>
-            <CSSTransition
-                key={location.key}
-                classNames="page"
-                timeout={300}
-                nodeRef={nodeRef}
-            >
-                <div ref={nodeRef}>
-                    <Routes location={location}>
-                        <Route path="/react/auth/register" exact element={<Register />} />
-                    </Routes>
-                </div>
-            </CSSTransition>
-        </TransitionGroup>
+        <Routes>
+            <Route path="/react/auth/register" exact element={<Register />} />
+            <Route path="/react/auth/journey" element={<Journey />} />
+        </Routes>
     );
 }
-
 
 function App() {
     return (
         <Router>
-            <div id="main">
-                <AnimatedRoutes />
+            <Navbar />
+            <div id="main" className='content container'>
+                <RouteArea />
             </div>
         </Router>
     );

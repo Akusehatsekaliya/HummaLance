@@ -37,7 +37,7 @@
 </head>
 
 <body>
-    <section>
+    <!-- <section>
         <div class="container">
             <div class="row justify-content-center d-flex">
                 <div class="col-lg-11 py-4">
@@ -51,11 +51,11 @@
 
                 </div>
 
-                <div id="app"></div>
-
+                
             </div>
         </div>
-    </section>
+    </section> -->
+    <div id="app"></div>
     @yield('script')
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"

@@ -3,6 +3,20 @@ import laravel from 'laravel-vite-plugin';
 import react from '@vitejs/plugin-react';
 
 export default defineConfig({
+    resolve: {
+        alias: {
+            '@scripts': '/resources/scripts',
+        },
+    },
+    build: {
+        rollupOptions: {
+            output: {
+                manualChunks: {
+                    vendor: ['react', 'axios', 'datatables.net-react', 'datatables.net-bs5'],
+                },
+            },
+        },
+    },
     plugins: [
         laravel({
             input: [
@@ -13,8 +27,8 @@ export default defineConfig({
                 // 'resources/scripts/admin/**'
             ],
             refresh: [
-                'resources/routes/**',
-                'routes/**',
+                // 'resources/routes/**',
+                // 'routes/**',
                 'resources/views/**',
             ],
         }),

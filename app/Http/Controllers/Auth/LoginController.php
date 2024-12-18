@@ -76,8 +76,8 @@ class LoginController extends Controller
                 ]);
             } else {
                 $user = User::create([
-                    'first_name' => $googleUser->getName(),
-                    'last_name' => $googleUser->getName(),
+                    'first_name' => $googleUser->user->given_name,
+                    'last_name' => $googleUser->user->family_name,
                     'email' => $googleUser->getEmail(),
                     'google_id' => $googleUser->getId(),
                     'avatar' => $googleUser->getAvatar(),

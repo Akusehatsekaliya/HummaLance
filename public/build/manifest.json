@@ -1,27 +1,27 @@
 {
-  "_axios-BUAy7Hk3.js": {
-    "file": "assets/axios-BUAy7Hk3.js",
-    "name": "axios"
+  "_vendor-DOXh85qL.js": {
+    "file": "assets/vendor-DOXh85qL.js",
+    "name": "vendor"
   },
   "resources/scripts/admin.jsx": {
-    "file": "assets/admin-BdLuEPLr.js",
+    "file": "assets/admin-BzMQBYxN.js",
     "name": "admin",
     "src": "resources/scripts/admin.jsx",
     "isEntry": true,
     "imports": [
-      "_axios-BUAy7Hk3.js"
+      "_vendor-DOXh85qL.js"
     ],
     "css": [
-      "assets/admin-fti1JBem.css"
+      "assets/admin-Bhil2q5u.css"
     ]
   },
   "resources/scripts/landing.jsx": {
-    "file": "assets/landing-CiyLHgpY.js",
+    "file": "assets/landing-C-4Ie769.js",
     "name": "landing",
     "src": "resources/scripts/landing.jsx",
     "isEntry": true,
     "imports": [
-      "_axios-BUAy7Hk3.js"
+      "_vendor-DOXh85qL.js"
     ]
   }
 }

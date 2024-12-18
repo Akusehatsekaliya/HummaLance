@@ -53,10 +53,19 @@ Route::get('/aboutyou', function () {
 })->name('aboutyou');
 
 // Google Login
-Route::middleware("guest")->group(function () {
-    Route::get('login/google', [LoginController::class, 'redirectToGoogle'])->name('login.google');
-    Route::get('login/google/callback', [LoginController::class, 'handleGoogleCallback']);
+
+Route::get("auth/check", function () {
+    return response()->json([
+        'authorized' => Auth::check(),
+        'user' => Auth::user()->only(["first_name", "email", "avatar"])
+    ]);
 });
+
+
+// Route::middleware("guest")->group(function () {
+Route::get('login/google', [LoginController::class, 'redirectToGoogle'])->name('login.google');
+Route::get('login/google/callback', [LoginController::class, 'handleGoogleCallback']);
+// });
 
 // Menampilkan form "Lupa Password"
 Route::get('password/reset', [ForgotPasswordController::class, 'showLinkRequestForm'])->name('password.request');
