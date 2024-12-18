@@ -1405,7 +1405,57 @@
     }
 
     .btn-outline-landing1 {
-        width: 100%;
-        justify-content: center;
+        margin-left: 0;
+        width: 48%;
     }
+    .btn-outline-login1 {
+        width: 48%;
+    }
+
+    .homepage-search-form .btn {
+        padding: 10px 20px;
+        border-radius: 8px;
+        text-align: center;
+        text-transform: uppercase;
+    }
+
+    .card-menu1,
+    .card-menu2,
+    .card-menu3,
+    .card-menu4,
+    .card-menu5,
+    .card-menu6,
+    .card-menu7,
+    .card-menu8,
+    .card-menu9{
+        width: 98px;
+        height: 98px;
+        margin-left:10px;
+    }
+
+    .card-menu1 svg,
+    .card-menu2 svg,
+    .card-menu3 svg,
+    .card-menu4 svg,
+    .card-menu5 svg,
+    .card-menu6 svg,
+    .card-menu7 svg,
+    .card-menu8 svg,
+    .card-menu9 svg{
+        margin-left: 27px;
+        margin-top: 18px;
+        justify-content: center;
+        display: flex;
+        align-items: center;
+    }
+
+    .py-5 {
+        padding-bottom: 0 !important;
+    }
+
+    .fitur-clocker{
+        margin: 6px;
+    }
+
+    
 }

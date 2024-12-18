@@ -281,69 +281,75 @@
             This will let us know and can help you further in starting your career journey as a freelancer,
             we will not tell your <br> answer to anyone including clients and potential companies.
         </p>
+        <form action="{{ route('update-experience') }}" method="post">
+            @csrf
+            <div class="options">
+                <label class="option" data-color="#C6FFD4">
+                    <div class="card-question1">
+                        <input name="experience" type="radio"
+                            value="{{ App\Constract\Enums\UserExperienceEnum::NEW->value }}" id="experience-1"
+                            data-color="#34C759" />
+                    </div>
+                    <x-svg class="vector-icon">{{ asset('assets/svg/login/freelancing.svg') }}</x-svg>
+                    <h3 style="font-weight: bold;">
+                        I'm new to freelancing
+                    </h3>
+                    <p class="mb-0">
+                        This option will let us know if you are new to the world of freelancing.
+                    </p>
+                </label>
 
-        <div class="options">
-            <label class="option" data-color="#C6FFD4">
-                <div class="card-question1">
-                    <input name="experience" type="radio" id="experience-1" data-color="#34C759" />
-                </div>
-                <x-svg class="vector-icon">{{ asset('assets/svg/login/freelancing.svg') }}</x-svg>
-                <h3 style="font-weight: bold;">
-                    I'm new to freelancing
-                </h3>
-                <p class="mb-0">
-                    This option will let us know if you are new to the world of freelancing.
-                </p>
-            </label>
+                <label class="option" data-color="#FFE0B5">
+                    <div class="card-question1">
+                        <input name="experience" value="{{ App\Constract\Enums\UserExperienceEnum::EXPERIENCE->value }}"
+                            type="radio" data-color="#FF9500" />
+                    </div>
+                    <x-svg class="vector-icon">{{ asset('assets/svg/login/experience.svg') }}</x-svg>
 
-            <label class="option" data-color="#FFE0B5">
-                <div class="card-question1">
-                    <input name="experience" type="radio" data-color="#FF9500" />
-                </div>
-                <x-svg class="vector-icon">{{ asset('assets/svg/login/experience.svg') }}</x-svg>
+                    </i>
+                    <h3 style="font-weight: bold;">
+                        I have experience as a freelancer
+                    </h3>
+                    <p class="mb-0">
+                        With this option we will know if you are a freelancer who has experience.
+                    </p>
+                </label>
 
-                </i>
-                <h3 style="font-weight: bold;">
-                    I have experience as a freelancer
-                </h3>
-                <p class="mb-0">
-                    With this option we will know if you are a freelancer who has experience.
-                </p>
-            </label>
+                <label class="option" data-color="#FFB8B4">
+                    <div class="card-question1">
+                        <input name="experience" type="radio"
+                            value="{{ App\Constract\Enums\UserExperienceEnum::EXPERT->value }}" data-color="#FF3B30" />
+                    </div>
+                    <x-svg class="vector-icon">{{ asset('assets/svg/login/expert.svg') }}</x-svg>
 
-            <label class="option" data-color="#FFB8B4">
-                <div class="card-question1">
-                    <input name="experience" type="radio" data-color="#FF3B30" />
-                </div>
-                <x-svg class="vector-icon">{{ asset('assets/svg/login/expert.svg') }}</x-svg>
-
-                </i>
-                <h3 style="font-weight: bold;">
-                    I am an expert in freelancer
-                </h3>
-                <p class="mb-0">
-                    By choosing this option we will know that you are an experienced expert in the world of
-                    freelancing.
-                </p>
-            </label>
+                    </i>
+                    <h3 style="font-weight: bold;">
+                        I am an expert in freelancer
+                    </h3>
+                    <p class="mb-0">
+                        By choosing this option we will know that you are an experienced expert in the world of
+                        freelancing.
+                    </p>
+                </label>
+            </div>
         </div>
-    </div>
-    <div class="position-relative" style="width: 100%;">
-        <div class="progress-container">
-            <div class="progress-bar" id="progressBar"></div>
+        <div class="position-relative" style="width: 100%;">
+            <div class="progress-container">
+                <div class="progress-bar" id="progressBar"></div>
+            </div>
         </div>
-    </div>
-    <div class="footer">
-        <button style="margin-left: 45px;">
-            Back
-        </button>
-        <a href="#" style="margin-left: 775px; margin-top: 17px;">
+        <div class="footer">
+            <button style="margin-left: 45px;">
+                Back
+            </button>
+            <a href="{{ route('question') }}" style="margin-left: 775px; margin-top: 17px;">
             Skip if you are a job seeker
         </a>
-        <button class="custom-button" style="background-color: #00AAFF; color: white;" id="nextBtn">
+        <button class="custom-button" type="submit" style="background-color: #00AAFF; color: white;" id="nextBtn">
             Next
         </button>
     </div>
+</form>
 @endsection
 
 @section('script')

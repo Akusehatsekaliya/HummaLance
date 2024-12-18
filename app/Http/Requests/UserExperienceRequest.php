@@ -2,11 +2,11 @@
 
 namespace App\Http\Requests;
 
-use App\Constract\Enums\UserJobEnum;
-use Illuminate\Foundation\Http\FormRequest;
+use App\Constract\Enums\UserExperienceEnum;
 use Illuminate\Validation\Rule;
+use Illuminate\Foundation\Http\FormRequest;
 
-class UserJobRequest extends FormRequest
+class UserExperienceRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -23,14 +23,15 @@ class UserJobRequest extends FormRequest
      */
     public function rules(): array
     {
-        // dd($this->all());
         return [
-            'job' => ['required', Rule::in([
-                UserJobEnum::OFFICE->value,
-                UserJobEnum::WFH->value,
-                UserJobEnum::FULL_TIME->value,
-                UserJobEnum::PART_TIME->value,
-            ])],
+            'experience' => [
+                'required', Rule::in([
+                    UserExperienceEnum::NEW->value,
+                    UserExperienceEnum::EXPERT->value,
+                    UserExperienceEnum::EXPERIENCE->value,
+                ])
+
+            ]
         ];
     }
 }
