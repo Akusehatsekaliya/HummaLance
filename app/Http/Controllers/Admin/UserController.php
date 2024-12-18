@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Constract\Enums\UserExperienceEnum;
 use App\Constract\Enums\UserStatusEnum;
 use App\Constract\Interfaces\UserInterface;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\UserAboutRequest;
+use App\Http\Requests\UserExperienceRequest;
 use App\Http\Requests\UserGoalRequest;
 use App\Http\Requests\UserJobRequest;
 use App\Http\Resources\UserResource;
@@ -67,14 +69,22 @@ class UserController extends Controller
     {
         $this->service->UpdateGoal($request);
 
-        return redirect();
+        return redirect()->route('job')->with('success', 'success created');
     }
 
     public function UpdateJob(UserJobRequest $request)
     {
+        // dd($request);
         $this->service->UpdateJob($request);
 
-        return redirect();
+        return redirect()->route('aboutyou')->with('success', 'success created');
+    }
+
+    public function UpdateExperience(UserExperienceRequest $request)
+    {
+        $this->service->UpdateExperience($request);
+
+        return redirect()->route('goals')->with('success', 'success created');
     }
 
     public function UpdateAboutUser(UserAboutRequest $request)

@@ -76,4 +76,6 @@ Route::post('/update-jobs', [UserController::class, 'UpdateJob'])->name('update-
 
 Route::post('/update-about_user', [UserController::class, 'UpdateAboutUser'])->name('update.about');
 
+Route::post('/update-experience', [UserController::class, 'UpdateExperience'])->name('update-experience');
+
 Route::resource('/company', CompanyController::class);

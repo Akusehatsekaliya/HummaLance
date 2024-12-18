@@ -186,7 +186,7 @@
             </li>
         </ul>
 
-        <a class="btn" href="#" style="font-weight: bold; font-size: 14px;">
+        <a class="btn" href="{{ route('optionExperience') }}" style="font-weight: bold; font-size: 14px;">
             Get Started
             <svg width="19" height="24" viewBox="0 0 19 24" style="margin-left: 8px" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g clip-path="url(#clip0_1459_649)">

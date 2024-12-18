@@ -44,7 +44,8 @@ class User extends Authenticatable
         'country',
         'job',
         'goal',
-        'about_user'
+        'about_user',
+        'experience'
     ];
 
     /**
