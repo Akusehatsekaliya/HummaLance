@@ -5,31 +5,38 @@
     border-radius: 5%;
     border: 1px solid #ffffff;
     box-shadow: 0 3px 3px #b8b8b861;
-    height: 23rem;
-    width: 29rem;
+    height: 22rem;
+    width: 100%;
 }
 .card-overview1 {
     border-radius: 5%;
     border: 1px solid #ffffff;
     box-shadow: 0 3px 3px #b8b8b861;
-    height: 14rem;
-    width: 15rem;
+    height: 14.5rem;
+    width: 100%;
 }
 .img-bg1 {
     width: 100%;
     height: 5rem;
+    border-radius: 15px 15px 0 0;
 }
 
 .img-profile1 {
     width: 64px;
     position: absolute;
-    left: 65px;
-    top: 48px;
+    left: 27px;
+    top: 44px;
     border: 0px solid #fff;
 }
 
+.overview p {
+    font-size: 10px;
+}
 .overview h4 {
-
+    font-size: 15px;
+}
+.overview h6 {
+    font-size: 16px;
 }
 
 .img-about1 {
@@ -37,7 +44,7 @@
 }
 
 .overview{
-    margin-left :64.5rem;
+    /* margin-left :64.5rem; */
 }
 </style>
 @endsection
@@ -118,7 +125,7 @@
         Fill in manually
     </button>
 </div>
-    <div class="col-lg-5 px-5 pb-4">
+    <div class="col-lg-6 px-5 pb-4">
         <div class="card-overview">
             <div class="img-about">
                 <img src="{{ asset('assets/images/bg-aboutyou.png') }}" class="img-bg">
@@ -135,46 +142,47 @@
                 </div>
             </div>
         </div>
+
+        <div class="overview d-flex justify-content-between mt-3">
+            <div class="col-lg-6 pl-0 pr-2"> <!-- Reduced horizontal padding -->
+                <div class="card-overview1"> <!-- Reduced padding inside the card -->
+                    <div class="img-about1">
+                        <img src="{{ asset('assets/images/bg-1.png') }}" class="img-bg1">
+                        <img src="{{ asset('assets/images/469126931_1095838208845928_9027533803000913619_n.png') }}" class="img-profile1 rounded-circle">
+                    </div>
+
+                    <div class="px-3">
+                        <h4 class="font-weight-bold overview">Samuel De Fransisco</h4>
+                        <div class="row px-3 text-secondary">
+                            <h6 class="mr-2" style="margin-left: -17px;"> Chef (He/Him)</h6>
+                        </div>
+                        <div class="text-secondary">
+                            <p class="text-justify mb-2">I am a graphic designer who is experienced in creating design feeds for social media, video editing for reels, and designing logos for your products, motion design animations for your logo.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 pr-0 pl-2"> <!-- Reduced horizontal padding -->
+                <div class="card-overview1"> <!-- Reduced padding inside the card -->
+                    <div class="img-about1">
+                        <img src="{{ asset('assets/images/bg-2.png') }}" class="img-bg1">
+                        <img src="{{ asset('assets/images/461980620_557712786838977_8466767888813043427_n.png') }}" class="img-profile1 rounded-circle">
+                    </div>
+
+                    <div class="px-3">
+                        <h4 class="font-weight-bold overview">Lebron James</h4>
+                        <div class="row px-3 text-secondary">
+                            <h6 class="mr-2" style="margin-left: -17px;"> Programmer (He/Him)</h6>
+                        </div>
+                        <div class="text-secondary">
+                            <p class="text-justify mb-2">I am a graphic designer who is experienced in creating design feeds for social media, video editing for reels, and designing logos for your products, motion design animations for your logo.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
-    <div class="overview">
-        <div class="col-lg-3 px-2 pb-1"> <!-- Reduced horizontal padding -->
-            <div class="card-overview1"> <!-- Reduced padding inside the card -->
-                <div class="img-about1">
-                    <img src="{{ asset('assets/images/bg-aboutyou.png') }}" class="img-bg1">
-                    <img src="{{ asset('assets/images/profile.png') }}" class="img-profile1 rounded-circle">
-                </div>
-    
-                <div class="px-3">
-                    <h4 class="font-weight-bold overview">Ahmad Rifaldi K.</h4>
-                    <div class="row px-3 text-secondary">
-                        <h6 class="mr-2" style="margin-left: -17px;"> Graphic Designer (He/Him)</h6>
-                    </div>
-                    <div class="text-secondary">
-                        <p class="text-justify mb-2">I am a graphic designer who is experienced in creating design feeds for social media, video editing for reels, and designing logos for your products, motion design animations for your logo.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-3 px-2 pb-1"> <!-- Reduced horizontal padding -->
-            <div class="card-overview1"> <!-- Reduced padding inside the card -->
-                <div class="img-about1">
-                    <img src="{{ asset('assets/images/bg-aboutyou.png') }}" class="img-bg1">
-                    <img src="{{ asset('assets/images/profile.png') }}" class="img-profile1 rounded-circle">
-                </div>
-    
-                <div class="px-3">
-                    <h4 class="font-weight-bold overview">Ahmad Rifaldi K.</h4>
-                    <div class="row px-3 text-secondary">
-                        <h6 class="mr-2" style="margin-left: -17px;"> Graphic Designer (He/Him)</h6>
-                    </div>
-                    <div class="text-secondary">
-                        <p class="text-justify mb-2">I am a graphic designer who is experienced in creating design feeds for social media, video editing for reels, and designing logos for your products, motion design animations for your logo.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    
+
 
 @endsection
