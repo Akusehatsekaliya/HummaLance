@@ -33,10 +33,10 @@
     font-size: 10px;
 }
 .overview h4 {
-    font-size: 15px;
+    font-size: 16px;
 }
 .overview h6 {
-    font-size: 16px;
+    font-size: 15px;
 }
 
 .img-about1 {
