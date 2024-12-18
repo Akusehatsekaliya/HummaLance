@@ -2,12 +2,12 @@
 
 return [
     'banner.Start Work Today' => 'Start Work Today',
-    'banner.headline' => 'The best <br> Platform to turn your free time into work and to pursue your dream job',
-    'banner.description' => 'Millions of people use clockers to make their dream jobs come true. Expand your connections and make your dream job come true with clockers.',
+    'banner.headline' => 'The Best <br> Platform to turn your free time into work and to pursue your dream job',
+    'banner.description' => 'Millions of people use clocker to make their dream jobs a reality.',
     'banner.get_started' => 'Get Started',
     'banner.learn_more' => 'Learn More',
     'populer.what_people_do_at_clocker' => 'What People Do At Clocker',
-    'populer.become_a_freelancer_and_make_lots_of_connections' => 'Become a freelancer and make lots of connections',
+    'populer.become_a_freelancer_and_make_lots_of_connections' => 'Become a freelancer and make lots <br> of connections',
     'populer.Join Clocker' => 'Join Clocker',
     'populer.Join clocker and create a freelancer account to start becoming a freelancer' => 'Join clocker and create a freelancer account to start becoming a freelancer',
     'populer.Start Selling' => 'Start Selling',

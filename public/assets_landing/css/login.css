@@ -772,7 +772,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     cursor: pointer;
     outline: none;
     border: 2px solid transparent;
-    transition: transform 0.3s, border 0.3s;
+    /* transition: transform 0.3s, border 0.3s; */
     border: 2px solid #dbdbdb; /* Tambahkan border */
     border-radius: 8px; /* Opsional: membuat sudut membulat */
 }
@@ -832,7 +832,8 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
 .card-job input[type="radio"]:checked {
     background-color: #21bde833;
-    transform: scale(1.05);
+    /* transform: scale(1.05); */
+    border: none;
 }
 
 .card-job input[type="radio"]:checked::after {

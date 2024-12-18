@@ -116,7 +116,7 @@
         z-index: 1;
     } --}}
     <style>
-        .grid-goals {
+        .grid-goals form{
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 16px;
@@ -380,6 +380,11 @@ input[type="radio"] {
         font-size: 16px;
         cursor: pointer;
     }
+    ul, ul li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
 </style>
 @endsection
 @section('content')
@@ -476,10 +481,12 @@ input[type="radio"] {
         </ul>
     </div>
     <div class="col-lg-5 grid-goals px-4 pb-4">
+        <form action="{{ route('update-goal') }}" method="put">
+            @csrf
         <!-- Card 1 -->
         {{-- <div> --}}
             <label class="card-option-container" for="goal1">
-                <input type="radio" class="form-check-input" name="goal" id="goal1">
+                <input type="radio" name="goal" id="goal1" value="side">
                     <img src="{{ asset('assets/svg/register/Coins-amico.svg') }}" alt="icon">
                     <br>
                     <span>To find income and side jobs</span>
@@ -489,7 +496,7 @@ input[type="radio"] {
         <!-- Card 2 -->
         {{-- <div class="card-options"> --}}
             <label class="card-option-container" for="goal2">
-                <input type="radio" name="goal" id="goal2">
+                <input type="radio" name="goal" id="goal2" value="steady">
                     <x-svg class="vector-icon">{{ asset('assets/svg/register/Group63.svg') }}</x-svg>
                     <br>
                     <span>To get a job and a steady income</span>
@@ -499,7 +506,7 @@ input[type="radio"] {
         <!-- Card 3 -->
         {{-- <div class=""> --}}
             <label class="card-option-container " data-color="#000"  for="goal3">
-                <input type="radio"  name="goal" id="goal3">
+                <input type="radio"  name="goal" id="goal3" value="experience">
                     <x-svg class="vector-icon">{{ asset('assets/svg/register/group64.svg') }}</x-svg>
                     <br>
                     <span>To find income and side jobs</span>
@@ -509,12 +516,13 @@ input[type="radio"] {
         <!-- Card 4 -->
         {{-- <div> --}}
             <label class="card-option-container" for="goal4">
-                <input type="radio"  name="goal" id="goal4">
+                <input type="radio"  name="goal" id="goal4" value="nothing">
                     <x-svg class="vector-icon">{{ asset('assets/svg/register/goals-yet.svg') }}</x-svg>
                     <br>
                     <span>To get a job and a steady income</span>
             </label>
         {{-- </div> --}}
+        </form>
     </div>
     <div class="position-relative" style="width: 100%;">
         <div class="progress-container mt-2">
@@ -545,7 +553,7 @@ input[type="radio"] {
 
         // Tambahkan gaya aktif pada card yang terpilih
         const container = this.closest('.card-option-container');
-        container.style.backgroundColor = '#d1ecf1'; // Light blue
+        container.style.backgroundColor = '#21bee826'; // Light blue
     });
 });
 
