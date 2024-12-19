@@ -1,89 +1,82 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
+import { AuthContext } from '@context/AuthContext';
+import API from '@components/apiAxios';
 import { useNavigate } from 'react-router-dom';
-// import { useAuth } from '/resources/scripts/auth';
-import API from '../components/apiAxios';
 
 const Journey = () => {
+    const navigate = useNavigate();
+    const { authState, setAuthState } = useContext(AuthContext);
     const [formData, setFormData] = useState({
         password: '',
         country: '',
         day: '',
-        month: '',
-        year: '',
+        month: '1',
+        year: '2024',
         emailsOptIn: false,
         termsAccepted: false,
     });
 
     const [errors, setErrors] = useState({});
 
-    // useEffect(() => {
-    //     if (!isAuthenticated) {
-    //         navigate("/react/auth/register");
-    //     }
-    // }, [isAuthenticated, navigate]);
-
     const countries = [
         { name: 'US', value: 'United States' },
         { name: 'IN', value: 'India' },
         { name: 'GB', value: 'United Kingdom' },
-        // Add other countries as needed
     ];
 
-    const handleChange = (e) => {
-        const { name, value, type, checked } = e.target;
-        setFormData({
-            ...formData,
+    // Function to handle form changes
+    const handleChange = ({ target: { name, value, type, checked } }) => {
+        setFormData((prevState) => ({
+            ...prevState,
             [name]: type === 'checkbox' ? checked : value,
-        });
+        }));
     };
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        // Validate form
+    // Validation function
+    const validateForm = () => {
         const newErrors = {};
+        const { password, country, day, month, year, termsAccepted } = formData;
 
-        // Validate password
-        if (!formData.password) {
-            newErrors.password = 'Password is required';
-        }
-
-        // Validate country
-        if (!formData.country) {
-            newErrors.country = 'Country is required';
-        }
-
-        // Validate day, month, and year
-        if (!formData.day || !formData.month || !formData.year) {
+        if (!password) newErrors.password = 'Password is required';
+        if (!country) newErrors.country = 'Country is required';
+        if (!day || !month || !year) {
             newErrors.dateOfBirth = 'Please select a valid date of birth';
+        } else if (parseInt(day) < 1 || parseInt(day) > 31) {
+            newErrors.day = 'Day must be between 1 and 31';
         }
+        if (!termsAccepted) newErrors.termsAccepted = 'You must agree to the terms and conditions';
 
-        // Validate terms and conditions
-        if (!formData.termsAccepted) {
-            newErrors.termsAccepted = 'You must agree to the terms and conditions';
-        }
+        return newErrors;
+    };
+
+    // Form submit handler
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        const newErrors = validateForm();
 
         setErrors(newErrors);
 
-        // Submit if no errors
         if (Object.keys(newErrors).length === 0) {
-            // Handle form submission, e.g., send data to server
-            console.log(formData);
+            const token = localStorage.getItem('access_token');
+
+            try {
+                const response = await API.post('/auth/journey', formData, {
+                    headers: { Authorization: `Bearer ${token}` },
+                });
+                setAuthState((prevState) => ({
+                    ...prevState,
+                    user: response.data,
+                }));
+                navigate("/react/auth/adventure");
+                // console.log('Form submitted successfully:', response.data);
+            } catch (error) {
+                console.error('Error submitting form:', error);
+            }
         }
     };
 
     const currentYear = new Date().getFullYear();
 
-    const handleFormSubmit = async (event) => {
-        event.preventDefault();
-        const formData = new FormData(event.target);
-        try {
-            await API.post('/auth/journey', formData);
-            setShowAddModal(false);
-            fetchData();
-        } catch (error) {
-            console.error('Error adding data:', error);
-        }
-    };
     return (
         <div className='d-flex justify-content-center'>
             <div className="card-register">
@@ -103,7 +96,7 @@ const Journey = () => {
                                     id="inputPassword"
                                     name="password"
                                     style={{ borderRadius: '9px', height: '45px' }}
-                                    defaultValue={formData.password}
+                                    value={formData.password}
                                     onChange={handleChange}
                                 />
                                 {errors.password && <span className="text-danger mb-3">{errors.password}</span>}
@@ -117,11 +110,12 @@ const Journey = () => {
                                     id="inputCountry"
                                     name="country"
                                     style={{ borderRadius: '9px', height: '45px' }}
-                                    defaultValue={formData.country}
+                                    value={formData.country}
                                     onChange={handleChange}
                                 >
+                                    <option value="">Select Country</option>
                                     {countries.map((item) => (
-                                        <option key={item.name} defaultValue={item.name}>
+                                        <option key={item.name} value={item.name}>
                                             {item.value}
                                         </option>
                                     ))}
@@ -139,9 +133,14 @@ const Journey = () => {
                                         className="form-control"
                                         id="inputday"
                                         style={{ borderRadius: '9px', height: '45px' }}
-                                        defaultValue={formData.day}
+                                        value={formData.day}
                                         onChange={handleChange}
+                                        onKeyPress={(e) => {
+                                            const value = e.target.value + e.key;
+                                            if (!/[0-9]/.test(e.key) || parseInt(value) < 1 || parseInt(value) > 31) e.preventDefault();
+                                        }}
                                     />
+                                    {errors.day && <span className="text-danger">{errors.day}</span>}
                                 </div>
 
                                 <div className="col-sm">
@@ -151,13 +150,13 @@ const Journey = () => {
                                         className="form-control"
                                         name="month"
                                         style={{ borderRadius: '9px', height: '45px' }}
-                                        defaultValue={formData.month}
+                                        value={formData.month}
                                         onChange={handleChange}
                                     >
                                         {[...Array(12).keys()].map((i) => {
                                             const value = i + 1;
                                             return (
-                                                <option key={value} defaultValue={value}>
+                                                <option key={value} value={value}>
                                                     {value < 10 ? `0${value}` : value}
                                                 </option>
                                             );
@@ -172,13 +171,13 @@ const Journey = () => {
                                         name="year"
                                         className="form-control"
                                         style={{ borderRadius: '9px', height: '45px' }}
-                                        defaultValue={formData.year}
+                                        value={formData.year}
                                         onChange={handleChange}
                                     >
                                         {[...Array(currentYear - 1900 + 1).keys()].reverse().map((i) => {
                                             const value = currentYear - i;
                                             return (
-                                                <option key={value} defaultValue={value}>
+                                                <option key={value} value={value}>
                                                     {value}
                                                 </option>
                                             );
@@ -194,11 +193,11 @@ const Journey = () => {
                                     className="form-check-input"
                                     type="checkbox"
                                     name="emailsOptIn"
-                                    id="flexCheckDefault"
+                                    id="emailsOptIn"
                                     checked={formData.emailsOptIn}
                                     onChange={handleChange}
                                 />
-                                <label className="form-check-label" htmlFor="flexCheckDefault">
+                                <label className="form-check-label" htmlFor="emailsOptIn">
                                     Send me helpful emails to find rewarding work and job leads.
                                 </label>
                             </div>
@@ -209,11 +208,11 @@ const Journey = () => {
                                     className="form-check-input"
                                     type="checkbox"
                                     name="termsAccepted"
-                                    id="flexCheckDefault"
+                                    id="termsAccepted"
                                     checked={formData.termsAccepted}
                                     onChange={handleChange}
                                 />
-                                <label className="form-check-label" htmlFor="flexCheckDefault">
+                                <label className="form-check-label" htmlFor="termsAccepted">
                                     Yes, I understand and agree to the <span className="text-landing">Clocker Terms of Service</span>,
                                     including the <span className="text-landing">User Agreement</span> and <span className="text-landing">Privacy Policy</span>.
                                 </label>

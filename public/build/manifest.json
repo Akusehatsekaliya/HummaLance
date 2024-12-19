@@ -1,27 +1,46 @@
 {
-  "_vendor-DOXh85qL.js": {
-    "file": "assets/vendor-DOXh85qL.js",
+  "_transition-!~{004}~.js": {
+    "file": "assets/transition-sS9ru1SU.css",
+    "src": "_transition-!~{004}~.js"
+  },
+  "_transition-DiF0lXAA.js": {
+    "file": "assets/transition-DiF0lXAA.js",
+    "name": "transition",
+    "imports": [
+      "_vendor-ClowtXgJ.js"
+    ],
+    "css": [
+      "assets/transition-sS9ru1SU.css"
+    ]
+  },
+  "_vendor-ClowtXgJ.js": {
+    "file": "assets/vendor-ClowtXgJ.js",
     "name": "vendor"
   },
   "resources/scripts/admin.jsx": {
-    "file": "assets/admin-BzMQBYxN.js",
+    "file": "assets/admin-CmwfnKiC.js",
     "name": "admin",
     "src": "resources/scripts/admin.jsx",
     "isEntry": true,
     "imports": [
-      "_vendor-DOXh85qL.js"
+      "_vendor-ClowtXgJ.js",
+      "_transition-DiF0lXAA.js"
     ],
     "css": [
-      "assets/admin-Bhil2q5u.css"
+      "assets/admin-Cg57er61.css"
     ]
   },
-  "resources/scripts/landing.jsx": {
-    "file": "assets/landing-C-4Ie769.js",
-    "name": "landing",
-    "src": "resources/scripts/landing.jsx",
+  "resources/scripts/auth.jsx": {
+    "file": "assets/auth-7b8erTbj.js",
+    "name": "auth",
+    "src": "resources/scripts/auth.jsx",
     "isEntry": true,
     "imports": [
-      "_vendor-DOXh85qL.js"
+      "_vendor-ClowtXgJ.js",
+      "_transition-DiF0lXAA.js"
+    ],
+    "css": [
+      "assets/auth-qoQBi8re.css"
     ]
   }
 }

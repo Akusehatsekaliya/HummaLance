@@ -55,7 +55,7 @@ class LoginController extends Controller
     public function redirectToGoogle()
     {
         return Socialite::driver('google')
-            ->with(['prompt' => 'select_account'])
+            // ->with(['prompt' => 'select_account'])
             ->redirect();
     }
 
@@ -97,11 +97,26 @@ class LoginController extends Controller
         }
         // dd($user);
 
-        Auth::login($user);
+        // Auth::login($user);
+        $token = $user->createToken('GeneralToken')->accessToken;
+
+        // return response()->json([
+        //     'token' => $token,
+        // ]);
         return response(<<<HTML
             <script>
+                window.opener.postMessage({
+                    "access_token": "$token",
+                    "user": $user,
+                    "expires_in": 3600
+                }, '*');
                 window.close();
             </script>
         HTML, 200)->header('Content-Type', 'text/html');
     }
+    // return response()->json([
+    //     'success' => true,
+    //     'message' => 'Login Success!',
+    //     'token'   => $user->createToken('General Use Token')->accessToken
+    // ]);
 }

@@ -1,86 +1,72 @@
-import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
-import axios from 'axios';
+import React, { useContext } from 'react';
+import { AuthContext } from '@context/AuthContext';
 
 const Register = () => {
-    const navigate = useNavigate();
-    const [state, setState] = useState({
-        isAuthorized: false,
-        userInfo: null,
-    });
-
-    const { isAuthorized } = state;
-
-    const fetchUser = async () => {
-        try {
-            const response = await axios.get("/auth/check");
-            setState((prevState) => ({
-                ...prevState,
-                isAuthorized: response.data.authorized,
-                userInfo: response.data.userInfo || null,
-            }));
-        } catch (error) {
-            console.error("Error fetching user data:", error);
-        }
-    };
-    useEffect(() => {
-
-        fetchUser();
-    }, []);
-
-    useEffect(() => {
-        if (isAuthorized) {
-            navigate("/react/auth/journey");
-        }
-    }, [isAuthorized, navigate]);
+    const { authState, setAuthState } = useContext(AuthContext);
 
     const popupCenter = ({ url, title, w, h }) => {
-        const width = window.innerWidth || document.documentElement.clientWidth || screen.width;
-        const height = window.innerHeight || document.documentElement.clientHeight || screen.height;
-
-        const systemZoom = width / window.screen.availWidth;
-        const left = (width - w) / 2 / systemZoom + window.screenLeft;
-        const top = (height - h) / 2 / systemZoom + window.screenTop;
+        const width = window.innerWidth;
+        const height = window.innerHeight;
+        const left = (width - w) / 2 + window.screenLeft;
+        const top = (height - h) / 2 + window.screenTop;
 
         const newWindow = window.open(
             url,
             title,
-            `popup=true,toolbar=no,location=no,status=no,menubar=no,resizable=no,scrollbars=yes,
-             width=${w / systemZoom},height=${h / systemZoom},top=${top},left=${left}`
+            `popup=true,toolbar=no,location=no,status=no,menubar=no,resizable=no,scrollbars=yes,width=${w},height=${h},top=${top},left=${left}`
         );
 
-        if (!newWindow) {
-            console.error('Popup failed to open.');
-            return null;
-        }
-        newWindow.focus();
+        if (newWindow) newWindow.focus();
         return newWindow;
     };
 
-    const handleGoogleClick = () => {
-        const loginPopup = popupCenter({ url: '/login/google', title: 'Clocker Login', w: 500, h: 600 });
+    const handleMessage = (event, loginPopup, clearPopupCheck) => {
+        if (event.origin !== window.location.origin || event.source !== loginPopup) return;
 
-        if (!loginPopup) return;
+        if (event.data?.access_token && event.data?.user) {
+            const expirationTime = Date.now() + event.data.expires_in * 1000;
 
-        const popupChecker = setInterval(async () => {
-            try {
-                if (loginPopup.closed) {
-                    clearInterval(popupChecker);
-                    await fetchUser(); // Fetch updated user data when popup is closed
-                }
-            } catch (error) {
-                console.error('Error checking authorization:', error);
-                clearInterval(popupChecker);
+            localStorage.setItem('access_token', event.data.access_token);
+            localStorage.setItem('token_expiration', expirationTime);
+
+            setAuthState({
+                isAuthenticated: true,
+                user: event.data.user,
+                token: event.data.access_token,
+            });
+        }
+        clearPopupCheck();
+        loginPopup.close();
+    };
+
+    const monitorPopup = (loginPopup, clearPopupCheck) => {
+        const interval = setInterval(() => {
+            if (loginPopup.closed) {
+                clearPopupCheck();
             }
         }, 500);
+
+        return () => clearInterval(interval);
+    };
+
+    const handleGoogleClick = () => {
+        const loginPopup = popupCenter({ url: "/login/google", title: "Clocker Login", w: 500, h: 600 });
+        if (!loginPopup) return console.error("Failed to open login popup.");
+
+        const clearPopupCheck = monitorPopup(loginPopup, () => {
+            window.removeEventListener("message", messageHandler);
+        });
+
+        const messageHandler = (event) => handleMessage(event, loginPopup, clearPopupCheck);
+        window.addEventListener("message", messageHandler);
     };
 
     return (
         <div className="col-lg-7">
             <div className="card-register">
-                <h4 className="justify-content-center d-flex">Sign up to start your freelance career</h4>
-                <div id="header" className="header">
-                    <div className="justify-content-between d-flex mt-5 gap-5">
+                <h4 className="text-center">Sign up to start your freelance career</h4>
+                <div className="header mt-5">
+                    <div className="d-flex justify-content-between gap-5">
                         <button className="linkedin-register">
                             <img src="/assets/svg/icons/mdi_linkedin.svg" alt="LinkedIn" />
                             Continue With LinkedIn
@@ -92,12 +78,8 @@ const Register = () => {
                                 className="profile-icon"
                             />
                             <div className="text-area">
-                                <span>
-                                    {state.userInfo?.name || "Continue As User"}
-                                </span>
-                                <span>
-                                    {state.userInfo?.email || "example@gmail.com"}
-                                </span>
+                                <span>{"Continue As User"}</span>
+                                <span>{authState?.user?.email || "example@gmail.com"}</span>
                             </div>
                             <img
                                 src="/assets/svg/icons/flat-color-icons_google.svg"

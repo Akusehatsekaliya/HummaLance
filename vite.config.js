@@ -6,6 +6,10 @@ export default defineConfig({
     resolve: {
         alias: {
             '@scripts': '/resources/scripts',
+            '@auth': '/resources/scripts/auth',
+            '@authCss': '/resources/css/auth',
+            '@context': '/resources/scripts/context',
+            '@components': '/resources/scripts/components',
         },
     },
     build: {
@@ -22,9 +26,9 @@ export default defineConfig({
             input: [
                 // 'resources/sass/app.scss',
                 // 'resources/js/app.js',
-                'resources/scripts/landing.jsx',
+                // 'resources/scripts/*',
                 'resources/scripts/admin.jsx',
-                // 'resources/scripts/admin/**'
+                'resources/scripts/auth.jsx'
             ],
             refresh: [
                 // 'resources/routes/**',

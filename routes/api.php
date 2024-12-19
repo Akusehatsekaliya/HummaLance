@@ -9,26 +9,30 @@ use App\Http\Controllers\Api\{
     CategoryController,
     UserController,
     ContractController,
-    LanguageController
+    LanguageController,
+    AuthController
 };
 use App\Http\Controllers\Api\LoginController;
 
-Route::middleware('auth')->get('/user', function (Request $request) {
+Route::middleware('auth:api')->get('/user', function (Request $request) {
     return response()->json([
         'authenticated' => true,
-        'user' => auth()->user(),
+        'user' => $request->user(),
     ]);
 });
 
-Route::get('/user', function () {
-    return response()->json([
-        'authenticated' => false,
-        'user' => auth()->user(),
-    ]);
+
+Route::middleware("check.token.domain")->group(function () {
+    Route::post('/auth/refresh', [AuthController::class, 'refresh']);
+
+    Route::post('/login', [LoginController::class, 'login']);
+
+    Route::middleware('auth:api')->group(function () {
+        Route::post('/logout', [LoginController::class, 'logout']);
+        Route::post('/auth/journey', [AuthController::class, 'journey']);
+    });
 });
 
-Route::post('/login', [LoginController::class, 'login']);
-Route::post('/logout', [LoginController::class, 'logout'])->middleware('auth:api');
 
 Route::prefix("admin")->group(function () {
     Route::apiResource('banner', BannerController::class);
