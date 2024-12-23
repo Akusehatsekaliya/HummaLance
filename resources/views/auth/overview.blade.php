@@ -1,6 +1,13 @@
 @extends('auth.layout.app')
 @section('style')
     <style>
+         .custom-hr {
+            border: none;
+            height: 0.8px;
+            width: 100vw;
+            background-color: #000;
+            margin-left: -15.5%;
+        }
         .card-overview {
             border-radius: 5%;
             border: 1px solid #ffffff;
@@ -308,11 +315,100 @@
         cursor: pointer;
         font-size: 16px;
     }
+    .footer {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        padding: 20px 0;
+        margin-top: 50px;
+    }
+
+    .footer a {
+        color: #007bff;
+        text-decoration: none;
+        font-weight: 500;
+    }
+
+    .footer button {
+        background-color: transparent;
+        border: 4px solid #f0f0f0;
+        border-radius: 10px;
+        padding: 8px 25px;
+        font-size: 16px;
+        cursor: pointer;
+        color: #007bff;
+    }
+
+    .shift-right {
+        margin-left: 45px;
+    }
+
+    .move-up {
+        position: relative;
+        top: -15px;
+        margin: 0;
+        margin-left: 45px;
+    }
+
+    .progress-container {
+        position: absolute;
+        left: -9.1%;
+        width: 100vw;
+        height: 4px;
+        background-color: #ddd;
+        margin: 40px 0;
+        border-radius: 12px;
+        z-index: 1;
+    }
+
+    .progress-bar {
+        position: absolute;
+        height: 100%;
+        width: 0;
+        background-color: #00AAFF;
+        transition: width 0.3s ease;
+
+    }
+
+    .step {
+        position: absolute;
+        top: -10px;
+        width: 20px;
+        height: 20px;
+        background-color: white;
+        border: 4px solid #ddd;
+        border-radius: 50%;
+    }
+
+    #step1 {
+        left: 0%;
+    }
+
+    #step2 {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    #step3 {
+        right: 0%;
+    }
+
+    .button-container {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 20px;
+    }
+
+    button {
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+    }
 
 </style>
 @endsection
 @section('content')
-    <div class="col-lg-4 pb-4">
+    <div class="col-lg-5 px-5 pb-4">
         <span style="font-weight: 600;">Overview</span>
         <span style="margin-left: 320px; font-weight: 610; color: #000000; font-size: 0.8rem;">1/10</span>
         <h4 class="font-weight-bold my-3">Cool, now write a description that explains about yourself.</h4>
@@ -445,7 +541,7 @@
             </div>
         </div>
     </div>
-    <div class="col-lg-6 px-5 pb-4">
+    <div class="col-lg-5 px-4 pb-4">
         <div class="card-overview">
             <div class="img-about">
                 <img src="{{ asset('assets/images/bg-aboutyou.png') }}" class="img-bg">
@@ -510,5 +606,21 @@
                 </div>
             </div>
         </div>
+    </div>
+    <div class="position-relative" style="width: 100%;">
+        <div class="progress-container mt-2">
+            <div class="progress-bar" id="progressBar"></div>
+        </div>
+    </div>
+    <div class="footer mt-4">
+        <button style="margin-left: 45px;">
+            Back
+        </button>
+        <a href="#" style="margin-left: 775px; margin-top: 17px;">
+            Skip if you are a job seeker
+        </a>
+        <button class="custom-button" style="background-color: #00AAFF; color: white;" id="nextBtn">
+            Next
+        </button>
     </div>
 @endsection
