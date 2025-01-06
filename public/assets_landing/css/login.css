@@ -22,6 +22,7 @@
     z-index: 10;
     background: linear-gradient(90deg, #1e1e20bf, #1e1e20bf);
 }
+
 .auth-modal img {
     user-select: none;
     -webkit-user-select: none;
@@ -269,6 +270,10 @@
     left: 50%;
 }
 
+.auth-modal .container:not(.active) .toggle-panel {
+    overflow: hidden;
+}
+
 .toggle-panel {
     position: absolute;
     width: 50%;
@@ -282,7 +287,7 @@
     transition: 0.6s ease-in-out;
     padding: 73px;
     top: 24px;
-    overflow: hidden;
+    /* overflow: hidden; */
 
     &.toggle-left {
         left: 0;
@@ -319,7 +324,8 @@
     height: 300px;
     bottom: -80px;
     left: -425px;
-    z-index: -3; /* Gambar berada di bawah form-box */
+    z-index: -3;
+    /* Gambar berada di bawah form-box */
     transform: translateX(0);
     transition: transform 1s ease-in-out, z-index 0s 1s;
 }
@@ -329,7 +335,8 @@
     height: 200px;
     bottom: -70px;
     left: 50px;
-    z-index: -3; /* Gambar berada di bawah form-box */
+    z-index: -3;
+    /* Gambar berada di bawah form-box */
     transform: translateX(0);
     transition: transform 1s ease-in-out, z-index 0s 1s;
 }
@@ -378,6 +385,7 @@
 }
 
 @media screen and (max-width: 650px) {
+
     .toggle-panel .login1,
     .toggle-panel .login2,
     .toggle-panel .login3,
@@ -405,9 +413,11 @@
     right: -50%;
     transition-delay: 0.4s;
 }
+
 .toggle-panel.toggle-left {
     transition-delay: 1s;
 }
+
 .auth-modal .container.active .toggle-panel.toggle-right {
     right: 0;
     transition-delay: 1.2s;
@@ -431,17 +441,22 @@
     border: 1px solid #686868 !important;
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
 }
+
 .card {
     width: 300px;
     border-radius: 8px;
 }
+
 .card.active {
-    background-color: #e9f7ff; /* Latar belakang biru muda */
+    background-color: #e9f7ff;
+    /* Latar belakang biru muda */
 }
+
 .border,
 .card.active {
     border: 1px solid #2b99ff !important;
 }
+
 .card-body {
     -ms-flex: 1 1 auto;
     flex: 1 1 auto;
@@ -467,9 +482,11 @@ input[type="radio"] {
     border-width: 2px;
     border-color: #9d9d9d;
 }
+
 .text-line {
     color: #7a7a7a;
 }
+
 .btn-login {
     background-color: #ededed;
     border-radius: 7px;
@@ -484,6 +501,7 @@ input[type="radio"] {
     justify-content: center;
     font-weight: 500;
 }
+
 .btn-primary {
     background-color: #00aaff;
     border-radius: 7px;
@@ -498,6 +516,7 @@ input[type="radio"] {
     justify-content: center;
     font-weight: 500;
 }
+
 .btn-primary:hover {
     background-color: #00aaff;
     color: #ffffff;
@@ -773,8 +792,10 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     outline: none;
     border: 2px solid transparent;
     /* transition: transform 0.3s, border 0.3s; */
-    border: 2px solid #dbdbdb; /* Tambahkan border */
-    border-radius: 8px; /* Opsional: membuat sudut membulat */
+    border: 2px solid #dbdbdb;
+    /* Tambahkan border */
+    border-radius: 8px;
+    /* Opsional: membuat sudut membulat */
 }
 
 .card-job input[type="radio"]::before {
@@ -873,4 +894,3 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     font-size: 17px;
     margin: 15px 0;
 }
-

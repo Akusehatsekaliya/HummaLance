@@ -1,63 +1,36 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom/client';
-import axios from 'axios';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import { LANDING_ROUTES } from './config/routes';
 
-const App = () => {
-    const [contracts, setContracts] = useState([]);
-    const [formData, setFormData] = useState({ title: '', content: '' });
+// Components
+import Navbar from '@components/landing/Navbar';
+// import Register from './auth/Register';
+import Journey from './auth/Journey';
+import Adventure from './auth/Adventure';
 
-    useEffect(() => {
-        fetchContracts();
-    }, []);
+// import '/resources/css/auth.css';
 
-    const fetchContracts = async () => {
-        const { data } = await axios.get('/api/contracts');
-        setContracts(data);
-    };
-
-    const handleSubmit = async (e) => {
-        e.preventDefault();
-        await axios.post('/api/contracts', formData);
-        fetchContracts();
-        setFormData({ title: '', content: '' });
-    };
-
-    const handleDelete = async (id) => {
-        await axios.delete(`/api/contracts/${id}`);
-        fetchContracts();
-    };
-
+function RouteArea() {
     return (
-        <div style={{ padding: '20px' }}>
-            <h1>Laravel React CRUD</h1>
-            <form onSubmit={handleSubmit}>
-                <input
-                    type="text"
-                    placeholder="Title"
-                    value={formData.title}
-                    onChange={(e) => setFormData({ ...formData, title: e.target.value })}
-                    required
-                />
-                <textarea
-                    placeholder="Content"
-                    value={formData.content}
-                    onChange={(e) => setFormData({ ...formData, content: e.target.value })}
-                    required
-                ></textarea>
-                <button type="submit">Add Post</button>
-            </form>
-            <ul>
-                {/* {contracts.map((post) => (
-                    <li key={post.id}>
-                        <h2>{post.title}</h2>
-                        <p>{post.content}</p>
-                        <button onClick={() => handleDelete(post.id)}>Delete</button>
-                    </li>
-                ))} */}
-            </ul>
-        </div>
+        <Routes>
+            {/* <Route
+                path={LANDING_ROUTES.DASHBOARD}
+                element={<Register />}
+            /> */}
+        </Routes>
     );
-};
+}
 
-const root = ReactDOM.createRoot(document.getElementById('app'));
-root.render(<App />);
+function App() {
+    return (
+        <Router>
+            <Navbar />
+            <div id="main" className='content container'>
+                <RouteArea />
+            </div>
+        </Router>
+    );
+}
+
+ReactDOM.createRoot(document.getElementById('app')).render(<App />);

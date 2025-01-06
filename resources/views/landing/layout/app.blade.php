@@ -1,4 +1,4 @@
-@include('landing.layout.auth')
+{{-- @include('landing.layout.auth') --}}
 <!DOCTYPE html>
 <html lang="{{ App::getLocale() }}">
 
@@ -23,7 +23,9 @@
     <!-- Bootstrap core CSS -->
     <link href="{{ asset('assets_landing/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
     <!-- Font Awesome-->
-    <link href="{{ asset('assets_landing/vendor/fontawesome/css/font-awesome.min.css') }}" rel="stylesheet">
+
+    <link href="{{ asset('vendor/fontawesome-free-6.7.2/css/all.css') }}" rel="stylesheet">
+    {{-- <link href="{{ asset('assets_landing/vendor/fontawesome/css/font-awesome.min.css') }}" rel="stylesheet"> --}}
     <!-- Material Design Icons -->
     <link href="{{ asset('assets_landing/vendor/icons/css/materialdesignicons.min.css') }}" media="all"
         rel="stylesheet" type="text/css">
@@ -162,9 +164,14 @@
 
     @yield('style')
     @stack('links')
+
+    @viteReactRefresh
+    @vite('resources/js/auth.jsx')
 </head>
 
 <body>
+    <div id="auth"></div>
+
     @include('landing.layout.navbar')
 
     @yield('content')
@@ -178,6 +185,7 @@
     @endif
 
     <script src="{{ asset('assets_landing/vendor/jquery/jquery.min.js') }}"></script>
+    <script src="{{ asset('vendor/fontawesome-free-6.7.2/js/all.js') }}"></script>
     {{-- <script src="{{ asset('assets_landing/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script> --}}
     <script src="{{ asset('assets_landing/vendor/slick-master/slick/slick.js') }}"></script>
     <script src="{{ asset('assets_landing/vendor/lightgallery-master/dist/js/lightgallery-all.min.js') }}"></script>

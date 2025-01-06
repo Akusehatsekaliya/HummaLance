@@ -8,17 +8,10 @@ export default defineConfig({
             '@scripts': '/resources/scripts',
             '@auth': '/resources/scripts/auth',
             '@authCss': '/resources/css/auth',
-            '@context': '/resources/scripts/context',
+            '@contexts': '/resources/scripts/contexts',
             '@components': '/resources/scripts/components',
-        },
-    },
-    build: {
-        rollupOptions: {
-            output: {
-                manualChunks: {
-                    vendor: ['react', 'axios', 'datatables.net-react', 'datatables.net-bs5'],
-                },
-            },
+            '@landing': '/resources/scripts/landing',
+            '@landingCss': '/resources/css/landing',
         },
     },
     plugins: [
@@ -28,7 +21,8 @@ export default defineConfig({
                 // 'resources/js/app.js',
                 // 'resources/scripts/*',
                 'resources/scripts/admin.jsx',
-                'resources/scripts/auth.jsx'
+                'resources/scripts/auth.jsx',
+                'resources/scripts/landing.jsx'
             ],
             refresh: [
                 // 'resources/routes/**',

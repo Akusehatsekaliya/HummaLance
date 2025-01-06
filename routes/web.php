@@ -18,7 +18,8 @@ Route::get('/debug', function () {
 
 
 Route::get("test", function () {
-    dd(auth()->user());
+    // $geo_location = file_get_contents('http://freegeoip.net/json/' . $_SERVER['HTTP_CLIENT_IP']);
+    return $_SERVER;
 });
 
 Route::get('/setlang/{lang}', function ($lang) {
