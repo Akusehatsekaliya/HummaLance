@@ -54,6 +54,9 @@ Route::get('/job', function () {
 Route::get('/aboutyou', function () {
     return view('auth.aboutyou');
 })->name('aboutyou');
+Route::get('/explain', function () {
+    return view('auth.explain');
+})->name('explain');
 
 // Google Login
 
