@@ -1,18 +1,18 @@
 import React, { useEffect, useState } from "react";
-import ReactDOM from "react-dom/client";
-import { Link, useLocation } from "react-router-dom";
-import '/public/assets_landing/css/login.css';
-import '/public/vendor/boxicons/css/boxicons.min.css';
-import '/public/vendor/boxicons/dist/boxicons.js';
+import ReactDOM from 'react-dom/client';
+import { useLocation } from "react-router-dom";
+import "/public/assets_landing/css/login.css";
+import "/public/vendor/boxicons/css/boxicons.min.css";
+import "/public/vendor/boxicons/dist/boxicons.js";
 
 const App = () => {
     const [isRegister, setIsRegister] = useState(false);
     const [isModalVisible, setIsModalVisible] = useState(false);
-    const [selectedOption, setSelectedOption] = useState(null); // State untuk pilihan radio
-    const [buttonText, setButtonText] = useState("Select an option"); // Teks tombol login
+    const [selectedOption, setSelectedOption] = useState(null);
+    const [buttonText, setButtonText] = useState("Select an option");
 
-    // URL tujuan halaman berikutnya
-    const nextPage = "/register";
+    const csrfToken =
+        document.querySelector('meta[name="csrf-token"]')?.getAttribute("content") || "";
 
     const buttonTexts = {
         "1": "Join as a freelancer",
@@ -20,35 +20,87 @@ const App = () => {
         "3": "Join as a company",
     };
 
+    const nextPage = "/register";
+
+    const popupCenter = ({ url, title, w, h }) => {
+        const { screenLeft, screenTop, innerWidth, innerHeight, screen } = window;
+        const dualScreenLeft = screenLeft !== undefined ? screenLeft : screenX;
+        const dualScreenTop = screenTop !== undefined ? screenTop : screenY;
+        const width = innerWidth || document.documentElement.clientWidth || screen.width;
+        const height = innerHeight || document.documentElement.clientHeight || screen.height;
+        const systemZoom = width / screen.availWidth;
+
+        const left = (width - w) / 2 / systemZoom + dualScreenLeft;
+        const top = (height - h) / 2 / systemZoom + dualScreenTop;
+
+        const newWindow = window.open(
+            url,
+            title,
+            `scrollbars=yes, width=${w / systemZoom}, height=${h / systemZoom}, top=${top}, left=${left}`
+        );
+
+        if (newWindow) newWindow.focus();
+        return newWindow;
+    };
+
+    const monitorPopup = (popup, clearPopupCheck) => {
+        const interval = setInterval(() => {
+            if (popup.closed) {
+                clearPopupCheck();
+            }
+        }, 500);
+        return () => clearInterval(interval);
+    };
+
+    const handleMessage = (event, popup, clearPopupCheck) => {
+        if (event.origin !== window.location.origin || event.source !== popup) return;
+
+        const { access_token, user, redirect_to } = event.data || {};
+        if (access_token && user && redirect_to) {
+            window.location.href = redirect_to;
+            clearPopupCheck();
+            popup.close();
+        }
+    };
+
+    const handleGoogleClick = () => {
+        const loginPopup = popupCenter({
+            url: "/login/google",
+            title: "Clocker Login",
+            w: 500,
+            h: 600,
+        });
+
+        if (!loginPopup) return;
+
+        const clearPopupCheck = monitorPopup(loginPopup, () => {
+            window.removeEventListener("message", messageHandler);
+        });
+
+        const messageHandler = (event) => handleMessage(event, loginPopup, clearPopupCheck);
+        window.addEventListener("message", messageHandler);
+    };
+
     const handleOptionChange = (event) => {
         const value = event.target.value;
         setSelectedOption(value);
-
-        // Ubah teks tombol sesuai pilihan
         setButtonText(buttonTexts[value]);
     };
 
     const handleLoginClick = () => {
         if (selectedOption) {
-            // Simpan pilihan ke Local Storage
             localStorage.setItem("selectedOption", selectedOption);
-            // Redirect ke halaman berikutnya
             window.location.href = nextPage;
         }
     };
 
-    // Show modal
     const showModal = (register = false) => {
         setIsRegister(register);
         setIsModalVisible(true);
     };
 
-    // Close modal
-    const closeModal = () => {
-        setIsModalVisible(false);
-    };
+    const closeModal = () => setIsModalVisible(false);
 
-    // Handle hash change
     const handleHashChange = () => {
         if (window.location.hash.includes("#login")) {
             removeHash();
@@ -59,14 +111,9 @@ const App = () => {
         }
     };
 
-    // Remove hash from URL
     const removeHash = () => {
         if ("pushState" in window.history) {
-            window.history.pushState(
-                "",
-                document.title,
-                window.location.pathname + window.location.search
-            );
+            window.history.pushState("", document.title, window.location.pathname + window.location.search);
         }
     };
 
@@ -87,7 +134,13 @@ const App = () => {
 
                         {/* {!isRegister && ( */}
                         <div className="form-box login">
-                            <form method="POST">
+                            <form method="POST" action={"/login"}>
+                                <input
+                                    type="hidden"
+                                    name="_token"
+                                    value={csrfToken || ''}
+                                />
+
                                 <h1>Log in To Clocker</h1>
                                 <div className="input-box">
                                     <i className="fa-solid fa-user"></i>
@@ -117,6 +170,7 @@ const App = () => {
                                 <div className="login-button-container">
                                     <a
                                         className="google-login"
+                                        onClick={handleGoogleClick}
                                     >
                                         <img
                                             loading="lazy"

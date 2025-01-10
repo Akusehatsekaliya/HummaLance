@@ -97,9 +97,14 @@ class LoginController extends Controller
         }
         // dd($user);
 
-        // Auth::login($user);
+        Auth::login($user);
         $token = $user->createToken('GeneralToken')->accessToken;
+        $redirectTo = $user->hasRole('admin') ? route('admin.dashboard.index') : route('home');
+        // if ($user->hasRole('admin')) {
+        //     return to_route('admin.dashboard.index');
+        // }
 
+        // return to_route("home");
         // return response()->json([
         //     'token' => $token,
         // ]);
@@ -108,6 +113,7 @@ class LoginController extends Controller
                 window.opener.postMessage({
                     "access_token": "$token",
                     "user": $user,
+                    "redirect_to": "$redirectTo",
                     "expires_in": 3600
                 }, '*');
                 window.close();

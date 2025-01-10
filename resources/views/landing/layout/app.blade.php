@@ -8,6 +8,7 @@
     <meta name="description" content="Gurdeep singh osahan">
     <meta name="author" content="Gurdeep singh osahan">
     <meta name="msapplication-navbutton-color" content="#01ABFE">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>CLOCKER</title>
     @vite('resources/js/app.js')
