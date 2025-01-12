@@ -2,6 +2,7 @@
     "private": true,
     "type": "module",
     "scripts": {
+        "start": "concurrently --kill-others \"php artisan serve\" \"npm run dev\"",
         "dev": "vite",
         "build": "vite build"
     },
@@ -10,6 +11,7 @@
         "@vitejs/plugin-react": "^4.2.0",
         "axios": "^1.7.9",
         "bootstrap": "^5.3.3",
+        "concurrently": "^9.1.2",
         "laravel-vite-plugin": "^1.0",
         "react": "^18.2.0",
         "react-dom": "^18.2.0",
