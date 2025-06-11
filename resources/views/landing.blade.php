@@ -7,6 +7,7 @@
         white-space: normal;
         overflow-wrap: break-word;
     }
+    
 </style>
 @endsection
 @section('content')
